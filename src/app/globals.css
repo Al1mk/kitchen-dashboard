@@ -1,26 +1,85 @@
 @import "tailwindcss";
 
+/*
+ * Semantic design tokens — see DESIGN.md.
+ * PROVISIONAL: brand values were sampled from screenshots of the Hochschule
+ * Coburg website/logo supplied by Ali on 2026-10-24. They are NOT verified
+ * against an official brand guide and can be replaced here centrally.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand-red: #cd4026;
+  --brand-red-strong: #a8321c;
+  --brand-orange: #ec962b;
+  --brand-cream: #f6d8aa;
+  --brand-purple: #4c0e74;
+
+  --ink: #23252b;
+  --ink-muted: #5b5f69;
+  --canvas: #f6f4f2;
+  --surface: #ffffff;
+  --line: #ddd8d3;
+  --focus: #1b4fd8;
+
+  --success: #1f7a3e;
+  --success-soft: #e5f4ea;
+  --warning: #7a4f00;
+  --warning-soft: #fff1d6;
+  --danger: #b42318;
+  --danger-soft: #fde8e6;
+  --info: #4c0e74;
+  --info-soft: #f1e8f8;
+  --neutral-soft: #ecebea;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand: var(--brand-red);
+  --color-brand-strong: var(--brand-red-strong);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-cream: var(--brand-cream);
+  --color-brand-purple: var(--brand-purple);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-focus: var(--focus);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --color-neutral-soft: var(--neutral-soft);
+  --font-sans: var(--font-body), system-ui, sans-serif;
+  --font-display: var(--font-heading), "Arial Narrow", system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Thin brand stripe echoing the website header (cream → orange → red). */
+.brand-stripe {
+  background: linear-gradient(90deg, var(--brand-cream), var(--brand-orange) 55%, var(--brand-red));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

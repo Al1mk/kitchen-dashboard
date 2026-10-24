@@ -51,17 +51,24 @@ Scope: M0 preparation and M1 (announcement draft → preview → publish → pub
 - [x] Read vault notes HCI-00…HCI-09.
 - [x] Stack selected and installed; Git initialised only in `campus-board/`.
 - [x] File map and test plan (this file).
-- [ ] Record ADR-007/008 in vault.
+- [x] Record ADR-007/008 in vault.
 
 ### M1 (test-first where marked T)
-- [ ] T Policy: draft/withdrawn/future/expired excluded; published visible; pending changes detected.
-- [ ] T Schema/time: required fields, lengths, enum, end after start, Berlin DST conversion.
-- [ ] T Repository: create idempotency, draft edits do not change published snapshot, withdraw removes public, data survives reopen.
-- [ ] T Auth: hash/verify, session expiry, logout invalidation.
-- [ ] API routes (admin + public) with auth/origin checks.
-- [ ] Admin UI: login, overview, list, editor with live preview, preview page, publish/withdraw with feedback and confirmation, unsaved-change guard.
-- [ ] Display UI: polling every 5 s, loading/empty/stale/error/recovery states.
-- [ ] E2E: unauthorized direct requests, invalid input, two-context publish/edit/republish/withdraw, display states, screenshots (1440×900 admin, 1080×1920 simulated portrait).
-- [ ] Restart persistence verified against a real server restart.
-- [ ] Typecheck, lint, unit tests, E2E, production build — results recorded in `docs/evidence/`.
-- [ ] README, DESIGN.md, vault notes updated.
+- [x] T Policy: draft/withdrawn/future/expired excluded; published visible; pending changes detected.
+- [x] T Schema/time: required fields, lengths, enum, end after start, Berlin DST conversion.
+- [x] T Repository: create idempotency, draft edits do not change published snapshot, withdraw removes public, data survives reopen.
+- [x] T Auth: hash/verify, session expiry, logout invalidation.
+- [x] API routes (admin + public) with auth/origin checks.
+- [x] Admin UI: login, overview, list, editor with live preview, preview page, publish/withdraw with feedback and confirmation, unsaved-change guard.
+- [x] Display UI: polling every 5 s, loading/empty/stale/error/recovery states.
+- [x] E2E: unauthorized direct requests, invalid input, two-context publish/edit/republish/withdraw, display states, screenshots (1440×900 admin, 1080×1920 simulated portrait).
+- [x] Restart persistence verified against a real server restart.
+- [x] Typecheck, lint, unit tests, E2E, production build — results recorded in `docs/evidence/`.
+- [x] README, DESIGN.md, vault notes updated.
+
+## Deviations and notes (2026-10-24)
+
+- `cacheComponents` (scaffold default) turned off; `package.json` is `"type": "module"`; `tsconfig` allows `.ts` import extensions so the same modules run in Next, Vitest and plain Node scripts.
+- `@types/node` pinned to 22 (Vitest 5 peer range; matches runtime).
+- Sessions persist in SQLite, so a server restart does not log the admin out (verified). Expiry 8 h.
+- Bugs found by tests and fixed: duplicate `id` on two confirm dialogs (broke dialog labelling), redundant `aria-label` on preview cards, password script relied on private readline internals and lost piped input.

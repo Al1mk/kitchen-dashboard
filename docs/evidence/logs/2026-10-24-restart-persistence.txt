@@ -1,0 +1,13 @@
+# Restart persistence check 2026-10-24 22:54 CEST (production build, temp DB)
+server 1 started (pid 55849)
+login: 200
+created: de1c8168-ef89-4201-9f9a-f620fe4832a0
+publish: 200
+save draft edit: 200
+public before restart: Neustart-Test
+server 1 stopped
+server 2 started (pid 55897)
+public after restart:  Neustart-Test
+old session after restart (GET admin list): 200
+admin state after restart: status=published pending=true draft="Neustart-Test (unveröffentlichter Entwurf)"
+done

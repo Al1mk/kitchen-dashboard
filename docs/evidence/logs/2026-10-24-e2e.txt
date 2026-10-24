@@ -1,0 +1,24 @@
+# Run: 2026-10-24 22:53 CEST · Playwright 1.64.1 · Chromium headless · production build (next build && next start :3100) · fresh temp DB · random admin password
+
+Running 17 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/api-security.spec.ts:5:3 › anonymous direct requests › cannot read or mutate admin data (48ms)
+  ✓   2 [chromium] › tests/e2e/api-security.spec.ts:15:3 › anonymous direct requests › admin pages redirect to the login page (362ms)
+  ✓   3 [chromium] › tests/e2e/api-security.spec.ts:22:3 › anonymous direct requests › public API rejects writes (4ms)
+  ✓   4 [chromium] › tests/e2e/api-security.spec.ts:26:3 › anonymous direct requests › wrong credentials are rejected (26ms)
+  ✓   5 [chromium] › tests/e2e/api-security.spec.ts:36:3 › authenticated API › rejects cross-origin mutations even with a valid session (31ms)
+  ✓   6 [chromium] › tests/e2e/api-security.spec.ts:47:3 › authenticated API › rejects invalid input server-side with field errors (30ms)
+  ✓   7 [chromium] › tests/e2e/api-security.spec.ts:70:3 › authenticated API › public output never contains drafts, future items or admin fields (30ms)
+  ✓   8 [chromium] › tests/e2e/api-security.spec.ts:88:3 › authenticated API › a repeated create request id does not create a duplicate (26ms)
+  ✓   9 [chromium] › tests/e2e/api-security.spec.ts:96:3 › authenticated API › logout invalidates the session server-side (28ms)
+  ✓  10 [chromium] › tests/e2e/display-states.spec.ts:8:1 › shows a loading state, then an empty state (116ms)
+  ✓  11 [chromium] › tests/e2e/display-states.spec.ts:21:1 › shows an error state on first-load failure and recovers (141ms)
+  ✓  12 [chromium] › tests/e2e/display-states.spec.ts:41:1 › keeps last data with a stale notice when the connection drops, then recovers automatically (10.3s)
+  ✓  13 [chromium] › tests/e2e/publish-flow.spec.ts:10:1 › draft → preview → publish → display → edit/republish → withdraw (25.5s)
+  ✓  14 [chromium] › tests/e2e/publish-flow.spec.ts:79:1 › validation errors are shown next to the fields (335ms)
+  ✓  15 [chromium] › tests/e2e/publish-flow.spec.ts:89:1 › leaving with unsaved changes asks for confirmation (321ms)
+  ✓  16 [chromium] › tests/e2e/publish-flow.spec.ts:101:1 › logout from the UI ends access to admin pages (298ms)
+  ✓  17 [chromium] › tests/e2e/screenshots.spec.ts:9:1 › capture admin (1440×900) and display (1080×1920) layouts (880ms)
+
+  17 passed (42.0s)
+exit=0

@@ -1,0 +1,60 @@
+# Run: 2026-10-24 22:53 CEST · node v22.20.0 · Darwin arm64
+## npm run typecheck
+
+> campus-board@0.1.0 typecheck
+> next typegen && tsc --noEmit
+
+Generating route types...
+✓ Types generated successfully
+exit=0
+## npm run lint (eslint)
+no findings
+exit=0
+## npm test (vitest)
+
+ RUN  v5.0.5 /Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/campus-board
+
+ ✓ tests/unit/policy.test.ts > isPubliclyVisible > hides drafts 1ms
+ ✓ tests/unit/policy.test.ts > isPubliclyVisible > hides withdrawn announcements even if a snapshot exists 0ms
+ ✓ tests/unit/policy.test.ts > isPubliclyVisible > shows published announcements without a window 0ms
+ ✓ tests/unit/policy.test.ts > isPubliclyVisible > hides published announcements that start in the future 0ms
+ ✓ tests/unit/policy.test.ts > isPubliclyVisible > shows announcements whose start time has been reached 0ms
+ ✓ tests/unit/policy.test.ts > isPubliclyVisible > hides expired announcements (end is exclusive) 0ms
+ ✓ tests/unit/policy.test.ts > hasPendingChanges > is false when draft equals the published snapshot 0ms
+ ✓ tests/unit/policy.test.ts > hasPendingChanges > is true when the draft differs from the published snapshot 0ms
+ ✓ tests/unit/policy.test.ts > hasPendingChanges > is false for drafts that were never published 0ms
+ ✓ tests/unit/policy.test.ts > getAdminState > maps lifecycle and window to an admin state 0ms
+ ✓ tests/unit/policy.test.ts > canPublish > rejects content whose end time already passed 0ms
+ ✓ tests/unit/policy.test.ts > canPublish > accepts content without an end time 0ms
+ ✓ tests/unit/schema-time.test.ts > berlin time conversion > converts winter time (UTC+1) 1ms
+ ✓ tests/unit/schema-time.test.ts > berlin time conversion > converts summer time (UTC+2) 0ms
+ ✓ tests/unit/schema-time.test.ts > berlin time conversion > rejects a local time that does not exist because of the spring DST gap 0ms
+ ✓ tests/unit/schema-time.test.ts > berlin time conversion > rejects malformed values 0ms
+ ✓ tests/unit/schema-time.test.ts > berlin time conversion > round-trips UTC back to a Berlin input value 0ms
+ ✓ tests/unit/schema-time.test.ts > parseAnnouncementInput > accepts valid input, trims text and converts times to UTC 1ms
+ ✓ tests/unit/schema-time.test.ts > parseAnnouncementInput > treats empty times as no restriction 0ms
+ ✓ tests/unit/schema-time.test.ts > parseAnnouncementInput > requires title and body 0ms
+ ✓ tests/unit/schema-time.test.ts > parseAnnouncementInput > rejects over-long text 0ms
+ ✓ tests/unit/schema-time.test.ts > parseAnnouncementInput > rejects unknown categories and wrong types 0ms
+ ✓ tests/unit/schema-time.test.ts > parseAnnouncementInput > rejects an end time that is not after the start time 0ms
+ ✓ tests/unit/schema-time.test.ts > parseAnnouncementInput > rejects non-object input 0ms
+ ✓ tests/unit/repository.test.ts > announcement repository > creates drafts that are not public 6ms
+ ✓ tests/unit/repository.test.ts > announcement repository > returns the existing record for a repeated create request id 3ms
+ ✓ tests/unit/repository.test.ts > announcement repository > publishes, keeps the published snapshot while the draft changes, and republishes 2ms
+ ✓ tests/unit/repository.test.ts > announcement repository > withdraws from public output but keeps the content recoverable 2ms
+ ✓ tests/unit/repository.test.ts > announcement repository > refuses to withdraw something that is not published 2ms
+ ✓ tests/unit/repository.test.ts > announcement repository > refuses to publish already expired content 1ms
+ ✓ tests/unit/repository.test.ts > announcement repository > excludes future and expired published content and exposes only allowlisted fields 2ms
+ ✓ tests/unit/repository.test.ts > announcement repository > orders pinned announcements first, then newest publication 8ms
+ ✓ tests/unit/repository.test.ts > announcement repository > keeps data after the database is closed and reopened 3ms
+ ✓ tests/unit/auth.test.ts > password hashing > verifies the correct password and rejects others 62ms
+ ✓ tests/unit/auth.test.ts > password hashing > produces different hashes for the same password (salted) 36ms
+ ✓ tests/unit/auth.test.ts > password hashing > rejects malformed stored hashes 0ms
+ ✓ tests/unit/auth.test.ts > session store > creates, validates, expires and deletes sessions 5ms
+
+ Test Files  4 passed (4)
+      Tests  37 passed (37)
+   Start at  22:54:43
+   Duration  176ms (tests 61%, import 27%, transform 10%, worker 3%)
+
+exit=0
