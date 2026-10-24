@@ -1,0 +1,13 @@
+$ scripts/verify-restart.sh
+# Restart persistence check 2026-10-25 01:03 CEST (production build, temp DB)
+server 1 started (pid 74248)
+created: b06f4c76-50f7-4321-9871-9c07d4f82aed
+ok   public titles before restart: ["Neustart-Test"]
+ok   admin state before restart: status=published pending=true draft=Neustart-Test (unveröffentlichter Entwurf)
+server 1 stopped (port 3200 no longer answers)
+server 2 started (pid 74287)
+ok   public output after restart (full JSON, unchanged): [{"id":"b06f4c76-50f7-4321-9871-9c07d4f82aed","title":"Neustart-Test","body":"Bleibt nach Neustart erhalten.","category":"general","pinned":false,"publishedAt":"2026-10-24T23:03:40.130Z","endsAt":null}]
+ok   old session after restart: HTTP 200
+ok   admin state after restart: status=published pending=true draft=Neustart-Test (unveröffentlichter Entwurf)
+PASS: 5 checks
+exit=0

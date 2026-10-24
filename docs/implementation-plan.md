@@ -72,3 +72,16 @@ Scope: M0 preparation and M1 (announcement draft → preview → publish → pub
 - `@types/node` pinned to 22 (Vitest 5 peer range; matches runtime).
 - Sessions persist in SQLite, so a server restart does not log the admin out (verified). Expiry 8 h.
 - Bugs found by tests and fixed: duplicate `id` on two confirm dialogs (broke dialog labelling), redundant `aria-label` on preview cards, password script relied on private readline internals and lost piped input.
+
+## Targeted fixes after the independent M1 review (2026-10-25)
+
+Findings R-001…R-004 from the review note `HCI-10 M1 review` (Obsidian vault). Scope stayed M1: no new modules, no redesign, no credential or data changes. Each regression test was run against the unfixed code first and failed.
+
+| ID | Problem | Fix | Regression check |
+| --- | --- | --- | --- |
+| R-001 | Several long cards shrank inside the fixed-height list and clipped their text (`overflow-hidden`) | `shrink-0` on the card in `BoardLayout.tsx`; the list scrolls instead | `tests/e2e/display-overflow.spec.ts`: 3 published + 1 draft at max length; on `/display` (1080×1920) and in the admin preview: 0 clipped cards, list scrollable, last card reachable. Before the fix: 3 of 3 cards clipped. |
+| R-002 | Editor crashed on plain HTTP via a non-loopback host (no secure context → no `crypto.randomUUID`) | Request id from `crypto.getRandomValues` (`AnnouncementEditor.tsx`) | `tests/e2e/insecure-origin.spec.ts`: Chromium maps `campus-board.test` to 127.0.0.1; asserts `isSecureContext=false`, no `randomUUID`, then saves a draft without page errors. Before the fix: client error page. |
+| R-003 | `db:seed-demo` ignored `.env.local`, could seed a different DB than the app | Script loads env via `@next/env` (now an explicit dev dependency, same version as `next`) and reuses `getDatabasePath()` | `tests/unit/seed-demo.test.ts`: temp dir with `.env.local` → seeds the custom path, default path untouched. Before the fix: wrote `data/campus-board.sqlite`. |
+| R-004 | `verify-restart.sh` printed values but did not assert them | `set -euo pipefail`, HTTP status checks, exact before/after comparison, port-in-use and stop checks, cleanup trap, no secrets in messages | Real run: `PASS: 5 checks`. Three negative variants (deleted DB, wrong password, port in use) each exit 1: `docs/evidence/logs/2026-10-25-restart-negative-checks.txt`. |
+
+Limits: R-001 makes all content reachable by scrolling, but a public screen without touch input has no one to scroll it; how to present more content than fits (rotation/paging, length limits) is a design question for later, not solved here. R-002 is verified in an isolated browser on one machine, not on a real LAN with a second device.

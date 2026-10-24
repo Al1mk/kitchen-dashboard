@@ -1,0 +1,30 @@
+# Static checks + unit tests 2026-10-25 01:03 CEST — after review fixes R-001…R-004
+$ npm run typecheck
+
+> campus-board@0.1.0 typecheck
+> next typegen && tsc --noEmit
+
+Generating route types...
+✓ Types generated successfully
+exit=0
+$ npm run lint
+
+> campus-board@0.1.0 lint
+> eslint
+
+exit=0
+$ npm test
+
+> campus-board@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.5 /Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/campus-board
+
+
+ Test Files  5 passed (5)
+      Tests  38 passed (38)
+   Start at  01:03:29
+   Duration  249ms (tests 46%, transform 30%, import 22%, worker 2%)
+
+exit=0

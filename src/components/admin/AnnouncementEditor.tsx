@@ -54,7 +54,13 @@ function sameValues(a: FormValues, b: FormValues) {
   );
 }
 
-const PUBLISHED_HINT = "Die Mitteilung erscheint innerhalb von etwa 5 Sekunden auf dem Bildschirm.";
+// crypto.randomUUID only exists in secure contexts (HTTPS or localhost); the admin
+// may also be opened over plain HTTP via a LAN IP, where getRandomValues still works.
+function newRequestId(): string {
+  return Array.from(crypto.getRandomValues(new Uint8Array(16)), (b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+const PUBLISHED_HINT ="Die Mitteilung erscheint innerhalb von etwa 5 Sekunden auf dem Bildschirm.";
 
 function publishedMessage(record: AdminAnnouncement): string {
   if (record.state === "scheduled" && record.published?.startsAt) {
@@ -74,7 +80,7 @@ export function AnnouncementEditor({ initial, flash }: { initial: AdminAnnouncem
   const [busy, setBusy] = useState<Busy>(null);
   const [confirmWithdraw, setConfirmWithdraw] = useState(false);
   const [pendingHref, setPendingHref] = useState<string | null>(null);
-  const [requestId] = useState(() => crypto.randomUUID());
+  const [requestId] = useState(newRequestId);
   const busyRef = useRef<Busy>(null);
   const formRef = useRef<HTMLFormElement>(null);
 

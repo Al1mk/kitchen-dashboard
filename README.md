@@ -26,6 +26,8 @@ npm run admin:set-password     # asks for username + password, writes .env.local
 npm run db:seed-demo           # optional: 3 clearly labelled demo items, idempotent, never deletes
 ```
 
+The seed script loads `.env*` files the same way Next.js does (via `@next/env`), so it writes to the same database as `npm run dev`, including a `CAMPUS_BOARD_DB_PATH` set only in `.env.local`. It prints the database path it used.
+
 `.env.local` is git-ignored and holds `ADMIN_USERNAME` and `ADMIN_PASSWORD_HASH` (scrypt). The password itself is never stored or printed. Without these values the login page shows a setup hint and login is disabled. See `.env.example` for all variables.
 
 ## Run
@@ -49,16 +51,16 @@ Local SQLite is not durable on serverless/ephemeral hosting; hosting is an open 
 
 `next start` listens on all interfaces. On a network that allows client-to-client traffic, another device can open `http://<host-ip>:3000/display`. Find the host IP on macOS with `ipconfig getifaddr en0`. The macOS firewall may ask to allow incoming connections; nothing is changed automatically. Whether the campus network allows this is unknown.
 
-Open the **admin on the host itself via `localhost`**: in production the session cookie is `Secure`, which browsers accept on `localhost` but not on plain-HTTP IP addresses. Only for a LAN demo where the admin must use the IP, set `CAMPUS_BOARD_INSECURE_COOKIES=true` (documented risk: cookie travels unencrypted).
+Open the **admin on the host itself via `localhost`**: in production the session cookie is `Secure`, which browsers accept on `localhost` but not on plain-HTTP IP addresses. Only for a LAN demo where the admin must use the IP, set `CAMPUS_BOARD_INSECURE_COOKIES=true` (documented risk: cookie travels unencrypted). The editor does not depend on browser APIs that need HTTPS (such as `crypto.randomUUID`), so it also works on such a plain-HTTP address; this is covered by an isolated browser test with a mapped host name on one machine (`tests/e2e/insecure-origin.spec.ts`), not by a test on a real second device.
 
 ## Tests
 
 ```bash
 npm run typecheck              # next typegen + tsc
 npm run lint
-npm test                       # Vitest: policy, schema/time, repository/persistence, auth (37 tests)
-npm run test:e2e               # Playwright: builds, starts on :3100 with a temp DB and random password (17 tests)
-scripts/verify-restart.sh      # publishes, restarts the production server, checks data (needs a prior build)
+npm test                       # Vitest: policy, schema/time, repository/persistence, auth, seed config (38 tests)
+npm run test:e2e               # Playwright: builds, starts on :3100 with a temp DB and random password (19 tests)
+scripts/verify-restart.sh      # publishes, restarts the production server, asserts data + session; exits 1 on failure (needs a prior build)
 ```
 
 E2E uses two independent browser contexts on one machine (admin + display). That is not a two-device test. Display network failures are simulated by request interception. Screenshots are written to `docs/evidence/screenshots/` (1080×1920 is a simulated portrait viewport, not the measured screen).

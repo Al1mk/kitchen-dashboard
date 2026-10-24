@@ -1,0 +1,25 @@
+# Negative checks for scripts/verify-restart.sh, 2026-10-25 ~01:02 CEST
+# Purpose: show that a failed request or a data mismatch makes the script exit non-zero.
+# Variants 1 and 2 are throwaway copies in a temp directory with one line changed (not committed);
+# variant 3 runs the unmodified script while another process occupies port 3200.
+
+## 1. Database files deleted between stop and restart (simulated data loss)
+# Restart persistence check 2026-10-25 01:02 CEST (production build, temp DB)
+server 1 started (pid 73090)
+created: 90eb608a-41d5-449d-8232-d4bf01f3b2a7
+ok   public titles before restart: ["Neustart-Test"]
+ok   admin state before restart: status=published pending=true draft=Neustart-Test (unveröffentlichter Entwurf)
+server 1 stopped (port 3200 no longer answers)
+server 2 started (pid 73129)
+FAIL: public output after restart (full JSON, unchanged): expected '[{"id":"90eb608a-41d5-449d-8232-d4bf01f3b2a7","title":"Neustart-Test","body":"Bleibt nach Neustart erhalten.","category":"general","pinned":false,"publishedAt":"2026-10-24T23:02:45.208Z","endsAt":null}]', got '[]'
+exit=1
+
+## 2. Login with a wrong password
+# Restart persistence check 2026-10-25 01:02 CEST (production build, temp DB)
+server 1 started (pid 73222)
+FAIL: login: HTTP 401 (expected 200)
+exit=1
+
+## 3. Port 3200 already used by another HTTP server (python http.server)
+FAIL: port 3200 is already in use; refusing to test a foreign server
+exit=1

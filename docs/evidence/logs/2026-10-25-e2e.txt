@@ -1,0 +1,28 @@
+# Playwright E2E 2026-10-25 01:05 CEST — after review fixes (production build, temp DB, Chromium)
+# [WebServer] build output omitted; see 2026-10-25-build.txt
+$ npx playwright test --reporter=list
+
+Running 19 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/api-security.spec.ts:5:3 › anonymous direct requests › cannot read or mutate admin data (57ms)
+  ✓   2 [chromium] › tests/e2e/api-security.spec.ts:15:3 › anonymous direct requests › admin pages redirect to the login page (391ms)
+  ✓   3 [chromium] › tests/e2e/api-security.spec.ts:22:3 › anonymous direct requests › public API rejects writes (6ms)
+  ✓   4 [chromium] › tests/e2e/api-security.spec.ts:26:3 › anonymous direct requests › wrong credentials are rejected (31ms)
+  ✓   5 [chromium] › tests/e2e/api-security.spec.ts:36:3 › authenticated API › rejects cross-origin mutations even with a valid session (37ms)
+  ✓   6 [chromium] › tests/e2e/api-security.spec.ts:47:3 › authenticated API › rejects invalid input server-side with field errors (39ms)
+  ✓   7 [chromium] › tests/e2e/api-security.spec.ts:70:3 › authenticated API › public output never contains drafts, future items or admin fields (38ms)
+  ✓   8 [chromium] › tests/e2e/api-security.spec.ts:88:3 › authenticated API › a repeated create request id does not create a duplicate (33ms)
+  ✓   9 [chromium] › tests/e2e/api-security.spec.ts:96:3 › authenticated API › logout invalidates the session server-side (33ms)
+  ✓  10 [chromium] › tests/e2e/display-overflow.spec.ts:25:1 › long announcements are not clipped on the display or in the preview (519ms)
+  ✓  11 [chromium] › tests/e2e/display-states.spec.ts:8:1 › shows a loading state, then an empty state (110ms)
+  ✓  12 [chromium] › tests/e2e/display-states.spec.ts:21:1 › shows an error state on first-load failure and recovers (161ms)
+  ✓  13 [chromium] › tests/e2e/display-states.spec.ts:41:1 › keeps last data with a stale notice when the connection drops, then recovers automatically (10.3s)
+  ✓  14 [chromium] › tests/e2e/publish-flow.spec.ts:10:1 › draft → preview → publish → display → edit/republish → withdraw (25.5s)
+  ✓  15 [chromium] › tests/e2e/publish-flow.spec.ts:79:1 › validation errors are shown next to the fields (385ms)
+  ✓  16 [chromium] › tests/e2e/publish-flow.spec.ts:89:1 › leaving with unsaved changes asks for confirmation (374ms)
+  ✓  17 [chromium] › tests/e2e/publish-flow.spec.ts:101:1 › logout from the UI ends access to admin pages (342ms)
+  ✓  18 [chromium] › tests/e2e/screenshots.spec.ts:9:1 › capture admin (1440×900) and display (1080×1920) layouts (1.0s)
+  ✓  19 [chromium] › tests/e2e/insecure-origin.spec.ts:16:1 › editor creates a draft in a non-secure context (HTTP, non-loopback host) (364ms)
+
+  19 passed (44.8s)
+exit=0

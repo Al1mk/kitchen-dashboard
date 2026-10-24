@@ -1,0 +1,45 @@
+# Production build 2026-10-25 01:03 CEST — after review fixes
+$ npm run build
+
+> campus-board@0.1.0 build
+> next build
+
+▲ Next.js 16.4.3 (Turbopack)
+- Environments: .env.local
+✓ Running next.config.ts took 15ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 492ms
+  Running TypeScript ...
+  Finished TypeScript in 1069ms ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/12) ...
+  Generating static pages using 11 workers (3/12) 
+  Generating static pages using 11 workers (6/12) 
+  Generating static pages using 11 workers (9/12) 
+✓ Generating static pages using 11 workers (12/12) in 224ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /admin
+├ ƒ /admin/announcements
+├ ƒ /admin/announcements/[id]
+├ ƒ /admin/announcements/[id]/preview
+├ ƒ /admin/announcements/new
+├ ƒ /admin/login
+├ ƒ /api/admin/announcements
+├ ƒ /api/admin/announcements/[id]
+├ ƒ /api/admin/announcements/[id]/publish
+├ ƒ /api/admin/announcements/[id]/withdraw
+├ ƒ /api/auth/login
+├ ƒ /api/auth/logout
+├ ƒ /api/public/announcements
+└ ○ /display
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+exit=0

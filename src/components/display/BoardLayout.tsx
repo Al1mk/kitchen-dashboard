@@ -18,7 +18,7 @@ export function AnnouncementCard({ item }: { item: BoardItem }) {
   const style = categoryStyle[item.category];
   return (
     <article
-      className={`relative flex overflow-hidden rounded-[1.2cqw] bg-surface shadow-[0_0.2cqw_0.8cqw_rgba(35,37,43,0.08)] ${
+      className={`relative flex shrink-0 overflow-hidden rounded-[1.2cqw] bg-surface shadow-[0_0.2cqw_0.8cqw_rgba(35,37,43,0.08)] ${
         item.isPreview ? "outline-[0.5cqw] outline-dashed outline-brand-purple" : ""
       }`}
     >
@@ -86,6 +86,7 @@ export function BoardLayout({
 
         <main className="flex min-h-0 flex-1 flex-col px-[4.5cqw] pt-[4cqw]">
           <h2 className="font-display text-[5.4cqw] font-bold">Mitteilungen</h2>
+        {/* Cards never shrink (that would clip their text); extra content scrolls this list. */}
           <div className="mt-[3cqw] flex min-h-0 flex-1 flex-col gap-[3cqw] overflow-y-auto pb-[4cqw]">
             {items && items.length > 0 ? items.map((item) => <AnnouncementCard key={item.id} item={item} />) : emptyState}
           </div>

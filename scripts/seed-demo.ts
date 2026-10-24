@@ -1,11 +1,15 @@
 // Usage: npm run db:seed-demo
 // Opt-in and non-destructive: inserts a few clearly labelled demo announcements
 // only if they do not exist yet (fixed ids). Never deletes or resets data.
-import { resolve } from "node:path";
+import nextEnv from "@next/env";
+import { getDatabasePath } from "../src/lib/config.ts";
 import { openDatabase } from "../src/lib/db/database.ts";
 import type { AnnouncementContent } from "../src/lib/announcements/schema.ts";
 
-const dbPath = resolve(process.env.CAMPUS_BOARD_DB_PATH ?? "data/campus-board.sqlite");
+// Load .env files exactly like `next dev` (or `next start` with NODE_ENV=production),
+// so the demo data lands in the same database the app uses.
+nextEnv.loadEnvConfig(process.cwd(), process.env.NODE_ENV !== "production", { info: () => {}, error: console.error });
+const dbPath = getDatabasePath();
 
 const DEMO: { id: string; publish: boolean; content: AnnouncementContent }[] = [
   {
