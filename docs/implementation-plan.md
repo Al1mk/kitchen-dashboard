@@ -126,3 +126,24 @@ Scope set by Ali: room management, class-session management, minimal public room
 - The admin overview now describes the panel's real purpose (rooms, schedule, announcements); announcement behaviour is unchanged.
 - One E2E failure during development was a test selector (Next's route announcer also has `role="alert"`), not an app bug.
 - Public pages use rem-based sizes (≥ 56 px targets), not the container-scaled layout of `/display`; on a 1080×1920 screen they use the middle 768 px. Kiosk sizing is a V2/display question.
+
+## Public navigation and DE/EN (2026-10-25)
+
+Scope set by Ali: a clear public entry, one navigation between announcements, rooms and schedule with an obvious return path, no admin links, German/English for the public interface, keeping language, day and room. Functional V1, not V2. Not in scope: map, booking, newcomer content.
+
+| File | Responsibility |
+| --- | --- |
+| `src/lib/i18n/public.ts` | `Lang`, `parseLang`, `publicHref` (keeps `lang` + context), German/English interface text |
+| `src/lib/time/berlin.ts` | Long/calendar dates and date-times optionally in English (en-GB); German stays the default |
+| `src/components/public/PublicNav.tsx` | Shared navigation (Start, Mitteilungen, Räume, Stundenplan) and Deutsch/English switch, page and board sizes |
+| `src/app/page.tsx` | Public start page (was a redirect to `/display`) |
+| `src/app/display/page.tsx`, `src/components/display/*` | Board gets the navigation, language switch and English text; admin preview unchanged (no nav, German) |
+| `src/components/public/*`, `src/app/rooms`, `src/app/schedule` | `lang` passed through; day/room/"all rooms" links keep context |
+
+- [x] `/` is a real page; every public page links to Start, Mitteilungen, Räume, Stundenplan; no `/admin` links (E2E checks each page visited).
+- [x] Language switch on every public page; `lang` kept on all public links; schedule keeps `datum`/`raum` on day, room and language changes (E2E, walked from `/` by clicking only).
+- [x] Staff-entered text shown as entered with `lang="de"`; English mode says it is German.
+- [ ] Optional English fields for staff content (not built; decision for Ali).
+- [ ] Kiosk idle screen and automatic reset to start/German (team/V2).
+
+Notes: the new E2E test was written after the code and passed on its first run; it was not run against the previous version. `<html lang>` stays `de`; the page container carries the language.

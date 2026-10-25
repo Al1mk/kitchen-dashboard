@@ -10,12 +10,13 @@ Two interfaces, one shared persistent data store:
 | `/admin/rooms/**` | Admin | Rooms: list (incl. archived), create, edit, archive, restore |
 | `/admin/schedule/**` | Admin | Class sessions: 7-day view with room filter, create, edit, cancel, reinstate |
 | `/admin/announcements/**` | Admin | Announcements: draft, portrait preview, publish, withdraw |
+| `/` | Public entry | Start page linking to announcements, rooms and schedule |
 | `/display` | Public portrait screen | Read-only announcement board, refreshes every 5 s, no admin navigation or session |
 | `/rooms`, `/schedule` | Public | Read-only room directory and daily schedule (`?datum=`, `?raum=`), refresh every 5 s |
 | `/api/public/*` | Anyone | Read-only, allowlisted projections (see `docs/contracts.md`) |
 | `/api/admin/**` | Logged-in admin only | Write contract (session + same-origin check on every mutation) |
 
-Milestone status: **M1** (announcement draft → preview → publish → display → edit/republish → withdraw) and **M2** (rooms and class sessions; changes are public on save, no draft step). Booking, newcomer content, the floor map (teammates) and the V2 redesign are not built. Shared data contract and open integration questions: `docs/contracts.md`.
+Milestone status: **M1** (announcement draft → preview → publish → display → edit/republish → withdraw) and **M2** (rooms and class sessions; changes are public on save, no draft step). All public pages share one navigation (Start, Mitteilungen, Räume, Stundenplan) and a Deutsch/English switch; `?lang=en` selects English and is kept on every public link together with the selected day and room. The admin stays German, and content typed in the admin is shown as entered (in English mode with a note that it is German). Booking, newcomer content, the floor map (teammates) and the V2 redesign are not built. Shared data contract and open integration questions: `docs/contracts.md`.
 
 ## Requirements
 
@@ -43,6 +44,7 @@ npm run build && npm start
 ```
 
 - Admin: <http://localhost:3000/admin/login>
+- Public entry: <http://localhost:3000/> (English: <http://localhost:3000/?lang=en>)
 - Public display: <http://localhost:3000/display> (best in a portrait window or full-screen on the screen's browser)
 
 ### Data
@@ -62,8 +64,8 @@ Open the **admin on the host itself via `localhost`**: in production the session
 ```bash
 npm run typecheck              # next typegen + tsc
 npm run lint
-npm test                       # Vitest: announcements, rooms, sessions, Berlin days/DST, migration, auth, seed (74 tests)
-npm run test:e2e               # Playwright: builds, starts on :3100 with a temp DB and random password (25 tests)
+npm test                       # Vitest: announcements, rooms, sessions, Berlin days/DST, migration, auth, seed, public DE/EN text (81 tests)
+npm run test:e2e               # Playwright: builds, starts on :3100 with a temp DB and random password (28 tests)
 scripts/verify-restart.sh      # publishes, restarts the production server, asserts data + session; exits 1 on failure (needs a prior build)
 ```
 

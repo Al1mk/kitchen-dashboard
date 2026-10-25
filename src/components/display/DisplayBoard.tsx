@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import type { PublicAnnouncement } from "@/lib/announcements/schema.ts";
+import { PUBLIC_TEXT, type Lang } from "@/lib/i18n/public.ts";
 import { formatBerlinTime } from "@/lib/time/berlin.ts";
 import { BoardLayout } from "./BoardLayout.tsx";
 
@@ -14,7 +15,8 @@ const REQUEST_TIMEOUT_MS = 4000;
 
 type Snapshot = { announcements: PublicAnnouncement[]; receivedAt: Date };
 
-export function DisplayBoard() {
+export function DisplayBoard({ lang, nav, languageSwitch }: { lang: Lang; nav?: ReactNode; languageSwitch?: ReactNode }) {
+  const t = PUBLIC_TEXT[lang];
   const [snapshot, setSnapshot] = useState<Snapshot | null>(null);
   const [failed, setFailed] = useState(false);
   const [now, setNow] = useState<Date | null>(null);
@@ -75,7 +77,7 @@ export function DisplayBoard() {
       onClick={() => loadNow.current()}
       className="min-h-[6cqw] min-w-[6cqw] touch-manipulation rounded-[1cqw] bg-ink px-[3cqw] py-[1.4cqw] text-[2.8cqw] font-semibold text-white active:bg-black"
     >
-      Erneut versuchen
+      {t.load.retry}
     </button>
   );
 
@@ -85,22 +87,22 @@ export function DisplayBoard() {
   if (!snapshot && !failed) {
     emptyState = (
       <p role="status" className="py-[8cqw] text-center text-[3.4cqw] text-ink-muted">
-        Mitteilungen werden geladen …
+        {t.load.loading.announcements}
       </p>
     );
   } else if (!snapshot && failed) {
     emptyState = (
       <div role="alert" className="flex flex-col items-center gap-[3cqw] py-[8cqw] text-center">
-        <p className="text-[3.6cqw] font-semibold">Mitteilungen können gerade nicht geladen werden.</p>
-        <p className="text-[2.8cqw] text-ink-muted">Wir versuchen es automatisch weiter.</p>
+        <p className="text-[3.6cqw] font-semibold">{t.load.failed.announcements}</p>
+        <p className="text-[2.8cqw] text-ink-muted">{t.load.retrying}</p>
         {retryButton}
       </div>
     );
   } else {
     emptyState = (
       <div role="status" className="py-[8cqw] text-center">
-        <p className="text-[3.6cqw] font-semibold">Zurzeit gibt es keine Mitteilungen.</p>
-        <p className="mt-[1.5cqw] text-[2.8cqw] text-ink-muted">Neue Mitteilungen erscheinen hier automatisch.</p>
+        <p className="text-[3.6cqw] font-semibold">{t.board.empty}</p>
+        <p className="mt-[1.5cqw] text-[2.8cqw] text-ink-muted">{t.board.emptyHint}</p>
       </div>
     );
     if (failed && snapshot) {
@@ -110,7 +112,7 @@ export function DisplayBoard() {
           className="flex items-center justify-between gap-[3cqw] bg-warning-soft px-[4.5cqw] py-[2.4cqw] text-warning"
         >
           <p className="text-[2.8cqw] font-semibold">
-            Verbindung unterbrochen – angezeigt wird der Stand von {formatBerlinTime(snapshot.receivedAt)} Uhr.
+            {t.load.stale(formatBerlinTime(snapshot.receivedAt))}
           </p>
           {retryButton}
         </div>
@@ -119,10 +121,18 @@ export function DisplayBoard() {
   }
 
   return (
-    <div className="flex h-dvh w-full items-start justify-center bg-ink">
+    <div lang={lang} className="flex h-dvh w-full items-start justify-center bg-ink">
       {/* Portrait frame: fills a portrait screen; letterboxed on landscape devices. */}
       <div className="h-dvh w-[min(100vw,calc(100dvh*9/16))]" data-testid="display-board" data-stale={failed && !!snapshot}>
-        <BoardLayout items={snapshot?.announcements ?? null} now={now} banner={banner} emptyState={emptyState} />
+        <BoardLayout
+          items={snapshot?.announcements ?? null}
+          now={now}
+          banner={banner}
+          emptyState={emptyState}
+          lang={lang}
+          nav={nav}
+          languageSwitch={languageSwitch}
+        />
       </div>
     </div>
   );

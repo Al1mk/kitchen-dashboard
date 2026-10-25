@@ -1,0 +1,33 @@
+# 2026-10-25 public navigation + DE/EN — typecheck, lint, unit (Claude Code, Ali's MacBook)
+
+> campus-board@0.1.0 typecheck
+> next typegen && tsc --noEmit
+
+Generating route types...
+✓ Types generated successfully
+exit 0
+
+> campus-board@0.1.0 lint
+> eslint
+
+exit 0
+
+ RUN  v5.0.5 /Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/campus-board
+
+ ✓ tests/unit/policy.test.ts (12 tests) 3ms
+ ✓ tests/unit/migration.test.ts (2 tests) 10ms
+ ✓ tests/unit/repository.test.ts (9 tests) 33ms
+ ✓ tests/unit/public-i18n.test.ts (7 tests) 2ms
+ ✓ tests/unit/schema-time.test.ts (12 tests) 5ms
+ ✓ tests/unit/schedule-time.test.ts (14 tests) 6ms
+ ✓ tests/unit/sessions.test.ts (8 tests) 25ms
+ ✓ tests/unit/rooms.test.ts (11 tests) 32ms
+ ✓ tests/unit/auth.test.ts (4 tests) 117ms
+ ✓ tests/unit/seed-demo.test.ts (2 tests) 280ms
+
+ Test Files  10 passed (10)
+      Tests  81 passed (81)
+   Start at  18:32:36
+   Duration  385ms (tests 51%, import 36%, transform 12%, worker 2%)
+
+exit 0

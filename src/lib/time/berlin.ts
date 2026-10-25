@@ -95,7 +95,14 @@ export function berlinDayRange(date: string): { start: string; end: string } {
   return { start: berlinLocalToUtcIso(`${date}T00:00`)!, end: berlinLocalToUtcIso(`${addDays(date, 1)}T00:00`)! };
 }
 
-const dateTimeFormatter = new Intl.DateTimeFormat("de-DE", {
+// Public pages also format in English (en-GB: day before month, 24-hour clock).
+type FormatLang = "de" | "en";
+const byLang = (options: Intl.DateTimeFormatOptions): Record<FormatLang, Intl.DateTimeFormat> => ({
+  de: new Intl.DateTimeFormat("de-DE", options),
+  en: new Intl.DateTimeFormat("en-GB", options),
+});
+
+const dateTimeFormatter = byLang({
   timeZone: TIME_ZONE,
   dateStyle: "medium",
   timeStyle: "short",
@@ -107,16 +114,16 @@ const timeFormatter = new Intl.DateTimeFormat("de-DE", {
   minute: "2-digit",
 });
 
-const longDateFormatter = new Intl.DateTimeFormat("de-DE", {
+const longDateFormatter = byLang({
   timeZone: TIME_ZONE,
   weekday: "long",
   day: "numeric",
   month: "long",
 });
 
-/** e.g. "24.10.2026, 14:05" */
-export function formatBerlinDateTime(iso: string): string {
-  return dateTimeFormatter.format(new Date(iso));
+/** e.g. "24.10.2026, 14:05" (en: "24 Oct 2026, 14:05") */
+export function formatBerlinDateTime(iso: string, lang: FormatLang = "de"): string {
+  return dateTimeFormatter[lang].format(new Date(iso));
 }
 
 /** e.g. "14:05" */
@@ -124,12 +131,12 @@ export function formatBerlinTime(date: Date): string {
   return timeFormatter.format(date);
 }
 
-/** e.g. "Samstag, 24. Oktober" */
-export function formatBerlinLongDate(date: Date): string {
-  return longDateFormatter.format(date);
+/** e.g. "Samstag, 24. Oktober" (en: "Saturday 24 October") */
+export function formatBerlinLongDate(date: Date, lang: FormatLang = "de"): string {
+  return longDateFormatter[lang].format(date);
 }
 
-const calendarDateFormatter = new Intl.DateTimeFormat("de-DE", {
+const calendarDateFormatter = byLang({
   timeZone: "UTC",
   weekday: "long",
   day: "numeric",
@@ -144,9 +151,9 @@ const shortCalendarDateFormatter = new Intl.DateTimeFormat("de-DE", {
   month: "2-digit",
 });
 
-/** "2026-11-02" → "Montag, 2. November 2026" (a calendar date, not an instant). */
-export function formatCalendarDate(date: string): string {
-  return calendarDateFormatter.format(new Date(`${date}T12:00:00Z`));
+/** "2026-11-02" → "Montag, 2. November 2026" (a calendar date, not an instant; en: "Monday, 2 November 2026"). */
+export function formatCalendarDate(date: string, lang: FormatLang = "de"): string {
+  return calendarDateFormatter[lang].format(new Date(`${date}T12:00:00Z`));
 }
 
 /** "2026-11-02" → "Mo., 02.11." */
