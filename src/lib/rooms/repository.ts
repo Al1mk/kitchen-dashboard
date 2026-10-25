@@ -21,6 +21,8 @@ type Row = {
   type: string;
   description: string;
   reservable: number;
+  name_en: string;
+  description_en: string;
   is_demo: number;
   archived_at: string | null;
   created_at: string;
@@ -58,6 +60,8 @@ export function createRoomRepository(db: Db, clock: () => Date = () => new Date(
       type: row.type as RoomType,
       description: row.description,
       reservable: row.reservable === 1,
+      nameEn: row.name_en,
+      descriptionEn: row.description_en,
       isDemo: row.is_demo === 1,
       archivedAt: row.archived_at,
       createdAt: row.created_at,
@@ -90,9 +94,22 @@ export function createRoomRepository(db: Db, clock: () => Date = () => new Date(
         const id = randomUUID();
         const now = clock().toISOString();
         db.prepare(
-          `INSERT INTO rooms (id, code, name, floor_id, type, description, reservable, is_demo, created_at, updated_at)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-        ).run(id, content.code, content.name, content.floorId, content.type, content.description, content.reservable ? 1 : 0, options.isDemo ? 1 : 0, now, now);
+          `INSERT INTO rooms (id, code, name, floor_id, type, description, reservable, name_en, description_en, is_demo, created_at, updated_at)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        ).run(
+          id,
+          content.code,
+          content.name,
+          content.floorId,
+          content.type,
+          content.description,
+          content.reservable ? 1 : 0,
+          content.nameEn,
+          content.descriptionEn,
+          options.isDemo ? 1 : 0,
+          now,
+          now,
+        );
         return { ok: true, room: get(id)! };
       })();
     },
@@ -103,9 +120,20 @@ export function createRoomRepository(db: Db, clock: () => Date = () => new Date(
         if (!selectOne.get(id)) return { ok: false, reason: "not_found" };
         if (codeTaken(content.code, id)) return { ok: false, reason: "duplicate_code" };
         db.prepare(
-          `UPDATE rooms SET code = ?, name = ?, floor_id = ?, type = ?, description = ?, reservable = ?, updated_at = ?
+          `UPDATE rooms SET code = ?, name = ?, floor_id = ?, type = ?, description = ?, reservable = ?, name_en = ?, description_en = ?, updated_at = ?
            WHERE id = ?`,
-        ).run(content.code, content.name, content.floorId, content.type, content.description, content.reservable ? 1 : 0, clock().toISOString(), id);
+        ).run(
+          content.code,
+          content.name,
+          content.floorId,
+          content.type,
+          content.description,
+          content.reservable ? 1 : 0,
+          content.nameEn,
+          content.descriptionEn,
+          clock().toISOString(),
+          id,
+        );
         return { ok: true, room: get(id)! };
       })();
     },
@@ -149,6 +177,8 @@ export function createRoomRepository(db: Db, clock: () => Date = () => new Date(
           description: row.description,
           reservable: row.reservable === 1,
           isDemo: row.is_demo === 1,
+          nameEn: row.name_en || null,
+          descriptionEn: row.description_en || null,
         }))
         .sort(compareRooms);
     },

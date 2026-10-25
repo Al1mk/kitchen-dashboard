@@ -10,6 +10,8 @@ export function toPublicAnnouncement(id: string, published: AnnouncementContent,
     pinned: published.pinned,
     publishedAt,
     endsAt: published.endsAt,
+    titleEn: published.titleEn || null,
+    bodyEn: published.bodyEn || null,
   };
 }
 

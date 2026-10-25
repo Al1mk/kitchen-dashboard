@@ -13,7 +13,7 @@ let now = new Date("2026-11-02T10:00:00.000Z");
 const clock = () => now;
 
 function room(overrides: Partial<RoomContent> = {}): RoomContent {
-  return { code: "T-1.01", name: "Seminarraum Test", floorId: "1OG", type: "seminar", description: "", reservable: false, ...overrides };
+  return { code: "T-1.01", name: "Seminarraum Test", floorId: "1OG", type: "seminar", description: "", reservable: false, nameEn: "", descriptionEn: "", ...overrides };
 }
 
 beforeEach(() => {
@@ -33,7 +33,7 @@ describe("parseRoomInput", () => {
   it("accepts and trims valid input", () => {
     expect(parseRoomInput(valid)).toEqual({
       ok: true,
-      content: { code: "T-1.01", name: "Seminarraum Test", floorId: "1OG", type: "seminar", description: "Beamer", reservable: true },
+      content: { code: "T-1.01", name: "Seminarraum Test", floorId: "1OG", type: "seminar", description: "Beamer", reservable: true, nameEn: "", descriptionEn: "" },
     });
   });
 
@@ -140,7 +140,7 @@ describe("room repository", () => {
 
     const listed = repo.listPublic();
     expect(listed.map((r) => r.code)).toEqual(["T-0.01", "T-1.9", "T-1.10"]);
-    expect(Object.keys(listed[0]).sort()).toEqual(["code", "description", "floorId", "id", "isDemo", "name", "reservable", "type"]);
+    expect(Object.keys(listed[0]).sort()).toEqual(["code", "description", "descriptionEn", "floorId", "id", "isDemo", "name", "nameEn", "reservable", "type"]);
     expect(repo.list({ includeArchived: false }).map((r) => r.code)).not.toContain("T-2.01");
     expect(repo.list({ includeArchived: true }).map((r) => r.code)).toContain("T-2.01");
   });

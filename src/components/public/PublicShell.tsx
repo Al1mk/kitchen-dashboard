@@ -109,6 +109,12 @@ export function DemoNotice({ lang }: { lang: Lang }) {
   );
 }
 
+/** Marks an item shown (partly) in German in the English interface. */
+export function FallbackTag({ lang, level }: { lang: Lang; level: "partial" | "all" | null }) {
+  if (!level) return null;
+  return <span className="rounded-full border border-ink-muted px-2.5 py-0.5 text-sm font-semibold text-ink-muted">{PUBLIC_TEXT[lang].fallback[level]}</span>;
+}
+
 export function DemoTag({ lang }: { lang: Lang }) {
   return <span className="rounded-full bg-info-soft px-2.5 py-0.5 text-sm font-semibold text-info">{PUBLIC_TEXT[lang].demoTag}</span>;
 }

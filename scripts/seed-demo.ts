@@ -2,6 +2,9 @@
 // Opt-in and non-destructive: inserts clearly labelled demo announcements, rooms
 // and one week of class sessions
 // only if they do not exist yet (fixed ids). Never deletes or resets data.
+// Some demo records have an English version, some only part of one, some none,
+// so the English interface's fallback can be seen. Records that already exist
+// are not changed (no English text is added to them).
 import nextEnv from "@next/env";
 import { getDatabasePath } from "../src/lib/config.ts";
 import { openDatabase } from "../src/lib/db/database.ts";
@@ -26,6 +29,8 @@ const DEMO: { id: string; publish: boolean; content: AnnouncementContent }[] = [
       pinned: true,
       startsAt: null,
       endsAt: null,
+      titleEn: "Welcome to Lucas-Cranach-Campus (Demo)",
+      bodyEn: "Sample content for the prototype: announcements published in the admin area appear here.",
     },
   },
   {
@@ -38,6 +43,8 @@ const DEMO: { id: string; publish: boolean; content: AnnouncementContent }[] = [
       pinned: false,
       startsAt: null,
       endsAt: null,
+      titleEn: "Games night in the kitchen (Demo)",
+      bodyEn: "", // partial on purpose: the English interface shows the German text here
     },
   },
   {
@@ -50,6 +57,8 @@ const DEMO: { id: string; publish: boolean; content: AnnouncementContent }[] = [
       pinned: false,
       startsAt: null,
       endsAt: null,
+      titleEn: "",
+      bodyEn: "",
     },
   },
 ];
@@ -78,22 +87,35 @@ console.log(`Demo-Mitteilungen: ${added} neu angelegt, ${DEMO.length - added} be
 
 // Demo rooms: invented codes with a DEMO- prefix so they can never be mistaken
 // for official room numbers. is_demo = 1 marks them in admin and public views.
-const DEMO_ROOMS: { id: string; code: string; name: string; floorId: FloorId; type: RoomType; reservable: boolean }[] = [
-  { id: "demo-room-e01", code: "DEMO-E01", name: "Küche / Aufenthalt (Demo)", floorId: "EG", type: "common", reservable: false },
-  { id: "demo-room-e02", code: "DEMO-E02", name: "Hörsaal A (Demo)", floorId: "EG", type: "lecture", reservable: false },
-  { id: "demo-room-101", code: "DEMO-101", name: "Seminarraum 1 (Demo)", floorId: "1OG", type: "seminar", reservable: true },
+const DEMO_ROOMS: { id: string; code: string; name: string; nameEn?: string; floorId: FloorId; type: RoomType; reservable: boolean }[] = [
+  { id: "demo-room-e01", code: "DEMO-E01", name: "Küche / Aufenthalt (Demo)", nameEn: "Kitchen / common room (Demo)", floorId: "EG", type: "common", reservable: false },
+  { id: "demo-room-e02", code: "DEMO-E02", name: "Hörsaal A (Demo)", nameEn: "Lecture hall A (Demo)", floorId: "EG", type: "lecture", reservable: false },
+  { id: "demo-room-101", code: "DEMO-101", name: "Seminarraum 1 (Demo)", nameEn: "Seminar room 1 (Demo)", floorId: "1OG", type: "seminar", reservable: true },
   { id: "demo-room-102", code: "DEMO-102", name: "PC-Labor (Demo)", floorId: "1OG", type: "lab", reservable: false },
   { id: "demo-room-201", code: "DEMO-201", name: "Gruppenraum (Demo)", floorId: "2OG", type: "study", reservable: true },
   { id: "demo-room-202", code: "DEMO-202", name: "Seminarraum 2 (Demo)", floorId: "2OG", type: "seminar", reservable: false },
 ];
 
 const insertRoom = db.prepare(
-  `INSERT OR IGNORE INTO rooms (id, code, name, floor_id, type, description, reservable, is_demo, created_at, updated_at)
-   VALUES (?, ?, ?, ?, ?, ?, ?, 1, ?, ?)`,
+  `INSERT OR IGNORE INTO rooms (id, code, name, floor_id, type, description, reservable, name_en, description_en, is_demo, created_at, updated_at)
+   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?)`,
 );
 let roomsAdded = 0;
 for (const r of DEMO_ROOMS) {
-  roomsAdded += insertRoom.run(r.id, r.code, r.name, r.floorId, r.type, "Beispieleintrag: Lage und Ausstattung sind erfunden.", r.reservable ? 1 : 0, now, now).changes;
+  const descriptionEn = r.nameEn ? "Example entry: location and equipment are invented." : "";
+  roomsAdded += insertRoom.run(
+    r.id,
+    r.code,
+    r.name,
+    r.floorId,
+    r.type,
+    "Beispieleintrag: Lage und Ausstattung sind erfunden.",
+    r.reservable ? 1 : 0,
+    r.nameEn ?? "",
+    descriptionEn,
+    now,
+    now,
+  ).changes;
 }
 console.log(`Demo-Räume: ${roomsAdded} neu angelegt, ${DEMO_ROOMS.length - roomsAdded} bereits vorhanden.`);
 

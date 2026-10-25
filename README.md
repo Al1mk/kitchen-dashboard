@@ -16,7 +16,7 @@ Two interfaces, one shared persistent data store:
 | `/api/public/*` | Anyone | Read-only, allowlisted projections (see `docs/contracts.md`) |
 | `/api/admin/**` | Logged-in admin only | Write contract (session + same-origin check on every mutation) |
 
-Milestone status: **M1** (announcement draft → preview → publish → display → edit/republish → withdraw) and **M2** (rooms and class sessions; changes are public on save, no draft step). All public pages share one navigation (Start, Mitteilungen, Räume, Stundenplan) and a Deutsch/English switch; `?lang=en` selects English and is kept on every public link together with the selected day and room. The admin stays German, and content typed in the admin is shown as entered (in English mode with a note that it is German). Booking, newcomer content, the floor map (teammates) and the V2 redesign are not built. Shared data contract and open integration questions: `docs/contracts.md`.
+Milestone status: **M1** (announcement draft → preview → publish → display → edit/republish → withdraw) and **M2** (rooms and class sessions; changes are public on save, no draft step). All public pages share one navigation (Start, Mitteilungen, Räume, Stundenplan) and a Deutsch/English switch; `?lang=en` selects English and is kept on every public link together with the selected day and room. The admin stays German. Announcements (title, text) and rooms (name, description) have optional English fields in the admin; in English mode they are shown where filled in, otherwise the German text appears with an "Only in German" / "Partly in German" marker. English announcement text follows the same draft → publish rules as the German text, and the preview has a German and an English view. Course titles, people, cohorts and room codes are never translated, and nothing is translated automatically. Booking, newcomer content, the floor map (teammates) and the V2 redesign are not built. Shared data contract and open integration questions: `docs/contracts.md`.
 
 ## Requirements
 
@@ -49,7 +49,7 @@ npm run build && npm start
 
 ### Data
 
-SQLite file at `data/campus-board.sqlite` (override with `CAMPUS_BOARD_DB_PATH`). Created on first start, migrated automatically (`PRAGMA user_version`), **never reset**. M2 adds schema version 2 (tables `rooms`, `class_sessions`); an M1 database is upgraded in place on the next start, existing data stays as it is. To start over, stop the server and delete the file yourself. Back it up by copying the file while the server is stopped.
+SQLite file at `data/campus-board.sqlite` (override with `CAMPUS_BOARD_DB_PATH`). Created on first start, migrated automatically (`PRAGMA user_version`), **never reset**. M2 adds schema version 2 (tables `rooms`, `class_sessions`); schema version 3 adds empty English fields to existing announcements and rooms. Older databases are upgraded in place on the next start; existing content, ids and publication state stay as they are. To start over, stop the server and delete the file yourself. Back it up by copying the file while the server is stopped.
 
 Local SQLite is not durable on serverless/ephemeral hosting; hosting is an open decision.
 
@@ -64,9 +64,9 @@ Open the **admin on the host itself via `localhost`**: in production the session
 ```bash
 npm run typecheck              # next typegen + tsc
 npm run lint
-npm test                       # Vitest: announcements, rooms, sessions, Berlin days/DST, migration, auth, seed, public DE/EN text (81 tests)
-npm run test:e2e               # Playwright: builds, starts on :3100 with a temp DB and random password (28 tests)
-scripts/verify-restart.sh      # publishes, restarts the production server, asserts data + session; exits 1 on failure (needs a prior build)
+npm test                       # Vitest: announcements, rooms, sessions, Berlin days/DST, migration, auth, seed, public DE/EN text, English content (88 tests)
+npm run test:e2e               # Playwright: builds, starts on :3100 with a temp DB and random password (31 tests)
+scripts/verify-restart.sh      # publishes (DE + EN), restarts the production server, asserts data + session; exits 1 on failure (needs a prior build)
 ```
 
 E2E uses two independent browser contexts on one machine (admin + display / public pages). That is not a two-device test. Display network failures are simulated by request interception. Screenshots are written to `docs/evidence/screenshots/` (1080×1920 is a simulated portrait viewport, not the measured screen).

@@ -22,7 +22,9 @@ export function contentEquals(a: AnnouncementContent, b: AnnouncementContent): b
     a.category === b.category &&
     a.pinned === b.pinned &&
     a.startsAt === b.startsAt &&
-    a.endsAt === b.endsAt
+    a.endsAt === b.endsAt &&
+    a.titleEn === b.titleEn &&
+    a.bodyEn === b.bodyEn
   );
 }
 

@@ -147,3 +147,27 @@ Scope set by Ali: a clear public entry, one navigation between announcements, ro
 - [ ] Kiosk idle screen and automatic reset to start/German (team/V2).
 
 Notes: the new E2E test was written after the code and passed on its first run; it was not run against the previous version. `<html lang>` stays `de`; the page container carries the language.
+
+## Optional English content (2026-10-25)
+
+Scope set by Ali after reviewing the navigation/DE-EN milestone: optional English title/body for announcements and name/description for rooms; admin stays German; existing records and ids intact; English shown when given, otherwise German with a marker on the item; draft/publish unchanged for English; preview in both languages; no per-language copies, no translation of course titles, people or room codes, no automatic translation. Not in scope: V2 styling, map, booking, newcomer pages.
+
+| File | Responsibility |
+| --- | --- |
+| `src/lib/db/migrations.ts` | Schema v3: `json_insert` empty `titleEn`/`bodyEn` into existing draft and published JSON; `rooms.name_en`, `rooms.description_en` |
+| `src/lib/announcements/schema.ts`, `policy.ts`, `projection.ts` | English fields in content, validation, pending-change comparison, public projection (`null` when empty) |
+| `src/lib/rooms/schema.ts`, `repository.ts` | English room fields; public `nameEn`/`descriptionEn` |
+| `src/lib/sessions/*` | Public session `room.nameEn` (session fields themselves have no English version) |
+| `src/lib/i18n/public.ts` | `localize`, `fallbackLevel`, "Only in German" / "Partly in German" |
+| `src/components/display/BoardLayout.tsx`, `src/components/public/*` | English text where present, German fallback with marker and `lang` |
+| `src/components/admin/AnnouncementEditor.tsx`, `RoomForm.tsx` | "Englische Fassung (optional)" fields; editor preview with German/English view |
+| `src/app/admin/(protected)/announcements/[id]/preview/page.tsx` | Large preview with `?sprache=en` |
+| `scripts/seed-demo.ts`, `scripts/verify-restart.sh` | Demo records with full / partial / no English; restart check covers English fields |
+
+- [x] Migration keeps existing content, ids, status and pending state (unit test on a schema-2 database; copy of the real `data/` database).
+- [x] English output, partial and missing translations (unit + E2E, rooms and announcements).
+- [x] English draft never changes published content before republishing; republish and withdraw cover both languages (unit + E2E).
+- [x] Preview shows both language versions (editor and large preview, E2E).
+- [x] One record per room/announcement; course data and room codes untranslated (unit + E2E).
+
+Notes: the new tests were written after the code. To check they can fail, two deliberate breakages were tried and each was caught by a new unit test (removing the JSON upgrade from migration 3; ignoring English fields in the pending-change comparison); the code was restored afterwards. The first E2E run had two failures, both in test selectors (one new test, one existing navigation test that expected the old wording of the English footer note); no app code changed for them. Native German/English text quality was not reviewed by a person.

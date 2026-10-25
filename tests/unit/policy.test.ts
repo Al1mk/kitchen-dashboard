@@ -17,6 +17,8 @@ function content(overrides: Partial<AnnouncementContent> = {}): AnnouncementCont
     pinned: false,
     startsAt: null,
     endsAt: null,
+    titleEn: "",
+    bodyEn: "",
     ...overrides,
   };
 }

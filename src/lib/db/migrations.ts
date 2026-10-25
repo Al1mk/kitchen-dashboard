@@ -60,4 +60,17 @@ export const MIGRATIONS: string[] = [
   CREATE INDEX class_sessions_room_time ON class_sessions (room_id, starts_at);
   CREATE INDEX class_sessions_time ON class_sessions (starts_at);
   `,
+  // Optional English texts for the public English interface ("" = none).
+  // Announcement content is JSON: json_insert adds the keys only where they
+  // are missing, in both the draft and the published snapshot, so an existing
+  // record keeps its content and does not appear to have unpublished changes.
+  `
+  UPDATE announcements
+  SET draft_json = json_insert(draft_json, '$.titleEn', '', '$.bodyEn', ''),
+      published_json = CASE WHEN published_json IS NULL THEN NULL
+                            ELSE json_insert(published_json, '$.titleEn', '', '$.bodyEn', '') END;
+
+  ALTER TABLE rooms ADD COLUMN name_en TEXT NOT NULL DEFAULT '';
+  ALTER TABLE rooms ADD COLUMN description_en TEXT NOT NULL DEFAULT '';
+  `,
 ];

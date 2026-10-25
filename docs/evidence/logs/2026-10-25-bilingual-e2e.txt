@@ -1,0 +1,38 @@
+# 2026-10-25 bilingual content — Playwright E2E (production build, temp DB, random password); second run after fixing two test selectors
+
+Running 31 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/api-security.spec.ts:5:3 › anonymous direct requests › cannot read or mutate admin data (88ms)
+  ✓   2 [chromium] › tests/e2e/api-security.spec.ts:15:3 › anonymous direct requests › admin pages redirect to the login page (691ms)
+  ✓   3 [chromium] › tests/e2e/api-security.spec.ts:22:3 › anonymous direct requests › public API rejects writes (6ms)
+  ✓   4 [chromium] › tests/e2e/api-security.spec.ts:26:3 › anonymous direct requests › wrong credentials are rejected (68ms)
+  ✓   5 [chromium] › tests/e2e/api-security.spec.ts:36:3 › authenticated API › rejects cross-origin mutations even with a valid session (110ms)
+  ✓   6 [chromium] › tests/e2e/api-security.spec.ts:47:3 › authenticated API › rejects invalid input server-side with field errors (119ms)
+  ✓   7 [chromium] › tests/e2e/api-security.spec.ts:70:3 › authenticated API › public output never contains drafts, future items or admin fields (105ms)
+  ✓   8 [chromium] › tests/e2e/api-security.spec.ts:88:3 › authenticated API › a repeated create request id does not create a duplicate (122ms)
+  ✓   9 [chromium] › tests/e2e/api-security.spec.ts:96:3 › authenticated API › logout invalidates the session server-side (103ms)
+  ✓  10 [chromium] › tests/e2e/bilingual-content.spec.ts:11:1 › English announcement text follows draft, preview, publish, republish and withdraw (25.8s)
+  ✓  11 [chromium] › tests/e2e/bilingual-content.spec.ts:104:1 › English room names and descriptions, with German fallback, in directory and schedule (827ms)
+  ✓  12 [chromium] › tests/e2e/display-overflow.spec.ts:25:1 › long announcements are not clipped on the display or in the preview (1.1s)
+  ✓  13 [chromium] › tests/e2e/display-states.spec.ts:8:1 › shows a loading state, then an empty state (202ms)
+  ✓  14 [chromium] › tests/e2e/display-states.spec.ts:21:1 › shows an error state on first-load failure and recovers (275ms)
+  ✓  15 [chromium] › tests/e2e/display-states.spec.ts:41:1 › keeps last data with a stale notice when the connection drops, then recovers automatically (10.5s)
+  ✓  16 [chromium] › tests/e2e/public-navigation.spec.ts:16:1 › public pages are reachable from / with a return path, keeping language, day and room (1.3s)
+  ✓  17 [chromium] › tests/e2e/public-navigation.spec.ts:107:1 › the board's language switch stays on the board and English carries over to other sections (312ms)
+  ✓  18 [chromium] › tests/e2e/publish-flow.spec.ts:10:1 › draft → preview → publish → display → edit/republish → withdraw (25.4s)
+  ✓  19 [chromium] › tests/e2e/publish-flow.spec.ts:79:1 › validation errors are shown next to the fields (581ms)
+  ✓  20 [chromium] › tests/e2e/publish-flow.spec.ts:89:1 › leaving with unsaved changes asks for confirmation (575ms)
+  ✓  21 [chromium] › tests/e2e/publish-flow.spec.ts:101:1 › logout from the UI ends access to admin pages (572ms)
+  ✓  22 [chromium] › tests/e2e/rooms-schedule-api.spec.ts:29:1 › anonymous requests cannot read or change rooms and sessions (64ms)
+  ✓  23 [chromium] › tests/e2e/rooms-schedule-api.spec.ts:46:1 › admin API validates, prevents conflicts and protects references (183ms)
+  ✓  24 [chromium] › tests/e2e/rooms-schedule-api.spec.ts:93:1 › public room and schedule output contain only allowlisted fields (159ms)
+  ✓  25 [chromium] › tests/e2e/rooms-schedule-flow.spec.ts:13:1 › room and session administration appear on the public pages (25.5s)
+  ✓  26 [chromium] › tests/e2e/rooms-schedule-flow.spec.ts:110:1 › public schedule changes day without admin access (257ms)
+  ✓  27 [chromium] › tests/e2e/screenshots-bilingual.spec.ts:12:1 › capture bilingual admin editor (1440×900) and English public pages (1080×1920) (1.5s)
+  ✓  28 [chromium] › tests/e2e/screenshots-m2.spec.ts:11:1 › capture M2 admin (1440×900) and public (1080×1920) layouts (2.1s)
+  ✓  29 [chromium] › tests/e2e/screenshots-nav.spec.ts:10:1 › capture public start, board and English schedule (1080×1920) (1.1s)
+  ✓  30 [chromium] › tests/e2e/screenshots.spec.ts:9:1 › capture admin (1440×900) and display (1080×1920) layouts (2.0s)
+  ✓  31 [chromium] › tests/e2e/insecure-origin.spec.ts:16:1 › editor creates a draft in a non-secure context (HTTP, non-loopback host) (527ms)
+
+  31 passed (1.8m)
+exit 0

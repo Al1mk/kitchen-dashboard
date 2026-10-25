@@ -6,7 +6,7 @@ import { afterEach, beforeEach, expect, it } from "vitest";
 import { openDatabase } from "../../src/lib/db/database.ts";
 import { MIGRATIONS } from "../../src/lib/db/migrations.ts";
 
-// An M1 database (schema version 1) must upgrade in place without losing data.
+// Older databases must upgrade in place without losing data.
 
 let dir: string;
 
@@ -33,7 +33,10 @@ it("upgrades an M1 database to the current schema and keeps its announcements an
 
   const db = openDatabase(path);
   expect(db.pragma("user_version", { simple: true })).toBe(MIGRATIONS.length);
-  expect(db.prepare("SELECT id, draft_json FROM announcements").all()).toEqual([{ id: "a1", draft_json: '{"title":"Alt"}' }]);
+  // Migration 3 only adds empty English fields to the stored content.
+  const row = db.prepare<[], { id: string; draft_json: string }>("SELECT id, draft_json FROM announcements").get()!;
+  expect(row.id).toBe("a1");
+  expect(JSON.parse(row.draft_json)).toEqual({ title: "Alt", titleEn: "", bodyEn: "" });
   expect(db.prepare("SELECT username FROM sessions").all()).toEqual([{ username: "admin" }]);
   const tables = db.prepare("SELECT name FROM sqlite_master WHERE type = 'table' ORDER BY name").all();
   expect(tables).toEqual(expect.arrayContaining([{ name: "rooms" }, { name: "class_sessions" }]));

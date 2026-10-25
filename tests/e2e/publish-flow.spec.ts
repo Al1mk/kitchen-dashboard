@@ -25,7 +25,7 @@ test("draft → preview → publish → display → edit/republish → withdraw"
 
   // 2.–3. Create and save a draft
   await admin.getByRole("link", { name: "Neue Mitteilung" }).click();
-  await admin.getByRole("textbox", { name: "Titel" }).fill(title);
+  await admin.getByRole("textbox", { name: "Titel", exact: true }).fill(title);
   await admin.getByRole("textbox", { name: "Text", exact: true }).fill("Wegen Bauarbeiten ist der Fahrradkeller gesperrt.");
   await admin.getByRole("radio", { name: "Wichtig" }).check();
   await admin.getByRole("button", { name: "Entwurf speichern" }).click();
@@ -48,7 +48,7 @@ test("draft → preview → publish → display → edit/republish → withdraw"
   await expect(display.getByRole("heading", { name: title })).toBeVisible({ timeout: UPDATE_TIMEOUT });
 
   // 7a. Edit and save as draft: the display must keep the published version.
-  await admin.getByRole("textbox", { name: "Titel" }).fill(editedTitle);
+  await admin.getByRole("textbox", { name: "Titel", exact: true }).fill(editedTitle);
   await admin.getByRole("button", { name: "Entwurf speichern" }).click();
   await expect(admin.getByText("weiterhin die zuletzt veröffentlichte Fassung")).toBeVisible();
   await expect(admin.getByText("Änderungen nicht veröffentlicht")).toBeVisible();
@@ -70,7 +70,7 @@ test("draft → preview → publish → display → edit/republish → withdraw"
   await expect(display.getByText(editedTitle)).toHaveCount(0, { timeout: UPDATE_TIMEOUT });
 
   // Content is still recoverable in the admin.
-  await expect(admin.getByRole("textbox", { name: "Titel" })).toHaveValue(editedTitle);
+  await expect(admin.getByRole("textbox", { name: "Titel", exact: true })).toHaveValue(editedTitle);
 
   await adminContext.close();
   await displayContext.close();
@@ -82,20 +82,20 @@ test("validation errors are shown next to the fields", async ({ page }) => {
   await page.getByRole("button", { name: "Entwurf speichern" }).click();
   await expect(page.getByRole("alert").filter({ hasText: "Bitte die markierten Felder prüfen" })).toBeVisible();
   await expect(page.getByText("Bitte einen Titel eingeben.")).toBeVisible();
-  await expect(page.getByRole("textbox", { name: "Titel" })).toBeFocused();
-  await expect(page.getByRole("textbox", { name: "Titel" })).toHaveAttribute("aria-invalid", "true");
+  await expect(page.getByRole("textbox", { name: "Titel", exact: true })).toBeFocused();
+  await expect(page.getByRole("textbox", { name: "Titel", exact: true })).toHaveAttribute("aria-invalid", "true");
 });
 
 test("leaving with unsaved changes asks for confirmation", async ({ page }) => {
   await loginViaUi(page);
   await page.goto("/admin/announcements/new");
-  await page.getByRole("textbox", { name: "Titel" }).fill("Nicht gespeichert");
+  await page.getByRole("textbox", { name: "Titel", exact: true }).fill("Nicht gespeichert");
   await page.getByRole("link", { name: "Übersicht" }).click();
   const dialog = page.getByRole("dialog", { name: "Ungespeicherte Änderungen verwerfen?" });
   await expect(dialog).toBeVisible();
   await dialog.getByRole("button", { name: "Weiter bearbeiten" }).click();
   await expect(page).toHaveURL(/\/admin\/announcements\/new$/);
-  await expect(page.getByRole("textbox", { name: "Titel" })).toHaveValue("Nicht gespeichert");
+  await expect(page.getByRole("textbox", { name: "Titel", exact: true })).toHaveValue("Nicht gespeichert");
 });
 
 test("logout from the UI ends access to admin pages", async ({ page }) => {

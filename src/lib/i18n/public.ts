@@ -2,9 +2,10 @@ import { CATEGORY_LABELS, type Category } from "../announcements/schema.ts";
 import { FLOOR_LABELS, ROOM_TYPE_LABELS, type FloorId, type RoomType } from "../rooms/schema.ts";
 
 // Interface text of the public pages in German and English (ADR-017). Safe to
-// import from client and server code. The admin stays German. Content typed by
-// staff (announcements, room names, course titles …) is not translated; it is
-// shown as entered and marked as German (lang="de").
+// import from client and server code. The admin stays German. Staff content is
+// never translated automatically: announcements and rooms may carry an English
+// version entered in the admin (ADR-019); without it the German text is shown
+// and the item is marked. Course titles, people and room codes stay as entered.
 
 export const LANGS = ["de", "en"] as const;
 export type Lang = (typeof LANGS)[number];
@@ -27,12 +28,33 @@ export function publicHref(path: string, lang: Lang, params: Record<string, stri
 
 export type PublicSection = "start" | "display" | "rooms" | "schedule";
 
+/** One staff-entered text as shown to the visitor. */
+export type LocalizedText = { text: string; lang: Lang; fallback: boolean };
+
+/**
+ * The English version when the visitor chose English and one exists;
+ * otherwise the German original, flagged as a fallback in the English interface.
+ */
+export function localize(de: string, en: string | null, lang: Lang): LocalizedText {
+  if (lang === "en" && en) return { text: en, lang: "en", fallback: false };
+  return { text: de, lang: "de", fallback: lang === "en" && de !== "" };
+}
+
+/** How much of an item is shown in German instead of English: null (nothing), "partial" or "all". */
+export function fallbackLevel(texts: LocalizedText[]): "partial" | "all" | null {
+  const shown = texts.filter((t) => t.text !== "");
+  const fallbacks = shown.filter((t) => t.fallback).length;
+  if (fallbacks === 0) return null;
+  return fallbacks === shown.length ? "all" : "partial";
+}
+
 const de = {
   sections: { start: "Start", display: "Mitteilungen", rooms: "Räume", schedule: "Stundenplan" } as Record<PublicSection, string>,
   navLabel: "Campus-Informationen",
   languageLabel: "Sprache",
   footer: "Prototyp im Kurs Mensch-Maschine-Interaktion – keine offizielle Anzeige der Hochschule Coburg.",
   contentNote: null as string | null,
+  fallback: { all: "Nur auf Deutsch", partial: "Teilweise auf Deutsch" },
   start: {
     title: "Campus-Informationen",
     intro: "Informationen für Studierende und Gäste am Lucas-Cranach-Campus.",
@@ -96,7 +118,8 @@ const en: PublicText = {
   languageLabel: "Language",
   footer: "Prototype from the Human-Computer Interaction course – not an official display of Hochschule Coburg.",
   contentNote:
-    "Announcements, room names and course details are entered by campus staff and are shown in German. English versions are not available yet.",
+    "Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”.",
+  fallback: { all: "Only in German", partial: "Partly in German" },
   start: {
     title: "Campus information",
     intro: "Information for students and visitors at Lucas-Cranach-Campus.",

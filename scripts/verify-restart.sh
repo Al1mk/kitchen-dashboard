@@ -45,9 +45,9 @@ stop() {
 PW=$(node -e 'console.log(require("crypto").randomBytes(18).toString("base64url"))')
 HASH=$(PW="$PW" node --input-type=module -e 'import {hashPassword} from "./src/lib/auth/password.ts"; console.log(await hashPassword(process.env.PW))')
 H=(-H "Origin: $BASE" -H 'Content-Type: application/json')
-PUBLISHED='{"title":"Neustart-Test","body":"Bleibt nach Neustart erhalten.","category":"general","pinned":false,"startsAt":"","endsAt":""}'
+PUBLISHED='{"title":"Neustart-Test","body":"Bleibt nach Neustart erhalten.","category":"general","pinned":false,"startsAt":"","endsAt":"","titleEn":"Restart test","bodyEn":"Survives a restart."}'
 DRAFT_TITLE="Neustart-Test (unveröffentlichter Entwurf)"
-DRAFT="{\"title\":\"$DRAFT_TITLE\",\"body\":\"x\",\"category\":\"general\",\"pinned\":false,\"startsAt\":\"\",\"endsAt\":\"\"}"
+DRAFT="{\"title\":\"$DRAFT_TITLE\",\"body\":\"x\",\"category\":\"general\",\"pinned\":false,\"startsAt\":\"\",\"endsAt\":\"\",\"titleEn\":\"Restart test (unpublished draft)\",\"bodyEn\":\"\"}"
 
 echo "# Restart persistence check $(TZ=Europe/Berlin date '+%Y-%m-%d %H:%M %Z') (production build, temp DB)"
 start; PID1=$SRV; echo "server 1 started (pid $PID1)"
@@ -59,12 +59,14 @@ req "save draft edit" 200 -b "$J" "${H[@]}" -X PUT -d "$DRAFT" "$BASE/api/admin/
 
 PUBLIC_BEFORE=$(req "public before" 200 "$BASE/api/public/announcements" | jget 'd.announcements')
 check "public titles before restart" '["Neustart-Test"]' "$(echo "$PUBLIC_BEFORE" | jget 'd.map(a=>a.title)')"
-ADMIN_Q='`status=${d.announcement.status} pending=${d.announcement.hasPendingChanges} draft=${d.announcement.draft.title}`'
-ADMIN_EXPECTED="status=published pending=true draft=$DRAFT_TITLE"
+# English version: the published one is public; the English draft edit is not.
+check "public English title before restart" '["Restart test"]' "$(echo "$PUBLIC_BEFORE" | jget 'd.map(a=>a.titleEn)')"
+ADMIN_Q='`status=${d.announcement.status} pending=${d.announcement.hasPendingChanges} draft=${d.announcement.draft.title} draftEn=${d.announcement.draft.titleEn}`'
+ADMIN_EXPECTED="status=published pending=true draft=$DRAFT_TITLE draftEn=Restart test (unpublished draft)"
 check "admin state before restart" "$ADMIN_EXPECTED" "$(req "admin before" 200 -b "$J" "$BASE/api/admin/announcements/$ID" | jget "$ADMIN_Q")"
 
 # M2: a room and a session in it (fixed future day, so the result is independent of today).
-ROOM_ID=$(req "create room" 201 -b "$J" "${H[@]}" -d '{"code":"NEUSTART-1","name":"Neustart-Raum","floorId":"EG","type":"seminar","description":"","reservable":false}' "$BASE/api/admin/rooms" | jget 'd.room.id')
+ROOM_ID=$(req "create room" 201 -b "$J" "${H[@]}" -d '{"code":"NEUSTART-1","name":"Neustart-Raum","nameEn":"Restart room","floorId":"EG","type":"seminar","description":"","reservable":false}' "$BASE/api/admin/rooms" | jget 'd.room.id')
 req "create session" 201 -b "$J" "${H[@]}" -d "{\"title\":\"Neustart-Termin\",\"instructor\":\"Test\",\"cohort\":\"Test\",\"term\":\"WS 2029/30\",\"roomId\":\"$ROOM_ID\",\"date\":\"2030-01-15\",\"startTime\":\"10:00\",\"endTime\":\"11:30\"}" "$BASE/api/admin/sessions" >/dev/null
 ROOMS_BEFORE=$(req "public rooms before" 200 "$BASE/api/public/rooms" | jget 'd.rooms')
 SCHEDULE_BEFORE=$(req "public schedule before" 200 "$BASE/api/public/schedule?date=2030-01-15" | jget 'd.sessions')

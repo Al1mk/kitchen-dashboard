@@ -31,7 +31,7 @@ beforeEach(() => {
   dir = mkdtempSync(join(tmpdir(), "campus-board-sessions-"));
   db = openDatabase(join(dir, "test.sqlite"));
   const rooms = createRoomRepository(db, clock);
-  const base = { name: "Raum", floorId: "EG", type: "seminar", description: "", reservable: false } as const;
+  const base = { name: "Raum", floorId: "EG", type: "seminar", description: "", reservable: false, nameEn: "", descriptionEn: "" } as const;
   const a = rooms.create({ ...base, code: "T-A" });
   const b = rooms.create({ ...base, code: "T-B" });
   if (!a.ok || !b.ok) throw new Error("setup");
@@ -137,7 +137,7 @@ describe("session repository", () => {
       ["Spät", "cancelled"],
     ]);
     expect(Object.keys(day[0]).sort()).toEqual(["cohort", "endsAt", "id", "instructor", "isDemo", "room", "startsAt", "status", "term", "title"]);
-    expect(Object.keys(day[0].room).sort()).toEqual(["code", "floorId", "id", "name"]);
+    expect(Object.keys(day[0].room).sort()).toEqual(["code", "floorId", "id", "name", "nameEn"]);
     expect(repo.listPublicDay("2026-11-03", roomB).map((s) => s.title)).toEqual(["Spät"]);
   });
 });

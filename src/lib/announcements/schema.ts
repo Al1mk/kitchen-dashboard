@@ -23,6 +23,9 @@ export type AnnouncementContent = {
   pinned: boolean;
   startsAt: string | null;
   endsAt: string | null;
+  /** Optional English version for the public English interface; "" = none (German is shown instead). */
+  titleEn: string;
+  bodyEn: string;
 };
 
 export type AnnouncementStatus = "draft" | "published" | "withdrawn";
@@ -36,6 +39,9 @@ export type PublicAnnouncement = {
   pinned: boolean;
   publishedAt: string;
   endsAt: string | null;
+  /** null = no English version; the English interface shows the German text and says so. */
+  titleEn: string | null;
+  bodyEn: string | null;
 };
 
 const localDateTime = z
@@ -67,6 +73,18 @@ const inputSchema = z
     pinned: z.boolean({ error: "Ungültiger Wert für „Hervorheben“." }),
     startsAt: localDateTime,
     endsAt: localDateTime,
+    titleEn: z
+      .string({ error: "Ungültiger englischer Titel." })
+      .trim()
+      .max(TITLE_MAX, `Der englische Titel darf höchstens ${TITLE_MAX} Zeichen lang sein.`)
+      .optional()
+      .default(""),
+    bodyEn: z
+      .string({ error: "Ungültiger englischer Text." })
+      .trim()
+      .max(BODY_MAX, `Der englische Text darf höchstens ${BODY_MAX} Zeichen lang sein.`)
+      .optional()
+      .default(""),
   })
   .superRefine((value, ctx) => {
     if (value.startsAt && value.endsAt && value.endsAt <= value.startsAt) {
@@ -101,6 +119,8 @@ export function parseAnnouncementInput(raw: unknown): ParseResult {
         pinned: v.pinned,
         startsAt: v.startsAt,
         endsAt: v.endsAt,
+        titleEn: v.titleEn,
+        bodyEn: v.bodyEn,
       },
     };
   }

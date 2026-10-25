@@ -69,7 +69,7 @@ test("public pages are reachable from / with a return path, keeping language, da
   await expect(page.getByRole("heading", { name: "Schedule", level: 1 })).toBeVisible();
   await expect(page.getByText(`Room ${code} – Navigationsraum (Ground floor)`)).toBeVisible();
   await expect(page.getByText("No classes are scheduled on this day.")).toBeVisible();
-  await expect(page.getByText(/are shown in German/)).toBeVisible();
+  await expect(page.getByText(/are shown as entered by campus staff/)).toBeVisible();
   await expect(page.getByRole("group", { name: "Language" }).getByRole("link", { name: "English" })).toHaveAttribute("aria-current", "true");
 
   // 6. Day navigation in English keeps language and room.

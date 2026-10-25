@@ -32,7 +32,7 @@ test("room and session administration appear on the public pages", async ({ brow
   await admin.getByRole("button", { name: "Raum anlegen" }).click();
   await expect(admin.getByText("Bitte eine Raumnummer eingeben.")).toBeVisible(); // server-side field error next to the field
   await admin.getByRole("textbox", { name: "Raumnummer" }).fill(code);
-  await admin.getByRole("textbox", { name: "Name" }).fill("Testraum Erstfassung");
+  await admin.getByRole("textbox", { name: "Name", exact: true }).fill("Testraum Erstfassung");
   await admin.getByRole("combobox", { name: "Stockwerk" }).selectOption("1OG");
   await admin.getByRole("combobox", { name: "Raumart" }).selectOption("seminar");
   await admin.getByRole("button", { name: "Raum anlegen" }).click();
@@ -65,7 +65,7 @@ test("room and session administration appear on the public pages", async ({ brow
   // 3. Rename and recode the room: the session keeps its room (stable id).
   await admin.goto(`/admin/rooms/${roomId}`);
   await admin.getByRole("textbox", { name: "Raumnummer" }).fill(newCode);
-  await admin.getByRole("textbox", { name: "Name" }).fill("Testraum Zweitfassung");
+  await admin.getByRole("textbox", { name: "Name", exact: true }).fill("Testraum Zweitfassung");
   await admin.getByRole("button", { name: "Änderungen speichern" }).click();
   await expect(admin.getByRole("status").filter({ hasText: "jetzt öffentlich sichtbar" })).toBeVisible();
   await expect(directory.getByRole("heading", { name: `${newCode} Testraum Zweitfassung` })).toBeVisible({ timeout: UPDATE_TIMEOUT });

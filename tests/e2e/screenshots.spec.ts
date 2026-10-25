@@ -28,7 +28,7 @@ test("capture admin (1440×900) and display (1080×1920) layouts", async ({ brow
   await admin.goto("/admin/announcements");
   await admin.screenshot({ path: `${OUT}/admin-list-1440x900.png`, fullPage: true });
   await admin.goto(`/admin/announcements/${created.announcement.id}`);
-  await admin.getByRole("textbox", { name: "Titel" }).fill("Küche am Freitag ab 13 Uhr geschlossen (Testinhalt)");
+  await admin.getByRole("textbox", { name: "Titel", exact: true }).fill("Küche am Freitag ab 13 Uhr geschlossen (Testinhalt)");
   await admin.screenshot({ path: `${OUT}/admin-editor-unsaved-1440x900.png`, fullPage: true });
   await admin.goto(`/admin/announcements/${created.announcement.id}/preview`);
   await admin.screenshot({ path: `${OUT}/admin-preview-1440x900.png`, fullPage: true });

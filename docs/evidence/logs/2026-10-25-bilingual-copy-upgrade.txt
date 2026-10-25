@@ -1,0 +1,8 @@
+# 2026-10-25 bilingual content — schema upgrade 2 → 3 on a COPY of the real data/ database (original never opened for writing)
+version before 2
+announcements 1 rooms 1 sessions 1
+version after 3
+pending changes after upgrade: [ false ]
+rooms public nameEn: []
+COPY UPGRADE OK: content, ids and status unchanged; English fields empty
+original data/ checksums unchanged

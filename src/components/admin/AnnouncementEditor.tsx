@@ -26,12 +26,14 @@ type FormValues = {
   pinned: boolean;
   startsAt: string;
   endsAt: string;
+  titleEn: string;
+  bodyEn: string;
 };
 
 type Message = { kind: "success" | "error"; text: string } | null;
 type Busy = null | "save" | "publish" | "withdraw";
 
-const EMPTY: FormValues = { title: "", body: "", category: "general", pinned: false, startsAt: "", endsAt: "" };
+const EMPTY: FormValues = { title: "", body: "", category: "general", pinned: false, startsAt: "", endsAt: "", titleEn: "", bodyEn: "" };
 
 function toForm(content: AnnouncementContent): FormValues {
   return {
@@ -41,6 +43,8 @@ function toForm(content: AnnouncementContent): FormValues {
     pinned: content.pinned,
     startsAt: content.startsAt ? utcIsoToBerlinLocal(content.startsAt) : "",
     endsAt: content.endsAt ? utcIsoToBerlinLocal(content.endsAt) : "",
+    titleEn: content.titleEn,
+    bodyEn: content.bodyEn,
   };
 }
 
@@ -51,8 +55,17 @@ function sameValues(a: FormValues, b: FormValues) {
     a.category === b.category &&
     a.pinned === b.pinned &&
     a.startsAt === b.startsAt &&
-    a.endsAt === b.endsAt
+    a.endsAt === b.endsAt &&
+    a.titleEn.trim() === b.titleEn.trim() &&
+    a.bodyEn.trim() === b.bodyEn.trim()
   );
+}
+
+/** Short German description of the English version of a published snapshot. */
+function englishStatus(content: AnnouncementContent): string {
+  if (content.titleEn && content.bodyEn) return `Englisch: „${content.titleEn}“`;
+  if (content.titleEn || content.bodyEn) return "Englische Fassung unvollständig (fehlende Teile erscheinen auf Deutsch)";
+  return "Keine englische Fassung (erscheint auf Deutsch)";
 }
 
 const PUBLISHED_HINT ="Die Mitteilung erscheint innerhalb von etwa 5 Sekunden auf dem Bildschirm.";
@@ -75,6 +88,7 @@ export function AnnouncementEditor({ initial, flash }: { initial: AdminAnnouncem
   const [busy, setBusy] = useState<Busy>(null);
   const [confirmWithdraw, setConfirmWithdraw] = useState(false);
   const [pendingHref, setPendingHref] = useState<string | null>(null);
+  const [previewLang, setPreviewLang] = useState<"de" | "en">("de");
   const [requestId] = useState(newRequestId);
   const busyRef = useRef<Busy>(null);
   const formRef = useRef<HTMLFormElement>(null);
@@ -108,7 +122,7 @@ export function AnnouncementEditor({ initial, flash }: { initial: AdminAnnouncem
   }
 
   function focusFirstError(fieldErrors: FieldErrors) {
-    const order: (keyof FormValues)[] = ["title", "body", "category", "pinned", "startsAt", "endsAt"];
+    const order: (keyof FormValues)[] = ["title", "body", "titleEn", "bodyEn", "category", "pinned", "startsAt", "endsAt"];
     const first = order.find((k) => fieldErrors[k]);
     if (first) formRef.current?.querySelector<HTMLElement>(`[name="${first}"]`)?.focus();
   }
@@ -250,6 +264,8 @@ export function AnnouncementEditor({ initial, flash }: { initial: AdminAnnouncem
     pinned: values.pinned,
     publishedAt: new Date(0).toISOString(),
     endsAt: previewEndsAt,
+    titleEn: values.titleEn.trim() || null,
+    bodyEn: values.bodyEn.trim() || null,
     isPreview: true,
   };
 
@@ -341,6 +357,58 @@ export function AnnouncementEditor({ initial, flash }: { initial: AdminAnnouncem
           </p>
           {errorText("body")}
         </div>
+
+        <fieldset className="flex flex-col gap-4 rounded-xl border border-line bg-surface p-5">
+          <legend className="px-1 font-semibold">Englische Fassung (optional)</legend>
+          <p id={fieldId("en-hint")} className="-mt-2 text-sm text-ink-muted">
+            Für Besucher:innen, die die öffentliche Seite auf Englisch anzeigen. Leer gelassene Felder zeigen dort den deutschen Text mit dem Hinweis
+            „Only in German“ bzw. „Partly in German“. Es wird nichts automatisch übersetzt. Die Verwaltung bleibt deutsch.
+          </p>
+          <div className="flex flex-col gap-1.5">
+            <div className="flex items-baseline justify-between">
+              <label htmlFor={fieldId("titleEn")} className="font-semibold">
+                Titel (Englisch)
+              </label>
+              <span className="text-sm text-ink-muted" aria-hidden="true">
+                {values.titleEn.length} / {TITLE_MAX}
+              </span>
+            </div>
+            <input
+              id={fieldId("titleEn")}
+              name="titleEn"
+              lang="en"
+              value={values.titleEn}
+              onChange={(e) => update("titleEn", e.target.value)}
+              maxLength={TITLE_MAX + 20}
+              aria-invalid={!!errors.titleEn?.length}
+              aria-describedby={describedBy("titleEn", fieldId("en-hint"))}
+              className={`${inputClass} ${borderFor("titleEn")}`}
+            />
+            {errorText("titleEn")}
+          </div>
+          <div className="flex flex-col gap-1.5">
+            <div className="flex items-baseline justify-between">
+              <label htmlFor={fieldId("bodyEn")} className="font-semibold">
+                Text (Englisch)
+              </label>
+              <span className="text-sm text-ink-muted" aria-hidden="true">
+                {values.bodyEn.length} / {BODY_MAX}
+              </span>
+            </div>
+            <textarea
+              id={fieldId("bodyEn")}
+              name="bodyEn"
+              lang="en"
+              value={values.bodyEn}
+              onChange={(e) => update("bodyEn", e.target.value)}
+              rows={4}
+              aria-invalid={!!errors.bodyEn?.length}
+              aria-describedby={describedBy("bodyEn", fieldId("en-hint"))}
+              className={`w-full rounded-lg border bg-canvas px-3 py-2 text-base leading-relaxed ${borderFor("bodyEn")}`}
+            />
+            {errorText("bodyEn")}
+          </div>
+        </fieldset>
 
         <fieldset className="flex flex-col gap-2" aria-describedby={describedBy("category")}>
           <legend className="mb-1.5 font-semibold">Kategorie</legend>
@@ -459,8 +527,31 @@ export function AnnouncementEditor({ initial, flash }: { initial: AdminAnnouncem
           </h2>
           <p className="text-sm text-ink-muted">So erscheint der aktuelle Entwurf (inkl. ungespeicherter Änderungen). Nicht öffentlich.</p>
         </div>
-        <div className="aspect-[9/16] w-full max-w-[22rem] overflow-hidden rounded-xl border-4 border-ink shadow-lg" aria-hidden="true">
-          <BoardLayout items={[previewItem]} now={null} />
+        <div role="group" aria-label="Sprachfassung der Vorschau" className="flex gap-2">
+          {(
+            [
+              ["de", "Deutsche Ansicht"],
+              ["en", "Englische Ansicht"],
+            ] as const
+          ).map(([code, label]) => (
+            <button
+              key={code}
+              type="button"
+              aria-pressed={previewLang === code}
+              onClick={() => setPreviewLang(code)}
+              className={`min-h-11 rounded-lg px-3 text-sm font-semibold ${previewLang === code ? "bg-ink text-white" : "border border-line bg-surface hover:bg-canvas"}`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+        <div
+          className="aspect-[9/16] w-full max-w-[22rem] overflow-hidden rounded-xl border-4 border-ink shadow-lg"
+          aria-hidden="true"
+          data-testid="editor-preview"
+          data-lang={previewLang}
+        >
+          <BoardLayout items={[previewItem]} now={null} lang={previewLang} />
         </div>
         {record ? (
           <Link
@@ -476,6 +567,7 @@ export function AnnouncementEditor({ initial, flash }: { initial: AdminAnnouncem
           <div className="rounded-xl border border-line bg-surface p-4 text-sm">
             <p className="font-semibold">Zurzeit veröffentlichte Fassung</p>
             <p className="mt-1 [overflow-wrap:anywhere]">„{record.published.title}“</p>
+            <p className="mt-1 text-ink-muted [overflow-wrap:anywhere]">{englishStatus(record.published)}</p>
             {record.publishedAt && <p className="mt-1 text-ink-muted">Veröffentlicht am {formatBerlinDateTime(record.publishedAt)} Uhr</p>}
           </div>
         )}

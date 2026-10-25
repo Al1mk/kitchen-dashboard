@@ -1,4 +1,4 @@
-# Shared contracts (M1 + M2)
+# Shared contracts (M1 + M2 + bilingual content)
 
 For teammates (map, schedule, booking, newcomer content) who want to integrate or build in parallel. **Implemented:** announcements (M1), rooms and class sessions (M2). Everything under "Open / proposed" is not built and **not yet agreed** with Arian, Parsa or Reza.
 
@@ -28,7 +28,9 @@ Returns only announcements that are published and inside their visibility window
       "category": "general | event | important",
       "pinned": true,
       "publishedAt": "ISO UTC",
-      "endsAt": "ISO UTC | null"
+      "endsAt": "ISO UTC | null",
+      "titleEn": "string ≤ 120 | null",
+      "bodyEn": "string ≤ 1200 | null"
     }
   ]
 }
@@ -36,7 +38,7 @@ Returns only announcements that are published and inside their visibility window
 
 ### Admin write: `/api/admin/announcements/**`
 
-Input times are `YYYY-MM-DDTHH:mm` (Berlin) or empty.
+Input times are `YYYY-MM-DDTHH:mm` (Berlin) or empty. `titleEn` and `bodyEn` are optional (missing or empty = no English version) and belong to the draft like every other field: saving them never changes the published snapshot; publishing copies both languages together; withdrawing removes both.
 
 | Method + path | Effect |
 | --- | --- |
@@ -63,6 +65,7 @@ Sources of truth: `src/lib/rooms/schema.ts`, `src/lib/sessions/schema.ts`. Unlik
 | `type` | `lecture` · `seminar` · `lab` · `study` · `common` · `office` · `other` | Editable |
 | `description` | Plain text ≤ 500, may be empty | Editable |
 | `reservable` | Marked for the future booking module (M4); no booking exists yet | Editable |
+| `nameEn`, `descriptionEn` | Optional English versions (≤ 80 / ≤ 500); in input missing or empty = none; in public output `null` when empty | Editable; public immediately like every room field |
 
 Rooms are **archived, never deleted** (the database refuses deleting a room that sessions reference). Archiving is refused while the room has scheduled sessions that have not ended. Archived rooms disappear from the public directory and cannot be chosen for new sessions; past sessions keep their reference and still show the room's code and name.
 
@@ -82,7 +85,9 @@ Active rooms, ordered by floor (`EG`, `1OG`, `2OG`), then natural code order (`1
       "type": "lecture | seminar | lab | study | common | office | other",
       "description": "string",
       "reservable": false,
-      "isDemo": false
+      "isDemo": false,
+      "nameEn": "string | null",
+      "descriptionEn": "string | null"
     }
   ]
 }
@@ -107,7 +112,7 @@ Sessions **starting** on one Europe/Berlin calendar day (default: today by the s
       "startsAt": "ISO UTC",
       "endsAt": "ISO UTC",
       "status": "scheduled | cancelled",
-      "room": { "id": "uuid", "code": "string", "name": "string", "floorId": "EG" },
+      "room": { "id": "uuid", "code": "string", "name": "string", "nameEn": "string | null", "floorId": "EG" },
       "isDemo": false
     }
   ]
@@ -145,4 +150,4 @@ These are working assumptions in the code, documented so they can be changed del
 6. **Cohort** is free text for now. A fixed list (study programme + semester) would allow filtering but needs real data.
 7. **Booking (M4)** would use `reservable` and the same room `id`, and must check overlaps with scheduled sessions on the server. It would be a separate, narrowly validated public write endpoint, never the admin API.
 8. **Kiosk navigation (updated 2026-10-25).** `/` is the public start page; every public page, including the `/display` board, has the same navigation (Start, Mitteilungen, Räume, Stundenplan) and no admin links. Still open (team/V2): whether the kiosk's idle screen is `/` or `/display`, an automatic return to the start page/German after inactivity, and where the map joins this navigation.
-9. **Language (ADR-017).** `?lang=en` switches the public interface to English; German is the default and has no parameter. Public links keep `lang`, and the schedule keeps `datum` and `raum` when the day, room filter or language changes. A map linking into these pages should pass `lang` through. Data and API responses are language-neutral (ids, enum values such as `floorId`/`type`/`category`, UTC times); labels are translated in the interface only. Text typed in the admin (titles, names, descriptions, cohort) exists once and is shown as entered, marked `lang="de"`; optional English fields for it are not built.
+9. **Language (ADR-017, ADR-019).** `?lang=en` switches the public interface to English; German is the default and has no parameter. Public links keep `lang`, and the schedule keeps `datum` and `raum` when the day, room filter or language changes. A map linking into these pages should pass `lang` through. IDs, enum values (`floorId`, `type`, `category`) and times are language-neutral; labels are translated in the interface only. **Optional English content:** announcements (`titleEn`, `bodyEn`) and rooms (`nameEn`, `descriptionEn`) may carry an English version entered by the admin. One record per announcement/room; there are no per-language copies. A client in English shows the English field when it is non-null and otherwise the German field, marking the item ("Only in German" if nothing on it is in English, "Partly in German" if some of it is). Never translated and identical in both languages: room `code`, session `title` (official course title), `instructor`, `cohort`, `term`. No automatic translation.

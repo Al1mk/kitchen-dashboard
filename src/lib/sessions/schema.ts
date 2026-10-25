@@ -32,7 +32,8 @@ export type PublicSession = {
   startsAt: string;
   endsAt: string;
   status: SessionStatus;
-  room: { id: string; code: string; name: string; floorId: FloorId };
+  /** Room name in English when the room has one (course details have no English version). */
+  room: { id: string; code: string; name: string; nameEn: string | null; floorId: FloorId };
   isDemo: boolean;
 };
 

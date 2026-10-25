@@ -38,7 +38,7 @@ describe("public text", () => {
 
   it("only the English interface carries the note that staff content stays German", () => {
     expect(PUBLIC_TEXT.de.contentNote).toBeNull();
-    expect(PUBLIC_TEXT.en.contentNote).toMatch(/shown in German/);
+    expect(PUBLIC_TEXT.en.contentNote).toMatch(/shown as entered/);
   });
 });
 

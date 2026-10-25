@@ -41,7 +41,7 @@ test("editor creates a draft in a non-secure context (HTTP, non-loopback host)",
   });
 
   const title = `HTTP-IP-Test ${Date.now()}`;
-  await page.getByRole("textbox", { name: "Titel" }).fill(title);
+  await page.getByRole("textbox", { name: "Titel", exact: true }).fill(title);
   await page.getByRole("textbox", { name: "Text", exact: true }).fill("Bearbeitet über eine unverschlüsselte Adresse.");
   await page.getByRole("button", { name: "Entwurf speichern" }).click();
   await expect(page.getByRole("status").filter({ hasText: "Entwurf gespeichert" })).toBeVisible();

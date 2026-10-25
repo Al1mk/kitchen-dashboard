@@ -1,0 +1,17 @@
+# 2026-10-25 bilingual content — restart persistence (Claude Code, Ali's MacBook)
+# Restart persistence check 2026-10-25 22:26 CET (production build, temp DB)
+server 1 started (pid 67588)
+created: e21adc78-3d13-4db6-963d-eff82ef08898
+ok   public titles before restart: ["Neustart-Test"]
+ok   public English title before restart: ["Restart test"]
+ok   admin state before restart: status=published pending=true draft=Neustart-Test (unveröffentlichter Entwurf) draftEn=Restart test (unpublished draft)
+ok   public schedule before restart: ["10:00 Neustart-Termin NEUSTART-1"]
+server 1 stopped (port 3200 no longer answers)
+server 2 started (pid 67657)
+ok   public output after restart (full JSON, unchanged): [{"id":"e21adc78-3d13-4db6-963d-eff82ef08898","title":"Neustart-Test","body":"Bleibt nach Neustart erhalten.","category":"general","pinned":false,"publishedAt":"2026-10-25T21:26:50.879Z","endsAt":null,"titleEn":"Restart test","bodyEn":"Survives a restart."}]
+ok   old session after restart: HTTP 200
+ok   admin state after restart: status=published pending=true draft=Neustart-Test (unveröffentlichter Entwurf) draftEn=Restart test (unpublished draft)
+ok   public rooms after restart (full JSON, unchanged): [{"id":"9a34ca68-7cbf-43a7-bc43-031efff48832","code":"NEUSTART-1","name":"Neustart-Raum","floorId":"EG","type":"seminar","description":"","reservable":false,"isDemo":false,"nameEn":"Restart room","descriptionEn":null}]
+ok   public schedule after restart (full JSON, unchanged): [{"id":"5b93669c-4530-415d-8e36-bfc0b3c8fdc9","title":"Neustart-Termin","instructor":"Test","cohort":"Test","term":"WS 2029/30","startsAt":"2030-01-15T09:00:00.000Z","endsAt":"2030-01-15T10:30:00.000Z","status":"scheduled","room":{"id":"9a34ca68-7cbf-43a7-bc43-031efff48832","code":"NEUSTART-1","name":"Neustart-Raum","nameEn":"Restart room","floorId":"EG"},"isDemo":false}]
+PASS: 9 checks
+exit 0

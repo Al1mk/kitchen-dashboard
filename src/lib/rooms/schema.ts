@@ -38,6 +38,9 @@ export type RoomContent = {
   type: RoomType;
   description: string;
   reservable: boolean;
+  /** Optional English versions for the public English interface; "" = none. */
+  nameEn: string;
+  descriptionEn: string;
 };
 
 /** Public projection: the only room fields anonymous visitors (and the map) receive. */
@@ -50,6 +53,9 @@ export type PublicRoom = {
   description: string;
   reservable: boolean;
   isDemo: boolean;
+  /** null = no English version; the English interface shows the German text and says so. */
+  nameEn: string | null;
+  descriptionEn: string | null;
 };
 
 const inputSchema = z.object({
@@ -76,6 +82,18 @@ const inputSchema = z.object({
     .optional()
     .default(""),
   reservable: z.boolean({ error: "Ungültiger Wert für „Reservierbar“." }),
+  nameEn: z
+    .string({ error: "Ungültiger englischer Name." })
+    .trim()
+    .max(ROOM_NAME_MAX, `Der englische Name darf höchstens ${ROOM_NAME_MAX} Zeichen lang sein.`)
+    .optional()
+    .default(""),
+  descriptionEn: z
+    .string({ error: "Ungültige englische Beschreibung." })
+    .trim()
+    .max(ROOM_DESCRIPTION_MAX, `Die englische Beschreibung darf höchstens ${ROOM_DESCRIPTION_MAX} Zeichen lang sein.`)
+    .optional()
+    .default(""),
 });
 
 /** Admin form input (strings and a boolean). */
@@ -90,7 +108,16 @@ export function parseRoomInput(raw: unknown): RoomParseResult {
   const v = result.data;
   return {
     ok: true,
-    content: { code: v.code, name: v.name, floorId: v.floorId, type: v.type, description: v.description, reservable: v.reservable },
+    content: {
+      code: v.code,
+      name: v.name,
+      floorId: v.floorId,
+      type: v.type,
+      description: v.description,
+      reservable: v.reservable,
+      nameEn: v.nameEn,
+      descriptionEn: v.descriptionEn,
+    },
   };
 }
 

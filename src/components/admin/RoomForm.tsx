@@ -19,10 +19,19 @@ import { ConfirmDialog } from "./ConfirmDialog.tsx";
 import { Field, FormMessage, LiveNotice, Pill, type FormMessageValue } from "./FormParts.tsx";
 import { useUnsavedChangesGuard } from "./useUnsavedChangesGuard.ts";
 
-type Values = { code: string; name: string; floorId: string; type: string; description: string; reservable: boolean };
+type Values = {
+  code: string;
+  name: string;
+  floorId: string;
+  type: string;
+  description: string;
+  reservable: boolean;
+  nameEn: string;
+  descriptionEn: string;
+};
 type Busy = null | "save" | "archive" | "restore";
 
-const EMPTY: Values = { code: "", name: "", floorId: "", type: "", description: "", reservable: false };
+const EMPTY: Values = { code: "", name: "", floorId: "", type: "", description: "", reservable: false, nameEn: "", descriptionEn: "" };
 
 const toValues = (room: RoomContent): Values => ({ ...room });
 
@@ -33,7 +42,9 @@ function same(a: Values, b: Values) {
     a.floorId === b.floorId &&
     a.type === b.type &&
     a.description.trim() === b.description.trim() &&
-    a.reservable === b.reservable
+    a.reservable === b.reservable &&
+    a.nameEn.trim() === b.nameEn.trim() &&
+    a.descriptionEn.trim() === b.descriptionEn.trim()
   );
 }
 
@@ -83,7 +94,7 @@ export function RoomForm({ initial, flash }: { initial: AdminRoom | null; flash?
         setMessage({ kind: "error", text: failureText(result.status, result.data) });
         if (result.data.fieldErrors) {
           setErrors(result.data.fieldErrors);
-          const first = (["code", "name", "floorId", "type", "description"] as const).find((k) => result.data.fieldErrors?.[k]);
+          const first = (["code", "name", "floorId", "type", "description", "nameEn", "descriptionEn"] as const).find((k) => result.data.fieldErrors?.[k]);
           if (first) formRef.current?.querySelector<HTMLElement>(`[name="${first}"]`)?.focus();
         }
         return;
@@ -208,6 +219,37 @@ export function RoomForm({ initial, flash }: { initial: AdminRoom | null; flash?
           />
         )}
       </Field>
+
+      <fieldset className="flex flex-col gap-4 rounded-xl border border-line bg-surface p-5">
+        <legend className="px-1 font-semibold">Englische Fassung (optional)</legend>
+        <p className="-mt-2 text-sm text-ink-muted">
+          Für die englische Ansicht der öffentlichen Seiten. Leer gelassene Felder zeigen dort den deutschen Text mit dem Hinweis „Only in German“
+          bzw. „Partly in German“. Raumnummer, Stockwerk und Termine gelten für beide Sprachen; es entsteht kein zweiter Raum.
+        </p>
+        <Field id={id("nameEn")} label="Name (Englisch)" error={errors.nameEn} counter={`${values.nameEn.length} / ${ROOM_NAME_MAX}`}>
+          {(p) => (
+            <input {...p} name="nameEn" lang="en" value={values.nameEn} onChange={(e) => update("nameEn", e.target.value)} maxLength={ROOM_NAME_MAX + 20} autoComplete="off" />
+          )}
+        </Field>
+        <Field
+          id={id("descriptionEn")}
+          label="Beschreibung (Englisch)"
+          error={errors.descriptionEn}
+          counter={`${values.descriptionEn.length} / ${ROOM_DESCRIPTION_MAX}`}
+        >
+          {(p) => (
+            <textarea
+              {...p}
+              name="descriptionEn"
+              lang="en"
+              rows={3}
+              value={values.descriptionEn}
+              onChange={(e) => update("descriptionEn", e.target.value)}
+              className={`${p.className} py-2 leading-relaxed`}
+            />
+          )}
+        </Field>
+      </fieldset>
 
       <label className="flex min-h-11 cursor-pointer items-center gap-3">
         <input type="checkbox" name="reservable" checked={values.reservable} onChange={(e) => update("reservable", e.target.checked)} className="size-5 accent-[var(--brand-red)]" />

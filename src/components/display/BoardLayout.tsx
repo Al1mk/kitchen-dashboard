@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import type { Category, PublicAnnouncement } from "@/lib/announcements/schema.ts";
-import { PUBLIC_TEXT, type Lang } from "@/lib/i18n/public.ts";
+import { fallbackLevel, localize, PUBLIC_TEXT, type Lang } from "@/lib/i18n/public.ts";
 import { formatBerlinDateTime, formatBerlinLongDate, formatBerlinTime } from "@/lib/time/berlin.ts";
 
 // Presentational portrait board shared by the public display and the admin
@@ -18,7 +18,11 @@ export type BoardItem = PublicAnnouncement & { isPreview?: boolean };
 
 export function AnnouncementCard({ item, lang = "de" }: { item: BoardItem; lang?: Lang }) {
   const style = categoryStyle[item.category];
-  const t = PUBLIC_TEXT[lang].board;
+  const text = PUBLIC_TEXT[lang];
+  const t = text.board;
+  const title = localize(item.title, item.titleEn, lang);
+  const body = localize(item.body, item.bodyEn, lang);
+  const fallback = fallbackLevel([title, body]);
   return (
     <article
       className={`relative flex shrink-0 overflow-hidden rounded-[1.2cqw] bg-surface shadow-[0_0.2cqw_0.8cqw_rgba(35,37,43,0.08)] ${
@@ -30,14 +34,21 @@ export function AnnouncementCard({ item, lang = "de" }: { item: BoardItem; lang?
         <div className="flex flex-wrap items-center gap-[1.4cqw] text-[2.3cqw] font-semibold uppercase tracking-wide">
           <span className={`rounded-full px-[1.8cqw] py-[0.5cqw] ${style.chip}`}>{t.categories[item.category]}</span>
           {item.pinned && <span className="rounded-full bg-brand-cream px-[1.8cqw] py-[0.5cqw] text-ink">{t.pinned}</span>}
+          {fallback && (
+            <span className="rounded-full border-[0.2cqw] border-ink-muted px-[1.8cqw] py-[0.4cqw] text-ink-muted">{text.fallback[fallback]}</span>
+          )}
           {item.isPreview && (
-            <span className="rounded-full bg-brand-purple px-[1.8cqw] py-[0.5cqw] text-white">Vorschau</span>
+            <span lang="de" className="rounded-full bg-brand-purple px-[1.8cqw] py-[0.5cqw] text-white">
+              Vorschau
+            </span>
           )}
         </div>
-        <h3 lang="de" className="font-display text-[4.6cqw] leading-[1.15] font-bold text-ink [overflow-wrap:anywhere]">
-          {item.title}
+        <h3 lang={title.lang} className="font-display text-[4.6cqw] leading-[1.15] font-bold text-ink [overflow-wrap:anywhere]">
+          {title.text}
         </h3>
-        <p lang="de" className="text-[3.1cqw] leading-[1.45] whitespace-pre-line text-ink [overflow-wrap:anywhere]">{item.body}</p>
+        <p lang={body.lang} className="text-[3.1cqw] leading-[1.45] whitespace-pre-line text-ink [overflow-wrap:anywhere]">
+          {body.text}
+        </p>
         {item.endsAt && (
           <p className="text-[2.4cqw] text-ink-muted">{t.validUntil(formatBerlinDateTime(item.endsAt, lang))}</p>
         )}

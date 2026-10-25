@@ -99,12 +99,13 @@ test("public room and schedule output contain only allowlisted fields", async ({
   const rooms = await request.get("/api/public/rooms");
   expect(rooms.headers()["cache-control"]).toContain("no-store");
   const listed = (await rooms.json()).rooms.find((r: { code: string }) => r.code === code);
-  expect(Object.keys(listed).sort()).toEqual(["code", "description", "floorId", "id", "isDemo", "name", "reservable", "type"]);
+  expect(Object.keys(listed).sort()).toEqual(["code", "description", "descriptionEn", "floorId", "id", "isDemo", "name", "nameEn", "reservable", "type"]);
 
   const day = await (await request.get(`/api/public/schedule?date=2030-02-05&roomId=${room.id}`)).json();
   expect(day.date).toBe("2030-02-05");
   expect(day.sessions).toHaveLength(1);
   expect(Object.keys(day.sessions[0]).sort()).toEqual(["cohort", "endsAt", "id", "instructor", "isDemo", "room", "startsAt", "status", "term", "title"]);
+  expect(Object.keys(day.sessions[0].room).sort()).toEqual(["code", "floorId", "id", "name", "nameEn"]);
 
   const today = await (await request.get("/api/public/schedule")).json();
   expect(today.date).toMatch(/^\d{4}-\d{2}-\d{2}$/);

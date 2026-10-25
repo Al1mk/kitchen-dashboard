@@ -33,6 +33,7 @@ type Row = {
   updated_at: string;
   room_code: string;
   room_name: string;
+  room_name_en: string;
   room_floor_id: string;
   room_archived_at: string | null;
 };
@@ -49,7 +50,7 @@ export type ReinstateResult =
   | ConflictFailure;
 
 const SELECT = `
-  SELECT s.*, r.code AS room_code, r.name AS room_name, r.floor_id AS room_floor_id, r.archived_at AS room_archived_at
+  SELECT s.*, r.code AS room_code, r.name AS room_name, r.name_en AS room_name_en, r.floor_id AS room_floor_id, r.archived_at AS room_archived_at
   FROM class_sessions s JOIN rooms r ON r.id = s.room_id`;
 
 export function createSessionRepository(db: Db, clock: () => Date = () => new Date()) {
@@ -189,7 +190,7 @@ export function createSessionRepository(db: Db, clock: () => Date = () => new Da
         startsAt: row.starts_at,
         endsAt: row.ends_at,
         status: row.status,
-        room: { id: row.room_id, code: row.room_code, name: row.room_name, floorId: row.room_floor_id as FloorId },
+        room: { id: row.room_id, code: row.room_code, name: row.room_name, nameEn: row.room_name_en || null, floorId: row.room_floor_id as FloorId },
         isDemo: row.is_demo === 1,
       }));
     },

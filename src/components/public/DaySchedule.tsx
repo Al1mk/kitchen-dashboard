@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { PUBLIC_TEXT, publicHref, type Lang } from "@/lib/i18n/public.ts";
+import { fallbackLevel, localize, PUBLIC_TEXT, publicHref, type Lang } from "@/lib/i18n/public.ts";
 import type { PublicRoom } from "@/lib/rooms/schema.ts";
 import type { PublicSession } from "@/lib/sessions/schema.ts";
 import { addDays, berlinDateOf, formatBerlinTime, formatCalendarDate } from "@/lib/time/berlin.ts";
-import { DemoNotice, DemoTag, LoadState } from "./PublicShell.tsx";
+import { DemoNotice, DemoTag, FallbackTag, LoadState } from "./PublicShell.tsx";
 import { usePolledJson } from "./usePolledJson.ts";
 
 type ScheduleResponse = { serverTime: string; date: string; room: PublicRoom | null; sessions: PublicSession[] };
@@ -16,10 +16,14 @@ const time = (iso: string) => formatBerlinTime(new Date(iso));
 export function DaySchedule({ date, roomId, lang }: { date: string | null; roomId: string | null; lang: Lang }) {
   const t = PUBLIC_TEXT[lang];
   const floor = (id: string) => t.floors[id as keyof typeof t.floors] ?? id;
+  // Room names follow the language (German if no English name); the room
+  // header marks the fallback, single session rows do not repeat it.
+  const roomName = (room: { name: string; nameEn: string | null }) => localize(room.name, room.nameEn, lang);
   const params = new URLSearchParams();
   if (date) params.set("date", date);
   if (roomId) params.set("roomId", roomId);
   const { data, failed, receivedAt, retry } = usePolledJson<ScheduleResponse>(`/api/public/schedule?${params}`);
+  const headerName = data?.room ? roomName(data.room) : null;
 
   const shownDate = data?.date ?? date;
   const today = data ? berlinDateOf(new Date(data.serverTime)) : null;
@@ -49,11 +53,12 @@ export function DaySchedule({ date, roomId, lang }: { date: string | null; roomI
         </div>
       )}
 
-      {data?.room && (
+      {data?.room && headerName && (
         <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl bg-surface px-5 py-3">
           <p className="font-semibold [overflow-wrap:anywhere]">
-            {t.schedule.room} {data.room.code} – <span lang="de">{data.room.name}</span> ({floor(data.room.floorId)})
+            {t.schedule.room} {data.room.code} – <span lang={headerName.lang}>{headerName.text}</span> ({floor(data.room.floorId)})
           </p>
+          <FallbackTag lang={lang} level={fallbackLevel([headerName])} />
           <Link href={href(date, null)} className="inline-flex min-h-14 touch-manipulation items-center rounded-xl border border-ink px-4 font-semibold">
             {t.schedule.allRooms}
           </Link>
@@ -94,7 +99,7 @@ export function DaySchedule({ date, roomId, lang }: { date: string | null; roomI
                       {s.isDemo && <DemoTag lang={lang} />}
                     </div>
                     <p className="[overflow-wrap:anywhere]">
-                      {t.schedule.room} <strong>{s.room.code}</strong> – <span lang="de">{s.room.name}</span> · {floor(s.room.floorId)}
+                      {t.schedule.room} <strong>{s.room.code}</strong> – <span lang={roomName(s.room).lang}>{roomName(s.room).text}</span> · {floor(s.room.floorId)}
                     </p>
                     <p lang="de" className="text-ink-muted [overflow-wrap:anywhere]">
                       {s.cohort} · {s.instructor}

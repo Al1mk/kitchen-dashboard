@@ -19,6 +19,8 @@ function content(overrides: Partial<AnnouncementContent> = {}): AnnouncementCont
     pinned: false,
     startsAt: null,
     endsAt: null,
+    titleEn: "",
+    bodyEn: "",
     ...overrides,
   };
 }
@@ -116,7 +118,7 @@ describe("announcement repository", () => {
 
     expect(repo.listPublic().map((a) => a.title)).toEqual(["Bald vorbei"]);
     expect(Object.keys(repo.listPublic()[0]).sort()).toEqual(
-      ["body", "category", "endsAt", "id", "pinned", "publishedAt", "title"].sort(),
+      ["body", "bodyEn", "category", "endsAt", "id", "pinned", "publishedAt", "title", "titleEn"].sort(),
     );
 
     current = new Date("2026-10-24T10:30:00.000Z");

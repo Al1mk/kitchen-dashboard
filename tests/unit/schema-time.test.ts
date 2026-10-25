@@ -46,6 +46,8 @@ describe("parseAnnouncementInput", () => {
       pinned: true,
       startsAt: "2026-10-30T17:00:00.000Z",
       endsAt: "2026-10-30T21:00:00.000Z",
+      titleEn: "",
+      bodyEn: "",
     });
   });
 
