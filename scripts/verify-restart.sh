@@ -1,7 +1,8 @@
 #!/bin/bash
 # Restart persistence check (production build, temporary database): publish an
 # announcement, save an unpublished draft edit, stop the server, start it again and
-# assert that the public output, the admin state and the session are unchanged.
+# assert that the public output (announcements, rooms, schedule), the admin state
+# and the session are unchanged.
 # Every request must return the expected HTTP status; any failure or mismatch
 # exits non-zero. Needs a prior `npm run build`. Never touches data/.
 set -euo pipefail
@@ -62,6 +63,13 @@ ADMIN_Q='`status=${d.announcement.status} pending=${d.announcement.hasPendingCha
 ADMIN_EXPECTED="status=published pending=true draft=$DRAFT_TITLE"
 check "admin state before restart" "$ADMIN_EXPECTED" "$(req "admin before" 200 -b "$J" "$BASE/api/admin/announcements/$ID" | jget "$ADMIN_Q")"
 
+# M2: a room and a session in it (fixed future day, so the result is independent of today).
+ROOM_ID=$(req "create room" 201 -b "$J" "${H[@]}" -d '{"code":"NEUSTART-1","name":"Neustart-Raum","floorId":"EG","type":"seminar","description":"","reservable":false}' "$BASE/api/admin/rooms" | jget 'd.room.id')
+req "create session" 201 -b "$J" "${H[@]}" -d "{\"title\":\"Neustart-Termin\",\"instructor\":\"Test\",\"cohort\":\"Test\",\"term\":\"WS 2029/30\",\"roomId\":\"$ROOM_ID\",\"date\":\"2030-01-15\",\"startTime\":\"10:00\",\"endTime\":\"11:30\"}" "$BASE/api/admin/sessions" >/dev/null
+ROOMS_BEFORE=$(req "public rooms before" 200 "$BASE/api/public/rooms" | jget 'd.rooms')
+SCHEDULE_BEFORE=$(req "public schedule before" 200 "$BASE/api/public/schedule?date=2030-01-15" | jget 'd.sessions')
+check "public schedule before restart" '["10:00 Neustart-Termin NEUSTART-1"]' "$(echo "$SCHEDULE_BEFORE" | jget 'd.map(s=>`${new Date(s.startsAt).toLocaleTimeString("de-DE",{timeZone:"Europe/Berlin",hour:"2-digit",minute:"2-digit"})} ${s.title} ${s.room.code}`)')"
+
 stop; echo "server 1 stopped (port $PORT no longer answers)"
 start; echo "server 2 started (pid $SRV)"
 [ "$SRV" != "$PID1" ] || fail "server 2 has the same pid as server 1"
@@ -70,6 +78,8 @@ check "public output after restart (full JSON, unchanged)" "$PUBLIC_BEFORE" "$(r
 req "old session after restart (GET admin list)" 200 -b "$J" "$BASE/api/admin/announcements" >/dev/null
 CHECKS=$((CHECKS + 1)); echo "ok   old session after restart: HTTP 200"
 check "admin state after restart" "$ADMIN_EXPECTED" "$(req "admin after" 200 -b "$J" "$BASE/api/admin/announcements/$ID" | jget "$ADMIN_Q")"
+check "public rooms after restart (full JSON, unchanged)" "$ROOMS_BEFORE" "$(req "public rooms after" 200 "$BASE/api/public/rooms" | jget 'd.rooms')"
+check "public schedule after restart (full JSON, unchanged)" "$SCHEDULE_BEFORE" "$(req "public schedule after" 200 "$BASE/api/public/schedule?date=2030-01-15" | jget 'd.sessions')"
 
 stop
 echo "PASS: $CHECKS checks"

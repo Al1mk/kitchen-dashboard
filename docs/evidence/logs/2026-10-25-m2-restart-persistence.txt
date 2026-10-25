@@ -1,0 +1,16 @@
+$ scripts/verify-restart.sh
+# Restart persistence check 2026-10-25 12:55 CET (production build, temp DB)
+server 1 started (pid 16079)
+created: 77b56d82-3ae7-436a-906f-220d4cd87db1
+ok   public titles before restart: ["Neustart-Test"]
+ok   admin state before restart: status=published pending=true draft=Neustart-Test (unveröffentlichter Entwurf)
+ok   public schedule before restart: ["10:00 Neustart-Termin NEUSTART-1"]
+server 1 stopped (port 3200 no longer answers)
+server 2 started (pid 16147)
+ok   public output after restart (full JSON, unchanged): [{"id":"77b56d82-3ae7-436a-906f-220d4cd87db1","title":"Neustart-Test","body":"Bleibt nach Neustart erhalten.","category":"general","pinned":false,"publishedAt":"2026-10-25T11:55:14.904Z","endsAt":null}]
+ok   old session after restart: HTTP 200
+ok   admin state after restart: status=published pending=true draft=Neustart-Test (unveröffentlichter Entwurf)
+ok   public rooms after restart (full JSON, unchanged): [{"id":"1df2e3d5-a708-401a-84d0-c3d9368a9dbb","code":"NEUSTART-1","name":"Neustart-Raum","floorId":"EG","type":"seminar","description":"","reservable":false,"isDemo":false}]
+ok   public schedule after restart (full JSON, unchanged): [{"id":"cba9a600-aac8-44cb-ab7b-c20ec1448409","title":"Neustart-Termin","instructor":"Test","cohort":"Test","term":"WS 2029/30","startsAt":"2030-01-15T09:00:00.000Z","endsAt":"2030-01-15T10:30:00.000Z","status":"scheduled","room":{"id":"1df2e3d5-a708-401a-84d0-c3d9368a9dbb","code":"NEUSTART-1","name":"Neustart-Raum","floorId":"EG"},"isDemo":false}]
+PASS: 8 checks
+exit=0

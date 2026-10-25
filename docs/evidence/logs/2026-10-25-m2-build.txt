@@ -1,0 +1,63 @@
+# M2 production build 2026-10-25 12:55 CET
+$ npm run build
+
+> campus-board@0.1.0 build
+> next build
+
+▲ Next.js 16.4.3 (Turbopack)
+- Environments: .env.local
+✓ Running next.config.ts took 12ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 258ms
+  Running TypeScript ...
+  Finished TypeScript in 811ms ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/20) ...
+  Generating static pages using 11 workers (5/20) 
+  Generating static pages using 11 workers (10/20) 
+  Generating static pages using 11 workers (15/20) 
+✓ Generating static pages using 11 workers (20/20) in 153ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /admin
+├ ƒ /admin/announcements
+├ ƒ /admin/announcements/[id]
+├ ƒ /admin/announcements/[id]/preview
+├ ƒ /admin/announcements/new
+├ ƒ /admin/login
+├ ƒ /admin/rooms
+├ ƒ /admin/rooms/[id]
+├ ƒ /admin/rooms/new
+├ ƒ /admin/schedule
+├ ƒ /admin/schedule/[id]
+├ ƒ /admin/schedule/new
+├ ƒ /api/admin/announcements
+├ ƒ /api/admin/announcements/[id]
+├ ƒ /api/admin/announcements/[id]/publish
+├ ƒ /api/admin/announcements/[id]/withdraw
+├ ƒ /api/admin/rooms
+├ ƒ /api/admin/rooms/[id]
+├ ƒ /api/admin/rooms/[id]/archive
+├ ƒ /api/admin/rooms/[id]/restore
+├ ƒ /api/admin/sessions
+├ ƒ /api/admin/sessions/[id]
+├ ƒ /api/admin/sessions/[id]/cancel
+├ ƒ /api/admin/sessions/[id]/reinstate
+├ ƒ /api/auth/login
+├ ƒ /api/auth/logout
+├ ƒ /api/public/announcements
+├ ƒ /api/public/rooms
+├ ƒ /api/public/schedule
+├ ○ /display
+├ ○ /rooms
+└ ƒ /schedule
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+exit=0

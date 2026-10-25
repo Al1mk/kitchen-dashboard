@@ -13,6 +13,7 @@ import {
   type Category,
   type FieldErrors,
 } from "@/lib/announcements/schema.ts";
+import { newRequestId } from "@/lib/request-id.ts";
 import { berlinLocalToUtcIso, formatBerlinDateTime, utcIsoToBerlinLocal } from "@/lib/time/berlin.ts";
 import { BoardLayout } from "../display/BoardLayout.tsx";
 import { ConfirmDialog } from "./ConfirmDialog.tsx";
@@ -52,12 +53,6 @@ function sameValues(a: FormValues, b: FormValues) {
     a.startsAt === b.startsAt &&
     a.endsAt === b.endsAt
   );
-}
-
-// crypto.randomUUID only exists in secure contexts (HTTPS or localhost); the admin
-// may also be opened over plain HTTP via a LAN IP, where getRandomValues still works.
-function newRequestId(): string {
-  return Array.from(crypto.getRandomValues(new Uint8Array(16)), (b) => b.toString(16).padStart(2, "0")).join("");
 }
 
 const PUBLISHED_HINT ="Die Mitteilung erscheint innerhalb von etwa 5 Sekunden auf dem Bildschirm.";

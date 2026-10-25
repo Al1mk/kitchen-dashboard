@@ -40,3 +40,22 @@ it("seeds the database configured in .env.local, not the default path", () => {
     { id: "demo-willkommen", status: "published" },
   ]);
 });
+
+it("adds labelled demo rooms and one demo week of sessions, and is idempotent", () => {
+  const dbPath = join(dir, "demo.sqlite");
+  const env = { ...process.env, CAMPUS_BOARD_DB_PATH: dbPath };
+  execFileSync(process.execPath, [SCRIPT], { cwd: dir, env, encoding: "utf8" });
+  const second = execFileSync(process.execPath, [SCRIPT], { cwd: dir, env, encoding: "utf8" });
+  expect(second).toMatch(/Demo-Räume: 0 neu angelegt/);
+  expect(second).toMatch(/Demo-Termine \(Woche ab \d{4}-\d{2}-\d{2}\): 0 neu angelegt/);
+
+  const db = openDatabase(dbPath);
+  const rooms = db.prepare("SELECT code, is_demo FROM rooms").all() as { code: string; is_demo: number }[];
+  const sessions = db.prepare("SELECT title, status, is_demo FROM class_sessions").all() as { title: string; status: string; is_demo: number }[];
+  db.close();
+  expect(rooms).toHaveLength(6);
+  expect(rooms.every((r) => r.code.startsWith("DEMO-") && r.is_demo === 1)).toBe(true);
+  expect(sessions).toHaveLength(9);
+  expect(sessions.every((s) => s.title.endsWith("(Demo)") && s.is_demo === 1)).toBe(true);
+  expect(sessions.filter((s) => s.status === "cancelled")).toHaveLength(1);
+});

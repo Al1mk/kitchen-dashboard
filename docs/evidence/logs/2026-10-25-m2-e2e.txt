@@ -1,0 +1,34 @@
+# M2 Playwright E2E 2026-10-25 12:56 CET (production build, temp DB, Chromium, one machine)
+# [WebServer] build output omitted; see 2026-10-25-m2-build.txt
+$ npx playwright test --reporter=list
+
+Running 25 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/api-security.spec.ts:5:3 › anonymous direct requests › cannot read or mutate admin data (41ms)
+  ✓   2 [chromium] › tests/e2e/api-security.spec.ts:15:3 › anonymous direct requests › admin pages redirect to the login page (371ms)
+  ✓   3 [chromium] › tests/e2e/api-security.spec.ts:22:3 › anonymous direct requests › public API rejects writes (5ms)
+  ✓   4 [chromium] › tests/e2e/api-security.spec.ts:26:3 › anonymous direct requests › wrong credentials are rejected (30ms)
+  ✓   5 [chromium] › tests/e2e/api-security.spec.ts:36:3 › authenticated API › rejects cross-origin mutations even with a valid session (34ms)
+  ✓   6 [chromium] › tests/e2e/api-security.spec.ts:47:3 › authenticated API › rejects invalid input server-side with field errors (36ms)
+  ✓   7 [chromium] › tests/e2e/api-security.spec.ts:70:3 › authenticated API › public output never contains drafts, future items or admin fields (35ms)
+  ✓   8 [chromium] › tests/e2e/api-security.spec.ts:88:3 › authenticated API › a repeated create request id does not create a duplicate (30ms)
+  ✓   9 [chromium] › tests/e2e/api-security.spec.ts:96:3 › authenticated API › logout invalidates the session server-side (31ms)
+  ✓  10 [chromium] › tests/e2e/display-overflow.spec.ts:25:1 › long announcements are not clipped on the display or in the preview (489ms)
+  ✓  11 [chromium] › tests/e2e/display-states.spec.ts:8:1 › shows a loading state, then an empty state (103ms)
+  ✓  12 [chromium] › tests/e2e/display-states.spec.ts:21:1 › shows an error state on first-load failure and recovers (151ms)
+  ✓  13 [chromium] › tests/e2e/display-states.spec.ts:41:1 › keeps last data with a stale notice when the connection drops, then recovers automatically (10.2s)
+  ✓  14 [chromium] › tests/e2e/publish-flow.spec.ts:10:1 › draft → preview → publish → display → edit/republish → withdraw (25.4s)
+  ✓  15 [chromium] › tests/e2e/publish-flow.spec.ts:79:1 › validation errors are shown next to the fields (355ms)
+  ✓  16 [chromium] › tests/e2e/publish-flow.spec.ts:89:1 › leaving with unsaved changes asks for confirmation (342ms)
+  ✓  17 [chromium] › tests/e2e/publish-flow.spec.ts:101:1 › logout from the UI ends access to admin pages (317ms)
+  ✓  18 [chromium] › tests/e2e/rooms-schedule-api.spec.ts:29:1 › anonymous requests cannot read or change rooms and sessions (20ms)
+  ✓  19 [chromium] › tests/e2e/rooms-schedule-api.spec.ts:46:1 › admin API validates, prevents conflicts and protects references (56ms)
+  ✓  20 [chromium] › tests/e2e/rooms-schedule-api.spec.ts:93:1 › public room and schedule output contain only allowlisted fields (38ms)
+  ✓  21 [chromium] › tests/e2e/rooms-schedule-flow.spec.ts:13:1 › room and session administration appear on the public pages (25.6s)
+  ✓  22 [chromium] › tests/e2e/rooms-schedule-flow.spec.ts:110:1 › public schedule changes day without admin access (176ms)
+  ✓  23 [chromium] › tests/e2e/screenshots-m2.spec.ts:11:1 › capture M2 admin (1440×900) and public (1080×1920) layouts (777ms)
+  ✓  24 [chromium] › tests/e2e/screenshots.spec.ts:9:1 › capture admin (1440×900) and display (1080×1920) layouts (948ms)
+  ✓  25 [chromium] › tests/e2e/insecure-origin.spec.ts:16:1 › editor creates a draft in a non-secure context (HTTP, non-loopback host) (329ms)
+
+  25 passed (1.2m)
+exit=0

@@ -85,3 +85,44 @@ Findings R-001…R-004 from the review note `HCI-10 M1 review` (Obsidian vault).
 | R-004 | `verify-restart.sh` printed values but did not assert them | `set -euo pipefail`, HTTP status checks, exact before/after comparison, port-in-use and stop checks, cleanup trap, no secrets in messages | Real run: `PASS: 5 checks`. Three negative variants (deleted DB, wrong password, port in use) each exit 1: `docs/evidence/logs/2026-10-25-restart-negative-checks.txt`. |
 
 Limits: R-001 makes all content reachable by scrolling, but a public screen without touch input has no one to scroll it; how to present more content than fits (rotation/paging, length limits) is a design question for later, not solved here. R-002 is verified in an isolated browser on one machine, not on a real LAN with a second device.
+
+## M2: rooms and class sessions (2026-10-25)
+
+Scope set by Ali: room management, class-session management, minimal public room directory and daily schedule, labelled demo data, contracts compatible with the teammates' future map. Not in scope: booking, newcomer pages, V2 redesign, deployment, Figma, rebuilding the map.
+
+### File map
+
+| File | Responsibility |
+| --- | --- |
+| `src/lib/db/migrations.ts` | Schema v2: `rooms`, `class_sessions` (FK `ON DELETE RESTRICT`, indexes) |
+| `src/lib/time/berlin.ts` | + calendar dates, Berlin day bounds (23/24/25 h days), German date formats |
+| `src/lib/validation.ts` | zod issues → German field errors (shared) |
+| `src/lib/rooms/schema.ts` / `repository.ts` | Room contract, validation, CRUD, archive guard, public projection |
+| `src/lib/sessions/schema.ts` / `repository.ts` | Session contract, Berlin date+time input → UTC, term helpers, overlap check, cancel/reinstate, public day query |
+| `src/lib/http/schedule-errors.ts` | German error responses for room/session routes |
+| `src/app/api/admin/rooms/**`, `src/app/api/admin/sessions/**` | Admin write API |
+| `src/app/api/public/rooms`, `src/app/api/public/schedule` | Public read API |
+| `src/app/admin/(protected)/rooms/**`, `.../schedule/**` | Admin pages |
+| `src/components/admin/RoomForm.tsx`, `SessionForm.tsx`, `FormParts.tsx`, `adminFetch.ts`, `useUnsavedChangesGuard.ts` | Admin forms and shared form helpers |
+| `src/components/public/**`, `src/app/rooms`, `src/app/schedule` | Public pages with polling (`usePolledJson`, same behaviour as ADR-011) |
+| `src/lib/request-id.ts` | Request id for idempotent creates (moved out of the announcement editor, behaviour unchanged) |
+| `scripts/seed-demo.ts` | + 6 `DEMO-` rooms and one demo week of sessions |
+
+### Checklist
+
+- [x] Unit tests written first and seen failing (missing modules/tables): rooms, sessions, Berlin days/terms, migration.
+- [x] Additive migration; an M1 database upgrades in place (unit test + a copy of the real `data/` database; original untouched).
+- [x] Rooms: stable id, unique code (case-insensitive), floor, type, description, reservable; edit keeps session references; archive blocked while sessions are planned; restore.
+- [x] Sessions: server-side validation, Berlin time incl. DST, same-room overlap rejected, archived/unknown room rejected, cancel/reinstate (reinstate re-checks room).
+- [x] Public directory and daily schedule read the same database; changes appear by polling without reload (E2E, two contexts).
+- [x] Allowlisted public fields; anonymous and cross-origin writes rejected (E2E).
+- [x] Restart check extended to rooms and schedule.
+- [x] Labelled demo data (opt-in seed).
+- [ ] Contract agreed with Arian/Parsa (only proposed; see `docs/contracts.md`, "Open / proposed").
+
+### Deviations and notes
+
+- No draft/publish for rooms and sessions (decision recorded in the vault, ADR-013): saves are public at once and every form says so.
+- The admin overview now describes the panel's real purpose (rooms, schedule, announcements); announcement behaviour is unchanged.
+- One E2E failure during development was a test selector (Next's route announcer also has `role="alert"`), not an app bug.
+- Public pages use rem-based sizes (≥ 56 px targets), not the container-scaled layout of `/display`; on a 1080×1920 screen they use the middle 768 px. Kiosk sizing is a V2/display question.

@@ -65,6 +65,36 @@ export function utcIsoToBerlinLocal(iso: string): string {
   return `${p.year}-${pad(p.month)}-${pad(p.day)}T${pad(p.hour)}:${pad(p.minute)}`;
 }
 
+const DATE_PATTERN = /^(\d{4})-(\d{2})-(\d{2})$/;
+
+/** True for an existing calendar date "YYYY-MM-DD" (rejects e.g. 2026-02-30). */
+export function isCalendarDate(value: string): boolean {
+  const match = DATE_PATTERN.exec(value);
+  if (!match) return false;
+  const [year, month, day] = match.slice(1).map(Number);
+  const date = new Date(Date.UTC(year, month - 1, day));
+  return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day;
+}
+
+/** Calendar arithmetic on "YYYY-MM-DD" values (no time zone involved). */
+export function addDays(date: string, days: number): string {
+  const [year, month, day] = date.split("-").map(Number);
+  return new Date(Date.UTC(year, month - 1, day + days)).toISOString().slice(0, 10);
+}
+
+/** The Berlin calendar date ("YYYY-MM-DD") of an instant. */
+export function berlinDateOf(date: Date): string {
+  return utcIsoToBerlinLocal(date.toISOString()).slice(0, 10);
+}
+
+/**
+ * UTC bounds [start, end) of a Berlin calendar day. Midnight always exists in
+ * Berlin (DST switches at 02:00/03:00), so days are 23, 24 or 25 hours long.
+ */
+export function berlinDayRange(date: string): { start: string; end: string } {
+  return { start: berlinLocalToUtcIso(`${date}T00:00`)!, end: berlinLocalToUtcIso(`${addDays(date, 1)}T00:00`)! };
+}
+
 const dateTimeFormatter = new Intl.DateTimeFormat("de-DE", {
   timeZone: TIME_ZONE,
   dateStyle: "medium",
@@ -97,4 +127,29 @@ export function formatBerlinTime(date: Date): string {
 /** e.g. "Samstag, 24. Oktober" */
 export function formatBerlinLongDate(date: Date): string {
   return longDateFormatter.format(date);
+}
+
+const calendarDateFormatter = new Intl.DateTimeFormat("de-DE", {
+  timeZone: "UTC",
+  weekday: "long",
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
+
+const shortCalendarDateFormatter = new Intl.DateTimeFormat("de-DE", {
+  timeZone: "UTC",
+  weekday: "short",
+  day: "2-digit",
+  month: "2-digit",
+});
+
+/** "2026-11-02" → "Montag, 2. November 2026" (a calendar date, not an instant). */
+export function formatCalendarDate(date: string): string {
+  return calendarDateFormatter.format(new Date(`${date}T12:00:00Z`));
+}
+
+/** "2026-11-02" → "Mo., 02.11." */
+export function formatShortCalendarDate(date: string): string {
+  return shortCalendarDateFormatter.format(new Date(`${date}T12:00:00Z`));
 }
