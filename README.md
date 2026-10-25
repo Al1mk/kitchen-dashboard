@@ -65,7 +65,7 @@ Open the **admin on the host itself via `localhost`**: in production the session
 npm run typecheck              # next typegen + tsc
 npm run lint
 npm test                       # Vitest: announcements, rooms, sessions, Berlin days/DST, migration, auth, seed, public DE/EN text, English content (88 tests)
-npm run test:e2e               # Playwright: builds, starts on :3100 with a temp DB and random password (31 tests)
+npm run test:e2e               # Playwright: builds, starts on :3100 with a temp DB and random password (32 tests)
 scripts/verify-restart.sh      # publishes (DE + EN), restarts the production server, asserts data + session; exits 1 on failure (needs a prior build)
 ```
 

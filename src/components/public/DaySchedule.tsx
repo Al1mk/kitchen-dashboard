@@ -16,8 +16,10 @@ const time = (iso: string) => formatBerlinTime(new Date(iso));
 export function DaySchedule({ date, roomId, lang }: { date: string | null; roomId: string | null; lang: Lang }) {
   const t = PUBLIC_TEXT[lang];
   const floor = (id: string) => t.floors[id as keyof typeof t.floors] ?? id;
-  // Room names follow the language (German if no English name); the room
-  // header marks the fallback, single session rows do not repeat it.
+  // Room names follow the language (German if no English name). The fallback
+  // marker sits beside the room name: in the header when one room is selected,
+  // otherwise in each session row. Course title, lecturer and study group are
+  // never translated, so they are never marked.
   const roomName = (room: { name: string; nameEn: string | null }) => localize(room.name, room.nameEn, lang);
   const params = new URLSearchParams();
   if (date) params.set("date", date);
@@ -99,7 +101,14 @@ export function DaySchedule({ date, roomId, lang }: { date: string | null; roomI
                       {s.isDemo && <DemoTag lang={lang} />}
                     </div>
                     <p className="[overflow-wrap:anywhere]">
-                      {t.schedule.room} <strong>{s.room.code}</strong> – <span lang={roomName(s.room).lang}>{roomName(s.room).text}</span> · {floor(s.room.floorId)}
+                      {t.schedule.room} <strong>{s.room.code}</strong> – <span lang={roomName(s.room).lang}>{roomName(s.room).text}</span>
+                      {!data.room && (
+                        <>
+                          {" "}
+                          <FallbackTag lang={lang} level={fallbackLevel([roomName(s.room)])} />
+                        </>
+                      )}{" "}
+                      · {floor(s.room.floorId)}
                     </p>
                     <p lang="de" className="text-ink-muted [overflow-wrap:anywhere]">
                       {s.cohort} · {s.instructor}

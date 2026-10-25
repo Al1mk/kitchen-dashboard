@@ -1,0 +1,43 @@
+# 2026-10-25 B-001 — regression test against the UNFIXED code (expected to fail)
+
+Running 1 test using 1 worker
+
+  ✘  1 [chromium] › tests/e2e/schedule-room-fallback.spec.ts:11:1 › unfiltered English schedule marks untranslated room names in each row (5.4s)
+
+
+  1) [chromium] › tests/e2e/schedule-room-fallback.spec.ts:11:1 › unfiltered English schedule marks untranslated room names in each row 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('article').filter({ has: getByRole('heading', { name: 'Grundlagen der Programmierung' }) }).locator('p').filter({ hasText: 'B1-MVOCHSA2-DE' }).getByText('Only in German', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('article').filter({ has: getByRole('heading', { name: 'Grundlagen der Programmierung' }) }).locator('p').filter({ hasText: 'B1-MVOCHSA2-DE' }).getByText('Only in German', { exact: true }) with timeout 5000ms
+      - waiting for getByRole('article').filter({ has: getByRole('heading', { name: 'Grundlagen der Programmierung' }) }).locator('p').filter({ hasText: 'B1-MVOCHSA2-DE' }).getByText('Only in German', { exact: true })
+
+
+      41 |     // Untranslated room: German name with the marker beside it, in the room line.
+      42 |     await expect(roomLine("Grundlagen der Programmierung", german.code)).toContainText("Seminarraum Deutsch");
+    > 43 |     await expect(roomLine("Grundlagen der Programmierung", german.code).getByText("Only in German", { exact: true })).toBeVisible();
+         |                                                                                                                       ^
+      44 |     await expect(row("Grundlagen der Programmierung").getByText(/in German/)).toHaveCount(1);
+      45 |     // Official course title, lecturer and study group stay as entered, unmarked.
+      46 |     await expect(p.getByRole("heading", { name: "Grundlagen der Programmierung" })).toHaveAttribute("lang", "de");
+        at expectEnglishRows (/Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/campus-board/tests/e2e/schedule-room-fallback.spec.ts:43:119)
+        at /Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/campus-board/tests/e2e/schedule-room-fallback.spec.ts:52:3
+
+    Error Context: test-results/schedule-room-fallback-unf-62ad5-ated-room-names-in-each-row-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/schedule-room-fallback-unf-62ad5-ated-room-names-in-each-row-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/schedule-room-fallback-unf-62ad5-ated-room-names-in-each-row-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/e2e/schedule-room-fallback.spec.ts:11:1 › unfiltered English schedule marks untranslated room names in each row 
