@@ -179,13 +179,13 @@ What the tests do and do not prove:
 
 | Step | What was done | Commit |
 | --- | --- | --- |
-| Setup | Next.js app scaffolded, stack chosen | `d2b631e` |
-| M1 | Announcements: login, draft, portrait preview, publish, edit/republish, withdraw, public board with live refresh | `f7537b3`, `52f2775` |
-| M1 review | Independent review findings R-001 to R-004 fixed (long cards were clipped, editor failed on plain-HTTP IP, seed used the wrong database, restart check without real assertions) | `a76658f` |
-| M2 | Rooms (stable id, archive instead of delete) and class sessions (Berlin time, no double booking, cancel/reinstate); public room directory and daily schedule | `8558a7e` |
-| Navigation + DE/EN | Public start page, one navigation on all public pages, German/English interface | `8a995ce` |
-| English content | Optional English fields for announcements and rooms; marked German fallback; preview in both languages | `076f8c4` |
-| Fix B-001 | Untranslated room names in the English schedule are marked in every row | `2accf90` |
+| Setup | Next.js app scaffolded, stack chosen | `64d258a` |
+| M1 | Announcements: login, draft, portrait preview, publish, edit/republish, withdraw, public board with live refresh | `73ac4eb`, `cff4509` |
+| M1 review | Independent review findings R-001 to R-004 fixed (long cards were clipped, editor failed on plain-HTTP IP, seed used the wrong database, restart check without real assertions) | `c79f712` |
+| M2 | Rooms (stable id, archive instead of delete) and class sessions (Berlin time, no double booking, cancel/reinstate); public room directory and daily schedule | `9c5dfcd` |
+| Navigation + DE/EN | Public start page, one navigation on all public pages, German/English interface | `076c7d7` |
+| English content | Optional English fields for announcements and rooms; marked German fallback; preview in both languages | `3dff61a` |
+| Fix B-001 | Untranslated room names in the English schedule are marked in every row | `ad79b6a` |
 
 **How AI was used:** the code, tests and documentation were written with **Claude Code** (Anthropic) at Ali's direction and reviewed by Ali step by step. Independent reviews of the work were done with **Codex** (OpenAI). All test results above are automated; no human usability test has been done yet.
 
