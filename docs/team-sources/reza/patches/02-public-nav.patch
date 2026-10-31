@@ -1,0 +1,10 @@
+--- a/src/components/public/PublicNav.tsx
++++ b/src/components/public/PublicNav.tsx
+@@
+ { key: "rooms", path: "/rooms" },
+ 
+ { key: "schedule", path: "/schedule" },
++
++{ key: "newcomers", path: "/newcomers" },
+ 
+ ];
