@@ -33,17 +33,30 @@ beforeEach(() => {
 });
 afterEach(() => { db.close(); rmSync(dir, { recursive: true, force: true }); });
 
-describe("Demo booking allowlist (Parsa selection)", () => {
-  it("rejects a reservable demo room outside the 21-code allowlist at server level", () => {
+// Integration change (T10, docs/contracts.md C6): the joint package rejected
+// reservable rooms outside its 21-code list. Bookability is now the
+// admin-controlled `reservable` flag of an active room; the code is not a
+// permission key (audit finding A-05). This test was adapted accordingly.
+describe("Bookability follows the admin flag, not the room code", () => {
+  it("rejects a room that is not marked reservable, whatever its code", () => {
     const created = createRoomRepository(db, clock).create({
-      code: "DEMO-R999", name: "Not on demo list", floorId: "1OG", type: "seminar",
-      description: "", reservable: true, nameEn: "", descriptionEn: "",
+      code: "K1-120", name: "Not reservable", floorId: "1OG", type: "seminar",
+      description: "", reservable: false, nameEn: "", descriptionEn: "",
     }, { isDemo: true });
     expect(created.ok).toBe(true);
     if (!created.ok) return;
     const repo = createBookingRepository(db, clock);
     expect(repo.availability(created.room.id, "2026-11-03")).toMatchObject({ ok: false, reason: "room_not_reservable" });
     expect(repo.create(input({ roomId: created.room.id }))).toMatchObject({ ok: false, reason: "room_not_reservable" });
+  });
+
+  it("accepts a reservable room outside the original 21 demo codes", () => {
+    const created = createRoomRepository(db, clock).create({
+      code: "DEMO-R999", name: "Katja made it reservable", floorId: "1OG", type: "seminar",
+      description: "", reservable: true, nameEn: "", descriptionEn: "",
+    }, { isDemo: true });
+    if (!created.ok) throw new Error("setup failed");
+    expect(createBookingRepository(db, clock).create(input({ roomId: created.room.id })).ok).toBe(true);
   });
 });
 
@@ -87,8 +100,9 @@ describe("Parsa booking – integration tests", () => {
     expect(sessions.create(sampleClass).ok).toBe(true);
     expect(repo.create(input({ startTime: "12:30", endTime: "13:30" }))).toMatchObject({ ok: false, reason: "time_conflict" });
     expect(repo.create(input()).ok).toBe(true);
+    // Adapted in T10: a booking block is reported distinctly from a class clash.
     expect(sessions.create({ ...sampleClass, startsAt: "2026-11-03T12:30:00.000Z", endsAt: "2026-11-03T13:30:00.000Z" }))
-      .toMatchObject({ ok: false, reason: "conflict" });
+      .toMatchObject({ ok: false, reason: "booking_conflict", conflict: { kind: "booking" } });
   });
 
   it("cancels with the right token; refuses wrong token; frees the slot", () => {

@@ -1,0 +1,54 @@
+
+ RUN  v5.0.5 /Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/campus-board
+
+ ❯ tests/unit/booking-concurrency.test.ts (3 tests | 2 failed) 566ms
+   ❯ concurrent writers on separate SQLite connections (3)
+     × lets exactly one of several simultaneous overlapping bookings win, every round 338ms
+     × never commits a class and a booking for the same time, whichever starts first 175ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/booking-concurrency.test.ts > concurrent writers on separate SQLite connections > lets exactly one of several simultaneous overlapping bookings win, every round
+AssertionError: expected [ 'accepted', 'accepted', 'accepted' ] to have a length of 1 but got 3
+
+- Expected
++ Received
+
+- 1
++ 3
+
+ ❯ tests/unit/booking-concurrency.test.ts:92:53
+     90|     }
+     91|     for (const round of outcomes) {
+     92|       expect(round.filter((o) => o === "accepted")).toHaveLength(1);
+       |                                                     ^
+     93|       // Losers see the committed winner (or a retryable lock timeout)…
+     94|       for (const o of round.filter((x) => x !== "accepted")) expect(["…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/booking-concurrency.test.ts > concurrent writers on separate SQLite connections > never commits a class and a booking for the same time, whichever starts first
+AssertionError: expected [ 'accepted', 'accepted' ] to have a length of 1 but got 2
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ tests/unit/booking-concurrency.test.ts:107:54
+    105|       const utc = `${String(h - 1).padStart(2, "0")}`;
+    106|       const result = await race([bookingJob(`${berlin}:00`, `${berlin}…
+    107|       expect(result.filter((o) => o === "accepted")).toHaveLength(1);
+       |                                                      ^
+    108|       for (const o of result.filter((x) => x !== "accepted")) expect([…
+    109|       seen.add(result.join("|"));
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  13:55:39
+   Duration  664ms (tests 92%, import 6%, transform 1%)
+

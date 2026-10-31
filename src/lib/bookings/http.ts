@@ -1,6 +1,10 @@
 import { jsonError } from "../auth/request.ts";
+import { busyResponse } from "../http/busy.ts";
+import type { ValidationDetail } from "./policy.ts";
 import type { BookingFailure } from "./repository.ts";
 
+// German messages for logs/admin; public clients translate the `error` and
+// `detail` codes instead of showing `message` (docs/contracts.md C5).
 const messages: Record<BookingFailure, string> = {
   validation: "Bitte Datum, Raum und Uhrzeit prüfen.",
   not_found: "Reservierung nicht gefunden oder Stornierungscode ungültig.",
@@ -9,15 +13,8 @@ const messages: Record<BookingFailure, string> = {
   request_id_reused: "Diese Anfrage-ID wurde bereits für eine andere Reservierung verwendet.",
   booking_ended: "Die Reservierung ist bereits beendet.",
 };
-export function bookingError(reason: BookingFailure, detail?: string) {
+export function bookingError(reason: BookingFailure, extra: { detail?: ValidationDetail; message?: string } = {}) {
   const status = reason === "validation" ? 400 : reason === "not_found" ? 404 : 409;
-  return jsonError(status, reason, detail ?? messages[reason]);
+  return jsonError(status, reason, extra.message ?? messages[reason], extra.detail ? { detail: extra.detail } : {});
 }
-export function bookingUnavailable(error: unknown): Response {
-  // Never print body, tokens or SQL internals to a public response.
-  if (error && typeof error === "object" && "code" in error &&
-      typeof error.code === "string" && /^(SQLITE_BUSY|SQLITE_LOCKED)/.test(error.code)) {
-    return jsonError(503, "temporarily_unavailable", "System beschäftigt. Bitte erneut versuchen.");
-  }
-  throw error;
-}
+export const bookingUnavailable = busyResponse;

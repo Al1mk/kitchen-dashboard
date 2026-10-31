@@ -1,6 +1,7 @@
 import type { NextRequest } from "next/server";
 import { jsonError, readJson, requireAdminApi } from "@/lib/auth/request.ts";
 import { noStore, sessionError } from "@/lib/http/schedule-errors.ts";
+import { busyResponse } from "@/lib/http/busy.ts";
 import { services } from "@/lib/server.ts";
 import { parseSessionInput } from "@/lib/sessions/schema.ts";
 import { addDays, berlinDateOf, berlinDayRange, isCalendarDate } from "@/lib/time/berlin.ts";
@@ -36,7 +37,12 @@ export async function POST(request: NextRequest) {
   }
   const requestId =
     typeof body?.requestId === "string" && body.requestId.length > 0 && body.requestId.length <= 100 ? body.requestId : undefined;
-  const result = services().classSessions.create(parsed.content, requestId);
+  let result;
+  try {
+    result = services().classSessions.create(parsed.content, requestId);
+  } catch (error) {
+    return busyResponse(error); // retryable 503 on lock contention
+  }
   if (!result.ok) return sessionError(result);
   return Response.json({ session: result.session }, { status: 201, headers: noStore });
 }

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { publicHref, type Lang } from "@/lib/i18n/public.ts";
-import { hhmmToMinutes, isDemoBookableRoom, minutesToHhmm } from "@/lib/bookings/policy.ts";
+import { hhmmToMinutes, minutesToHhmm } from "@/lib/bookings/policy.ts";
 
 type Room = { id: string; code: string; name: string; nameEn: string | null; reservable: boolean; isDemo: boolean };
 type Span = { startTime: string; endTime: string };
@@ -76,7 +76,7 @@ export function BookingFlow({ lang, initialRoomId, initialDate, minDate, maxDate
     fetch("/api/public/rooms", { cache: "no-store", signal: controller.signal })
       .then((res) => { if (!res.ok) throw new Error(); return res.json(); })
       .then((payload: { rooms: Room[] }) => {
-        const next = payload.rooms.filter((r) => r.reservable && isDemoBookableRoom(r.code));
+        const next = payload.rooms.filter((r) => r.reservable);
         setRooms(next);
         // The map passes the human-readable code, while the booking API uses stable room UUIDs.
         // Resolve after the public room list loads; never guess a database ID in the map.

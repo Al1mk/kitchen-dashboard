@@ -1,7 +1,8 @@
 import { createHash, randomUUID, timingSafeEqual } from "node:crypto";
 import type { Db } from "../db/database.ts";
 import { berlinLocalToUtcIso, utcIsoToBerlinLocal } from "../time/berlin.ts";
-import { BOOKING_POLICY, hhmmToMinutes, isBookingDateInRange, isDemoBookableRoom, minutesToHhmm, validatePeriod, type BookingInput } from "./policy.ts";
+import { findOccupant } from "../occupancy/conflicts.ts";
+import { BOOKING_POLICY, hhmmToMinutes, isBookingDateInRange, minutesToHhmm, validatePeriod, type BookingInput, type ValidationDetail } from "./policy.ts";
 
 type BookingStatus = "confirmed" | "cancelled";
 type BookingRow = {
@@ -23,7 +24,7 @@ export type BookingAdmin = BookingPublic & { createdAt: string; cancelledAt: str
 export type BusySpan = { startTime: string; endTime: string; kind: "class" | "booking" };
 export type FreeSpan = { startTime: string; endTime: string };
 export type BookingFailure = "validation" | "not_found" | "room_not_reservable" | "time_conflict" | "request_id_reused" | "booking_ended";
-export type BookResult = { ok: true; booking: BookingPublic; replayed: boolean } | { ok: false; reason: BookingFailure; message?: string };
+export type BookResult = { ok: true; booking: BookingPublic; replayed: boolean } | { ok: false; reason: BookingFailure; detail?: ValidationDetail; message?: string };
 export type CancelResult = { ok: true; booking: BookingPublic } | { ok: false; reason: "not_found" | "booking_ended" };
 
 const hashToken = (token: string): string => createHash("sha256").update(token, "utf8").digest("hex");
@@ -35,22 +36,13 @@ function publicBooking(row: BookingRow): BookingPublic {
   return { id: row.id, roomId: row.room_id, startsAt: row.starts_at, endsAt: row.ends_at, status: row.status, isDemo: true };
 }
 
-/** Shared occupancy check; must also be called from Ali's class-session mutations. */
-export function bookingConflict(db: Db, roomId: string, startsAt: string, endsAt: string) {
-  return db.prepare<[string, string, string], { id: string; startsAt: string; endsAt: string }>(
-    `SELECT id, starts_at AS startsAt, ends_at AS endsAt FROM room_bookings
-     WHERE room_id = ? AND status = 'confirmed' AND starts_at < ? AND ends_at > ?
-     ORDER BY starts_at LIMIT 1`,
-  ).get(roomId, endsAt, startsAt) ?? null;
-}
+/** Bookable now = active and admin-flagged reservable. The room code plays no role. */
+const isBookable = (room: RoomRow | undefined): room is RoomRow => !!room && !room.archived_at && room.reservable === 1;
 
 export function createBookingRepository(db: Db, clock: () => Date = () => new Date()) {
   const readRoom = db.prepare<[string], RoomRow>("SELECT id, code, name, floor_id, is_demo, reservable, archived_at FROM rooms WHERE id = ?");
   const readRequest = db.prepare<[string], BookingRow>("SELECT * FROM room_bookings WHERE create_request_id = ?");
   const readBooking = db.prepare<[string], BookingRow>("SELECT * FROM room_bookings WHERE id = ?");
-  const readClassCollision = db.prepare<[string, string, string], { id: string }>(
-    "SELECT id FROM class_sessions WHERE room_id = ? AND status = 'scheduled' AND starts_at < ? AND ends_at > ? LIMIT 1",
-  );
   const readBookings = db.prepare<[string, string, string], BookingRow>(
     "SELECT * FROM room_bookings WHERE room_id = ? AND status = 'confirmed' AND starts_at < ? AND ends_at > ? ORDER BY starts_at",
   );
@@ -77,13 +69,10 @@ export function createBookingRepository(db: Db, clock: () => Date = () => new Da
         }
         return { ok: false, reason: "request_id_reused" };
       }
-      if (!checked.ok) return { ok: false, reason: "validation", message: checked.message };
+      if (!checked.ok) return { ok: false, reason: "validation", detail: checked.detail, message: checked.message };
       const { startsAt, endsAt } = checked.period;
-      const room = readRoom.get(input.roomId);
-      if (!room || room.archived_at || room.reservable !== 1 || !isDemoBookableRoom(room.code)) return { ok: false, reason: "room_not_reservable" };
-      if (readClassCollision.get(input.roomId, endsAt, startsAt) || bookingConflict(db, input.roomId, startsAt, endsAt)) {
-        return { ok: false, reason: "time_conflict" };
-      }
+      if (!isBookable(readRoom.get(input.roomId))) return { ok: false, reason: "room_not_reservable" };
+      if (findOccupant(db, input.roomId, { startsAt, endsAt })) return { ok: false, reason: "time_conflict" };
       const id = randomUUID();
       const iso = now.toISOString();
       db.prepare(
@@ -132,7 +121,7 @@ export function createBookingRepository(db: Db, clock: () => Date = () => new Da
     const now = clock();
     if (!isBookingDateInRange(date, now)) return { ok: false as const, reason: "validation" as const };
     const room = readRoom.get(roomId);
-    if (!room || room.archived_at || room.reservable !== 1 || !isDemoBookableRoom(room.code)) return { ok: false as const, reason: "room_not_reservable" as const };
+    if (!isBookable(room)) return { ok: false as const, reason: "room_not_reservable" as const };
     const startsAt = berlinLocalToUtcIso(`${date}T${BOOKING_POLICY.opens}`)!;
     const endsAt = berlinLocalToUtcIso(`${date}T${BOOKING_POLICY.closes}`)!;
     const windowStart = Date.parse(startsAt);
@@ -153,14 +142,22 @@ export function createBookingRepository(db: Db, clock: () => Date = () => new Da
     const currentMin = earliestBerlin.startsWith(date) ? hhmmToMinutes(earliestBerlin.slice(11))! : closing;
     const fractionalMinute = earliestInstant % 60_000 !== 0 ? 1 : 0;
     let cursor = Math.max(opening, Math.ceil((currentMin + fractionalMinute) / BOOKING_POLICY.minuteStep) * BOOKING_POLICY.minuteStep);
+    // Free spans start and end on the booking grid; gaps shorter than one
+    // minimum booking are not advertised (a class ending 12:07 frees 12:15).
+    const step = BOOKING_POLICY.minuteStep;
     const free: FreeSpan[] = [];
+    const addFree = (from: number, to: number) => {
+      const s = Math.ceil(from / step) * step;
+      const e = Math.floor(to / step) * step;
+      if (e - s >= BOOKING_POLICY.minMinutes) free.push({ startTime: minutesToHhmm(s), endTime: minutesToHhmm(e) });
+    };
     for (const b of busy) {
       const bStart = hhmmToMinutes(b.startTime)!;
       const bEnd = hhmmToMinutes(b.endTime)!;
-      if (bStart > cursor) free.push({ startTime: minutesToHhmm(cursor), endTime: minutesToHhmm(bStart) });
+      if (bStart > cursor) addFree(cursor, bStart);
       cursor = Math.max(cursor, bEnd);
     }
-    if (cursor < closing) free.push({ startTime: minutesToHhmm(cursor), endTime: minutesToHhmm(closing) });
+    if (cursor < closing) addFree(cursor, closing);
     return { ok: true as const, room: { id: room.id, code: room.code, name: room.name, floorId: room.floor_id, isDemo: room.is_demo === 1 }, busy, free };
   }
 

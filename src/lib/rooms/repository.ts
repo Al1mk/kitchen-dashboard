@@ -1,5 +1,6 @@
 import { randomUUID } from "node:crypto";
 import type { Db } from "../db/database.ts";
+import { upcomingOccupancy } from "../occupancy/conflicts.ts";
 import { compareRoomCodes, FLOOR_IDS, type FloorId, type PublicRoom, type RoomContent, type RoomType } from "./schema.ts";
 
 /** Admin view of one room. */
@@ -33,7 +34,7 @@ export type RoomWriteResult = { ok: true; room: AdminRoom } | { ok: false; reaso
 export type ArchiveResult =
   | { ok: true; room: AdminRoom }
   | { ok: false; reason: "not_found" | "already_archived" }
-  | { ok: false; reason: "in_use"; upcomingSessions: number };
+  | { ok: false; reason: "in_use"; upcomingSessions: number; upcomingBookings: number };
 export type RestoreResult = { ok: true; room: AdminRoom } | { ok: false; reason: "not_found" | "not_archived" };
 
 const floorOrder = (id: string) => FLOOR_IDS.indexOf(id as FloorId);
@@ -47,12 +48,6 @@ export function createRoomRepository(db: Db, clock: () => Date = () => new Date(
   const selectAll = db.prepare<[], Row>("SELECT * FROM rooms");
   const selectActive = db.prepare<[], Row>("SELECT * FROM rooms WHERE archived_at IS NULL");
   const selectCodeOwner = db.prepare<[string], { id: string }>("SELECT id FROM rooms WHERE code = ?");
-  const countUpcoming = db.prepare<[string, string], { n: number }>(
-    "SELECT COUNT(*) AS n FROM class_sessions WHERE room_id = ? AND status = 'scheduled' AND ends_at > ?",
-  );
-  const countUpcomingBookings = db.prepare<[string, string], { n: number }>(
-    "SELECT COUNT(*) AS n FROM room_bookings WHERE room_id = ? AND status = 'confirmed' AND ends_at > ?",
-  );
 
   function toAdmin(row: Row): AdminRoom {
     return {
@@ -69,7 +64,7 @@ export function createRoomRepository(db: Db, clock: () => Date = () => new Date(
       archivedAt: row.archived_at,
       createdAt: row.created_at,
       updatedAt: row.updated_at,
-      upcomingSessions: countUpcoming.get(row.id, clock().toISOString())!.n,
+      upcomingSessions: upcomingOccupancy(db, row.id, clock().toISOString()).sessions,
     };
   }
 
@@ -114,7 +109,7 @@ export function createRoomRepository(db: Db, clock: () => Date = () => new Date(
           now,
         );
         return { ok: true, room: get(id)! };
-      })();
+      }).immediate();
     },
 
     /** Changes take effect publicly at once. Sessions keep pointing to the same room id. */
@@ -122,7 +117,7 @@ export function createRoomRepository(db: Db, clock: () => Date = () => new Date(
       return db.transaction((): RoomWriteResult => {
         const current = selectOne.get(id);
         if (!current) return { ok: false, reason: "not_found" };
-        if (current.reservable === 1 && !content.reservable && countUpcomingBookings.get(id, clock().toISOString())!.n > 0) {
+        if (current.reservable === 1 && !content.reservable && upcomingOccupancy(db, id, clock().toISOString()).bookings > 0) {
           return { ok: false, reason: "booking_in_use" };
         }
         if (codeTaken(content.code, id)) return { ok: false, reason: "duplicate_code" };
@@ -142,7 +137,7 @@ export function createRoomRepository(db: Db, clock: () => Date = () => new Date(
           id,
         );
         return { ok: true, room: get(id)! };
-      })();
+      }).immediate();
     },
 
     /**
@@ -156,19 +151,23 @@ export function createRoomRepository(db: Db, clock: () => Date = () => new Date(
         if (!row) return { ok: false, reason: "not_found" };
         if (row.archived_at) return { ok: false, reason: "already_archived" };
         const now = clock().toISOString();
-        const upcoming = countUpcoming.get(id, now)!.n + countUpcomingBookings.get(id, now)!.n;
-        if (upcoming > 0) return { ok: false, reason: "in_use", upcomingSessions: upcoming };
+        const upcoming = upcomingOccupancy(db, id, now);
+        if (upcoming.sessions + upcoming.bookings > 0) {
+          return { ok: false, reason: "in_use", upcomingSessions: upcoming.sessions, upcomingBookings: upcoming.bookings };
+        }
         db.prepare("UPDATE rooms SET archived_at = ?, updated_at = ? WHERE id = ?").run(now, now, id);
         return { ok: true, room: get(id)! };
-      })();
+      }).immediate();
     },
 
     restore(id: string): RestoreResult {
-      const row = selectOne.get(id);
-      if (!row) return { ok: false, reason: "not_found" };
-      if (!row.archived_at) return { ok: false, reason: "not_archived" };
-      db.prepare("UPDATE rooms SET archived_at = NULL, updated_at = ? WHERE id = ?").run(clock().toISOString(), id);
-      return { ok: true, room: get(id)! };
+      return db.transaction((): RestoreResult => {
+        const row = selectOne.get(id);
+        if (!row) return { ok: false, reason: "not_found" };
+        if (!row.archived_at) return { ok: false, reason: "not_archived" };
+        db.prepare("UPDATE rooms SET archived_at = NULL, updated_at = ? WHERE id = ?").run(clock().toISOString(), id);
+        return { ok: true, room: get(id)! };
+      }).immediate();
     },
 
     /** Active rooms only, allowlisted fields, ordered by floor and natural code order. */
