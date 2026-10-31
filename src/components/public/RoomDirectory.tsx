@@ -58,10 +58,18 @@ export function RoomDirectory({ lang }: { lang: Lang }) {
                     >
                       {t.rooms.todayInRoom}
                     </Link>
+                    <Link
+                      href={publicHref("/map", lang, { raum: room.id })}
+                      className="mt-1 inline-flex min-h-14 w-fit touch-manipulation items-center rounded-xl border border-ink px-5 font-semibold hover:bg-canvas"
+                    >
+                      {t.rooms.onMap}
+                    </Link>
                     {room.reservable && (
-                      <Link href={publicHref("/booking", lang, { raum: room.id })}
-                        className="mt-1 inline-flex min-h-14 w-fit touch-manipulation items-center rounded-xl bg-brand px-5 font-semibold text-white hover:bg-brand-strong">
-                        {lang === "de" ? "Raum reservieren (DEMO)" : "Book room (DEMO)"}
+                      <Link
+                        href={publicHref("/booking", lang, { raum: room.id })}
+                        className="mt-1 inline-flex min-h-14 w-fit touch-manipulation items-center rounded-xl bg-brand px-5 font-semibold text-white hover:bg-brand-strong"
+                      >
+                        {t.rooms.book}
                       </Link>
                     )}
                   </article>

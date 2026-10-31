@@ -61,9 +61,14 @@ export function DaySchedule({ date, roomId, lang }: { date: string | null; roomI
             {t.schedule.room} {data.room.code} – <span lang={headerName.lang}>{headerName.text}</span> ({floor(data.room.floorId)})
           </p>
           <FallbackTag lang={lang} level={fallbackLevel([headerName])} />
-          <Link href={href(date, null)} className="inline-flex min-h-14 touch-manipulation items-center rounded-xl border border-ink px-4 font-semibold">
-            {t.schedule.allRooms}
-          </Link>
+          <div className="flex flex-wrap gap-2">
+            <Link href={publicHref("/map", lang, { raum: data.room.id, datum: date })} className="inline-flex min-h-14 touch-manipulation items-center rounded-xl border border-ink px-4 font-semibold">
+              {t.schedule.onMap}
+            </Link>
+            <Link href={href(date, null)} className="inline-flex min-h-14 touch-manipulation items-center rounded-xl border border-ink px-4 font-semibold">
+              {t.schedule.allRooms}
+            </Link>
+          </div>
         </div>
       )}
 

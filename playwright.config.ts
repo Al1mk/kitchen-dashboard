@@ -27,7 +27,9 @@ export default defineConfig({
   },
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
   webServer: {
-    command: `npx next build && npx next start -p ${PORT}`,
+    // The fresh E2E database gets the team demo rooms (fixed ids bound to map
+    // positions) before the server starts; the seed refuses data/.
+    command: `node scripts/seed-team-demo.ts --yes && npx next build && npx next start -p ${PORT}`,
     url: `http://localhost:${PORT}/api/public/announcements`,
     timeout: 300_000,
     reuseExistingServer: false,

@@ -93,6 +93,16 @@ export function BookingFlow({
   const [phase, setPhase] = useState<Phase>({ kind: "select" });
   const [notice, setNotice] = useState<BookingErrorKey | null>(null);
   const sending = useRef(false);
+  // A link to /booking with other parameters (nav, map) resets room/date; never while a request is unresolved.
+  const [urlState, setUrlState] = useState({ roomId: initialRoomId, date: initialDate });
+  if ((urlState.roomId !== initialRoomId || urlState.date !== initialDate) && phase.kind !== "submitting" && phase.kind !== "uncertain") {
+    setUrlState({ roomId: initialRoomId, date: initialDate });
+    if ((initialRoomId ?? "") !== roomId || initialDate !== date) {
+      setRoomId(initialRoomId ?? "");
+      setDate(initialDate);
+      setStart("");
+    }
+  }
 
   const locked = phase.kind === "submitting" || phase.kind === "uncertain";
   const guard = useLeaveGuard(locked);

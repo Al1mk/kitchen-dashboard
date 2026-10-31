@@ -5,7 +5,8 @@ import { expect, test } from "@playwright/test";
 // tests). 1080×1920 is a simulated portrait viewport, not the measured
 // resolution of the campus screen.
 
-const OUT = "docs/evidence/screenshots";
+// SCREENSHOT_DIR lets a later run write elsewhere instead of overwriting earlier evidence.
+const OUT = process.env.SCREENSHOT_DIR ?? "docs/evidence/screenshots";
 
 test("capture public start, board and English schedule (1080×1920)", async ({ browser }) => {
   const context = await browser.newContext({ viewport: { width: 1080, height: 1920 } });

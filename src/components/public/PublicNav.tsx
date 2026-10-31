@@ -1,32 +1,33 @@
 import Link from "next/link";
 import { PUBLIC_TEXT, publicHref, type Lang, type PublicSection } from "@/lib/i18n/public.ts";
 
-// Navigation shared by every public page (start, announcement board, rooms,
-// schedule). No admin links. "page" sizes fit the normal pages; "board" uses
+// Navigation shared by every public page (start, newcomers, map, rooms,
+// schedule, booking, announcement board). No admin links. Seven entries: four
+// columns on wider screens and the portrait board, two on narrow phones. "page" sizes fit the normal pages; "board" uses
 // container units like the portrait announcement board.
 
 const SECTIONS: { key: PublicSection; path: string }[] = [
   { key: "start", path: "/" },
-  { key: "display", path: "/display" },
+  { key: "newcomers", path: "/newcomers" },
+  { key: "map", path: "/map" },
   { key: "rooms", path: "/rooms" },
   { key: "schedule", path: "/schedule" },
   { key: "booking", path: "/booking" },
-  { key: "map", path: "/map" },
-  { key: "newcomers", path: "/newcomers" },
+  { key: "display", path: "/display" },
 ];
 
 type Variant = "page" | "board";
 
 const styles = {
   page: {
-    list: "grid grid-cols-2 gap-2 sm:grid-cols-3",
+    list: "grid grid-cols-2 gap-2 sm:grid-cols-4",
     item: "min-h-14 rounded-xl px-3 font-semibold",
     idle: "bg-canvas text-ink hover:bg-neutral-soft",
     switch: "rounded-xl border border-line p-1 gap-1",
     lang: "min-h-12 rounded-lg px-3 font-semibold",
   },
   board: {
-    list: "grid grid-cols-3 gap-[1.4cqw]",
+    list: "grid grid-cols-4 gap-[1.4cqw]",
     item: "min-h-[7cqw] rounded-[1cqw] px-[1.4cqw] text-[2.8cqw] font-semibold",
     idle: "bg-canvas text-ink active:bg-neutral-soft",
     switch: "rounded-[1cqw] border border-line p-[0.5cqw] gap-[0.5cqw]",

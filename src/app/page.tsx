@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PublicShell } from "@/components/public/PublicShell.tsx";
 import { PUBLIC_TEXT, parseLang, publicHref } from "@/lib/i18n/public.ts";
 
-// Public entry: links to the three public sections. Every public page links
+// Public entry: links to every public section (same order as the navigation). Every public page links
 // back here ("Start"/"Home"); ?lang=en keeps the visitor's language.
 
 export async function generateMetadata({ searchParams }: PageProps<"/">): Promise<Metadata> {
@@ -12,9 +12,12 @@ export async function generateMetadata({ searchParams }: PageProps<"/">): Promis
 }
 
 const TILES = [
-  { key: "display", path: "/display" },
+  { key: "newcomers", path: "/newcomers" },
+  { key: "map", path: "/map" },
   { key: "rooms", path: "/rooms" },
   { key: "schedule", path: "/schedule" },
+  { key: "booking", path: "/booking" },
+  { key: "display", path: "/display" },
 ] as const;
 
 export default async function StartPage({ searchParams }: PageProps<"/">) {
@@ -36,11 +39,6 @@ export default async function StartPage({ searchParams }: PageProps<"/">) {
           </li>
         ))}
       </ul>
-      <Link href={publicHref("/booking", lang)}
-        className="flex min-h-24 touch-manipulation flex-col justify-center rounded-xl border-l-8 border-brand bg-surface px-6 py-4 shadow-sm hover:bg-neutral-soft">
-        <span className="font-display text-3xl font-bold">{lang === "de" ? "Raum reservieren (DEMO)" : "Book a room (DEMO)"}</span>
-        <span className="text-ink-muted">{lang === "de" ? "Freie Zeiten prüfen und Probe-Reservierung erstellen" : "Find free times and make a test reservation"}</span>
-      </Link>
     </PublicShell>
   );
 }

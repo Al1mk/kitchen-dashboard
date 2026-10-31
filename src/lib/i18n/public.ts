@@ -59,9 +59,12 @@ const de = {
     title: "Campus-Informationen",
     intro: "Informationen für Studierende und Gäste am Lucas-Cranach-Campus.",
     tiles: {
+      newcomers: "Erste Orientierung: wo finde ich was?",
+      map: "Räume auf dem Stockwerksplan finden",
       display: "Aktuelle Hinweise für den Campus",
       rooms: "Alle Räume nach Stockwerk",
       schedule: "Lehrveranstaltungen nach Tag und Raum",
+      booking: "Freie Zeiten prüfen und einen Raum probeweise reservieren (Demo)",
     },
   },
   load: {
@@ -87,6 +90,8 @@ const de = {
     empty: "Zurzeit sind keine Räume eingetragen.",
     emptyHint: "Neue Räume erscheinen hier automatisch.",
     todayInRoom: "Heute in diesem Raum",
+    onMap: "Auf der Karte zeigen",
+    book: "Raum reservieren (Demo)",
   },
   schedule: {
     chooseDay: "Tag wählen",
@@ -95,6 +100,7 @@ const de = {
     nextDay: "Folgetag →",
     room: "Raum",
     allRooms: "Alle Räume",
+    onMap: "Auf der Karte",
     empty: "An diesem Tag sind keine Termine eingetragen.",
     emptyHint: "Änderungen erscheinen hier automatisch.",
     cancelled: "Entfällt",
@@ -124,9 +130,12 @@ const en: PublicText = {
     title: "Campus information",
     intro: "Information for students and visitors at Lucas-Cranach-Campus.",
     tiles: {
+      newcomers: "First orientation: where do I find what?",
+      map: "Find rooms on the floor plan",
       display: "Current notices for the campus",
       rooms: "All rooms by floor",
       schedule: "Classes by day and room",
+      booking: "Check free times and make a test booking (demo)",
     },
   },
   load: {
@@ -160,6 +169,8 @@ const en: PublicText = {
     empty: "No rooms have been added yet.",
     emptyHint: "New rooms appear here automatically.",
     todayInRoom: "Today in this room",
+    onMap: "Show on the map",
+    book: "Book this room (demo)",
   },
   schedule: {
     chooseDay: "Choose a day",
@@ -168,6 +179,7 @@ const en: PublicText = {
     nextDay: "Next day →",
     room: "Room",
     allRooms: "All rooms",
+    onMap: "On the map",
     empty: "No classes are scheduled on this day.",
     emptyHint: "Changes appear here automatically.",
     cancelled: "Cancelled",
