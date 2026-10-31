@@ -1,0 +1,117 @@
+
+> campus-board@0.1.0 test:e2e
+> playwright test
+
+[WebServer] (node:10769) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10789) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10795) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10817) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10812) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10814) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10813) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10819) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10811) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10815) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10816) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10820) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10821) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10818) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10822) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10842) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 32 tests using 1 worker
+
+(node:10843) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/e2e/api-security.spec.ts:5:3 › anonymous direct requests › cannot read or mutate admin data (36ms)
+  ✓   2 [chromium] › tests/e2e/api-security.spec.ts:15:3 › anonymous direct requests › admin pages redirect to the login page (216ms)
+  ✓   3 [chromium] › tests/e2e/api-security.spec.ts:22:3 › anonymous direct requests › public API rejects writes (4ms)
+  ✓   4 [chromium] › tests/e2e/api-security.spec.ts:26:3 › anonymous direct requests › wrong credentials are rejected (27ms)
+  ✓   5 [chromium] › tests/e2e/api-security.spec.ts:36:3 › authenticated API › rejects cross-origin mutations even with a valid session (30ms)
+  ✓   6 [chromium] › tests/e2e/api-security.spec.ts:47:3 › authenticated API › rejects invalid input server-side with field errors (30ms)
+  ✓   7 [chromium] › tests/e2e/api-security.spec.ts:70:3 › authenticated API › public output never contains drafts, future items or admin fields (29ms)
+  ✓   8 [chromium] › tests/e2e/api-security.spec.ts:88:3 › authenticated API › a repeated create request id does not create a duplicate (25ms)
+  ✓   9 [chromium] › tests/e2e/api-security.spec.ts:96:3 › authenticated API › logout invalidates the session server-side (27ms)
+  ✓  10 [chromium] › tests/e2e/bilingual-content.spec.ts:11:1 › English announcement text follows draft, preview, publish, republish and withdraw (25.7s)
+  ✓  11 [chromium] › tests/e2e/bilingual-content.spec.ts:104:1 › English room names and descriptions, with German fallback, in directory and schedule (274ms)
+  ✓  12 [chromium] › tests/e2e/display-overflow.spec.ts:25:1 › long announcements are not clipped on the display or in the preview (425ms)
+  ✓  13 [chromium] › tests/e2e/display-states.spec.ts:8:1 › shows a loading state, then an empty state (107ms)
+  ✓  14 [chromium] › tests/e2e/display-states.spec.ts:21:1 › shows an error state on first-load failure and recovers (154ms)
+  ✓  15 [chromium] › tests/e2e/display-states.spec.ts:41:1 › keeps last data with a stale notice when the connection drops, then recovers automatically (10.3s)
+  ✓  16 [chromium] › tests/e2e/public-navigation.spec.ts:16:1 › public pages are reachable from / with a return path, keeping language, day and room (839ms)
+  ✓  17 [chromium] › tests/e2e/public-navigation.spec.ts:107:1 › the board's language switch stays on the board and English carries over to other sections (238ms)
+  ✓  18 [chromium] › tests/e2e/publish-flow.spec.ts:10:1 › draft → preview → publish → display → edit/republish → withdraw (25.5s)
+  ✓  19 [chromium] › tests/e2e/publish-flow.spec.ts:79:1 › validation errors are shown next to the fields (323ms)
+  ✓  20 [chromium] › tests/e2e/publish-flow.spec.ts:89:1 › leaving with unsaved changes asks for confirmation (338ms)
+  ✓  21 [chromium] › tests/e2e/publish-flow.spec.ts:101:1 › logout from the UI ends access to admin pages (296ms)
+  ✓  22 [chromium] › tests/e2e/rooms-schedule-api.spec.ts:29:1 › anonymous requests cannot read or change rooms and sessions (15ms)
+  ✓  23 [chromium] › tests/e2e/rooms-schedule-api.spec.ts:46:1 › admin API validates, prevents conflicts and protects references (39ms)
+  ✓  24 [chromium] › tests/e2e/rooms-schedule-api.spec.ts:93:1 › public room and schedule output contain only allowlisted fields (33ms)
+  ✘  25 [chromium] › tests/e2e/rooms-schedule-flow.spec.ts:13:1 › room and session administration appear on the public pages (21.1s)
+(node:10931) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  26 [chromium] › tests/e2e/rooms-schedule-flow.spec.ts:110:1 › public schedule changes day without admin access (194ms)
+  ✓  27 [chromium] › tests/e2e/schedule-room-fallback.spec.ts:11:1 › unfiltered English schedule marks untranslated room names in each row (386ms)
+  ✓  28 [chromium] › tests/e2e/screenshots-bilingual.spec.ts:12:1 › capture bilingual admin editor (1440×900) and English public pages (1080×1920) (638ms)
+  ✓  29 [chromium] › tests/e2e/screenshots-m2.spec.ts:11:1 › capture M2 admin (1440×900) and public (1080×1920) layouts (764ms)
+  ✓  30 [chromium] › tests/e2e/screenshots-nav.spec.ts:10:1 › capture public start, board and English schedule (1080×1920) (802ms)
+  ✓  31 [chromium] › tests/e2e/screenshots.spec.ts:9:1 › capture admin (1440×900) and display (1080×1920) layouts (930ms)
+(node:10946) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  32 [chromium] › tests/e2e/insecure-origin.spec.ts:16:1 › editor creates a draft in a non-secure context (HTTP, non-loopback host) (311ms)
+
+
+  1) [chromium] › tests/e2e/rooms-schedule-flow.spec.ts:13:1 › room and session administration appear on the public pages 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('alert').filter({ hasText: 'kann nicht archiviert werden' })
+    Expected substring: "Es ist noch 1 Termin geplant"
+    Received string:    "Der Raum hat noch 1 aktive Termine/Reservierungen und kann nicht archiviert werden. Bitte zuerst absagen oder stornieren."
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" getByRole('alert').filter({ hasText: 'kann nicht archiviert werden' }) with timeout 5000ms
+      - waiting for getByRole('alert').filter({ hasText: 'kann nicht archiviert werden' })
+        13 × locator resolved to <p role="alert" class="rounded-lg px-4 py-3 font-semibold bg-danger-soft text-danger">Der Raum hat noch 1 aktive Termine/Reservierungen…</p>
+           - unexpected value "Der Raum hat noch 1 aktive Termine/Reservierungen und kann nicht archiviert werden. Bitte zuerst absagen oder stornieren."
+
+
+      84 |   await admin.getByRole("button", { name: "Raum archivieren" }).click();
+      85 |   await admin.getByRole("dialog").getByRole("button", { name: "Archivieren" }).click();
+    > 86 |   await expect(admin.getByRole("alert").filter({ hasText: "kann nicht archiviert werden" })).toContainText("Es ist noch 1 Termin geplant");
+         |                                                                                              ^
+      87 |
+      88 |   // 6. Cancel the session: it stays public, marked "Entfällt".
+      89 |   await admin.goto(sessionUrl);
+        at /private/tmp/hci-team-audit-2026-10-31/combined-candidate/tests/e2e/rooms-schedule-flow.spec.ts:86:94
+
+    Error Context: test-results/rooms-schedule-flow-room-a-aade7--appear-on-the-public-pages-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/rooms-schedule-flow-room-a-aade7--appear-on-the-public-pages-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/rooms-schedule-flow-room-a-aade7--appear-on-the-public-pages-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/e2e/rooms-schedule-flow.spec.ts:13:1 › room and session administration appear on the public pages 
+  31 passed (1.6m)

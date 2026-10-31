@@ -1,0 +1,22 @@
+{
+  "originalEntries": 47,
+  "candidateEntries": 48,
+  "original47Unchanged": true,
+  "uniqueCodes": true,
+  "bookableCodes": 21,
+  "bookableCodesInOriginal": 20,
+  "originalFloorCounts": {
+    "1OG": 21,
+    "2OG": 18,
+    "3OG": 8
+  },
+  "addedUnpositioned": [
+    {
+      "code": "K1-114",
+      "floor": "1OG",
+      "x": null,
+      "y": null
+    }
+  ],
+  "imageBytesUnchanged": true
+}

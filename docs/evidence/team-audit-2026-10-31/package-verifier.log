@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/VERIFY_PACKAGE.py", line 13, in <module>
+    N=json.loads((folder/'rooms.json').read_text())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/01_NETLIFY_DEMO/rooms.json'
