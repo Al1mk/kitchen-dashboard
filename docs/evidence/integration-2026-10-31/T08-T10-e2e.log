@@ -1,0 +1,16 @@
+
+Running 11 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/booking-api.spec.ts:14:1 › booking create, retry, conflicts, admin guards and cancellation follow the contract (137ms)
+  ✓   2 [chromium] › tests/e2e/booking-api.spec.ts:116:1 › public availability refuses unknown and non-reservable rooms; there is no public booking list (37ms)
+  ✓   3 [chromium] › tests/e2e/booking-pending.spec.ts:51:1 › A-01: a delayed accepted response still produces the receipt for the submitted request (520ms)
+  ✓   4 [chromium] › tests/e2e/booking-pending.spec.ts:80:1 › navigation while pending asks first; staying keeps the request and its receipt (410ms)
+  ✓   5 [chromium] › tests/e2e/booking-pending.spec.ts:103:1 › deliberate abandonment warns that the booking may exist, then leaves (341ms)
+  ✓   6 [chromium] › tests/e2e/booking-pending.spec.ts:120:1 › an uncertain outcome is retried with the identical request and never creates a second booking (337ms)
+  ✓   7 [chromium] › tests/e2e/booking-selection.spec.ts:24:1 › unknown, archived and non-reservable requested rooms are explained and never replaced (290ms)
+  ✓   8 [chromium] › tests/e2e/booking-selection.spec.ts:39:1 › no query: the visitor chooses a room deliberately (176ms)
+  ✓   9 [chromium] › tests/e2e/booking-selection.spec.ts:49:1 › a late availability answer for the previous room is ignored (729ms)
+  ✓  10 [chromium] › tests/e2e/booking-selection.spec.ts:78:1 › availability failure shows a retry and blocks confirmation until it recovers (262ms)
+  ✓  11 [chromium] › tests/e2e/booking-selection.spec.ts:90:1 › English mode translates API errors instead of showing German server text (271ms)
+
+  11 passed (8.9s)

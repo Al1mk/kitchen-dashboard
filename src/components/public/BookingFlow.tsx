@@ -1,40 +1,49 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState, type FormEvent } from "react";
-import { publicHref, type Lang } from "@/lib/i18n/public.ts";
-import { hhmmToMinutes, minutesToHhmm } from "@/lib/bookings/policy.ts";
+import { useRouter } from "next/navigation";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
+import { BOOKING_POLICY, hhmmToMinutes, minutesToHhmm } from "@/lib/bookings/policy.ts";
+import { localize, publicHref, type Lang } from "@/lib/i18n/public.ts";
+import type { PublicRoom } from "@/lib/rooms/schema.ts";
+import { formatCalendarDate } from "@/lib/time/berlin.ts";
+import { BOOKING_COPY, bookingErrorKey, type BookingErrorKey } from "./booking-copy.ts";
+import { BookingReceipt, type Receipt } from "./BookingReceipt.tsx";
+import { DemoNotice, FallbackTag } from "./PublicShell.tsx";
+import { useLeaveGuard } from "./useLeaveGuard.ts";
 
-type Room = { id: string; code: string; name: string; nameEn: string | null; reservable: boolean; isDemo: boolean };
+// Public demo booking flow. Originally supplied by Aryan and Parsa (joint
+// package); restructured in the integration (T08, T09, T13):
+// - T08: the request (room, date, times, request id, cancel token) is an
+//   immutable snapshot taken before sending; the receipt is built from it.
+//   While sending or when the outcome is unknown, the selection is locked and
+//   leaving asks first. An uncertain outcome is retried with the same snapshot.
+// - T09: a requested room (?raum=<id>) is never replaced by another room;
+//   availability is keyed by room+date and stale answers are ignored.
+// - T13: localized states and errors, receipt with countdown/More time/Done.
+
 type Span = { startTime: string; endTime: string };
-type Availability = { date: string; room: { id: string; code: string; name: string }; free: Span[]; busy: (Span & { kind: string })[] };
-type Receipt = { id: string; room: Room; date: string; startTime: string; endTime: string; cancelToken: string };
-type PendingRequest = { key: string; requestId: string; cancelToken: string };
+type Availability = { date: string; room: { id: string }; free: Span[]; busy: (Span & { kind: "class" | "booking" })[] };
+type RoomsState = { status: "loading" } | { status: "failed" } | { status: "ok"; rooms: PublicRoom[] };
+type AvailabilityState = { key: string; status: "ok"; data: Availability } | { key: string; status: "failed"; errorKey: BookingErrorKey | null };
 
-const copy = {
-  de: {
-    title: "Raum reservieren", disclaimer: "DEMO – keine echte Hochschulreservierung. Keine Anmeldung, kein offizieller Anspruch auf den Raum.",
-    room: "Raum auswählen", date: "Datum", duration: "Dauer", time: "Freie Startzeit wählen",
-    busy: "Belegte Zeiten", none: "Keine freien Zeitfenster. Anderen Tag, Raum oder kürzere Dauer wählen.",
-    loading: "Lade Zeiten …", confirm: "Weiter zur Bestätigung", review: "Buchung prüfen", back: "Ändern",
-    book: "Demo-Reservierung bestätigen", submitting: "Reservierung wird geprüft …", success: "Reservierung erfolgreich",
-    conflict: "Zeitfenster ist inzwischen belegt. Bitte ein neues wählen.", failure: "Fehler bei der Anfrage. Bitte erneut versuchen.",
-    code: "Stornierungscode", id: "Buchungsnummer", noRecovery: "Wichtig: Nummer und Code notieren! Sie werden nicht gespeichert oder per E-Mail gesendet. Ohne diese Daten ist keine spätere Selbst-Stornierung möglich.",
-    privacy: "Auf dem öffentlichen Display wird dieser Beleg nach 60 Sekunden automatisch ausgeblendet.",
-    finish: "Fertig – Beleg ausblenden", cancelLink: "Reservierung stornieren", home: "Zur Startseite", mapLink: "Diesen Raum auf der Karte sehen",
-  },
-  en: {
-    title: "Book a room", disclaimer: "DEMO – not a real university room reservation. No login or official entitlement to use this room.",
-    room: "Choose a room", date: "Date", duration: "Duration", time: "Select a free start time",
-    busy: "Occupied times", none: "No free times. Try another room, date or shorter duration.",
-    loading: "Loading availability …", confirm: "Review reservation", review: "Review reservation", back: "Change",
-    book: "Confirm demo booking", submitting: "Checking reservation …", success: "Reservation successful",
-    conflict: "This time has just been taken. Choose another.", failure: "Request failed. Please try again.",
-    code: "Cancellation code", id: "Booking ID", noRecovery: "Important: Write down the ID and code! They are not stored or emailed to you. You need both to cancel later.",
-    privacy: "For privacy this receipt disappears automatically after 60 seconds on the public display.",
-    finish: "Done – hide receipt", cancelLink: "Cancel a booking", home: "Back to home", mapLink: "View this room on the map",
-  },
-} as const;
+/** Everything that is sent, fixed before the request starts. */
+type Submitted = {
+  room: PublicRoom;
+  date: string;
+  startTime: string;
+  endTime: string;
+  requestId: string;
+  cancelToken: string;
+};
+type Phase =
+  | { kind: "select" }
+  | { kind: "review" }
+  | { kind: "submitting"; request: Submitted }
+  | { kind: "uncertain"; request: Submitted }
+  | { kind: "receipt"; receipt: Receipt };
+
+const DURATIONS = [15, 30, 45, 60, 90, 120].filter((m) => m >= BOOKING_POLICY.minMinutes && m <= BOOKING_POLICY.maxMinutes);
 
 function randomBase64Url(bytes: number): string {
   const array = new Uint8Array(bytes);
@@ -44,198 +53,453 @@ function randomBase64Url(bytes: number): string {
 
 function possibleStarts(free: Span[], duration: number): string[] {
   const times: string[] = [];
+  const step = BOOKING_POLICY.minuteStep;
   for (const slot of free) {
     const start = hhmmToMinutes(slot.startTime);
     const end = hhmmToMinutes(slot.endTime);
     if (start === null || end === null) continue;
-    for (let x = Math.ceil(start / 15) * 15; x + duration <= end; x += 15) times.push(minutesToHhmm(x));
+    for (let x = Math.ceil(start / step) * step; x + duration <= end; x += step) times.push(minutesToHhmm(x));
   }
   return times;
 }
 
-export function BookingFlow({ lang, initialRoomId, initialDate, minDate, maxDate }: { lang: Lang; initialRoomId: string | null; initialDate: string; minDate: string; maxDate: string }) {
-  const t = copy[lang];
-  const [rooms, setRooms] = useState<Room[]>([]);
+const field = "min-h-14 w-full rounded-xl border border-ink bg-surface p-3 text-lg disabled:cursor-not-allowed disabled:opacity-60";
+const panel = "rounded-xl bg-surface p-5 shadow-sm";
+
+export function BookingFlow({
+  lang,
+  initialRoomId,
+  initialDate,
+  minDate,
+  maxDate,
+}: {
+  lang: Lang;
+  initialRoomId: string | null;
+  initialDate: string;
+  minDate: string;
+  maxDate: string;
+}) {
+  const t = BOOKING_COPY[lang];
+  const router = useRouter();
+  const ids = { room: useId(), date: useId(), duration: useId() };
+  const [roomsState, setRoomsState] = useState<RoomsState>({ status: "loading" });
+  const [roomsReload, setRoomsReload] = useState(0);
   const [roomId, setRoomId] = useState(initialRoomId ?? "");
   const [date, setDate] = useState(initialDate);
   const [duration, setDuration] = useState(60);
   const [start, setStart] = useState("");
-  const [availability, setAvailability] = useState<Availability | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [review, setReview] = useState(false);
-  const [error, setError] = useState("");
-  const [receipt, setReceipt] = useState<Receipt | null>(null);
-  const pendingRef = useRef<PendingRequest | null>(null);
-  const selectedRoom = rooms.find((r) => r.id === roomId);
-  const times = possibleStarts(availability?.free ?? [], duration);
-  const endTime = start ? minutesToHhmm(hhmmToMinutes(start)! + duration) : "";
+  const [availability, setAvailability] = useState<AvailabilityState | null>(null);
+  const [availabilityReload, setAvailabilityReload] = useState(0);
+  const [phase, setPhase] = useState<Phase>({ kind: "select" });
+  const [notice, setNotice] = useState<BookingErrorKey | null>(null);
+  const sending = useRef(false);
 
+  const locked = phase.kind === "submitting" || phase.kind === "uncertain";
+  const guard = useLeaveGuard(locked);
+
+  const rooms = roomsState.status === "ok" ? roomsState.rooms : [];
+  const selectedRoom = rooms.find((r) => r.id === roomId) ?? null;
+  // An explicitly requested room that is not bookable stays visibly rejected: no substitution.
+  const requestRejected = roomsState.status === "ok" && initialRoomId !== null && roomId === initialRoomId && !selectedRoom;
+  const key = selectedRoom ? `${selectedRoom.id}|${date}` : "";
+  const current = availability && availability.key === key ? availability : null;
+  const availabilityLoading = !!selectedRoom && !current;
+  const times = current?.status === "ok" ? possibleStarts(current.data.free, duration) : [];
+  const chosenStart = times.includes(start) ? start : "";
+  const endTime = chosenStart ? minutesToHhmm(hhmmToMinutes(chosenStart)! + duration) : "";
+
+  // Reservable rooms from the public room API (same data as the directory and map).
   useEffect(() => {
     const controller = new AbortController();
     fetch("/api/public/rooms", { cache: "no-store", signal: controller.signal })
-      .then((res) => { if (!res.ok) throw new Error(); return res.json(); })
-      .then((payload: { rooms: Room[] }) => {
-        const next = payload.rooms.filter((r) => r.reservable);
-        setRooms(next);
-        // The map passes the human-readable code, while the booking API uses stable room UUIDs.
-        // Resolve after the public room list loads; never guess a database ID in the map.
-        setRoomId((old) => next.find((r) => r.id === old || r.code.toLowerCase() === old.toLowerCase())?.id ?? next[0]?.id ?? "");
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json() as Promise<{ rooms: PublicRoom[] }>;
       })
-      .catch((err: unknown) => { if (!(err instanceof Error && err.name === "AbortError")) setError(t.failure); });
+      .then((payload) => setRoomsState({ status: "ok", rooms: payload.rooms.filter((r) => r.reservable) }))
+      .catch(() => {
+        if (!controller.signal.aborted) setRoomsState({ status: "failed" });
+      });
     return () => controller.abort();
-  }, [t.failure]);
+  }, [roomsReload]);
 
+  // Availability for exactly the selected room and date; late answers for another key are ignored.
   useEffect(() => {
-    if (!roomId || !date) return;
+    if (!key) return;
+    const [requestedRoom, requestedDate] = key.split("|");
     const controller = new AbortController();
-    setLoading(true); setAvailability(null); setStart(""); setReview(false); setError("");
-    fetch(`/api/public/availability?${new URLSearchParams({ roomId, date })}`, { cache: "no-store", signal: controller.signal })
-      .then(async (res) => { const data = await res.json(); if (!res.ok) throw new Error(data.message || t.failure); return data; })
-      .then((data: Availability) => { setAvailability(data); setLoading(false); })
-      .catch((err: unknown) => { if (!(err instanceof Error && err.name === "AbortError")) { setError(err instanceof Error ? err.message : t.failure); setLoading(false); } });
+    fetch(`/api/public/availability?${new URLSearchParams({ roomId: requestedRoom, date: requestedDate })}`, { cache: "no-store", signal: controller.signal })
+      .then(async (res) => {
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          setAvailability({ key, status: "failed", errorKey: res.status === 400 || res.status === 409 ? bookingErrorKey(data.error, data.detail) : null });
+          return;
+        }
+        const ok = data as Availability;
+        if (ok.room?.id !== requestedRoom || ok.date !== requestedDate) throw new Error("mismatched availability");
+        setAvailability({ key, status: "ok", data: ok });
+      })
+      .catch(() => {
+        if (!controller.signal.aborted) setAvailability({ key, status: "failed", errorKey: null });
+      });
     return () => controller.abort();
-  }, [roomId, date, t.failure]);
+  }, [key, availabilityReload]);
 
-  useEffect(() => {
-    if (!receipt) return;
-    const timer = window.setTimeout(() => setReceipt(null), 60_000);
-    return () => window.clearTimeout(timer);
-  }, [receipt]);
+  function syncUrl(nextRoom: string, nextDate: string) {
+    router.replace(publicHref("/booking", lang, { raum: nextRoom || null, datum: nextDate }), { scroll: false });
+  }
+  function changeSelection(update: () => void) {
+    if (locked) return; // defence in depth: controls are disabled while locked
+    update();
+    setStart("");
+    setNotice(null);
+    setPhase({ kind: "select" });
+  }
 
-  function selectionChanged() { setReview(false); setStart(""); setError(""); pendingRef.current = null; }
-
-  async function submit() {
-    if (!selectedRoom || !start || !endTime || submitting) return;
-    const key = `${roomId}|${date}|${start}|${endTime}`;
-    if (!pendingRef.current || pendingRef.current.key !== key) pendingRef.current = { key, requestId: randomBase64Url(16), cancelToken: randomBase64Url(32) };
-    setSubmitting(true); setError("");
+  async function send(request: Submitted) {
+    if (sending.current) return;
+    sending.current = true;
+    setPhase({ kind: "submitting", request });
+    setNotice(null);
     try {
       const response = await fetch("/api/public/bookings", {
-        method: "POST", headers: { "Content-Type": "application/json" }, cache: "no-store",
-        body: JSON.stringify({ roomId, date, startTime: start, endTime, requestId: pendingRef.current.requestId, cancelToken: pendingRef.current.cancelToken }),
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        cache: "no-store",
+        body: JSON.stringify({
+          roomId: request.room.id,
+          date: request.date,
+          startTime: request.startTime,
+          endTime: request.endTime,
+          requestId: request.requestId,
+          cancelToken: request.cancelToken,
+        }),
       });
-      const data = await response.json();
-      if (!response.ok) {
-        if (response.status === 409 && data.error === "time_conflict") {
-          pendingRef.current = null;
-          setReview(false);
-          setStart("");
-          setAvailability(null);
-          const latest = await fetch(`/api/public/availability?${new URLSearchParams({ roomId, date })}`, { cache: "no-store" });
-          if (latest.ok) setAvailability(await latest.json());
-          throw new Error(t.conflict);
-        }
-        if (response.status === 409 && data.error === "request_id_reused") pendingRef.current = null;
-        throw new Error(data.message || t.failure);
+      const data = await response.json().catch(() => null);
+      if (response.ok && data && typeof data.booking?.id === "string") {
+        setPhase({
+          kind: "receipt",
+          receipt: {
+            id: data.booking.id,
+            roomCode: request.room.code,
+            roomName: localize(request.room.name, request.room.nameEn, lang),
+            date: request.date,
+            startTime: request.startTime,
+            endTime: request.endTime,
+            cancelToken: request.cancelToken,
+          },
+        });
+        return;
       }
-      setReceipt({ id: data.booking.id, room: selectedRoom, date, startTime: start, endTime, cancelToken: pendingRef.current.cancelToken });
-      pendingRef.current = null;
-      setReview(false);
-    } catch (err) { setError(err instanceof Error ? err.message : t.failure); }
-    finally { setSubmitting(false); }
+      if (response.status === 400 || response.status === 409) {
+        // Definite rejection: nothing was stored, the snapshot can be dropped.
+        const errorKey = bookingErrorKey(data?.error, data?.detail);
+        setNotice(errorKey);
+        setStart("");
+        setPhase({ kind: "select" });
+        if (errorKey === "time_conflict" || errorKey === "in_past") setAvailabilityReload((n) => n + 1);
+        if (errorKey === "room_not_reservable") setRoomsReload((n) => n + 1);
+        return;
+      }
+      // 503, other server errors or an unreadable answer: the outcome is unknown.
+      setPhase({ kind: "uncertain", request });
+    } catch {
+      setPhase({ kind: "uncertain", request });
+    } finally {
+      sending.current = false;
+    }
   }
+
+  function confirm() {
+    if (!selectedRoom || !chosenStart || !endTime || locked) return;
+    void send({
+      room: selectedRoom,
+      date,
+      startTime: chosenStart,
+      endTime,
+      requestId: randomBase64Url(16),
+      cancelToken: randomBase64Url(32),
+    });
+  }
+
+  const finish = useCallback(() => {
+    setPhase({ kind: "select" });
+    setStart("");
+    router.push(publicHref("/", lang));
+  }, [router, lang]);
+
+  function abandon(href: string | null) {
+    setPhase({ kind: "select" });
+    setStart("");
+    guard.stay();
+    if (href) router.push(href);
+  }
+
+  if (phase.kind === "receipt") {
+    return (
+      <div className="flex flex-col gap-5" data-testid="booking-flow">
+        <BookingReceipt receipt={phase.receipt} lang={lang} onDone={finish} />
+      </div>
+    );
+  }
+
+  const pendingRequest = phase.kind === "submitting" || phase.kind === "uncertain" ? phase.request : null;
+  const shown = pendingRequest ?? (selectedRoom && chosenStart ? { room: selectedRoom, date, startTime: chosenStart, endTime } : null);
+  const shownName = shown ? localize(shown.room.name, shown.room.nameEn, lang) : null;
 
   return (
     <div className="flex flex-col gap-5" data-testid="booking-flow">
       <p className="rounded-xl border border-info/40 bg-info-soft p-4 font-semibold text-info">{t.disclaimer}</p>
-      <Link href={publicHref("/map-demo/index.html", lang, {raum: selectedRoom?.code})}
-        className="flex min-h-14 items-center justify-center rounded-xl border border-ink bg-surface p-4 font-semibold hover:bg-canvas">
-        ↖ {t.mapLink}
-      </Link>
-      {receipt ? (
-        <section className="flex flex-col gap-4 rounded-xl bg-success-soft p-5" role="status" aria-live="polite">
-          <h2 className="font-display text-3xl font-bold text-success">✓ {t.success}</h2>
-          <p><strong>{receipt.room.code} · {receipt.room.name}</strong></p>
-          <p>{receipt.date} · {receipt.startTime}–{receipt.endTime}</p>
-          <div className="rounded-xl bg-surface p-4"><p className="text-base">{t.id}</p><p className="break-all font-mono text-base font-semibold">{receipt.id}</p></div>
-          <div className="rounded-xl bg-surface p-4"><p className="text-base">{t.code}</p><p className="break-all font-mono text-base font-semibold">{receipt.cancelToken}</p></div>
-          <p className="font-semibold">{t.noRecovery}</p>
-          <p className="text-base text-ink-muted">{t.privacy}</p>
-          <button type="button" className="min-h-14 rounded-xl bg-ink p-4 font-semibold text-white" onClick={() => { setReceipt(null); setStart(""); }}>{t.finish}</button>
-          <Link href={publicHref("/", lang)} className="flex min-h-14 items-center justify-center rounded-xl border border-ink p-4 font-semibold">{t.home}</Link>
-        </section>
-      ) : (
-        <>
-          <div className="rounded-xl bg-surface p-5 shadow-sm">
-            <label htmlFor="booking-room" className="mb-2 block font-bold">1. {t.room}</label>
-            <select id="booking-room" className="min-h-14 w-full rounded-xl border border-ink bg-surface p-3" value={roomId} onChange={(event) => { selectionChanged(); setAvailability(null); setRoomId(event.target.value); }}>
-              {rooms.length === 0 && <option value="">–</option>}
-              {rooms.map((r) => <option key={r.id} value={r.id}>{r.code} – {lang === "en" && r.nameEn ? r.nameEn : r.name}{r.isDemo ? " (DEMO)" : ""}</option>)}
-            </select>
+      {rooms.some((r) => r.isDemo) && <DemoNotice lang={lang} />}
+
+      <div className={panel}>
+        <label htmlFor={ids.room} className="mb-2 block text-lg font-bold">
+          {t.room}
+        </label>
+        {roomsState.status === "loading" && <p role="status">{t.roomsLoading}</p>}
+        {roomsState.status === "failed" && (
+          <div role="alert" className="flex flex-wrap items-center gap-3">
+            <p className="font-semibold">{t.roomsFailed}</p>
+            <button type="button" onClick={() => setRoomsReload((n) => n + 1)} className="min-h-14 rounded-xl bg-ink px-5 font-semibold text-white">
+              {t.retry}
+            </button>
           </div>
-          <div className="rounded-xl bg-surface p-5 shadow-sm">
-            <label htmlFor="booking-date" className="mb-2 block font-bold">2. {t.date}</label>
-            <input id="booking-date" type="date" min={minDate} max={maxDate} value={date} onChange={(event) => { selectionChanged(); setAvailability(null); setDate(event.target.value); }} className="min-h-14 w-full rounded-xl border border-ink bg-surface p-3" />
+        )}
+        {roomsState.status === "ok" && rooms.length === 0 && <p role="status">{t.roomsEmpty}</p>}
+        {requestRejected && (
+          <p role="alert" className="mb-3 rounded-xl bg-warning-soft p-4 font-semibold text-warning">
+            {t.requestedUnavailable}
+          </p>
+        )}
+        <select
+          id={ids.room}
+          className={field}
+          value={selectedRoom ? roomId : ""}
+          disabled={locked || rooms.length === 0}
+          onChange={(e) => {
+            const next = e.target.value;
+            changeSelection(() => setRoomId(next));
+            syncUrl(next, date);
+          }}
+        >
+          <option value="">{t.roomPlaceholder}</option>
+          {rooms.map((r) => (
+            <option key={r.id} value={r.id}>
+              {r.code} – {localize(r.name, r.nameEn, lang).text}
+            </option>
+          ))}
+        </select>
+        {selectedRoom && (
+          <div className="mt-3 flex flex-wrap gap-3">
+            <Link href={publicHref("/map", lang, { raum: selectedRoom.id })} className="inline-flex min-h-12 items-center rounded-xl border border-ink px-4 font-semibold">
+              {t.mapLink}
+            </Link>
+            <Link href={publicHref("/schedule", lang, { raum: selectedRoom.id, datum: date })} className="inline-flex min-h-12 items-center rounded-xl border border-ink px-4 font-semibold">
+              {t.scheduleLink}
+            </Link>
           </div>
-          <div className="rounded-xl bg-surface p-5 shadow-sm">
-            <label htmlFor="booking-duration" className="mb-2 block font-bold">3. {t.duration}</label>
-            <select id="booking-duration" value={duration} onChange={(event) => { selectionChanged(); setDuration(Number(event.target.value)); }} className="min-h-14 w-full rounded-xl border border-ink bg-surface p-3">
-              {[15, 30, 60, 90, 120].map((mins) => <option key={mins} value={mins}>{mins} min</option>)}
-            </select>
+        )}
+      </div>
+
+      <div className={panel}>
+        <label htmlFor={ids.date} className="mb-2 block text-lg font-bold">
+          {t.date}
+        </label>
+        <input
+          id={ids.date}
+          type="date"
+          min={minDate}
+          max={maxDate}
+          value={date}
+          disabled={locked}
+          onChange={(e) => {
+            const next = e.target.value;
+            if (!next) return;
+            changeSelection(() => setDate(next));
+            syncUrl(roomId, next);
+          }}
+          className={field}
+        />
+      </div>
+
+      <div className={panel}>
+        <label htmlFor={ids.duration} className="mb-2 block text-lg font-bold">
+          {t.duration}
+        </label>
+        <select
+          id={ids.duration}
+          value={duration}
+          disabled={locked}
+          onChange={(e) => {
+            const next = Number(e.target.value);
+            changeSelection(() => setDuration(next));
+          }}
+          className={field}
+        >
+          {DURATIONS.map((m) => (
+            <option key={m} value={m}>
+              {t.minutes(m)}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <section className={panel} aria-labelledby="booking-times">
+        <h2 id="booking-times" className="mb-3 text-lg font-bold">
+          {t.time}
+        </h2>
+        {!selectedRoom && <p className="text-ink-muted">{t.chooseRoomFirst}</p>}
+        {availabilityLoading && <p role="status">{t.loading}</p>}
+        {current?.status === "failed" && (
+          <div role="alert" className="flex flex-wrap items-center gap-3">
+            <p className="font-semibold">{current.errorKey ? t.errors[current.errorKey] : t.availabilityFailed}</p>
+            <button type="button" onClick={() => setAvailabilityReload((n) => n + 1)} className="min-h-14 rounded-xl bg-ink px-5 font-semibold text-white">
+              {t.retry}
+            </button>
           </div>
-          <section className="rounded-xl bg-surface p-5 shadow-sm">
-            <h2 className="mb-3 font-bold">4. {t.time}</h2>
-            {loading && <p role="status">{t.loading}</p>}
-            {!loading && availability && (
-              <>
-                <div role="group" aria-label={t.time} className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-                  {times.map((value) => <button type="button" key={value} aria-pressed={start === value} onClick={() => { setStart(value); setReview(false); setError(""); pendingRef.current = null; }} className={`min-h-16 touch-manipulation rounded-xl border-2 px-3 py-3 font-bold ${start === value ? "border-brand bg-brand text-white" : "border-line bg-canvas hover:border-ink"}`}>{value}</button>)}
-                </div>
-                {times.length === 0 && <p role="status" className="text-warning">{t.none}</p>}
-                {availability.busy.length > 0 && <div className="mt-5 border-t border-line pt-3 text-base text-ink-muted"><strong>{t.busy}: </strong>{availability.busy.map((s) => `${s.startTime}–${s.endTime}`).join(", ")}</div>}
-              </>
+        )}
+        {current?.status === "ok" && (
+          <>
+            <div role="group" aria-label={t.time} className="grid grid-cols-3 gap-3 sm:grid-cols-4">
+              {times.map((value) => (
+                <button
+                  type="button"
+                  key={value}
+                  aria-pressed={chosenStart === value}
+                  disabled={locked}
+                  onClick={() => {
+                    if (locked) return;
+                    setStart(value);
+                    setNotice(null);
+                    setPhase({ kind: "select" });
+                  }}
+                  className={`min-h-16 touch-manipulation rounded-xl border-2 px-3 py-3 text-lg font-bold tabular-nums disabled:opacity-60 ${
+                    chosenStart === value ? "border-brand bg-brand text-white" : "border-line bg-canvas hover:border-ink"
+                  }`}
+                >
+                  {value}
+                </button>
+              ))}
+            </div>
+            {times.length === 0 && (
+              <p role="status" className="font-semibold text-warning">
+                {t.none}
+              </p>
             )}
-          </section>
-          {error && <p role="alert" className="rounded-xl bg-danger-soft p-4 font-semibold text-danger">{error}</p>}
-          {review && selectedRoom && start && endTime ? (
-            <section className="flex flex-col gap-3 rounded-xl border-2 border-brand bg-surface p-5">
-              <h2 className="font-display text-2xl font-bold">{t.review}</h2>
-              <p>{selectedRoom.code} · {selectedRoom.name}</p>
-              <p className="font-semibold">{date} · {start}–{endTime}</p>
-              <button type="button" disabled={submitting} onClick={submit} className="min-h-16 rounded-xl bg-brand p-4 font-bold text-white disabled:opacity-60">{submitting ? t.submitting : t.book}</button>
-              <button type="button" disabled={submitting} onClick={() => setReview(false)} className="min-h-14 rounded-xl border border-ink p-3 font-semibold">{t.back}</button>
-            </section>
-          ) : (
-            <button type="button" onClick={() => setReview(true)} disabled={!roomId || !start || !availability || submitting} className="min-h-16 rounded-xl bg-brand p-4 font-bold text-white disabled:opacity-50">{t.confirm}</button>
-          )}
-          <Link href={publicHref("/booking/cancel", lang)} className="flex min-h-14 items-center justify-center rounded-xl border border-ink p-3 font-semibold">{t.cancelLink}</Link>
-        </>
+            {current.data.busy.length > 0 && (
+              <p className="mt-5 border-t border-line pt-3 text-base text-ink-muted">
+                <strong>{t.busy}: </strong>
+                {current.data.busy.map((s) => `${s.startTime}–${s.endTime}`).join(", ")}
+              </p>
+            )}
+          </>
+        )}
+      </section>
+
+      {notice && (
+        <p role="alert" className="rounded-xl bg-danger-soft p-4 font-semibold text-danger">
+          {t.errors[notice]}
+        </p>
       )}
+
+      {phase.kind === "select" && (
+        <button type="button" onClick={() => setPhase({ kind: "review" })} disabled={!shown} className="min-h-16 rounded-xl bg-brand p-4 text-lg font-bold text-white disabled:opacity-50">
+          {t.confirm}
+        </button>
+      )}
+
+      {phase.kind !== "select" && shown && shownName && (
+        <section aria-labelledby="booking-review" className="flex flex-col gap-3 rounded-xl border-2 border-brand bg-surface p-5">
+          <h2 id="booking-review" className="font-display text-2xl font-bold">
+            {t.review}
+          </h2>
+          <p className="flex flex-wrap items-center gap-2 text-lg">
+            <strong>{shown.room.code}</strong> <span lang={shownName.lang}>{shownName.text}</span>
+            <FallbackTag lang={lang} level={shownName.fallback ? "all" : null} />
+          </p>
+          <p className="text-lg font-semibold">
+            {formatCalendarDate(shown.date, lang)} · {shown.startTime}–{shown.endTime}
+          </p>
+          {phase.kind === "submitting" && (
+            <p role="status" className="rounded-xl bg-info-soft p-3 font-semibold text-info">
+              {t.lockedNote}
+            </p>
+          )}
+          {phase.kind === "uncertain" ? (
+            <div role="alert" className="flex flex-col gap-3 rounded-xl bg-warning-soft p-4 text-warning">
+              <p className="font-bold">{t.uncertainTitle}</p>
+              <p>{t.uncertainText}</p>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <button type="button" onClick={() => void send(phase.request)} className="min-h-16 rounded-xl bg-brand p-4 text-lg font-bold text-white">
+                  {t.resend}
+                </button>
+                <button type="button" onClick={() => abandon(null)} className="min-h-16 rounded-xl border-2 border-ink bg-surface p-4 font-semibold text-ink">
+                  {t.abandon}
+                </button>
+              </div>
+            </div>
+          ) : (
+            <>
+              <button type="button" disabled={locked} onClick={confirm} className="min-h-16 rounded-xl bg-brand p-4 text-lg font-bold text-white disabled:opacity-60">
+                {phase.kind === "submitting" ? t.submitting : t.book}
+              </button>
+              <button type="button" disabled={locked} onClick={() => setPhase({ kind: "select" })} className="min-h-14 rounded-xl border border-ink p-3 font-semibold disabled:opacity-60">
+                {t.change}
+              </button>
+            </>
+          )}
+        </section>
+      )}
+
+      <Link href={publicHref("/booking/cancel", lang)} className="flex min-h-14 items-center justify-center rounded-xl border border-ink p-3 font-semibold">
+        {t.cancelLink}
+      </Link>
+
+      <LeaveDialog open={guard.blockedHref !== null} lang={lang} onStay={guard.stay} onLeave={() => abandon(guard.blockedHref)} />
     </div>
   );
 }
 
-export function BookingCancel({ lang }: { lang: Lang }) {
-  const [id, setId] = useState("");
-  const [token, setToken] = useState("");
-  const [state, setState] = useState<"idle" | "pending" | "success">("idle");
-  const [error, setError] = useState("");
-  const t = lang === "de" ? {
-    title: "Reservierung stornieren", id: "Buchungsnummer", code: "Stornierungscode", go: "Stornierung bestätigen",
-    done: "Reservierung wurde storniert.", failed: "Stornierung fehlgeschlagen. Nummer und Code prüfen.", back: "Zur Buchung",
-  } : {
-    title: "Cancel a booking", id: "Booking ID", code: "Cancellation code", go: "Confirm cancellation",
-    done: "Booking cancelled.", failed: "Cancellation failed. Check ID and code.", back: "Book a room",
-  };
-  async function cancel(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault(); setState("pending"); setError("");
-    try {
-      const response = await fetch(`/api/public/bookings/${encodeURIComponent(id.trim())}/cancel`, { method: "POST", headers: { Authorization: `Bearer ${token.trim()}` }, cache: "no-store" });
-      const result = await response.json();
-      if (!response.ok) throw new Error(result.message || t.failed);
-      setId(""); setToken(""); setState("success");
-    } catch (err) { setError(err instanceof Error ? err.message : t.failed); setState("idle"); }
-  }
-  return <div className="flex flex-col gap-5">
-    <p className="rounded-xl bg-info-soft p-4 font-semibold text-info">DEMO – {lang === "de" ? "kein offizielles Raumbuchungssystem." : "not an official university booking system."}</p>
-    {state === "success" ? <p role="status" className="rounded-xl bg-success-soft p-4 font-semibold text-success">✓ {t.done}</p> :
-      <form onSubmit={cancel} className="flex flex-col gap-4 rounded-xl bg-surface p-5">
-        <label className="flex flex-col gap-2 font-bold">{t.id}<input type="text" autoComplete="off" spellCheck={false} value={id} onChange={(e) => setId(e.target.value)} required maxLength={60} className="min-h-14 rounded-xl border border-ink px-3 font-mono text-base" /></label>
-        <label className="flex flex-col gap-2 font-bold">{t.code}<input type="password" autoComplete="off" value={token} onChange={(e) => setToken(e.target.value)} required maxLength={100} className="min-h-14 rounded-xl border border-ink px-3 font-mono text-base" /></label>
-        {error && <p role="alert" className="rounded-xl bg-danger-soft p-4 text-danger">{error}</p>}
-        <button disabled={state === "pending"} className="min-h-16 rounded-xl bg-brand p-4 font-bold text-white disabled:opacity-50" type="submit">{t.go}</button>
-      </form>}
-    <Link href={publicHref("/booking", lang)} className="flex min-h-14 items-center justify-center rounded-xl border border-ink p-3 font-semibold">{t.back}</Link>
-  </div>;
+/** Asks before leaving while a booking request is unresolved (T08). */
+function LeaveDialog({ open, lang, onStay, onLeave }: { open: boolean; lang: Lang; onStay: () => void; onLeave: () => void }) {
+  const t = BOOKING_COPY[lang];
+  const ref = useRef<HTMLDialogElement>(null);
+  const titleId = useId();
+  const textId = useId();
+  useEffect(() => {
+    const dialog = ref.current;
+    if (!dialog) return;
+    if (open && !dialog.open) dialog.showModal();
+    if (!open && dialog.open) dialog.close();
+  }, [open]);
+  return (
+    <dialog
+      ref={ref}
+      role="alertdialog"
+      aria-labelledby={titleId}
+      aria-describedby={textId}
+      onCancel={(e) => {
+        e.preventDefault();
+        onStay();
+      }}
+      className="m-auto w-[min(92vw,34rem)] rounded-xl bg-surface p-0 text-ink shadow-xl backdrop:bg-ink/50"
+    >
+      <div className="flex flex-col gap-4 p-6">
+        <h2 id={titleId} className="font-display text-2xl font-bold">
+          {t.guardTitle}
+        </h2>
+        <p id={textId} className="text-lg">
+          {t.guardText}
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <button type="button" autoFocus onClick={onStay} className="min-h-16 rounded-xl bg-ink px-4 text-lg font-bold text-white">
+            {t.stay}
+          </button>
+          <button type="button" onClick={onLeave} className="min-h-16 rounded-xl border-2 border-danger px-4 text-lg font-bold text-danger">
+            {t.leave}
+          </button>
+        </div>
+      </div>
+    </dialog>
+  );
 }

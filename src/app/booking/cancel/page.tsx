@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BookingCancel } from "@/components/public/BookingFlow.tsx";
+import { BookingCancel } from "@/components/public/BookingCancel.tsx";
 import { PublicShell } from "@/components/public/PublicShell.tsx";
 import { parseLang } from "@/lib/i18n/public.ts";
 
