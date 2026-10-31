@@ -73,4 +73,22 @@ export const MIGRATIONS: string[] = [
   ALTER TABLE rooms ADD COLUMN name_en TEXT NOT NULL DEFAULT '';
   ALTER TABLE rooms ADD COLUMN description_en TEXT NOT NULL DEFAULT '';
   `,
+  // M4: persistent DEMO room reservations. Keep existing migrations unchanged.
+  `
+  CREATE TABLE room_bookings (
+    id                TEXT PRIMARY KEY,
+    create_request_id TEXT NOT NULL UNIQUE,
+    room_id           TEXT NOT NULL REFERENCES rooms(id) ON DELETE RESTRICT,
+    starts_at         TEXT NOT NULL,
+    ends_at           TEXT NOT NULL CHECK (ends_at > starts_at),
+    cancel_token_hash TEXT NOT NULL,
+    status            TEXT NOT NULL CHECK (status IN ('confirmed', 'cancelled')),
+    is_demo           INTEGER NOT NULL DEFAULT 1 CHECK (is_demo = 1),
+    cancelled_at      TEXT,
+    created_at        TEXT NOT NULL,
+    updated_at        TEXT NOT NULL
+  );
+  CREATE INDEX room_bookings_room_time ON room_bookings(room_id, starts_at);
+  CREATE INDEX room_bookings_status_time ON room_bookings(status, starts_at);
+  `,
 ];

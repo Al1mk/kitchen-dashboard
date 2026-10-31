@@ -29,7 +29,7 @@ type Row = {
   updated_at: string;
 };
 
-export type RoomWriteResult = { ok: true; room: AdminRoom } | { ok: false; reason: "not_found" | "duplicate_code" };
+export type RoomWriteResult = { ok: true; room: AdminRoom } | { ok: false; reason: "not_found" | "duplicate_code" | "booking_in_use" };
 export type ArchiveResult =
   | { ok: true; room: AdminRoom }
   | { ok: false; reason: "not_found" | "already_archived" }
@@ -49,6 +49,9 @@ export function createRoomRepository(db: Db, clock: () => Date = () => new Date(
   const selectCodeOwner = db.prepare<[string], { id: string }>("SELECT id FROM rooms WHERE code = ?");
   const countUpcoming = db.prepare<[string, string], { n: number }>(
     "SELECT COUNT(*) AS n FROM class_sessions WHERE room_id = ? AND status = 'scheduled' AND ends_at > ?",
+  );
+  const countUpcomingBookings = db.prepare<[string, string], { n: number }>(
+    "SELECT COUNT(*) AS n FROM room_bookings WHERE room_id = ? AND status = 'confirmed' AND ends_at > ?",
   );
 
   function toAdmin(row: Row): AdminRoom {
@@ -117,7 +120,11 @@ export function createRoomRepository(db: Db, clock: () => Date = () => new Date(
     /** Changes take effect publicly at once. Sessions keep pointing to the same room id. */
     update(id: string, content: RoomContent): RoomWriteResult {
       return db.transaction((): RoomWriteResult => {
-        if (!selectOne.get(id)) return { ok: false, reason: "not_found" };
+        const current = selectOne.get(id);
+        if (!current) return { ok: false, reason: "not_found" };
+        if (current.reservable === 1 && !content.reservable && countUpcomingBookings.get(id, clock().toISOString())!.n > 0) {
+          return { ok: false, reason: "booking_in_use" };
+        }
         if (codeTaken(content.code, id)) return { ok: false, reason: "duplicate_code" };
         db.prepare(
           `UPDATE rooms SET code = ?, name = ?, floor_id = ?, type = ?, description = ?, reservable = ?, name_en = ?, description_en = ?, updated_at = ?
@@ -149,7 +156,7 @@ export function createRoomRepository(db: Db, clock: () => Date = () => new Date(
         if (!row) return { ok: false, reason: "not_found" };
         if (row.archived_at) return { ok: false, reason: "already_archived" };
         const now = clock().toISOString();
-        const upcoming = countUpcoming.get(id, now)!.n;
+        const upcoming = countUpcoming.get(id, now)!.n + countUpcomingBookings.get(id, now)!.n;
         if (upcoming > 0) return { ok: false, reason: "in_use", upcomingSessions: upcoming };
         db.prepare("UPDATE rooms SET archived_at = ?, updated_at = ? WHERE id = ?").run(now, now, id);
         return { ok: true, room: get(id)! };

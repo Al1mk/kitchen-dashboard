@@ -1,5 +1,5 @@
 window.K1_DATA = {
-  "imageNotes": "All 47 selectable labels are transcribed from the red room-number tags visible in the 3 user-approved AI illustrations. Not verified against actual campus plans. Floor 1OG: 21, 2OG: 18, 3OG: 8. Image-relative tag centers.",
+  "imageNotes": "All 47 selectable labels are transcribed from the red room-number tags visible in the 3 user-approved AI illustrations. Not verified against actual campus plans. Floor 1OG: 21, 2OG: 18, 3OG: 8. Image-relative tag centers. Additional room K1-114 comes from a separately provided university plan, without a map coordinate.",
   "floors": [
     {
       "id": "1OG",
@@ -631,6 +631,20 @@ window.K1_DATA = {
       "imageLabel": true,
       "verifiedCampus": false,
       "source": "visible red label in user-approved AI illustration"
+    },
+    {
+      "id": "1og-k1-114",
+      "floor": "1OG",
+      "code": "K1-114",
+      "name": "Rapid Prototyping",
+      "nameEn": "Rapid Prototyping",
+      "category": "lab",
+      "x": null,
+      "y": null,
+      "imageLabel": false,
+      "verifiedCampus": false,
+      "hasMapPin": false,
+      "source": "Separate university floorplan supplied by Parsa; not in Aryan's V12.2 catalogue and no pin coordinate supplied."
     }
   ]
 };

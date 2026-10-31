@@ -33,3 +33,10 @@
 /* Visible fallback when an image asset is missing; prevent markers floating on a blank plan. */
 .map-image-error{position:absolute;inset:24px auto auto 24px;max-width:min(80%,420px);z-index:10;border:1px solid #e3a8ae;border-left:4px solid #bd1422;border-radius:8px;padding:13px 15px;color:#991b2b;background:#fff2f2;font-size:14px;line-height:1.45;}
 .map-image-error[hidden]{display:none;}
+
+/* Parsa + Aryan HCI demo: supplementary booking CTA (only four assumed bookable rooms). */
+.booking-cta {display:inline-flex;align-items:center;justify-content:center;min-height:58px;padding:12px 18px;border-radius:12px;background:#087e85;color:#fff;font-weight:800;text-decoration:none;text-align:center;line-height:1.45;box-shadow:0 6px 15px rgba(8,126,133,.13);}
+.booking-cta:hover,.booking-cta:focus-visible {background:#056c73;color:#fff;}
+.booking-note,.not-bookable {font-size:13px;line-height:1.5;margin-top:9px;color:#64748b;}
+.detail-actions {display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+@media (max-width:600px){.booking-cta{width:100%;min-height:60px;}}

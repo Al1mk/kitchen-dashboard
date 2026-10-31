@@ -36,6 +36,11 @@ export default async function StartPage({ searchParams }: PageProps<"/">) {
           </li>
         ))}
       </ul>
+      <Link href={publicHref("/booking", lang)}
+        className="flex min-h-24 touch-manipulation flex-col justify-center rounded-xl border-l-8 border-brand bg-surface px-6 py-4 shadow-sm hover:bg-neutral-soft">
+        <span className="font-display text-3xl font-bold">{lang === "de" ? "Raum reservieren (DEMO)" : "Book a room (DEMO)"}</span>
+        <span className="text-ink-muted">{lang === "de" ? "Freie Zeiten prüfen und Probe-Reservierung erstellen" : "Find free times and make a test reservation"}</span>
+      </Link>
     </PublicShell>
   );
 }

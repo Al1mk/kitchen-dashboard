@@ -7,7 +7,7 @@ import { formatBerlinDateTime, formatBerlinTime } from "../time/berlin.ts";
 
 export const noStore = { "Cache-Control": "no-store" };
 
-export function roomError(reason: "not_found" | "duplicate_code" | "already_archived" | "not_archived" | "in_use", upcoming = 0) {
+export function roomError(reason: "not_found" | "duplicate_code" | "already_archived" | "not_archived" | "in_use" | "booking_in_use", upcoming = 0) {
   switch (reason) {
     case "not_found":
       return jsonError(404, "not_found", "Raum nicht gefunden.");
@@ -15,6 +15,8 @@ export function roomError(reason: "not_found" | "duplicate_code" | "already_arch
       return jsonError(409, "duplicate_code", "Diese Raumnummer ist bereits vergeben.", {
         fieldErrors: { code: ["Diese Raumnummer ist bereits vergeben (auch archivierte Räume zählen)."] },
       });
+    case "booking_in_use":
+      return jsonError(409, "booking_in_use", "Aktive Reservierungen verhindern das Abschalten der Buchbarkeit.");
     case "already_archived":
       return jsonError(409, "already_archived", "Der Raum ist bereits archiviert.");
     case "not_archived":
@@ -23,7 +25,7 @@ export function roomError(reason: "not_found" | "duplicate_code" | "already_arch
       return jsonError(
         409,
         "room_in_use",
-        `Der Raum kann nicht archiviert werden: Es ${upcoming === 1 ? "ist noch 1 Termin" : `sind noch ${upcoming} Termine`} geplant. Bitte verlegen oder absagen Sie ${upcoming === 1 ? "ihn" : "sie"} zuerst.`,
+        `Der Raum hat noch ${upcoming} aktive Termine/Reservierungen und kann nicht archiviert werden. Bitte zuerst absagen oder stornieren.`,
         { upcomingSessions: upcoming },
       );
   }

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { isDemoBookableRoom } from "@/lib/bookings/policy.ts";
 import { fallbackLevel, localize, PUBLIC_TEXT, publicHref, type Lang } from "@/lib/i18n/public.ts";
 import { FLOORS, type PublicRoom } from "@/lib/rooms/schema.ts";
 import { DemoNotice, DemoTag, FallbackTag, LoadState } from "./PublicShell.tsx";
@@ -58,6 +59,12 @@ export function RoomDirectory({ lang }: { lang: Lang }) {
                     >
                       {t.rooms.todayInRoom}
                     </Link>
+                    {room.reservable && isDemoBookableRoom(room.code) && (
+                      <Link href={publicHref("/booking", lang, { raum: room.id })}
+                        className="mt-1 inline-flex min-h-14 w-fit touch-manipulation items-center rounded-xl bg-brand px-5 font-semibold text-white hover:bg-brand-strong">
+                        {lang === "de" ? "Raum reservieren (DEMO)" : "Book room (DEMO)"}
+                      </Link>
+                    )}
                   </article>
                 </li>
                 );

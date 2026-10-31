@@ -20,7 +20,8 @@
     de: {badge:'HCI-Prototyp',eyebrow:'CAMPUS WAYFINDING',title:'Finde deinen Raum.',intro:'Wähle ein Geschoss oder suche einen Bereich auf dem Gebäudeplan.',searchLabel:'Raum suchen',floors:'Geschosse',found:'Räume',loading:'Lade Räume …',sidebarNote:'Illustrationsbasierte Demo · kein amtlicher Lageplan',mapEyebrow:'INTERAKTIVE GEBÄUDEKARTE',mapSubtitle:'Tippe auf einen Marker oder wähle einen Bereich aus der Liste.',reset:'Anpassen',mapLegend:'Räume auf der Illustration',pins:'Markierungen',scrollHint:'Zum Erkunden scrollen / zoomen',emptyTitle:'Wähle einen Bereich aus',emptyText:'Position und Angaben erscheinen hier.',disclaimer:'Hinweis: Die Bilder sind KI-generierte Designillustrationen und kein verifizierter Grundriss. Positionen beziehen sich auf die Bilder, nicht auf echte Gebäude-Koordinaten. Live-Stundenpläne werden nicht simuliert.',searchPlaceholder:'z. B. K1-120, 120, Seminarraum …',invalidRoomFormat:'Ungültiges Raumformat. Beispiele: K1-120, K1 120, 120 oder K1-215a. Auch Raumnamen sind möglich.',noResults:'Kein Raum gefunden. Prüfe die Raumnummer (z. B. K1-120).',showOnMap:'Auf Karte zeigen',imageMissing:'Kartenbild konnte nicht geladen werden. Bitte die Dateien im Ordner assets prüfen.',zoomInLabel:'Vergrößern',zoomOutLabel:'Verkleinern',clearLabel:'Suche löschen',languageLabel:'Switch to English',mapRegionLabel:'Gebäudeplan, verschiebbar',floorSelectLabel:'Geschoss wählen',noLiveSchedule:'Live-Raumplan nicht verbunden',floor:'Geschoss',area:'Bereich',designSpot:'Position auf der Illustration',notOfficial:'Keine offizielle Raumzuordnung',floorName:['1. Obergeschoss','2. Obergeschoss','3. Obergeschoss'],groupLabel:'Räume im Plan',location:'Markierung',details:'Ausgewählter Bereich'},
     en: {badge:'HCI prototype',eyebrow:'CAMPUS WAYFINDING',title:'Find your room.',intro:'Choose a floor or search an area on the building illustration.',searchLabel:'Search rooms',floors:'Floors',found:'Rooms',loading:'Loading …',sidebarNote:'Illustrative demo · not an official floor plan',mapEyebrow:'INTERACTIVE CAMPUS MAP',mapSubtitle:'Tap a marker or choose an area from the list.',reset:'Fit',mapLegend:'Areas on the illustration',pins:'Markers',scrollHint:'Scroll / zoom to explore',emptyTitle:'Select an area',emptyText:'Its position and details will appear here.',disclaimer:'Note: These images are AI-generated design illustrations, not verified architectural plans. Positions are relative to the images, not real campus coordinates. Live class schedules are not simulated.',searchPlaceholder:'e.g. K1-120, 120, seminar room …',invalidRoomFormat:'Invalid room code. Examples: K1-120, K1 120, 120, or K1-215a. You can also search by room name.',noResults:'No room found. Check the room code (e.g. K1-120).',showOnMap:'Show on map',imageMissing:'Map image could not be loaded. Please check the files in the assets folder.',zoomInLabel:'Zoom in',zoomOutLabel:'Zoom out',clearLabel:'Clear search',languageLabel:'Zu Deutsch wechseln',mapRegionLabel:'Interactive floor map, scrollable',floorSelectLabel:'Choose floor',noLiveSchedule:'Live room schedule not connected',floor:'Floor',area:'Area',designSpot:'Position in illustration',notOfficial:'Not an official room designation',floorName:['First floor','Second floor','Third floor'],groupLabel:'Rooms on plan',location:'Marker',details:'Selected area'}
   };
-  let lang = 'de', floor = '1OG', zoom=1, selectedId=null, queryText='', lastFocusedPin=null;
+  const sharedParams = new URLSearchParams(window.location.search);
+  let lang = sharedParams.get('lang') === 'en' ? 'en' : 'de', floor = '1OG', zoom=1, selectedId=null, queryText='', lastFocusedPin=null;
   let validationTimer = null;
   const FEEDBACK_DELAY_MS = 480;
 
@@ -52,6 +53,9 @@
     }, FEEDBACK_DELAY_MS);
     return true;
   }
+  const BOOKABLE_DEMO_CODES = new Set(window.LCC_BOOKABLE_CODES || []);
+  const bookingBase = window.location.pathname.includes('/map-demo/') ? '../booking/' : 'booking/';
+  const bookingHref = (code) => `${bookingBase}?${new URLSearchParams({raum:code,lang})}`;
   const indexById=new Map(data.places.map(p=>[p.id,p]));
   const labelFloor = (id) => t[lang].floorName[['1OG','2OG','3OG'].indexOf(id)] || id;
   const roomName = (item) => lang === 'en' ? item.nameEn : item.name;
@@ -65,6 +69,11 @@
   const currentFloorPlaces = () => data.places.filter(item=>item.floor===floor && matched(item));
   const visibleList = () => data.places.filter(item=>matched(item) && (queryText || item.floor===floor));
   const escapeHtml = (s) => String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  // Shared room-code contract: the map uses visual IDs; Next.js booking resolves
+  // the stable SQLite room id from the selected code (no fake DB identifiers in URLs).
+  const linkedCode = (sharedParams.get('raum') || '').toUpperCase();
+  const linkedRoom = data.places.find(item => item.code.toUpperCase() === linkedCode);
+  if (linkedRoom) { floor = linkedRoom.floor; selectedId = linkedRoom.id; }
   const iconFor = (kind)=>({seminar:'▤',common:'◈',lab:'⚙',study:'▦',office:'▣',other:'•',unverified:'?'})[kind]||'•';
   function updateLabels(){
     document.documentElement.lang=lang;
@@ -107,7 +116,7 @@
     };
     if(dom.image.src!==metadata.image && dom.image.getAttribute('src')!==metadata.image) dom.image.src=metadata.image;
     dom.markers.innerHTML='';
-    currentFloorPlaces().forEach((item,i)=>{
+    currentFloorPlaces().filter(item=>Number.isFinite(item.x) && Number.isFinite(item.y)).forEach((item,i)=>{
       const button=document.createElement('button');button.type='button';button.className='map-pin room-code-pin'+(selectedId===item.id?' selected':'');
       button.style.left=`${(item.x*100).toFixed(3)}%`;button.style.top=`${(item.y*100).toFixed(3)}%`;
       button.title=`${item.code} · ${roomName(item)}`;button.setAttribute('aria-label',`${item.code}, ${roomName(item)}, ${labelFloor(item.floor)}`);
@@ -129,14 +138,24 @@
       b.append(icon,label,arrow);b.addEventListener('click',()=>selectRoom(item.id,true));dom.results.appendChild(b);
     });
   }
+  const bookingCopy = {
+    de: {button:'Diesen Raum probeweise reservieren →', note:'Nur Demo: Buchbarkeit dieser 21 Räume angenommen, keine echte Hochschulbuchung.', unavailable:'Für diesen Bereich ist in der Demo keine Buchung vorgesehen.'},
+    en: {button:'Make a test reservation for this room →', note:'Demo only: room availability is assumed, not confirmed by the university.', unavailable:'This location is not bookable in the demo.'},
+  };
   function drawDetails(){
     const item=indexById.get(selectedId);
     if(!item){dom.details.innerHTML=`<div class="details-empty"><div class="empty-symbol">⌖</div><div><h3>${escapeHtml(t[lang].emptyTitle)}</h3><p>${escapeHtml(t[lang].emptyText)}</p></div></div>`;return;}
-    // Explicitly avoid an invented room schedule or reservation button.
-    dom.details.innerHTML=`<div class="details-selected"><div class="detail-icon" aria-hidden="true">${iconFor(item.category)}</div><div class="detail-content"><div class="detail-floor">${escapeHtml(labelFloor(item.floor))} · ${escapeHtml(t[lang].designSpot)}</div><h3>${escapeHtml(item.code)} · ${escapeHtml(roomName(item))}</h3><p>${escapeHtml(t[lang].notOfficial)}</p></div><div class="detail-actions"><button id="focus-selected" type="button">⌖ ${escapeHtml(t[lang].showOnMap)}</button></div></div>`;
-    q('#focus-selected').addEventListener('click',()=>centerOn(item));
+    const canDemoBook = BOOKABLE_DEMO_CODES.has(item.code);
+    const hasPosition = Number.isFinite(item.x) && Number.isFinite(item.y);
+    const demoAction = canDemoBook
+      ? `<a class="booking-cta" href="${bookingHref(item.code)}">${escapeHtml(bookingCopy[lang].button)}</a>`
+      : `<p class="not-bookable">${escapeHtml(bookingCopy[lang].unavailable)}</p>`;
+    const noPositionNote = !hasPosition ? (lang === 'de' ? 'Raum aus dem Hochschulplan: noch kein Marker in dieser KI-Illustration.' : 'Room from the university plan: no pin in this AI illustration yet.') : '';
+    dom.details.innerHTML=`<div class="details-selected"><div class="detail-icon" aria-hidden="true">${iconFor(item.category)}</div><div class="detail-content"><div class="detail-floor">${escapeHtml(labelFloor(item.floor))} · ${escapeHtml(t[lang].designSpot)}</div><h3>${escapeHtml(item.code)} · ${escapeHtml(roomName(item))}</h3><p>${escapeHtml(t[lang].notOfficial)}</p>${canDemoBook?`<p class="booking-note">${escapeHtml(bookingCopy[lang].note)}</p>`:''}${noPositionNote?`<p class="booking-note">${escapeHtml(noPositionNote)}</p>`:''}</div><div class="detail-actions">${hasPosition ? `<button id="focus-selected" type="button">⌖ ${escapeHtml(t[lang].showOnMap)}</button>` : ''}${demoAction}</div></div>`;
+    if (hasPosition) q('#focus-selected').addEventListener('click',()=>centerOn(item));
   }
   function centerOn(item){
+    if (!Number.isFinite(item.x) || !Number.isFinite(item.y)) return; // no fabricated pin for K1-114
     const rect=dom.mapLayer.getBoundingClientRect(), vp=dom.viewport;
     const left=Math.max(0,rect.width*item.x-vp.clientWidth/2),top=Math.max(0,rect.height*item.y-vp.clientHeight/2);
     vp.scrollTo({left,top,behavior:'instant'});

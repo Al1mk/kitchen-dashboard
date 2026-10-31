@@ -1,4 +1,5 @@
 import { randomUUID } from "node:crypto";
+import { bookingConflict } from "../bookings/repository.ts";
 import type { Db } from "../db/database.ts";
 import type { FloorId } from "../rooms/schema.ts";
 import { berlinDayRange } from "../time/berlin.ts";
@@ -102,7 +103,14 @@ export function createSessionRepository(db: Db, clock: () => Date = () => new Da
 
   function findConflict(roomId: string, startsAt: string, endsAt: string, exceptId = ""): ConflictFailure | null {
     const conflict = selectOverlap.get(roomId, endsAt, startsAt, exceptId);
-    return conflict ? { ok: false, reason: "conflict", conflict } : null;
+    if (conflict) return { ok: false, reason: "conflict", conflict };
+    // Booking and class occupancy is checked in the SAME transaction as mutation.
+    const reservation = bookingConflict(db, roomId, startsAt, endsAt);
+    if (reservation) return {
+      ok: false, reason: "conflict",
+      conflict: { id: reservation.id, title: "Demo-Raumreservierung", startsAt: reservation.startsAt, endsAt: reservation.endsAt },
+    };
+    return null;
   }
 
   return {
