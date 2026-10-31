@@ -46,3 +46,6 @@ next-env.d.ts
 /playwright-report/
 /.vitest/
 !.env.example
+
+# disposable integration/demo databases (never the real data/ file)
+/.demo-data/
