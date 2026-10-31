@@ -44,6 +44,9 @@ Filled in as each import happens (actual SHAs).
 | Task | Commit | What entered | Verification |
 | --- | --- | --- | --- |
 | T00 | `201a006` | Audit/plan baseline docs | Secret pattern scan: no matches |
+| T03 | `7326b8e` (author `Aryan <>`) | `public/map-demo/` (3 PNG, data.js, app.js, styles.css, index.html, rooms.json), `src/app/map/page.tsx`, `docs/team-sources/aryan-v12.2/` (README, PR body, installer, survey templates, QA reports) — byte-identical to the ZIPs | 47 unique entries (21/18/8), PNG hashes equal to joint copy, `node --check app.js` ok |
+| T04 | `1c566f3` (author `Aryan and Parsa (joint) <>`) | `PARSA_BOOKING/add/**` verbatim; shared-file edits produced by the package's `apply_to_repo.py` (reviewed; run with `python3 -I -B` on the branch; 10/10 anchors matched once); `ARYAN_MAP` delta files; `INSTALL_COMBINED.py` `plan_nav` edit applied with the same anchors; docs under `docs/team-sources/aryan-parsa-joint/` | typecheck exit 0; `tests/unit/bookings.test.ts` 8/8 |
+| T05 | `6bc0b21` (author `Reza <>`) | `src/app/newcomers/page.tsx`, `src/lib/newcomers/content.ts`, `docs/hci/{booklet,design/reza,research,testing}/` verbatim; prototype, patches, screenshot, coordination notes under `docs/team-sources/reza/` | `diff -r` of docs vs. package: identical. Intermediate commit does not typecheck alone (section key added in `cb74062`) |
 
 ## 5. Integration adaptations log
 
@@ -51,6 +54,8 @@ Each entry: task, file(s), what changed relative to the imported source, why, au
 
 | Task | Commit | Adapted source | Change | Author |
 | --- | --- | --- | --- | --- |
+| T05 | `cb74062` | Reza's patch suggestions 01/02 | Added `newcomers` section key, DE/EN labels and nav entry by hand (patches no longer applied cleanly after T04) | Ali |
+| T07 | `7cae97f` | Aryan's catalog + joint 21-code choice | Generated typed catalog with fixed ids, ID-bound geometry module, guarded seed; the joint `scripts/seed-parsa-demo-rooms.ts` stays as imported but is superseded for the demo | Ali |
 
 ## 6. Unknowns that stay unknown
 

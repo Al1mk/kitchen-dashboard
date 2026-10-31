@@ -1,6 +1,6 @@
 # Authoritative task board and execution checkpoints
 
-Prepared by Codex on **31 October 2026**. **Execution has not started.** Historical audit results are in the brief/audit, not task completion for this new integration run.
+Prepared by Codex on **31 October 2026**. **Execution started 31 October 2026 (Claude Code, branch `integrate/team-v1-20261031`).** Historical audit results are in the brief/audit, not task completion for this new integration run.
 
 Use these states: `TODO`, `IN_PROGRESS`, `IMPLEMENTED` (code present, acceptance not yet verified), `VERIFIED`, `WAITING_HUMAN`, `BLOCKED` (name the concrete blocker), `DEFERRED` (give reason). Mark a task VERIFIED only within its stated acceptance scope. A partial human-dependent task can remain WAITING_HUMAN while its prepared files and technical results are listed in Evidence.
 
@@ -8,14 +8,14 @@ This table is the single authority for task state. Update plan step checkboxes a
 
 | ID | Priority | Depends on | Deliverable | Executor / external input | Status | Evidence / commit |
 | --- | --- | --- | --- | --- | --- | --- |
-| T00 | P0 | — | Current state and start checkpoint | Claude | TODO | None for new run |
-| T01 | P0 | T00 | Provenance and attribution ledger | Claude; joint split unknown | TODO | — |
-| T02 | P0 | T00 | Safe integration branch + isolated DB | Claude | TODO | — |
-| T03 | P0 | T01,T02 | Original Aryan map import | Claude import / Aryan source | TODO | — |
-| T04 | P0 | T03 | Joint booking/map delta import | Claude import / joint source | TODO | — |
-| T05 | P0 | T04 | Reza verbatim import + separate integration | Claude import / Reza source; Ali wiring | TODO | — |
-| T06 | P0 | T04,T05 | Working integration contracts | Claude / Ali's requested scope | TODO | — |
-| T07 | P0 | T06 | Unified seed + stable geometry IDs | Claude | TODO | — |
+| T00 | P0 | — | Current state and start checkpoint | Claude | VERIFIED | Start `4ae9808` = origin/main; branch created; see checkpoint IMPORTED |
+| T01 | P0 | T00 | Provenance and attribution ledger | Claude; joint split unknown | VERIFIED | `docs/contributions.md`; 67/67 source hashes identical; name-only authors accepted by Git (`bb00a2a`) |
+| T02 | P0 | T00 | Safe integration branch + isolated DB | Claude | VERIFIED | Branch `integrate/team-v1-20261031`; `.demo-data/` ignored; seed refuses `data/` (`bb00a2a`, `7cae97f`) |
+| T03 | P0 | T01,T02 | Original Aryan map import | Claude import / Aryan source | VERIFIED | `7326b8e` author `Aryan <>`; 47 unique entries 21/18/8; image hashes identical; app.js syntax ok |
+| T04 | P0 | T03 | Joint booking/map delta import | Claude import / joint source | VERIFIED | `1c566f3` author `Aryan and Parsa (joint) <>`; 10/10 anchors; migration 4; typecheck 0; bookings unit 8/8 |
+| T05 | P0 | T04 | Reza verbatim import + separate integration | Claude import / Reza source; Ali wiring | IMPLEMENTED | `6bc0b21` author `Reza <>` (verbatim) + `cb74062` Ali wiring; typecheck 0; DE/EN render check pending (T15 E2E) |
+| T06 | P0 | T04,T05 | Working integration contracts | Claude / Ali's requested scope | IMPLEMENTED | `fe8d7c3` contracts C1–C9 with per-rule status; `integration-contracts.test.ts` pending with T10 |
+| T07 | P0 | T06 | Unified seed + stable geometry IDs | Claude | VERIFIED | `7cae97f`; map-config + team-demo unit 17/17; seed run twice on `.demo-data/team-demo.sqlite` (48 new, then 0 new) |
 | T08 | P0 | T04,T06 | Pending request/receipt fix | Claude | TODO | — |
 | T09 | P0 | T07,T08 | Explicit selection + request states | Claude | TODO | — |
 | T10 | P0 | T06,T07 | Atomic occupancy / API / eligibility | Claude | TODO | — |
@@ -54,6 +54,29 @@ This table is the single authority for task state. Update plan step checkboxes a
 - Corrections: T05 depends on T04 and separates verbatim Reza source from Ali wiring; T04 likewise separates new adaptations. T08/T13 specify unresolved-request navigation protection, explicit warned abandonment, forced-unload limitations and a corresponding regression. Credential traces/video/screenshots, floor-query clearing and exact test commands were clarified.
 - Follow-up review: **all four chunks Approved**, no remaining plan blockers. This is document review, not an assertion that the application is fixed or tested.
 - All execution rows remain TODO. No runtime code changes, fresh application tests, commit or push were performed by the planning turn.
+
+### IMPORTED — 31 October 2026 (Europe/Berlin, afternoon)
+
+```text
+Checkpoint: IMPORTED / 2026-10-31
+Branch / HEAD / dirty paths: integrate/team-v1-20261031 / 7cae97f / untracked .claude/.headroom_wrap_settings.lock (excluded)
+VERIFIED task IDs: T00, T01, T02, T03, T04, T07
+IMPLEMENTED, not verified: T05 (DE/EN render check pending), T06 (contract tests pending with T10)
+Current task and next step: T08 pending-request fix, then T09/T10
+Checks actually run (command, exit, count, evidence):
+  source re-hash vs audit manifest: 67/67 identical (docs/evidence/integration-2026-10-31/README.md)
+  npm run typecheck after T04, T05, T07: exit 0 each (T04/T05/T07-typecheck.log)
+  vitest tests/unit/bookings.test.ts after T04: 8/8 (count from that run's JSON report; log only has wrapper output)
+  vitest map-config + team-demo + bookings after T07: 25/25 (T07-unit.log)
+  seed CLI twice on .demo-data/team-demo.sqlite: 48 new then 0 new (T07-seed-demo-db.log)
+Still failing / concrete blockers: known audit defects A-01..A-09 open by design until T08-T16; lint not yet run on branch
+Human input pending (owner and exact request): Aryan+Parsa: internal split of joint package; Reza: newcomer facts (T21)
+Contribution/import/adaptation commits: 7326b8e Aryan; 1c566f3 Aryan and Parsa (joint); 6bc0b21 Reza; Ali: 201a006, bb00a2a, cb74062, fe8d7c3, 7cae97f
+HCI change IDs and evidence type: none yet (change-log created in T18)
+Vault updated (notes) or pending outbox path: HCI-05, HCI-19, HCI-00 updated at this checkpoint
+Next 1-3 executable IDs: T08, T09, T10
+Scope intentionally deferred: none
+```
 
 ### Append after each meaningful checkpoint
 
