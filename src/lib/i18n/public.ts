@@ -26,7 +26,7 @@ export function publicHref(path: string, lang: Lang, params: Record<string, stri
   return query.size ? `${path}?${query}` : path;
 }
 
-export type PublicSection = "start" | "display" | "rooms" | "schedule" | "booking" | "map";
+export type PublicSection = "start" | "display" | "rooms" | "schedule" | "booking" | "map" | "newcomers";
 
 /** One staff-entered text as shown to the visitor. */
 export type LocalizedText = { text: string; lang: Lang; fallback: boolean };
@@ -49,7 +49,7 @@ export function fallbackLevel(texts: LocalizedText[]): "partial" | "all" | null 
 }
 
 const de = {
-  sections: { start: "Start", display: "Mitteilungen", rooms: "Räume", schedule: "Stundenplan", booking: "Raumbuchung", map: "Karte" } as Record<PublicSection, string>,
+  sections: { start: "Start", display: "Mitteilungen", rooms: "Räume", schedule: "Stundenplan", booking: "Raumbuchung", map: "Karte", newcomers: "Neu am Campus" } as Record<PublicSection, string>,
   navLabel: "Campus-Informationen",
   languageLabel: "Sprache",
   footer: "Prototyp im Kurs Mensch-Maschine-Interaktion – keine offizielle Anzeige der Hochschule Coburg.",
@@ -113,7 +113,7 @@ const de = {
 export type PublicText = typeof de;
 
 const en: PublicText = {
-  sections: { start: "Home", display: "Announcements", rooms: "Rooms", schedule: "Schedule", booking: "Booking", map: "Map" },
+  sections: { start: "Home", display: "Announcements", rooms: "Rooms", schedule: "Schedule", booking: "Booking", map: "Map", newcomers: "New to campus" },
   navLabel: "Campus information",
   languageLabel: "Language",
   footer: "Prototype from the Human-Computer Interaction course – not an official display of Hochschule Coburg.",

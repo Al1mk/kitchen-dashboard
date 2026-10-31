@@ -12,6 +12,7 @@ const SECTIONS: { key: PublicSection; path: string }[] = [
   { key: "schedule", path: "/schedule" },
   { key: "booking", path: "/booking" },
   { key: "map", path: "/map" },
+  { key: "newcomers", path: "/newcomers" },
 ];
 
 type Variant = "page" | "board";
