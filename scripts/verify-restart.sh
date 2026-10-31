@@ -1,8 +1,8 @@
 #!/bin/bash
 # Restart persistence check (production build, temporary database): publish an
 # announcement, save an unpublished draft edit, stop the server, start it again and
-# assert that the public output (announcements, rooms, schedule), the admin state
-# and the session are unchanged.
+# assert that the public output (announcements, rooms, schedule), the admin state,
+# the session and demo bookings (confirmed/cancelled, busy spans, token) are unchanged.
 # Every request must return the expected HTTP status; any failure or mismatch
 # exits non-zero. Needs a prior `npm run build`. Never touches data/.
 set -euo pipefail
@@ -72,6 +72,22 @@ ROOMS_BEFORE=$(req "public rooms before" 200 "$BASE/api/public/rooms" | jget 'd.
 SCHEDULE_BEFORE=$(req "public schedule before" 200 "$BASE/api/public/schedule?date=2030-01-15" | jget 'd.sessions')
 check "public schedule before restart" '["10:00 Neustart-Termin NEUSTART-1"]' "$(echo "$SCHEDULE_BEFORE" | jget 'd.map(s=>`${new Date(s.startsAt).toLocaleTimeString("de-DE",{timeZone:"Europe/Berlin",hour:"2-digit",minute:"2-digit"})} ${s.title} ${s.room.code}`)')"
 
+# Team integration (T17): two demo bookings on a relative Berlin date inside the
+# booking horizon; one is cancelled. Tokens are generated here and never printed.
+BDATE=$(node -e 'console.log(new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Berlin"}).format(new Date(Date.now()+2*86400000)))')
+rnd() { node -e "console.log(require('crypto').randomBytes($1).toString('base64url'))"; }
+BROOM=$(req "create bookable room" 201 -b "$J" "${H[@]}" -d '{"code":"NEUSTART-B","name":"Buchungsraum","floorId":"1OG","type":"study","description":"","reservable":true}' "$BASE/api/admin/rooms" | jget 'd.room.id')
+TOK1=$(rnd 32); TOK2=$(rnd 32)
+B1=$(req "create booking 1" 201 "${H[@]}" -d "{\"roomId\":\"$BROOM\",\"date\":\"$BDATE\",\"startTime\":\"10:00\",\"endTime\":\"11:00\",\"requestId\":\"$(rnd 16)\",\"cancelToken\":\"$TOK1\"}" "$BASE/api/public/bookings" | jget 'd.booking.id')
+B2=$(req "create booking 2" 201 "${H[@]}" -d "{\"roomId\":\"$BROOM\",\"date\":\"$BDATE\",\"startTime\":\"12:00\",\"endTime\":\"13:00\",\"requestId\":\"$(rnd 16)\",\"cancelToken\":\"$TOK2\"}" "$BASE/api/public/bookings" | jget 'd.booking.id')
+req "cancel booking 2" 200 -H "Origin: $BASE" -H "Authorization: Bearer $TOK2" -X POST "$BASE/api/public/bookings/$B2/cancel" >/dev/null
+BOOKINGS_Q='d.bookings.map(b=>`${b.id===process.env.B1?"B1":b.id===process.env.B2?"B2":"other"}:${b.status}`).sort().join(",")'
+export B1 B2
+BOOKINGS_BEFORE=$(req "admin bookings before" 200 -b "$J" "$BASE/api/admin/bookings?from=$BDATE&days=1&roomId=$BROOM" | jget "$BOOKINGS_Q")
+check "bookings before restart" "B1:confirmed,B2:cancelled" "$BOOKINGS_BEFORE"
+AVAIL_BEFORE=$(req "availability before" 200 "$BASE/api/public/availability?roomId=$BROOM&date=$BDATE" | jget 'd.busy')
+ROOMS_BEFORE=$(req "public rooms before (incl. booking room)" 200 "$BASE/api/public/rooms" | jget 'd.rooms')
+
 stop; echo "server 1 stopped (port $PORT no longer answers)"
 start; echo "server 2 started (pid $SRV)"
 [ "$SRV" != "$PID1" ] || fail "server 2 has the same pid as server 1"
@@ -82,6 +98,11 @@ CHECKS=$((CHECKS + 1)); echo "ok   old session after restart: HTTP 200"
 check "admin state after restart" "$ADMIN_EXPECTED" "$(req "admin after" 200 -b "$J" "$BASE/api/admin/announcements/$ID" | jget "$ADMIN_Q")"
 check "public rooms after restart (full JSON, unchanged)" "$ROOMS_BEFORE" "$(req "public rooms after" 200 "$BASE/api/public/rooms" | jget 'd.rooms')"
 check "public schedule after restart (full JSON, unchanged)" "$SCHEDULE_BEFORE" "$(req "public schedule after" 200 "$BASE/api/public/schedule?date=2030-01-15" | jget 'd.sessions')"
+
+check "bookings after restart (confirmed stays, cancelled stays cancelled)" "$BOOKINGS_BEFORE" "$(req "admin bookings after" 200 -b "$J" "$BASE/api/admin/bookings?from=$BDATE&days=1&roomId=$BROOM" | jget "$BOOKINGS_Q")"
+check "availability after restart (unchanged busy spans)" "$AVAIL_BEFORE" "$(req "availability after" 200 "$BASE/api/public/availability?roomId=$BROOM&date=$BDATE" | jget 'd.busy')"
+req "token still cancels after restart" 200 -H "Origin: $BASE" -H "Authorization: Bearer $TOK1" -X POST "$BASE/api/public/bookings/$B1/cancel" >/dev/null
+CHECKS=$((CHECKS + 1)); echo "ok   cancellation code still valid after restart: HTTP 200"
 
 stop
 echo "PASS: $CHECKS checks"

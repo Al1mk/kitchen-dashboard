@@ -5,7 +5,6 @@ import { join, resolve } from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { openDatabase, type Db } from "../../src/lib/db/database.ts";
 import { markerFor } from "../../src/lib/map/config.ts";
-import { TEAM_DEMO_ROOMS } from "../../src/lib/map/team-catalog.ts";
 import { seedTeamDemo } from "../../src/lib/map/team-seed.ts";
 import { createRoomRepository } from "../../src/lib/rooms/repository.ts";
 

@@ -21,7 +21,7 @@
     en: {badge:'HCI prototype',eyebrow:'CAMPUS WAYFINDING',title:'Find your room.',intro:'Choose a floor or search an area on the building illustration.',searchLabel:'Search rooms',floors:'Floors',found:'Rooms',loading:'Loading …',sidebarNote:'Illustrative demo · not an official floor plan',mapEyebrow:'INTERACTIVE CAMPUS MAP',mapSubtitle:'Tap a marker or choose an area from the list.',reset:'Fit',mapLegend:'Areas on the illustration',pins:'Markers',scrollHint:'Scroll / zoom to explore',emptyTitle:'Select an area',emptyText:'Its position and details will appear here.',disclaimer:'Note: These images are AI-generated design illustrations, not verified architectural plans. Positions are relative to the images, not real campus coordinates. Live class schedules are not simulated.',searchPlaceholder:'e.g. K1-120, 120, seminar room …',invalidRoomFormat:'Invalid room code. Examples: K1-120, K1 120, 120, or K1-215a. You can also search by room name.',noResults:'No room found. Check the room code (e.g. K1-120).',showOnMap:'Show on map',imageMissing:'Map image could not be loaded. Please check the files in the assets folder.',zoomInLabel:'Zoom in',zoomOutLabel:'Zoom out',clearLabel:'Clear search',languageLabel:'Zu Deutsch wechseln',mapRegionLabel:'Interactive floor map, scrollable',floorSelectLabel:'Choose floor',noLiveSchedule:'Live room schedule not connected',floor:'Floor',area:'Area',designSpot:'Position in illustration',notOfficial:'Not an official room designation',floorName:['First floor','Second floor','Third floor'],groupLabel:'Rooms on plan',location:'Marker',details:'Selected area'}
   };
   const sharedParams = new URLSearchParams(window.location.search);
-  let lang = sharedParams.get('lang') === 'en' ? 'en' : 'de', floor = '1OG', zoom=1, selectedId=null, queryText='', lastFocusedPin=null;
+  let lang = sharedParams.get('lang') === 'en' ? 'en' : 'de', floor = '1OG', zoom=1, selectedId=null, queryText='';
   let validationTimer = null;
   const FEEDBACK_DELAY_MS = 480;
 
@@ -116,7 +116,7 @@
     };
     if(dom.image.src!==metadata.image && dom.image.getAttribute('src')!==metadata.image) dom.image.src=metadata.image;
     dom.markers.innerHTML='';
-    currentFloorPlaces().filter(item=>Number.isFinite(item.x) && Number.isFinite(item.y)).forEach((item,i)=>{
+    currentFloorPlaces().filter(item=>Number.isFinite(item.x) && Number.isFinite(item.y)).forEach((item)=>{
       const button=document.createElement('button');button.type='button';button.className='map-pin room-code-pin'+(selectedId===item.id?' selected':'');
       button.style.left=`${(item.x*100).toFixed(3)}%`;button.style.top=`${(item.y*100).toFixed(3)}%`;
       button.title=`${item.code} · ${roomName(item)}`;button.setAttribute('aria-label',`${item.code}, ${roomName(item)}, ${labelFloor(item.floor)}`);
