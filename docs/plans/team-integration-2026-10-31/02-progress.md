@@ -13,21 +13,21 @@ This table is the single authority for task state. Update plan step checkboxes a
 | T02 | P0 | T00 | Safe integration branch + isolated DB | Claude | VERIFIED | Branch `integrate/team-v1-20261031`; `.demo-data/` ignored; seed refuses `data/` (`bb00a2a`, `7cae97f`) |
 | T03 | P0 | T01,T02 | Original Aryan map import | Claude import / Aryan source | VERIFIED | `7326b8e` author `Aryan <>`; 47 unique entries 21/18/8; image hashes identical; app.js syntax ok |
 | T04 | P0 | T03 | Joint booking/map delta import | Claude import / joint source | VERIFIED | `1c566f3` author `Aryan and Parsa (joint) <>`; 10/10 anchors; migration 4; typecheck 0; bookings unit 8/8 |
-| T05 | P0 | T04 | Reza verbatim import + separate integration | Claude import / Reza source; Ali wiring | IMPLEMENTED | `6bc0b21` author `Reza <>` (verbatim) + `cb74062` Ali wiring; typecheck 0; DE/EN render check pending (T15 E2E) |
-| T06 | P0 | T04,T05 | Working integration contracts | Claude / Ali's requested scope | IMPLEMENTED | `fe8d7c3` contracts C1–C9 with per-rule status; `integration-contracts.test.ts` pending with T10 |
+| T05 | P0 | T04 | Reza verbatim import + separate integration | Claude import / Reza source; Ali wiring | VERIFIED | `6bc0b21` Reza verbatim + `cb74062` Ali wiring; DE/EN render and links tested in `integrated-navigation.spec.ts` (T17 60/60) |
+| T06 | P0 | T04,T05 | Working integration contracts | Claude / Ali's requested scope | VERIFIED | `fe8d7c3` contract C1–C9, all rows now with tested status; `integration-contracts.test.ts` 5/5 (`64d2801`) |
 | T07 | P0 | T06 | Unified seed + stable geometry IDs | Claude | VERIFIED | `7cae97f`; map-config + team-demo unit 17/17; seed run twice on `.demo-data/team-demo.sqlite` (48 new, then 0 new) |
-| T08 | P0 | T04,T06 | Pending request/receipt fix | Claude | TODO | — |
-| T09 | P0 | T07,T08 | Explicit selection + request states | Claude | TODO | — |
-| T10 | P0 | T06,T07 | Atomic occupancy / API / eligibility | Claude | TODO | — |
-| T11 | P0 | T07 | Live-ID map in shared shell | Claude adapting Aryan source | TODO | — |
-| T12 | P0 | T05,T11 | Shared navigation/query/language | Claude | TODO | — |
-| T13 | P0 | T08,T09,T10,T12 | Localized booking/receipt/cancel | Claude | TODO | — |
-| T14 | P0 | T10 | Minimal Katja booking UI | Claude | TODO | — |
-| T15 | P0/P1 | T05,T12 | Working newcomer entry/content | Claude; Reza factual input in T21 | TODO | — |
-| T16 | P0 | T08–T15 | Clean lint, regression and docs | Claude | TODO | — |
-| T17 | P0 | T16 | Full acceptance + restart/races | Claude | TODO | — |
-| T18 | P1 | T00 | Research templates/change ledger | Claude; humans supply results | TODO | — |
-| T19 | P0 | T17,T18 | Frozen/shareable integrated V1 | Claude | TODO | — |
+| T08 | P0 | T04,T06 | Pending request/receipt fix | Claude | VERIFIED | `fb55c6d`; `booking-pending.spec.ts` 4/4 failed before (null-ref reproduced), 4/4 pass after |
+| T09 | P0 | T07,T08 | Explicit selection + request states | Claude | VERIFIED | `fb55c6d`; `booking-selection.spec.ts` 5/5 |
+| T10 | P0 | T06,T07 | Atomic occupancy / API / eligibility | Claude | VERIFIED | `ead0cf0`; occupancy/booking units; worker-thread race 3/3 (fails without transaction); `booking-api.spec.ts` 2/2 |
+| T11 | P0 | T07 | Live-ID map in shared shell | Claude adapting Aryan source | VERIFIED | `fac4a89`; `map-integration.spec.ts` 7/7 |
+| T12 | P0 | T05,T11 | Shared navigation/query/language | Claude | VERIFIED | `fac4a89`; `integrated-navigation.spec.ts` 7/7 incl. simulated 540×960 and 1080×1920 |
+| T13 | P0 | T08,T09,T10,T12 | Localized booking/receipt/cancel | Claude | VERIFIED | `fb55c6d` + `5e114cb`; `booking-language-receipt.spec.ts` 3/3; whether 60 s suffices for people: NOT RUN |
+| T14 | P0 | T10 | Minimal Katja booking UI | Claude | VERIFIED | `5859bb4`; `admin-bookings.spec.ts` 2/2 |
+| T15 | P0/P1 | T05,T12 | Working newcomer entry/content | Claude; Reza factual input in T21 | IMPLEMENTED | `5c5a3c9`; in-app links DE/EN tested; real newcomer facts pending T21 (Reza) |
+| T16 | P0 | T08–T15 | Clean lint, regression and docs | Claude | VERIFIED | `64d2801`, `43bd5f2`; lint 0 problems; archive wording fixed (old journey passes); docs updated |
+| T17 | P0 | T16 | Full acceptance + restart/races | Claude | VERIFIED | code `64d2801`: typecheck 0, lint 0, unit 134/134, build 0, E2E 60/60, concurrency 3/3, restart PASS 13 (attempt 1: script bug); `docs/evidence/integration-2026-10-31/T17/` |
+| T18 | P1 | T00 | Research templates/change ledger | Claude; humans supply results | VERIFIED | `43bd5f2` docs/hci: proto-personas (hypotheses), change-log CH-001..011, test plan, templates, outlines; no study claimed |
+| T19 | P0 | T17,T18 | Frozen/shareable integrated V1 | Claude | BLOCKED | V1 frozen locally: code `64d2801`, docs `43bd5f2` (`docs/hci/versions.md`); publishing the branch to GitHub was denied by the local agent permission policy — Ali to publish it |
 | T20 | P1 | T00; T19 for app check | Real screen / second device | Reza/Ali; Claude prepares | TODO | — |
 | T21 | P1 | T00 | Facts, provenance, Moodle dates | Reza/team; official sources | TODO | — |
 | T22 | P1 | T18,T19 | Actual human task observations | Humans; Claude processes records | TODO | — |
@@ -76,6 +76,33 @@ HCI change IDs and evidence type: none yet (change-log created in T18)
 Vault updated (notes) or pending outbox path: HCI-05, HCI-19, HCI-00 updated at this checkpoint
 Next 1-3 executable IDs: T08, T09, T10
 Scope intentionally deferred: none
+```
+
+### V1-READY (local) — 31 October 2026, evening (Europe/Berlin)
+
+```text
+Checkpoint: V1-READY (local; GitHub branch publication pending) / 2026-10-31
+Branch / HEAD / dirty paths: integrate/team-v1-20261031 / 43bd5f2 (+ this board update) / .claude/.headroom_wrap_settings.lock (excluded)
+VERIFIED task IDs: T00-T14, T16, T17, T18
+IMPLEMENTED, not verified: T15 (in-app part tested; real facts pending T21)
+BLOCKED: T19 publication only (agent permission policy denied the branch upload); local V1 is complete
+Current task and next step: T29 vault sync, then T23 analytical review on integrated-v1
+Checks actually run (command, exit, count, evidence) on code 64d2801:
+  npm run typecheck exit 0 (also rerun after the last edits)
+  npm run lint exit 0, 0 problems (first run 3 warnings, fixed)
+  npm test exit 0, 134/134 in 17 files
+  npm run build exit 0
+  npm run test:e2e exit 0, 60/60 (SCREENSHOT_DIR=docs/evidence/integration-2026-10-31/screenshots)
+  npx vitest run tests/unit/booking-concurrency.test.ts exit 0, 3/3
+  bash scripts/verify-restart.sh: attempt 1 exit 1 (script ordering bug), attempt 2 exit 0, PASS 13
+  credential pattern scan of T17 logs: 0 matches
+Still failing / concrete blockers: GitHub branch publication (permission); no failing test suite
+Human input pending: Aryan+Parsa joint split; Reza screen measurements (T20) and newcomer facts/help destination (T21); team: Moodle dates/format (T21); volunteers/Katja for U1-U6 (T22)
+Contribution/import/adaptation commits: originals 7326b8e (Aryan), 1c566f3 (Aryan and Parsa joint), 6bc0b21 (Reza); Ali integration fe8d7c3, 7cae97f, ead0cf0, fb55c6d, fac4a89, 5e114cb, 5859bb4, 5c5a3c9, 64d2801, 43bd5f2
+HCI change IDs and evidence type: CH-001..CH-011, technical/analytical; human result NOT RUN for all
+Vault updated (notes) or pending outbox path: HCI-05, HCI-06, HCI-16, HCI-19, HCI-00, HCI-02 at this checkpoint
+Next 1-3 executable IDs: T23 (analytical part), T24 (only analytically motivated, labelled), T28/T29
+Scope intentionally deferred: V2 styling until T23; no deployment, no main merge
 ```
 
 ### Append after each meaningful checkpoint
