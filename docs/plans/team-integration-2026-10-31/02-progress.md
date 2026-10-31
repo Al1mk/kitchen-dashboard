@@ -31,13 +31,13 @@ This table is the single authority for task state. Update plan step checkboxes a
 | T20 | P1 | T00; T19 for app check | Real screen / second device | Reza/Ali; Claude prepares | TODO | — |
 | T21 | P1 | T00 | Facts, provenance, Moodle dates | Reza/team; official sources | TODO | — |
 | T22 | P1 | T18,T19 | Actual human task observations | Humans; Claude processes records | TODO | — |
-| T23 | P1 | T18,T19; add human data when available | Ranked V2 decisions | Claude + actual evidence | TODO | — |
-| T24 | P1/P2 | T23 | Selected UI/UX V2 changes | Claude | TODO | — |
+| T23 | P1 | T18,T19; add human data when available | Ranked V2 decisions | Claude + actual evidence | IMPLEMENTED | `50bd120`: analytical HE-01..08, CW-01, ranked V2 candidates; human data not yet available |
+| T24 | P1/P2 | T23 | Selected UI/UX V2 changes | Claude | DEFERRED | Sequenced after first T22 session so V1 stays the tested version (`docs/hci/v2-decisions.md`) |
 | T25 | P1 | T24 | Current regression + human retest | Claude / actual participants | TODO | — |
 | T26 | P1 | T18; latest real evidence | Attributed booklet draft/final | Claude draft / each member review | TODO | — |
 | T27 | P1 | T19; latest V2 if ready | Short demo + rehearsal status | Claude prepares / presenter rehearses | TODO | — |
 | T28 | P1 | T19; final completed code | Reviewable branch/docs/package | Claude | TODO | — |
-| T29 | P1 | Current checkpoint | Follow-up packet and vault sync | Claude | TODO | — |
+| T29 | P1 | Current checkpoint | Follow-up packet and vault sync | Claude | IMPLEMENTED | `docs/hci/review-handoff.md`; vault HCI-05/06/16/19/00/02 updated 2026-10-31 |
 
 ## Checkpoints
 
