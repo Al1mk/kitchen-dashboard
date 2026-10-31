@@ -163,42 +163,42 @@ Status legend: **implemented** = in code; **tested** = covered by a test that wa
 | Rule | Status |
 | --- | --- |
 | Floor ids `EG`, `1OG`, `2OG`, `3OG`. Old ids keep their meaning; nothing is renamed. Only `1OG`/`2OG`/`3OG` have a map image; a room on `EG` shows "no map for this floor". | implemented (T04 added `3OG`) |
-| `MapFloor = { floorId, image, width, height }` — the three images from Aryan's delivery with their intrinsic pixel size. They are AI-generated illustrations (per the source), not verified campus or emergency plans. | pending (T07 `src/lib/map/config.ts`) |
-| `RoomMapPosition = { roomId, floorId, x, y }`: origin top-left of the **image**, x to the right, y down, finite numbers in `[0, 1]` inclusive, relative to the image (not the viewport), at most one position per room id. | pending (T07) |
-| A marker is drawn only if the room is in the current public room list, has a position, and the position's `floorId` equals the room's current `floorId`. Otherwise the room is still selectable as information, without a dot. Archived/unknown rooms never get a marker. | pending (T11) |
-| K1-114 (48th entry, joint package) has no position. | pending (T07) |
+| `MapFloor = { floorId, image, width, height }` — the three images from Aryan's delivery with their intrinsic pixel size. They are AI-generated illustrations (per the source), not verified campus or emergency plans. | tested (`map-config.test.ts`) |
+| `RoomMapPosition = { roomId, floorId, x, y }`: origin top-left of the **image**, x to the right, y down, finite numbers in `[0, 1]` inclusive, relative to the image (not the viewport), at most one position per room id. | tested (`map-config.test.ts`) |
+| A marker is drawn only if the room is in the current public room list, has a position, and the position's `floorId` equals the room's current `floorId`. Otherwise the room is still selectable as information, without a dot. Archived/unknown rooms never get a marker. | tested (`map-config.test.ts`, `map-integration.spec.ts`) |
+| K1-114 (48th entry, joint package) has no position. | tested |
 
 ### C2 Team demo rooms
 
 | Rule | Status |
 | --- | --- |
-| One opt-in seed (`npm run db:seed-team-demo -- --yes`) creates the 48 catalog rooms with deterministic ids `lcc-demo-room-<code lower-case>` (e.g. `lcc-demo-room-k1-120`), `isDemo=true`. It requires `CAMPUS_BOARD_DB_PATH` and refuses the default `data/` database. | pending (T07) |
-| Existing rows are never changed: an existing id is kept as is (also if archived or edited), a code owned by another id is reported as a collision and skipped. No guessing of ids at runtime. | pending (T07) |
-| Initial `reservable=true` for the 21 codes chosen in the joint package (seed provenance only); all other imported areas `false`. | pending (T07) |
-| Imported categories map 1:1 to existing room types (`seminar`, `common`, `lab`, `office`, `study`, `other`). | pending (T07) |
-| A few clearly labelled demo class sessions on relative Berlin dates (today/tomorrow) so map → schedule → booking can be shown. Not the real timetable. | pending (T07) |
+| One opt-in seed (`npm run db:seed-team-demo -- --yes`) creates the 48 catalog rooms with deterministic ids `lcc-demo-room-<code lower-case>` (e.g. `lcc-demo-room-k1-120`), `isDemo=true`. It requires `CAMPUS_BOARD_DB_PATH` and refuses the default `data/` database. | tested (`team-demo.test.ts`) |
+| Existing rows are never changed: an existing id is kept as is (also if archived or edited), a code owned by another id is reported as a collision and skipped. No guessing of ids at runtime. | tested |
+| Initial `reservable=true` for the 21 codes chosen in the joint package (seed provenance only); all other imported areas `false`. | tested |
+| Imported categories map 1:1 to existing room types (`seminar`, `common`, `lab`, `office`, `study`, `other`). | tested |
+| A few clearly labelled demo class sessions on relative Berlin dates (today/tomorrow) so map → schedule → booking can be shown. Not the real timetable. | implemented |
 
 ### C3 Public page URLs and context
 
 | Parameter | Meaning | Status |
 | --- | --- | --- |
-| `raum` | Stable opaque room **id** on `/map`, `/schedule`, `/booking`. Never a room code. A value that is not an id of a suitable active room is shown as "room not available" with a deliberate choice; the app never substitutes another room. | pending (T09, T11) |
-| `datum` | Berlin calendar date `YYYY-MM-DD` on `/schedule` and `/booking` | implemented on `/schedule`; booking pending (T09) |
-| `etage` | Floor shown on `/map` when no room is selected | pending (T11) |
-| `lang=en` | English public interface; kept on every public link and language switch with the other parameters | implemented for existing pages; new pages pending (T11–T13) |
+| `raum` | Stable opaque room **id** on `/map`, `/schedule`, `/booking`. Never a room code. A value that is not an id of a suitable active room is shown as "room not available" with a deliberate choice; the app never substitutes another room. | tested (`booking-selection.spec.ts`, `map-integration.spec.ts`) |
+| `datum` | Berlin calendar date `YYYY-MM-DD` on `/schedule` and `/booking` | tested on `/schedule`, `/booking`, `/map` |
+| `etage` | Floor shown on `/map` when no room is selected | tested |
+| `lang=en` | English public interface; kept on every public link and language switch with the other parameters | tested (`integrated-navigation.spec.ts`) |
 
 Changing the floor on the map clears `raum` and keeps `lang`. APIs keep their parameter names `roomId` and `date`.
 
 ### C4 Booking policy (demo assumption)
 
-One server definition in `src/lib/bookings/policy.ts`: time zone Europe/Berlin, storage in UTC ISO, 14 bookable dates including today (`daysAhead: 13`), 08:00–20:00, 15-minute grid, 15–120 minutes, start not in the past (server clock). Source: joint package; labelled as a demo assumption. Status: implemented (T04 import); single use by page and API pending (T09/T10).
+One server definition in `src/lib/bookings/policy.ts`: time zone Europe/Berlin, storage in UTC ISO, 14 bookable dates including today (`daysAhead: 13`), 08:00–20:00, 15-minute grid, 15–120 minutes, start not in the past (server clock). Source: joint package; labelled as a demo assumption. Status: tested; page, API and client use `bookingDateRange`/`BOOKING_POLICY` (`integration-contracts.test.ts`).
 
 ### C5 Booking API
 
 | Endpoint | Contract | Status |
 | --- | --- | --- |
-| `GET /api/public/availability?roomId&date` | 200 `{ serverTime, date, timeZone, policy, room, window, busy[], free[] }`. `busy` = actual class/booking spans clipped to the window (`kind: class \| booking`). `free` spans start and end on the 15-minute grid; spans shorter than 15 minutes are dropped. Advisory only. 400 `validation`, 409 `room_not_reservable` (unknown, archived or not reservable). | implemented; grid rounding pending (T10) |
-| `POST /api/public/bookings` | Body `{ roomId, date, startTime, endTime, requestId (16 random bytes, base64url), cancelToken (32 random bytes, base64url) }`. Client generates both secrets; server stores only a SHA-256 hash of the token. Same-origin required (403 `forbidden_origin`). 201 new / 200 `replayed: true` for an exact retry (same request id, room, period and token, checked **before** time validation). 409 `request_id_reused`, `room_not_reservable`, `time_conflict`; 400 `validation` with `detail` code (`date_out_of_range`, `invalid_time`, `grid`, `in_past`, `invalid_input`); 503 `temporarily_unavailable` = retryable with the same body. | implemented; `detail` codes pending (T10) |
+| `GET /api/public/availability?roomId&date` | 200 `{ serverTime, date, timeZone, policy, room, window, busy[], free[] }`. `busy` = actual class/booking spans clipped to the window (`kind: class \| booking`). `free` spans start and end on the 15-minute grid; spans shorter than 15 minutes are dropped. Advisory only. 400 `validation`, 409 `room_not_reservable` (unknown, archived or not reservable). | tested (`occupancy.test.ts`, `booking-api.spec.ts`) |
+| `POST /api/public/bookings` | Body `{ roomId, date, startTime, endTime, requestId (16 random bytes, base64url), cancelToken (32 random bytes, base64url) }`. Client generates both secrets; server stores only a SHA-256 hash of the token. Same-origin required (403 `forbidden_origin`). 201 new / 200 `replayed: true` for an exact retry (same request id, room, period and token, checked **before** time validation). 409 `request_id_reused`, `room_not_reservable`, `time_conflict`; 400 `validation` with `detail` code (`date_out_of_range`, `invalid_time`, `grid`, `in_past`, `invalid_input`); 503 `temporarily_unavailable` = retryable with the same body. | tested (`booking-api.spec.ts`, `booking-pending.spec.ts`) |
 | `POST /api/public/bookings/:id/cancel` | `Authorization: Bearer <cancelToken>`; 200 (also for an already cancelled booking), 401 malformed token, 404 unknown id or wrong token (indistinguishable), 409 `booking_ended`, 503 retryable. Booking ids are UUIDs. | implemented |
 | `GET /api/admin/bookings?from&days&roomId` | Admin only. `{ bookings: [{ id, roomId, roomCode, startsAt, endsAt, status, isDemo, createdAt, cancelledAt }] }`. Never contains token or hash. | implemented |
 | `POST /api/admin/bookings/:id/cancel` | Admin only, same-origin. 200 / 404 / 409 `booking_ended`. | implemented |
@@ -209,25 +209,25 @@ Public responses carry machine-readable `error`/`detail` codes. The `message` fi
 
 | Rule | Status |
 | --- | --- |
-| Overlap is half-open: `existing.start < proposed.end && existing.end > proposed.start`. Cancelled classes and cancelled bookings never block; a class never blocks itself on edit. | implemented (T04) — consolidation pending (T10 `src/lib/occupancy/conflicts.ts`) |
-| Every mutation that can create occupancy runs check + write in one `BEGIN IMMEDIATE` transaction on the same connection: booking create; class create, edit, reinstate; room archive and "reservable off". | pending (T10) |
-| Bookability is `room active AND reservable` at the time of the write. Room code/name are not permission keys; no code allowlist at runtime. | pending (T10; removes the code allowlist imported in T04) |
-| Class vs. class keeps `409 room_conflict` with `conflict { id, title, startsAt, endsAt }` (unchanged). Class vs. booking returns `409 booking_conflict` with `conflict { kind: "booking", id, startsAt, endsAt }` (admin API only). Nothing is cancelled silently. | pending (T10) |
-| Archive refused while scheduled classes or confirmed bookings lie ahead: `409 room_in_use` with `upcomingSessions` and `upcomingBookings`. Switching `reservable` off refused while confirmed future bookings exist: `409 booking_in_use`. | implemented (T04) — counts/wording pending (T10/T16) |
-| SQLite busy/locked → 503 `temporarily_unavailable`; clients retry with the identical request. | implemented for booking routes (T04) |
+| Overlap is half-open: `existing.start < proposed.end && existing.end > proposed.start`. Cancelled classes and cancelled bookings never block; a class never blocks itself on edit. | tested (`occupancy.test.ts`) |
+| Every mutation that can create occupancy runs check + write in one `BEGIN IMMEDIATE` transaction on the same connection: booking create; class create, edit, reinstate; room archive and "reservable off". | tested incl. worker-thread race on separate connections (`booking-concurrency.test.ts`) |
+| Bookability is `room active AND reservable` at the time of the write. Room code/name are not permission keys; no code allowlist at runtime. | tested (rename keeps bookability) |
+| Class vs. class keeps `409 room_conflict` with `conflict { id, title, startsAt, endsAt }` (unchanged). Class vs. booking returns `409 booking_conflict` with `conflict { kind: "booking", id, startsAt, endsAt }` (admin API only). Nothing is cancelled silently. | tested |
+| Archive refused while scheduled classes or confirmed bookings lie ahead: `409 room_in_use` with `upcomingSessions` and `upcomingBookings`. Switching `reservable` off refused while confirmed future bookings exist: `409 booking_in_use`. | tested |
+| SQLite busy/locked → 503 `temporarily_unavailable`; clients retry with the identical request. | implemented for booking and admin occupancy routes; lock contention itself not provoked in tests |
 
 ### C7 Public booking UI and receipt
 
 | Rule | Status |
 | --- | --- |
-| The request (room, date, start, end, request id, token) is snapshotted before the request is sent; the receipt is built from that snapshot. While a request is in flight or its outcome is unknown, the selection is locked and in-app navigation (nav, language, Home, map, cancel, change) asks for confirmation; abandoning warns that a booking may already exist and the code would be lost. Forced reload/close is only protected by a best-effort browser prompt; credentials live in memory only. | pending (T08) |
-| Receipt shows room (localized name), date, time, booking id and cancellation code; a visible 60-second countdown, "More time" and "Finish". Finish/expiry clears it and returns to Start in the current language. Unfinished forms do not time out. No general kiosk idle reset. The 60 s value is a provisional design choice to be tested with people. | pending (T13) |
-| Credentials never go into URL, local/session storage, cookies or logs. | implemented (T04 keeps them in memory) — tests pending (T13) |
+| The request (room, date, start, end, request id, token) is snapshotted before the request is sent; the receipt is built from that snapshot. While a request is in flight or its outcome is unknown, the selection is locked and in-app navigation (nav, language, Home, map, cancel, change) asks for confirmation; abandoning warns that a booking may already exist and the code would be lost. Forced reload/close is only protected by a best-effort browser prompt; credentials live in memory only. | tested in-app (`booking-pending.spec.ts`); reload/close prompt not tested |
+| Receipt shows room (localized name), date, time, booking id and cancellation code; a visible 60-second countdown, "More time" and "Finish". Finish/expiry clears it and returns to Start in the current language. Unfinished forms do not time out. No general kiosk idle reset. The 60 s value is a provisional design choice to be tested with people. | tested technically (`booking-language-receipt.spec.ts`); human test NOT RUN |
+| Credentials never go into URL, local/session storage, cookies or logs. | implemented; E2E checks no receipt after back navigation |
 
 ### C8 Admin booking view
 
-`/admin/bookings`: list for a date range and optional room, with Berlin date/time, room and textual state; explicit cancellation with confirmation. A class form that hits a booking conflict links to this list filtered to the room and date. No editing, reinstating or analytics. Status: pending (T14).
+`/admin/bookings`: list for a date range and optional room, with Berlin date/time, room and textual state; explicit cancellation with confirmation. A class form that hits a booking conflict links to this list filtered to the room and date. No editing, reinstating or analytics. Status: tested (`admin-bookings.spec.ts`).
 
 ### C9 Newcomer page
 
-Static DE/EN content in `src/lib/newcomers/content.ts` (Reza's original, adapted). Links only to existing in-app destinations (map, schedule, notices). No contact, office hours or university policy unless a source is recorded in `docs/hci/research/newcomer-content-sources.md`. No CMS. Status: route implemented (T05); content/links pending (T15).
+Static DE/EN content in `src/lib/newcomers/content.ts` (Reza's original, adapted). Links only to existing in-app destinations (map, schedule, notices). No contact, office hours or university policy unless a source is recorded in `docs/hci/research/newcomer-content-sources.md`. No CMS. Status: tested in-app links DE/EN (`integrated-navigation.spec.ts`); real facts pending (T21).

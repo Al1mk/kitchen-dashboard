@@ -23,3 +23,4 @@ Credential scan of all T17 logs (43-char base64url pattern): 0 matches.
 
 Not established by these checks: physical kiosk/touch, second device on a LAN, human usability,
 real campus accuracy of the map, real timetable data.
+Typecheck rerun on 64d2801 code after all T17 edits: exit 0.
