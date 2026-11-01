@@ -27,7 +27,7 @@ This table is the single authority for task state. Update plan step checkboxes a
 | T16 | P0 | T08–T15 | Clean lint, regression and docs | Claude | VERIFIED | `64d2801`, `43bd5f2`; lint 0 problems; archive wording fixed (old journey passes); docs updated |
 | T17 | P0 | T16 | Full acceptance + restart/races | Claude | VERIFIED | code `64d2801`: typecheck 0, lint 0, unit 134/134, build 0, E2E 60/60, concurrency 3/3, restart PASS 13 (attempt 1: script bug); `docs/evidence/integration-2026-10-31/T17/` |
 | T18 | P1 | T00 | Research templates/change ledger | Claude; humans supply results | VERIFIED | `43bd5f2` docs/hci: proto-personas (hypotheses), change-log CH-001..011, test plan, templates, outlines; no study claimed |
-| T19 | P0 | T17,T18 | Frozen/shareable integrated V1 | Claude | BLOCKED | V1 frozen locally: code `64d2801`, docs `43bd5f2` (`docs/hci/versions.md`); publishing the branch to GitHub was denied by the local agent permission policy — Ali to publish it |
+| T19 | P0 | T17,T18 | Frozen/shareable integrated V1 | Claude prepares; Ali publishes | VERIFIED | Ali pushed `integrate/team-v1-20261031` on 2026-11-01; remote = `f7f91af`, main unchanged `4ae9808`; fresh clone of the remote: typecheck 0, lint 0, unit 136/136, build 0, E2E 66/66, restart PASS 13 (`docs/evidence/post-push-verification-2026-11-01/`) |
 | T20 | P1 | T00; T19 for app check | Real screen / second device | Reza/Ali; Claude prepares | TODO | — |
 | T21 | P1 | T00 | Facts, provenance, Moodle dates | Reza/team; official sources | TODO | — |
 | T22 | P1 | T18,T19 | Actual human task observations | Humans; Claude processes records | TODO | — |
@@ -179,4 +179,11 @@ Scope intentionally deferred: V2 design work, schedule booking link (CW-01), pus
 - Backup: `Project/git-backups/campus-board-before-publication-20261101-104535/` (outside the repository).
 - Checks on the unchanged runtime: typecheck 0, lint 0, unit 136/136. Evidence: `docs/evidence/publication-prep-2026-11-01/`.
 - T19 publication: ready for Ali's manual push of `integrate/team-v1-20261031` only; remote verification and fresh-clone tests follow after his confirmation.
+
+### PUBLISHED-AND-VERIFIED — 1 November 2026, late morning (Europe/Berlin)
+
+- Ali pushed the branch himself. Read-only check: `integrate/team-v1-20261031` = `f7f91af7686c9966fa8d2a767fc03224cc3d4876` (the prepared HEAD), `main` = `4ae9808` unchanged.
+- Fresh clone of the remote branch, `npm ci`, temporary databases, no `.env.local`/`data/` copied: typecheck 0, lint 0, unit 136/136, build 0, E2E 66/66, restart PASS 13. Evidence: `docs/evidence/post-push-verification-2026-11-01/`.
+- The commit recording this is local only, for Ali's next push.
+- Next: T22 first human round (U1–U6) on this published version; T20/T21 inputs from Reza and the team; then T24 starting with CW-01.
 

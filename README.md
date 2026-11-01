@@ -252,7 +252,7 @@ If you (or your AI agent) work on this repository:
 | K-5 | Manual walkthrough of M2 and the bilingual features by Ali | In review | Ali creates a room and a session, edits them, and checks `/rooms`, `/schedule` and `/display?lang=en` |
 | K-6 | Kiosk idle behaviour: which page is the idle screen (`/` or `/display`), and should the screen return to Start/German after inactivity? | Needs decision | Team/V2 decision; agree with Reza (screen) |
 | K-7 | Warn when the German text changes after an English version exists | Needs decision | Not built; decide whether it is needed |
-| I-1 | Integrate the three team deliveries into one V1 | In review | Branch `integrate/team-v1-20261031`; typecheck/lint/134 unit/60 browser/restart green on 2026-10-31; review findings V1-R001/V1-R002 fixed 2026-11-01 (`27ef96b`, pre-publication `9144cff`; 136 unit/66 browser/restart green); see `docs/contributions.md` |
+| I-1 | Integrate the three team deliveries into one V1 | In review | Branch `integrate/team-v1-20261031`; typecheck/lint/134 unit/60 browser/restart green on 2026-10-31; review findings V1-R001/V1-R002 fixed 2026-11-01 (`27ef96b`, pre-publication `9144cff`; 136 unit/66 browser/restart green); branch published 2026-11-01 at `f7f91af` and re-verified on a fresh clone; see `docs/contributions.md` |
 
 #### Shared decisions — Ali with Arian and Parsa (blocks map and booking)
 
