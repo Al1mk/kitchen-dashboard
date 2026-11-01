@@ -421,7 +421,7 @@ Depends: T19 and all completed code changes; human gaps may remain documented. F
 - [ ] Check clean attribution boundaries, legitimate human identities, no AI trailers, no secrets/data/dependencies or original-source overwrites. — *2026-11-01 reconciliation: open.*
 - [ ] Ensure current required technical checks match the final code; no repeated full suite for documentation-only changes without a new concern. — *2026-11-01 reconciliation: open.*
 - [ ] Normally push the tested integration branch if access permits and verify remote SHA. No force push, automatic main merge, deployment, university mutation or messages. — *2026-11-01 reconciliation: open.*
-- [ ] Provide exact run/manual-review instructions, branch/commit and any external blockers. Do not say the HCI examination is finished if human evidence/booklet review remains open. — *2026-11-01 reconciliation: open.*
+- [ ] Provide exact run/manual-review instructions, branch/commit and any external blockers. Do not say the HCI examination is finished if human evidence/booklet review remains open. — *2026-11-01 follow-up: guide prepared and checked in T30; final-candidate packaging and fresh-reader rehearsal T31 remain open.*
 
 Acceptance: the review candidate can be checked/reproduced, with code and course-completion states separate.
 
@@ -436,3 +436,54 @@ Depends: current progress; no requirement that external human work is complete. 
 - [x] Give Ali a compact packet to paste back to Codex for review. Update Persian vault notes and the authoritative progress board together.
 
 Acceptance: another session can resume without rereading the entire chat or mistaking prepared work for completed results.
+
+## Follow-up tasks added 1 November 2026 — runnable project guide
+
+These extend the original T00–T29 plan at Ali's request. They do not change its historical step counts or replace T20/T22 human evidence.
+
+### T30 — Complete the setup/admin/manual-test guide [P1]
+
+Depends: T19. Owner: Ali / documentation assistance. Files: README, `docs/run-guide.md`, this plan and `02-progress.md`.
+
+- [x] Cover first clone/install, supported Node, one local admin setup/reset, no student registration, demo DB/seed, production start and ordinary restart.
+- [x] Include page map, all modules' manual checks, LAN/host distinction, backups and useful troubleshooting, especially port 3000 already in use.
+- [x] Verify documented commands against the current scripts/configuration, local links and shell syntax; record exactly what was checked. Source/CLI review, local Markdown links/anchors and 11 shell-block syntax checks completed 2026-11-01. Fresh-reader walkthrough remains T31, NOT RUN.
+
+Acceptance: reproducible written instructions and documented source/link/syntax checks. No new account-management feature is implied.
+
+### T31 — Rehearse onboarding with a fresh reader [P1, human-dependent]
+
+Depends: T30. Owner: Ali coordinates; a teammate follows the guide.
+
+- [ ] Follow README from a fresh clone using private local credentials and a disposable DB. Record OS, Node, commit, selected DB, Ready, login and public-page outcome, with no secrets.
+- [ ] Record unclear/missing steps and adjust the guide based on actual observations; distinguish this onboarding rehearsal from U1–U6 product usability and physical-device testing.
+
+Acceptance: actual run recorded; otherwise WAITING_HUMAN. This does not authorize extra users/accounts, deployment or a push.
+
+## Follow-up tasks added 1 November 2026 — room and people search
+
+Requested during Ali's local review; planned only. Detailed requirements, source conflicts and acceptance steps: [room and people search](../../hci/requests/2026-11-01-room-and-people-search.md).
+
+### T34 — Resolve room/person content [P1, human-dependent]
+
+Depends: T21 factual input. Reza/team confirm with Ali and Aryan; ownership to agree.
+
+- [ ] Confirm Katja's public name/secretariat room; reconcile Grosch K1-105 recollection vs official K1-211 listing and catalog EDV label; confirm kitchen/communication target. Record sources/date, preserving uncertainty until resolved.
+- [ ] Plan minimal corrections to existing room IDs/live records and intended fresh-demo content. Do not overwrite source imports or silently assume a seed updates existing data.
+
+### T32 — Search the room directory [P1]
+
+Depends: existing room API; independent of unresolved person facts. Owner to agree with Ali/Aryan.
+
+- [ ] Add `/rooms` search for codes and DE/EN names, reusing current map matching where suitable; clear/no-result states, touch/keyboard and language-aware ID links.
+- [ ] Verify code variants, partial names, no match, archived rooms and links in both languages. Record results only after execution.
+
+### T33 — Find offices/classes by person or course [P1]
+
+Depends: T32 for consistent search behaviour, T34 before real office assignments and T21 for actual timetable. Ali coordinates integration; teammate reviews to agree.
+
+- [ ] Decide minimal verified staff/alias-to-room mapping alongside existing session instructor/title fields; distinguish office from dated classroom and keep ambiguous/missing matches explicit.
+- [ ] Support confirmed names/aliases (Chris / Christian Zagel, Christian Grosch, Katja) and MMI course queries; preserve room IDs, map/schedule context and DE/EN.
+- [ ] Verify ambiguity, date/time, missing office/session and changed/archived rooms; any human retest remains separate. No new account system or live person tracking.
+
+Acceptance: all three tasks remain open until the detailed request's respective fact/implementation checks are actually completed. A request alone is not an implementation or participant result.

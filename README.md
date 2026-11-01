@@ -81,35 +81,37 @@ More screenshots are in [`docs/evidence/screenshots/`](docs/evidence/screenshots
 
 ## Quick start
 
-**Requirements:** Node.js 22.18 or newer (tested with 22.20 on macOS), npm.
+**Requirements:** Node.js 22.18 or newer (tested with 22.20 on macOS), npm, Git. These commands use macOS/Linux shell syntax.
+
+**Full project guide:** [`docs/run-guide.md`](docs/run-guide.md) covers a fresh clone, the local admin account/password reset, demo data, daily restart, every page, manual testing, another device, backups, automated checks and troubleshooting (including `EADDRINUSE`). For an existing installation, use its [restart instructions](docs/run-guide.md#restart-an-existing-installation); do not create another admin or reseed every time.
 
 ```bash
 git clone https://github.com/Al1mk/kitchen-dashboard.git
 cd kitchen-dashboard
-npm install
-npm run admin:set-password     # choose a local admin username + password; writes .env.local (hash only, git-ignored)
-npm run db:seed-demo           # optional: demo announcements, 6 DEMO- rooms and one demo week of classes
-npm run dev                    # http://localhost:3000
-
-# Team demo (map rooms + booking) in a separate, disposable database:
+npm ci
+npm run admin:set-password     # first setup only: local admin username + password; hash in ignored .env.local
 export CAMPUS_BOARD_DB_PATH="$PWD/.demo-data/team-demo.sqlite"
-npm run db:seed-team-demo -- --yes   # 48 map rooms with fixed ids (21 bookable), 4 demo classes; refuses data/
-npm run dev
+npm run db:seed-demo           # demo notices, 6 DEMO- rooms and this week's classes
+npm run db:seed-team-demo -- --yes   # 48 map rooms + today's/tomorrow's demo classes; refuses data/
+npm run build
+npm start -- --hostname 127.0.0.1
 ```
 
-Then open:
+Wait for **Ready**, keep that terminal open, then open:
 
 - Public start page: <http://localhost:3000/> (English: <http://localhost:3000/?lang=en>)
 - Announcement board: <http://localhost:3000/display>. This works best in a portrait window or full screen.
 - Admin: <http://localhost:3000/admin/login>
 
-**Production mode:** `npm run build && npm start`.
+**Accounts:** the command above configures **one local demo administrator**, not an additional account. There is no registration page, multi-user administration or student account; visitors book without logging in. Existing installations keep their credentials unless you deliberately reset them.
+
+**Development mode:** stop the production server with `Ctrl+C`, keep the same database selection, then run `npm run dev -- --hostname 127.0.0.1`. Run one server at a time in this checkout. Prefer production mode for the manual walkthrough.
 
 **Data:**
-- The database is a SQLite file at `data/campus-board.sqlite`. It is git-ignored; every clone starts empty.
-- It is created and upgraded automatically on start and **never reset**. To start over, stop the server and delete the file.
-- To back it up, copy the file while the server is stopped.
-- The demo seed only adds records; it never deletes anything. Demo rooms use invented codes such as `DEMO-E01`.
+- The commands above select an ignored `.demo-data/team-demo.sqlite` file. Without that setting the app uses `data/campus-board.sqlite`. Every clone needs its own credentials and data.
+- The database is created/upgraded automatically; seeds add missing examples, not a reset. Repeated output such as `0 neu` is normal. Prepare seeds before testing, with the server stopped; use a new demo filename for a clean rehearsal.
+- In **each new terminal**, select the same database before starting. Otherwise you can open a different, apparently empty installation.
+- Back up local data with the server and other database users stopped; see the guide. Keep `.env.local`, databases and cancellation codes out of Git.
 
 **Second device on the same network:** `npm start` listens on all interfaces, so another device can open `http://<your-ip>:3000/display` (on macOS: `ipconfig getifaddr en0`). Open the admin on the host itself via `localhost`; see `.env.example` for the LAN-only cookie option and its risk. This has **not** been tested on real devices yet.
 
@@ -180,9 +182,11 @@ All public responses contain `serverTime`, are never cached and contain only all
 npm run typecheck
 npm run lint
 npm test                    # unit tests (136)
-npm run test:e2e            # browser tests (66): builds the app, seeds a temporary database with the team demo rooms, random password
-scripts/verify-restart.sh   # restarts a production server and checks that all data survived (run npm run build first)
+PLAYWRIGHT_NO_COPY_PROMPT=1 npm run test:e2e # browser tests (66), temporary database/password; builds the app
+bash scripts/verify-restart.sh # persistence check, temporary DB; needs a production build
 ```
+
+Stop the manual server before E2E/build checks: they replace the shared `.next` output even though the browser tests use port 3100 and a separate database. Install test Chromium once with `npx playwright install chromium`. Restart the manual server afterwards with its original demo database selected. Full instructions and evidence handling: [run guide](docs/run-guide.md#automated-checks-for-contributors).
 
 What the tests do and do not prove:
 
@@ -235,7 +239,7 @@ If you (or your AI agent) work on this repository:
 
 | Backlog | To do | In progress | Needs decision | In review | Done |
 | --- | --- | --- | --- | --- | --- |
-| G-3, G-4 | R-1, G-1, G-2 | R-2 | S-3, S-4, S-5, S-6, K-6, K-7 | K-5, I-1, A-1, A-2, A-3, A-4, A-5, P-1, P-2, P-3, P-4, P-5, R-3, S-1, S-2 | K-1, K-2, K-3, K-4 |
+| G-3, G-4 | R-1, G-1, G-2, K-9, A-6, I-2 | R-2 | S-3, S-4, S-5, S-6, K-6, K-7, R-4 | K-5, I-1, A-1, A-2, A-3, A-4, A-5, P-1, P-2, P-3, P-4, P-5, R-3, S-1, S-2 | K-1, K-2, K-3, K-4, K-8 |
 
 "In review" for team cards means: implemented and covered by automated tests on the integration branch, waiting for the team's review. It does not mean tested with people.
 
@@ -252,7 +256,10 @@ If you (or your AI agent) work on this repository:
 | K-5 | Manual walkthrough of M2 and the bilingual features by Ali | In review | Ali creates a room and a session, edits them, and checks `/rooms`, `/schedule` and `/display?lang=en` |
 | K-6 | Kiosk idle behaviour: which page is the idle screen (`/` or `/display`), and should the screen return to Start/German after inactivity? | Needs decision | Team/V2 decision; agree with Reza (screen) |
 | K-7 | Warn when the German text changes after an English version exists | Needs decision | Not built; decide whether it is needed |
+| K-8 | Complete setup, admin-account and testing guide in the repository | Done | T30: [run guide](docs/run-guide.md), README entry and source/command/link checks; documentation only, not a fresh-reader test |
+| K-9 | Have a teammate follow the guide from a fresh clone | To do | T31: record OS/Node/commit, own local admin, demo path, Ready/login/public result and any unclear step; no passwords or invented success |
 | I-1 | Integrate the three team deliveries into one V1 | In review | Branch `integrate/team-v1-20261031`; typecheck/lint/134 unit/60 browser/restart green on 2026-10-31; review findings V1-R001/V1-R002 fixed 2026-11-01 (`27ef96b`, pre-publication `9144cff`; 136 unit/66 browser/restart green); branch published 2026-11-01 at `f7f91af` and re-verified on a fresh clone; see `docs/contributions.md` |
+| I-2 | Lecturer/staff and course search, linked to rooms | To do | T33: name/approved alias/course → confirmed office or dated classroom; distinguish the two, retain stable IDs/DE/EN. [Request and sources](docs/hci/requests/2026-11-01-room-and-people-search.md); not implemented |
 
 #### Shared decisions — Ali with Arian and Parsa (blocks map and booking)
 
@@ -274,6 +281,7 @@ If you (or your AI agent) work on this repository:
 | A-3 | Tapping a room opens its classes | In review | Link to `/schedule?raum=<id>` and keep `&lang=en` |
 | A-4 | Room search / selection on the map | In review | Touch-friendly; large targets (at least 56 px) |
 | A-5 | Map in English | In review | Labels in `src/lib/i18n/public.ts`; room names follow the existing fallback rule |
+| A-6 | Search bar on the room directory | To do | T32: search `/rooms` by code/name in both languages, clear/no-results, preserve links. Existing map search remains; [scope](docs/hci/requests/2026-11-01-room-and-people-search.md) |
 
 #### Parsa — booking and free time *(proposed owner)*
 
@@ -292,6 +300,7 @@ If you (or your AI agent) work on this repository:
 | R-1 | Collect the real screen data: model, resolution, size, browser, touch | To do | Needed to replace the assumed 1080×1920 |
 | R-2 | Content for newcomers ("first time here") and contacts | In progress | Text material first; needs to be editable in the admin later (M3) |
 | R-3 | Link newcomer content to rooms/floors by shared id | In review | Uses room `id` and `floorId` from the contract |
+| R-4 | Confirm Katja/secretariat, Grosch's office and kitchen/communication label | Needs decision | T34: Ali recalls possibly K1-105 for Grosch; official campus-team listing says K1-211. Confirm on site and resolve catalog differences before changing data; [evidence](docs/hci/requests/2026-11-01-room-and-people-search.md) |
 
 #### Whole team — testing, V2 and report
 

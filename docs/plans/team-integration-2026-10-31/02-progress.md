@@ -38,6 +38,11 @@ This table is the single authority for task state. Update plan step checkboxes a
 | T27 | P1 | T19; latest V2 if ready | Short demo + rehearsal status | Claude prepares / presenter rehearses | TODO | — |
 | T28 | P1 | T19; final completed code | Reviewable branch/docs/package | Claude | TODO | — |
 | T29 | P1 | Current checkpoint | Follow-up packet and vault sync | Claude | IMPLEMENTED | `docs/hci/review-handoff.md`; vault HCI-05/06/16/19/00/02 updated 2026-10-31; correction checkpoint 2026-11-01 (HCI-00/03/05/06/16/19/20) |
+| T30 | P1 | T19 | Full setup/admin/run/manual-test guide | Ali / Codex documentation | VERIFIED | 2026-11-01: README + `docs/run-guide.md`; scripts/configuration/Next CLI, local links/anchors and 11 shell-block syntax checks; documentation scope only, no additional accounts or fresh-reader result |
+| T31 | P1 | T30 | Fresh-reader onboarding rehearsal | Ali coordinates / teammate | WAITING_HUMAN | Follow the guide from a fresh clone and record real results; no new-reader outcome yet |
+| T32 | P1 | Existing rooms/API | Search bar on `/rooms` | Ali/Aryan ownership to agree | TODO | Requested 2026-11-01; map search already exists, directory search does not; details in `docs/hci/requests/2026-11-01-room-and-people-search.md` |
+| T33 | P1 | T32,T34; T21 for real sessions | Lecturer/staff/course → office or dated classroom | Ali coordinates; team reviews to agree | TODO | Explicit office/class distinction, alias ambiguity, stable room IDs and DE/EN; not implemented |
+| T34 | P1 | T21 / campus input | Verify office/person and kitchen labels | Reza/team with Ali/Aryan | WAITING_HUMAN | Grosch K1-105 recollection vs official K1-211; Katja/secretariat and communication/kitchen target pending confirmation; names/sources documented, no data edit |
 
 ## Checkpoints
 
@@ -186,4 +191,18 @@ Scope intentionally deferred: V2 design work, schedule booking link (CW-01), pus
 - Fresh clone of the remote branch, `npm ci`, temporary databases, no `.env.local`/`data/` copied: typecheck 0, lint 0, unit 136/136, build 0, E2E 66/66, restart PASS 13. Evidence: `docs/evidence/post-push-verification-2026-11-01/`.
 - The commit recording this is local only, for Ali's next push.
 - Next: T22 first human round (U1–U6) on this published version; T20/T21 inputs from Reza and the team; then T24 starting with CW-01.
+
+### RUN-GUIDE-PREPARED — 1 November 2026 (Europe/Berlin)
+
+- Ali requested the full project run/account/test guide in README and the to-do list. T30/T31 were appended to the original plan; old step counts/checkpoints are historical, not renumbered.
+- T30 VERIFIED for documentation: README quick start selects a disposable DB before either seed; the linked run guide separates initial account setup from restart, documents the one-admin limit, module walkthrough, credentials, LAN, backup, checks and port conflict recovery.
+- Validation: current scripts/configuration and installed `next start --help` reviewed; local Markdown targets/anchors, 11 Bash blocks (`bash -n`) and documented npm script names checked; `git diff --check`. No app test suite, fresh clone onboarding, credential reset or data mutation performed for this documentation change.
+- T31 WAITING_HUMAN: a teammate must actually follow the guide and report outcomes. Ali's current server start/manual results are still unconfirmed after the earlier known server was stopped to free port 3000.
+- Documentation remains local for Ali to review/commit/push. No runtime code, credentials, database, teammate source, commit, push or deployment changed in this checkpoint. T20/T22 and the V2/booklet work remain open.
+
+### SEARCH-REQUEST-RECORDED — 1 November 2026 (Europe/Berlin)
+
+- Added T32 directory search and T33 people/course-to-room search as TODO; map room search is already present. T34 campus-content verification is WAITING_HUMAN. Requirements and primary-source conflicts are in `docs/hci/requests/2026-11-01-room-and-people-search.md`; README cards A-6/I-2/R-4 reflect the same states.
+- Ali's tentative Grosch K1-105 recollection conflicts with the official campus-team K1-211 listing and supplied catalog EDV label. Katja/secretariat, adjacency and kitchen/communication target remain unverified; no record was changed. Office destinations must be distinguished from dated classroom results.
+- Documentation checks: 35 local links/anchors, 11 Bash blocks and `git diff --check` without errors. Source/UI search presence inspected; official names/source listings read, not physically verified. No fresh app tests, implementation, staging, commit or push. Ali receives explicit instructions to stage the six related documentation files and exclude Headroom/local data.
 

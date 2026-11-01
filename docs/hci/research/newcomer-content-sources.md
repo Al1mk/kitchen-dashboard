@@ -23,3 +23,9 @@ No external university facts (addresses, offices, phone numbers, opening hours, 
 5. Should the page mention the kitchen display itself (what it is for, who maintains it)?
 
 Answers must record who supplied them, the source and the date. Until then the card stays as it is.
+
+## Ali's room/person follow-up — 1 November 2026
+
+Ali requested people/course search, a Katja → secretariat association, a possible Grosch → K1-105 assignment and a kitchen/communication-area label. These are recorded in the [request and provenance table](../requests/2026-11-01-room-and-people-search.md), not yet inserted into the app.
+
+The official [campus-team page](https://www.hs-coburg.de/studieren/bachelor/wirtschaft/wirtschaftsinformatik-2-0/campusteam/) read on 1 November lists Christian Grosch in **K1-211**. The official [Zagel profile](https://www.hs-coburg.de/personen/prof-dr-christian-zagel/) confirms **Prof. Dr. Christian Zagel**, but its **9-118 office in Coburg** is not a K1/Kronach location or current class assignment. Katja's full name and local office association remain unverified. Resolve source conflicts/on-site facts in T34 before publishing; the historical statement above describes what was supplied at the original 31 October checkpoint.
