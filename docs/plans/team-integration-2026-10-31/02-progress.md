@@ -21,7 +21,7 @@ This table is the single authority for task state. Update plan step checkboxes a
 | T10 | P0 | T06,T07 | Atomic occupancy / API / eligibility | Claude | VERIFIED | `ead0cf0`; occupancy/booking units; worker-thread race 3/3 (fails without transaction); `booking-api.spec.ts` 2/2 |
 | T11 | P0 | T07 | Live-ID map in shared shell | Claude adapting Aryan source | VERIFIED | `fac4a89`; `map-integration.spec.ts` 7/7 |
 | T12 | P0 | T05,T11 | Shared navigation/query/language | Claude | VERIFIED | `fac4a89`; `integrated-navigation.spec.ts` 7/7 incl. simulated 540×960 and 1080×1920 |
-| T13 | P0 | T08,T09,T10,T12 | Localized booking/receipt/cancel | Claude | IMPLEMENTED | Original 3/3 acceptance remains green; independent 2026-11-01 review reproduced V1-R001 (cancelled replay shown as saved) and V1-R002 (receipt language switch). Correct and reverify; `docs/reviews/2026-11-01-integrated-v1-review.md`. Human timing: NOT RUN |
+| T13 | P0 | T08,T09,T10,T12 | Localized booking/receipt/cancel | Claude | VERIFIED | Reopened 2026-11-01 by the independent review (V1-R001, V1-R002); corrected in `9144cff`: review probes 2/2 failed before → pass after; 4 new regressions fail on the original runtime (sensitivity) → pass; full acceptance unit 136/136, E2E 66/66, restart PASS 13 (`docs/evidence/v1-corrections-2026-11-01/`). Human timing of the 60 s receipt: NOT RUN |
 | T14 | P0 | T10 | Minimal Katja booking UI | Claude | VERIFIED | `5859bb4`; `admin-bookings.spec.ts` 2/2 |
 | T15 | P0/P1 | T05,T12 | Working newcomer entry/content | Claude; Reza factual input in T21 | IMPLEMENTED | `5c5a3c9`; in-app links DE/EN tested; real newcomer facts pending T21 (Reza) |
 | T16 | P0 | T08–T15 | Clean lint, regression and docs | Claude | VERIFIED | `64d2801`, `43bd5f2`; lint 0 problems; archive wording fixed (old journey passes); docs updated |
@@ -37,7 +37,7 @@ This table is the single authority for task state. Update plan step checkboxes a
 | T26 | P1 | T18; latest real evidence | Attributed booklet draft/final | Claude draft / each member review | TODO | — |
 | T27 | P1 | T19; latest V2 if ready | Short demo + rehearsal status | Claude prepares / presenter rehearses | TODO | — |
 | T28 | P1 | T19; final completed code | Reviewable branch/docs/package | Claude | TODO | — |
-| T29 | P1 | Current checkpoint | Follow-up packet and vault sync | Claude | IMPLEMENTED | `docs/hci/review-handoff.md`; vault HCI-05/06/16/19/00/02 updated 2026-10-31 |
+| T29 | P1 | Current checkpoint | Follow-up packet and vault sync | Claude | IMPLEMENTED | `docs/hci/review-handoff.md`; vault HCI-05/06/16/19/00/02 updated 2026-10-31; correction checkpoint 2026-11-01 (HCI-00/03/05/06/16/19/20) |
 
 ## Checkpoints
 
@@ -146,3 +146,29 @@ Prefer a checkpoint after each finished task and a short update during longer wo
 - Source inputs: 67/67 hashes unchanged; real `data/` files: all 3 checksums unchanged. No physical screen, second device or human study.
 - Documentation follow-up: contribution adaptations after T07 and execution-plan step checkboxes need reconciliation with actual evidence (currently 0 checked / 171 unchecked). Do not blanket-check human-dependent steps.
 - Next executable scope: fix V1-R001 and V1-R002, reverify T13 and record a technical revision; then first human round, selected V2 and booklet/demo work. Remote publication status was not checked here.
+
+### V1-CORRECTED (local technical revision) — 1 November 2026, night (Europe/Berlin)
+
+Appended; the INDEPENDENT-REVIEW entry above and the original findings stay unchanged.
+
+```text
+Checkpoint: V1-CORRECTED (local; technical revision of integrated V1, not V2) / 2026-11-01
+Branch / HEAD / dirty paths: integrate/team-v1-20261031 / see final report (83efaac review docs, 9144cff fix, then documentation commit) / .claude/.headroom_wrap_settings.lock (excluded)
+VERIFIED task IDs: T00-T14, T16-T18 (T13 re-verified after V1-R001/V1-R002)
+IMPLEMENTED, not verified: T15 (real facts pending T21), T23 (analytical only), T29
+Resolution: V1-R001 cancelled replay now shown as "Diese Reservierung ist storniert / This booking is cancelled" (no code, no re-creation, unknown state stays retryable); V1-R002 receipt keeps source names and localizes at render (DE/EN switch, fallback marker, no resend, countdown not reset)
+Checks actually run on the correction (exit, count; evidence docs/evidence/v1-corrections-2026-11-01/):
+  review probes before fix: exit 1, 2/2 failed at the intended assertions
+  new regressions on original runtime: exit 1, 4/4 failed (sensitivity; 6 dumped test-DB codes redacted, assertions narrowed)
+  targeted after fix: exit 0, 13/13
+  npm run typecheck 0; npm run lint 0 (0 problems); npm test 0, 136/136 in 18 files; concurrency 3/3; npm run build 0
+  PLAYWRIGHT_NO_COPY_PROMPT=1 npm run test:e2e 0, 66/66; bash scripts/verify-restart.sh 0, PASS 13
+  real data/ checksums: unchanged (3 files)
+Still failing / concrete blockers: none in the suite; GitHub publication still Ali's action (T19)
+Documentation: contributions §5 extended to T08-T23 + corrections; execution-plan checkboxes reconciled (125 checked / 46 open with notes); change log CH-012/CH-013; versions `v1-corrected`; clean demo screenshots (14, simulated portrait) from a fresh seeded demo DB
+Human input pending: unchanged — Aryan+Parsa split; Reza T20/T21; team Moodle dates; participants/Katja for U1-U6
+HCI change IDs and evidence type: CH-012 (feedback / Gulf of Evaluation), CH-013 (consistency / localization): technical; human result NOT RUN
+Next 1-3 executable IDs: T22 first human round on this corrected V1; then T24 (CW-01 first); T19 publication by Ali
+Scope intentionally deferred: V2 design work, schedule booking link (CW-01), push/merge/deploy
+```
+

@@ -26,3 +26,11 @@ Originals imported unchanged: `7326b8e` Aryan (map V12.2), `1c566f3` Aryan and P
 - Reza: screen model, size, resolution, orientation, browser, touch (T20 sheet in `docs/hci/research/screen-specs.md`); 3–5 real newcomer questions and one verified help destination with source (T21).
 - Team: current Moodle dates and booklet/presentation format (slides show 2025).
 - Volunteers / Katja or proxy: tasks U1–U6 (`docs/hci/testing/plan.md`).
+
+## Update — 2026-11-01 (after the independent review)
+
+- Review documents committed unchanged (`83efaac`). Findings V1-R001 (cancelled replay shown as saved) and V1-R002 (receipt language switch) fixed in `9144cff` as a **technical revision** (`v1-corrected` in `docs/hci/versions.md`), not V2. T13 is VERIFIED again.
+- Checks on `9144cff`: review probes 2/2 failed before → pass; 4 new regressions fail on the original runtime → pass; typecheck 0 · lint 0 · unit 136/136 · concurrency 3/3 · build 0 · E2E 66/66 · restart PASS 13. Evidence: `docs/evidence/v1-corrections-2026-11-01/`.
+- Documentation: contributions §5 through `9144cff`; execution-plan checkboxes reconciled (125 checked / 46 open, each open partial step annotated); CH-012/CH-013; clean demo screenshots without test fixtures.
+- Review focus for this revision: `src/components/public/booking-result.ts` (which answers count as settled), `BookingReceipt.tsx` (cancelled state hides the code; names localized at render), the new tests in `booking-pending.spec.ts` and `booking-language-receipt.spec.ts`.
+- Human inputs needed: unchanged (above). Publication of the branch remains Ali's action.

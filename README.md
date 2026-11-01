@@ -125,7 +125,7 @@ Then open:
 | Validation | zod, on the server. Error messages are German and shown next to the field. |
 | Live updates | Public pages ask the server every 5 seconds (simple and robust on a kiosk; no websockets) |
 | Auth | One demo admin from `.env.local` (scrypt hash). Server-side sessions use a random token in an HttpOnly cookie. Every change must also come from the same origin (CSRF protection). |
-| Tests | Vitest (unit, 134 tests) and Playwright (browser, 60 tests, production build, temporary database) — counts of the 2026-10-31 integration run |
+| Tests | Vitest (unit, 136 tests) and Playwright (browser, 66 tests, production build, temporary database) — counts of the 2026-11-01 correction run (2026-10-31 integration run: 134/60) |
 
 ### Folder map
 
@@ -179,8 +179,8 @@ All public responses contain `serverTime`, are never cached and contain only all
 ```bash
 npm run typecheck
 npm run lint
-npm test                    # unit tests (134)
-npm run test:e2e            # browser tests (60): builds the app, seeds a temporary database with the team demo rooms, random password
+npm test                    # unit tests (136)
+npm run test:e2e            # browser tests (66): builds the app, seeds a temporary database with the team demo rooms, random password
 scripts/verify-restart.sh   # restarts a production server and checks that all data survived (run npm run build first)
 ```
 
@@ -188,7 +188,7 @@ What the tests do and do not prove:
 
 - "Two devices" in the browser tests are two separate browser sessions on one computer, not two physical devices.
 - No test has been done with real users, with Katja, or on the real campus screen.
-- Every milestone's logs and screenshots are in [`docs/evidence/`](docs/evidence/README.md), with test IDs T-01 to T-25; the team integration run is in [`docs/evidence/integration-2026-10-31/`](docs/evidence/integration-2026-10-31/README.md).
+- Every milestone's logs and screenshots are in [`docs/evidence/`](docs/evidence/README.md), with test IDs T-01 to T-25; the team integration run is in [`docs/evidence/integration-2026-10-31/`](docs/evidence/integration-2026-10-31/README.md), the independent review in [`docs/evidence/review-2026-11-01/`](docs/evidence/review-2026-11-01/README.md) and its two corrections in [`docs/evidence/v1-corrections-2026-11-01/`](docs/evidence/v1-corrections-2026-11-01/README.md).
 - Concurrency is tested with separate database connections in worker threads, not with physical devices.
 
 ---
@@ -252,7 +252,7 @@ If you (or your AI agent) work on this repository:
 | K-5 | Manual walkthrough of M2 and the bilingual features by Ali | In review | Ali creates a room and a session, edits them, and checks `/rooms`, `/schedule` and `/display?lang=en` |
 | K-6 | Kiosk idle behaviour: which page is the idle screen (`/` or `/display`), and should the screen return to Start/German after inactivity? | Needs decision | Team/V2 decision; agree with Reza (screen) |
 | K-7 | Warn when the German text changes after an English version exists | Needs decision | Not built; decide whether it is needed |
-| I-1 | Integrate the three team deliveries into one V1 | In review | Branch `integrate/team-v1-20261031`; typecheck/lint/134 unit/60 browser/restart green on 2026-10-31; see `docs/contributions.md` |
+| I-1 | Integrate the three team deliveries into one V1 | In review | Branch `integrate/team-v1-20261031`; typecheck/lint/134 unit/60 browser/restart green on 2026-10-31; review findings V1-R001/V1-R002 fixed 2026-11-01 (`9144cff`; 136 unit/66 browser/restart green); see `docs/contributions.md` |
 
 #### Shared decisions — Ali with Arian and Parsa (blocks map and booking)
 

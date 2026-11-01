@@ -56,6 +56,20 @@ Each entry: task, file(s), what changed relative to the imported source, why, au
 | --- | --- | --- | --- | --- |
 | T05 | `cb74062` | Reza's patch suggestions 01/02 | Added `newcomers` section key, DE/EN labels and nav entry by hand (patches no longer applied cleanly after T04) | Ali |
 | T07 | `7cae97f` | Aryan's catalog + joint 21-code choice | Generated typed catalog with fixed ids, ID-bound geometry module, guarded seed; the joint `scripts/seed-parsa-demo-rooms.ts` stays as imported but is superseded for the demo | Ali |
+| T06 | `fe8d7c3` | Older `docs/contracts.md` + joint booking API as imported | Working integration contract C1–C9 (room ids, URL context, booking policy/errors, occupancy, receipt); labelled as Ali-authorised engineering defaults, not team consensus | Ali |
+| T10 | `ead0cf0` | Joint booking policy/repository/routes (incl. its 21-code allowlist) + Ali's rooms/sessions repositories | New `src/lib/occupancy/conflicts.ts`; all occupying writes in `BEGIN IMMEDIATE`; eligibility from the `reservable` flag (allowlist removed); `booking_conflict`/in-use guards; busy → 503; worker-thread concurrency test; joint `tests/unit/bookings.test.ts` adapted with marked comments | Ali |
+| T08, T09, T13 (part) | `fb55c6d` | Joint `BookingFlow.tsx` (Aryan and Parsa) | Flow restructured: request snapshot before sending, lock and leave guard, identical retry, no room substitution, keyed availability; new receipt, cancel component, DE/EN copy | Ali |
+| T11, T12 | `fac4a89` | Aryan's map (search, zoom, geometry, images) + joint delta | React `CampusMap` in the shared shell with live room data and id-bound markers; seven-section navigation and context links; E2E specs; screenshot output folder configurable. Aryan's static map files stay as imported | Ali |
+| T13 | `5e114cb` | — | Receipt/cancellation browser tests only | Ali |
+| T14 | `5859bb4` | Joint admin booking APIs | Katja's "Reservierungen" page, explicit cancel dialog, link from the class-conflict message | Ali |
+| T15 | `5c5a3c9` | Reza's newcomer page/content (`6bc0b21`) | Cards rewritten to working in-app destinations; one prototype note; open fact questions recorded for Reza. Reza's original stays in history | Ali |
+| T06, T16, T17 | `64d2801` | Aryan's `public/map-demo/app.js` (two unused variables only) | Contract unit tests, restart script extended for bookings, lint clean; the only edit to an imported original file is the removal of two unused variables in `app.js` | Ali |
+| T16, T18, T19 | `43bd5f2` | Team documents as imported | README/DESIGN/contracts updates; HCI ledger, templates, outlines, versions (no study claimed) | Ali |
+| T23 | `50bd120` | — | Analytical heuristic review, walkthrough, ranked V2 candidates (analytical evidence only) | Ali |
+| Review | `83efaac` | — | Independent integrated-V1 review documents and evidence, written by Codex for Ali and committed unchanged | Ali (committer); review by Codex |
+| V1-R001, V1-R002 | `9144cff` | Ali's T08/T13 receipt code | Cancelled replay shown as cancelled; receipt localizes source names at render; review probes activated; new regressions | Ali |
+
+Documentation/board-only commits (`b2b3a36`, `4bb9c2d`, `c2933f6` and the 2026-11-01 documentation commit) change no runtime code. All Ali integration rows from T05 onward were produced with Claude Code assistance at Ali's request (see §2); no row assigns new code to Aryan, Parsa or Reza, and the internal Aryan/Parsa split stays unknown (§6).
 
 ## 6. Unknowns that stay unknown
 
