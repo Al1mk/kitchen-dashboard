@@ -1,0 +1,85 @@
+[WebServer] (node:80149) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:80150) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:80169) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:80176) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:80181) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:80183) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:80178) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:80179) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:80174) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:80184) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:80180) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:80182) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:80175) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:80177) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:80186) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:80205) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:80206) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/e2e/review-booking.spec.ts:28:1 › REVIEW: replay after Katja cancellation must not show an active success receipt (691ms)
+(node:80213) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › tests/e2e/review-booking.spec.ts:57:1 › REVIEW: changing settled receipt language must localize its room name (352ms)
+
+
+  1) [chromium] › tests/e2e/review-booking.spec.ts:28:1 › REVIEW: replay after Katja cancellation must not show an active success receipt 
+
+    Error: Server replay is cancelled, so receipt must not claim Booking saved
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+      52 |   await expect(page.getByTestId("booking-receipt")).toBeVisible();
+      53 |   const saysActiveSuccess = await page.getByTestId("booking-receipt").getByRole("heading", { name: /Booking saved/ }).isVisible();
+    > 54 |   expect(saysActiveSuccess, "Server replay is cancelled, so receipt must not claim Booking saved").toBe(false);
+         |                                                                                                    ^
+      55 | });
+      56 |
+      57 | test("REVIEW: changing settled receipt language must localize its room name", async ({ page, request, baseURL }) => {
+        at /private/tmp/hci-v1-review-2026-11-01-z_c5ngar/tests/e2e/review-booking.spec.ts:54:100
+
+    Error Context: review-probe-results/review-booking-REVIEW-repl-736e4-w-an-active-success-receipt-chromium/error-context.md
+
+  2) [chromium] › tests/e2e/review-booking.spec.ts:57:1 › REVIEW: changing settled receipt language must localize its room name 
+
+    Error: English settled receipt must show the available English room name
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      63 |   await expect(page.getByTestId("booking-receipt").getByRole("heading", { name: /Booking saved/ })).toBeVisible();
+      64 |   const text = await page.getByTestId("booking-receipt").innerText();
+    > 65 |   expect(text.includes("English review room"), "English settled receipt must show the available English room name").toBe(true);
+         |                                                                                                                     ^
+      66 | });
+      67 |
+        at /private/tmp/hci-v1-review-2026-11-01-z_c5ngar/tests/e2e/review-booking.spec.ts:65:117
+
+    Error Context: review-probe-results/review-booking-REVIEW-chan-edfc4-must-localize-its-room-name-chromium/error-context.md
+
+  2 failed
+    [chromium] › tests/e2e/review-booking.spec.ts:28:1 › REVIEW: replay after Katja cancellation must not show an active success receipt 
+    [chromium] › tests/e2e/review-booking.spec.ts:57:1 › REVIEW: changing settled receipt language must localize its room name 

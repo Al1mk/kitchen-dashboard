@@ -21,7 +21,7 @@ This table is the single authority for task state. Update plan step checkboxes a
 | T10 | P0 | T06,T07 | Atomic occupancy / API / eligibility | Claude | VERIFIED | `ead0cf0`; occupancy/booking units; worker-thread race 3/3 (fails without transaction); `booking-api.spec.ts` 2/2 |
 | T11 | P0 | T07 | Live-ID map in shared shell | Claude adapting Aryan source | VERIFIED | `fac4a89`; `map-integration.spec.ts` 7/7 |
 | T12 | P0 | T05,T11 | Shared navigation/query/language | Claude | VERIFIED | `fac4a89`; `integrated-navigation.spec.ts` 7/7 incl. simulated 540×960 and 1080×1920 |
-| T13 | P0 | T08,T09,T10,T12 | Localized booking/receipt/cancel | Claude | VERIFIED | `fb55c6d` + `5e114cb`; `booking-language-receipt.spec.ts` 3/3; whether 60 s suffices for people: NOT RUN |
+| T13 | P0 | T08,T09,T10,T12 | Localized booking/receipt/cancel | Claude | IMPLEMENTED | Original 3/3 acceptance remains green; independent 2026-11-01 review reproduced V1-R001 (cancelled replay shown as saved) and V1-R002 (receipt language switch). Correct and reverify; `docs/reviews/2026-11-01-integrated-v1-review.md`. Human timing: NOT RUN |
 | T14 | P0 | T10 | Minimal Katja booking UI | Claude | VERIFIED | `5859bb4`; `admin-bookings.spec.ts` 2/2 |
 | T15 | P0/P1 | T05,T12 | Working newcomer entry/content | Claude; Reza factual input in T21 | IMPLEMENTED | `5c5a3c9`; in-app links DE/EN tested; real newcomer facts pending T21 (Reza) |
 | T16 | P0 | T08–T15 | Clean lint, regression and docs | Claude | VERIFIED | `64d2801`, `43bd5f2`; lint 0 problems; archive wording fixed (old journey passes); docs updated |
@@ -136,3 +136,13 @@ Prefer a checkpoint after each finished task and a short update during longer wo
 | V1-READY | T17/T19 actual green checks, commit and reproducible demo | Human study, final booklet, campus deployment |
 | V2-IMPLEMENTED | Selected T23/T24 changes and rationale | Measured benefit without human retest |
 | REVIEW-PACKET | T28/T29 current evidence and explicit gaps | Automatic main merge or examination submission |
+
+### INDEPENDENT-REVIEW — 1 November 2026
+
+- Reviewed local HEAD `c2933f6` (runtime equivalent to `64d2801`), 20 commits ahead of local main. No runtime edit, commit, push, merge or deployment in this review.
+- Fresh isolated checks: typecheck and lint exit 0; unit 134/134 including 3 concurrency tests; production build exit 0; original E2E suite 60/60; restart PASS 13. Earlier attempts stopped before tests on font/build-process restrictions; logs retained.
+- Two new browser probes fail on the unchanged app: **V1-R001** cancelled replay is presented as a saved booking; **V1-R002** settled receipt language switch retains the old room name. T13 is therefore reopened as IMPLEMENTED pending these corrections and revalidation. Historical VERIFIED checkpoints are not erased.
+- Evidence and scoped Claude follow-up: `docs/reviews/2026-11-01-integrated-v1-review.md`, `docs/evidence/review-2026-11-01/`.
+- Source inputs: 67/67 hashes unchanged; real `data/` files: all 3 checksums unchanged. No physical screen, second device or human study.
+- Documentation follow-up: contribution adaptations after T07 and execution-plan step checkboxes need reconciliation with actual evidence (currently 0 checked / 171 unchecked). Do not blanket-check human-dependent steps.
+- Next executable scope: fix V1-R001 and V1-R002, reverify T13 and record a technical revision; then first human round, selected V2 and booklet/demo work. Remote publication status was not checked here.

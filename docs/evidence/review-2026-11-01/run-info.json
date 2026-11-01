@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-01",
+  "reviewedHead": "c2933f6c72e2236bc51379632bec04488dd46fd0",
+  "runtimeEquivalentTo": "64d2801",
+  "scratch": "/private/tmp/hci-v1-review-2026-11-01-z_c5ngar",
+  "originalSourceFilesUnchanged": 67,
+  "realDatabaseFilesUnchanged": 3,
+  "coauthorTrailers": 0,
+  "checks": [
+    {
+      "command": "npm test",
+      "exit": 0,
+      "testsPassed": 134,
+      "filesPassed": 17,
+      "includesConcurrencyTests": 3,
+      "evidence": "exec tool output; stdout not separately saved"
+    },
+    {
+      "command": "npm run lint",
+      "exit": 0,
+      "evidence": "exec tool output; no errors or warnings"
+    },
+    {
+      "command": "npm run typecheck",
+      "exit": 0,
+      "evidence": "exec tool output"
+    },
+    {
+      "command": "node node_modules/next/dist/bin/next build",
+      "exit": 0,
+      "log": "build.log"
+    },
+    {
+      "command": "npm run test:e2e -- --grep-invert 'REVIEW:'",
+      "exit": 0,
+      "testsPassed": 60,
+      "log": "baseline-e2e.log"
+    },
+    {
+      "command": "bash scripts/verify-restart.sh",
+      "exit": 0,
+      "checksPassed": 13,
+      "log": "restart.log"
+    },
+    {
+      "command": "PLAYWRIGHT_NO_COPY_PROMPT=1 npx playwright test tests/e2e/review-booking.spec.ts --reporter=list --output=review-probe-results",
+      "exit": 1,
+      "testsFailed": 2,
+      "expected": "Reproduces two unfixed review findings",
+      "log": "new-probes-before-fix.log"
+    }
+  ],
+  "notRun": [
+    "physical screen",
+    "second device/LAN",
+    "human usability",
+    "post-fix checks",
+    "GitHub push or remote verification"
+  ]
+}
