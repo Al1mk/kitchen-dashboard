@@ -1,0 +1,68 @@
+// Copied verbatim (apart from this note) from docs/evidence/review-2026-11-01/review-booking.spec.ts.txt:
+// the independent review probes for V1-R001 and V1-R002, now part of the active suite.
+import { randomBytes } from "node:crypto";
+import { expect, test, type APIRequestContext, type Page } from "@playwright/test";
+import { loginViaApi } from "./helpers.ts";
+
+// Independent review probes. Credentials stay in process memory, never in
+// assertion text, reports, screenshots, videos or traces.
+test.use({ trace: "off", video: "off", screenshot: "off" });
+
+const date = () => new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Berlin" }).format(new Date(Date.now() + 5 * 86_400_000));
+
+async function createRoom(request: APIRequestContext, baseURL: string) {
+  const origin = await loginViaApi(request, baseURL);
+  const response = await request.post("/api/admin/rooms", {
+    headers: { ...origin, "Content-Type": "application/json" },
+    data: { code: `REVIEW-${randomBytes(3).toString("hex")}`, name: "Deutscher Testraum", nameEn: "English review room", floorId: "1OG", type: "study", description: "", reservable: true },
+  });
+  expect(response.status()).toBe(201);
+  return { room: (await response.json()).room as { id: string }, origin };
+}
+
+async function choose(page: Page, roomId: string, lang: "de" | "en") {
+  await page.goto(`/booking?raum=${roomId}&datum=${date()}${lang === "en" ? "&lang=en" : ""}`);
+  await page.getByRole("button", { name: "10:00", exact: true }).click();
+  await page.getByRole("button", { name: lang === "en" ? "Review booking" : "Weiter zur Bestätigung" }).click();
+  await page.getByRole("button", { name: lang === "en" ? "Confirm demo booking" : "Demo-Reservierung bestätigen" }).click();
+}
+
+test("REVIEW: replay after Katja cancellation must not show an active success receipt", async ({ page, request, baseURL }) => {
+  const { room, origin } = await createRoom(request, baseURL!);
+  let first = true;
+  let createdId = "";
+  let replayStatus = "";
+  await page.route("**/api/public/bookings", async (route) => {
+    const response = await route.fetch();
+    const payload = await response.json();
+    if (first) {
+      first = false;
+      createdId = payload.booking.id;
+      await route.abort("failed");
+    } else {
+      replayStatus = payload.booking.status;
+      await route.fulfill({ response });
+    }
+  });
+  await choose(page, room.id, "en");
+  await expect(page.getByRole("button", { name: "Send again" })).toBeVisible();
+  const cancelled = await request.post(`/api/admin/bookings/${createdId}/cancel`, { headers: origin });
+  expect(cancelled.status()).toBe(200);
+  expect((await cancelled.json()).booking.status).toBe("cancelled");
+  await page.getByRole("button", { name: "Send again" }).click();
+  await expect.poll(() => replayStatus).toBe("cancelled");
+  await expect(page.getByTestId("booking-receipt")).toBeVisible();
+  const saysActiveSuccess = await page.getByTestId("booking-receipt").getByRole("heading", { name: /Booking saved/ }).isVisible();
+  expect(saysActiveSuccess, "Server replay is cancelled, so receipt must not claim Booking saved").toBe(false);
+});
+
+test("REVIEW: changing settled receipt language must localize its room name", async ({ page, request, baseURL }) => {
+  const { room } = await createRoom(request, baseURL!);
+  await choose(page, room.id, "de");
+  await expect(page.getByTestId("booking-receipt")).toBeVisible();
+  await page.getByRole("link", { name: "English", exact: true }).click();
+  await expect(page).toHaveURL(/lang=en/);
+  await expect(page.getByTestId("booking-receipt").getByRole("heading", { name: /Booking saved/ })).toBeVisible();
+  const text = await page.getByTestId("booking-receipt").innerText();
+  expect(text.includes("English review room"), "English settled receipt must show the available English room name").toBe(true);
+});

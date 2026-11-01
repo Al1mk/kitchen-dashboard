@@ -9,6 +9,7 @@ import type { PublicRoom } from "@/lib/rooms/schema.ts";
 import { formatCalendarDate } from "@/lib/time/berlin.ts";
 import { BOOKING_COPY, bookingErrorKey, type BookingErrorKey } from "./booking-copy.ts";
 import { BookingReceipt, type Receipt } from "./BookingReceipt.tsx";
+import { settledBooking } from "./booking-result.ts";
 import { DemoNotice, FallbackTag } from "./PublicShell.tsx";
 import { useLeaveGuard } from "./useLeaveGuard.ts";
 
@@ -21,6 +22,8 @@ import { useLeaveGuard } from "./useLeaveGuard.ts";
 // - T09: a requested room (?raum=<id>) is never replaced by another room;
 //   availability is keyed by room+date and stale answers are ignored.
 // - T13: localized states and errors, receipt with countdown/More time/Done.
+// - Review 2026-11-01: V1-R001 (cancelled replay is shown as cancelled) and
+//   V1-R002 (receipt room name follows the current language).
 
 type Span = { startTime: string; endTime: string };
 type Availability = { date: string; room: { id: string }; free: Span[]; busy: (Span & { kind: "class" | "booking" })[] };
@@ -186,13 +189,18 @@ export function BookingFlow({
         }),
       });
       const data = await response.json().catch(() => null);
-      if (response.ok && data && typeof data.booking?.id === "string") {
+      const settled = response.ok ? settledBooking(data) : null;
+      if (settled) {
+        // V1-R001: an exact retry may return a booking cancelled in the meantime; the
+        // receipt shows that state. V1-R002: source names are kept and localized when shown.
         setPhase({
           kind: "receipt",
           receipt: {
-            id: data.booking.id,
+            id: settled.id,
+            status: settled.status,
             roomCode: request.room.code,
-            roomName: localize(request.room.name, request.room.nameEn, lang),
+            roomName: request.room.name,
+            roomNameEn: request.room.nameEn,
             date: request.date,
             startTime: request.startTime,
             endTime: request.endTime,
@@ -211,7 +219,7 @@ export function BookingFlow({
         if (errorKey === "room_not_reservable") setRoomsReload((n) => n + 1);
         return;
       }
-      // 503, other server errors or an unreadable answer: the outcome is unknown.
+      // 503, other server errors, an unreadable answer or an unknown booking state: the outcome is unknown.
       setPhase({ kind: "uncertain", request });
     } catch {
       setPhase({ kind: "uncertain", request });

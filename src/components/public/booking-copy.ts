@@ -51,6 +51,9 @@ const de = {
   cancelLink: "Reservierung stornieren",
   receipt: {
     success: "Reservierung gespeichert",
+    cancelledTitle: "Diese Reservierung ist storniert",
+    cancelledText:
+      "Deine Anfrage war bereits gespeichert, wurde aber inzwischen storniert. Sie ist nicht aktiv, und es wurde keine neue Reservierung angelegt. Wenn du den Raum noch brauchst, starte eine neue Reservierung.",
     id: "Buchungsnummer",
     code: "Stornierungscode",
     noRecovery:
@@ -126,6 +129,9 @@ const en: BookingCopy = {
   cancelLink: "Cancel a booking",
   receipt: {
     success: "Booking saved",
+    cancelledTitle: "This booking is cancelled",
+    cancelledText:
+      "Your request had already been saved but has since been cancelled. It is not active, and no new booking was created. If you still need the room, start a new booking.",
     id: "Booking ID",
     code: "Cancellation code",
     noRecovery:
