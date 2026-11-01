@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-01",
+  "reviewer": "Codex",
+  "base_commit": "452d893",
+  "scope": "working-tree source inspection, fresh unit run, browser probes against existing production build, read-only demo/backup comparison",
+  "fresh_checks": {
+    "npm test": {
+      "exit": 0,
+      "files_passed": 19,
+      "tests_passed": 152
+    },
+    "navigation_probes": {
+      "exit": 1,
+      "passed": 0,
+      "failed": 2,
+      "shared_finding": "SEARCH-R001"
+    },
+    "SQLite demo_and_backup_integrity": "ok",
+    "git diff --check": {
+      "exit": 0
+    }
+  },
+  "reviewed_claude_logs_not_rerun": [
+    "typecheck",
+    "lint",
+    "build",
+    "72 browser tests",
+    "13 restart checks"
+  ],
+  "initial_environment_attempt": "server bind EPERM; subsequently rerun with normal tool approval; first probe cleanup also exited 13, not an application result",
+  "source_sha256": {
+    "src/components/public/RoomDirectory.tsx": "ba8ce0e4b7366f050ecb552ea81706f6c4858aa484d9a024bcd7225b6110e494",
+    "src/components/public/CampusMap.tsx": "ba99d94ec1b1c0d7858ce2e7cbca1711feed08e1e7499dec10e5d736b4922446",
+    "src/app/rooms/page.tsx": "4ba45ddedb778b79d7bba901d1340868d0475ed16ad7d8ea77587d3fb23e669e",
+    "src/lib/search/match.ts": "3b126981dafc290fafab193187953b4b0c38ee28e7e626692a860a0cd84ce787",
+    "src/lib/map/team-seed.ts": "df2d98b32f119e068c419e235bc3bf34461d3a9dcb2112cc2c2f6a13ca163106",
+    "scripts/seed-demo.ts": "c38288760ff02ffd9490da71838a5d35f3cbc5cc82e698a1667f772341d3a0ac",
+    "tests/e2e/room-search.spec.ts": "17ef4be2473885e7fe12e9b7e3535ffd5c400878e44850d8589a5105553b1bc7",
+    "tests/unit/search-match.test.ts": "e6fe80e958fe6d9853a5379c0c1b63293ee1a1944561c1eee1e96179f821f73c"
+  },
+  "runtime_edited": false,
+  "admin_login_used": false,
+  "real_or_manual_database_mutated": false,
+  "temporary_server_stopped": true,
+  "commit_or_push": false
+}

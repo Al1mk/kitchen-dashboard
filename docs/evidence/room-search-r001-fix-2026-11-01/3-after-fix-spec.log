@@ -1,0 +1,14 @@
+
+Running 9 tests using 1 worker
+
+  ✓  1 [chromium] › tests/e2e/room-search.spec.ts:75:1 › room search: code variants, names, clear and no results (German) (381ms)
+  ✓  2 [chromium] › tests/e2e/room-search.spec.ts:119:1 › lecturer and course search for a chosen day, aliases, ambiguity and links (German) (469ms)
+  ✓  3 [chromium] › tests/e2e/room-search.spec.ts:184:1 › English search and language switch keep the query, the day and the room context (370ms)
+  ✓  4 [chromium] › tests/e2e/room-search.spec.ts:215:1 › results follow a room rename by id, and polling does not reset the search (11.5s)
+  ✓  5 [chromium] › tests/e2e/room-search.spec.ts:251:1 › a failed class request is not shown as 'no classes'; room search keeps working (125ms)
+  ✓  6 [chromium] › tests/e2e/room-search.spec.ts:260:1 › a late response for a previous day is ignored after the day changes (3.6s)
+  ✓  7 [chromium] › tests/e2e/room-search.spec.ts:291:1 › SEARCH-R001: Back and Forward restore each entry's search and day across a language switch (3.8s)
+  ✓  8 [chromium] › tests/e2e/room-search.spec.ts:328:1 › SEARCH-R001: the bare Rooms navigation link clears the search in both languages (3.1s)
+  ✓  9 [chromium] › tests/e2e/room-search.spec.ts:353:1 › SEARCH-R001: fast typing keeps every character and does not navigate per keystroke (2.7s)
+
+  9 passed (30.8s)

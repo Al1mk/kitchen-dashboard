@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-01",
+  "reviewer": "Codex",
+  "base_commit": "452d893",
+  "fresh_unit": {
+    "command": "npm test",
+    "exit": 0,
+    "tests_passed": 152,
+    "files_passed": 19
+  },
+  "fresh_browser": {
+    "passed": 7,
+    "failed": 0,
+    "exit": 0,
+    "scope": "navigation/history/language/typing/clear on existing production build; synthetic intercepted public APIs; isolated DB on port 3342; server stopped"
+  },
+  "claude_logs_reviewed_not_rerun": [
+    "typecheck",
+    "lint",
+    "build",
+    "75 browser tests",
+    "13 restart checks"
+  ],
+  "finding": "SEARCH-R001 resolved in reviewed scope",
+  "remaining_test_harness_note": "fixed beforeAll slots collide on worker restart/repeat-each; documented non-blocking follow-up, not repaired here",
+  "runtime_edits": false,
+  "valued_database_or_credential_mutations": false,
+  "stage_commit_push": false,
+  "source_sha256": {
+    "src/components/public/RoomDirectory.tsx": "10f59f1b3002e9929bebea5d7c721e40a287c6c7c80e6c8ef3dd622ae121274a",
+    "src/components/public/LiveLanguageSwitch.tsx": "f55f9ced0d5b5e1571010665d19723c3c86ccc8bcd8716ac6479398b87fcc491",
+    "src/components/public/PublicNav.tsx": "e629123e5462fcf479dbab1fa9c8db7c6c851723e5b19e6f88b0867020ad4e53",
+    "src/components/public/PublicShell.tsx": "8b4503f65a7dd390064e22488a5f8821016a95ef6a85d8fb86c476ef3e78c930",
+    "src/app/rooms/page.tsx": "3c49c9d494603d16f6a2b3a93e0da541e53b78aef0e51fed4081c9dfb9765ca3",
+    "src/lib/search/match.ts": "3b126981dafc290fafab193187953b4b0c38ee28e7e626692a860a0cd84ce787",
+    "tests/e2e/room-search.spec.ts": "8b6fe08034a674cc03f8c2c81c97c35571bbc50b5b16cf01ae97c99b487fe322"
+  }
+}

@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { PUBLIC_TEXT, type Lang, type PublicSection } from "@/lib/i18n/public.ts";
 import { formatBerlinTime } from "@/lib/time/berlin.ts";
+import { LiveLanguageSwitch } from "./LiveLanguageSwitch.tsx";
 import { LanguageSwitch, PublicNav } from "./PublicNav.tsx";
 
 // Frame of the public start page, room directory and schedule. No admin links
@@ -13,6 +14,7 @@ export function PublicShell({
   lang,
   path,
   params,
+  liveParams,
   title,
   children,
 }: {
@@ -21,6 +23,8 @@ export function PublicShell({
   /** Current path and context for the language switch. */
   path: string;
   params?: Record<string, string | null | undefined>;
+  /** Query keys the page itself changes in the browser; the language switch reads them live. */
+  liveParams?: string[];
   title: string;
   children: ReactNode;
 }) {
@@ -34,7 +38,7 @@ export function PublicShell({
             <img src="/brand/hs-coburg-logo-screenshot.png" alt="Hochschule Coburg" width={445} height={118} className="h-auto w-44" />
             <p className="mt-1 font-semibold text-ink-muted">Lucas-Cranach-Campus Kronach</p>
           </div>
-          <LanguageSwitch lang={lang} path={path} params={params} />
+          {liveParams ? <LiveLanguageSwitch lang={lang} path={path} keys={liveParams} /> : <LanguageSwitch lang={lang} path={path} params={params} />}
         </div>
         <div className="mx-auto w-full max-w-3xl px-5 pb-3">
           <PublicNav active={active} lang={lang} />

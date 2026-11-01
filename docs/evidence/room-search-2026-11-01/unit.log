@@ -1,0 +1,13 @@
+
+> campus-board@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.5 <repo>
+
+
+ Test Files  19 passed (19)
+      Tests  152 passed (152)
+   Start at  12:51:34
+   Duration  986ms (tests 66%, import 25%, transform 8%, worker 1%)
+

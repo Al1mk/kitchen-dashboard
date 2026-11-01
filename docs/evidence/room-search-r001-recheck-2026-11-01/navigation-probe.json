@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-01",
+  "artifact": "current production build; controlled public API fixtures; no admin login or real data",
+  "checks": [
+    {
+      "name": "Back after language switch and query/day edits restores prior state",
+      "expected": {
+        "query": "Chris",
+        "date": "2031-05-12"
+      },
+      "actual": {
+        "url": "http://127.0.0.1:3342/rooms?suche=Chris&datum=2031-05-12",
+        "query": "Chris",
+        "date": "2031-05-12"
+      },
+      "pass": true
+    },
+    {
+      "name": "Forward restores edited English search/day",
+      "actual": {
+        "url": "http://127.0.0.1:3342/rooms?suche=Grosch&datum=2031-05-13&lang=en",
+        "query": "Grosch",
+        "date": "2031-05-13"
+      },
+      "pass": true
+    },
+    {
+      "name": "Language switch preserves edited search/day",
+      "actual": {
+        "url": "http://127.0.0.1:3342/rooms?suche=Grosch&datum=2031-05-13",
+        "query": "Grosch",
+        "date": "2031-05-13"
+      },
+      "pass": true
+    },
+    {
+      "name": "Bare Rooms navigation clears search",
+      "expected": {
+        "query": "",
+        "path": "/rooms"
+      },
+      "actual": {
+        "url": "http://127.0.0.1:3342/rooms",
+        "query": ""
+      },
+      "pass": true
+    },
+    {
+      "name": "Back from bare Rooms restores filtered entry",
+      "actual": {
+        "url": "http://127.0.0.1:3342/rooms?suche=Grosch&datum=2031-05-13",
+        "query": "Grosch",
+        "date": "2031-05-13"
+      },
+      "pass": true
+    },
+    {
+      "name": "Fast typing retains every character without document navigation",
+      "actual": {
+        "query": "Mensch-Maschine-Interaktion",
+        "documentRequests": 0
+      },
+      "pass": true
+    },
+    {
+      "name": "Clear empties search and returns focus",
+      "pass": true
+    }
+  ]
+}

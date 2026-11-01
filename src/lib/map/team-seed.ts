@@ -19,9 +19,16 @@ export type TeamSeedReport = {
   sessionsSkipped: number;
 };
 
+/**
+ * Lecturer of the HCI course of this project, as identified by Ali; name as on
+ * https://www.hs-coburg.de/personen/prof-dr-christian-zagel/ . Used only for the
+ * HCI demo sessions: their rooms, days and times stay invented demo values.
+ */
+export const HCI_LECTURER = "Prof. Dr. Christian Zagel";
+
 /** Sample sessions relative to "today" (Berlin): clearly demo, not a real timetable. */
 const DEMO_SESSIONS = [
-  { day: 0, roomId: "lcc-demo-room-k1-120", start: "10:00", end: "11:30", title: "Mensch-Maschine-Interaktion (Demo)", instructor: "Dozent:in A (Demo)" },
+  { day: 0, roomId: "lcc-demo-room-k1-120", start: "10:00", end: "11:30", title: "Mensch-Maschine-Interaktion (Demo)", instructor: HCI_LECTURER },
   { day: 0, roomId: "lcc-demo-room-k1-103", start: "14:00", end: "15:30", title: "Wirtschaftsinformatik – Übung (Demo)", instructor: "Dozent:in B (Demo)" },
   { day: 1, roomId: "lcc-demo-room-k1-120", start: "08:15", end: "09:45", title: "Projektmanagement (Demo)", instructor: "Dozent:in C (Demo)" },
   { day: 1, roomId: "lcc-demo-room-k1-303", start: "12:00", end: "13:30", title: "Statistik (Demo)", instructor: "Dozent:in D (Demo)" },

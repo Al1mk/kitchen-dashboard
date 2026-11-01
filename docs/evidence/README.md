@@ -78,7 +78,17 @@ Build is part of T-24 (Playwright builds before starting). Restart check not rer
 | Folder | What | Result |
 | --- | --- | --- |
 | [`integration-2026-10-31/`](integration-2026-10-31/README.md) | Integrated V1 (code `64d2801`), executed by Claude Code | typecheck/lint 0, unit 134/134, E2E 60/60, concurrency 3/3, restart PASS 13 |
+| [`room-search-r001-fix-2026-11-01/`](room-search-r001-fix-2026-11-01/README.md) | SEARCH-R001 correction (uncommitted), executed by Claude Code | regressions red before → green; typecheck/lint 0, unit 152/152, build 0, E2E 75/75, restart PASS 13 |
+| [`room-search-2026-11-01/`](room-search-2026-11-01/README.md) | T32 room search and T33 classroom search on `/rooms` (uncommitted, base `452d893`), executed by Claude Code; Ali's demo DB lecturer update | typecheck/lint 0, unit 152/152, build 0, E2E 72/72, restart PASS 13 |
 | [`review-2026-11-01/`](review-2026-11-01/README.md) | Independent review by Codex on an isolated copy | baseline green; two new probes failed (V1-R001, V1-R002) |
 | [`v1-corrections-2026-11-01/`](v1-corrections-2026-11-01/README.md) | Corrections (`9144cff`), executed by Claude Code; clean demo screenshots | probes red before → green; unit 136/136, E2E 66/66, concurrency 3/3, restart PASS 13 |
 | [`publication-prep-2026-11-01/`](publication-prep-2026-11-01/README.md) | Identity normalization before first push, SHA mapping | 24/24 commits verified tree-identical; typecheck/lint 0, unit 136/136 |
 | [`post-push-verification-2026-11-01/`](post-push-verification-2026-11-01/README.md) | Fresh clone of the pushed branch `f7f91af` | typecheck/lint 0, unit 136/136, build 0, E2E 66/66, restart PASS 13 |
+
+## Independent room-search review — 1 November 2026
+
+[Evidence](room-search-review-2026-11-01/README.md): fresh unit 152/152, two navigation probes fail from SEARCH-R001, read-only demo/backup comparison correct. Full Claude build/E2E/restart logs inspected, not rerun; no runtime fix or human test. [Review](../reviews/2026-11-01-room-search-review.md).
+
+## SEARCH-R001 independently resolved — 1 November 2026
+
+[Independent recheck](room-search-r001-recheck-2026-11-01/README.md): fresh unit 152/152 and 7/7 public-browser probes. Original failing Back/bare-navigation scenarios pass after correction. Claude full 75-browser/13-restart/build/typecheck/lint evidence read, not independently rerun. No human study or further runtime change.

@@ -1,0 +1,13 @@
+2026-10-27 demo-session-2026-10-27-3 | Programmierung – Übung (Demo) | Dozent:in C (Demo) | DEMO-102 | scheduled | demo
+2026-10-27 demo-session-2026-10-27-4 | Mensch-Maschine-Interaktion (Demo) | Prof. Dr. Christian Zagel | DEMO-101 | scheduled | demo
+2026-10-29 demo-session-2026-10-29-7 | Mensch-Maschine-Interaktion – Projekt (Demo) | Prof. Dr. Christian Zagel | DEMO-101 | scheduled | demo
+2026-10-29 demo-session-2026-10-29-8 | Programmierung – Labor (Demo) | Dozent:in C (Demo) | DEMO-102 | scheduled | demo
+2026-11-01 lcc-demo-session-2026-11-01-1 | Mensch-Maschine-Interaktion (Demo) | Prof. Dr. Christian Zagel | K1-120 | scheduled | demo
+2026-11-01 lcc-demo-session-2026-11-01-2 | Wirtschaftsinformatik – Übung (Demo) | Dozent:in B (Demo) | K1-103 | scheduled | demo
+2026-10-26 demo-session-2026-10-26-1 | Einführung in die Wirtschaftsinformatik (Demo) | Dozent:in A (Demo) | DEMO-101 | scheduled | demo
+2026-10-26 demo-session-2026-10-26-2 | Mathematik (Demo) | Dozent:in B (Demo) | DEMO-E02 | scheduled | demo
+2026-11-02 lcc-demo-session-2026-11-02-3 | Projektmanagement (Demo) | Dozent:in C (Demo) | K1-120 | scheduled | demo
+2026-11-02 lcc-demo-session-2026-11-02-4 | Statistik (Demo) | Dozent:in D (Demo) | K1-303 | scheduled | demo
+/rooms 200
+/rooms?suche=Chris&datum=2026-11-01 200
+/rooms?lang=en 200

@@ -1,0 +1,58 @@
+{
+  "mode": "SQLite read-only connections",
+  "current_integrity": "ok",
+  "backup_integrity": "ok",
+  "tables": {
+    "announcements": {
+      "current_rows": 3,
+      "backup_rows": 3,
+      "identical": true
+    },
+    "class_sessions": {
+      "current_rows": 13,
+      "backup_rows": 13,
+      "identical": false
+    },
+    "room_bookings": {
+      "current_rows": 1,
+      "backup_rows": 1,
+      "identical": true
+    },
+    "rooms": {
+      "current_rows": 54,
+      "backup_rows": 54,
+      "identical": true
+    },
+    "sessions": {
+      "current_rows": 0,
+      "backup_rows": 0,
+      "identical": true
+    }
+  },
+  "changed_session_rows": [
+    {
+      "id": "demo-session-2026-10-27-4",
+      "changed_columns": [
+        "instructor",
+        "updated_at"
+      ],
+      "new_instructor": "Prof. Dr. Christian Zagel"
+    },
+    {
+      "id": "demo-session-2026-10-29-7",
+      "changed_columns": [
+        "instructor",
+        "updated_at"
+      ],
+      "new_instructor": "Prof. Dr. Christian Zagel"
+    },
+    {
+      "id": "lcc-demo-session-2026-11-01-1",
+      "changed_columns": [
+        "instructor",
+        "updated_at"
+      ],
+      "new_instructor": "Prof. Dr. Christian Zagel"
+    }
+  ]
+}

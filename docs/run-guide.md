@@ -81,6 +81,8 @@ export CAMPUS_BOARD_DB_PATH="$PWD/.demo-data/ali-manual-2026-11-01.sqlite"
 npm start -- --hostname 127.0.0.1
 ```
 
+This code change needs one rebuild before that start (stop the server first, then `npm run build`). Ali's manual demo DB already has Prof. Dr. Christian Zagel as lecturer of its untouched HCI demo sessions (one-off update on 1 November with a backup in `.demo-data/backups/`); no seed run is needed for that.
+
 Teammates use their own checkout path and the filename they selected, such as `.demo-data/team-demo.sqlite`. **Every new terminal needs the same export again.** Without it, the app defaults to `data/campus-board.sqlite`, which may contain different or no data. `.env.local` can alternatively hold the chosen `CAMPUS_BOARD_DB_PATH`, but an exported shell value takes precedence; keep one deliberate choice.
 
 Rebuild after pulling code changes or before a first production start. Stop the server first; run `npm ci` if dependencies changed (or to reproduce the lockfile), then `npm run build` and the start command. Inspect local changes before pulling; do not reset or overwrite a teammate's work. For development, stop production, select the demo DB and use `npm run dev -- --hostname 127.0.0.1` instead.
@@ -92,7 +94,7 @@ Rebuild after pulling code changes or before a first production start. Stop the 
 | `/` / `/?lang=en` | Public entry, German / English |
 | `/newcomers` | Newcomer tasks and links; verified contacts still pending |
 | `/map` | Illustrative floor map, search, room details and linked schedule/booking |
-| `/rooms` | Active rooms and links to their map, schedule and booking |
+| `/rooms` | Active rooms and links to their map, schedule and booking; search by room number/name, and by course or lecturer for a chosen day |
 | `/schedule` | Day's classes, room filter, previous/next day, cancelled classes |
 | `/booking` / `/booking/cancel` | Demo reservation and cancellation without a student account |
 | `/display` / `/display?lang=en` | Portrait announcement board |
@@ -112,6 +114,7 @@ Use a demo DB and separate public/admin browser tabs. These are **expected check
 | --- | --- | --- |
 | 1 | From Start, visit every public section, return Home, switch DE/EN and continue | Shared navigation and language persist; no admin link |
 | 2 | Search for `K1-120` on the map, view its schedule, choose tomorrow | Selected room/day remain correct; floor change clears the previous selection |
+| 2a | On `/rooms`, search `K1 120`, then `seminar`; clear the search. Then search `Chris` (or `HCI`) and choose a day that has an HCI demo class | Room results keep floor grouping and links; class results show time, lecturer, room and "Entfällt" where cancelled; "Auf der Karte zeigen" opens the same room and day; language switch keeps query and day |
 | 3 | Find essential information through Newcomer | Links work in both languages; note missing factual content separately |
 | 4 | Choose a bookable room and a free hour tomorrow; confirm once | Matching room/date/time and confirmation; save your booking number/code privately before the 60-second receipt expires; try More time and Done |
 | 5 | Cancel that reservation using its number and code | Clear cancelled result; slot becomes available; no login needed |
@@ -173,7 +176,7 @@ bash scripts/verify-restart.sh
 
 The browser configuration builds production output, uses a temporary DB/random admin and starts on port **3100**. Restart verification needs that production build (or a prior `npm run build`), uses its own temporary DB and port **3200**. Keep those ports free. Do not override `E2E_DB_PATH` with valued data. Tests produce ignored `test-results/` and `playwright-report/`; inspect/redact artifacts before sharing because failure snapshots can include page content. Credential-bearing tests disable traces/video/screenshots; the command above also disables automatic error-context copying.
 
-The recorded fresh-clone run on 1 November had **136 unit and 66 browser tests plus 13 restart checks**; see [logs and scope](evidence/post-push-verification-2026-11-01/README.md). These are historical results, not a promise of today's run. Stop at a failed command, investigate and record its real outcome. Once finished, restart the manual app with its own demo DB selected. No full suite needs repeating just because this documentation changed.
+The latest recorded run (SEARCH-R001 correction, 1 November, this checkout) had **152 unit and 75 browser tests plus 13 restart checks**; see [logs and scope](evidence/room-search-r001-fix-2026-11-01/README.md). The room-search run before it had 152/72/13 ([logs](evidence/room-search-2026-11-01/README.md)). The earlier fresh-clone run had 136/66/13 ([logs](evidence/post-push-verification-2026-11-01/README.md)). These are historical results, not a promise of today's run. Stop at a failed command, investigate and record its real outcome. Once finished, restart the manual app with its own demo DB selected. No full suite needs repeating just because this documentation changed.
 
 ## Troubleshooting
 
@@ -186,7 +189,7 @@ The recorded fresh-clone run on 1 November had **136 unit and 66 browser tests p
 | Native SQLite module mismatch after changing Node | Stop the server and rerun `npm ci` with the intended Node version. Retain the error if build tools/platform dependencies are missing. |
 | Login disabled / unknown password | On this installation run the interactive account setup, restart, and use your chosen credentials at `/admin/login`. There is no public registration or default login. |
 | Login keeps returning to login over a LAN IP | Check hostname consistency and the explicit plain-HTTP demo cookie option above; prefer localhost on the host. |
-| Unexpected or empty content | Verify the exported DB path in this terminal. Do not assume the selected date has classes: base seed is weekdays, team seed today/tomorrow. Archived/edited seed rows are preserved. |
+| Unexpected or empty content | Verify the exported DB path in this terminal. Do not assume the selected date has classes: base seed is weekdays, team seed today/tomorrow. A search for `Chris`/`HCI` finds HCI demo classes only on days that have one. Archived/edited seed rows are preserved. |
 | Notices remain on Loading / old app state | Check the terminal and the public API at `/api/public/announcements`; reload the correct production address. If using LAN dev, use the production instructions. Preserve errors for investigation rather than treating HTTP 200 alone as interactive success. |
 | New room has no map marker | Expected: rooms use stable IDs but positions are separately configured. A name/code match does not invent geometry. |
 | Booking/class save refused | Check active/reservable room, date/time limits and existing occupancy. Resolve a real conflict explicitly; don't bypass the server checks. |

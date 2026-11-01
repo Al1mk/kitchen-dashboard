@@ -32,7 +32,7 @@ Two interfaces share **one persistent database**. Whatever Katja saves in the ad
 | `/` | Start page with a large button for every section |
 | `/newcomers` | "Neu am Campus": short task cards that lead to the map, schedule, notices and booking (static text; real contacts still missing) |
 | `/map` | Campus map: three floor illustrations, search by room number or name, zoom, room details with links to its classes and to booking. Room names, floors and booking permission come live from the room list; positions are bound to the room id |
-| `/rooms` | All rooms, grouped by floor, each with links to today's classes, the map and (if bookable) booking |
+| `/rooms` | All rooms, grouped by floor, each with links to today's classes, the map and (if bookable) booking. Search by room number or DE/EN name; the same search also lists a chosen day's classes by course or lecturer (the classroom of that class, not an office) |
 | `/schedule` | Classes of one day; previous/next day; optional filter by room (`?raum=<room id>`); cancelled classes stay visible as "Entfällt" |
 | `/booking`, `/booking/cancel` | Demo booking: choose room, date, duration and a free start time; receipt with booking number and cancellation code (60-second countdown, "More time", "Done"); cancel with number + code |
 | `/display` | Announcement board in portrait format (designed for the 1080×1920 screen) |
@@ -127,7 +127,7 @@ Wait for **Ready**, keep that terminal open, then open:
 | Validation | zod, on the server. Error messages are German and shown next to the field. |
 | Live updates | Public pages ask the server every 5 seconds (simple and robust on a kiosk; no websockets) |
 | Auth | One demo admin from `.env.local` (scrypt hash). Server-side sessions use a random token in an HttpOnly cookie. Every change must also come from the same origin (CSRF protection). |
-| Tests | Vitest (unit, 136 tests) and Playwright (browser, 66 tests, production build, temporary database) — counts of the 2026-11-01 correction run (2026-10-31 integration run: 134/60) |
+| Tests | Vitest (unit, 152 tests) and Playwright (browser, 75 tests, production build, temporary database) — counts of the 2026-11-01 SEARCH-R001 correction run (earlier: 152/72 room search, 136/66 on 2026-11-01, 134/60 on 2026-10-31) |
 
 ### Folder map
 
@@ -181,7 +181,7 @@ All public responses contain `serverTime`, are never cached and contain only all
 ```bash
 npm run typecheck
 npm run lint
-npm test                    # unit tests (136)
+npm test                    # unit tests (152)
 PLAYWRIGHT_NO_COPY_PROMPT=1 npm run test:e2e # browser tests (66), temporary database/password; builds the app
 bash scripts/verify-restart.sh # persistence check, temporary DB; needs a production build
 ```
@@ -239,7 +239,7 @@ If you (or your AI agent) work on this repository:
 
 | Backlog | To do | In progress | Needs decision | In review | Done |
 | --- | --- | --- | --- | --- | --- |
-| G-3, G-4 | R-1, G-1, G-2, K-9, A-6, I-2 | R-2 | S-3, S-4, S-5, S-6, K-6, K-7, R-4 | K-5, I-1, A-1, A-2, A-3, A-4, A-5, P-1, P-2, P-3, P-4, P-5, R-3, S-1, S-2 | K-1, K-2, K-3, K-4, K-8 |
+| G-3, G-4 | R-1, G-1, G-2, K-9 | R-2, I-2 | S-3, S-4, S-5, S-6, K-6, K-7, R-4 | K-5, I-1, A-1, A-2, A-3, A-4, A-5, P-1, P-2, P-3, P-4, P-5, R-3, S-1, S-2, A-6 | K-1, K-2, K-3, K-4, K-8 |
 
 "In review" for team cards means: implemented and covered by automated tests on the integration branch, waiting for the team's review. It does not mean tested with people.
 
@@ -259,7 +259,7 @@ If you (or your AI agent) work on this repository:
 | K-8 | Complete setup, admin-account and testing guide in the repository | Done | T30: [run guide](docs/run-guide.md), README entry and source/command/link checks; documentation only, not a fresh-reader test |
 | K-9 | Have a teammate follow the guide from a fresh clone | To do | T31: record OS/Node/commit, own local admin, demo path, Ready/login/public result and any unclear step; no passwords or invented success |
 | I-1 | Integrate the three team deliveries into one V1 | In review | Branch `integrate/team-v1-20261031`; typecheck/lint/134 unit/60 browser/restart green on 2026-10-31; review findings V1-R001/V1-R002 fixed 2026-11-01 (`27ef96b`, pre-publication `9144cff`; 136 unit/66 browser/restart green); branch published 2026-11-01 at `f7f91af` and re-verified on a fresh clone; see `docs/contributions.md` |
-| I-2 | Lecturer/staff and course search, linked to rooms | To do | T33: name/approved alias/course → confirmed office or dated classroom; distinguish the two, retain stable IDs/DE/EN. [Request and sources](docs/hci/requests/2026-11-01-room-and-people-search.md); not implemented |
+| I-2 | Lecturer/staff and course search, linked to rooms | In progress | T33: classroom part done on `/rooms` (2026-11-01, uncommitted for Ali's review): course/lecturer search for a chosen day, aliases `Chris`/`MMI`/`HCI`, Prof. Dr. Christian Zagel as HCI demo lecturer, stable room IDs and DE/EN. Office/staff lookup (Grosch, Katja) waits for T34. [Request and sources](docs/hci/requests/2026-11-01-room-and-people-search.md), [evidence](docs/evidence/room-search-2026-11-01/README.md) |
 
 #### Shared decisions — Ali with Arian and Parsa (blocks map and booking)
 
@@ -281,7 +281,7 @@ If you (or your AI agent) work on this repository:
 | A-3 | Tapping a room opens its classes | In review | Link to `/schedule?raum=<id>` and keep `&lang=en` |
 | A-4 | Room search / selection on the map | In review | Touch-friendly; large targets (at least 56 px) |
 | A-5 | Map in English | In review | Labels in `src/lib/i18n/public.ts`; room names follow the existing fallback rule |
-| A-6 | Search bar on the room directory | To do | T32: search `/rooms` by code/name in both languages, clear/no-results, preserve links. Existing map search remains; [scope](docs/hci/requests/2026-11-01-room-and-people-search.md) |
+| A-6 | Search bar on the room directory | In review | T32 implemented and technically verified 2026-11-01 (uncommitted for Ali's review): `/rooms` search by code/DE/EN name with code variants, clear and no-results, floor grouping and ID links; map uses the same matcher. Independent review reopened T32: [SEARCH-R001](docs/reviews/2026-11-01-room-search-review.md) affected Back/navigation search restoration; corrected and re-verified the same day ([fix evidence](docs/evidence/room-search-r001-fix-2026-11-01/README.md)); awaiting Ali's review/commit and Aryan's review. No human retest yet. [Original evidence](docs/evidence/room-search-2026-11-01/README.md) |
 
 #### Parsa — booking and free time *(proposed owner)*
 

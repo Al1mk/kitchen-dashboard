@@ -84,6 +84,32 @@ describe("team demo seed", () => {
     expect(db.prepare("SELECT COUNT(*) AS n FROM rooms WHERE code = 'K1-121'").get()).toEqual({ n: 0 });
   });
 
+  it("gives only the HCI demo session the HCI lecturer; the other demo lecturers stay placeholders", () => {
+    seedTeamDemo(db, now);
+    const sessions = db
+      .prepare<[], { id: string; title: string; instructor: string; room_id: string; status: string; is_demo: number }>(
+        "SELECT id, title, instructor, room_id, status, is_demo FROM class_sessions ORDER BY id",
+      )
+      .all();
+    expect(sessions).toEqual([
+      { id: "lcc-demo-session-2026-11-02-1", title: "Mensch-Maschine-Interaktion (Demo)", instructor: "Prof. Dr. Christian Zagel", room_id: "lcc-demo-room-k1-120", status: "scheduled", is_demo: 1 },
+      { id: "lcc-demo-session-2026-11-02-2", title: "Wirtschaftsinformatik – Übung (Demo)", instructor: "Dozent:in B (Demo)", room_id: "lcc-demo-room-k1-103", status: "scheduled", is_demo: 1 },
+      { id: "lcc-demo-session-2026-11-03-3", title: "Projektmanagement (Demo)", instructor: "Dozent:in C (Demo)", room_id: "lcc-demo-room-k1-120", status: "scheduled", is_demo: 1 },
+      { id: "lcc-demo-session-2026-11-03-4", title: "Statistik (Demo)", instructor: "Dozent:in D (Demo)", room_id: "lcc-demo-room-k1-303", status: "scheduled", is_demo: 1 },
+    ]);
+  });
+
+  it("leaves an existing session with the same id unchanged on reseeding (old lecturer or edited record)", () => {
+    seedTeamDemo(db, now);
+    // A database seeded before the lecturer change, and a record edited later.
+    db.prepare("UPDATE class_sessions SET instructor = 'Dozent:in A (Demo)' WHERE id = 'lcc-demo-session-2026-11-02-1'").run();
+    db.prepare("UPDATE class_sessions SET instructor = 'Eigene Angabe', updated_at = '2026-11-02T08:00:00.000Z' WHERE id = 'lcc-demo-session-2026-11-03-3'").run();
+    const before = db.prepare("SELECT * FROM class_sessions ORDER BY id").all();
+    const report = seedTeamDemo(db, new Date(now.getTime() + 60_000));
+    expect(report.sessionsCreated).toBe(0);
+    expect(db.prepare("SELECT * FROM class_sessions ORDER BY id").all()).toEqual(before);
+  });
+
   it("does not add a demo session into a slot already taken by a class or booking", () => {
     // Rooms first (no sessions yet would be fine, but the seed adds both in one run):
     seedTeamDemo(db, now);

@@ -68,11 +68,14 @@ export function LanguageSwitch({
   path,
   params = {},
   variant = "page",
+  prefetch,
 }: {
   lang: Lang;
   path: string;
   params?: Record<string, string | null | undefined>;
   variant?: Variant;
+  /** false for links whose target changes while the visitor types (no prefetch per keystroke). */
+  prefetch?: false;
 }) {
   const s = styles[variant];
   const options = [
@@ -85,6 +88,7 @@ export function LanguageSwitch({
         <Link
           key={option.code}
           href={publicHref(path, option.code, params)}
+          prefetch={prefetch}
           hrefLang={option.code}
           lang={option.code}
           aria-current={option.code === lang ? "true" : undefined}

@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-01",
+  "artifact": "current production build; controlled public API fixtures; no admin login or real data",
+  "checks": [
+    {
+      "name": "Back after language switch and query/day edits restores prior state",
+      "expected": {
+        "query": "Chris",
+        "date": "2031-05-12"
+      },
+      "actual": {
+        "url": "http://127.0.0.1:3341/rooms?suche=Grosch&datum=2031-05-13",
+        "query": "Grosch",
+        "date": "2031-05-13"
+      },
+      "pass": false
+    },
+    {
+      "name": "Bare Rooms navigation clears search",
+      "expected": {
+        "query": "",
+        "path": "/rooms"
+      },
+      "actual": {
+        "url": "http://127.0.0.1:3341/rooms?suche=Grosch&datum=2031-05-13",
+        "query": "Grosch"
+      },
+      "pass": false
+    }
+  ]
+}

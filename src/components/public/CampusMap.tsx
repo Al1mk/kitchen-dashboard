@@ -6,6 +6,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { fallbackLevel, localize, PUBLIC_TEXT, publicHref, type Lang } from "@/lib/i18n/public.ts";
 import { MAP_FLOORS, mapFloor, markerFor } from "@/lib/map/config.ts";
 import { FLOORS, type FloorId, type PublicRoom } from "@/lib/rooms/schema.ts";
+import { isExactRoomCode, roomMatches } from "@/lib/search/match.ts";
 import { DemoNotice, DemoTag, FallbackTag, LoadState } from "./PublicShell.tsx";
 import { usePolledJson } from "./usePolledJson.ts";
 
@@ -72,17 +73,10 @@ const copy = {
   },
 } as const;
 
-const normal = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
-const codeKey = (s: string) => normal(s).replace(/[^a-z0-9]/g, "");
-/** Aryan's matching: exact code (also without the "K1-" prefix), or code/name contains the text. */
-function isExactCode(room: PublicRoom, term: string) {
-  const key = codeKey(term);
-  return !!key && (codeKey(room.code) === key || codeKey(room.code.replace(/^K1-/i, "")) === key);
-}
-function matches(room: PublicRoom, term: string) {
-  if (!term) return true;
-  return isExactCode(room, term) || normal(`${room.code} ${room.name} ${room.nameEn ?? ""}`).includes(normal(term)) || codeKey(room.code).includes(codeKey(term));
-}
+// Aryan's matching (exact code, also without the "K1-" prefix, or code/name
+// contains the text), moved to src/lib/search/match.ts so /rooms uses the same rules (T32).
+const isExactCode = isExactRoomCode;
+const matches = roomMatches;
 
 const ZOOM_MIN = 1;
 const ZOOM_MAX = 3;

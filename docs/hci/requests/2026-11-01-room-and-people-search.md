@@ -1,11 +1,15 @@
 # Room, person and course search — requested follow-up
 
-Recorded **1 November 2026** from Ali's request during his local review. **PLANNED, NOT IMPLEMENTED.** This records a team requirement, not an independent participant study or a measured UX improvement.
+Recorded **1 November 2026** from Ali's request during his local review. **Status update (same day, afternoon): T32 implemented and technically verified; the classroom part of T33 implemented and technically tested; office/staff lookup and T34 still open** — see [implementation and evidence](#implementation-1-november-2026). This records a team requirement, not an independent participant study or a measured UX improvement.
+
+## Independent review follow-up — 1 November 2026
+
+T32 is reopened to **IMPLEMENTED**, pending [SEARCH-R001](../../reviews/2026-11-01-room-search-review.md): same-page history/navigation overwrites the previous query/day with current local state. Core matching and lecturer corrections remain present; T33 stays IN_PROGRESS and T34 WAITING_HUMAN. Original implementation/test records below are retained; they did not cover this additional sequence. No fix has been applied by the reviewer.
 
 ## Existing behaviour
 
 - `CampusMap.tsx` already searches active rooms by code, German name and English name. Preserve it and reuse its matching where appropriate.
-- `RoomDirectory.tsx` (`/rooms`) lists rooms by floor but has no search input.
+- `RoomDirectory.tsx` (`/rooms`) listed rooms by floor without a search input (search added 1 November, see below).
 - Sessions contain `title`, `instructor` and stable `roomId`; there is no structured staff/office directory or person/course search. A class's room is not automatically its lecturer's office.
 
 ## Ordered to-do list
@@ -20,10 +24,10 @@ Recorded **1 November 2026** from Ali's request during his local review. **PLANN
 
 ### T32 — Add room search to the room directory [P1]
 
-- [ ] Add a clearly labelled, touch-friendly search input to `/rooms`, for room code and DE/EN room name; reuse existing map behaviour instead of building another directory/database.
-- [ ] Support partial text, case-insensitive matching and code variants such as `K1-105`, `K1 105` and `105`; keep `room.id` as identity. Verify how spaces/punctuation are normalized rather than copying edge cases blindly.
-- [ ] Provide clear/reset and a useful no-results state; keep floor grouping, room-map/schedule/booking links, language, active-room rules and German-fallback labels.
-- [ ] Test relevant search/link behaviour in both languages, including keyboard/touch interaction and an archived room; record real outcomes. No automatic room replacement when a search has no match.
+- [x] Add a clearly labelled, touch-friendly search input to `/rooms`, for room code and DE/EN room name; reuse existing map behaviour instead of building another directory/database.
+- [x] Support partial text, case-insensitive matching and code variants such as `K1-105`, `K1 105` and `105`; keep `room.id` as identity. Verify how spaces/punctuation are normalized rather than copying edge cases blindly.
+- [x] Provide clear/reset and a useful no-results state; keep floor grouping, room-map/schedule/booking links, language, active-room rules and German-fallback labels.
+- [x] Test relevant search/link behaviour in both languages, including keyboard/touch interaction and an archived room; record real outcomes. No automatic room replacement when a search has no match.
 
 ### T33 — Search by lecturer/staff name or course [P1]
 
@@ -49,4 +53,17 @@ Official pages were read on **1 November 2026**. A public directory is a dated s
 | Katja in the secretariat | Ali's statement; current illustrative catalog secretariat is K1-107 | Person/room association and full name unverified; the official campus-team page read here did not identify Katja |
 | Communication area is kitchen / communication area | Ali's requested correction; catalog K1-108 is Kommunikation / Communication area | Requested label recorded; exact target room to confirm before changing live data |
 
-The user's request is to **add these to the to-do list**. No app, DB, seed or source import was changed by this requirements note. T32/T33 are TODO; T34 is WAITING_HUMAN. Current task state: [progress board](../../plans/team-integration-2026-10-31/02-progress.md).
+## Implementation (1 November 2026)
+
+Implemented by Claude Code at Ali's request on `main` at `452d893`; **uncommitted** for Ali's review. Technical checks only — no participant or human retest.
+
+- **T32 done:** `/rooms` search field (DE/EN labels, hint, clear button returning focus, no-results message), shared matcher `src/lib/search/match.ts` also used by the map. Code variants `K1-105`, `K1 105`, `k1-105`, `105` (also partial: `105` lists K1-105 and any K1-105x); accents/umlauts (`Kueche`/`Kuche` → Küche); punctuation-only queries match nothing. Floor grouping, map/schedule/booking links by room ID and German-fallback labels stay; archived rooms are not listed (only active rooms come from the API).
+- **T33 classroom part done:** for a non-empty query `/rooms` also lists classes of a chosen day (date field and previous/today/next, default today in Berlin) whose course or lecturer matches: time, course, lecturer, room, floor, "Entfällt"/"Cancelled", links to `/map?raum=<id>&datum=` and `/schedule?datum=&raum=<id>`. Labelled as the room of a class on that day, not an office or a person's location. `Chris` → Christian Zagel and `MMI`/`HCI` → Mensch-Maschine-Interaktion are configured aliases (whole query, whole word); `Christian` lists every match. Error state ≠ "no classes"; a previous day's late response is discarded.
+- **HCI demo lecturer:** Prof. Dr. Christian Zagel (name source above) on the three HCI demo sessions of the two seeds; Ali's manual demo DB corrected with a backup (details in the evidence). Rooms/times remain invented demo values, not the course's timetable.
+- **Still open (T33 remainder, T34):** office/staff lookup and the checkboxes above for Grosch, Katja, office mapping and missing-office states; room/label corrections incl. the kitchen rename. Nothing from the fact table was applied to data.
+
+Evidence: [room-search-2026-11-01](../../evidence/room-search-2026-11-01/README.md).
+
+Design rationale (analytical, not measured): visitors can *recognize* a room or course in a filtered list instead of recalling the floor and room number (recognition rather than recall); the same matching on map and directory keeps search consistent; explicit no-results, cancelled and error states give clear feedback; direct links to the right room and day reduce navigation steps. Whether this helps real visitors is untested until a human session (T22) is run.
+
+The user's request is to **add these to the to-do list**. No app, DB, seed or source import was changed by this requirements note. At recording time T32/T33 were TODO; for the state after implementation see the progress board. T34 is WAITING_HUMAN. Current task state: [progress board](../../plans/team-integration-2026-10-31/02-progress.md).

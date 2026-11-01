@@ -1,0 +1,27 @@
+
+Running 1 test using 1 worker
+
+  ✘  1 [chromium] › tests/e2e/room-search.spec.ts:328:1 › SEARCH-R001: the bare Rooms navigation link clears the search in both languages (1.1s)
+
+
+  1) [chromium] › tests/e2e/room-search.spec.ts:328:1 › SEARCH-R001: the bare Rooms navigation link clears the search in both languages 
+
+    Error: expect(received).toMatch(expected)
+
+    Expected pattern: /\/rooms$/
+    Received string:  "http://localhost:3100/rooms?suche=Chris&datum=2031-05-12"
+
+      286 |   await expect(page).toHaveURL(at(pathAndQuery));
+      287 |   await page.waitForTimeout(700);
+    > 288 |   expect(page.url()).toMatch(at(pathAndQuery));
+          |                      ^
+      289 | }
+      290 |
+      291 | test("SEARCH-R001: Back and Forward restore each entry's search and day across a language switch", async ({ page }) => {
+        at expectStableUrl (<repo>/tests/e2e/room-search.spec.ts:288:22)
+        at <repo>/tests/e2e/room-search.spec.ts:332:3
+
+    Error Context: test-results/room-search-SEARCH-R001-th-42a7a-he-search-in-both-languages-chromium/error-context.md
+
+  1 failed
+    [chromium] › tests/e2e/room-search.spec.ts:328:1 › SEARCH-R001: the bare Rooms navigation link clears the search in both languages 

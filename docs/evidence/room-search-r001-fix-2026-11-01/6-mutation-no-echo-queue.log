@@ -1,0 +1,38 @@
+
+Running 3 tests using 1 worker
+
+  ✓  1 [chromium] › tests/e2e/room-search.spec.ts:291:1 › SEARCH-R001: Back and Forward restore each entry's search and day across a language switch (4.0s)
+  ✓  2 [chromium] › tests/e2e/room-search.spec.ts:328:1 › SEARCH-R001: the bare Rooms navigation link clears the search in both languages (3.2s)
+  ✘  3 [chromium] › tests/e2e/room-search.spec.ts:353:1 › SEARCH-R001: fast typing keeps every character and does not navigate per keystroke (5.2s)
+
+
+  1) [chromium] › tests/e2e/room-search.spec.ts:353:1 › SEARCH-R001: fast typing keeps every character and does not navigate per keystroke 
+
+    Error: expect(locator).toHaveValue(expected) failed
+
+    Locator:  getByRole('searchbox', { name: 'Raum, Lehrperson oder Lehrveranstaltung suchen' })
+    Expected: "Mensch Maschine Interaktion"
+    Received: "Mnsch Maschine Interaktion"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveValue" getByRole('searchbox', { name: 'Raum, Lehrperson oder Lehrveranstaltung suchen' }) with timeout 5000ms
+      - waiting for getByRole('searchbox', { name: 'Raum, Lehrperson oder Lehrveranstaltung suchen' })
+        14 × locator resolved to <input type="search" maxlength="100" id="room-search" autocomplete="off" spellcheck="false" enterkeyhint="search" value="Mnsch Maschine Interaktion" aria-describedby="room-search-hint" placeholder="z. B. K1-105, Seminarraum, Zagel oder HCI" class="min-h-14 w-full rounded-xl border border-ink bg-surface px-4 text-lg"/>
+           - unexpected value "Mnsch Maschine Interaktion"
+
+
+      361 |   });
+      362 |   await searchBox(page).pressSequentially("Mensch Maschine Interaktion", { delay: 0 });
+    > 363 |   await expect(searchBox(page)).toHaveValue("Mensch Maschine Interaktion");
+          |                                 ^
+      364 |   await expectStableUrl(page, `/rooms?suche=Mensch+Maschine+Interaktion&datum=${DAY}`);
+      365 |   await expect(searchBox(page)).toHaveValue("Mensch Maschine Interaktion");
+      366 |   await expect(classMatches(page)).toHaveCount(2);
+        at <repo>/tests/e2e/room-search.spec.ts:363:33
+
+    Error Context: test-results/room-search-SEARCH-R001-fa-6084b--not-navigate-per-keystroke-chromium/error-context.md
+
+  1 failed
+    [chromium] › tests/e2e/room-search.spec.ts:353:1 › SEARCH-R001: fast typing keeps every character and does not navigate per keystroke 
+  2 passed (16.9s)

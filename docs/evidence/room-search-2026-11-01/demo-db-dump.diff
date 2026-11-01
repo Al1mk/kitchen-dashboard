@@ -1,0 +1,11 @@
+--- before
++++ after
+@@ -109 +109 @@
+-INSERT INTO class_sessions VALUES('demo-session-2026-10-27-4',NULL,'Mensch-Maschine-Interaktion (Demo)','Dozent:in D (Demo)','Wirtschaftsinformatik 2.0 – Beispielsemester','WS 2026/27','demo-room-101','2026-10-27T12:00:00.000Z','2026-10-27T13:30:00.000Z','scheduled',NULL,1,'2026-11-01T10:46:50.122Z','2026-11-01T10:46:50.122Z');
++INSERT INTO class_sessions VALUES('demo-session-2026-10-27-4',NULL,'Mensch-Maschine-Interaktion (Demo)','Prof. Dr. Christian Zagel','Wirtschaftsinformatik 2.0 – Beispielsemester','WS 2026/27','demo-room-101','2026-10-27T12:00:00.000Z','2026-10-27T13:30:00.000Z','scheduled',NULL,1,'2026-11-01T10:46:50.122Z','2026-11-01T11:49:15.995Z');
+@@ -112 +112 @@
+-INSERT INTO class_sessions VALUES('demo-session-2026-10-29-7',NULL,'Mensch-Maschine-Interaktion – Projekt (Demo)','Dozent:in D (Demo)','Wirtschaftsinformatik 2.0 – Beispielsemester','WS 2026/27','demo-room-101','2026-10-29T09:00:00.000Z','2026-10-29T10:30:00.000Z','scheduled',NULL,1,'2026-11-01T10:46:50.122Z','2026-11-01T10:46:50.122Z');
++INSERT INTO class_sessions VALUES('demo-session-2026-10-29-7',NULL,'Mensch-Maschine-Interaktion – Projekt (Demo)','Prof. Dr. Christian Zagel','Wirtschaftsinformatik 2.0 – Beispielsemester','WS 2026/27','demo-room-101','2026-10-29T09:00:00.000Z','2026-10-29T10:30:00.000Z','scheduled',NULL,1,'2026-11-01T10:46:50.122Z','2026-11-01T11:49:15.995Z');
+@@ -115 +115 @@
+-INSERT INTO class_sessions VALUES('lcc-demo-session-2026-11-01-1',NULL,'Mensch-Maschine-Interaktion (Demo)','Dozent:in A (Demo)','Beispielsemester (Demo)','WS 2026/27','lcc-demo-room-k1-120','2026-11-01T09:00:00.000Z','2026-11-01T10:30:00.000Z','scheduled',NULL,1,'2026-11-01T10:46:50.286Z','2026-11-01T10:46:50.286Z');
++INSERT INTO class_sessions VALUES('lcc-demo-session-2026-11-01-1',NULL,'Mensch-Maschine-Interaktion (Demo)','Prof. Dr. Christian Zagel','Beispielsemester (Demo)','WS 2026/27','lcc-demo-room-k1-120','2026-11-01T09:00:00.000Z','2026-11-01T10:30:00.000Z','scheduled',NULL,1,'2026-11-01T10:46:50.286Z','2026-11-01T11:49:15.995Z');

@@ -9,6 +9,7 @@ import nextEnv from "@next/env";
 import { getDatabasePath } from "../src/lib/config.ts";
 import { openDatabase } from "../src/lib/db/database.ts";
 import type { AnnouncementContent } from "../src/lib/announcements/schema.ts";
+import { HCI_LECTURER } from "../src/lib/map/team-seed.ts";
 import type { FloorId, RoomType } from "../src/lib/rooms/schema.ts";
 import { termForDate } from "../src/lib/sessions/schema.ts";
 import { addDays, berlinDateOf, berlinLocalToUtcIso } from "../src/lib/time/berlin.ts";
@@ -125,10 +126,10 @@ const DEMO_WEEK: { day: number; roomId: string; start: string; end: string; titl
   { day: 0, roomId: "demo-room-101", start: "08:15", end: "09:45", title: "Einführung in die Wirtschaftsinformatik (Demo)", instructor: "Dozent:in A (Demo)" },
   { day: 0, roomId: "demo-room-e02", start: "10:00", end: "11:30", title: "Mathematik (Demo)", instructor: "Dozent:in B (Demo)" },
   { day: 1, roomId: "demo-room-102", start: "08:15", end: "11:30", title: "Programmierung – Übung (Demo)", instructor: "Dozent:in C (Demo)" },
-  { day: 1, roomId: "demo-room-101", start: "13:00", end: "14:30", title: "Mensch-Maschine-Interaktion (Demo)", instructor: "Dozent:in D (Demo)" },
+  { day: 1, roomId: "demo-room-101", start: "13:00", end: "14:30", title: "Mensch-Maschine-Interaktion (Demo)", instructor: HCI_LECTURER },
   { day: 2, roomId: "demo-room-e02", start: "08:15", end: "09:45", title: "Betriebswirtschaftslehre (Demo)", instructor: "Dozent:in B (Demo)" },
   { day: 2, roomId: "demo-room-202", start: "10:00", end: "11:30", title: "Englisch (Demo)", instructor: "Dozent:in E (Demo)" },
-  { day: 3, roomId: "demo-room-101", start: "10:00", end: "11:30", title: "Mensch-Maschine-Interaktion – Projekt (Demo)", instructor: "Dozent:in D (Demo)" },
+  { day: 3, roomId: "demo-room-101", start: "10:00", end: "11:30", title: "Mensch-Maschine-Interaktion – Projekt (Demo)", instructor: HCI_LECTURER },
   { day: 3, roomId: "demo-room-102", start: "13:00", end: "16:15", title: "Programmierung – Labor (Demo)", instructor: "Dozent:in C (Demo)" },
   { day: 4, roomId: "demo-room-202", start: "08:15", end: "09:45", title: "Statistik (Demo)", instructor: "Dozent:in A (Demo)", cancelled: true },
 ];

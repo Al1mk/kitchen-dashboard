@@ -1,0 +1,103 @@
+
+Running 15 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/room-search.spec.ts:291:1 › SEARCH-R001: Back and Forward restore each entry's search and day across a language switch (4.0s)
+  ✓   2 [chromium] › tests/e2e/room-search.spec.ts:328:1 › SEARCH-R001: the bare Rooms navigation link clears the search in both languages (3.1s)
+  ✓   3 [chromium] › tests/e2e/room-search.spec.ts:353:1 › SEARCH-R001: fast typing keeps every character and does not navigate per keystroke (2.6s)
+  ✘   4 [chromium] › tests/e2e/room-search.spec.ts:291:1 › SEARCH-R001: Back and Forward restore each entry's search and day across a language switch (0ms)
+  -   5 [chromium] › tests/e2e/room-search.spec.ts:328:1 › SEARCH-R001: the bare Rooms navigation link clears the search in both languages
+  -   6 [chromium] › tests/e2e/room-search.spec.ts:353:1 › SEARCH-R001: fast typing keeps every character and does not navigate per keystroke
+  ✘   7 [chromium] › tests/e2e/room-search.spec.ts:291:1 › SEARCH-R001: Back and Forward restore each entry's search and day across a language switch (0ms)
+  -   8 [chromium] › tests/e2e/room-search.spec.ts:328:1 › SEARCH-R001: the bare Rooms navigation link clears the search in both languages
+  -   9 [chromium] › tests/e2e/room-search.spec.ts:353:1 › SEARCH-R001: fast typing keeps every character and does not navigate per keystroke
+  ✘  10 [chromium] › tests/e2e/room-search.spec.ts:291:1 › SEARCH-R001: Back and Forward restore each entry's search and day across a language switch (0ms)
+  -  11 [chromium] › tests/e2e/room-search.spec.ts:328:1 › SEARCH-R001: the bare Rooms navigation link clears the search in both languages
+  -  12 [chromium] › tests/e2e/room-search.spec.ts:353:1 › SEARCH-R001: fast typing keeps every character and does not navigate per keystroke
+  ✘  13 [chromium] › tests/e2e/room-search.spec.ts:291:1 › SEARCH-R001: Back and Forward restore each entry's search and day across a language switch (0ms)
+  -  14 [chromium] › tests/e2e/room-search.spec.ts:328:1 › SEARCH-R001: the bare Rooms navigation link clears the search in both languages
+  -  15 [chromium] › tests/e2e/room-search.spec.ts:353:1 › SEARCH-R001: fast typing keeps every character and does not navigate per keystroke
+
+
+  1) [chromium] › tests/e2e/room-search.spec.ts:291:1 › SEARCH-R001: Back and Forward restore each entry's search and day across a language switch 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 201
+    Received: 409
+
+      30 | async function createSession(request: APIRequestContext, input: { title: string; instructor: string; roomId: string; date: string; startTime: string; endTime: string }) {
+      31 |   const response = await request.post("/api/admin/sessions", { headers, data: { cohort: "Suchtest", term: "SS 2031", ...input } });
+    > 32 |   expect(response.status()).toBe(201);
+         |                             ^
+      33 |   return (await response.json()).session.id as string;
+      34 | }
+      35 |
+        at createSession (<repo>/tests/e2e/room-search.spec.ts:32:29)
+        at <repo>/tests/e2e/room-search.spec.ts:44:3
+
+    Error Context: test-results/room-search-SEARCH-R001-Ba-af320-ay-across-a-language-switch-chromium-repeat1/error-context.md
+
+  2) [chromium] › tests/e2e/room-search.spec.ts:291:1 › SEARCH-R001: Back and Forward restore each entry's search and day across a language switch 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 201
+    Received: 409
+
+      30 | async function createSession(request: APIRequestContext, input: { title: string; instructor: string; roomId: string; date: string; startTime: string; endTime: string }) {
+      31 |   const response = await request.post("/api/admin/sessions", { headers, data: { cohort: "Suchtest", term: "SS 2031", ...input } });
+    > 32 |   expect(response.status()).toBe(201);
+         |                             ^
+      33 |   return (await response.json()).session.id as string;
+      34 | }
+      35 |
+        at createSession (<repo>/tests/e2e/room-search.spec.ts:32:29)
+        at <repo>/tests/e2e/room-search.spec.ts:44:3
+
+    Error Context: test-results/room-search-SEARCH-R001-Ba-af320-ay-across-a-language-switch-chromium-repeat2/error-context.md
+
+  3) [chromium] › tests/e2e/room-search.spec.ts:291:1 › SEARCH-R001: Back and Forward restore each entry's search and day across a language switch 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 201
+    Received: 409
+
+      30 | async function createSession(request: APIRequestContext, input: { title: string; instructor: string; roomId: string; date: string; startTime: string; endTime: string }) {
+      31 |   const response = await request.post("/api/admin/sessions", { headers, data: { cohort: "Suchtest", term: "SS 2031", ...input } });
+    > 32 |   expect(response.status()).toBe(201);
+         |                             ^
+      33 |   return (await response.json()).session.id as string;
+      34 | }
+      35 |
+        at createSession (<repo>/tests/e2e/room-search.spec.ts:32:29)
+        at <repo>/tests/e2e/room-search.spec.ts:44:3
+
+    Error Context: test-results/room-search-SEARCH-R001-Ba-af320-ay-across-a-language-switch-chromium-repeat3/error-context.md
+
+  4) [chromium] › tests/e2e/room-search.spec.ts:291:1 › SEARCH-R001: Back and Forward restore each entry's search and day across a language switch 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 201
+    Received: 409
+
+      30 | async function createSession(request: APIRequestContext, input: { title: string; instructor: string; roomId: string; date: string; startTime: string; endTime: string }) {
+      31 |   const response = await request.post("/api/admin/sessions", { headers, data: { cohort: "Suchtest", term: "SS 2031", ...input } });
+    > 32 |   expect(response.status()).toBe(201);
+         |                             ^
+      33 |   return (await response.json()).session.id as string;
+      34 | }
+      35 |
+        at createSession (<repo>/tests/e2e/room-search.spec.ts:32:29)
+        at <repo>/tests/e2e/room-search.spec.ts:44:3
+
+    Error Context: test-results/room-search-SEARCH-R001-Ba-af320-ay-across-a-language-switch-chromium-repeat4/error-context.md
+
+  4 failed
+    [chromium] › tests/e2e/room-search.spec.ts:291:1 › SEARCH-R001: Back and Forward restore each entry's search and day across a language switch 
+    [chromium] › tests/e2e/room-search.spec.ts:291:1 › SEARCH-R001: Back and Forward restore each entry's search and day across a language switch 
+    [chromium] › tests/e2e/room-search.spec.ts:291:1 › SEARCH-R001: Back and Forward restore each entry's search and day across a language switch 
+    [chromium] › tests/e2e/room-search.spec.ts:291:1 › SEARCH-R001: Back and Forward restore each entry's search and day across a language switch 
+  8 did not run
+  3 passed (14.7s)

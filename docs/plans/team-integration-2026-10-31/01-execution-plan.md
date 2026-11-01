@@ -475,8 +475,10 @@ Depends: T21 factual input. Reza/team confirm with Ali and Aryan; ownership to a
 
 Depends: existing room API; independent of unresolved person facts. Owner to agree with Ali/Aryan.
 
-- [ ] Add `/rooms` search for codes and DE/EN names, reusing current map matching where suitable; clear/no-result states, touch/keyboard and language-aware ID links.
-- [ ] Verify code variants, partial names, no match, archived rooms and links in both languages. Record results only after execution.
+- [x] Add `/rooms` search for codes and DE/EN names, reusing current map matching where suitable; clear/no-result states, touch/keyboard and language-aware ID links.
+- [x] Verify code variants, partial names, no match, archived rooms and links in both languages. Record results only after execution. (2026-11-01: `room-search.spec.ts`, `search-match.test.ts`; evidence `docs/evidence/room-search-2026-11-01/`)
+
+- [ ] Follow-up SEARCH-R001: restore query/day on Back/Forward after editing a language view, and clear them on bare Rooms navigation; establish failing regressions and reverify before closing T32. Independent review: `docs/reviews/2026-11-01-room-search-review.md`.
 
 ### T33 — Find offices/classes by person or course [P1]
 
@@ -485,5 +487,7 @@ Depends: T32 for consistent search behaviour, T34 before real office assignments
 - [ ] Decide minimal verified staff/alias-to-room mapping alongside existing session instructor/title fields; distinguish office from dated classroom and keep ambiguous/missing matches explicit.
 - [ ] Support confirmed names/aliases (Chris / Christian Zagel, Christian Grosch, Katja) and MMI course queries; preserve room IDs, map/schedule context and DE/EN.
 - [ ] Verify ambiguity, date/time, missing office/session and changed/archived rooms; any human retest remains separate. No new account system or live person tracking.
+
+Status 2026-11-01: T32 verified technically. T33 classroom part implemented and tested (day-based course/lecturer search, Chris/MMI/HCI aliases, Christian Zagel as HCI demo lecturer); the T33 checkboxes stay open because office/staff mapping (Grosch, Katja) depends on T34.
 
 Acceptance: all three tasks remain open until the detailed request's respective fact/implementation checks are actually completed. A request alone is not an implementation or participant result.

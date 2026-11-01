@@ -1,0 +1,32 @@
+backup: <repo>/.demo-data/backups/ali-manual-2026-11-01.before-hci-lecturer-20261101-124915.sqlite
+backup integrity_check: ok
+backup equals source (row counts, all class_sessions rows): true
+row counts: {"announcements":3,"class_sessions":13,"room_bookings":1,"rooms":54,"sessions":0}
+APPLIED {
+ "updated": [
+  {
+   "id": "demo-session-2026-10-27-4",
+   "title": "Mensch-Maschine-Interaktion (Demo)",
+   "room": "demo-room-101",
+   "from": "Dozent:in D (Demo)",
+   "to": "Prof. Dr. Christian Zagel"
+  },
+  {
+   "id": "demo-session-2026-10-29-7",
+   "title": "Mensch-Maschine-Interaktion – Projekt (Demo)",
+   "room": "demo-room-101",
+   "from": "Dozent:in D (Demo)",
+   "to": "Prof. Dr. Christian Zagel"
+  },
+  {
+   "id": "lcc-demo-session-2026-11-01-1",
+   "title": "Mensch-Maschine-Interaktion (Demo)",
+   "room": "lcc-demo-room-k1-120",
+   "from": "Dozent:in A (Demo)",
+   "to": "Prof. Dr. Christian Zagel"
+  }
+ ],
+ "alreadyCurrent": [],
+ "skipped": [],
+ "notCoveredByRules": []
+}

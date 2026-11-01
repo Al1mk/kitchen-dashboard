@@ -1,0 +1,8 @@
+
+Running 3 tests using 1 worker
+
+  ✓  1 [chromium] › tests/e2e/room-search.spec.ts:291:1 › SEARCH-R001: Back and Forward restore each entry's search and day across a language switch (4.0s)
+  ✓  2 [chromium] › tests/e2e/room-search.spec.ts:328:1 › SEARCH-R001: the bare Rooms navigation link clears the search in both languages (3.2s)
+  ✓  3 [chromium] › tests/e2e/room-search.spec.ts:353:1 › SEARCH-R001: fast typing keeps every character and does not navigate per keystroke (2.6s)
+
+  3 passed (13.4s)

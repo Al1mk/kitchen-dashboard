@@ -185,9 +185,22 @@ Status legend: **implemented** = in code; **tested** = covered by a test that wa
 | `raum` | Stable opaque room **id** on `/map`, `/schedule`, `/booking`. Never a room code. A value that is not an id of a suitable active room is shown as "room not available" with a deliberate choice; the app never substitutes another room. | tested (`booking-selection.spec.ts`, `map-integration.spec.ts`) |
 | `datum` | Berlin calendar date `YYYY-MM-DD` on `/schedule` and `/booking` | tested on `/schedule`, `/booking`, `/map` |
 | `etage` | Floor shown on `/map` when no room is selected | tested |
+| `suche` | Search text on `/rooms` (≤ 100 characters), kept in sync by the page without navigation (`history.replaceState`). An incoming navigation (Back/Forward, language switch, bare `/rooms` link) is authoritative and replaces the page's search state (SEARCH-R001); the language links are built from the current URL. Not sent to any API: matching runs in the browser on `/api/public/rooms` and `/api/public/schedule` data | tested (`room-search.spec.ts`) |
+| `datum` on `/rooms` | Day of the class results of the search (Berlin date; default today by the server clock); passed on to the result links `/map?raum=&datum=` and `/schedule?datum=&raum=` | tested (`room-search.spec.ts`) |
 | `lang=en` | English public interface; kept on every public link and language switch with the other parameters | tested (`integrated-navigation.spec.ts`) |
 
 Changing the floor on the map clears `raum` and keeps `lang`. APIs keep their parameter names `roomId` and `date`.
+
+### C3a Public search (T32, classroom part of T33; 2026-11-01)
+
+| Rule | Status |
+| --- | --- |
+| One matcher (`src/lib/search/match.ts`) for `/rooms` and the map: lower case, accents removed, `ß`→`ss`, punctuation/whitespace runs → one space; umlauts also matched as `ae`/`oe`/`ue`. Rooms: code, German or English name contains the text, or exact code with/without `K1-` (`K1-105`, `K1 105`, `k1-105`, `105`). | tested (`search-match.test.ts`) |
+| Blank query = no filter. A non-blank query that normalizes to nothing (e.g. `!!!`) matches **nothing** (the map's earlier inline matcher matched every room for such a query). | tested |
+| Classes: course `title` or `instructor` of the selected day contains the text; cancelled sessions are included and labelled. Approved aliases only, applied when they are the whole query and as whole words: `Chris` → Christian Zagel, `MMI`/`HCI` → Mensch-Maschine-Interaktion. No other abbreviation or translation. A broad name (`Christian`) lists every match. | tested |
+| A class result is the **room of that class on that day**, never an office or a person's location. Office/staff lookup (T33 remainder) needs confirmed data from T34 and is not implemented. | implemented (wording tested in both languages) |
+| A failed schedule request shows the error/retry state, not "no classes"; a response for a previously selected day is never shown. Room search keeps working when the schedule fails. Polling never resets the query or day. | tested (`room-search.spec.ts`) |
+| A class whose room is no longer active is shown without map/schedule links ("no longer in the room directory"). | tested |
 
 ### C4 Booking policy (demo assumption)
 

@@ -59,3 +59,30 @@ it("adds labelled demo rooms and one demo week of sessions, and is idempotent", 
   expect(sessions.every((s) => s.title.endsWith("(Demo)") && s.is_demo === 1)).toBe(true);
   expect(sessions.filter((s) => s.status === "cancelled")).toHaveLength(1);
 });
+
+it("names the HCI lecturer only on the two HCI demo sessions and keeps existing sessions on reseeding", () => {
+  const dbPath = join(dir, "demo.sqlite");
+  const env = { ...process.env, CAMPUS_BOARD_DB_PATH: dbPath };
+  execFileSync(process.execPath, [SCRIPT], { cwd: dir, env, encoding: "utf8" });
+
+  let db = openDatabase(dbPath);
+  const rows = db.prepare("SELECT id, title, instructor, room_id, is_demo FROM class_sessions ORDER BY id").all() as {
+    id: string; title: string; instructor: string; room_id: string; is_demo: number;
+  }[];
+  const hci = rows.filter((r) => r.instructor === "Prof. Dr. Christian Zagel");
+  expect(hci.map((r) => [r.id.replace(/\d{4}-\d{2}-\d{2}/, "<date>"), r.title, r.room_id, r.is_demo])).toEqual([
+    ["demo-session-<date>-4", "Mensch-Maschine-Interaktion (Demo)", "demo-room-101", 1],
+    ["demo-session-<date>-7", "Mensch-Maschine-Interaktion – Projekt (Demo)", "demo-room-101", 1],
+  ]);
+  // All other sample sessions keep their placeholder lecturers.
+  expect(rows.filter((r) => !hci.includes(r)).every((r) => /^Dozent:in [A-E] \(Demo\)$/.test(r.instructor))).toBe(true);
+
+  // A session seeded earlier with the old placeholder is not rewritten by a later run.
+  db.prepare("UPDATE class_sessions SET instructor = 'Dozent:in D (Demo)' WHERE id = ?").run(hci[0].id);
+  const before = db.prepare("SELECT * FROM class_sessions ORDER BY id").all();
+  db.close();
+  execFileSync(process.execPath, [SCRIPT], { cwd: dir, env, encoding: "utf8" });
+  db = openDatabase(dbPath);
+  expect(db.prepare("SELECT * FROM class_sessions ORDER BY id").all()).toEqual(before);
+  db.close();
+});
