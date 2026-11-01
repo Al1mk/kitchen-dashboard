@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-01",
+  "reviewedHead": "c7b915999373be8a18ecb81f07426a5f1bbecbbd",
+  "runtimeEquivalentTo": "9144cff",
+  "checks": [
+    {
+      "command": "npm test",
+      "exit": 0,
+      "passed": 136,
+      "files": 18,
+      "includesSeparateConnectionConcurrencyCases": 3
+    },
+    {
+      "command": "npm run lint",
+      "exit": 0
+    },
+    {
+      "command": "npm run typecheck",
+      "exit": 0
+    },
+    {
+      "command": "PLAYWRIGHT_NO_COPY_PROMPT=1 npx playwright test tests/e2e/booking-pending.spec.ts tests/e2e/booking-language-receipt.spec.ts tests/e2e/review-booking.spec.ts --reporter=list --output=verification-test-results",
+      "exit": 0,
+      "passed": 13,
+      "includesConfiguredProductionBuild": true
+    }
+  ],
+  "full66BrowserSuite": "Claude reported and committed logs inspected; not rerun by this follow-up",
+  "restart13": "Claude reported and committed logs inspected; not rerun by this follow-up; no API/database/server changes in this correction",
+  "realDatabaseFilesUnchanged": true,
+  "realDatabaseFilesChecked": 3,
+  "physicalScreen": "NOT RUN",
+  "secondDevice": "NOT RUN",
+  "humanUsability": "NOT RUN",
+  "remoteState": "Not independently checked by Codex in this follow-up",
+  "runtimeEditsOrCommitOrPushByThisReview": false
+}
