@@ -172,3 +172,11 @@ Next 1-3 executable IDs: T22 first human round on this corrected V1; then T24 (C
 Scope intentionally deferred: V2 design work, schedule booking link (CW-01), push/merge/deploy
 ```
 
+### PUBLICATION-PREPARED (local, not pushed) — 1 November 2026, morning (Europe/Berlin)
+
+- Codex's follow-up verification of the corrected V1 committed (`b1e89f2`).
+- At Ali's instruction the 24 unpublished commits were given exactly `al1mk <alimk1752@gmail.com>` as author and committer; imports titled `Aryan part:`, `Aryan + Parsa part:`, `Reza part:`. Trees, order and timestamps unchanged (24/24 verified). All SHAs in the rows and checkpoints above are pre-publication; mapping: `docs/history-mapping-2026-11-01.md` (e.g. `64d2801` → `7588746`, `9144cff` → `27ef96b`).
+- Backup: `Project/git-backups/campus-board-before-publication-20261101-104535/` (outside the repository).
+- Checks on the unchanged runtime: typecheck 0, lint 0, unit 136/136. Evidence: `docs/evidence/publication-prep-2026-11-01/`.
+- T19 publication: ready for Ali's manual push of `integrate/team-v1-20261031` only; remote verification and fresh-clone tests follow after his confirmation.
+

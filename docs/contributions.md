@@ -16,6 +16,8 @@ Ali stated on 2026-10-31 that he does not know how Aryan and Parsa divided the j
 
 ## 2. Commit attribution rules used in this branch
 
+> **Superseded before publication (2026-11-01):** at Ali's instruction, every commit of the outgoing batch — including the three imports below — now has exactly `al1mk <alimk1752@gmail.com>` as Git author and committer. Teammates' work is identified by the commit subject (`Aryan part:`, `Aryan + Parsa part:`, `Reza part:`) and body and by this ledger; Ali imported their deliveries, he did not write them. The SHAs in this ledger are the pre-publication ones; [`history-mapping-2026-11-01.md`](history-mapping-2026-11-01.md) maps each to its published SHA. The rules below record how the batch was first committed on 2026-10-31.
+
 - **Original contributor imports** (verbatim files from a package, or the package's own scripted patch output) are committed with the contributor **name only and an empty email**, as Ali permitted on 2026-10-31 for these imports. Git accepted `Name <>` authors in a scratch test on 2026-10-31. The committer field remains Ali's normal identity, because Ali's checkout performed the import.
   - Aryan original: author `Aryan <>`.
   - Joint package: author `Aryan and Parsa (joint) <>`.

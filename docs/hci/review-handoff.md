@@ -34,3 +34,7 @@ Originals imported unchanged: `7326b8e` Aryan (map V12.2), `1c566f3` Aryan and P
 - Documentation: contributions §5 through `9144cff`; execution-plan checkboxes reconciled (125 checked / 46 open, each open partial step annotated); CH-012/CH-013; clean demo screenshots without test fixtures.
 - Review focus for this revision: `src/components/public/booking-result.ts` (which answers count as settled), `BookingReceipt.tsx` (cancelled state hides the code; names localized at render), the new tests in `booking-pending.spec.ts` and `booking-language-receipt.spec.ts`.
 - Human inputs needed: unchanged (above). Publication of the branch remains Ali's action.
+
+## Publication preparation — 2026-11-01
+
+Before the first push, all 24 unpublished commits were given Ali's exact Git identity `al1mk <alimk1752@gmail.com>`; the three imports carry the subjects `Aryan part: …`, `Aryan + Parsa part: …`, `Reza part: …`. File trees, order and timestamps are unchanged (verified per commit). SHAs above are pre-publication; see `docs/history-mapping-2026-11-01.md` (e.g. `9144cff` → `27ef96b`, `64d2801` → `7588746`). Codex's follow-up verification is committed as `b1e89f2`. Prepared locally; Ali pushes the branch himself.

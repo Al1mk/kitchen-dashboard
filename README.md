@@ -204,7 +204,7 @@ What the tests do and do not prove:
 | Navigation + DE/EN | Public start page, one navigation on all public pages, German/English interface | `076c7d7` |
 | English content | Optional English fields for announcements and rooms; marked German fallback; preview in both languages | `3dff61a` |
 | Fix B-001 | Untranslated room names in the English schedule are marked in every row | `ad79b6a` |
-| Team integration (branch `integrate/team-v1-20261031`) | Imported Aryan's map (`7326b8e`), the joint Aryan/Parsa booking package (`1c566f3`) and Reza's newcomer work (`6bc0b21`) under their names; then Ali's integration: ID-bound map in the shared shell, one occupancy rule, booking fixes (pending request, no room substitution, translations, receipt), Katja's booking list, newcomer page | `fe8d7c3` … see `docs/contributions.md` |
+| Team integration (branch `integrate/team-v1-20261031`) | Imported Aryan's map (`746f1e7`, subject "Aryan part"), the joint Aryan/Parsa booking package (`a06edaa`, "Aryan + Parsa part") and Reza's newcomer work (`c2fd85a`, "Reza part") unchanged — Ali committed the imports, the work is theirs; then Ali's integration: ID-bound map in the shared shell, one occupancy rule, booking fixes (pending request, no room substitution, translations, receipt), Katja's booking list, newcomer page | `76f789b` … see `docs/contributions.md` and `docs/history-mapping-2026-11-01.md` (older documents quote pre-publication SHAs) |
 
 **How AI was used:** Ali's code, tests and documentation were written with **Claude Code** (Anthropic) at Ali's direction and reviewed by Ali step by step. Independent reviews, the 2026-10-31 source audit and the integration plan were done with **Codex** (OpenAI). The 2026-10-31 integration of the team modules was carried out with Claude Code. The teammates' own deliveries state their own tool use (e.g. the map illustrations are described as AI-generated). All test results above are automated; no human usability test has been done yet.
 
@@ -252,7 +252,7 @@ If you (or your AI agent) work on this repository:
 | K-5 | Manual walkthrough of M2 and the bilingual features by Ali | In review | Ali creates a room and a session, edits them, and checks `/rooms`, `/schedule` and `/display?lang=en` |
 | K-6 | Kiosk idle behaviour: which page is the idle screen (`/` or `/display`), and should the screen return to Start/German after inactivity? | Needs decision | Team/V2 decision; agree with Reza (screen) |
 | K-7 | Warn when the German text changes after an English version exists | Needs decision | Not built; decide whether it is needed |
-| I-1 | Integrate the three team deliveries into one V1 | In review | Branch `integrate/team-v1-20261031`; typecheck/lint/134 unit/60 browser/restart green on 2026-10-31; review findings V1-R001/V1-R002 fixed 2026-11-01 (`9144cff`; 136 unit/66 browser/restart green); see `docs/contributions.md` |
+| I-1 | Integrate the three team deliveries into one V1 | In review | Branch `integrate/team-v1-20261031`; typecheck/lint/134 unit/60 browser/restart green on 2026-10-31; review findings V1-R001/V1-R002 fixed 2026-11-01 (`27ef96b`, pre-publication `9144cff`; 136 unit/66 browser/restart green); see `docs/contributions.md` |
 
 #### Shared decisions — Ali with Arian and Parsa (blocks map and booking)
 

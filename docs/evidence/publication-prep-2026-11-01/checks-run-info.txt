@@ -1,0 +1,5 @@
+date: Sun Nov  1 10:50:32 CET 2026; HEAD b1e89f2c4393a626c184c60ae0bdb31374fa3ad3 + uncommitted docs only (AGENTS.md README.md docs/contributions.md docs/hci/review-handoff.md docs/hci/versions.md )
+runtime/test paths changed vs HEAD (raw git diff --name-only, wc -l): 0
+diff lines old tip 6ca7e40 vs new tip b1e89f2 (raw git diff, wc -l): 0
+commands: npm run typecheck (exit 0), npm run lint (exit 0), npm test (exit 0, 136/136 in 18 files)
+not rerun: build, browser suite, restart (no runtime/test change; see README)
