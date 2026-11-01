@@ -1,0 +1,54 @@
+[WebServer] (node:30528) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30529) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30548) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30551) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30564) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30557) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30559) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30560) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30558) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30567) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30561) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30563) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30565) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30566) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30562) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30569) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30588) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 13 tests using 1 worker
+
+(node:30591) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/e2e/booking-language-receipt.spec.ts:50:1 › English receipt: localized room name, countdown, More time, expiry returns Home in English (912ms)
+  ✓   2 [chromium] › tests/e2e/booking-language-receipt.spec.ts:67:1 › V1-R002: a settled receipt follows DE → EN → DE without resending, resetting or changing its identity (839ms)
+  ✓   3 [chromium] › tests/e2e/booking-language-receipt.spec.ts:117:1 › V1-R002: a room without an English name shows the German fallback marker only in English (397ms)
+  ✓   4 [chromium] › tests/e2e/booking-language-receipt.spec.ts:137:1 › Done clears the receipt; going back does not reveal it again (338ms)
+  ✓   5 [chromium] › tests/e2e/booking-language-receipt.spec.ts:148:1 › public cancellation: malformed, wrong and right credentials, repeated cancellation (605ms)
+  ✓   6 [chromium] › tests/e2e/booking-pending.spec.ts:51:1 › A-01: a delayed accepted response still produces the receipt for the submitted request (294ms)
+  ✓   7 [chromium] › tests/e2e/booking-pending.spec.ts:80:1 › navigation while pending asks first; staying keeps the request and its receipt (404ms)
+  ✓   8 [chromium] › tests/e2e/booking-pending.spec.ts:103:1 › deliberate abandonment warns that the booking may exist, then leaves (338ms)
+  ✓   9 [chromium] › tests/e2e/booking-pending.spec.ts:120:1 › an uncertain outcome is retried with the identical request and never creates a second booking (337ms)
+  ✓  10 [chromium] › tests/e2e/booking-pending.spec.ts:156:1 › V1-R001: accepted, response lost, cancelled by Katja, identical retry → shown as cancelled, nothing re-created (404ms)
+  ✓  11 [chromium] › tests/e2e/booking-pending.spec.ts:211:1 › V1-R001: an unknown booking state in a successful answer stays recoverable with the same request (332ms)
+  ✓  12 [chromium] › tests/e2e/review-booking.spec.ts:30:1 › REVIEW: replay after Katja cancellation must not show an active success receipt (407ms)
+  ✓  13 [chromium] › tests/e2e/review-booking.spec.ts:59:1 › REVIEW: changing settled receipt language must localize its room name (331ms)
+
+  13 passed (12.6s)

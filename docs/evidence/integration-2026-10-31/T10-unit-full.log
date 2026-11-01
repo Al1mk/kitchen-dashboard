@@ -1,0 +1,9 @@
+
+ RUN  v5.0.5 /Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/campus-board
+
+
+ Test Files  16 passed (16)
+      Tests  129 passed (129)
+   Start at  13:56:12
+   Duration  889ms (tests 64%, import 23%, transform 13%, worker 1%)
+

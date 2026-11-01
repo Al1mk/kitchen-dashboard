@@ -1,0 +1,160 @@
+
+Running 4 tests using 1 worker
+
+  ✘  1 [chromium] › tests/e2e/booking-pending.spec.ts:51:1 › A-01: a delayed accepted response still produces the receipt for the submitted request (15.5s)
+  ✘  2 [chromium] › tests/e2e/booking-pending.spec.ts:79:1 › navigation while pending asks first; staying keeps the request and its receipt (5.3s)
+  ✘  3 [chromium] › tests/e2e/booking-pending.spec.ts:102:1 › deliberate abandonment warns that the booking may exist, then leaves (5.3s)
+  ✘  4 [chromium] › tests/e2e/booking-pending.spec.ts:119:1 › an uncertain outcome is retried with the identical request and never creates a second booking (5.3s)
+
+
+  1) [chromium] › tests/e2e/booking-pending.spec.ts:51:1 › A-01: a delayed accepted response still produces the receipt for the submitted request 
+
+    Error: expect(locator).toBeDisabled() failed
+
+    Locator:  getByLabel('3. Dauer')
+    Expected: disabled
+    Received: enabled
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "soft toBeDisabled" getByLabel('3. Dauer') with timeout 5000ms
+      - waiting for getByLabel('3. Dauer')
+        14 × locator resolved to <select id="booking-duration" class="min-h-14 w-full rounded-xl border border-ink bg-surface p-3">…</select>
+           - unexpected value "enabled"
+
+
+      57 |
+      58 |   // While pending, the selection is locked ...
+    > 59 |   await expect.soft(page.getByLabel("3. Dauer")).toBeDisabled();
+         |                                                  ^
+      60 |   await expect.soft(page.getByLabel("1. Raum auswählen")).toBeDisabled();
+      61 |   // ... and even a forced change must not alter or destroy the submitted request.
+      62 |   await page.getByLabel("3. Dauer").selectOption("30", { force: true, timeout: 2000 }).catch(() => {});
+        at /Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/campus-board/tests/e2e/booking-pending.spec.ts:59:50
+
+    Error: expect(locator).toBeDisabled() failed
+
+    Locator:  getByLabel('1. Raum auswählen')
+    Expected: disabled
+    Received: enabled
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "soft toBeDisabled" getByLabel('1. Raum auswählen') with timeout 5000ms
+      - waiting for getByLabel('1. Raum auswählen')
+        14 × locator resolved to <select id="booking-room" class="min-h-14 w-full rounded-xl border border-ink bg-surface p-3">…</select>
+           - unexpected value "enabled"
+
+
+      58 |   // While pending, the selection is locked ...
+      59 |   await expect.soft(page.getByLabel("3. Dauer")).toBeDisabled();
+    > 60 |   await expect.soft(page.getByLabel("1. Raum auswählen")).toBeDisabled();
+         |                                                           ^
+      61 |   // ... and even a forced change must not alter or destroy the submitted request.
+      62 |   await page.getByLabel("3. Dauer").selectOption("30", { force: true, timeout: 2000 }).catch(() => {});
+      63 |   held.release();
+        at /Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/campus-board/tests/e2e/booking-pending.spec.ts:60:59
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByTestId('booking-receipt')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByTestId('booking-receipt') with timeout 5000ms
+      - waiting for getByTestId('booking-receipt')
+
+
+      66 |   await expect.soft(page.getByText(/Cannot read properties of null/)).toHaveCount(0, { timeout: 3000 });
+      67 |   const receipt = page.getByTestId("booking-receipt");
+    > 68 |   await expect(receipt).toBeVisible();
+         |                         ^
+      69 |   await expect(receipt).toContainText(room.code);
+      70 |   await expect(receipt).toContainText("10:00–11:00");
+      71 |   const code = (await receipt.getByTestId("receipt-code").textContent())?.trim() ?? "";
+        at /Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/campus-board/tests/e2e/booking-pending.spec.ts:68:25
+
+    Error Context: test-results/booking-pending-A-01-a-del-07756-t-for-the-submitted-request-chromium/error-context.md
+
+  2) [chromium] › tests/e2e/booking-pending.spec.ts:79:1 › navigation while pending asks first; staying keeps the request and its receipt 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('alertdialog')
+    Expected substring: "Buchungsnummer und Stornierungscode"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toContainText" getByRole('alertdialog') with timeout 5000ms
+      - waiting for getByRole('alertdialog')
+
+
+      90 |     await link.click();
+      91 |     const dialog = page.getByRole("alertdialog");
+    > 92 |     await expect(dialog).toContainText("Buchungsnummer und Stornierungscode");
+         |                          ^
+      93 |     await dialog.getByRole("button", { name: "Hierbleiben" }).click();
+      94 |     await expect(dialog).toBeHidden();
+      95 |     await expect(page).toHaveURL(/\/booking/);
+        at /Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/campus-board/tests/e2e/booking-pending.spec.ts:92:26
+
+    Error Context: test-results/booking-pending-navigation-7625d-the-request-and-its-receipt-chromium/error-context.md
+
+  3) [chromium] › tests/e2e/booking-pending.spec.ts:102:1 › deliberate abandonment warns that the booking may exist, then leaves 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('alertdialog')
+    Expected substring: "kann trotzdem bestehen"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toContainText" getByRole('alertdialog') with timeout 5000ms
+      - waiting for getByRole('alertdialog')
+
+
+      109 |   await page.getByRole("navigation", { name: "Campus-Informationen" }).getByRole("link", { name: "Räume" }).click();
+      110 |   const dialog = page.getByRole("alertdialog");
+    > 111 |   await expect(dialog).toContainText("kann trotzdem bestehen");
+          |                        ^
+      112 |   await dialog.getByRole("button", { name: "Trotzdem verlassen" }).click();
+      113 |   await expect(page).toHaveURL(/\/rooms/);
+      114 |   held.release();
+        at /Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/campus-board/tests/e2e/booking-pending.spec.ts:111:24
+
+    Error Context: test-results/booking-pending-deliberate-e7e17-oking-may-exist-then-leaves-chromium/error-context.md
+
+  4) [chromium] › tests/e2e/booking-pending.spec.ts:119:1 › an uncertain outcome is retried with the identical request and never creates a second booking 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('alert').filter({ hasText: 'nicht bestätigen' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('alert').filter({ hasText: 'nicht bestätigen' }) with timeout 5000ms
+      - waiting for getByRole('alert').filter({ hasText: 'nicht bestätigen' })
+
+
+      134 |   await page.getByRole("button", { name: "Demo-Reservierung bestätigen" }).click();
+      135 |   const uncertain = page.getByRole("alert").filter({ hasText: "nicht bestätigen" });
+    > 136 |   await expect(uncertain).toBeVisible();
+          |                           ^
+      137 |   await expect(page.getByTestId("booking-receipt")).toHaveCount(0);
+      138 |   await expect(page.getByLabel("3. Dauer")).toBeDisabled();
+      139 |
+        at /Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/campus-board/tests/e2e/booking-pending.spec.ts:136:27
+
+    Error Context: test-results/booking-pending-an-uncerta-b65af-er-creates-a-second-booking-chromium/error-context.md
+
+  4 failed
+    [chromium] › tests/e2e/booking-pending.spec.ts:51:1 › A-01: a delayed accepted response still produces the receipt for the submitted request 
+    [chromium] › tests/e2e/booking-pending.spec.ts:79:1 › navigation while pending asks first; staying keeps the request and its receipt 
+    [chromium] › tests/e2e/booking-pending.spec.ts:102:1 › deliberate abandonment warns that the booking may exist, then leaves 
+    [chromium] › tests/e2e/booking-pending.spec.ts:119:1 › an uncertain outcome is retried with the identical request and never creates a second booking 

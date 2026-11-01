@@ -1,0 +1,91 @@
+# source: HEAD c2933f6c72e2236bc51379632bec04488dd46fd0, runtime unchanged (no src/ edits); probe copied verbatim from docs/evidence/review-2026-11-01/review-booking.spec.ts.txt
+# date: Sun Nov  1 01:29:03 CET 2026
+# command: PLAYWRIGHT_NO_COPY_PROMPT=1 npx playwright test tests/e2e/review-booking.spec.ts --reporter=list
+[WebServer] (node:83183) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:83185) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:83228) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:83230) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:83247) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:83252) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:83249) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:83246) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:83250) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:83251) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:83255) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:83248) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:83256) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:83254) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:83253) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:83257) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:83300) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:83301) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/e2e/review-booking.spec.ts:28:1 › REVIEW: replay after Katja cancellation must not show an active success receipt (676ms)
+(node:83307) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › tests/e2e/review-booking.spec.ts:57:1 › REVIEW: changing settled receipt language must localize its room name (359ms)
+
+
+  1) [chromium] › tests/e2e/review-booking.spec.ts:28:1 › REVIEW: replay after Katja cancellation must not show an active success receipt 
+
+    Error: Server replay is cancelled, so receipt must not claim Booking saved
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+      52 |   await expect(page.getByTestId("booking-receipt")).toBeVisible();
+      53 |   const saysActiveSuccess = await page.getByTestId("booking-receipt").getByRole("heading", { name: /Booking saved/ }).isVisible();
+    > 54 |   expect(saysActiveSuccess, "Server replay is cancelled, so receipt must not claim Booking saved").toBe(false);
+         |                                                                                                    ^
+      55 | });
+      56 |
+      57 | test("REVIEW: changing settled receipt language must localize its room name", async ({ page, request, baseURL }) => {
+        at /Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/campus-board/tests/e2e/review-booking.spec.ts:54:100
+
+    Error Context: test-results/review-booking-REVIEW-repl-736e4-w-an-active-success-receipt-chromium/error-context.md
+
+  2) [chromium] › tests/e2e/review-booking.spec.ts:57:1 › REVIEW: changing settled receipt language must localize its room name 
+
+    Error: English settled receipt must show the available English room name
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      63 |   await expect(page.getByTestId("booking-receipt").getByRole("heading", { name: /Booking saved/ })).toBeVisible();
+      64 |   const text = await page.getByTestId("booking-receipt").innerText();
+    > 65 |   expect(text.includes("English review room"), "English settled receipt must show the available English room name").toBe(true);
+         |                                                                                                                     ^
+      66 | });
+      67 |
+        at /Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/campus-board/tests/e2e/review-booking.spec.ts:65:117
+
+    Error Context: test-results/review-booking-REVIEW-chan-edfc4-must-localize-its-room-name-chromium/error-context.md
+
+  2 failed
+    [chromium] › tests/e2e/review-booking.spec.ts:28:1 › REVIEW: replay after Katja cancellation must not show an active success receipt 
+    [chromium] › tests/e2e/review-booking.spec.ts:57:1 › REVIEW: changing settled receipt language must localize its room name 
+# exit: 1

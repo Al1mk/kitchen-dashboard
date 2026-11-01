@@ -1,0 +1,8 @@
+Hi zusammen! Für mein HCI-Projekt suche ich ein paar Freiwillige für einen kurzen Usability-Test (ca. 3 Minuten).
+
+Bitte öffnet die Karten-Demo und gebt zuerst absichtlich „K1-12x“ in die Suche ein. Schaut euch die rote Fehlermeldung an und korrigiert die Eingabe anschließend zu „K1-120“. Testet danach „K1-210“ und „K1-303“ sowie die Suche nach „Seminarraum“. Anschließend bitte die 5 kurzen Fragen beantworten.
+
+Demo: [DEMO-LINK EINSETZEN]
+Google-Formular: [FORMULAR-LINK EINSETZEN]
+
+Danke! Freiwillig und anonym. Die Karte ist nur ein Designprototyp, kein offizieller Gebäudeplan.

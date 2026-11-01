@@ -66,6 +66,8 @@ export function SessionForm({
   const [message, setMessage] = useState<FormMessageValue>(flash ? { kind: "success", text: flash } : null);
   const [busy, setBusy] = useState<Busy>(null);
   const [confirmCancel, setConfirmCancel] = useState(false);
+  /** Set when a save was refused because a demo booking occupies the slot (T14). */
+  const [bookingBlock, setBookingBlock] = useState<{ roomId: string; date: string } | null>(null);
   const [requestId] = useState(newRequestId);
   const busyRef = useRef<Busy>(null);
   const formRef = useRef<HTMLFormElement>(null);
@@ -99,8 +101,9 @@ export function SessionForm({
     }
   }
 
-  function showFailure(status: number, data: { message?: string; fieldErrors?: Record<string, string[]> }) {
+  function showFailure(status: number, data: { message?: string; error?: string; fieldErrors?: Record<string, string[]> }) {
     setMessage({ kind: "error", text: failureText(status, data) });
+    setBookingBlock(data.error === "booking_conflict" ? { roomId: values.roomId, date: values.date } : null);
     if (data.fieldErrors) {
       setErrors(data.fieldErrors);
       const first = FIELD_ORDER.find((k) => data.fieldErrors?.[k]);
@@ -172,6 +175,20 @@ export function SessionForm({
       <LiveNotice>Termine haben keinen Entwurf. Nach dem Speichern sind Änderungen sofort im öffentlichen Stundenplan sichtbar.</LiveNotice>
 
       <FormMessage message={message} />
+      {bookingBlock && (
+        <p className="rounded-lg border border-warning/40 bg-warning-soft px-4 py-3 text-warning">
+          Die Reservierung wird nicht automatisch storniert.{" "}
+          <a
+            href={`/admin/bookings?von=${bookingBlock.date}&raum=${encodeURIComponent(bookingBlock.roomId)}`}
+            target="_blank"
+            rel="noopener"
+            className="font-semibold underline underline-offset-4"
+          >
+            Reservierungen für diesen Raum und Tag ansehen (neuer Tab)
+          </a>
+          . Ihre Eingaben hier bleiben erhalten; speichern Sie danach erneut.
+        </p>
+      )}
 
       <Field id={id("title")} label="Lehrveranstaltung / Modul" required error={errors.title} counter={`${values.title.length} / ${SESSION_TITLE_MAX}`}>
         {(p) => <input {...p} name="title" value={values.title} onChange={(e) => update("title", e.target.value)} maxLength={SESSION_TITLE_MAX + 20} />}

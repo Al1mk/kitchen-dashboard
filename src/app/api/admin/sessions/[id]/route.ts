@@ -1,6 +1,7 @@
 import type { NextRequest } from "next/server";
 import { jsonError, readJson, requireAdminApi } from "@/lib/auth/request.ts";
 import { noStore, sessionError } from "@/lib/http/schedule-errors.ts";
+import { busyResponse } from "@/lib/http/busy.ts";
 import { services } from "@/lib/server.ts";
 import { parseSessionInput } from "@/lib/sessions/schema.ts";
 
@@ -21,7 +22,12 @@ export async function PUT(request: NextRequest, ctx: RouteContext<"/api/admin/se
   if (!parsed.ok) {
     return jsonError(400, "validation", "Bitte die markierten Felder prüfen.", { fieldErrors: parsed.fieldErrors });
   }
-  const result = services().classSessions.update((await ctx.params).id, parsed.content);
+  let result;
+  try {
+    result = services().classSessions.update((await ctx.params).id, parsed.content);
+  } catch (error) {
+    return busyResponse(error); // retryable 503 on lock contention
+  }
   if (!result.ok) return sessionError(result);
   return Response.json({ session: result.session }, { headers: noStore });
 }

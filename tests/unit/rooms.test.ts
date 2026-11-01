@@ -111,7 +111,7 @@ describe("room repository", () => {
     if (!future.ok) throw new Error("setup");
 
     expect(rooms.get(r.room.id)?.upcomingSessions).toBe(1);
-    expect(rooms.archive(r.room.id)).toEqual({ ok: false, reason: "in_use", upcomingSessions: 1 });
+    expect(rooms.archive(r.room.id)).toEqual({ ok: false, reason: "in_use", upcomingSessions: 1, upcomingBookings: 0 });
 
     sessions.cancel(future.session.id);
     const archived = rooms.archive(r.room.id);

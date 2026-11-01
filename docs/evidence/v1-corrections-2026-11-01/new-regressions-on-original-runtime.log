@@ -1,0 +1,134 @@
+# purpose: sensitivity check — the NEW regression tests (grep 'V1-R00') run against the ORIGINAL runtime files from c2933f6 (BookingFlow.tsx, BookingReceipt.tsx, booking-copy.ts restored temporarily; booking-result.ts present but unused)
+# date: Sun Nov  1 01:33:27 CET 2026
+# command: PLAYWRIGHT_NO_COPY_PROMPT=1 npx playwright test tests/e2e/booking-pending.spec.ts tests/e2e/booking-language-receipt.spec.ts --grep 'V1-R00' --reporter=list
+
+Running 4 tests using 1 worker
+
+  ✘  1 [chromium] › tests/e2e/booking-language-receipt.spec.ts:67:1 › V1-R002: a settled receipt follows DE → EN → DE without resending, resetting or changing its identity (5.4s)
+  ✘  2 [chromium] › tests/e2e/booking-language-receipt.spec.ts:116:1 › V1-R002: a room without an English name shows the German fallback marker only in English (5.3s)
+  ✘  3 [chromium] › tests/e2e/booking-pending.spec.ts:156:1 › V1-R001: accepted, response lost, cancelled by Katja, identical retry → shown as cancelled, nothing re-created (5.4s)
+  ✘  4 [chromium] › tests/e2e/booking-pending.spec.ts:211:1 › V1-R001: an unknown booking state in a successful answer stays recoverable with the same request (5.3s)
+
+
+  1) [chromium] › tests/e2e/booking-language-receipt.spec.ts:67:1 › V1-R002: a settled receipt follows DE → EN → DE without resending, resetting or changing its identity 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByTestId('booking-receipt').locator('span[lang]').first()
+    Expected: "Receipt room"
+    Received: "Belegraum"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveText" getByTestId('booking-receipt').locator('span[lang]').first() with timeout 5000ms
+      - waiting for getByTestId('booking-receipt').locator('span[lang]').first()
+        14 × locator resolved to <span lang="de">Belegraum</span>
+           - unexpected value "Belegraum"
+
+
+      82 |   await switchTo(page, "en");
+      83 |   await expect(receipt.getByRole("heading", { name: "Booking saved" })).toBeVisible();
+    > 84 |   await expect(nameEl).toHaveText("Receipt room");
+         |                        ^
+      85 |   await expect(nameEl).toHaveAttribute("lang", "en");
+      86 |   await expect(receipt).not.toContainText("Belegraum");
+      87 |   await expect(receipt).not.toContainText("Only in German");
+        at /Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/campus-board/tests/e2e/booking-language-receipt.spec.ts:84:24
+
+    Error Context: test-results/booking-language-receipt-V-569ed-ng-or-changing-its-identity-chromium/error-context.md
+
+  2) [chromium] › tests/e2e/booking-language-receipt.spec.ts:116:1 › V1-R002: a room without an English name shows the German fallback marker only in English 
+
+    Error: expect(locator).not.toContainText(expected) failed
+
+    Locator: getByTestId('booking-receipt')
+    Expected substring: not "Nur auf Deutsch"
+    Received string: "✓ Reservierung gespeichertRCPT-8E6733BelegraumNur auf DeutschDonnerstag, 5. November 2026 · 14:00–15:00Buchungsnummer86503300-c110-4578-a9c6-c245cbe37d15Stornierungscode[REDACTED cancellation code]Wichtig: Notiere oder fotografiere Nummer und Code jetzt. Sie werden nirgends gespeichert und nicht verschickt. Ohne beide kannst du nicht selbst stornieren.Dieser Beleg wird in 56 Sekunden ausgeblendet.Mehr ZeitFertig"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "not toContainText" getByTestId('booking-receipt') with timeout 5000ms
+      - waiting for getByTestId('booking-receipt')
+        6 × locator resolved to <section data-testid="booking-receipt" aria-labelledby="receipt-title" class="flex flex-col gap-4 rounded-xl border-2 border-success bg-success-soft p-5">…</section>
+          - unexpected value "✓ Reservierung gespeichertRCPT-8E6733BelegraumNur auf DeutschDonnerstag, 5. November 2026 · 14:00–15:00Buchungsnummer86503300-c110-4578-a9c6-c245cbe37d15Stornierungscode[REDACTED cancellation code]Wichtig: Notiere oder fotografiere Nummer und Code jetzt. Sie werden nirgends gespeichert und nicht verschickt. Ohne beide kannst du nicht selbst stornieren.Dieser Beleg wird in 60 Sekunden ausgeblendet.Mehr ZeitFertig"
+        2 × locator resolved to <section data-testid="booking-receipt" aria-labelledby="receipt-title" class="flex flex-col gap-4 rounded-xl border-2 border-success bg-success-soft p-5">…</section>
+          - unexpected value "✓ Reservierung gespeichertRCPT-8E6733BelegraumNur auf DeutschDonnerstag, 5. November 2026 · 14:00–15:00Buchungsnummer86503300-c110-4578-a9c6-c245cbe37d15Stornierungscode[REDACTED cancellation code]Wichtig: Notiere oder fotografiere Nummer und Code jetzt. Sie werden nirgends gespeichert und nicht verschickt. Ohne beide kannst du nicht selbst stornieren.Dieser Beleg wird in 59 Sekunden ausgeblendet.Mehr ZeitFertig"
+        2 × locator resolved to <section data-testid="booking-receipt" aria-labelledby="receipt-title" class="flex flex-col gap-4 rounded-xl border-2 border-success bg-success-soft p-5">…</section>
+          - unexpected value "✓ Reservierung gespeichertRCPT-8E6733BelegraumNur auf DeutschDonnerstag, 5. November 2026 · 14:00–15:00Buchungsnummer86503300-c110-4578-a9c6-c245cbe37d15Stornierungscode[REDACTED cancellation code]Wichtig: Notiere oder fotografiere Nummer und Code jetzt. Sie werden nirgends gespeichert und nicht verschickt. Ohne beide kannst du nicht selbst stornieren.Dieser Beleg wird in 58 Sekunden ausgeblendet.Mehr ZeitFertig"
+        2 × locator resolved to <section data-testid="booking-receipt" aria-labelledby="receipt-title" class="flex flex-col gap-4 rounded-xl border-2 border-success bg-success-soft p-5">…</section>
+          - unexpected value "✓ Reservierung gespeichertRCPT-8E6733BelegraumNur auf DeutschDonnerstag, 5. November 2026 · 14:00–15:00Buchungsnummer86503300-c110-4578-a9c6-c245cbe37d15Stornierungscode[REDACTED cancellation code]Wichtig: Notiere oder fotografiere Nummer und Code jetzt. Sie werden nirgends gespeichert und nicht verschickt. Ohne beide kannst du nicht selbst stornieren.Dieser Beleg wird in 57 Sekunden ausgeblendet.Mehr ZeitFertig"
+        2 × locator resolved to <section data-testid="booking-receipt" aria-labelledby="receipt-title" class="flex flex-col gap-4 rounded-xl border-2 border-success bg-success-soft p-5">…</section>
+          - unexpected value "✓ Reservierung gespeichertRCPT-8E6733BelegraumNur auf DeutschDonnerstag, 5. November 2026 · 14:00–15:00Buchungsnummer86503300-c110-4578-a9c6-c245cbe37d15Stornierungscode[REDACTED cancellation code]Wichtig: Notiere oder fotografiere Nummer und Code jetzt. Sie werden nirgends gespeichert und nicht verschickt. Ohne beide kannst du nicht selbst stornieren.Dieser Beleg wird in 56 Sekunden ausgeblendet.Mehr ZeitFertig"
+
+
+      126 |   await expect(receipt.getByRole("heading", { name: "Reservierung gespeichert" })).toBeVisible();
+      127 |   await expect(nameEl).toHaveText("Belegraum");
+    > 128 |   await expect(receipt).not.toContainText("Nur auf Deutsch");
+          |                             ^
+      129 |   await expect(receipt).not.toContainText("Only in German");
+      130 |
+      131 |   await switchTo(page, "en");
+        at /Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/campus-board/tests/e2e/booking-language-receipt.spec.ts:128:29
+
+    Error Context: test-results/booking-language-receipt-V-51293-back-marker-only-in-English-chromium/error-context.md
+
+  3) [chromium] › tests/e2e/booking-pending.spec.ts:156:1 › V1-R001: accepted, response lost, cancelled by Katja, identical retry → shown as cancelled, nothing re-created 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  getByTestId('booking-receipt')
+    Expected: "cancelled"
+    Received: ""
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" getByTestId('booking-receipt') with timeout 5000ms
+      - waiting for getByTestId('booking-receipt')
+        14 × locator resolved to <section data-testid="booking-receipt" aria-labelledby="receipt-title" class="flex flex-col gap-4 rounded-xl border-2 border-success bg-success-soft p-5">…</section>
+           - unexpected value "null"
+
+
+      185 |   expect(same, "retry repeats the identical request and credentials").toBe(true);
+      186 |   // ... and the visitor is told so: no active-success claim, no code to note down.
+    > 187 |   await expect(receipt).toHaveAttribute("data-status", "cancelled");
+          |                         ^
+      188 |   await expect(receipt.getByRole("heading", { name: "Diese Reservierung ist storniert" })).toBeVisible();
+      189 |   await expect(receipt).toContainText("Sie ist nicht aktiv, und es wurde keine neue Reservierung angelegt.");
+      190 |   await expect(receipt.getByRole("heading", { name: /gespeichert/ })).toHaveCount(0);
+        at /Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/campus-board/tests/e2e/booking-pending.spec.ts:187:25
+
+    Error Context: test-results/booking-pending-V1-R001-ac-f6ffa-ancelled-nothing-re-created-chromium/error-context.md
+
+  4) [chromium] › tests/e2e/booking-pending.spec.ts:211:1 › V1-R001: an unknown booking state in a successful answer stays recoverable with the same request 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('alert').filter({ hasText: 'nicht bestätigen' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('alert').filter({ hasText: 'nicht bestätigen' }) with timeout 5000ms
+      - waiting for getByRole('alert').filter({ hasText: 'nicht bestätigen' })
+
+
+      222 |   await chooseSlotAndReview(page, room.id);
+      223 |   await page.getByRole("button", { name: "Demo-Reservierung bestätigen" }).click();
+    > 224 |   await expect(page.getByRole("alert").filter({ hasText: "nicht bestätigen" })).toBeVisible();
+          |                                                                                 ^
+      225 |   await expect(page.getByTestId("booking-receipt")).toHaveCount(0);
+      226 |   await page.getByRole("button", { name: "Erneut senden" }).click();
+      227 |   await expect(page.getByTestId("booking-receipt")).toHaveAttribute("data-status", "confirmed");
+        at /Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/campus-board/tests/e2e/booking-pending.spec.ts:224:81
+
+    Error Context: test-results/booking-pending-V1-R001-an-d1e41-rable-with-the-same-request-chromium/error-context.md
+
+  4 failed
+    [chromium] › tests/e2e/booking-language-receipt.spec.ts:67:1 › V1-R002: a settled receipt follows DE → EN → DE without resending, resetting or changing its identity 
+    [chromium] › tests/e2e/booking-language-receipt.spec.ts:116:1 › V1-R002: a room without an English name shows the German fallback marker only in English 
+    [chromium] › tests/e2e/booking-pending.spec.ts:156:1 › V1-R001: accepted, response lost, cancelled by Katja, identical retry → shown as cancelled, nothing re-created 
+    [chromium] › tests/e2e/booking-pending.spec.ts:211:1 › V1-R001: an unknown booking state in a successful answer stays recoverable with the same request 
+# exit: 1
+
+# NOTE (added after the run): 6 occurrence(s) of a cancellation code from the disposable E2E database were dumped by a broad not.toContainText assertion on the whole receipt and have been redacted above. The assertions were then narrowed to code-free elements (receipt-room / receipt-when / status).

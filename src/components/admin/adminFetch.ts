@@ -1,6 +1,6 @@
 // Small client helpers shared by the room and class-session forms.
 
-export type ApiFailure = { message?: string; fieldErrors?: Record<string, string[]> };
+export type ApiFailure = { error?: string; message?: string; fieldErrors?: Record<string, string[]> };
 
 /** JSON request to the admin API. status 0 means the server was not reachable. */
 export async function adminFetch<T>(url: string, method: string, body?: unknown): Promise<{ ok: boolean; status: number; data: Partial<T> & ApiFailure }> {

@@ -9,6 +9,7 @@ export const FLOORS = [
   { id: "EG", label: "Erdgeschoss" },
   { id: "1OG", label: "1. Obergeschoss" },
   { id: "2OG", label: "2. Obergeschoss" },
+  { id: "3OG", label: "3. Obergeschoss" },
 ] as const;
 export type FloorId = (typeof FLOORS)[number]["id"];
 export const FLOOR_IDS = FLOORS.map((f) => f.id) as [FloorId, ...FloorId[]];

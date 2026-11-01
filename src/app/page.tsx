@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PublicShell } from "@/components/public/PublicShell.tsx";
 import { PUBLIC_TEXT, parseLang, publicHref } from "@/lib/i18n/public.ts";
 
-// Public entry: links to the three public sections. Every public page links
+// Public entry: links to every public section (same order as the navigation). Every public page links
 // back here ("Start"/"Home"); ?lang=en keeps the visitor's language.
 
 export async function generateMetadata({ searchParams }: PageProps<"/">): Promise<Metadata> {
@@ -12,9 +12,12 @@ export async function generateMetadata({ searchParams }: PageProps<"/">): Promis
 }
 
 const TILES = [
-  { key: "display", path: "/display" },
+  { key: "newcomers", path: "/newcomers" },
+  { key: "map", path: "/map" },
   { key: "rooms", path: "/rooms" },
   { key: "schedule", path: "/schedule" },
+  { key: "booking", path: "/booking" },
+  { key: "display", path: "/display" },
 ] as const;
 
 export default async function StartPage({ searchParams }: PageProps<"/">) {

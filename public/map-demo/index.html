@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#10213e">
+  <meta name="description" content="LCC K1 Campus Navigator – interaktiver HCI-Demonstrator">
+  <title>LCC Navigator · Gebäude K1</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="data.js"></script>
+  <script defer src="room-config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="logo-mark" aria-hidden="true">K1</span><div><b>LCC <span class="brand-accent">Navigator</span></b><small>Hochschule Coburg · Kronach</small></div></div>
+      <div class="top-actions"><span class="demo-badge" data-i18n="badge">HCI-Prototyp</span><button id="language" class="lang-button" type="button" aria-label="Switch language">EN</button></div>
+    </header>
+    <div class="layout">
+      <aside class="sidebar" aria-label="Navigation und Raumsuche">
+        <section class="intro"><span class="eyebrow" data-i18n="eyebrow">CAMPUS WAYFINDING</span><h1 data-i18n="title">Finde deinen Raum.</h1><p data-i18n="intro">Wähle ein Geschoss oder suche einen Bereich auf dem Gebäudeplan.</p></section>
+        <form id="search-form" class="search-wrap" role="search" novalidate>
+          <label class="sr-only" for="search" data-i18n="searchLabel">Raum suchen</label>
+          <div class="search-input-wrap">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="search" type="search" autocomplete="off" spellcheck="false" aria-invalid="false" placeholder="z. B. K1-120, 120, Seminarraum …">
+            <button id="clear-search" class="clear" type="button" aria-label="Suche löschen" hidden>×</button>
+          </div>
+          <p id="search-feedback" class="search-feedback" role="status" aria-live="polite" aria-atomic="true" hidden>
+            <span class="feedback-icon" aria-hidden="true">!</span><span id="search-feedback-text"></span>
+          </p>
+        </form>
+        <section class="floor-section"><div class="section-label"><h2 data-i18n="floors">Geschosse</h2><span>01 — 03</span></div><div id="floor-buttons" class="floors" role="group" aria-label="Geschoss wählen"><button type="button" data-floor="1OG" class="floor active" aria-pressed="true"><span class="floor-num">01</span><span class="floor-text" data-floor-label="1OG">1. Obergeschoss</span><span class="floor-arrow">↗</span></button><button type="button" data-floor="2OG" class="floor" aria-pressed="false"><span class="floor-num">02</span><span class="floor-text" data-floor-label="2OG">2. Obergeschoss</span><span class="floor-arrow">↗</span></button><button type="button" data-floor="3OG" class="floor" aria-pressed="false"><span class="floor-num">03</span><span class="floor-text" data-floor-label="3OG">3. Obergeschoss</span><span class="floor-arrow">↗</span></button></div></section>
+        <section class="results-section"><div class="section-label"><h2 data-i18n="found">Räume</h2><span id="result-count">0</span></div><div id="results" class="results" aria-live="polite"><span class="loading" data-i18n="loading">Lade Räume …</span></div></section>
+        <div class="sidebar-footer"><span class="status-dot"></span><span data-i18n="sidebarNote">Illustrationsbasierte Demo · kein amtlicher Lageplan</span></div>
+      </aside>
+      <main class="main-content" id="main">
+        <div class="map-heading"><div><div class="eyebrow"><span class="status-dot"></span><span data-i18n="mapEyebrow">INTERAKTIVE GEBÄUDEKARTE</span></div><h2 id="map-heading-title">1. Obergeschoss <span class="title-muted">/ K1</span></h2><p id="map-subtitle" data-i18n="mapSubtitle">Tippe auf einen Marker oder wähle einen Bereich aus der Liste.</p></div><div class="map-controls"><button id="zoom-out" type="button" aria-label="Verkleinern" title="Verkleinern">−</button><output id="zoom-label" aria-live="off">100%</output><button id="zoom-in" type="button" aria-label="Vergrößern" title="Vergrößern">+</button><button id="zoom-reset" type="button" class="reset" data-i18n="reset">Anpassen</button></div></div>
+        <div class="map-outer"><div class="map-toolbar"><div class="map-legend"><span class="legend-diamond"></span><span data-i18n="mapLegend">Räume auf der Illustration</span></div><label class="toggle"><input id="pins-toggle" type="checkbox" checked><span data-i18n="pins">Markierungen</span></label></div><div id="map-viewport" class="map-viewport" tabindex="0" aria-label="Gebäudeplan, horizontal verschiebbar"><div id="map-layer" class="map-layer"><img id="floor-image" src="assets/1OG.png" alt="Illustration des ersten Obergeschosses" draggable="false"><div id="markers" class="markers"></div><div id="map-image-error" class="map-image-error" role="alert" hidden></div></div></div><div class="map-caption"><span id="map-caption-text">1. OG · Illustration</span><span data-i18n="scrollHint">Zum Erkunden scrollen / zoomen</span></div></div>
+        <section class="details" id="details" aria-live="polite"><div class="details-empty"><div class="empty-symbol">⌖</div><div><h3 data-i18n="emptyTitle">Wähle einen Bereich aus</h3><p data-i18n="emptyText">Position und Angaben erscheinen hier.</p></div></div></section>
+        <p class="ethical-note" data-i18n="disclaimer">Hinweis: Die Bilder sind KI-generierte Designillustrationen und kein verifizierter Grundriss. Positionen beziehen sich auf die Bilder, nicht auf echte Gebäude-Koordinaten. Live-Stundenpläne werden nicht simuliert.</p>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

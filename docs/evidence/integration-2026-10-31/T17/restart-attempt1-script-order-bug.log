@@ -1,0 +1,14 @@
+# Restart persistence check 2026-10-31 18:09 CET (production build, temp DB)
+server 1 started (pid 54486)
+created: 4c4f0343-de69-4dd6-b851-7d091605afbe
+ok   public titles before restart: ["Neustart-Test"]
+ok   public English title before restart: ["Restart test"]
+ok   admin state before restart: status=published pending=true draft=Neustart-Test (unveröffentlichter Entwurf) draftEn=Restart test (unpublished draft)
+ok   public schedule before restart: ["10:00 Neustart-Termin NEUSTART-1"]
+ok   bookings before restart: B1:confirmed,B2:cancelled
+server 1 stopped (port 3200 no longer answers)
+server 2 started (pid 54603)
+ok   public output after restart (full JSON, unchanged): [{"id":"4c4f0343-de69-4dd6-b851-7d091605afbe","title":"Neustart-Test","body":"Bleibt nach Neustart erhalten.","category":"general","pinned":false,"publishedAt":"2026-10-31T17:09:55.719Z","endsAt":null,"titleEn":"Restart test","bodyEn":"Survives a restart."}]
+ok   old session after restart: HTTP 200
+ok   admin state after restart: status=published pending=true draft=Neustart-Test (unveröffentlichter Entwurf) draftEn=Restart test (unpublished draft)
+FAIL: public rooms after restart (full JSON, unchanged): expected '[{"id":"8e2dcd48-359e-4d4a-8c00-80910638e0be","code":"NEUSTART-1","name":"Neustart-Raum","floorId":"EG","type":"seminar","description":"","reservable":false,"isDemo":false,"nameEn":"Restart room","descriptionEn":null}]', got '[{"id":"8e2dcd48-359e-4d4a-8c00-80910638e0be","code":"NEUSTART-1","name":"Neustart-Raum","floorId":"EG","type":"seminar","description":"","reservable":false,"isDemo":false,"nameEn":"Restart room","descriptionEn":null},{"id":"b0c9c7d5-63a5-4c66-b7b4-3b86c83b2c11","code":"NEUSTART-B","name":"Buchungsraum","floorId":"1OG","type":"study","description":"","reservable":true,"isDemo":false,"nameEn":null,"descriptionEn":null}]'

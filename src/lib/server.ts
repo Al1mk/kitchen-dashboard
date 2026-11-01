@@ -4,6 +4,7 @@ import { createSessionStore } from "./auth/sessions.ts";
 import { getDatabasePath } from "./config.ts";
 import { openDatabase, type Db } from "./db/database.ts";
 import { createRoomRepository, type RoomRepository } from "./rooms/repository.ts";
+import { createBookingRepository, type BookingRepository } from "./bookings/repository.ts";
 import { createSessionRepository, type SessionRepository } from "./sessions/repository.ts";
 
 // One database connection per server process (survives dev hot reloads).
@@ -13,6 +14,7 @@ type Services = {
   announcements: AnnouncementRepository;
   rooms: RoomRepository;
   classSessions: SessionRepository;
+  bookings: BookingRepository;
   sessions: ReturnType<typeof createSessionStore>;
 };
 
@@ -26,6 +28,7 @@ export function services(): Services {
       announcements: createAnnouncementRepository(db),
       rooms: createRoomRepository(db),
       classSessions: createSessionRepository(db),
+      bookings: createBookingRepository(db),
       sessions: createSessionStore(db),
     };
   }

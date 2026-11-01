@@ -1,0 +1,11 @@
+--- a/src/lib/i18n/public.ts
++++ b/src/lib/i18n/public.ts
+@@
+-export type PublicSection = "start" | "display" | "rooms" | "schedule";
++export type PublicSection = "start" | "display" | "rooms" | "schedule" | "newcomers";
+@@
+-  sections: { start: "Start", display: "Mitteilungen", rooms: "Räume", schedule: "Stundenplan" } as Record<PublicSection, string>,
++  sections: { start: "Start", display: "Mitteilungen", rooms: "Räume", schedule: "Stundenplan", newcomers: "Neu am Campus" } as Record<PublicSection, string>,
+@@
+-  sections: { start: "Home", display: "Announcements", rooms: "Rooms", schedule: "Schedule" },
++  sections: { start: "Home", display: "Announcements", rooms: "Rooms", schedule: "Schedule", newcomers: "New to campus" },

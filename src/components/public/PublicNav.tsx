@@ -1,15 +1,19 @@
 import Link from "next/link";
 import { PUBLIC_TEXT, publicHref, type Lang, type PublicSection } from "@/lib/i18n/public.ts";
 
-// Navigation shared by every public page (start, announcement board, rooms,
-// schedule). No admin links. "page" sizes fit the normal pages; "board" uses
+// Navigation shared by every public page (start, newcomers, map, rooms,
+// schedule, booking, announcement board). No admin links. Seven entries: four
+// columns on wider screens and the portrait board, two on narrow phones. "page" sizes fit the normal pages; "board" uses
 // container units like the portrait announcement board.
 
 const SECTIONS: { key: PublicSection; path: string }[] = [
   { key: "start", path: "/" },
-  { key: "display", path: "/display" },
+  { key: "newcomers", path: "/newcomers" },
+  { key: "map", path: "/map" },
   { key: "rooms", path: "/rooms" },
   { key: "schedule", path: "/schedule" },
+  { key: "booking", path: "/booking" },
+  { key: "display", path: "/display" },
 ];
 
 type Variant = "page" | "board";

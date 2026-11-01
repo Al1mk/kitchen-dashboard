@@ -1,0 +1,19 @@
+# Restart persistence check 2026-10-31 18:10 CET (production build, temp DB)
+server 1 started (pid 54673)
+created: d61c811c-c3df-40fa-84d4-22c607601b0f
+ok   public titles before restart: ["Neustart-Test"]
+ok   public English title before restart: ["Restart test"]
+ok   admin state before restart: status=published pending=true draft=Neustart-Test (unveröffentlichter Entwurf) draftEn=Restart test (unpublished draft)
+ok   public schedule before restart: ["10:00 Neustart-Termin NEUSTART-1"]
+ok   bookings before restart: B1:confirmed,B2:cancelled
+server 1 stopped (port 3200 no longer answers)
+server 2 started (pid 54796)
+ok   public output after restart (full JSON, unchanged): [{"id":"d61c811c-c3df-40fa-84d4-22c607601b0f","title":"Neustart-Test","body":"Bleibt nach Neustart erhalten.","category":"general","pinned":false,"publishedAt":"2026-10-31T17:10:07.680Z","endsAt":null,"titleEn":"Restart test","bodyEn":"Survives a restart."}]
+ok   old session after restart: HTTP 200
+ok   admin state after restart: status=published pending=true draft=Neustart-Test (unveröffentlichter Entwurf) draftEn=Restart test (unpublished draft)
+ok   public rooms after restart (full JSON, unchanged): [{"id":"ae2dc27a-1497-496b-887c-e03674b0bcc7","code":"NEUSTART-1","name":"Neustart-Raum","floorId":"EG","type":"seminar","description":"","reservable":false,"isDemo":false,"nameEn":"Restart room","descriptionEn":null},{"id":"c2d85b48-740b-41b6-939f-528289562bda","code":"NEUSTART-B","name":"Buchungsraum","floorId":"1OG","type":"study","description":"","reservable":true,"isDemo":false,"nameEn":null,"descriptionEn":null}]
+ok   public schedule after restart (full JSON, unchanged): [{"id":"867fdeac-f1fd-4141-988c-ee7bc25f936d","title":"Neustart-Termin","instructor":"Test","cohort":"Test","term":"WS 2029/30","startsAt":"2030-01-15T09:00:00.000Z","endsAt":"2030-01-15T10:30:00.000Z","status":"scheduled","room":{"id":"ae2dc27a-1497-496b-887c-e03674b0bcc7","code":"NEUSTART-1","name":"Neustart-Raum","nameEn":"Restart room","floorId":"EG"},"isDemo":false}]
+ok   bookings after restart (confirmed stays, cancelled stays cancelled): B1:confirmed,B2:cancelled
+ok   availability after restart (unchanged busy spans): [{"startTime":"10:00","endTime":"11:00","kind":"booking"}]
+ok   cancellation code still valid after restart: HTTP 200
+PASS: 13 checks

@@ -1,0 +1,28 @@
+{
+  "passed": [
+    "Missing data handled visibly without JS exception",
+    "Missing data no uncaught exception",
+    "320 selected marker clickable",
+    "320 expanded marker hit area, got 1og-k1-120",
+    "320 zoom button touch height",
+    "320 lang button touch height",
+    "320 translated zoom aria-label",
+    "320 translated clear aria-label",
+    "320 zero JS uncaught errors",
+    "390 selected marker clickable",
+    "390 expanded marker hit area, got 1og-k1-120",
+    "390 zoom button touch height",
+    "390 lang button touch height",
+    "390 translated zoom aria-label",
+    "390 translated clear aria-label",
+    "390 zero JS uncaught errors",
+    "1280 selected marker clickable",
+    "1280 expanded marker hit area, got 1og-k1-120",
+    "1280 zoom button touch height",
+    "1280 lang button touch height",
+    "1280 translated zoom aria-label",
+    "1280 translated clear aria-label",
+    "1280 zero JS uncaught errors"
+  ],
+  "failed": []
+}

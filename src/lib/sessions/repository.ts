@@ -1,5 +1,6 @@
 import { randomUUID } from "node:crypto";
 import type { Db } from "../db/database.ts";
+import { findOccupant } from "../occupancy/conflicts.ts";
 import type { FloorId } from "../rooms/schema.ts";
 import { berlinDayRange } from "../time/berlin.ts";
 import type { PublicSession, SessionContent, SessionStatus } from "./schema.ts";
@@ -16,6 +17,8 @@ export type AdminClassSession = SessionContent & {
 };
 
 export type SessionConflict = { id: string; title: string; startsAt: string; endsAt: string };
+/** A confirmed demo booking blocking the class (admin API only; never contains the cancellation secret). */
+export type BookingBlock = { kind: "booking"; id: string; startsAt: string; endsAt: string };
 
 type Row = {
   id: string;
@@ -39,7 +42,7 @@ type Row = {
 };
 
 type RoomCheckFailure = { ok: false; reason: "room_not_found" | "room_archived" };
-type ConflictFailure = { ok: false; reason: "conflict"; conflict: SessionConflict };
+type ConflictFailure = { ok: false; reason: "conflict"; conflict: SessionConflict } | { ok: false; reason: "booking_conflict"; conflict: BookingBlock };
 
 export type SessionWriteResult = { ok: true; session: AdminClassSession } | { ok: false; reason: "not_found" } | RoomCheckFailure | ConflictFailure;
 export type CancelResult = { ok: true; session: AdminClassSession } | { ok: false; reason: "not_found" | "not_scheduled" };
@@ -61,12 +64,6 @@ export function createSessionRepository(db: Db, clock: () => Date = () => new Da
     `${SELECT} WHERE s.starts_at >= ? AND s.starts_at < ? AND s.room_id = ? ORDER BY s.starts_at, r.code`,
   );
   const selectRoom = db.prepare<[string], { archived_at: string | null }>("SELECT archived_at FROM rooms WHERE id = ?");
-  // Half-open intervals: a session ending at 09:30 does not clash with one starting at 09:30.
-  const selectOverlap = db.prepare<[string, string, string, string], SessionConflict>(
-    `SELECT id, title, starts_at AS startsAt, ends_at AS endsAt FROM class_sessions
-     WHERE room_id = ? AND status = 'scheduled' AND starts_at < ? AND ends_at > ? AND id != ?
-     ORDER BY starts_at LIMIT 1`,
-  );
 
   function toAdmin(row: Row): AdminClassSession {
     return {
@@ -101,8 +98,11 @@ export function createSessionRepository(db: Db, clock: () => Date = () => new Da
   }
 
   function findConflict(roomId: string, startsAt: string, endsAt: string, exceptId = ""): ConflictFailure | null {
-    const conflict = selectOverlap.get(roomId, endsAt, startsAt, exceptId);
-    return conflict ? { ok: false, reason: "conflict", conflict } : null;
+    // Shared half-open occupancy check (classes and bookings), inside the caller's IMMEDIATE transaction.
+    const occupant = findOccupant(db, roomId, { startsAt, endsAt }, exceptId);
+    if (!occupant) return null;
+    if (occupant.kind === "booking") return { ok: false, reason: "booking_conflict", conflict: occupant };
+    return { ok: false, reason: "conflict", conflict: { id: occupant.id, title: occupant.title, startsAt: occupant.startsAt, endsAt: occupant.endsAt } };
   }
 
   return {
@@ -130,7 +130,7 @@ export function createSessionRepository(db: Db, clock: () => Date = () => new Da
            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'scheduled', ?, ?, ?)`,
         ).run(id, requestId ?? null, content.title, content.instructor, content.cohort, content.term, content.roomId, content.startsAt, content.endsAt, options.isDemo ? 1 : 0, now, now);
         return { ok: true, session: get(id)! };
-      })();
+      }).immediate();
     },
 
     /** Saves changes; they are public immediately. Cancelled sessions stay cancelled. */
@@ -148,7 +148,7 @@ export function createSessionRepository(db: Db, clock: () => Date = () => new Da
            WHERE id = ?`,
         ).run(content.title, content.instructor, content.cohort, content.term, content.roomId, content.startsAt, content.endsAt, clock().toISOString(), id);
         return { ok: true, session: get(id)! };
-      })();
+      }).immediate();
     },
 
     /** Marks the session as cancelled. It stays visible publicly, labelled "Entfällt". */
@@ -160,7 +160,7 @@ export function createSessionRepository(db: Db, clock: () => Date = () => new Da
         const now = clock().toISOString();
         db.prepare("UPDATE class_sessions SET status = 'cancelled', cancelled_at = ?, updated_at = ? WHERE id = ?").run(now, now, id);
         return { ok: true, session: get(id)! };
-      })();
+      }).immediate();
     },
 
     /** Undoes a cancellation if the room is still active and free. */
@@ -174,7 +174,7 @@ export function createSessionRepository(db: Db, clock: () => Date = () => new Da
         if (conflict) return conflict;
         db.prepare("UPDATE class_sessions SET status = 'scheduled', cancelled_at = NULL, updated_at = ? WHERE id = ?").run(clock().toISOString(), id);
         return { ok: true, session: get(id)! };
-      })();
+      }).immediate();
     },
 
     /** Public schedule of one Berlin calendar day, cancelled sessions included. */

@@ -1,0 +1,28 @@
+{
+  "scope": "Actual installed repositories against new disposable SQLite DB; no HTTP server.",
+  "checks": [
+    {
+      "name": "Rename room code while keeping ID and reservable flag",
+      "sameId": true,
+      "reservable": true,
+      "before": true,
+      "after": {
+        "ok": false,
+        "reason": "room_not_reservable"
+      }
+    },
+    {
+      "name": "Free spans around off-grid class",
+      "free": [
+        {
+          "startTime": "08:00",
+          "endTime": "12:07"
+        },
+        {
+          "startTime": "12:23",
+          "endTime": "20:00"
+        }
+      ]
+    }
+  ]
+}

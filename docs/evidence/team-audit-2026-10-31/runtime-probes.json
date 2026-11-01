@@ -1,0 +1,58 @@
+{
+  "scope": "Actual production Next.js build, local loopback server, new disposable SQLite database, generated temporary admin credentials; no real data.",
+  "checks": [
+    {
+      "name": "Availability",
+      "status": 200
+    },
+    {
+      "name": "Create booking",
+      "status": 201
+    },
+    {
+      "name": "Retry same request preserves booking ID",
+      "status": 200
+    },
+    {
+      "name": "Overlapping booking blocked",
+      "status": 409,
+      "error": "time_conflict"
+    },
+    {
+      "name": "Katja class over booking blocked",
+      "status": 409,
+      "error": "room_conflict"
+    },
+    {
+      "name": "Archive occupied room blocked",
+      "status": 409
+    },
+    {
+      "name": "Admin list excludes cancellation secrets",
+      "status": 200
+    },
+    {
+      "name": "Incorrect cancellation token rejected",
+      "status": 404
+    },
+    {
+      "name": "Correct cancellation succeeds",
+      "status": 200
+    },
+    {
+      "name": "Cancellation releases room for class",
+      "status": 201
+    },
+    {
+      "name": "Stable room ID supplied to /map",
+      "status": 307,
+      "location": "/map-demo/index.html?lang=en",
+      "roomIdRetained": false
+    },
+    {
+      "name": "English newcomer page served",
+      "status": 200
+    }
+  ],
+  "outcome": "All assertions passed; map ID loss is a recorded integration defect, not a passing requirement."
+}

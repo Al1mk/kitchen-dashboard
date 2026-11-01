@@ -1,0 +1,32 @@
+
+> campus-board@0.1.0 lint
+> eslint
+
+
+/private/tmp/hci-team-audit-2026-10-31/combined-candidate/public/map-demo/app.js
+   24:117  warning  'lastFocusedPin' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  119:105  warning  'i' is defined but never used                        @typescript-eslint/no-unused-vars
+
+/private/tmp/hci-team-audit-2026-10-31/combined-candidate/src/app/newcomers/page.tsx
+  4:38  warning  'Lang' is defined but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/hci-team-audit-2026-10-31/combined-candidate/src/components/public/BookingFlow.tsx
+  92:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/private/tmp/hci-team-audit-2026-10-31/combined-candidate/src/components/public/BookingFlow.tsx:92:5
+  90 |     if (!roomId || !date) return;
+  91 |     const controller = new AbortController();
+> 92 |     setLoading(true); setAvailability(null); setStart(""); setReview(false); setError("");
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  93 |     fetch(`/api/public/availability?${new URLSearchParams({ roomId, date })}`, { cache: "no-store", signal: controller.signal })
+  94 |       .then(async (res) => { const data = await res.json(); if (!res.ok) throw new Error(data.message || t.failure); return data; })
+  95 |       .then((data: Availability) => { setAvailability(data); setLoading(false); })  react-hooks/set-state-in-effect
+
+✖ 4 problems (1 error, 3 warnings)
+

@@ -1,0 +1,26 @@
+T17 integrated technical acceptance — 2026-10-31 ~18:00–18:10 CET, macOS, local
+Code: HEAD 5c5a3c9 plus the T16/T17 working-tree changes committed right after this run
+(tests/unit/integration-contracts.test.ts, scripts/verify-restart.sh, public/map-demo/app.js
+unused variables, tests/unit/team-demo.test.ts unused import).
+Datasets: unit tests = temp SQLite files; E2E = fresh temp DB seeded with the team demo
+(48 rooms, 4 demo sessions) + random admin; restart = mktemp DB. Real data/ never used.
+
+npm run typecheck                         exit 0
+npm run lint                              exit 0, 0 problems (first run: 3 warnings; fixed, rerun clean)
+npm test                                  exit 0, 17 files, 134/134
+npm run build                             exit 0
+npm run test:e2e (SCREENSHOT_DIR=docs/evidence/integration-2026-10-31/screenshots)
+                                          exit 0, 60/60 (includes booking-api, booking-pending,
+                                          booking-selection, map, navigation, receipt, admin bookings,
+                                          and the old rooms-schedule journey with the archive message)
+npx vitest run tests/unit/booking-concurrency.test.ts
+                                          exit 0, 3/3 (worker threads, separate SQLite connections)
+bash scripts/verify-restart.sh            attempt 1 exit 1: script bug (room list captured before the
+                                          booking room was added) -> script fixed;
+                                          attempt 2 exit 0, PASS 13 checks (bookings, busy spans,
+                                          cancellation code, rooms, schedule, announcements, session)
+Credential scan of all T17 logs (43-char base64url pattern): 0 matches.
+
+Not established by these checks: physical kiosk/touch, second device on a LAN, human usability,
+real campus accuracy of the map, real timetable data.
+Typecheck rerun on 64d2801 code after all T17 edits: exit 0.

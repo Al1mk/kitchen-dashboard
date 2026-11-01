@@ -1,0 +1,22 @@
+
+Running 17 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/admin-bookings.spec.ts:11:1 › a class blocked by a booking links to the list; after explicit cancellation the retry succeeds (899ms)
+  ✓   2 [chromium] › tests/e2e/admin-bookings.spec.ts:53:1 › a stale list handles a booking that was cancelled meanwhile; anonymous access is refused (454ms)
+  ✓   3 [chromium] › tests/e2e/booking-language-receipt.spec.ts:35:1 › English receipt: localized room name, countdown, More time, expiry returns Home in English (643ms)
+  ✓   4 [chromium] › tests/e2e/booking-language-receipt.spec.ts:52:1 › Done clears the receipt; going back does not reveal it again (347ms)
+  ✓   5 [chromium] › tests/e2e/booking-language-receipt.spec.ts:63:1 › public cancellation: malformed, wrong and right credentials, repeated cancellation (635ms)
+  ✓   6 [chromium] › tests/e2e/integrated-navigation.spec.ts:10:1 › newcomer → map → schedule → booking → map, by clicks, in English (1.2s)
+  ✓   7 [chromium] › tests/e2e/integrated-navigation.spec.ts:46:1 › navigation lists all seven sections once, with no admin link (413ms)
+  ✓   8 [chromium] › tests/e2e/integrated-navigation.spec.ts:56:1 › the newcomer page's links all lead to working pages in both languages (209ms)
+  ✓   9 [chromium] › tests/e2e/integrated-navigation.spec.ts:75:3 › simulated portrait 540×960: start, map and booking fit without horizontal page scroll (451ms)
+  ✓  10 [chromium] › tests/e2e/integrated-navigation.spec.ts:75:3 › simulated portrait 1080×1920: start, map and booking fit without horizontal page scroll (445ms)
+  ✓  11 [chromium] › tests/e2e/map-integration.spec.ts:22:1 › deep link selects the room on its floor, in the shared shell, with schedule and booking links (209ms)
+  ✓  12 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (207ms)
+  ✓  13 [chromium] › tests/e2e/map-integration.spec.ts:56:1 › search by code selects the room; changing the floor clears the room and keeps the language (287ms)
+  ✓  14 [chromium] › tests/e2e/map-integration.spec.ts:68:1 › renaming keeps the marker (id binding); moving to another floor hides the old position (279ms)
+  ✓  15 [chromium] › tests/e2e/map-integration.spec.ts:85:1 › archived and unknown rooms get no marker and no substitute (200ms)
+  ✓  16 [chromium] › tests/e2e/map-integration.spec.ts:97:1 › K1-114 is selectable as information without a dot (155ms)
+  ✓  17 [chromium] › tests/e2e/map-integration.spec.ts:105:1 › a missing floor image shows a localized fallback and keeps the room list (121ms)
+
+  17 passed (12.6s)

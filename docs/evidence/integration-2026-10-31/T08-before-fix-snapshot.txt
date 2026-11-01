@@ -1,0 +1,29 @@
+# T08 before fix — branch ead0cf0 + spec, imported BookingFlow unchanged, Playwright production build, temp E2E DB
+# Excerpt of Playwright page snapshot after release of the held (server-accepted) response. No credential present (no receipt rendered).
+      - listitem:
+        - link "Raumbuchung":
+      - listitem:
+        - link "Karte":
+      - listitem:
+        - link "Neu am Campus":
+- main:
+  - heading "Raum reservieren" [level=1]
+  - paragraph: DEMO – keine echte Hochschulreservierung. Keine Anmeldung, kein offizieller Anspruch auf den Raum.
+  - link "↖ Diesen Raum auf der Karte sehen":
+  - text: 1. Raum auswählen
+  - combobox "1. Raum auswählen":
+    - option "PEND-E74E22 – Wartetest-Raum" [selected]
+  - text: 2. Datum
+  - textbox "2. Datum": 2026-11-02
+  - text: 3. Dauer
+  - combobox "3. Dauer":
+    - option "15 min"
+    - option "30 min" [selected]
+    - option "60 min"
+    - option "90 min"
+    - option "120 min"
+  - heading "4. Freie Startzeit wählen" [level=2]
+  - group "Freie Startzeit wählen":
+  - alert: Cannot read properties of null (reading 'cancelToken')
+  - button "Weiter zur Bestätigung" [disabled]
+  - link "Reservierung stornieren":

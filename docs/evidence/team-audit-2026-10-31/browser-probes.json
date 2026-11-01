@@ -1,0 +1,41 @@
+{
+  "scope": "Isolated Chromium: real static map from file; unchanged BookingFlow bundled with plain-anchor Link and mocked fetch. NOT a running Next.js server/API test.",
+  "checks": [
+    {
+      "name": "Map all catalog entries selectable",
+      "selected": 48,
+      "total": 48,
+      "bookingActions": 21
+    },
+    {
+      "name": "Map public navigation",
+      "homeLinks": 0,
+      "allLinks": [
+        "../booking/?raum=K1-120&lang=en"
+      ]
+    },
+    {
+      "name": "Map language survives reload",
+      "before": "de",
+      "after": "en",
+      "urlLanguage": "en"
+    },
+    {
+      "name": "Unknown deep-linked room silently changes",
+      "requested": "missing-room-id",
+      "selected": "r-a"
+    },
+    {
+      "name": "Normal client booking flow",
+      "success": true,
+      "posts": 1
+    },
+    {
+      "name": "Selection change during in-flight create",
+      "acceptedPosts": 1,
+      "receiptVisible": 0,
+      "alert": "Cannot read properties of null (reading 'cancelToken')"
+    }
+  ],
+  "pageErrors": []
+}

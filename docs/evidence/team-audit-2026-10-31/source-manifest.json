@@ -1,0 +1,337 @@
+[
+  {
+    "path": "Project/LCC_K1_COMPLETE_V12_2_QA_VERIFIED_aryan/LCC_K1_FOR_ALI_V12_2.zip",
+    "sha256": "d8cae19fb1f239f3e46903434dc04f2d65bb91e406a043ebdeb11e335da0d53b",
+    "size": 7170414
+  },
+  {
+    "path": "Project/LCC_K1_COMPLETE_V12_2_QA_VERIFIED_aryan/LCC_K1_STUDENT_DEMO_V12_2_NETLIFY.zip",
+    "sha256": "4507968e506d241c584e02ef443a19546d772fa072abc8fb2223549982f346f0",
+    "size": 7165015
+  },
+  {
+    "path": "Project/LCC_K1_COMPLETE_V12_2_QA_VERIFIED_aryan/LCC_K1_SURVEY_V12_2.zip",
+    "sha256": "46f1bd18a7d2f3986ced541da7158a2631b0860ee3aa79449cc1c9a20d3b73f8",
+    "size": 3805
+  },
+  {
+    "path": "Project/LCC_K1_COMPLETE_V12_2_QA_VERIFIED_aryan/QA_BROWSER_218_ASSERTIONS.json",
+    "sha256": "cc7eb711d0fbaa496a2e77bd1bbe83d1b5bc8042246c7a2186112fa17d901ab6",
+    "size": 11895
+  },
+  {
+    "path": "Project/LCC_K1_COMPLETE_V12_2_QA_VERIFIED_aryan/QA_REPORT_DE.md",
+    "sha256": "12fac2378e6982358654c9cbaddc253b6ba19d21327fd223e989ca5aab9af78d",
+    "size": 2298
+  },
+  {
+    "path": "Project/LCC_K1_COMPLETE_V12_2_QA_VERIFIED_aryan/QA_REPORT_FA.md",
+    "sha256": "d20d682089abc203f086a5aad46414bead1d71ee262b52c4a1c34bfcda9afb74",
+    "size": 5828
+  },
+  {
+    "path": "Project/LCC_K1_COMPLETE_V12_2_QA_VERIFIED_aryan/QA_TOUCH_AND_FALLBACK_23_ASSERTIONS.json",
+    "sha256": "fd5e05c708fc18a01eb16fb76759ce5819aebd3eca4932bf9a7cf84fd03988a3",
+    "size": 961
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/ARYAN_MAP/PR_BODY_DE.md",
+    "sha256": "78ee8fc9017c142e1a3c197217fd7ddb8403159feec0f09e8178525221aa9ee3",
+    "size": 1872
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/ARYAN_MAP/README_DE.md",
+    "sha256": "af6188b636dcd01e4ca95be44b786007340ee0b263d3b33fac49fbb1d2967f38",
+    "size": 3401
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/ARYAN_MAP/nextjs/public/map-demo/app.js",
+    "sha256": "f68777144b952801c4c719069d49339fdf73b28cfa7d60aaf309af5489b08a33",
+    "size": 19497
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/ARYAN_MAP/nextjs/public/map-demo/assets/1OG.png",
+    "sha256": "11db1f215f829cc4796801be71cfa60436e927ec5bf901de8e7b465f7c8d7c5b",
+    "size": 2364980
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/ARYAN_MAP/nextjs/public/map-demo/assets/2OG.png",
+    "sha256": "67d932dce5297d3869113642b04b28e621673d249c56ae0a09d0cdb6b386c5b1",
+    "size": 2313596
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/ARYAN_MAP/nextjs/public/map-demo/assets/3OG.png",
+    "sha256": "76bd13c5c9afdecd455f2a592340ce0bed728a3554540c9a172437d0843f7a84",
+    "size": 2469904
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/ARYAN_MAP/nextjs/public/map-demo/data.js",
+    "sha256": "d2281cc3a67f304147a6e5ce59dcd28938d17c255679c8bb0abc9277c3800d0a",
+    "size": 17150
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/ARYAN_MAP/nextjs/public/map-demo/index.html",
+    "sha256": "5c1ba5442cd05179f6e983fef0ba0a3065cab0d204ad3bf4128047a234e7b431",
+    "size": 5694
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/ARYAN_MAP/nextjs/public/map-demo/room-config.js",
+    "sha256": "3e8e34300ef161f5a3870b11b81825b0225900b65c0324e5c9fb7570d95fdab7",
+    "size": 240
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/ARYAN_MAP/nextjs/public/map-demo/rooms.json",
+    "sha256": "0f3c4a49f3245e3794b579d2b05f5b7ebb34e55b5b329f1bcb8c95203ba9d797",
+    "size": 17132
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/ARYAN_MAP/nextjs/public/map-demo/styles.css",
+    "sha256": "80f62b062bddb01c961b2e9a7917101850a5695acac6c16ef5672de2106fded7",
+    "size": 13590
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/ARYAN_MAP/nextjs/src/app/map/page.tsx",
+    "sha256": "2cebe43e50b70b6cb4801d63b3929a6b451ba9c71976cf09e4fe46f4af7ecffb",
+    "size": 538
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/ARYAN_MAP/scripts/install_into_repo.py",
+    "sha256": "3553256c3ef0dad8f7db1ee6901b8fb32256012a5b133110f112a660df24b7ad",
+    "size": 3387
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/ARYAN_ORIGINAL_ROOMS_47.json",
+    "sha256": "317d0ca540be4f840beec82244fd248f5be7b5b45c926cba8dfa8c559623f3fa",
+    "size": 16603
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/BOOKABLE_ROOMS_21.md",
+    "sha256": "bad004c6ecf7d965732562d43ac9745e89fabca76b467875b6857302f6cb7d99",
+    "size": 2434
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/INSTALL_COMBINED.py",
+    "sha256": "9fe991c564ee269d97df03946754d6c6fee2bf827fab6ec1716f89e8c99fdde2",
+    "size": 4153
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/PARSA_BOOKING/README_FOR_ALI.md",
+    "sha256": "40ac089a998581b42144e415a41b19629b86a08f27802d7df6dd2f8b3c381d19",
+    "size": 7757
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/PARSA_BOOKING/README_PARSA_FA.md",
+    "sha256": "772809877d5eb24de6f0459cbf29cb3fbb03d699139f4db3b12e3f94e77f9c2d",
+    "size": 2052
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/PARSA_BOOKING/add/scripts/seed-parsa-demo-rooms.ts",
+    "sha256": "001238444c131376a2d3c84222bdc46641227c8863fd2609813b6a9db32ac64a",
+    "size": 4480
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/PARSA_BOOKING/add/src/app/api/admin/bookings/[id]/cancel/route.ts",
+    "sha256": "dd2cfe54920c987c874ec0628add6cd288af370ba53a77445e55964f281e4699",
+    "size": 715
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/PARSA_BOOKING/add/src/app/api/admin/bookings/route.ts",
+    "sha256": "b548820bbdd73ae9aaed2fcd4a2ed65a399b2c2221a3d5060e781f378c8d305b",
+    "size": 998
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/PARSA_BOOKING/add/src/app/api/public/availability/route.ts",
+    "sha256": "8b1024e7d1620589c08038e05c5c80718a8b3cbcd3159887cb63289a9d384e4f",
+    "size": 1108
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/PARSA_BOOKING/add/src/app/api/public/bookings/[id]/cancel/route.ts",
+    "sha256": "c09d891607bb2f3687b5421c188403fb3953118ffdad6bebf12e70db067380eb",
+    "size": 1223
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/PARSA_BOOKING/add/src/app/api/public/bookings/route.ts",
+    "sha256": "89d067a1d8ee93a81a09df142b39ec127c5d6ca2d4b91d07cd3d330c5aa0bdcd",
+    "size": 1169
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/PARSA_BOOKING/add/src/app/booking/cancel/page.tsx",
+    "sha256": "780bd883ba27584ab6a0071ed547f2e001513d21728b73a07e90667759919005",
+    "size": 669
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/PARSA_BOOKING/add/src/app/booking/page.tsx",
+    "sha256": "1bd324a761405973529eb01aa77368632f3b2b38b5d574ecf91ad629a5e58aba",
+    "size": 1203
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/PARSA_BOOKING/add/src/components/public/BookingFlow.tsx",
+    "sha256": "72c75011f903b83508343505613586fb070435eddae565105e629a904b639e27",
+    "size": 17096
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/PARSA_BOOKING/add/src/lib/bookings/http.ts",
+    "sha256": "5d4c6567ecca777dbb280298658e4eaeaaeae56c125b022153b96495d7e9e5ad",
+    "size": 1233
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/PARSA_BOOKING/add/src/lib/bookings/policy.ts",
+    "sha256": "392a0a968fdf082484ba2de141252dcca710e777401acf20028b32cf8d84ec0b",
+    "size": 4696
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/PARSA_BOOKING/add/src/lib/bookings/repository.ts",
+    "sha256": "84e467986b7aee470d3e7d2e78af3394062edfcb455c63632e9fdf2952171e27",
+    "size": 10595
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/PARSA_BOOKING/add/tests/unit/bookings.test.ts",
+    "sha256": "fd3e04c9e5bf0693126b4db60d64975620025cefb9ea4344aaebf142498c7af8",
+    "size": 7142
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/PARSA_BOOKING/apply_to_repo.py",
+    "sha256": "e821ce7e5f05d7724704cb662e96b054b1344ce760e4113a33fffaa8c66c45d7",
+    "size": 12745
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/PARSA_BOOKING/docs/PARSA_HCI_EVIDENCE_TEMPLATE.md",
+    "sha256": "8a85887bfefb3f0f4e65cf612aa49eec52a867dcce16dc2e0f774ae8c5c05988",
+    "size": 2838
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/PARSA_BOOKLET_AKTUALISIERUNG_DE.md",
+    "sha256": "17a3c1a70f0e205b4ba1ffb4b57d86af64ecb2d95c4f0931bc9e5972fae3f34e",
+    "size": 5572
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/QA_NACHWEIS.md",
+    "sha256": "ddc0bd5e01fd0bebaa1159779d9ef759a92b8a477e50eb2f8a992a1519c8290e",
+    "size": 3468
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/QA_SOURCE_ALIGNED_2026-10-30.md",
+    "sha256": "a441ea3f6750bf3bce96737bde62fb578df0ace8bff93d7817dee9480aa2981d",
+    "size": 2629
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/README_FOR_ALI.md",
+    "sha256": "4b02f8f415ddb44073602700c327dbec032a5c4df528636a968421309e8957a7",
+    "size": 5162
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/README_START_HIER_FA.md",
+    "sha256": "fa5b5e840a6b3b0aa293a9c91050d9e68472d812302e545f6e2a4837b5201d0e",
+    "size": 2555
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/ROOMS_SOURCE_AND_BOOKING.json",
+    "sha256": "9c3e515d67a803d494f97af04fe781b0b2a8f4b3248c6c5715601952f0303577",
+    "size": 6195
+  },
+  {
+    "path": "Project/Parsa_Aryan_SOURCE_FINAL_Fuer_Ali (2)/VERIFY_PACKAGE.py",
+    "sha256": "0b8846735f422d7a7f3124ab088baf296267cd6020a515a8d7ade7294810d8f2",
+    "size": 2361
+  },
+  {
+    "path": "Project/Reza_HCI_Final_Pack/README_FA.md",
+    "sha256": "b1d59d9854a38c86bf0dfb5e2da1b03d9d2573fc532bd5c301e57aa917c87af2",
+    "size": 4438
+  },
+  {
+    "path": "Project/Reza_HCI_Final_Pack/docs/hci/booklet/04-reza-booklet.docx",
+    "sha256": "f9af7df908da018f711af710fd99c0a107c14e3da1f9f9cd036099eddee45b19",
+    "size": 107710
+  },
+  {
+    "path": "Project/Reza_HCI_Final_Pack/docs/hci/booklet/04-reza-booklet.pdf",
+    "sha256": "66600a87a89a455b6a8991dab45f9a875f77e0cfb92740b5ace369eb618aee9f",
+    "size": 185758
+  },
+  {
+    "path": "Project/Reza_HCI_Final_Pack/docs/hci/booklet/04-reza.md",
+    "sha256": "15eb43adb25d671a3c5f5b644c5f73a4918197985775aa969784ed06e3d9c66c",
+    "size": 6061
+  },
+  {
+    "path": "Project/Reza_HCI_Final_Pack/docs/hci/design/reza/design-rationale.md",
+    "sha256": "cd74fbd8a15d0841c72c25218a4537396e0a2fec324bcfbfa833142344055400",
+    "size": 1813
+  },
+  {
+    "path": "Project/Reza_HCI_Final_Pack/docs/hci/design/reza/sketch-A-task-first.svg",
+    "sha256": "2a633ee12831ccf7ce5b3e8f1fbc8ab1e72aec93c7cf5d0cec611cc80762463e",
+    "size": 3395
+  },
+  {
+    "path": "Project/Reza_HCI_Final_Pack/docs/hci/design/reza/sketch-B-category-first.svg",
+    "sha256": "a40407857e1c1518887a19fea55e5d6ff52deac72a25ac80d6fc934949592fd0",
+    "size": 3852
+  },
+  {
+    "path": "Project/Reza_HCI_Final_Pack/docs/hci/research/interview-guide.md",
+    "sha256": "3bf847b807026e8bfe1ca459d8f061a6f4cbc0f66ade371db5367ef1c5b62447",
+    "size": 1615
+  },
+  {
+    "path": "Project/Reza_HCI_Final_Pack/docs/hci/research/screen-specs.md",
+    "sha256": "c688d7f4d5e67e55cdc46b9e7935b60016e964c9b7353dea995e26900d2f542c",
+    "size": 1924
+  },
+  {
+    "path": "Project/Reza_HCI_Final_Pack/docs/hci/testing/reza-test-plan.md",
+    "sha256": "6da97d66382bc5e1b5666aa2d6adf822e6700531016e0fee01475a3cf91f5761",
+    "size": 2180
+  },
+  {
+    "path": "Project/Reza_HCI_Final_Pack/docs/hci/testing/reza-test-record-template.md",
+    "sha256": "06088e8e3d82fc416b8a01bb654407fcb6c4aef84aa5391cdea842285692b65d",
+    "size": 594
+  },
+  {
+    "path": "Project/Reza_HCI_Final_Pack/patches/01-public-section-i18n.patch",
+    "sha256": "a50924edb7fd2487e7c1b9dabe6eaa146b7a759e48e87ddd1bc5bceabf8c4a59",
+    "size": 741
+  },
+  {
+    "path": "Project/Reza_HCI_Final_Pack/patches/02-public-nav.patch",
+    "sha256": "6f853903a65b70896e25d61a6768493a27443ad225a32429a3b18c1d143b5f1d",
+    "size": 216
+  },
+  {
+    "path": "Project/Reza_HCI_Final_Pack/patches/README.md",
+    "sha256": "3d173ea8fd4b1a8092848b5c0dc2db89baf19abb18805a54c36dc5209c0ef2cf",
+    "size": 968
+  },
+  {
+    "path": "Project/Reza_HCI_Final_Pack/prototype/index.html",
+    "sha256": "d517b1d2a27994f092d43e191b5da73ce562074296adb4a482d81844466f69d3",
+    "size": 19411
+  },
+  {
+    "path": "Project/Reza_HCI_Final_Pack/screenshots/newcomer-concept-mockup.png",
+    "sha256": "11175765ca911606dd5c9809b7276d3f07ddca178edcee406e42b141cd1a1273",
+    "size": 70685
+  },
+  {
+    "path": "Project/Reza_HCI_Final_Pack/src/app/newcomers/page.tsx",
+    "sha256": "525a7ed3dfa4a33de9d55ab077f2f18de3f1f510c27a4e099e8d334602520cca",
+    "size": 4492
+  },
+  {
+    "path": "Project/Reza_HCI_Final_Pack/src/lib/newcomers/content.ts",
+    "sha256": "a97b4a5c7d90fdaff6878d0f17127941356e9f56920145825b0c9bab9194b9eb",
+    "size": 2253
+  },
+  {
+    "path": "Project/Reza_HCI_Final_Pack/team-coordination/ALI_message_de.md",
+    "sha256": "2ecec8a265ddd87178bca183435428c413ce4d91aa0efe9f898f6cb4b57c4593",
+    "size": 1359
+  },
+  {
+    "path": "Project/Reza_HCI_Final_Pack/team-coordination/team-status.md",
+    "sha256": "c274c9d77114ef9a9255025711f3ab5ad70f5d7a7a1ce6e6eaa35b4f37f9b622",
+    "size": 1454
+  }
+]

@@ -1,0 +1,16 @@
+HCI-Kurztest – LCC Navigator V12.2 (ca. 3 Minuten)
+
+Öffne bitte den Link zum Designprototyp (kein offizieller Campusplan).
+
+Aufgabe 1: Gib absichtlich „K1-12x“ in das Suchfeld ein. Lies den Hinweis unter der Eingabe.
+Aufgabe 2: Korrigiere den Suchbegriff zu „K1-120“. Beobachte, ob die Meldung verschwindet und der Raum im 1. OG markiert wird.
+Aufgabe 3: Suche „K1-210“, „K1-215a“ und „K1-303“; wechselt die Karte in die jeweils passende Etage?
+Aufgabe 4: Suche nach einem Raumnamen, z. B. „Seminarraum“, und wähle einen Treffer aus.
+
+Frage 1: Konntest du die gesuchten Raumnummern finden? [Ja / Teilweise / Nein]
+Frage 2: War der rote Hinweis bei der absichtlich falschen Eingabe verständlich und hilfreich? [Ja / Teilweise / Nein]
+Frage 3: War die Zuordnung der Raumnummern auf der Karte verständlich? [Ja / Teilweise / Nein]
+Frage 4: Wie einfach war die Suche insgesamt? [1 sehr schwer ... 5 sehr einfach]
+Frage 5: Was würdest du an Suche, Fehlermeldung oder Karte verbessern? [Freitext, optional]
+
+Freiwillige, anonyme Teilnahme. Keine Live-Raumbelegungen, Buchungen oder offiziellen Fluchtweg-Daten. Es werden keine Ergebnisse vorweggenommen.

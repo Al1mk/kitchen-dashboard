@@ -37,3 +37,10 @@ The logo image `public/brand/hs-coburg-logo-screenshot.png` is a crop of Ali's s
 ## Guidance used
 
 UI/UX Pro Max skill (Quick Reference rules: accessibility, touch targets, forms & feedback, semantic tokens) was consulted by Claude Code during V1. Its search CLI and other installed design skills were not run. V2 changes should be evidence-led (user tests) and recorded with before/after screenshots.
+
+## Team integration additions (2026-10-31, V1)
+
+- Map, booking and newcomer pages reuse the existing tokens (`brand`, `ink`, `surface`, `line`, state colours) and the `PublicShell`; no new palette was introduced.
+- Public touch targets keep the ≥ 56 px rule (`min-h-14`/`min-h-16`) for buttons and links. **Exception:** map markers are small code labels (≈ 20–24 px high) taken over from Aryan's design so that 47 labels fit on the illustration; the room list below the map offers the same selection with large targets. Marker size/overlap on the 540 px wide view is an open analytical finding for V2 (T23), not yet tested with people.
+- State is never shown by colour alone: booking and admin states use text ("Bestätigt", "Storniert", "Vorbei"), selected markers also change size and `aria-pressed`.
+- The map illustrations are AI-generated drawings from Aryan's delivery and are labelled on the page as not verified plans.

@@ -4,7 +4,8 @@ import { loginViaApi, loginViaUi, sampleInput } from "./helpers.ts";
 // Captures layout evidence. 1080×1920 is a simulated portrait viewport (test
 // assumption), not the measured resolution of the campus screen.
 
-const OUT = "docs/evidence/screenshots";
+// SCREENSHOT_DIR lets a later run write elsewhere instead of overwriting earlier evidence.
+const OUT = process.env.SCREENSHOT_DIR ?? "docs/evidence/screenshots";
 
 test("capture admin (1440×900) and display (1080×1920) layouts", async ({ browser, request, baseURL }) => {
   const headers = await loginViaApi(request, baseURL!);

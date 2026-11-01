@@ -1,0 +1,12 @@
+date: Sun Nov  1 01:35:20 CET 2026
+base HEAD: c2933f6c72e2236bc51379632bec04488dd46fd0
+patch: uncommitted correction (sha256 of diff below)
+519aa211195220e3668cc5ec4566fc7fe46668729bca31bedd789d37c81223ed  -
+ M src/components/public/BookingFlow.tsx
+ M src/components/public/BookingReceipt.tsx
+ M src/components/public/booking-copy.ts
+ M tests/e2e/booking-language-receipt.spec.ts
+ M tests/e2e/booking-pending.spec.ts
+?? src/components/public/booking-result.ts
+?? tests/e2e/review-booking.spec.ts
+?? tests/unit/booking-result.test.ts
