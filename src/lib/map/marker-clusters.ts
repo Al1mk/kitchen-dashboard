@@ -3,7 +3,8 @@
  * stored room coordinate. Dimensions are CSS pixels of the ACTUAL map layer,
  * not physical millimeters of the kiosk and not window.innerWidth.
  *
- * Markers are 72×44 CSS px, cluster badges are 44×44 CSS px. The small
+ * The caller supplies measured CSS hit sizes (including kiosk rem scaling).
+ * The defaults describe the 16 px root only. The small
  * 6 px gap is a layout safeguard, NOT a claimed WCAG certification.
  */
 export type MapPin<T> = { id: string; x: number; y: number; room: T };
@@ -14,9 +15,8 @@ export type MarkerGroup<T> = {
   pins: MapPin<T>[];
 };
 
-const MARKER_WIDTH = 72;
-const CLUSTER_WIDTH = 44;
-const TARGET_HEIGHT = 44;
+export type MarkerMetrics = { markerWidth: number; clusterWidth: number; height: number };
+const DEFAULT_METRICS: MarkerMetrics = { markerWidth: 72, clusterWidth: 44, height: 44 };
 const GAP = 6;
 
 /**
@@ -25,15 +25,16 @@ const GAP = 6;
  * That centroid is an interaction affordance, never a substituted room position.
  * An individual pin always keeps its original normalized x,y.
  */
-export function groupMapMarkers<T>(points: readonly MapPin<T>[], layerWidth: number, layerHeight: number): MarkerGroup<T>[] {
+export function groupMapMarkers<T>(points: readonly MapPin<T>[], layerWidth: number, layerHeight: number, metrics: MarkerMetrics = DEFAULT_METRICS): MarkerGroup<T>[] {
   if (!Number.isFinite(layerWidth) || !Number.isFinite(layerHeight) || layerWidth <= 0 || layerHeight <= 0) return [];
+  if (Object.values(metrics).some(value => !Number.isFinite(value) || value <= 0)) return [];
   let groups: MarkerGroup<T>[] = points.filter(p => Number.isFinite(p.x) && Number.isFinite(p.y) && p.x >= 0 && p.x <= 1 && p.y >= 0 && p.y <= 1)
     .map(p => ({ key: p.id, x: p.x, y: p.y, pins: [p] }));
 
-  const width = (g: MarkerGroup<T>) => g.pins.length > 1 ? CLUSTER_WIDTH : MARKER_WIDTH;
+  const width = (g: MarkerGroup<T>) => g.pins.length > 1 ? metrics.clusterWidth : metrics.markerWidth;
   const overlaps = (a: MarkerGroup<T>, b: MarkerGroup<T>) =>
     Math.abs(a.x - b.x) * layerWidth < (width(a) + width(b)) / 2 + GAP &&
-    Math.abs(a.y - b.y) * layerHeight < TARGET_HEIGHT + GAP;
+    Math.abs(a.y - b.y) * layerHeight < metrics.height + GAP;
 
   // Finite: every iteration reduces the group count by one.
   for (let restart = true; restart;) {

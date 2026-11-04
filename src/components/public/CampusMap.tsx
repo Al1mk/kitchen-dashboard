@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useCallback, useEffect, useRef, useState, type FormEvent } from "react";
 import { fallbackLevel, localize, PUBLIC_TEXT, publicHref, type Lang } from "@/lib/i18n/public.ts";
 import { MAP_FLOORS, mapFloor, markerFor } from "@/lib/map/config.ts";
 import { groupMapMarkers } from "@/lib/map/marker-clusters.ts";
@@ -85,6 +85,10 @@ const copy = {
 const isExactCode = isExactRoomCode;
 const matches = roomMatches;
 
+// Sizing probes share these classes with the actual hit controls. This keeps
+// grouping in sync with rem scaling and future size changes, not just zoom.
+const PIN_SIZE = "h-11 w-[4.5rem]";
+const CLUSTER_SIZE = "h-11 w-11";
 const ZOOM_MIN = 1;
 const ZOOM_MAX = 3;
 
@@ -99,7 +103,7 @@ export function CampusMap({ lang, initialRoomId, initialFloor, date }: { lang: L
   const [query, setQuery] = useState("");
   const [zoom, setZoom] = useState(1);
   const [brokenImage, setBrokenImage] = useState<string | null>(null);
-  const [layerSize, setLayerSize] = useState({ width: 0, height: 0 });
+  const [layerSize, setLayerSize] = useState({ width: 0, height: 0, markerWidth: 0, clusterWidth: 0, targetHeight: 0 });
   const [expandedCluster, setExpandedCluster] = useState<string | null>(null);
   // URL is the source of context: a link to /map (nav) or another ?raum resets the view.
   const [urlState, setUrlState] = useState({ roomId: initialRoomId, floor: initialFloor });
@@ -110,6 +114,10 @@ export function CampusMap({ lang, initialRoomId, initialFloor, date }: { lang: L
   }
   const viewport = useRef<HTMLDivElement>(null);
   const layer = useRef<HTMLDivElement>(null);
+  const pinSizer = useRef<HTMLSpanElement>(null);
+  const clusterSizer = useRef<HTMLSpanElement>(null);
+  const clusterOpener = useRef<HTMLButtonElement | null>(null);
+  const detailsHeading = useRef<HTMLHeadingElement>(null);
 
   // The selection is resolved by id against the *current* room list on every poll.
   const selected = rooms && selectedId ? rooms.find((r) => r.id === selectedId) ?? null : null;
@@ -127,21 +135,44 @@ export function CampusMap({ lang, initialRoomId, initialFloor, date }: { lang: L
   const selectedMarker = selected ? markerFor(selected) : null;
   // Collision checks use the visible map layer at the current zoom; no room
   // coordinate or stable room ID is changed. A cluster is a choice control.
-  const pinGroups = groupMapMarkers(markers.map(({ room, x, y }) => ({ id: room.id, x, y, room })), layerSize.width, layerSize.height);
+  const pinGroups = groupMapMarkers(markers.map(({ room, x, y }) => ({ id: room.id, x, y, room })), layerSize.width, layerSize.height, { markerWidth: layerSize.markerWidth, clusterWidth: layerSize.clusterWidth, height: layerSize.targetHeight });
   const openGroup = pinGroups.find((g) => g.key === expandedCluster && g.pins.length > 1) ?? null;
   const openGroupKey = openGroup?.key ?? null;
+  // An invalidated choice is closed, not remembered for a later poll/resize.
+  if (expandedCluster && !openGroup) setExpandedCluster(null);
   const clusterHeading = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
     const element = layer.current;
-    if (!element || typeof ResizeObserver === "undefined") return;
+    const pin = pinSizer.current;
+    const cluster = clusterSizer.current;
+    if (!element || !pin || !cluster || typeof ResizeObserver === "undefined") return;
     const observer = new ResizeObserver(() => {
-      const width = element.clientWidth;
-      const height = element.clientHeight;
-      setLayerSize((old) => old.width === width && old.height === height ? old : { width, height });
+      const pinBox = pin.getBoundingClientRect();
+      const clusterBox = cluster.getBoundingClientRect();
+      const next = { width: element.clientWidth, height: element.clientHeight, markerWidth: pinBox.width, clusterWidth: clusterBox.width, targetHeight: Math.max(pinBox.height, clusterBox.height) };
+      setLayerSize((old) => Object.keys(next).every((key) => old[key as keyof typeof old] === next[key as keyof typeof next]) ? old : next);
     });
     observer.observe(element);
+    observer.observe(pin);
+    observer.observe(cluster);
     return () => observer.disconnect();
   }, [floor, zoom, imageFailed]);
+  // React's ref cleanup runs before the focused subtree is removed. Layout
+  // effect cleanup is too late here: activeElement has already become BODY.
+  const trackChooser = useCallback((chooser: HTMLElement | null) => {
+    if (!chooser) return;
+    return () => {
+      if (!chooser.contains(document.activeElement)) return;
+      requestAnimationFrame(() => {
+        // Explicit close/selection or a user's next action takes precedence.
+        if (document.activeElement !== document.body) return;
+        const opener = clusterOpener.current;
+        const target = opener?.isConnected ? opener : viewport.current ?? detailsHeading.current;
+        target?.focus({ preventScroll: true });
+        target?.scrollIntoView({ block: "center", behavior: "auto" });
+      });
+    };
+  }, []);
   // Make the room chooser discoverable after tapping a marker on a tall kiosk.
   useEffect(() => {
     if (!openGroupKey) return;
@@ -171,6 +202,23 @@ export function CampusMap({ lang, initialRoomId, initialFloor, date }: { lang: L
     setFloorChoice(room.floorId);
     syncUrl(room.id, room.floorId);
     requestAnimationFrame(() => requestAnimationFrame(() => centerOn(room.id)));
+  }
+
+  function closeCluster() {
+    setExpandedCluster(null);
+    requestAnimationFrame(() => {
+      const target = clusterOpener.current?.isConnected ? clusterOpener.current : viewport.current;
+      target?.focus({ preventScroll: true });
+      target?.scrollIntoView({ block: "center", behavior: "auto" });
+    });
+  }
+
+  function selectClusterRoom(room: PublicRoom) {
+    select(room);
+    requestAnimationFrame(() => {
+      detailsHeading.current?.focus({ preventScroll: true });
+      detailsHeading.current?.scrollIntoView({ block: "center", behavior: "auto" });
+    });
   }
 
   function chooseFloor(id: FloorId) {
@@ -321,6 +369,8 @@ export function CampusMap({ lang, initialRoomId, initialFloor, date }: { lang: L
                 className="absolute inset-0 h-full w-full select-none"
                 draggable={false}
               />
+              <span ref={pinSizer} aria-hidden="true" className={`pointer-events-none invisible absolute block ${PIN_SIZE}`} />
+              <span ref={clusterSizer} aria-hidden="true" className={`pointer-events-none invisible absolute block ${CLUSTER_SIZE}`} />
               {pinGroups.map((group) => {
                 const { x, y, pins } = group;
                 const isGroup = pins.length > 1;
@@ -336,9 +386,12 @@ export function CampusMap({ lang, initialRoomId, initialFloor, date }: { lang: L
                     aria-expanded={expandedCluster === group.key}
                     aria-pressed={isSelected}
                     title={pins.map((pin) => pin.room.code).join(", ")}
-                    onClick={() => setExpandedCluster(expandedCluster === group.key ? null : group.key)}
+                    onClick={(event) => {
+                      if (expandedCluster === group.key) closeCluster();
+                      else { clusterOpener.current = event.currentTarget; setExpandedCluster(group.key); }
+                    }}
                     style={{ left: `${x * 100}%`, top: `${y * 100}%` }}
-                    className={`absolute z-[1] flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 touch-manipulation items-center justify-center rounded-xl border-2 px-1 text-sm font-bold shadow ${
+                    className={`absolute z-[1] flex ${CLUSTER_SIZE} -translate-x-1/2 -translate-y-1/2 touch-manipulation items-center justify-center rounded-xl border-2 px-1 text-sm font-bold shadow ${
                       isSelected ? "border-ink bg-brand text-white" : "border-white bg-ink text-white"
                     }`}
                   >
@@ -354,7 +407,7 @@ export function CampusMap({ lang, initialRoomId, initialFloor, date }: { lang: L
                     onClick={() => select(room)}
                     title={room.code}
                     style={{ left: `${x * 100}%`, top: `${y * 100}%` }}
-                    className={`absolute flex h-11 w-[4.5rem] -translate-x-1/2 -translate-y-1/2 touch-manipulation items-center justify-center overflow-hidden rounded-lg border-2 px-2 py-1 text-xs font-bold whitespace-nowrap shadow ${
+                    className={`absolute flex ${PIN_SIZE} -translate-x-1/2 -translate-y-1/2 touch-manipulation items-center justify-center overflow-hidden rounded-lg border-2 px-2 py-1 text-xs font-bold whitespace-nowrap shadow ${
                       isSelected ? "z-10 border-ink bg-brand text-white" : "border-white bg-ink/85 text-white"
                     }`}
                   >
@@ -368,19 +421,20 @@ export function CampusMap({ lang, initialRoomId, initialFloor, date }: { lang: L
       </section>
 
       {openGroup && (
-        <section role="region" aria-label={t.chooseNearby} className="flex flex-col gap-3 rounded-xl border-2 border-ink bg-surface p-4" data-testid="map-cluster-chooser">
+        <section ref={trackChooser} role="region" aria-label={t.chooseNearby} className="flex flex-col gap-3 rounded-xl border-2 border-ink bg-surface p-4" data-testid="map-cluster-chooser">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <h3 ref={clusterHeading} tabIndex={-1} className="text-xl font-bold">{t.chooseNearby}</h3>
-            <button type="button" onClick={() => setExpandedCluster(null)} className="min-h-11 rounded-xl border border-ink px-4 font-semibold">{t.closeNearby}</button>
+            <button type="button" onClick={closeCluster} className="min-h-11 rounded-xl border border-ink px-4 font-semibold">{t.closeNearby}</button>
           </div>
           <p>{t.nearbyNote}</p>
           <ul className="grid gap-2 sm:grid-cols-2">
             {openGroup.pins.map(({ room }) => {
               const localized = localize(room.name, room.nameEn, lang);
               return <li key={room.id}>
-                <button type="button" onClick={() => select(room)} className="flex min-h-14 w-full flex-col justify-center rounded-xl border border-ink bg-surface px-4 py-2 text-left">
+                <button type="button" onClick={() => selectClusterRoom(room)} className="flex min-h-14 w-full flex-col justify-center rounded-xl border border-ink bg-surface px-4 py-2 text-left">
                   <span className="font-bold">{room.code}</span>
                   <span lang={localized.lang}>{localized.text}</span>
+                  <FallbackTag lang={lang} level={localized.fallback ? "all" : null} />
                 </button>
               </li>;
             })}
@@ -389,7 +443,7 @@ export function CampusMap({ lang, initialRoomId, initialFloor, date }: { lang: L
       )}
 
       <section aria-labelledby="map-details-title" data-testid="map-details" className="flex flex-col gap-3 rounded-xl border-2 border-line bg-surface p-5">
-        <h2 id="map-details-title" className="text-base font-semibold text-ink-muted">
+        <h2 ref={detailsHeading} tabIndex={-1} id="map-details-title" className="text-base font-semibold text-ink-muted">
           {t.selected}
         </h2>
         {selectionMissing && (
