@@ -1,0 +1,129 @@
+[
+ {
+  "k": "S1 receipt -> tap English: url",
+  "v": "/booking?datum=2026-11-03&raum=lcc-demo-room-k1-103&lang=en"
+ },
+ {
+  "k": "S1 receipt still visible?",
+  "v": true
+ },
+ {
+  "k": "S1 main text",
+  "v": "Book a room Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. ✓ Booking saved K1-103 Seminar room 1 Tuesday, 3 No"
+ },
+ {
+  "k": "S2 receipt -> browser Back: url",
+  "v": "blank"
+ },
+ {
+  "k": "S2 receipt still visible?",
+  "v": false
+ },
+ {
+  "k": "S2 main text",
+  "v": ""
+ },
+ {
+  "k": "S3.1 receipt -> tap nav Start: url",
+  "v": "/"
+ },
+ {
+  "k": "S3.1 any dialog?",
+  "v": 0
+ },
+ {
+  "k": "S3.1 Back after leaving: receipt recoverable?",
+  "v": false
+ },
+ {
+  "k": "S3.2 receipt -> tap nav Karte: url",
+  "v": "/map"
+ },
+ {
+  "k": "S3.2 any dialog?",
+  "v": 0
+ },
+ {
+  "k": "S3.2 Back after leaving: receipt recoverable?",
+  "v": false
+ },
+ {
+  "k": "S4 POST aborted: main text (tail)",
+  "v": "inuten 120 Minuten 4. Freie Startzeit wählen 16:30 16:45 17:00 17:15 17:30 17:45 18:00 18:15 18:30 18:45 19:00 Reservierung prüfen K1-121 Elektronik-Werkstatt Dienstag, 3. November 2026 · 19:00–20:00 Wir konnten nicht bestätigen, ob die Reservierung gespeichert wurde. Sende sie erneut: Es wird genau dieselbe Anfrage wiederholt, eine doppelte Reservierung entsteht nicht. Erneut senden Abbrechen Reservierung stornieren"
+ },
+ {
+  "k": "S4 live regions",
+  "v": [
+   {
+    "role": "alert",
+    "t": "Wir konnten nicht bestätigen, ob die Reservierung gespeichert wurde. Sende sie erneut: Es wird genau dieselbe Anfrage wiederholt, eine doppelte Reservierung entsteht nicht. Erneut senden Abbrechen"
+   }
+  ]
+ },
+ {
+  "k": "S4 visible buttons",
+  "v": [
+   {
+    "t": "Erneut senden",
+    "h": 64,
+    "w": 320
+   },
+   {
+    "t": "Abbrechen",
+    "h": 64,
+    "w": 320
+   }
+  ]
+ },
+ {
+  "k": "S4 nav tap during unresolved state: url",
+  "v": "/booking?raum=lcc-demo-room-k1-121&datum=2026-11-03"
+ },
+ {
+  "k": "S4 dialog visible?",
+  "v": [
+   "Reservierung läuft noch Die Reservierung wird gerade gespeichert oder ihr Ergebnis ist noch unklar. Wenn du jetzt gehst, kann sie trotzdem bestehen – aber Buchungsnummer und Stornierungscode gehen verloren, und du kannst sie nicht mehr selbst stornie"
+  ]
+ },
+ {
+  "k": "S4 guard buttons",
+  "v": {
+   "stay": [
+    242,
+    64
+   ],
+   "leave": [
+    242,
+    64
+   ]
+  }
+ },
+ {
+  "k": "S4 after Hierbleiben: url",
+  "v": "/booking?raum=lcc-demo-room-k1-121&datum=2026-11-03"
+ },
+ {
+  "k": "S5 confirm button 300 ms after tap",
+  "v": {
+   "t": "Reservierung wird gespeichert …",
+   "disabled": true,
+   "ariaBusy": null
+  }
+ },
+ {
+  "k": "S5 POST requests sent after two taps",
+  "v": 1
+ },
+ {
+  "k": "S6 availability aborted: main text (tail)",
+  "v": "302 – Besprechung K1-303 – Seminarraum 8 K1-305 – Büro 2 K1-306 – Büro 3 K1-307 – Seminarraum 7 Diesen Raum auf der Karte zeigen Termine in diesem Raum 2. Datum 3. Dauer 15 Minuten 30 Minuten 45 Minuten 60 Minuten 90 Minuten 120 Minuten 4. Freie Startzeit wählen Die freien Zeiten können gerade nicht geladen werden. Erneut versuchen Weiter zur Bestätigung Reservierung stornieren"
+ },
+ {
+  "k": "S7 /rooms rooms API aborted: main text",
+  "v": "Räume Raum, Lehrperson oder Lehrveranstaltung suchen Raumnummer (z. B. K1-105 oder 105), Raumname, Lehrperson oder Lehrveranstaltung. Räume können gerade nicht geladen werden. Wir versuchen es automatisch weiter. Erneut versuchen"
+ },
+ {
+  "k": "S7 /map rooms API aborted: main text",
+  "v": "Karte Wähle ein Stockwerk, tippe auf eine Markierung oder suche nach Raumnummer oder Name. Hinweis: Die Pläne sind KI-generierte Illustrationen aus dem Team-Prototyp, kein geprüfter Gebäudeplan und kein Fluchtplan. Positionen beziehen sich auf die Bilder. Räume können gerade nicht geladen werden. Wir versuchen es autom"
+ }
+]

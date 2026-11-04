@@ -1,0 +1,27 @@
+{
+ "ctx": "sens-540x960",
+ "name": "booking-receipt",
+ "lang": "de",
+ "label": "after",
+ "geo": {
+  "vw": 540,
+  "vh": 960,
+  "pinned": {
+   "position": "fixed",
+   "tag": "div",
+   "x": 0,
+   "y": 733,
+   "w": 540,
+   "h": 227,
+   "top": 733,
+   "bottom": 960,
+   "left": 0,
+   "right": 540
+  },
+  "navCount": 1
+ },
+ "doneButton": {
+  "top": 558,
+  "bottom": 622
+ }
+}

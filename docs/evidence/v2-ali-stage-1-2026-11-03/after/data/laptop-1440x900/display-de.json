@@ -1,0 +1,301 @@
+{
+ "ctx": "laptop-1440x900",
+ "name": "display",
+ "lang": "de",
+ "url": "/display",
+ "label": "after",
+ "htmlLang": "de",
+ "title": "Mitteilungen – Campus Board",
+ "summary": {
+  "targets": 9,
+  "targetsMin44fail": 9,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 9,
+  "minTargetH": 30.4,
+  "minTargetW": 61.6,
+  "textMinFs": 10.6,
+  "textLt14": 15,
+  "textLt16": 17,
+  "textTotal": 21,
+  "lowContrastCount": 0,
+  "screens": 1,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 0
+ },
+ "headings": [
+  {
+   "l": "H2",
+   "t": "Mitteilungen",
+   "fs": 27.3375,
+   "y": 153
+  },
+  {
+   "l": "H3",
+   "t": "Willkommen am Lucas-Cranach-Campus (Demo)",
+   "fs": 23.2875,
+   "y": 256
+  },
+  {
+   "l": "H3",
+   "t": "Spieleabend in der Küche (Demo)",
+   "fs": 23.2875,
+   "y": 442
+  }
+ ],
+ "textSizeHist": {
+  "37.5": 1,
+  "13.2": 4,
+  "27.3": 1,
+  "11.6": 3,
+  "23.3": 2,
+  "15.7": 2,
+  "10.6": 1,
+  "13.7": 7
+ },
+ "smallTargets": [
+  "a:Deutsch 66.2x30.4",
+  "a:English 61.6x30.4",
+  "a:Start 109.8x35.4",
+  "a:Neu am Campus 109.8x35.4",
+  "a:Karte 109.8x35.4",
+  "a:Räume 109.8x35.4",
+  "a:Stundenplan 109.8x35.4",
+  "a:Raumbuchung 109.8x35.4",
+  "a:Mitteilungen 109.8x35.4"
+ ],
+ "geo": {
+  "dock": {
+   "position": "static",
+   "x": 466.9,
+   "y": 758.3,
+   "w": 506.3,
+   "h": 141.7,
+   "top": 758.3,
+   "bottom": 900,
+   "left": 466.9,
+   "right": 973.1,
+   "shareOfViewport": 0.157
+  },
+  "layout": {
+   "rootFontPx": 16,
+   "h1Px": null,
+   "firstParagraphPx": 15.6938,
+   "mainWidth": 506.3,
+   "contentWidth": 460.4
+  },
+  "vw": 1440,
+  "vh": 900,
+  "frameCentre": 720,
+  "navCount": 1,
+  "linkCount": 7,
+  "links": [
+   {
+    "name": "Start",
+    "href": "/",
+    "current": null,
+    "x": 489.7,
+    "y": 812.9,
+    "w": 109.8,
+    "h": 35.4,
+    "top": 812.9,
+    "bottom": 848.4,
+    "left": 489.7,
+    "right": 599.5
+   },
+   {
+    "name": "Neu am Campus",
+    "href": "/newcomers",
+    "current": null,
+    "x": 606.6,
+    "y": 812.9,
+    "w": 109.8,
+    "h": 35.4,
+    "top": 812.9,
+    "bottom": 848.4,
+    "left": 606.6,
+    "right": 716.5
+   },
+   {
+    "name": "Karte",
+    "href": "/map",
+    "current": null,
+    "x": 723.5,
+    "y": 812.9,
+    "w": 109.8,
+    "h": 35.4,
+    "top": 812.9,
+    "bottom": 848.4,
+    "left": 723.5,
+    "right": 833.4
+   },
+   {
+    "name": "Räume",
+    "href": "/rooms",
+    "current": null,
+    "x": 840.5,
+    "y": 812.9,
+    "w": 109.8,
+    "h": 35.4,
+    "top": 812.9,
+    "bottom": 848.4,
+    "left": 840.5,
+    "right": 950.3
+   },
+   {
+    "name": "Stundenplan",
+    "href": "/schedule",
+    "current": null,
+    "x": 548.2,
+    "y": 855.5,
+    "w": 109.8,
+    "h": 35.4,
+    "top": 855.5,
+    "bottom": 890.9,
+    "left": 548.2,
+    "right": 658
+   },
+   {
+    "name": "Raumbuchung",
+    "href": "/booking",
+    "current": null,
+    "x": 665.1,
+    "y": 855.5,
+    "w": 109.8,
+    "h": 35.4,
+    "top": 855.5,
+    "bottom": 890.9,
+    "left": 665.1,
+    "right": 774.9
+   },
+   {
+    "name": "Mitteilungen",
+    "href": "/display",
+    "current": "page",
+    "x": 782,
+    "y": 855.5,
+    "w": 109.8,
+    "h": 35.4,
+    "top": 855.5,
+    "bottom": 890.9,
+    "left": 782,
+    "right": 891.8
+   }
+  ],
+  "rows": [
+   {
+    "count": 4,
+    "top": 812.9,
+    "left": 489.7,
+    "right": 950.3,
+    "centre": 720,
+    "minH": 35.4,
+    "minW": 109.8,
+    "minGap": 7,
+    "names": [
+     "Start",
+     "Neu am Campus",
+     "Karte",
+     "Räume"
+    ]
+   },
+   {
+    "count": 3,
+    "top": 855.5,
+    "left": 548.2,
+    "right": 891.8,
+    "centre": 720,
+    "minH": 35.4,
+    "minW": 109.8,
+    "minGap": 7.1,
+    "names": [
+     "Stundenplan",
+     "Raumbuchung",
+     "Mitteilungen"
+    ]
+   }
+  ],
+  "rowVerticalGap": 7.2,
+  "navBox": {
+   "x": 489.7,
+   "y": 812.9,
+   "w": 460.7,
+   "h": 78,
+   "top": 812.9,
+   "bottom": 890.9,
+   "left": 489.7,
+   "right": 950.3
+  },
+  "navCentreYRatio": 0.9,
+  "lang": {
+   "found": true,
+   "box": {
+    "x": 648.8,
+    "y": 768.4,
+    "w": 142.4,
+    "h": 37.4,
+    "top": 768.4,
+    "bottom": 805.9,
+    "left": 648.8,
+    "right": 791.2
+   },
+   "gapBetween": 7.6,
+   "links": [
+    {
+     "name": "Deutsch",
+     "current": "true",
+     "href": "/display",
+     "x": 652.3,
+     "y": 772,
+     "w": 66.2,
+     "h": 30.4,
+     "top": 772,
+     "bottom": 802.3,
+     "left": 652.3,
+     "right": 718.5
+    },
+    {
+     "name": "English",
+     "current": null,
+     "href": "/display?lang=en",
+     "x": 726.1,
+     "y": 772,
+     "w": 61.6,
+     "h": 30.4,
+     "top": 772,
+     "bottom": 802.3,
+     "left": 726.1,
+     "right": 787.7
+    }
+   ],
+   "centreYRatio": 0.9
+  },
+  "pinned": null,
+  "cssVars": {
+   "dockH": null,
+   "scrollPaddingBottom": "auto",
+   "fontSize": "16px"
+  },
+  "media": {
+   "portraitMinW520": false,
+   "coarse": false,
+   "hoverNone": false
+  }
+ },
+ "clear": {
+  "scrollY": 0,
+  "docHeight": 900,
+  "dockTop": null,
+  "lastContentBottom": 717.1,
+  "footerBottom": 758.3,
+  "lowestBottom": 758.3,
+  "clearOfDock": true,
+  "clearance": null
+ },
+ "focus": {
+  "stops": 9,
+  "coveredByDock": [],
+  "outsideViewport": [],
+  "withoutRing": []
+ }
+}

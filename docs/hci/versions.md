@@ -5,7 +5,7 @@
 | Original deliveries | `746f1e7` (Aryan V12.2), `a06edaa` (Aryan+Parsa joint), `c2fd85a` (Reza) — pre-publication `7326b8e`, `1c566f3`, `6bc0b21` | Teammates' work, imported unchanged | `docs/contributions.md`, source hashes 67/67 | Integrated behaviour |
 | **integrated-v1** | code: `7588746` (pre-publication `64d2801`; branch `integrate/team-v1-20261031`; docs-only commits follow) | Technical integration of all modules; CH-001…CH-011 | T17: typecheck 0, lint 0 problems, unit 134/134, build 0, E2E 60/60, concurrency 3/3, restart PASS 13 — `docs/evidence/integration-2026-10-31/T17/` | Human usability, physical screen, real campus accuracy, real timetable |
 | **v1-corrected** (technical revision) | code: `27ef96b` (pre-publication `9144cff`) | integrated-v1 plus the two review corrections CH-012 (V1-R001) and CH-013 (V1-R002); same architecture, API and data model | `docs/evidence/v1-corrections-2026-11-01/`: probes red before / green after; typecheck 0, lint 0, unit 136/136, concurrency 3/3, build 0, E2E 66/66, restart PASS 13; clean demo screenshots (simulated portrait) | Not a V2, not human-tested; no measured usability benefit |
-| V2 | — | Not started; will follow T23 findings | — | — |
+| **V2-in-progress** | branch `integrate/v2-ali-parsa-20261104` (local integration; see final handoff for SHAs) | Ali Stages1/2 + Parsa delivered V2 module and Ali review fixes; Stage3/map/copy still pending | `docs/evidence/v2-integration-2026-11-04/` plus preserved stage evidence | Not full V2 acceptance; no physical/human validation |
 
 ## integrated-v1 reproduction
 

@@ -1,0 +1,4 @@
+(a) wrong code, same length, one char changed: Reservierung stornieren DEMO – kein offizielles Raumbuchungssystem. Buchungsnummer Stornierungscode Nummer und Code passen zu keiner Reservierung. Bitte prüfe beide Angaben. Stornierung bestätigen Zur Raumbuchung
+(b) wrong booking id, one char changed: Reservierung stornieren DEMO – kein offizielles Raumbuchungssystem. Buchungsnummer Stornierungscode Die Buchungsnummer hat nicht das richtige Format. Bitte prüfe sie. Stornierung bestätigen Zur Raumbuchung
+(c) correct pair: Reservierung stornieren DEMO – kein offizielles Raumbuchungssystem. ✓ Die Reservierung wurde storniert. Zur Raumbuchung
+(d) after cancel: 'Reservierung stornieren' page has a way home?: ["Zur Raumbuchung"]

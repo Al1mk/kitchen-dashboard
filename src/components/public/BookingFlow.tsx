@@ -96,6 +96,7 @@ export function BookingFlow({
   const [phase, setPhase] = useState<Phase>({ kind: "select" });
   const [notice, setNotice] = useState<BookingErrorKey | null>(null);
   const sending = useRef(false);
+  const reviewRef = useRef<HTMLElement>(null);
   // A link to /booking with other parameters (nav, map) resets room/date; never while a request is unresolved.
   const [urlState, setUrlState] = useState({ roomId: initialRoomId, date: initialDate });
   if ((urlState.roomId !== initialRoomId || urlState.date !== initialDate) && phase.kind !== "submitting" && phase.kind !== "uncertain") {
@@ -108,7 +109,12 @@ export function BookingFlow({
   }
 
   const locked = phase.kind === "submitting" || phase.kind === "uncertain";
-  const guard = useLeaveGuard(locked);
+  const guard = useLeaveGuard(locked || (phase.kind === "receipt" && phase.receipt.status !== "cancelled"), phase.kind === "receipt");
+
+  // AP-03: the review can be far below the chosen time on a portrait kiosk.
+  useEffect(() => {
+    if (phase.kind === "review") reviewRef.current?.scrollIntoView({ block: "start", behavior: "auto" });
+  }, [phase.kind]);
 
   const rooms = roomsState.status === "ok" ? roomsState.rooms : [];
   const selectedRoom = rooms.find((r) => r.id === roomId) ?? null;
@@ -257,6 +263,7 @@ export function BookingFlow({
     return (
       <div className="flex flex-col gap-5" data-testid="booking-flow">
         <BookingReceipt receipt={phase.receipt} lang={lang} onDone={finish} />
+        <LeaveDialog open={guard.blockedHref !== null} lang={lang} receipt onStay={guard.stay} onLeave={() => abandon(guard.blockedHref)} />
       </div>
     );
   }
@@ -427,7 +434,7 @@ export function BookingFlow({
       )}
 
       {phase.kind !== "select" && shown && shownName && (
-        <section aria-labelledby="booking-review" className="flex flex-col gap-3 rounded-xl border-2 border-brand bg-surface p-5">
+        <section ref={reviewRef} aria-labelledby="booking-review" className="flex flex-col gap-3 rounded-xl border-2 border-brand bg-surface p-5">
           <h2 id="booking-review" className="font-display text-2xl font-bold">
             {t.review}
           </h2>
@@ -479,7 +486,7 @@ export function BookingFlow({
 }
 
 /** Asks before leaving while a booking request is unresolved (T08). */
-function LeaveDialog({ open, lang, onStay, onLeave }: { open: boolean; lang: Lang; onStay: () => void; onLeave: () => void }) {
+function LeaveDialog({ open, lang, receipt = false, onStay, onLeave }: { open: boolean; lang: Lang; receipt?: boolean; onStay: () => void; onLeave: () => void }) {
   const t = BOOKING_COPY[lang];
   const ref = useRef<HTMLDialogElement>(null);
   const titleId = useId();
@@ -504,10 +511,10 @@ function LeaveDialog({ open, lang, onStay, onLeave }: { open: boolean; lang: Lan
     >
       <div className="flex flex-col gap-4 p-6">
         <h2 id={titleId} className="font-display text-2xl font-bold">
-          {t.guardTitle}
+          {receipt ? t.receiptLeaveTitle : t.guardTitle}
         </h2>
         <p id={textId} className="text-lg">
-          {t.guardText}
+          {receipt ? t.receiptLeaveText : t.guardText}
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
           <button type="button" autoFocus onClick={onStay} className="min-h-16 rounded-xl bg-ink px-4 text-lg font-bold text-white">

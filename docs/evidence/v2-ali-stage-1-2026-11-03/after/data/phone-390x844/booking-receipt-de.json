@@ -1,0 +1,16 @@
+{
+ "ctx": "phone-390x844",
+ "name": "booking-receipt",
+ "lang": "de",
+ "label": "after",
+ "geo": {
+  "vw": 390,
+  "vh": 844,
+  "pinned": null,
+  "navCount": 1
+ },
+ "doneButton": {
+  "top": 669,
+  "bottom": 733
+ }
+}

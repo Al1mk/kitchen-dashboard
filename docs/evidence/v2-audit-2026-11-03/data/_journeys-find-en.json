@@ -1,0 +1,2277 @@
+{
+ "ctx": "kiosk-nominal-1080x1920",
+ "note": "Nominal portrait kiosk simulation: Chromium viewport 1080x1920 CSS px, DPR 1, touch enabled, isMobile false",
+ "lang": "en",
+ "log": [
+  {
+   "journey": "A1-find-room",
+   "n": 1,
+   "step": "start",
+   "ok": true,
+   "ms": 999,
+   "url": "/?lang=en",
+   "h1": "Campus information",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Campus information Information for students and visitors at Lucas-Cranach-Campus. New to campus First orientation: where do I find what? Map Find rooms on the floor plan Rooms All rooms by floor Schedule Classes by day and room Booking Check free times and make a test booking (demo) Announcements Current notices for the campus",
+   "buttons": [
+    "New to campus First orientation: where d",
+    "Map Find rooms on the floor plan",
+    "Rooms All rooms by floor",
+    "Schedule Classes by day and room",
+    "Booking Check free times and make a test",
+    "Announcements Current notices for the ca"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A1-find-room-en-01-start.png"
+  },
+  {
+   "journey": "A1-find-room",
+   "n": 2,
+   "step": "tap-rooms-nav",
+   "ok": true,
+   "ms": 477,
+   "url": "/rooms?lang=en",
+   "h1": "Rooms",
+   "scrollY": 0,
+   "docH": 16511,
+   "vh": 1920,
+   "mainText": "Rooms Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Search for a room, lecturer or course Room number (e.g. K1-105 or 105), room name, lecturer or course. Sample data: Entries marked “Example” are invented demo data, not official room or class information. Ground floor DEMO-E01 Kitchen / common room (Demo) Example Common room / kitchen Example entry: location and equipment are invented. Today in this room Show on the map DEMO-E02 Lecture hall A (Demo) Example Lecture hall Example entry: location and equipment are invented. Today in this room S",
+   "buttons": [
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A1-find-room-en-02-tap-rooms-nav.png"
+  },
+  {
+   "journey": "A1-find-room",
+   "n": 3,
+   "step": "type-120",
+   "ok": true,
+   "ms": 634,
+   "url": "/rooms?suche=120&lang=en",
+   "h1": "Rooms",
+   "scrollY": 0,
+   "docH": 3806,
+   "vh": 1920,
+   "mainText": "Rooms Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Search for a room, lecturer or course Room number (e.g. K1-105 or 105), room name, lecturer or course. Clear search Sample data: Entries marked “Example” are invented demo data, not official room or class information. Matching rooms · 9 rooms 1st floor K1-120 Seminar room Example Seminar room Today in this room Show on the map Book this room (demo) 2nd floor K1-201 Restroom Example Other Today in this room Show on the map K1-202 Restroom Example Other Today in this room Show on the map K1-203",
+   "buttons": [
+    "Clear search",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "← Previous day",
+    "Today",
+    "Next day →"
+   ],
+   "active": "input#room-search",
+   "shot": "journeys/kiosk-nominal-1080x1920/A1-find-room-en-03-type-120.png"
+  },
+  {
+   "journey": "A1-find-room",
+   "n": 4,
+   "step": "results-120",
+   "ok": true,
+   "ms": 414,
+   "url": "/rooms?suche=120&lang=en",
+   "h1": "Rooms",
+   "scrollY": 0,
+   "docH": 3806,
+   "vh": 1920,
+   "mainText": "Rooms Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Search for a room, lecturer or course Room number (e.g. K1-105 or 105), room name, lecturer or course. Clear search Sample data: Entries marked “Example” are invented demo data, not official room or class information. Matching rooms · 9 rooms 1st floor K1-120 Seminar room Example Seminar room Today in this room Show on the map Book this room (demo) 2nd floor K1-201 Restroom Example Other Today in this room Show on the map K1-202 Restroom Example Other Today in this room Show on the map K1-203",
+   "buttons": [
+    "Clear search",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "← Previous day",
+    "Today",
+    "Next day →"
+   ],
+   "active": "input#room-search",
+   "shot": "journeys/kiosk-nominal-1080x1920/A1-find-room-en-04-results-120.png"
+  },
+  {
+   "journey": "A1-find-room",
+   "n": 5,
+   "step": "tap-show-on-map",
+   "ok": true,
+   "ms": 500,
+   "url": "/map?raum=lcc-demo-room-k1-120&lang=en",
+   "h1": "Map",
+   "scrollY": 0,
+   "docH": 2604,
+   "vh": 1920,
+   "mainText": "Map Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Choose a floor, tap a marker or search by room number or name. Note: the plans are AI-generated illustrations from the team prototype, not a verified building or emergency plan. Positions refer to the images. Sample data: Entries marked “Example” are invented demo data, not official room or class information. Ground floor 1st floor 2nd floor 3rd floor Search rooms 1st floor − + Whole plan K1-103 K1-104 K1-105 K1-106 K1-107 K1-108 K1-109 K1-110 K1-111 K1-112 K1-113 K1-115 K1-116 K1-118 K1-119 K1",
+   "buttons": [
+    "Ground floor",
+    "1st floor",
+    "2nd floor",
+    "3rd floor",
+    "Zoom out",
+    "Zoom in",
+    "Whole plan",
+    "K1-103, Seminar room 1",
+    "K1-104, Shared Space",
+    "K1-105, IT room",
+    "K1-106, Seminar room 3",
+    "K1-107, Secretariat",
+    "K1-108, Communication area",
+    "K1-109, Circulation area",
+    "K1-110, Workspaces",
+    "K1-111, Workspaces",
+    "K1-112, Machine room",
+    "K1-113, Welding area",
+    "K1-115, Room",
+    "K1-116, Room",
+    "K1-118, Room",
+    "K1-119, Media Lab",
+    "K1-120, Seminar room",
+    "K1-121, Electronics workshop",
+    "K1-122, Room",
+    "K1-123, Room",
+    "K1-124, Networking",
+    "K1-125, Seminar room",
+    "Show on the plan",
+    "Classes in this room",
+    "Book this room (demo)",
+    "DEMO-101 Seminar room 1 (Demo)",
+    "DEMO-102 PC-Labor (Demo)",
+    "K1-103 Seminar room 1",
+    "K1-104 Shared Space",
+    "K1-105 IT room",
+    "K1-106 Seminar room 3",
+    "K1-107 Secretariat",
+    "K1-108 Communication area",
+    "K1-109 Circulation area"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A1-find-room-en-05-tap-show-on-map.png"
+  },
+  {
+   "journey": "A1-find-room",
+   "n": 6,
+   "step": "map-selected",
+   "ok": true,
+   "ms": 456,
+   "url": "/map?raum=lcc-demo-room-k1-120&lang=en",
+   "h1": "Map",
+   "scrollY": 0,
+   "docH": 2604,
+   "vh": 1920,
+   "mainText": "Map Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Choose a floor, tap a marker or search by room number or name. Note: the plans are AI-generated illustrations from the team prototype, not a verified building or emergency plan. Positions refer to the images. Sample data: Entries marked “Example” are invented demo data, not official room or class information. Ground floor 1st floor 2nd floor 3rd floor Search rooms 1st floor − + Whole plan K1-103 K1-104 K1-105 K1-106 K1-107 K1-108 K1-109 K1-110 K1-111 K1-112 K1-113 K1-115 K1-116 K1-118 K1-119 K1",
+   "buttons": [
+    "Ground floor",
+    "1st floor",
+    "2nd floor",
+    "3rd floor",
+    "Zoom out",
+    "Zoom in",
+    "Whole plan",
+    "K1-103, Seminar room 1",
+    "K1-104, Shared Space",
+    "K1-105, IT room",
+    "K1-106, Seminar room 3",
+    "K1-107, Secretariat",
+    "K1-108, Communication area",
+    "K1-109, Circulation area",
+    "K1-110, Workspaces",
+    "K1-111, Workspaces",
+    "K1-112, Machine room",
+    "K1-113, Welding area",
+    "K1-115, Room",
+    "K1-116, Room",
+    "K1-118, Room",
+    "K1-119, Media Lab",
+    "K1-120, Seminar room",
+    "K1-121, Electronics workshop",
+    "K1-122, Room",
+    "K1-123, Room",
+    "K1-124, Networking",
+    "K1-125, Seminar room",
+    "Show on the plan",
+    "Classes in this room",
+    "Book this room (demo)",
+    "DEMO-101 Seminar room 1 (Demo)",
+    "DEMO-102 PC-Labor (Demo)",
+    "K1-103 Seminar room 1",
+    "K1-104 Shared Space",
+    "K1-105 IT room",
+    "K1-106 Seminar room 3",
+    "K1-107 Secretariat",
+    "K1-108 Communication area",
+    "K1-109 Circulation area"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A1-find-room-en-06-map-selected.png"
+  },
+  {
+   "journey": "A1-find-room",
+   "n": 7,
+   "step": "tap-schedule-link",
+   "ok": true,
+   "ms": 435,
+   "url": "/schedule?raum=lcc-demo-room-k1-120&lang=en",
+   "h1": "Schedule",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Schedule Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Tuesday, 3 November 2026· Today ← Previous day Today Next day → Room K1-120 – Seminar room (1st floor) On the map All rooms Sample data: Entries marked “Example” are invented demo data, not official room or class information. 10:00–11:30 Mensch-Maschine-Interaktion (Demo) In progress Example Room K1-120 – Seminar room · 1st floor Beispielsemester (Demo) · Prof. Dr. Christian Zagel",
+   "buttons": [
+    "← Previous day",
+    "Today",
+    "Next day →",
+    "On the map",
+    "All rooms"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A1-find-room-en-07-tap-schedule-link.png"
+  },
+  {
+   "journey": "A1-find-room",
+   "n": 8,
+   "step": "schedule-for-room",
+   "ok": true,
+   "ms": 398,
+   "url": "/schedule?raum=lcc-demo-room-k1-120&lang=en",
+   "h1": "Schedule",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Schedule Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Tuesday, 3 November 2026· Today ← Previous day Today Next day → Room K1-120 – Seminar room (1st floor) On the map All rooms Sample data: Entries marked “Example” are invented demo data, not official room or class information. 10:00–11:30 Mensch-Maschine-Interaktion (Demo) In progress Example Room K1-120 – Seminar room · 1st floor Beispielsemester (Demo) · Prof. Dr. Christian Zagel",
+   "buttons": [
+    "← Previous day",
+    "Today",
+    "Next day →",
+    "On the map",
+    "All rooms"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A1-find-room-en-08-schedule-for-room.png"
+  },
+  {
+   "journey": "A1-find-room",
+   "n": 9,
+   "step": "tap-home",
+   "ok": true,
+   "ms": 450,
+   "url": "/?lang=en",
+   "h1": "Campus information",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Campus information Information for students and visitors at Lucas-Cranach-Campus. New to campus First orientation: where do I find what? Map Find rooms on the floor plan Rooms All rooms by floor Schedule Classes by day and room Booking Check free times and make a test booking (demo) Announcements Current notices for the campus",
+   "buttons": [
+    "New to campus First orientation: where d",
+    "Map Find rooms on the floor plan",
+    "Rooms All rooms by floor",
+    "Schedule Classes by day and room",
+    "Booking Check free times and make a test",
+    "Announcements Current notices for the ca"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A1-find-room-en-09-tap-home.png"
+  },
+  {
+   "journey": "A2-map-marker",
+   "n": 10,
+   "step": "open-map",
+   "ok": true,
+   "ms": 1021,
+   "url": "/map?lang=en",
+   "h1": "Map",
+   "scrollY": 0,
+   "docH": 2451,
+   "vh": 1920,
+   "mainText": "Map Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Choose a floor, tap a marker or search by room number or name. Note: the plans are AI-generated illustrations from the team prototype, not a verified building or emergency plan. Positions refer to the images. Sample data: Entries marked “Example” are invented demo data, not official room or class information. Ground floor 1st floor 2nd floor 3rd floor Search rooms 1st floor − + Whole plan K1-103 K1-104 K1-105 K1-106 K1-107 K1-108 K1-109 K1-110 K1-111 K1-112 K1-113 K1-115 K1-116 K1-118 K1-119 K1",
+   "buttons": [
+    "Ground floor",
+    "1st floor",
+    "2nd floor",
+    "3rd floor",
+    "Zoom out",
+    "Zoom in",
+    "Whole plan",
+    "K1-103, Seminar room 1",
+    "K1-104, Shared Space",
+    "K1-105, IT room",
+    "K1-106, Seminar room 3",
+    "K1-107, Secretariat",
+    "K1-108, Communication area",
+    "K1-109, Circulation area",
+    "K1-110, Workspaces",
+    "K1-111, Workspaces",
+    "K1-112, Machine room",
+    "K1-113, Welding area",
+    "K1-115, Room",
+    "K1-116, Room",
+    "K1-118, Room",
+    "K1-119, Media Lab",
+    "K1-120, Seminar room",
+    "K1-121, Electronics workshop",
+    "K1-122, Room",
+    "K1-123, Room",
+    "K1-124, Networking",
+    "K1-125, Seminar room",
+    "DEMO-101 Seminar room 1 (Demo)",
+    "DEMO-102 PC-Labor (Demo)",
+    "K1-103 Seminar room 1",
+    "K1-104 Shared Space",
+    "K1-105 IT room",
+    "K1-106 Seminar room 3",
+    "K1-107 Secretariat",
+    "K1-108 Communication area",
+    "K1-109 Circulation area",
+    "K1-110 Workspaces",
+    "K1-111 Workspaces",
+    "K1-112 Machine room"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A2-map-marker-en-10-open-map.png"
+  },
+  {
+   "journey": "A2-map-marker",
+   "n": 11,
+   "step": "tap-marker-K1-120",
+   "ok": true,
+   "ms": 503,
+   "url": "/map?raum=lcc-demo-room-k1-120&lang=en",
+   "h1": "Map",
+   "scrollY": 0,
+   "docH": 2604,
+   "vh": 1920,
+   "mainText": "Map Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Choose a floor, tap a marker or search by room number or name. Note: the plans are AI-generated illustrations from the team prototype, not a verified building or emergency plan. Positions refer to the images. Sample data: Entries marked “Example” are invented demo data, not official room or class information. Ground floor 1st floor 2nd floor 3rd floor Search rooms 1st floor − + Whole plan K1-103 K1-104 K1-105 K1-106 K1-107 K1-108 K1-109 K1-110 K1-111 K1-112 K1-113 K1-115 K1-116 K1-118 K1-119 K1",
+   "buttons": [
+    "Ground floor",
+    "1st floor",
+    "2nd floor",
+    "3rd floor",
+    "Zoom out",
+    "Zoom in",
+    "Whole plan",
+    "K1-103, Seminar room 1",
+    "K1-104, Shared Space",
+    "K1-105, IT room",
+    "K1-106, Seminar room 3",
+    "K1-107, Secretariat",
+    "K1-108, Communication area",
+    "K1-109, Circulation area",
+    "K1-110, Workspaces",
+    "K1-111, Workspaces",
+    "K1-112, Machine room",
+    "K1-113, Welding area",
+    "K1-115, Room",
+    "K1-116, Room",
+    "K1-118, Room",
+    "K1-119, Media Lab",
+    "K1-120, Seminar room",
+    "K1-121, Electronics workshop",
+    "K1-122, Room",
+    "K1-123, Room",
+    "K1-124, Networking",
+    "K1-125, Seminar room",
+    "Show on the plan",
+    "Classes in this room",
+    "Book this room (demo)",
+    "DEMO-101 Seminar room 1 (Demo)",
+    "DEMO-102 PC-Labor (Demo)",
+    "K1-103 Seminar room 1",
+    "K1-104 Shared Space",
+    "K1-105 IT room",
+    "K1-106 Seminar room 3",
+    "K1-107 Secretariat",
+    "K1-108 Communication area",
+    "K1-109 Circulation area"
+   ],
+   "active": "button",
+   "shot": "journeys/kiosk-nominal-1080x1920/A2-map-marker-en-11-tap-marker-K1-120.png"
+  },
+  {
+   "journey": "A2-map-marker",
+   "n": 12,
+   "step": "selected-panel",
+   "ok": true,
+   "ms": 447,
+   "url": "/map?raum=lcc-demo-room-k1-120&lang=en",
+   "h1": "Map",
+   "scrollY": 0,
+   "docH": 2604,
+   "vh": 1920,
+   "mainText": "Map Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Choose a floor, tap a marker or search by room number or name. Note: the plans are AI-generated illustrations from the team prototype, not a verified building or emergency plan. Positions refer to the images. Sample data: Entries marked “Example” are invented demo data, not official room or class information. Ground floor 1st floor 2nd floor 3rd floor Search rooms 1st floor − + Whole plan K1-103 K1-104 K1-105 K1-106 K1-107 K1-108 K1-109 K1-110 K1-111 K1-112 K1-113 K1-115 K1-116 K1-118 K1-119 K1",
+   "buttons": [
+    "Ground floor",
+    "1st floor",
+    "2nd floor",
+    "3rd floor",
+    "Zoom out",
+    "Zoom in",
+    "Whole plan",
+    "K1-103, Seminar room 1",
+    "K1-104, Shared Space",
+    "K1-105, IT room",
+    "K1-106, Seminar room 3",
+    "K1-107, Secretariat",
+    "K1-108, Communication area",
+    "K1-109, Circulation area",
+    "K1-110, Workspaces",
+    "K1-111, Workspaces",
+    "K1-112, Machine room",
+    "K1-113, Welding area",
+    "K1-115, Room",
+    "K1-116, Room",
+    "K1-118, Room",
+    "K1-119, Media Lab",
+    "K1-120, Seminar room",
+    "K1-121, Electronics workshop",
+    "K1-122, Room",
+    "K1-123, Room",
+    "K1-124, Networking",
+    "K1-125, Seminar room",
+    "Show on the plan",
+    "Classes in this room",
+    "Book this room (demo)",
+    "DEMO-101 Seminar room 1 (Demo)",
+    "DEMO-102 PC-Labor (Demo)",
+    "K1-103 Seminar room 1",
+    "K1-104 Shared Space",
+    "K1-105 IT room",
+    "K1-106 Seminar room 3",
+    "K1-107 Secretariat",
+    "K1-108 Communication area",
+    "K1-109 Circulation area"
+   ],
+   "active": "button",
+   "shot": "journeys/kiosk-nominal-1080x1920/A2-map-marker-en-12-selected-panel.png"
+  },
+  {
+   "journey": "A2-map-marker",
+   "n": 13,
+   "step": "tap-floor-2",
+   "ok": true,
+   "ms": 504,
+   "url": "/map?etage=2OG&lang=en",
+   "h1": "Map",
+   "scrollY": 0,
+   "docH": 2297,
+   "vh": 1920,
+   "mainText": "Map Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Choose a floor, tap a marker or search by room number or name. Note: the plans are AI-generated illustrations from the team prototype, not a verified building or emergency plan. Positions refer to the images. Sample data: Entries marked “Example” are invented demo data, not official room or class information. Ground floor 1st floor 2nd floor 3rd floor Search rooms 2nd floor − + Whole plan K1-201 K1-202 K1-203 K1-204 K1-206 K1-207 K1-208 K1-209 K1-210 K1-211 K1-212 K1-213 K1-214 K1-215a K1-215b ",
+   "buttons": [
+    "Ground floor",
+    "1st floor",
+    "2nd floor",
+    "3rd floor",
+    "Zoom out",
+    "Zoom in",
+    "Whole plan",
+    "K1-201, Restroom",
+    "K1-202, Restroom",
+    "K1-203, Room",
+    "K1-204, Office 2",
+    "K1-206, Office 3",
+    "K1-207, Meeting room",
+    "K1-208, Multi-purpose room",
+    "K1-209, Room",
+    "K1-210, Seminar room",
+    "K1-211, Office 1",
+    "K1-212, Tea kitchen",
+    "K1-213, Corridor",
+    "K1-214, Room",
+    "K1-215a, Corridor 2",
+    "K1-215b, Corridor 1",
+    "K1-216, Model city V2X",
+    "K1-217, Testing methods lab",
+    "K1-218, Project room",
+    "DEMO-201 Gruppenraum (Demo)",
+    "DEMO-202 Seminarraum 2 (Demo)",
+    "K1-201 Restroom",
+    "K1-202 Restroom",
+    "K1-203 Room",
+    "K1-204 Office 2",
+    "K1-206 Office 3",
+    "K1-207 Meeting room",
+    "K1-208 Multi-purpose room",
+    "K1-209 Room",
+    "K1-210 Seminar room",
+    "K1-211 Office 1",
+    "K1-212 Tea kitchen",
+    "K1-213 Corridor",
+    "K1-214 Room"
+   ],
+   "active": "button",
+   "shot": "journeys/kiosk-nominal-1080x1920/A2-map-marker-en-13-tap-floor-2.png"
+  },
+  {
+   "journey": "A2-map-marker",
+   "n": 14,
+   "step": "type-search-labor",
+   "ok": true,
+   "ms": 744,
+   "url": "/map?etage=2OG&lang=en",
+   "h1": "Map",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Map Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Choose a floor, tap a marker or search by room number or name. Note: the plans are AI-generated illustrations from the team prototype, not a verified building or emergency plan. Positions refer to the images. Sample data: Entries marked “Example” are invented demo data, not official room or class information. Ground floor 1st floor 2nd floor 3rd floor Search rooms Clear search 2nd floor − + Whole plan K1-217 Selected room No room selected Tap a marker or a room in the list. Search rooms · 2 roo",
+   "buttons": [
+    "Ground floor",
+    "1st floor",
+    "2nd floor",
+    "3rd floor",
+    "Clear search",
+    "Zoom out",
+    "Zoom in",
+    "Whole plan",
+    "K1-217, Testing methods lab",
+    "DEMO-102 PC-Labor (Demo) · 1st floor",
+    "K1-217 Testing methods lab · 2nd floor"
+   ],
+   "active": "input#map-search",
+   "shot": "journeys/kiosk-nominal-1080x1920/A2-map-marker-en-14-type-search-labor.png"
+  },
+  {
+   "journey": "A2-map-marker",
+   "n": 15,
+   "step": "tap-room-in-list",
+   "ok": true,
+   "ms": 483,
+   "url": "/map?raum=lcc-demo-room-k1-217&lang=en",
+   "h1": "Map",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Map Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Choose a floor, tap a marker or search by room number or name. Note: the plans are AI-generated illustrations from the team prototype, not a verified building or emergency plan. Positions refer to the images. Sample data: Entries marked “Example” are invented demo data, not official room or class information. Ground floor 1st floor 2nd floor 3rd floor Search rooms Clear search 2nd floor − + Whole plan K1-217 Selected room K1-217 Testing methods lab Example 2nd floor · Lab / computer room Show o",
+   "buttons": [
+    "Ground floor",
+    "1st floor",
+    "2nd floor",
+    "3rd floor",
+    "Clear search",
+    "Zoom out",
+    "Zoom in",
+    "Whole plan",
+    "K1-217, Testing methods lab",
+    "Show on the plan",
+    "Classes in this room",
+    "Book this room (demo)",
+    "DEMO-102 PC-Labor (Demo) · 1st floor",
+    "K1-217 Testing methods lab · 2nd floor"
+   ],
+   "active": "button",
+   "shot": "journeys/kiosk-nominal-1080x1920/A2-map-marker-en-15-tap-room-in-list.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 16,
+   "step": "rooms-zagel",
+   "ok": true,
+   "ms": 1045,
+   "url": "/rooms?suche=Zagel&lang=en",
+   "h1": "Rooms",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Rooms Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Search for a room, lecturer or course Room number (e.g. K1-105 or 105), room name, lecturer or course. Clear search Sample data: Entries marked “Example” are invented demo data, not official room or class information. Matching rooms · 0 rooms No room matches “Zagel”. Check the room number or spelling. Matching classes · Tuesday, 3 November 2026 · 2 classes The room shown is where the class takes place on that day – not an office and not where a person is right now. Day of the classes ← Previo",
+   "buttons": [
+    "Clear search",
+    "← Previous day",
+    "Today",
+    "Next day →",
+    "Show on the map",
+    "Classes in this room",
+    "Show on the map",
+    "Classes in this room"
+   ],
+   "active": "input#room-search",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-en-16-rooms-zagel.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 17,
+   "step": "next-day",
+   "ok": true,
+   "ms": 455,
+   "url": "/rooms?suche=Zagel&datum=2026-11-04&lang=en",
+   "h1": "Rooms",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Rooms Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Search for a room, lecturer or course Room number (e.g. K1-105 or 105), room name, lecturer or course. Clear search Sample data: Entries marked “Example” are invented demo data, not official room or class information. Matching rooms · 0 rooms No room matches “Zagel”. Check the room number or spelling. Matching classes · Wednesday, 4 November 2026 · 0 classes The room shown is where the class takes place on that day – not an office and not where a person is right now. Day of the classes ← Prev",
+   "buttons": [
+    "Clear search",
+    "← Previous day",
+    "Today",
+    "Next day →"
+   ],
+   "active": "button",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-en-17-next-day.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 18,
+   "step": "back-to-today",
+   "ok": true,
+   "ms": 440,
+   "url": "/rooms?suche=Zagel&lang=en",
+   "h1": "Rooms",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Rooms Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Search for a room, lecturer or course Room number (e.g. K1-105 or 105), room name, lecturer or course. Clear search Sample data: Entries marked “Example” are invented demo data, not official room or class information. Matching rooms · 0 rooms No room matches “Zagel”. Check the room number or spelling. Matching classes · Tuesday, 3 November 2026 · 2 classes The room shown is where the class takes place on that day – not an office and not where a person is right now. Day of the classes ← Previo",
+   "buttons": [
+    "Clear search",
+    "← Previous day",
+    "Today",
+    "Next day →",
+    "Show on the map",
+    "Classes in this room",
+    "Show on the map",
+    "Classes in this room"
+   ],
+   "active": "button",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-en-18-back-to-today.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 19,
+   "step": "tap-class-map-link",
+   "ok": true,
+   "ms": 495,
+   "url": "/map?raum=lcc-demo-room-k1-120&datum=2026-11-03&lang=en",
+   "h1": "Map",
+   "scrollY": 0,
+   "docH": 2604,
+   "vh": 1920,
+   "mainText": "Map Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Choose a floor, tap a marker or search by room number or name. Note: the plans are AI-generated illustrations from the team prototype, not a verified building or emergency plan. Positions refer to the images. Sample data: Entries marked “Example” are invented demo data, not official room or class information. Ground floor 1st floor 2nd floor 3rd floor Search rooms 1st floor − + Whole plan K1-103 K1-104 K1-105 K1-106 K1-107 K1-108 K1-109 K1-110 K1-111 K1-112 K1-113 K1-115 K1-116 K1-118 K1-119 K1",
+   "buttons": [
+    "Ground floor",
+    "1st floor",
+    "2nd floor",
+    "3rd floor",
+    "Zoom out",
+    "Zoom in",
+    "Whole plan",
+    "K1-103, Seminar room 1",
+    "K1-104, Shared Space",
+    "K1-105, IT room",
+    "K1-106, Seminar room 3",
+    "K1-107, Secretariat",
+    "K1-108, Communication area",
+    "K1-109, Circulation area",
+    "K1-110, Workspaces",
+    "K1-111, Workspaces",
+    "K1-112, Machine room",
+    "K1-113, Welding area",
+    "K1-115, Room",
+    "K1-116, Room",
+    "K1-118, Room",
+    "K1-119, Media Lab",
+    "K1-120, Seminar room",
+    "K1-121, Electronics workshop",
+    "K1-122, Room",
+    "K1-123, Room",
+    "K1-124, Networking",
+    "K1-125, Seminar room",
+    "Show on the plan",
+    "Classes in this room",
+    "Book this room (demo)",
+    "DEMO-101 Seminar room 1 (Demo)",
+    "DEMO-102 PC-Labor (Demo)",
+    "K1-103 Seminar room 1",
+    "K1-104 Shared Space",
+    "K1-105 IT room",
+    "K1-106 Seminar room 3",
+    "K1-107 Secretariat",
+    "K1-108 Communication area",
+    "K1-109 Circulation area"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-en-19-tap-class-map-link.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 20,
+   "step": "browser-back",
+   "ok": true,
+   "ms": 422,
+   "url": "/rooms?suche=Zagel&lang=en",
+   "h1": "Rooms",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Rooms Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Search for a room, lecturer or course Room number (e.g. K1-105 or 105), room name, lecturer or course. Clear search Sample data: Entries marked “Example” are invented demo data, not official room or class information. Matching rooms · 0 rooms No room matches “Zagel”. Check the room number or spelling. Matching classes · Tuesday, 3 November 2026 · 2 classes The room shown is where the class takes place on that day – not an office and not where a person is right now. Day of the classes ← Previo",
+   "buttons": [
+    "Clear search",
+    "← Previous day",
+    "Today",
+    "Next day →",
+    "Show on the map",
+    "Classes in this room",
+    "Show on the map",
+    "Classes in this room"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-en-20-browser-back.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 21,
+   "step": "clear-search",
+   "ok": true,
+   "ms": 449,
+   "url": "/rooms?lang=en",
+   "h1": "Rooms",
+   "scrollY": 0,
+   "docH": 16511,
+   "vh": 1920,
+   "mainText": "Rooms Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Search for a room, lecturer or course Room number (e.g. K1-105 or 105), room name, lecturer or course. Sample data: Entries marked “Example” are invented demo data, not official room or class information. Ground floor DEMO-E01 Kitchen / common room (Demo) Example Common room / kitchen Example entry: location and equipment are invented. Today in this room Show on the map DEMO-E02 Lecture hall A (Demo) Example Lecture hall Example entry: location and equipment are invented. Today in this room S",
+   "buttons": [
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map"
+   ],
+   "active": "input#room-search",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-en-21-clear-search.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 22,
+   "step": "search-typo-zagl",
+   "ok": true,
+   "ms": 676,
+   "url": "/rooms?suche=Zagl&lang=en",
+   "h1": "Rooms",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Rooms Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Search for a room, lecturer or course Room number (e.g. K1-105 or 105), room name, lecturer or course. Clear search Sample data: Entries marked “Example” are invented demo data, not official room or class information. Matching rooms · 0 rooms No room matches “Zagl”. Check the room number or spelling. Matching classes · Tuesday, 3 November 2026 · 0 classes The room shown is where the class takes place on that day – not an office and not where a person is right now. Day of the classes ← Previou",
+   "buttons": [
+    "Clear search",
+    "← Previous day",
+    "Today",
+    "Next day →"
+   ],
+   "active": "input#room-search",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-en-22-search-typo-zagl.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 23,
+   "step": "clear-2",
+   "ok": true,
+   "ms": 470,
+   "url": "/rooms?lang=en",
+   "h1": "Rooms",
+   "scrollY": 0,
+   "docH": 16511,
+   "vh": 1920,
+   "mainText": "Rooms Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Search for a room, lecturer or course Room number (e.g. K1-105 or 105), room name, lecturer or course. Sample data: Entries marked “Example” are invented demo data, not official room or class information. Ground floor DEMO-E01 Kitchen / common room (Demo) Example Common room / kitchen Example entry: location and equipment are invented. Today in this room Show on the map DEMO-E02 Lecture hall A (Demo) Example Lecture hall Example entry: location and equipment are invented. Today in this room S",
+   "buttons": [
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map"
+   ],
+   "active": "input#room-search",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-en-23-clear-2.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 24,
+   "step": "search-HCI",
+   "ok": true,
+   "ms": 611,
+   "url": "/rooms?suche=HCI&lang=en",
+   "h1": "Rooms",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Rooms Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Search for a room, lecturer or course Room number (e.g. K1-105 or 105), room name, lecturer or course. Clear search Sample data: Entries marked “Example” are invented demo data, not official room or class information. Matching rooms · 0 rooms No room matches “HCI”. Check the room number or spelling. Matching classes · Tuesday, 3 November 2026 · 2 classes The room shown is where the class takes place on that day – not an office and not where a person is right now. Day of the classes ← Previous",
+   "buttons": [
+    "Clear search",
+    "← Previous day",
+    "Today",
+    "Next day →",
+    "Show on the map",
+    "Classes in this room",
+    "Show on the map",
+    "Classes in this room"
+   ],
+   "active": "input#room-search",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-en-24-search-HCI.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 25,
+   "step": "clear-3",
+   "ok": true,
+   "ms": 474,
+   "url": "/rooms?lang=en",
+   "h1": "Rooms",
+   "scrollY": 0,
+   "docH": 16511,
+   "vh": 1920,
+   "mainText": "Rooms Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Search for a room, lecturer or course Room number (e.g. K1-105 or 105), room name, lecturer or course. Sample data: Entries marked “Example” are invented demo data, not official room or class information. Ground floor DEMO-E01 Kitchen / common room (Demo) Example Common room / kitchen Example entry: location and equipment are invented. Today in this room Show on the map DEMO-E02 Lecture hall A (Demo) Example Lecture hall Example entry: location and equipment are invented. Today in this room S",
+   "buttons": [
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map",
+    "Book this room (demo)",
+    "Today in this room",
+    "Show on the map",
+    "Today in this room",
+    "Show on the map"
+   ],
+   "active": "input#room-search",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-en-25-clear-3.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 26,
+   "step": "search-gibberish",
+   "ok": true,
+   "ms": 727,
+   "url": "/rooms?suche=qqqqq&lang=en",
+   "h1": "Rooms",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Rooms Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Search for a room, lecturer or course Room number (e.g. K1-105 or 105), room name, lecturer or course. Clear search Sample data: Entries marked “Example” are invented demo data, not official room or class information. Matching rooms · 0 rooms No room matches “qqqqq”. Check the room number or spelling. Matching classes · Tuesday, 3 November 2026 · 0 classes The room shown is where the class takes place on that day – not an office and not where a person is right now. Day of the classes ← Previo",
+   "buttons": [
+    "Clear search",
+    "← Previous day",
+    "Today",
+    "Next day →"
+   ],
+   "active": "input#room-search",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-en-26-search-gibberish.png"
+  },
+  {
+   "journey": "A4-newcomer",
+   "n": 27,
+   "step": "start",
+   "ok": true,
+   "ms": 982,
+   "url": "/?lang=en",
+   "h1": "Campus information",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Campus information Information for students and visitors at Lucas-Cranach-Campus. New to campus First orientation: where do I find what? Map Find rooms on the floor plan Rooms All rooms by floor Schedule Classes by day and room Booking Check free times and make a test booking (demo) Announcements Current notices for the campus",
+   "buttons": [
+    "New to campus First orientation: where d",
+    "Map Find rooms on the floor plan",
+    "Rooms All rooms by floor",
+    "Schedule Classes by day and room",
+    "Booking Check free times and make a test",
+    "Announcements Current notices for the ca"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A4-newcomer-en-27-start.png"
+  },
+  {
+   "journey": "A4-newcomer",
+   "n": 28,
+   "step": "tap-newcomer-card",
+   "ok": true,
+   "ms": 456,
+   "url": "/newcomers?lang=en",
+   "h1": "New to campus?",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "New to campus? Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Choose what you need right now. Student HCI prototype – not an official information system of Hochschule Coburg. Rooms and classes shown here are partly example data; please confirm important details with official university sources. Find a room Search by room number or name and see which floor the room is on. The plans are illustrations, not verified building plans. Open the map What is on today? See the listed classes by day and room. Cancelled classes are marked. Open the schedule",
+   "buttons": [
+    "Open the map",
+    "Open the schedule",
+    "View notices",
+    "Book a room",
+    "View announcements"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A4-newcomer-en-28-tap-newcomer-card.png"
+  },
+  {
+   "journey": "A4-newcomer",
+   "n": 29,
+   "step": "tap-help-card-cta",
+   "ok": true,
+   "ms": 426,
+   "url": "/display?lang=en",
+   "h1": null,
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Announcements GENERAL HIGHLIGHTED Welcome to Lucas-Cranach-Campus (Demo) Sample content for the prototype: announcements published in the admin area appear here. EVENT PARTLY IN GERMAN Games night in the kitchen (Demo) Beispielinhalt: Gemeinsamer Spieleabend – Datum und Ort sind erfunden und dienen nur der Demonstration.",
+   "buttons": [],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A4-newcomer-en-29-tap-help-card-cta.png"
+  },
+  {
+   "journey": "A5-schedule",
+   "n": 30,
+   "step": "open",
+   "ok": true,
+   "ms": 974,
+   "url": "/schedule?lang=en",
+   "h1": "Schedule",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Schedule Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Tuesday, 3 November 2026· Today ← Previous day Today Next day → Sample data: Entries marked “Example” are invented demo data, not official room or class information. 08:15–11:30 Programmierung – Übung (Demo) In progress Example Room DEMO-102 – PC-Labor (Demo) Only in German · 1st floor Wirtschaftsinformatik 2.0 – Beispielsemester · Dozent:in C (Demo) 10:00–11:30 Mensch-Maschine-Interaktion (Demo) In progress Example Room K1-120 – Seminar room · 1st floor Beispielsemester (Demo) · Prof. Dr.",
+   "buttons": [
+    "← Previous day",
+    "Today",
+    "Next day →"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A5-schedule-en-30-open.png"
+  },
+  {
+   "journey": "A5-schedule",
+   "n": 31,
+   "step": "tap-next",
+   "ok": true,
+   "ms": 442,
+   "url": "/schedule?datum=2026-11-04&lang=en",
+   "h1": "Schedule",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Schedule Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Wednesday, 4 November 2026 ← Previous day Today Next day → Sample data: Entries marked “Example” are invented demo data, not official room or class information. 08:15–09:45 Betriebswirtschaftslehre (Demo) Example Room DEMO-E02 – Lecture hall A (Demo) · Ground floor Wirtschaftsinformatik 2.0 – Beispielsemester · Dozent:in B (Demo) 08:15–09:45 Projektmanagement (Demo) Example Room K1-120 – Seminar room · 1st floor Beispielsemester (Demo) · Dozent:in C (Demo) 10:00–11:30 Englisch (Demo) Examp",
+   "buttons": [
+    "← Previous day",
+    "Today",
+    "Next day →"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A5-schedule-en-31-tap-next.png"
+  },
+  {
+   "journey": "A5-schedule",
+   "n": 32,
+   "step": "tap-prev-prev",
+   "ok": true,
+   "ms": 653,
+   "url": "/schedule?datum=2026-11-02&lang=en",
+   "h1": "Schedule",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Schedule Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Monday, 2 November 2026 ← Previous day Today Next day → Sample data: Entries marked “Example” are invented demo data, not official room or class information. 08:15–09:45 Einführung in die Wirtschaftsinformatik (Demo) Example Room DEMO-101 – Seminar room 1 (Demo) · 1st floor Wirtschaftsinformatik 2.0 – Beispielsemester · Dozent:in A (Demo) 10:00–11:30 Mathematik (Demo) Example Room DEMO-E02 – Lecture hall A (Demo) · Ground floor Wirtschaftsinformatik 2.0 – Beispielsemester · Dozent:in B (De",
+   "buttons": [
+    "← Previous day",
+    "Today",
+    "Next day →"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A5-schedule-en-32-tap-prev-prev.png"
+  },
+  {
+   "journey": "A5-schedule",
+   "n": 33,
+   "step": "saturday-empty",
+   "ok": true,
+   "ms": 958,
+   "url": "/schedule?lang=en&datum=2026-11-07",
+   "h1": "Schedule",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Schedule Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Saturday, 7 November 2026 ← Previous day Today Next day → No classes are scheduled on this day. Changes appear here automatically.",
+   "buttons": [
+    "← Previous day",
+    "Today",
+    "Next day →"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A5-schedule-en-33-saturday-empty.png"
+  },
+  {
+   "journey": "A5-schedule",
+   "n": 34,
+   "step": "far-future",
+   "ok": true,
+   "ms": 960,
+   "url": "/schedule?lang=en&datum=2031-01-01",
+   "h1": "Schedule",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Schedule Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Wednesday, 1 January 2031 ← Previous day Today Next day → No classes are scheduled on this day. Changes appear here automatically.",
+   "buttons": [
+    "← Previous day",
+    "Today",
+    "Next day →"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A5-schedule-en-34-far-future.png"
+  },
+  {
+   "journey": "A5-schedule",
+   "n": 35,
+   "step": "bad-date",
+   "ok": true,
+   "ms": 969,
+   "url": "/schedule?lang=en&datum=not-a-date",
+   "h1": "Schedule",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Schedule Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Tuesday, 3 November 2026· Today ← Previous day Today Next day → Sample data: Entries marked “Example” are invented demo data, not official room or class information. 08:15–11:30 Programmierung – Übung (Demo) In progress Example Room DEMO-102 – PC-Labor (Demo) Only in German · 1st floor Wirtschaftsinformatik 2.0 – Beispielsemester · Dozent:in C (Demo) 10:00–11:30 Mensch-Maschine-Interaktion (Demo) In progress Example Room K1-120 – Seminar room · 1st floor Beispielsemester (Demo) · Prof. Dr.",
+   "buttons": [
+    "← Previous day",
+    "Today",
+    "Next day →"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A5-schedule-en-35-bad-date.png"
+  },
+  {
+   "journey": "A5-schedule",
+   "n": 36,
+   "step": "room-filter-param",
+   "ok": true,
+   "ms": 4928,
+   "url": "/schedule?lang=en&raum=k1-120",
+   "h1": "Schedule",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Schedule Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. Classes cannot be loaded right now. We keep trying automatically. Try again",
+   "buttons": [
+    "Try again"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A5-schedule-en-36-room-filter-param.png"
+  }
+ ],
+ "events": {
+  "console": [
+   {
+    "type": "error",
+    "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "at": "/schedule?lang=en&raum=k1-120"
+   }
+  ],
+  "pageerror": [],
+  "requestfailed": [
+   {
+    "url": "/newcomers?lang=en&_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?lang=en&_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=demo-room-e01&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=demo-room-e02&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=demo-room-e01&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=demo-room-e02&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=demo-room-101&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=demo-room-102&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=demo-room-101&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=demo-room-101&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-103&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=demo-room-102&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=lcc-demo-room-k1-103&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-103&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-112&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-112&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=lcc-demo-room-k1-112&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-120&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-120&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=lcc-demo-room-k1-120&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-121&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-121&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=lcc-demo-room-k1-121&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-122&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-123&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-122&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-202&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-202&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-201&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-201&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-203&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-204&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-203&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-204&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=lcc-demo-room-k1-204&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-120&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-120&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-02&raum=lcc-demo-room-k1-120&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-04&raum=lcc-demo-room-k1-120&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?lang=en&_rsc=GwwRtTerPLiEJR6D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=GwwRtTerPLiEJR6D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=GwwRtTerPLiEJR6D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?lang=en&_rsc=GwwRtTerPLiEJR6D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=GwwRtTerPLiEJR6D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=GwwRtTerPLiEJR6D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?lang=en&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=GwwRtTerPLiEJR6D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=GwwRtTerPLiEJR6D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=GwwRtTerPLiEJR6D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=GwwRtTerPLiEJR6D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=GwwRtTerPLiEJR6D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=GwwRtTerPLiEJR6D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-120&lang=en&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=lcc-demo-room-k1-120&lang=en&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-120&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?etage=2OG&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-217&lang=en&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=lcc-demo-room-k1-217&lang=en&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?lang=en&_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?lang=en&_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=demo-room-101&lang=en&_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=demo-room-e01&lang=en&_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=demo-room-e01&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=demo-room-e01&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=demo-room-e02&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=demo-room-101&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=demo-room-e02&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=demo-room-101&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=demo-room-102&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=demo-room-102&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=demo-room-101&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-103&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-304&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-304&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=demo-room-102&datum=2026-11-03&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-120&datum=2026-11-03&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-03&raum=demo-room-102&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-03&raum=lcc-demo-room-k1-120&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=demo-room-101&datum=2026-11-03&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-03&raum=demo-room-101&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-120&datum=2026-11-03&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-120&datum=2026-11-03&lang=en&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=lcc-demo-room-k1-120&datum=2026-11-03&lang=en&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-104&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-109&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-104&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-109&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-110&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-110&lang=en&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?lang=en&_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?lang=en&_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=GFoJpxtQB11Vori7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=AoBhd38kWy1X2L9P",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-04&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-02&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-04&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-03&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-03&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-01&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-02&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-07&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-07&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-06&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-08&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2031-01-01&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2031-01-01&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2030-12-31&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2031-01-02&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-04&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-02&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=k1-120&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=k1-120&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/api/public/schedule?roomId=k1-120",
+    "why": "net::ERR_ABORTED"
+   }
+  ],
+  "badresponse": [
+   {
+    "url": "/api/public/schedule?roomId=k1-120",
+    "status": 404
+   }
+  ]
+ }
+}

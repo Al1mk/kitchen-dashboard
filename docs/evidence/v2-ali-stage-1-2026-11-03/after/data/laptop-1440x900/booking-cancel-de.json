@@ -1,0 +1,263 @@
+{
+ "ctx": "laptop-1440x900",
+ "name": "booking-cancel",
+ "lang": "de",
+ "url": "/booking/cancel",
+ "label": "after",
+ "htmlLang": "de",
+ "title": "Reservierung stornieren – LCC Campus Board",
+ "summary": {
+  "targets": 13,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 0,
+  "minTargetH": 48,
+  "minTargetW": 80.5,
+  "textMinFs": 14,
+  "textLt14": 0,
+  "textLt16": 1,
+  "textTotal": 17,
+  "lowContrastCount": 0,
+  "screens": 1,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 1
+ },
+ "headings": [
+  {
+   "l": "H1",
+   "t": "Reservierung stornieren",
+   "fs": 36,
+   "y": 277
+  }
+ ],
+ "textSizeHist": {
+  "14": 1,
+  "18": 15,
+  "36": 1
+ },
+ "smallTargets": [],
+ "geo": {
+  "dock": null,
+  "layout": {
+   "rootFontPx": 16,
+   "h1Px": 36,
+   "firstParagraphPx": 18,
+   "mainWidth": 768,
+   "contentWidth": 728
+  },
+  "vw": 1440,
+  "vh": 900,
+  "frameCentre": 720,
+  "navCount": 1,
+  "linkCount": 7,
+  "links": [
+   {
+    "name": "Start",
+    "href": "/",
+    "current": null,
+    "x": 356,
+    "y": 114.7,
+    "w": 176,
+    "h": 56,
+    "top": 114.7,
+    "bottom": 170.7,
+    "left": 356,
+    "right": 532
+   },
+   {
+    "name": "Neu am Campus",
+    "href": "/newcomers",
+    "current": null,
+    "x": 540,
+    "y": 114.7,
+    "w": 176,
+    "h": 56,
+    "top": 114.7,
+    "bottom": 170.7,
+    "left": 540,
+    "right": 716
+   },
+   {
+    "name": "Karte",
+    "href": "/map",
+    "current": null,
+    "x": 724,
+    "y": 114.7,
+    "w": 176,
+    "h": 56,
+    "top": 114.7,
+    "bottom": 170.7,
+    "left": 724,
+    "right": 900
+   },
+   {
+    "name": "Räume",
+    "href": "/rooms",
+    "current": null,
+    "x": 908,
+    "y": 114.7,
+    "w": 176,
+    "h": 56,
+    "top": 114.7,
+    "bottom": 170.7,
+    "left": 908,
+    "right": 1084
+   },
+   {
+    "name": "Stundenplan",
+    "href": "/schedule",
+    "current": null,
+    "x": 356,
+    "y": 178.7,
+    "w": 176,
+    "h": 56,
+    "top": 178.7,
+    "bottom": 234.7,
+    "left": 356,
+    "right": 532
+   },
+   {
+    "name": "Raumbuchung",
+    "href": "/booking",
+    "current": "page",
+    "x": 540,
+    "y": 178.7,
+    "w": 176,
+    "h": 56,
+    "top": 178.7,
+    "bottom": 234.7,
+    "left": 540,
+    "right": 716
+   },
+   {
+    "name": "Mitteilungen",
+    "href": "/display",
+    "current": null,
+    "x": 724,
+    "y": 178.7,
+    "w": 176,
+    "h": 56,
+    "top": 178.7,
+    "bottom": 234.7,
+    "left": 724,
+    "right": 900
+   }
+  ],
+  "rows": [
+   {
+    "count": 4,
+    "top": 114.7,
+    "left": 356,
+    "right": 1084,
+    "centre": 720,
+    "minH": 56,
+    "minW": 176,
+    "minGap": 8,
+    "names": [
+     "Start",
+     "Neu am Campus",
+     "Karte",
+     "Räume"
+    ]
+   },
+   {
+    "count": 3,
+    "top": 178.7,
+    "left": 356,
+    "right": 900,
+    "centre": 628,
+    "minH": 56,
+    "minW": 176,
+    "minGap": 8,
+    "names": [
+     "Stundenplan",
+     "Raumbuchung",
+     "Mitteilungen"
+    ]
+   }
+  ],
+  "rowVerticalGap": 8,
+  "navBox": {
+   "x": 356,
+   "y": 114.7,
+   "w": 728,
+   "h": 120,
+   "top": 114.7,
+   "bottom": 234.7,
+   "left": 356,
+   "right": 1084
+  },
+  "navCentreYRatio": 0.2,
+  "lang": {
+   "found": true,
+   "box": {
+    "x": 898.7,
+    "y": 30.3,
+    "w": 185.3,
+    "h": 58,
+    "top": 30.3,
+    "bottom": 88.3,
+    "left": 898.7,
+    "right": 1084
+   },
+   "gapBetween": 8,
+   "links": [
+    {
+     "name": "Deutsch",
+     "current": "true",
+     "href": "/booking/cancel",
+     "x": 903.7,
+     "y": 35.3,
+     "w": 86.8,
+     "h": 48,
+     "top": 35.3,
+     "bottom": 83.3,
+     "left": 903.7,
+     "right": 990.5
+    },
+    {
+     "name": "English",
+     "current": null,
+     "href": "/booking/cancel?lang=en",
+     "x": 998.5,
+     "y": 35.3,
+     "w": 80.5,
+     "h": 48,
+     "top": 35.3,
+     "bottom": 83.3,
+     "left": 998.5,
+     "right": 1079
+    }
+   ],
+   "centreYRatio": 0.1
+  },
+  "pinned": null,
+  "cssVars": {
+   "dockH": null,
+   "scrollPaddingBottom": "auto",
+   "fontSize": "16px"
+  },
+  "media": {
+   "portraitMinW520": false,
+   "coarse": false,
+   "hoverNone": false
+  }
+ },
+ "clear": {
+  "scrollY": 0,
+  "docHeight": 900,
+  "dockTop": null,
+  "lastContentBottom": 812.7,
+  "footerBottom": 900,
+  "lowestBottom": 900,
+  "clearOfDock": true,
+  "clearance": null
+ },
+ "focus": {
+  "stops": 13,
+  "coveredByDock": [],
+  "outsideViewport": [],
+  "withoutRing": []
+ }
+}

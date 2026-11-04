@@ -1,0 +1,96 @@
+{
+ "titles": [
+  "de /: Campus-Informationen – Campus Board",
+  "de /newcomers: Neu am Campus – Campus Board",
+  "de /map: Karte – Campus Board",
+  "de /rooms: Räume – Campus Board",
+  "de /schedule: Stundenplan – Campus Board",
+  "de /booking: Raum reservieren – Campus Board",
+  "de /booking/cancel: Reservierung stornieren – LCC Campus Board",
+  "de /display: Mitteilungen – Campus Board",
+  "en /: Campus information – Campus Board",
+  "en /newcomers: New to campus – Campus Board",
+  "en /map: Map – Campus Board",
+  "en /rooms: Rooms – Campus Board",
+  "en /schedule: Schedule – Campus Board",
+  "en /booking: Book a room – Campus Board",
+  "en /booking/cancel: Reservierung stornieren – LCC Campus Board",
+  "en /display: Announcements – Campus Board"
+ ],
+ "htmlLang": [
+  "de /: de",
+  "de /newcomers: de",
+  "de /map: de",
+  "de /rooms: de",
+  "de /schedule: de",
+  "de /booking: de",
+  "de /booking/cancel: de",
+  "de /display: de",
+  "en /: de",
+  "en /newcomers: de",
+  "en /map: de",
+  "en /rooms: de",
+  "en /schedule: de",
+  "en /booking: de",
+  "en /booking/cancel: de",
+  "en /display: de"
+ ],
+ "placeholder": [
+  {
+   "path": "/rooms",
+   "placeholder": "z. B. K1-105, Seminarraum, Zagel oder HCI",
+   "color": "oklab(0.264941 0.000203982 -0.0115437 / 0.5)",
+   "opacity": "1",
+   "bg": "rgb(255, 255, 255)",
+   "ratio": 3.11,
+   "fs": "18px"
+  },
+  {
+   "path": "/map",
+   "placeholder": "z. B. K1-120, 120 oder Seminarraum",
+   "color": "oklab(0.264941 0.000203982 -0.0115437 / 0.5)",
+   "opacity": "1",
+   "bg": "rgb(255, 255, 255)",
+   "ratio": 3.11,
+   "fs": "18px"
+  },
+  {
+   "path": "/booking/cancel",
+   "placeholder": null,
+   "color": "rgb(35, 37, 43)",
+   "opacity": "1",
+   "bg": "rgba(0, 0, 0, 0)",
+   "ratio": 1.37,
+   "fs": "16px"
+  }
+ ],
+ "ariaCurrent": [
+  "de /: Start=page",
+  "de /newcomers: Neu am Campus=page",
+  "de /map: Karte=page",
+  "de /rooms: Räume=page",
+  "de /schedule: Stundenplan=page",
+  "de /booking: Raumbuchung=page",
+  "de /booking/cancel: Raumbuchung=page",
+  "de /display: Mitteilungen=page",
+  "en /: Home=page",
+  "en /newcomers: New to campus=page",
+  "en /map: Map=page",
+  "en /rooms: Rooms=page",
+  "en /schedule: Schedule=page",
+  "en /booking: Booking=page",
+  "en /booking/cancel: Booking=page",
+  "en /display: Announcements=page"
+ ],
+ "logoTap": {
+  "before": "/map",
+  "after": "/map",
+  "isLink": false
+ },
+ "headingsDisplay": null,
+ "disabledPrimary": {
+  "disabled": true,
+  "opacity": 0.5,
+  "ratio": 2.18
+ }
+}

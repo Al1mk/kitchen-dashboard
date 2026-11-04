@@ -1,0 +1,91 @@
+{
+ "de": {
+  "summary": {
+   "targets": 9,
+   "targetsMin44fail": 0,
+   "targetsMin24fail": 0,
+   "targetsGapLt8": 2,
+   "minTargetH": 64.8,
+   "minTargetW": 131.3,
+   "textMinFs": 22.7,
+   "textLt14": 0,
+   "textLt16": 0,
+   "textTotal": 40,
+   "lowContrastCount": 0,
+   "screens": 1,
+   "hOverflow": false,
+   "homeLinks": 1,
+   "h1": 0
+  },
+  "docH": 1920,
+  "vh": 1920,
+  "headings": [
+   "H2:Mitteilungen@570",
+   "H3:Mensa heute geschlossen (Audit@790",
+   "H3:Willkommen am Lucas-Cranach-Ca@1322",
+   "H3:Neue Lernräume im 2. Obergesch@1718",
+   "H3:Fundsachen: Schlüsselbund im S@2250",
+   "H3:Aufzug im Gebäude K1 außer Bet@2597",
+   "H3:Workshop Prototyping für Ersts@2984",
+   "H3:Bibliothek: verlängerte Öffnun@3719",
+   "H3:Spieleabend in der Küche (Demo@4163"
+  ],
+  "pinned": []
+ },
+ "en": {
+  "summary": {
+   "targets": 9,
+   "targetsMin44fail": 0,
+   "targetsMin24fail": 0,
+   "targetsGapLt8": 2,
+   "minTargetH": 64.8,
+   "minTargetW": 131.3,
+   "textMinFs": 22.7,
+   "textLt14": 0,
+   "textLt16": 0,
+   "textTotal": 48,
+   "lowContrastCount": 0,
+   "screens": 1,
+   "hOverflow": false,
+   "homeLinks": 1,
+   "h1": 0
+  },
+  "docH": 1920,
+  "vh": 1920,
+  "headings": [
+   "H2:Announcements@555",
+   "H3:Mensa heute geschlossen (Audit@776",
+   "H3:Welcome to Lucas-Cranach-Campu@1309",
+   "H3:Neue Lernräume im 2. Obergesch@1649",
+   "H3:Fundsachen: Schlüsselbund im S@2183",
+   "H3:Aufzug im Gebäude K1 außer Bet@2532",
+   "H3:Workshop Prototyping für Ersts@2921",
+   "H3:Bibliothek: verlängerte Öffnun@3658",
+   "H3:Games night in the kitchen (De@4104"
+  ],
+  "pinned": []
+ },
+ "autoMotion": {
+  "t0": {
+   "y": 0,
+   "first": "Mensa heute geschlossen (Audit)",
+   "n": 8,
+   "clock": "17:16"
+  },
+  "t25": {
+   "y": 0,
+   "first": "Mensa heute geschlossen (Audit)",
+   "n": 8,
+   "clock": "17:17"
+  }
+ },
+ "bottom": {
+  "y": 0,
+  "docH": 1920,
+  "vh": 1920,
+  "lastNoticeBottom": 4220,
+  "footerTop": 1833
+ },
+ "empty_de": "Mitteilungen Zurzeit gibt es keine Mitteilungen. Neue Mitteilungen erscheinen hier automatisch.",
+ "empty_en": "Announcements There are no announcements at the moment. New announcements appear here automatically."
+}

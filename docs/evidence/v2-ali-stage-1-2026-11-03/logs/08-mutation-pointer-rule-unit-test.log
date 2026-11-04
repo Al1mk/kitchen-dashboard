@@ -1,0 +1,170 @@
+
+ RUN  v5.0.5 <scratch>/mut
+
+ ❯ tests/unit/public-kiosk-layout.test.ts (3 tests | 2 failed) 8ms
+   ❯ public kiosk layout rule (3)
+     × is the same rule in the CSS custom variant and the root scale block 6ms
+     × scales only pages that opt in with data-public-shell, so admin pages keep the ordinary size 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/public-kiosk-layout.test.ts > public kiosk layout rule > is the same rule in the CSS custom variant and the root scale block
+AssertionError: expected '@import "tailwindcss";\n\n/*\n * Sema…' to contain '@custom-variant kiosk (@media (orient…'
+
+- Expected
++ Received
+
+- @custom-variant kiosk (@media (orientation: portrait) and (min-width: 520px));
++ @import "tailwindcss";
++
++ /*
++  * Semantic design tokens — see DESIGN.md.
++  * PROVISIONAL: brand values were sampled from screenshots of the Hochschule
++  * Coburg website/logo supplied by Ali on 2026-10-24. They are NOT verified
++  * against an official brand guide and can be replaced here centrally.
++  */
++ :root {
++   --brand-red: #cd4026;
++   --brand-red-strong: #a8321c;
++   --brand-orange: #ec962b;
++   --brand-cream: #f6d8aa;
++   --brand-purple: #4c0e74;
++
++   --ink: #23252b;
++   --ink-muted: #5b5f69;
++   --canvas: #f6f4f2;
++   --surface: #ffffff;
++   --line: #ddd8d3;
++   --focus: #1b4fd8;
++
++   --success: #1f7a3e;
++   --success-soft: #e5f4ea;
++   --warning: #7a4f00;
++   --warning-soft: #fff1d6;
++   --danger: #b42318;
++   --danger-soft: #fde8e6;
++   --info: #4c0e74;
++   --info-soft: #f1e8f8;
++   --neutral-soft: #ecebea;
++ }
++
++ @theme inline {
++   --color-brand: var(--brand-red);
++   --color-brand-strong: var(--brand-red-strong);
++   --color-brand-orange: var(--brand-orange);
++   --color-brand-cream: var(--brand-cream);
++   --color-brand-purple: var(--brand-purple);
++   --color-ink: var(--ink);
++   --color-ink-muted: var(--ink-muted);
++   --color-canvas: var(--canvas);
++   --color-surface: var(--surface);
++   --color-line: var(--line);
++   --color-focus: var(--focus);
++   --color-success: var(--success);
++   --color-success-soft: var(--success-soft);
++   --color-warning: var(--warning);
++   --color-warning-soft: var(--warning-soft);
++   --color-danger: var(--danger);
++   --color-danger-soft: var(--danger-soft);
++   --color-info: var(--info);
++   --color-info-soft: var(--info-soft);
++   --color-neutral-soft: var(--neutral-soft);
++   --font-sans: var(--font-body), system-ui, sans-serif;
++   --font-display: var(--font-heading), "Arial Narrow", system-ui, sans-serif;
++ }
++
++ html {
++   color-scheme: light;
++ }
++
++ /*
++  * Public kiosk mode (V2 Stage 1, AL-02; docs/contracts.md C10).
++  * Chosen by viewport and orientation only — portrait and at least 520 CSS px wide — never by pointer
++  * type (`pointer: coarse` is true only when touch is emulated/detected). The same rule is in
++  * src/lib/public-layout.ts; tests/unit/public-kiosk-layout.test.ts keeps both in step.
++  * All sizes are PROVISIONAL design choices pending the physical measurement of the panel (V2-P0).
++  */
++ @custom-variant kiosk (@media (pointer: coarse) and (orientation: portrait) and (min-width: 520px));
++
++ :root {
++   /* Space between dock tiles, rows and language buttons (≥ 8 px at every kiosk size). */
++   --public-dock-gap: 0.75rem;
++ }
++
++ @media (pointer: coarse) and (orientation: portrait) and (min-width: 520px) {
++   /*
++    * Scope: only pages that render PublicShell carry [data-public-shell], so the admin and every
++    * other page keep the ordinary 16 px root. Tailwind sizes are rem-based, so raising the root grows
++    * text, buttons, spacing and the content column together. 16 px up to a 720 px viewport (a 200 %
++    * browser zoom keeps its effect), rising linearly to 22 px at 1080 px (1.375×). Expressed in %, so a
++    * larger browser default text size is still respected.
++    * --public-dock-h is the reserved height of the fixed dock: this value is the first-paint estimate
++    * and DockHeightSync replaces it with the measured height.
++    */
++   :root:has([data-public-shell]) {
++     font-size: clamp(100%, calc(100% + (100vw - 720px) * 0.016667), 137.5%);
++     --public-dock-h: 15rem;
++     scroll-padding-bottom: calc(var(--public-dock-h) + 1rem);
++   }
++ }
++
++ body {
++   background: var(--canvas);
++   color: var(--ink);
++ }
++
++ :focus-visible {
++   outline: 3px solid var(--focus);
++   outline-offset: 2px;
++ }
++
++ /* Thin brand stripe echoing the website header (cream → orange → red). */
++ .brand-stripe {
++   background: linear-gradient(90deg, var(--brand-cream), var(--brand-orange) 55%, var(--brand-red));
++ }
++
++ @media (prefers-reduced-motion: reduce) {
++   *,
++   *::before,
++   *::after {
++     animation-duration: 0.01ms !important;
++     transition-duration: 0.01ms !important;
++   }
++ }
++
+
+ ❯ tests/unit/public-kiosk-layout.test.ts:17:17
+     15|
+     16|   it("is the same rule in the CSS custom variant and the root scale bl…
+     17|     expect(css).toContain(`@custom-variant kiosk (@media ${PUBLIC_KIOS…
+       |                 ^
+     18|     expect(css).toContain(`@media ${PUBLIC_KIOSK_MEDIA} {`);
+     19|     // every portrait @media block in the file (not the @custom-varian…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/public-kiosk-layout.test.ts > public kiosk layout rule > scales only pages that opt in with data-public-shell, so admin pages keep the ordinary size
+AssertionError: expected '' to match /:root:has\(\[data-public-shell\]\)/
+
+- Expected:
+/:root:has\(\[data-public-shell\]\)/
+
++ Received:
+""
+
+ ❯ tests/unit/public-kiosk-layout.test.ts:27:19
+     25|   it("scales only pages that opt in with data-public-shell, so admin p…
+     26|     const scale = css.match(/@media \(orientation: portrait\) and \(mi…
+     27|     expect(scale).toMatch(/:root:has\(\[data-public-shell\]\)/);
+       |                   ^
+     28|     expect(scale).toMatch(/font-size:/);
+     29|     expect(scale).toMatch(/--public-dock-h:/);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  21:33:06
+   Duration  88ms (transform 42%, tests 30%, import 20%, worker 8%)
+

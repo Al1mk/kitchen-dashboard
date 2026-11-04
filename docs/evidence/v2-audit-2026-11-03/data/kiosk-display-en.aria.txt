@@ -1,0 +1,45 @@
+- banner:
+  - img "Hochschule Coburg"
+  - paragraph: 10:51
+  - paragraph: Tuesday 3 November
+  - paragraph: Lucas-Cranach-Campus Kronach
+  - group "Language":
+    - link "Deutsch":
+      - /url: /display
+    - link "English":
+      - /url: /display?lang=en
+  - navigation "Campus information":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /?lang=en
+      - listitem:
+        - link "New to campus":
+          - /url: /newcomers?lang=en
+      - listitem:
+        - link "Map":
+          - /url: /map?lang=en
+      - listitem:
+        - link "Rooms":
+          - /url: /rooms?lang=en
+      - listitem:
+        - link "Schedule":
+          - /url: /schedule?lang=en
+      - listitem:
+        - link "Booking":
+          - /url: /booking?lang=en
+      - listitem:
+        - link "Announcements":
+          - /url: /display?lang=en
+- main:
+  - heading "Announcements" [level=2]
+  - article:
+    - text: General Highlighted
+    - heading "Welcome to Lucas-Cranach-Campus (Demo)" [level=3]
+    - paragraph: "Sample content for the prototype: announcements published in the admin area appear here."
+  - article:
+    - text: Event Partly in German
+    - heading "Games night in the kitchen (Demo)" [level=3]
+    - paragraph: "Beispielinhalt: Gemeinsamer Spieleabend – Datum und Ort sind erfunden und dienen nur der Demonstration."
+- contentinfo: Prototype from the Human-Computer Interaction course – not an official display of Hochschule Coburg. Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”.
+- alert

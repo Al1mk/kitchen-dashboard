@@ -1,0 +1,111 @@
+
+Running 2 tests using 1 worker
+
+  ✘  1 [chromium] › tests/e2e/kiosk-dock.spec.ts:317:3 › kiosk 1080x1700 (assumed chrome loss): keyboard focus is never hidden behind the dock (774ms)
+  ✘  2 [chromium] › tests/e2e/kiosk-dock.spec.ts:317:3 › kiosk 540x960 (assumed 200 % zoom): keyboard focus is never hidden behind the dock (716ms)
+
+
+  1) [chromium] › tests/e2e/kiosk-dock.spec.ts:317:3 › kiosk 1080x1700 (assumed chrome loss): keyboard focus is never hidden behind the dock 
+
+    Error: 1080x1700 (assumed chrome loss) /booking?raum=lcc-demo-room-k1-103&datum=2026-11-05: focused controls hidden behind the dock
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 28
+
+    - Array []
+    + Array [
+    +   "08:00",
+    +   "08:15",
+    +   "08:30",
+    +   "08:45",
+    +   "09:00",
+    +   "09:15",
+    +   "09:30",
+    +   "09:45",
+    +   "10:00",
+    +   "10:15",
+    +   "10:30",
+    +   "10:45",
+    +   "11:00",
+    +   "11:15",
+    +   "11:30",
+    +   "11:45",
+    +   "17:00",
+    +   "17:15",
+    +   "17:30",
+    +   "17:45",
+    +   "18:00",
+    +   "18:15",
+    +   "18:30",
+    +   "18:45",
+    +   "19:00",
+    +   "Reservierung stornieren",
+    + ]
+
+      334 |       }
+      335 |       expect(contentStops, `${where}: the walk reached page content, not only the dock`).toBeGreaterThanOrEqual(minStops);
+    > 336 |       expect(covered, `${where}: focused controls hidden behind the dock`).toEqual([]);
+          |                                                                            ^
+      337 |       // Backward from the top lands on the LAST control of the page: it must sit above the dock.
+      338 |       await page.evaluate(() => { (document.activeElement as HTMLElement | null)?.blur(); window.scrollTo(0, 0); });
+      339 |       await page.keyboard.press("Shift+Tab");
+        at <scratch>/mut/tests/e2e/kiosk-dock.spec.ts:336:76
+
+    Error Context: test-results/kiosk-dock-kiosk-1080x1700-028e3-ever-hidden-behind-the-dock-chromium/error-context.md
+
+  2) [chromium] › tests/e2e/kiosk-dock.spec.ts:317:3 › kiosk 540x960 (assumed 200 % zoom): keyboard focus is never hidden behind the dock 
+
+    Error: 540x960 (assumed 200 % zoom) /booking?raum=lcc-demo-room-k1-103&datum=2026-11-05: focused controls hidden behind the dock
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 29
+
+    - Array []
+    + Array [
+    +   "input",
+    +   "15 Minuten30 Minuten45 Minuten",
+    +   "10:15",
+    +   "10:30",
+    +   "10:45",
+    +   "11:00",
+    +   "11:15",
+    +   "11:30",
+    +   "11:45",
+    +   "12:00",
+    +   "12:15",
+    +   "12:30",
+    +   "12:45",
+    +   "13:00",
+    +   "15:30",
+    +   "15:45",
+    +   "16:00",
+    +   "16:15",
+    +   "16:30",
+    +   "16:45",
+    +   "17:00",
+    +   "17:15",
+    +   "17:30",
+    +   "17:45",
+    +   "18:00",
+    +   "18:15",
+    +   "Reservierung stornieren",
+    + ]
+
+      334 |       }
+      335 |       expect(contentStops, `${where}: the walk reached page content, not only the dock`).toBeGreaterThanOrEqual(minStops);
+    > 336 |       expect(covered, `${where}: focused controls hidden behind the dock`).toEqual([]);
+          |                                                                            ^
+      337 |       // Backward from the top lands on the LAST control of the page: it must sit above the dock.
+      338 |       await page.evaluate(() => { (document.activeElement as HTMLElement | null)?.blur(); window.scrollTo(0, 0); });
+      339 |       await page.keyboard.press("Shift+Tab");
+        at <scratch>/mut/tests/e2e/kiosk-dock.spec.ts:336:76
+
+    Error Context: test-results/kiosk-dock-kiosk-540x960-a-ca15c-ever-hidden-behind-the-dock-chromium/error-context.md
+
+  2 failed
+    [chromium] › tests/e2e/kiosk-dock.spec.ts:317:3 › kiosk 1080x1700 (assumed chrome loss): keyboard focus is never hidden behind the dock 
+    [chromium] › tests/e2e/kiosk-dock.spec.ts:317:3 › kiosk 540x960 (assumed 200 % zoom): keyboard focus is never hidden behind the dock 

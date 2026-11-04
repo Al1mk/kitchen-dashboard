@@ -1,0 +1,39 @@
+
+> campus-board@0.1.0 test:e2e
+> playwright test
+
+[WebServer] (node:77841) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:77842) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:77862) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] Turbopack build encountered 2 warnings:
+[WebServer] [next]/internal/font/google/roboto_condensed_21e8c35.module.css
+[WebServer] Warning: Error while requesting resource
+[WebServer] There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500;700&display=swap
+[WebServer] 
+[WebServer] 
+[WebServer] [next]/internal/font/google/source_sans_3_d7f2339d.module.css
+[WebServer] Warning: Error while requesting resource
+[WebServer] There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200..900&display=swap
+[WebServer] 
+[WebServer] 
+[WebServer] 
+[WebServer] > Build error occurred
+[WebServer] Error: Turbopack build failed with 2 errors:
+[WebServer] [next]/internal/font/google/roboto_condensed_21e8c35.module.css
+[WebServer] Error: next/font: error:
+[WebServer] Failed to fetch Roboto Condensed from Google Fonts.
+[WebServer] If you are offline or behind a proxy, self-host the font with next/font/local, or set HTTP_PROXY/HTTPS_PROXY so Next.js can reach fonts.googleapis.com.
+[WebServer] 
+[WebServer] 
+[WebServer] [next]/internal/font/google/source_sans_3_d7f2339d.module.css
+[WebServer] Error: next/font: error:
+[WebServer] Failed to fetch Source Sans 3 from Google Fonts.
+[WebServer] If you are offline or behind a proxy, self-host the font with next/font/local, or set HTTP_PROXY/HTTPS_PROXY so Next.js can reach fonts.googleapis.com.
+[WebServer] 
+[WebServer] 
+[WebServer]     at ignore-listed frames
+Error: Process from config.webServer was not able to start. Exit code: 1
+

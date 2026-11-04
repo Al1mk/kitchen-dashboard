@@ -1,0 +1,80 @@
+- banner:
+  - img "Hochschule Coburg"
+  - paragraph: Lucas-Cranach-Campus Kronach
+  - group "Language":
+    - link "Deutsch":
+      - /url: /booking?datum=2026-11-03
+    - link "English":
+      - /url: /booking?datum=2026-11-03&lang=en
+  - navigation "Campus information":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /?lang=en
+      - listitem:
+        - link "New to campus":
+          - /url: /newcomers?lang=en
+      - listitem:
+        - link "Map":
+          - /url: /map?lang=en
+      - listitem:
+        - link "Rooms":
+          - /url: /rooms?lang=en
+      - listitem:
+        - link "Schedule":
+          - /url: /schedule?lang=en
+      - listitem:
+        - link "Booking":
+          - /url: /booking?lang=en
+      - listitem:
+        - link "Announcements":
+          - /url: /display?lang=en
+- main:
+  - heading "Book a room" [level=1]
+  - paragraph: Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”.
+  - paragraph: DEMO – not a real university room reservation. No login and no official entitlement to the room.
+  - paragraph: "Sample data: Entries marked “Example” are invented demo data, not official room or class information."
+  - text: 1. Choose a room
+  - combobox "1. Choose a room":
+    - option "Please choose a room" [selected]
+    - option "DEMO-101 – Seminar room 1 (Demo)"
+    - option "K1-103 – Seminar room 1"
+    - option "K1-112 – Machine room"
+    - option "K1-114 – Rapid Prototyping"
+    - option "K1-119 – Media Lab"
+    - option "K1-120 – Seminar room"
+    - option "K1-121 – Electronics workshop"
+    - option "K1-125 – Seminar room"
+    - option "DEMO-201 – Gruppenraum (Demo)"
+    - option "K1-204 – Office 2"
+    - option "K1-206 – Office 3"
+    - option "K1-207 – Meeting room"
+    - option "K1-210 – Seminar room"
+    - option "K1-211 – Office 1"
+    - option "K1-216 – Model city V2X"
+    - option "K1-217 – Testing methods lab"
+    - option "K1-218 – Project room"
+    - option "K1-301 – Office 1"
+    - option "K1-302 – Meeting room"
+    - option "K1-303 – Seminar room 8"
+    - option "K1-305 – Office 2"
+    - option "K1-306 – Office 3"
+    - option "K1-307 – Seminar room 7"
+  - text: 2. Date
+  - textbox "2. Date": 2026-11-03
+  - text: 3. Duration
+  - combobox "3. Duration":
+    - option "15 minutes"
+    - option "30 minutes"
+    - option "45 minutes"
+    - option "60 minutes" [selected]
+    - option "90 minutes"
+    - option "120 minutes"
+  - region "4. Select a free start time":
+    - heading "4. Select a free start time" [level=2]
+    - paragraph: Choose a room first.
+  - button "Review booking" [disabled]
+  - link "Cancel a booking":
+    - /url: /booking/cancel?lang=en
+- contentinfo: Prototype from the Human-Computer Interaction course – not an official display of Hochschule Coburg.
+- alert

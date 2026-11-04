@@ -137,6 +137,8 @@ test("V1-R002: a room without an English name shows the German fallback marker o
 test("Done clears the receipt; going back does not reveal it again", async ({ page, request, baseURL }) => {
   const r = await room(request, baseURL!);
   const { receipt } = await book(page, r.id, "de", "11:00");
+  await expect(receipt.getByRole("button", { name: "Fertig" })).toBeDisabled();
+  await receipt.getByLabel("Ich habe Buchungsnummer und Stornierungscode gesichert.").check();
   await receipt.getByRole("button", { name: "Fertig" }).click();
   await expect(page).toHaveURL(/\/$/);
   await page.goBack();

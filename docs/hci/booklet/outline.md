@@ -12,3 +12,9 @@ Shared front matter (additional to the 4 × 5 pages): problem (kitchen display a
 | Reza | newcomer route, sketch A vs B, screen inspection, interview/test plan, real results when available | `6bc0b21`, `docs/hci/booklet/04-reza*`, T20/T21 |
 
 Each personal section: 1 problem/role, 2 alternatives with real dates, 3 implemented prototype and own vs integration contribution, 4 HCI principles with screenshots, 5 actual evaluation, changes, limits, AI assistance. Keep NOT RUN where no human evidence exists.
+
+## V2 editorial responsibility — 3 November 2026
+
+Reza is now the **documentation editor/assembler and main presenter**, with lighter coding work on newcomer copy. This does not make him the author of everyone's work. **Ali, Aryan, Parsa and Reza each prepare and approve their own minimum five-page personal contribution** under the course basis above; Reza makes structure, references, before/after captions and the final assembly consistent. Shared front matter does not replace the four individual sections.
+
+Each implementer supplies the evidence packet in [team plan section 6](../../plans/v2-team-2026-11-03/01-team-tasks-fa.md): finding/owner, actual before state, source evidence, decision/change/files/SHA, HCI reasoning, matched before/after captures, tests actually run, human result or NOT RUN and remaining limits. The earlier internal split of the joint source package remains unknown until the two authors clarify it; future assigned leads must not be projected backwards onto that history.

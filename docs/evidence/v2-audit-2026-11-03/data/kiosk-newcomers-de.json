@@ -1,0 +1,858 @@
+{
+ "context": "kiosk-nominal-1080x1920",
+ "route": "/newcomers",
+ "lang": "de",
+ "status": 200,
+ "finalUrl": "/newcomers",
+ "loadMs": 1538,
+ "stillLoadingAfter8s": false,
+ "summary": {
+  "targets": 14,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 2,
+  "minTargetH": 48,
+  "minTargetW": 80.5,
+  "textMinFs": 14,
+  "textLt14": 0,
+  "textLt16": 1,
+  "textTotal": 29,
+  "lowContrastCount": 0,
+  "screens": 1,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 1
+ },
+ "measure": {
+  "viewport": {
+   "vw": 1080,
+   "vh": 1920,
+   "dpr": 1
+  },
+  "htmlLang": "de",
+  "title": "Neu am Campus – Campus Board",
+  "scroll": {
+   "scrollWidth": 1080,
+   "scrollHeight": 1920,
+   "screens": 1,
+   "hOverflow": false
+  },
+  "landmarks": {
+   "header": true,
+   "nav": 1,
+   "main": true,
+   "footer": true,
+   "skipLink": false
+  },
+  "headings": [
+   {
+    "l": "H1",
+    "t": "Neu am Campus?",
+    "fs": 36,
+    "y": 273
+   },
+   {
+    "l": "H2",
+    "t": "Einen Raum finden",
+    "fs": 24,
+    "y": 497
+   },
+   {
+    "l": "H2",
+    "t": "Was findet heute statt?",
+    "fs": 24,
+    "y": 497
+   },
+   {
+    "l": "H2",
+    "t": "Aktuelle Hinweise",
+    "fs": 24,
+    "y": 792
+   },
+   {
+    "l": "H2",
+    "t": "Einen Lernraum reservieren",
+    "fs": 24,
+    "y": 792
+   },
+   {
+    "l": "H2",
+    "t": "Du brauchst Hilfe?",
+    "fs": 24,
+    "y": 1058
+   }
+  ],
+  "targets": [
+   {
+    "i": 0,
+    "tag": "a",
+    "name": "Deutsch",
+    "href": "/newcomers",
+    "x": 728,
+    "y": 35,
+    "w": 86.8,
+    "h": 48,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 4.2
+   },
+   {
+    "i": 1,
+    "tag": "a",
+    "name": "English",
+    "href": "/newcomers?lang=en",
+    "x": 819,
+    "y": 35,
+    "w": 80.5,
+    "h": 48,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 4.2
+   },
+   {
+    "i": 2,
+    "tag": "a",
+    "name": "Start",
+    "href": "/",
+    "x": 176,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 3,
+    "tag": "a",
+    "name": "Neu am Campus",
+    "href": "/newcomers",
+    "x": 360,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 4,
+    "tag": "a",
+    "name": "Karte",
+    "href": "/map",
+    "x": 544,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 5,
+    "tag": "a",
+    "name": "Räume",
+    "href": "/rooms",
+    "x": 728,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 6,
+    "tag": "a",
+    "name": "Stundenplan",
+    "href": "/schedule",
+    "x": 176,
+    "y": 175,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 7,
+    "tag": "a",
+    "name": "Raumbuchung",
+    "href": "/booking",
+    "x": 360,
+    "y": 175,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 8,
+    "tag": "a",
+    "name": "Mitteilungen",
+    "href": "/display",
+    "x": 544,
+    "y": 175,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 9,
+    "tag": "a",
+    "name": "Karte öffnen",
+    "href": "/map",
+    "x": 197,
+    "y": 678,
+    "w": 314,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 58
+   },
+   {
+    "i": 10,
+    "tag": "a",
+    "name": "Stundenplan öffnen",
+    "href": "/schedule",
+    "x": 569,
+    "y": 678,
+    "w": 314,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 58
+   },
+   {
+    "i": 11,
+    "tag": "a",
+    "name": "Hinweise ansehen",
+    "href": "/display",
+    "x": 197,
+    "y": 944,
+    "w": 314,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 58
+   },
+   {
+    "i": 12,
+    "tag": "a",
+    "name": "Raum reservieren",
+    "href": "/booking",
+    "x": 569,
+    "y": 944,
+    "w": 314,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 58
+   },
+   {
+    "i": 13,
+    "tag": "a",
+    "name": "Mitteilungen ansehen",
+    "href": "/display",
+    "x": 197,
+    "y": 1297,
+    "w": 314,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 297
+   }
+  ],
+  "nameless": [],
+  "unlabeled": [],
+  "imgs": [
+   {
+    "src": "/brand/hs-coburg-logo-screenshot.png",
+    "alt": "Hochschule Coburg",
+    "w": 176,
+    "h": 47
+   }
+  ],
+  "homeLinks": [
+   {
+    "i": 2,
+    "tag": "a",
+    "name": "Start",
+    "href": "/",
+    "x": 176,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   }
+  ],
+  "pinned": [],
+  "overflowers": [],
+  "text": {
+   "count": 29,
+   "sizeHist": {
+    "14": 1,
+    "16": 1,
+    "18": 21,
+    "24": 5,
+    "36": 1
+   },
+   "items": [
+    {
+     "text": "Lucas-Cranach-Campus Kronach",
+     "tag": "p",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 71,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Deutsch",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 35,
+     "fg": "255,255,255",
+     "bg": "35,37,43"
+    },
+    {
+     "text": "English",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 35,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Start",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Neu am Campus",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 4.82,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "255,255,255",
+     "bg": "205,64,38"
+    },
+    {
+     "text": "Karte",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Räume",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Stundenplan",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 175,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Raumbuchung",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 175,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Mitteilungen",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 175,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Neu am Campus?",
+     "tag": "h1",
+     "fs": 36,
+     "weight": "700",
+     "contrast": 13.96,
+     "large": true,
+     "hasBgImage": false,
+     "y": 273,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Wähle direkt aus, was du gerade brauchst.",
+     "tag": "p",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 333,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Studentischer HCI-Prototyp – kein offizielles Info",
+     "tag": "p",
+     "fs": 16,
+     "weight": "400",
+     "contrast": 10.87,
+     "large": false,
+     "hasBgImage": false,
+     "y": 382,
+     "fg": "76,14,116",
+     "bg": "241,232,248"
+    },
+    {
+     "text": "Einen Raum finden",
+     "tag": "h2",
+     "fs": 24,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 497,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Suche nach Raumnummer oder Name und sieh, auf welc",
+     "tag": "p",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 545,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Karte öffnen",
+     "tag": "a",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 4.82,
+     "large": false,
+     "hasBgImage": false,
+     "y": 678,
+     "fg": "255,255,255",
+     "bg": "205,64,38"
+    },
+    {
+     "text": "Was findet heute statt?",
+     "tag": "h2",
+     "fs": 24,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 497,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Sieh dir die eingetragenen Lehrveranstaltungen nac",
+     "tag": "p",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 545,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Stundenplan öffnen",
+     "tag": "a",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 4.82,
+     "large": false,
+     "hasBgImage": false,
+     "y": 678,
+     "fg": "255,255,255",
+     "bg": "205,64,38"
+    },
+    {
+     "text": "Aktuelle Hinweise",
+     "tag": "h2",
+     "fs": 24,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 792,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Hier stehen die Mitteilungen, die das Campus-Team ",
+     "tag": "p",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 840,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Hinweise ansehen",
+     "tag": "a",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 4.82,
+     "large": false,
+     "hasBgImage": false,
+     "y": 944,
+     "fg": "255,255,255",
+     "bg": "205,64,38"
+    },
+    {
+     "text": "Einen Lernraum reservieren",
+     "tag": "h2",
+     "fs": 24,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 792,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Prüfe freie Zeiten und reserviere einen freigegebe",
+     "tag": "p",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 840,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Raum reservieren",
+     "tag": "a",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 4.82,
+     "large": false,
+     "hasBgImage": false,
+     "y": 944,
+     "fg": "255,255,255",
+     "bg": "205,64,38"
+    },
+    {
+     "text": "Du brauchst Hilfe?",
+     "tag": "h2",
+     "fs": 24,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 1058,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Geprüfte Kontaktangaben und Öffnungszeiten sind in",
+     "tag": "p",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1106,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Mitteilungen ansehen",
+     "tag": "a",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 4.82,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1297,
+     "fg": "255,255,255",
+     "bg": "205,64,38"
+    },
+    {
+     "text": "Prototyp im Kurs Mensch-Maschine-Interaktion – kei",
+     "tag": "footer",
+     "fs": 14,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1875,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    }
+   ]
+  }
+ },
+ "tabStops": [
+  {
+   "tag": "a",
+   "name": "Deutsch",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 35,
+   "h": 48
+  },
+  {
+   "tag": "a",
+   "name": "English",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 35,
+   "h": 48
+  },
+  {
+   "tag": "a",
+   "name": "Start",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Neu am Campus",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Karte",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Räume",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Stundenplan",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 175,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Raumbuchung",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 175,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Mitteilungen",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 175,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Karte öffnen",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 678,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Stundenplan öffnen",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 678,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Hinweise ansehen",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 944,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Raum reservieren",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 944,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Mitteilungen ansehen",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 1297,
+   "h": 56
+  }
+ ],
+ "newEvents": {
+  "console": [],
+  "pageerror": [],
+  "requestfailed": [
+   {
+    "url": "/?_rsc=-IStrZXe8e5woxGk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=-IStrZXe8e5woxGk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=-IStrZXe8e5woxGk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=-IStrZXe8e5woxGk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=-IStrZXe8e5woxGk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=-IStrZXe8e5woxGk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=GFoJpxtQB11Vori7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=GFoJpxtQB11Vori7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=GFoJpxtQB11Vori7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=GFoJpxtQB11Vori7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=GFoJpxtQB11Vori7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=GFoJpxtQB11Vori7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=GFoJpxtQB11Vori7",
+    "why": "net::ERR_ABORTED"
+   }
+  ],
+  "badresponse": []
+ }
+}

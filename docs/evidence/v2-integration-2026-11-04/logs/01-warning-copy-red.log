@@ -1,0 +1,52 @@
+
+> campus-board@0.1.0 test
+> vitest run tests/unit/booking-warning-copy.test.ts
+
+
+ RUN  v5.0.5 /private<isolated-workspace>/candidate
+
+ ❯ tests/unit/booking-warning-copy.test.ts (2 tests | 2 failed) 4ms
+   ❯ pending booking warning (PARSA-R001) (2)
+     × explicitly warns in German that leaving may leave a stored booking 3ms
+     × explicitly warns in English that leaving may leave a stored booking 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/booking-warning-copy.test.ts > pending booking warning (PARSA-R001) > explicitly warns in German that leaving may leave a stored booking
+AssertionError: expected 'Der Status der Anfrage ist noch unkla…' to contain 'kann sie trotzdem bestehen'
+
+Expected: "kann sie trotzdem bestehen"
+Received: "Der Status der Anfrage ist noch unklar. Beim Verlassen können Buchungsnummer und Stornierungscode verloren gehen."
+
+ ❯ tests/unit/booking-warning-copy.test.ts:6:39
+      4| describe("pending booking warning (PARSA-R001)", () => {
+      5|   it("explicitly warns in German that leaving may leave a stored booki…
+      6|     expect(BOOKING_COPY.de.guardText).toContain("kann sie trotzdem bes…
+       |                                       ^
+      7|     expect(BOOKING_COPY.de.guardText).toContain("Buchungsnummer und St…
+      8|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/booking-warning-copy.test.ts > pending booking warning (PARSA-R001) > explicitly warns in English that leaving may leave a stored booking
+AssertionError: expected 'The request outcome is still uncertai…' to contain 'may still exist'
+
+Expected: "may still exist"
+Received: "The request outcome is still uncertain. Leaving may lose the booking ID and cancellation code."
+
+ ❯ tests/unit/booking-warning-copy.test.ts:10:39
+      8|   });
+      9|   it("explicitly warns in English that leaving may leave a stored book…
+     10|     expect(BOOKING_COPY.en.guardText).toContain("may still exist");
+       |                                       ^
+     11|     expect(BOOKING_COPY.en.guardText).toContain("booking ID and cancel…
+     12|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  20:19:31
+   Duration  69ms (import 36%, tests 31%, transform 19%, worker 13%)
+

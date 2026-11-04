@@ -1,0 +1,254 @@
+
+> campus-board@0.1.0 test:e2e
+> playwright test tests/e2e/parsa-review-fixes.spec.ts
+
+[WebServer] (node:29820) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:29821) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:29849) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:29854) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:29868) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:29861) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:29864) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:29859) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:29862) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:29860) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:29866) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:29869) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:29867) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:29865) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:29863) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:29871) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:29899) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 1 worker
+
+(node:29900) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:7:1 › PARSA-R002: the 15-second warning keeps More time above the kiosk dock (504ms)
+(node:29907) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:29:2 › PARSA-R003: invalid schedule room has a localized recovery path (de) (5.1s)
+(node:29918) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:36:2 › PARSA-R004: cancellation title follows language (de) (104ms)
+  ✘  4 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:40:2 › PARSA-R006: literal credential entry has hints and no text corrections (de) (5.1s)
+(node:29929) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  5 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:29:2 › PARSA-R003: invalid schedule room has a localized recovery path (en) (5.1s)
+(node:29941) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  6 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:36:2 › PARSA-R004: cancellation title follows language (en) (5.1s)
+(node:29954) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  7 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:40:2 › PARSA-R006: literal credential entry has hints and no text corrections (en) (5.1s)
+(node:29965) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  8 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:55:1 › PARSA-R003: a removed room clears its stale schedule; a network failure keeps last good data (5.2s)
+
+
+  1) [chromium] › tests/e2e/parsa-review-fixes.spec.ts:7:1 › PARSA-R002: the 15-second warning keeps More time above the kiosk dock 
+
+    Error: More time is hidden under the dock after the warning appears
+
+    expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 733
+    Received:    801.65625
+
+      23 |  // Close the page before assertion so a failing test cannot export receipt credentials in an error-context snapshot.
+      24 |  await page.close();
+    > 25 |  expect(geometry.buttonBottom,'More time is hidden under the dock after the warning appears').toBeLessThanOrEqual(geometry.dockTop);
+         |                                                                                               ^
+      26 | });
+      27 |
+      28 | for (const lang of ['de', 'en']) {
+        at /private<isolated-workspace>/candidate/tests/e2e/parsa-review-fixes.spec.ts:25:95
+
+    Error Context: test-results/parsa-review-fixes-PARSA-R-7f38c-e-time-above-the-kiosk-dock-chromium/error-context.md
+
+  2) [chromium] › tests/e2e/parsa-review-fixes.spec.ts:29:2 › PARSA-R003: invalid schedule room has a localized recovery path (de) 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('main').getByRole('alert')
+    Expected substring: "nicht verfügbar"
+    Received string:    "Termine können gerade nicht geladen werden.Wir versuchen es automatisch weiter.Erneut versuchen"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" getByRole('main').getByRole('alert') with timeout 5000ms
+      - waiting for getByRole('main').getByRole('alert')
+        14 × locator resolved to <div role="alert" class="flex flex-col items-center gap-3 py-10 text-center">…</div>
+           - unexpected value "Termine können gerade nicht geladen werden.Wir versuchen es automatisch weiter.Erneut versuchen"
+
+
+      30 |   await page.goto(`/schedule?raum=unknown-parsa-review&datum=2026-11-10&lang=${lang}`);
+      31 |   const main = page.getByRole('main');
+    > 32 |   await expect(main.getByRole('alert')).toContainText(lang === 'de' ? 'nicht verfügbar' : 'unavailable');
+         |                                         ^
+      33 |   await expect(main.getByRole('link', {name:lang==='de'?'Alle Räume':'All rooms',exact:true})).toHaveAttribute('href', `/schedule?datum=2026-11-10${lang==='en'?'&lang=en':''}`);
+      34 |   await expect(main).not.toContainText(lang==='de'?'Wir versuchen':'We keep trying');
+      35 |  });
+        at /private<isolated-workspace>/candidate/tests/e2e/parsa-review-fixes.spec.ts:32:41
+
+    Error Context: test-results/parsa-review-fixes-PARSA-R-24f0b-localized-recovery-path-de--chromium/error-context.md
+
+  3) [chromium] › tests/e2e/parsa-review-fixes.spec.ts:40:2 › PARSA-R006: literal credential entry has hints and no text corrections (de) 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  getByLabel('Buchungsnummer', { exact: true })
+    Expected: "none"
+    Received: ""
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" getByLabel('Buchungsnummer', { exact: true }) with timeout 5000ms
+      - waiting for getByLabel('Buchungsnummer', { exact: true })
+        14 × locator resolved to <input value="" type="text" required="" maxlength="60" autocomplete="off" spellcheck="false" class="min-h-14 rounded-xl border border-ink px-3 font-mono text-base"/>
+           - unexpected value "null"
+
+
+      43 |   const code = page.getByLabel(lang==='de'?'Stornierungscode':'Cancellation code',{exact:true});
+      44 |   for (const field of [id,code]) {
+    > 45 |    await expect(field).toHaveAttribute('autocapitalize','none');
+         |                        ^
+      46 |    await expect(field).toHaveAttribute('autocorrect','off');
+      47 |    await expect(field).toHaveAttribute('spellcheck','false');
+      48 |    await expect(field).toHaveAttribute('aria-describedby','cancel-credential-hint');
+        at /private<isolated-workspace>/candidate/tests/e2e/parsa-review-fixes.spec.ts:45:24
+
+    Error Context: test-results/parsa-review-fixes-PARSA-R-f9edf-and-no-text-corrections-de--chromium/error-context.md
+
+  4) [chromium] › tests/e2e/parsa-review-fixes.spec.ts:29:2 › PARSA-R003: invalid schedule room has a localized recovery path (en) 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('main').getByRole('alert')
+    Expected substring: "unavailable"
+    Received string:    "Classes cannot be loaded right now.We keep trying automatically.Try again"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" getByRole('main').getByRole('alert') with timeout 5000ms
+      - waiting for getByRole('main').getByRole('alert')
+        14 × locator resolved to <div role="alert" class="flex flex-col items-center gap-3 py-10 text-center">…</div>
+           - unexpected value "Classes cannot be loaded right now.We keep trying automatically.Try again"
+
+
+      30 |   await page.goto(`/schedule?raum=unknown-parsa-review&datum=2026-11-10&lang=${lang}`);
+      31 |   const main = page.getByRole('main');
+    > 32 |   await expect(main.getByRole('alert')).toContainText(lang === 'de' ? 'nicht verfügbar' : 'unavailable');
+         |                                         ^
+      33 |   await expect(main.getByRole('link', {name:lang==='de'?'Alle Räume':'All rooms',exact:true})).toHaveAttribute('href', `/schedule?datum=2026-11-10${lang==='en'?'&lang=en':''}`);
+      34 |   await expect(main).not.toContainText(lang==='de'?'Wir versuchen':'We keep trying');
+      35 |  });
+        at /private<isolated-workspace>/candidate/tests/e2e/parsa-review-fixes.spec.ts:32:41
+
+    Error Context: test-results/parsa-review-fixes-PARSA-R-bd00a-localized-recovery-path-en--chromium/error-context.md
+
+  5) [chromium] › tests/e2e/parsa-review-fixes.spec.ts:36:2 › PARSA-R004: cancellation title follows language (en) 
+
+    Error: expect(page).toHaveTitle(expected) failed
+
+    Expected: "Cancel a booking – LCC Campus Board"
+    Received: "Reservierung stornieren – LCC Campus Board"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveTitle" with timeout 5000ms
+        14 × locator resolved to <html lang="de" class="rafaCq_variable d8oG9G_variable h-full antialiased">…</html>
+           - unexpected value "Reservierung stornieren – LCC Campus Board"
+
+
+      36 |  test(`PARSA-R004: cancellation title follows language (${lang})`,async({page})=>{
+      37 |   await page.goto(`/booking/cancel?lang=${lang}`);
+    > 38 |   await expect(page).toHaveTitle(`${lang==='de'?'Reservierung stornieren':'Cancel a booking'} – LCC Campus Board`);
+         |                      ^
+      39 |  });
+      40 |  test(`PARSA-R006: literal credential entry has hints and no text corrections (${lang})`,async({page})=>{
+      41 |   await page.goto(`/booking/cancel?lang=${lang}`);
+        at /private<isolated-workspace>/candidate/tests/e2e/parsa-review-fixes.spec.ts:38:22
+
+    Error Context: test-results/parsa-review-fixes-PARSA-R-ca199--title-follows-language-en--chromium/error-context.md
+
+  6) [chromium] › tests/e2e/parsa-review-fixes.spec.ts:40:2 › PARSA-R006: literal credential entry has hints and no text corrections (en) 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  getByLabel('Booking ID', { exact: true })
+    Expected: "none"
+    Received: ""
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" getByLabel('Booking ID', { exact: true }) with timeout 5000ms
+      - waiting for getByLabel('Booking ID', { exact: true })
+        14 × locator resolved to <input value="" type="text" required="" maxlength="60" autocomplete="off" spellcheck="false" class="min-h-14 rounded-xl border border-ink px-3 font-mono text-base"/>
+           - unexpected value "null"
+
+
+      43 |   const code = page.getByLabel(lang==='de'?'Stornierungscode':'Cancellation code',{exact:true});
+      44 |   for (const field of [id,code]) {
+    > 45 |    await expect(field).toHaveAttribute('autocapitalize','none');
+         |                        ^
+      46 |    await expect(field).toHaveAttribute('autocorrect','off');
+      47 |    await expect(field).toHaveAttribute('spellcheck','false');
+      48 |    await expect(field).toHaveAttribute('aria-describedby','cancel-credential-hint');
+        at /private<isolated-workspace>/candidate/tests/e2e/parsa-review-fixes.spec.ts:45:24
+
+    Error Context: test-results/parsa-review-fixes-PARSA-R-edfb0-and-no-text-corrections-en--chromium/error-context.md
+
+  7) [chromium] › tests/e2e/parsa-review-fixes.spec.ts:55:1 › PARSA-R003: a removed room clears its stale schedule; a network failure keeps last good data 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('main').getByRole('alert')
+    Expected substring: "unavailable"
+    Received string:    "Connection lost – showing the information from 20:20.Try again"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" getByRole('main').getByRole('alert') with timeout 5000ms
+      - waiting for getByRole('main').getByRole('alert')
+        14 × locator resolved to <div role="alert" class="flex flex-wrap items-center justify-between gap-3 rounded-xl bg-warning-soft px-4 py-3 text-warning">…</div>
+           - unexpected value "Connection lost – showing the information from 20:20.Try again"
+
+
+      68 |  await expect(main.getByRole('link',{name:'On the map',exact:true})).toBeVisible();
+      69 |  status=404; await main.getByRole('button',{name:'Try again'}).click();
+    > 70 |  await expect(main.getByRole('alert')).toContainText('unavailable');
+         |                                        ^
+      71 |  await expect(main.getByRole('link',{name:'On the map',exact:true})).toHaveCount(0);
+      72 |  status=200; await page.clock.fastForward(5_500);
+      73 |  await expect(main.getByRole('link',{name:'On the map',exact:true})).toBeVisible();
+        at /private<isolated-workspace>/candidate/tests/e2e/parsa-review-fixes.spec.ts:70:40
+
+    Error Context: test-results/parsa-review-fixes-PARSA-R-c1648-ailure-keeps-last-good-data-chromium/error-context.md
+
+  7 failed
+    [chromium] › tests/e2e/parsa-review-fixes.spec.ts:7:1 › PARSA-R002: the 15-second warning keeps More time above the kiosk dock 
+    [chromium] › tests/e2e/parsa-review-fixes.spec.ts:29:2 › PARSA-R003: invalid schedule room has a localized recovery path (de) 
+    [chromium] › tests/e2e/parsa-review-fixes.spec.ts:40:2 › PARSA-R006: literal credential entry has hints and no text corrections (de) 
+    [chromium] › tests/e2e/parsa-review-fixes.spec.ts:29:2 › PARSA-R003: invalid schedule room has a localized recovery path (en) 
+    [chromium] › tests/e2e/parsa-review-fixes.spec.ts:36:2 › PARSA-R004: cancellation title follows language (en) 
+    [chromium] › tests/e2e/parsa-review-fixes.spec.ts:40:2 › PARSA-R006: literal credential entry has hints and no text corrections (en) 
+    [chromium] › tests/e2e/parsa-review-fixes.spec.ts:55:1 › PARSA-R003: a removed room clears its stale schedule; a network failure keeps last good data 
+  1 passed (43.9s)

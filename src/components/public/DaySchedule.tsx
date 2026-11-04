@@ -24,7 +24,11 @@ export function DaySchedule({ date, roomId, lang }: { date: string | null; roomI
   const params = new URLSearchParams();
   if (date) params.set("date", date);
   if (roomId) params.set("roomId", roomId);
-  const { data, failed, receivedAt, retry } = usePolledJson<ScheduleResponse>(`/api/public/schedule?${params}`);
+  const { data: polledData, failed, receivedAt, retry, httpStatus } = usePolledJson<ScheduleResponse>(`/api/public/schedule?${params}`);
+  // A missing/archived room is not a connection outage. Do not show a stale
+  // schedule for that room; normal polling still permits recovery if restored.
+  const roomUnavailable = !!roomId && httpStatus === 404;
+  const data = roomUnavailable ? null : polledData;
   const headerName = data?.room ? roomName(data.room) : null;
 
   const shownDate = data?.date ?? date;
@@ -65,6 +69,11 @@ export function DaySchedule({ date, roomId, lang }: { date: string | null; roomI
             <Link href={publicHref("/map", lang, { raum: data.room.id, datum: date })} className="inline-flex min-h-14 touch-manipulation items-center rounded-xl border border-ink px-4 font-semibold">
               {t.schedule.onMap}
             </Link>
+            {data.room.reservable && shownDate && today && shownDate >= today && shownDate <= addDays(today, 13) && (
+              <Link href={publicHref("/booking", lang, { raum: data.room.id, datum: shownDate })} className="inline-flex min-h-14 touch-manipulation items-center rounded-xl bg-brand px-4 font-bold text-white">
+                {t.schedule.bookRoom}
+              </Link>
+            )}
             <Link href={href(date, null)} className="inline-flex min-h-14 touch-manipulation items-center rounded-xl border border-ink px-4 font-semibold">
               {t.schedule.allRooms}
             </Link>
@@ -72,7 +81,16 @@ export function DaySchedule({ date, roomId, lang }: { date: string | null; roomI
         </div>
       )}
 
-      <LoadState loading={!data} failed={failed} receivedAt={receivedAt} retry={retry} what="sessions" lang={lang} />
+      {roomUnavailable ? (
+        <div role="alert" className="flex flex-col gap-3 rounded-xl bg-warning-soft p-5 text-warning">
+          <p className="font-semibold">{t.schedule.roomUnavailable}</p>
+          <Link href={href(date, null)} className="inline-flex min-h-14 items-center self-start rounded-xl border border-ink px-4 font-semibold text-ink">
+            {t.schedule.allRooms}
+          </Link>
+        </div>
+      ) : (
+        <LoadState loading={!data} failed={failed} receivedAt={receivedAt} retry={retry} what="sessions" lang={lang} />
+      )}
 
       {data && data.sessions.length === 0 && (
         <div role="status" className="rounded-xl border border-dashed border-line bg-surface p-8 text-center">

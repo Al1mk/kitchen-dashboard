@@ -1,0 +1,34 @@
+{
+ "ctx": "kiosk-pointer-1080x1920",
+ "name": "display-many",
+ "lang": "en",
+ "label": "before",
+ "geo": {
+  "vw": 1080,
+  "vh": 1920,
+  "rows": [
+   4,
+   3
+  ],
+  "lang": {
+   "found": true,
+   "gap": 5.4,
+   "centreYRatio": 0.1
+  },
+  "navTop": 311.9,
+  "navBottom": 478.2,
+  "frameCentre": 540,
+  "rowCentres": [
+   540,
+   415.3
+  ]
+ },
+ "list": {
+  "cards": 8,
+  "scrollable": true,
+  "clipped": 0,
+  "lastReachable": true,
+  "listBottom": 1725
+ },
+ "listAboveNav": false
+}

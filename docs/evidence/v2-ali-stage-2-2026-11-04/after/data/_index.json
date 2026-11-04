@@ -1,0 +1,1479 @@
+{
+ "label": "after",
+ "base": "http://127.0.0.1:<port>",
+ "chromium": "156.0.8078.4",
+ "contexts": {
+  "kiosk-touch-1080x1920": "Nominal portrait kiosk, DPR 1, touch emulation ON (so (pointer: coarse) is true only because of the emulation)",
+  "kiosk-pointer-1080x1920": "Same viewport, touch OFF = pointer-fine portrait. The kiosk layout must not depend on pointer type",
+  "sens-1080x1700": "Sensitivity ONLY: assumes ~220 CSS px lost to menu bar + browser chrome (unmeasured)",
+  "sens-540x960": "Sensitivity ONLY: what 200 % browser zoom on a 1080x1920 output would report (unmeasured assumption)",
+  "laptop-1440x900": "Ordinary laptop, mouse + keyboard",
+  "phone-390x844": "Ordinary phone emulation (isMobile, touch, DPR 2)"
+ },
+ "pages": [
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "home",
+   "lang": "de",
+   "screens": 1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": {
+    "kind": "stage2",
+    "cards": 6,
+    "columns": 2,
+    "minW": 492.3,
+    "minH": 379.9,
+    "maxH": 379.9,
+    "pictograms": 6,
+    "lastBottomViewportAtEnd": null
+   },
+   "newcomers": null,
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "newcomers",
+   "lang": "de",
+   "screens": 1.1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": {
+    "cards": 5,
+    "columns": 2,
+    "minH": 375.7,
+    "helpFullWidth": true,
+    "pictograms": 5,
+    "noteKind": "compact marker",
+    "noteHeight": 33,
+    "noteFontPx": 22,
+    "noteBackground": "rgba(0, 0, 0, 0)"
+   },
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "rooms",
+   "lang": "de",
+   "screens": 8.2,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 54,
+    "medianPitch": 259,
+    "firstCardH": 292,
+    "actionsInOneRow": 54,
+    "chips": 4,
+    "chipBar": {
+     "sticky": true,
+     "h": 99
+    },
+    "floorHeadings": 4
+   },
+   "search": null
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "rooms-search-hci",
+   "lang": "de",
+   "screens": 1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": null,
+   "rooms": null,
+   "search": {
+    "first": "classes",
+    "classMatches": 1,
+    "noRoomMessage": "Kein Raum passt zu „HCI“ – die Treffer stehen oben bei den Lehrveranstaltungen.",
+    "noRoomAboveClasses": false,
+    "scopeSentence": true,
+    "classesHeadingTop": 613.4
+   }
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "rooms-search-k1-120",
+   "lang": "de",
+   "screens": 1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 1,
+    "medianPitch": null,
+    "firstCardH": 242.5,
+    "actionsInOneRow": 1,
+    "chips": 0,
+    "chipBar": null,
+    "floorHeadings": 1
+   },
+   "search": {
+    "first": "rooms",
+    "classMatches": 0,
+    "noRoomMessage": null,
+    "noRoomAboveClasses": null,
+    "scopeSentence": true,
+    "classesHeadingTop": 1004.9
+   }
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "home",
+   "lang": "en",
+   "screens": 1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": {
+    "kind": "stage2",
+    "cards": 6,
+    "columns": 2,
+    "minW": 492.3,
+    "minH": 379.9,
+    "maxH": 379.9,
+    "pictograms": 6,
+    "lastBottomViewportAtEnd": null
+   },
+   "newcomers": null,
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "newcomers",
+   "lang": "en",
+   "screens": 1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": {
+    "cards": 5,
+    "columns": 2,
+    "minH": 375.7,
+    "helpFullWidth": true,
+    "pictograms": 5,
+    "noteKind": "compact marker",
+    "noteHeight": 33,
+    "noteFontPx": 22,
+    "noteBackground": "rgba(0, 0, 0, 0)"
+   },
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "rooms",
+   "lang": "en",
+   "screens": 8.2,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 54,
+    "medianPitch": 259,
+    "firstCardH": 292,
+    "actionsInOneRow": 54,
+    "chips": 4,
+    "chipBar": {
+     "sticky": true,
+     "h": 99
+    },
+    "floorHeadings": 4
+   },
+   "search": null
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "rooms-search-hci",
+   "lang": "en",
+   "screens": 1.1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": null,
+   "rooms": null,
+   "search": {
+    "first": "classes",
+    "classMatches": 1,
+    "noRoomMessage": "No room matches “HCI” – your results are the classes above.",
+    "noRoomAboveClasses": false,
+    "scopeSentence": true,
+    "classesHeadingTop": 706.9
+   }
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "rooms-search-k1-120",
+   "lang": "en",
+   "screens": 1.1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 1,
+    "medianPitch": null,
+    "firstCardH": 242.5,
+    "actionsInOneRow": 1,
+    "chips": 0,
+    "chipBar": null,
+    "floorHeadings": 1
+   },
+   "search": {
+    "first": "rooms",
+    "classMatches": 0,
+    "noRoomMessage": null,
+    "noRoomAboveClasses": null,
+    "scopeSentence": true,
+    "classesHeadingTop": 1098.4
+   }
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "home",
+   "lang": "de",
+   "screens": 1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": {
+    "kind": "stage2",
+    "cards": 6,
+    "columns": 2,
+    "minW": 492.3,
+    "minH": 379.9,
+    "maxH": 379.9,
+    "pictograms": 6,
+    "lastBottomViewportAtEnd": null
+   },
+   "newcomers": null,
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "newcomers",
+   "lang": "de",
+   "screens": 1.1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": {
+    "cards": 5,
+    "columns": 2,
+    "minH": 375.7,
+    "helpFullWidth": true,
+    "pictograms": 5,
+    "noteKind": "compact marker",
+    "noteHeight": 33,
+    "noteFontPx": 22,
+    "noteBackground": "rgba(0, 0, 0, 0)"
+   },
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "rooms",
+   "lang": "de",
+   "screens": 8.2,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 54,
+    "medianPitch": 259,
+    "firstCardH": 292,
+    "actionsInOneRow": 54,
+    "chips": 4,
+    "chipBar": {
+     "sticky": true,
+     "h": 99
+    },
+    "floorHeadings": 4
+   },
+   "search": null
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "rooms-search-hci",
+   "lang": "de",
+   "screens": 1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": null,
+   "rooms": null,
+   "search": {
+    "first": "classes",
+    "classMatches": 1,
+    "noRoomMessage": "Kein Raum passt zu „HCI“ – die Treffer stehen oben bei den Lehrveranstaltungen.",
+    "noRoomAboveClasses": false,
+    "scopeSentence": true,
+    "classesHeadingTop": 613.4
+   }
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "rooms-search-k1-120",
+   "lang": "de",
+   "screens": 1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 1,
+    "medianPitch": null,
+    "firstCardH": 242.5,
+    "actionsInOneRow": 1,
+    "chips": 0,
+    "chipBar": null,
+    "floorHeadings": 1
+   },
+   "search": {
+    "first": "rooms",
+    "classMatches": 0,
+    "noRoomMessage": null,
+    "noRoomAboveClasses": null,
+    "scopeSentence": true,
+    "classesHeadingTop": 1004.9
+   }
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "home",
+   "lang": "en",
+   "screens": 1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": {
+    "kind": "stage2",
+    "cards": 6,
+    "columns": 2,
+    "minW": 492.3,
+    "minH": 379.9,
+    "maxH": 379.9,
+    "pictograms": 6,
+    "lastBottomViewportAtEnd": null
+   },
+   "newcomers": null,
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "newcomers",
+   "lang": "en",
+   "screens": 1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": {
+    "cards": 5,
+    "columns": 2,
+    "minH": 375.7,
+    "helpFullWidth": true,
+    "pictograms": 5,
+    "noteKind": "compact marker",
+    "noteHeight": 33,
+    "noteFontPx": 22,
+    "noteBackground": "rgba(0, 0, 0, 0)"
+   },
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "rooms",
+   "lang": "en",
+   "screens": 8.2,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 54,
+    "medianPitch": 259,
+    "firstCardH": 292,
+    "actionsInOneRow": 54,
+    "chips": 4,
+    "chipBar": {
+     "sticky": true,
+     "h": 99
+    },
+    "floorHeadings": 4
+   },
+   "search": null
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "rooms-search-hci",
+   "lang": "en",
+   "screens": 1.1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": null,
+   "rooms": null,
+   "search": {
+    "first": "classes",
+    "classMatches": 1,
+    "noRoomMessage": "No room matches “HCI” – your results are the classes above.",
+    "noRoomAboveClasses": false,
+    "scopeSentence": true,
+    "classesHeadingTop": 706.9
+   }
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "rooms-search-k1-120",
+   "lang": "en",
+   "screens": 1.1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 1,
+    "medianPitch": null,
+    "firstCardH": 242.5,
+    "actionsInOneRow": 1,
+    "chips": 0,
+    "chipBar": null,
+    "floorHeadings": 1
+   },
+   "search": {
+    "first": "rooms",
+    "classMatches": 0,
+    "noRoomMessage": null,
+    "noRoomAboveClasses": null,
+    "scopeSentence": true,
+    "classesHeadingTop": 1098.4
+   }
+  },
+  {
+   "ctx": "sens-1080x1700",
+   "name": "home",
+   "lang": "de",
+   "screens": 1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": {
+    "kind": "stage2",
+    "cards": 6,
+    "columns": 2,
+    "minW": 492.3,
+    "minH": 313.5,
+    "maxH": 313.5,
+    "pictograms": 6,
+    "lastBottomViewportAtEnd": null
+   },
+   "newcomers": null,
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "sens-1080x1700",
+   "name": "newcomers",
+   "lang": "de",
+   "screens": 1.2,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": {
+    "cards": 5,
+    "columns": 2,
+    "minH": 375.7,
+    "helpFullWidth": true,
+    "pictograms": 5,
+    "noteKind": "compact marker",
+    "noteHeight": 33,
+    "noteFontPx": 22,
+    "noteBackground": "rgba(0, 0, 0, 0)"
+   },
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "sens-1080x1700",
+   "name": "rooms",
+   "lang": "de",
+   "screens": 9.2,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 54,
+    "medianPitch": 259,
+    "firstCardH": 292,
+    "actionsInOneRow": 54,
+    "chips": 4,
+    "chipBar": {
+     "sticky": true,
+     "h": 99
+    },
+    "floorHeadings": 4
+   },
+   "search": null
+  },
+  {
+   "ctx": "sens-1080x1700",
+   "name": "rooms-search-hci",
+   "lang": "de",
+   "screens": 1.1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": null,
+   "rooms": null,
+   "search": {
+    "first": "classes",
+    "classMatches": 1,
+    "noRoomMessage": "Kein Raum passt zu „HCI“ – die Treffer stehen oben bei den Lehrveranstaltungen.",
+    "noRoomAboveClasses": false,
+    "scopeSentence": true,
+    "classesHeadingTop": 613.4
+   }
+  },
+  {
+   "ctx": "sens-1080x1700",
+   "name": "rooms-search-k1-120",
+   "lang": "de",
+   "screens": 1.1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 1,
+    "medianPitch": null,
+    "firstCardH": 242.5,
+    "actionsInOneRow": 1,
+    "chips": 0,
+    "chipBar": null,
+    "floorHeadings": 1
+   },
+   "search": {
+    "first": "rooms",
+    "classMatches": 0,
+    "noRoomMessage": null,
+    "noRoomAboveClasses": null,
+    "scopeSentence": true,
+    "classesHeadingTop": 1004.9
+   }
+  },
+  {
+   "ctx": "sens-1080x1700",
+   "name": "home",
+   "lang": "en",
+   "screens": 1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": {
+    "kind": "stage2",
+    "cards": 6,
+    "columns": 2,
+    "minW": 492.3,
+    "minH": 313.5,
+    "maxH": 313.5,
+    "pictograms": 6,
+    "lastBottomViewportAtEnd": null
+   },
+   "newcomers": null,
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "sens-1080x1700",
+   "name": "newcomers",
+   "lang": "en",
+   "screens": 1.2,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": {
+    "cards": 5,
+    "columns": 2,
+    "minH": 375.7,
+    "helpFullWidth": true,
+    "pictograms": 5,
+    "noteKind": "compact marker",
+    "noteHeight": 33,
+    "noteFontPx": 22,
+    "noteBackground": "rgba(0, 0, 0, 0)"
+   },
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "sens-1080x1700",
+   "name": "rooms",
+   "lang": "en",
+   "screens": 9.3,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 54,
+    "medianPitch": 259,
+    "firstCardH": 292,
+    "actionsInOneRow": 54,
+    "chips": 4,
+    "chipBar": {
+     "sticky": true,
+     "h": 99
+    },
+    "floorHeadings": 4
+   },
+   "search": null
+  },
+  {
+   "ctx": "sens-1080x1700",
+   "name": "rooms-search-hci",
+   "lang": "en",
+   "screens": 1.2,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": null,
+   "rooms": null,
+   "search": {
+    "first": "classes",
+    "classMatches": 1,
+    "noRoomMessage": "No room matches “HCI” – your results are the classes above.",
+    "noRoomAboveClasses": false,
+    "scopeSentence": true,
+    "classesHeadingTop": 706.9
+   }
+  },
+  {
+   "ctx": "sens-1080x1700",
+   "name": "rooms-search-k1-120",
+   "lang": "en",
+   "screens": 1.2,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 77,
+   "textMinFs": 19.3,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 1,
+    "medianPitch": null,
+    "firstCardH": 242.5,
+    "actionsInOneRow": 1,
+    "chips": 0,
+    "chipBar": null,
+    "floorHeadings": 1
+   },
+   "search": {
+    "first": "rooms",
+    "classMatches": 0,
+    "noRoomMessage": null,
+    "noRoomAboveClasses": null,
+    "scopeSentence": true,
+    "classesHeadingTop": 1098.4
+   }
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "home",
+   "lang": "de",
+   "screens": 1.5,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 56,
+   "textMinFs": 14,
+   "home": {
+    "kind": "stage2",
+    "cards": 6,
+    "columns": 1,
+    "minW": 500,
+    "minH": 136,
+    "maxH": 136,
+    "pictograms": 6,
+    "lastBottomViewportAtEnd": null
+   },
+   "newcomers": null,
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "newcomers",
+   "lang": "de",
+   "screens": 2.1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 56,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": {
+    "cards": 5,
+    "columns": 1,
+    "minH": 244.5,
+    "helpFullWidth": true,
+    "pictograms": 5,
+    "noteKind": "compact marker",
+    "noteHeight": 48,
+    "noteFontPx": 16,
+    "noteBackground": "rgba(0, 0, 0, 0)"
+   },
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "rooms",
+   "lang": "de",
+   "screens": 12.2,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 56,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 54,
+    "medianPitch": 199.5,
+    "firstCardH": 212,
+    "actionsInOneRow": 54,
+    "chips": 4,
+    "chipBar": {
+     "sticky": true,
+     "h": 72
+    },
+    "floorHeadings": 4
+   },
+   "search": null
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "rooms-search-hci",
+   "lang": "de",
+   "screens": 1.6,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 56,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": null,
+   "rooms": null,
+   "search": {
+    "first": "classes",
+    "classMatches": 1,
+    "noRoomMessage": "Kein Raum passt zu „HCI“ – die Treffer stehen oben bei den Lehrveranstaltungen.",
+    "noRoomAboveClasses": false,
+    "scopeSentence": true,
+    "classesHeadingTop": 498.7
+   }
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "rooms-search-k1-120",
+   "lang": "de",
+   "screens": 1.6,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 56,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 1,
+    "medianPitch": null,
+    "firstCardH": 187.5,
+    "actionsInOneRow": 1,
+    "chips": 0,
+    "chipBar": null,
+    "floorHeadings": 1
+   },
+   "search": {
+    "first": "rooms",
+    "classMatches": 0,
+    "noRoomMessage": null,
+    "noRoomAboveClasses": null,
+    "scopeSentence": true,
+    "classesHeadingTop": 794.2
+   }
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "home",
+   "lang": "en",
+   "screens": 1.4,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 56,
+   "textMinFs": 14,
+   "home": {
+    "kind": "stage2",
+    "cards": 6,
+    "columns": 1,
+    "minW": 500,
+    "minH": 112,
+    "maxH": 112,
+    "pictograms": 6,
+    "lastBottomViewportAtEnd": null
+   },
+   "newcomers": null,
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "newcomers",
+   "lang": "en",
+   "screens": 2.1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 56,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": {
+    "cards": 5,
+    "columns": 1,
+    "minH": 215.3,
+    "helpFullWidth": true,
+    "pictograms": 5,
+    "noteKind": "compact marker",
+    "noteHeight": 48,
+    "noteFontPx": 16,
+    "noteBackground": "rgba(0, 0, 0, 0)"
+   },
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "rooms",
+   "lang": "en",
+   "screens": 12.1,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 56,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 54,
+    "medianPitch": 188,
+    "firstCardH": 240,
+    "actionsInOneRow": 54,
+    "chips": 4,
+    "chipBar": {
+     "sticky": true,
+     "h": 72
+    },
+    "floorHeadings": 4
+   },
+   "search": null
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "rooms-search-hci",
+   "lang": "en",
+   "screens": 1.6,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 56,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": null,
+   "rooms": null,
+   "search": {
+    "first": "classes",
+    "classMatches": 1,
+    "noRoomMessage": "No room matches “HCI” – your results are the classes above.",
+    "noRoomAboveClasses": false,
+    "scopeSentence": true,
+    "classesHeadingTop": 538.7
+   }
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "rooms-search-k1-120",
+   "lang": "en",
+   "screens": 1.6,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 56,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 1,
+    "medianPitch": null,
+    "firstCardH": 176,
+    "actionsInOneRow": 1,
+    "chips": 0,
+    "chipBar": null,
+    "floorHeadings": 1
+   },
+   "search": {
+    "first": "rooms",
+    "classMatches": 0,
+    "noRoomMessage": null,
+    "noRoomAboveClasses": null,
+    "scopeSentence": true,
+    "classesHeadingTop": 822.7
+   }
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "home",
+   "lang": "de",
+   "screens": 1.2,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 48,
+   "textMinFs": 14,
+   "home": {
+    "kind": "stage2",
+    "cards": 6,
+    "columns": 2,
+    "minW": 358,
+    "minH": 200,
+    "maxH": 228,
+    "pictograms": 6,
+    "lastBottomViewportAtEnd": null
+   },
+   "newcomers": null,
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "newcomers",
+   "lang": "de",
+   "screens": 1.5,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 48,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": {
+    "cards": 5,
+    "columns": 2,
+    "minH": 273.8,
+    "helpFullWidth": true,
+    "pictograms": 5,
+    "noteKind": "compact marker",
+    "noteHeight": 24,
+    "noteFontPx": 16,
+    "noteBackground": "rgba(0, 0, 0, 0)"
+   },
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "rooms",
+   "lang": "de",
+   "screens": 12.6,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 48,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 54,
+    "medianPitch": 188,
+    "firstCardH": 212,
+    "actionsInOneRow": 54,
+    "chips": 4,
+    "chipBar": {
+     "sticky": false,
+     "h": 72
+    },
+    "floorHeadings": 4
+   },
+   "search": null
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "rooms-search-hci",
+   "lang": "de",
+   "screens": 1.5,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 48,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": null,
+   "rooms": null,
+   "search": {
+    "first": "classes",
+    "classMatches": 1,
+    "noRoomMessage": "Kein Raum passt zu „HCI“ – die Treffer stehen oben bei den Lehrveranstaltungen.",
+    "noRoomAboveClasses": false,
+    "scopeSentence": true,
+    "classesHeadingTop": 582.7
+   }
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "rooms-search-k1-120",
+   "lang": "de",
+   "screens": 1.5,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 48,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 1,
+    "medianPitch": null,
+    "firstCardH": 176,
+    "actionsInOneRow": 1,
+    "chips": 0,
+    "chipBar": null,
+    "floorHeadings": 1
+   },
+   "search": {
+    "first": "rooms",
+    "classMatches": 0,
+    "noRoomMessage": null,
+    "noRoomAboveClasses": null,
+    "scopeSentence": true,
+    "classesHeadingTop": 866.7
+   }
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "home",
+   "lang": "en",
+   "screens": 1.2,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 48,
+   "textMinFs": 14,
+   "home": {
+    "kind": "stage2",
+    "cards": 6,
+    "columns": 2,
+    "minW": 358,
+    "minH": 200,
+    "maxH": 228,
+    "pictograms": 6,
+    "lastBottomViewportAtEnd": null
+   },
+   "newcomers": null,
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "newcomers",
+   "lang": "en",
+   "screens": 1.5,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 48,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": {
+    "cards": 5,
+    "columns": 2,
+    "minH": 273.8,
+    "helpFullWidth": true,
+    "pictograms": 5,
+    "noteKind": "compact marker",
+    "noteHeight": 24,
+    "noteFontPx": 16,
+    "noteBackground": "rgba(0, 0, 0, 0)"
+   },
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "rooms",
+   "lang": "en",
+   "screens": 12.6,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 48,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 54,
+    "medianPitch": 188,
+    "firstCardH": 212,
+    "actionsInOneRow": 54,
+    "chips": 4,
+    "chipBar": {
+     "sticky": false,
+     "h": 72
+    },
+    "floorHeadings": 4
+   },
+   "search": null
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "rooms-search-hci",
+   "lang": "en",
+   "screens": 1.5,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 48,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": null,
+   "rooms": null,
+   "search": {
+    "first": "classes",
+    "classMatches": 1,
+    "noRoomMessage": "No room matches “HCI” – your results are the classes above.",
+    "noRoomAboveClasses": false,
+    "scopeSentence": true,
+    "classesHeadingTop": 650.7
+   }
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "rooms-search-k1-120",
+   "lang": "en",
+   "screens": 1.5,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 48,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 1,
+    "medianPitch": null,
+    "firstCardH": 176,
+    "actionsInOneRow": 1,
+    "chips": 0,
+    "chipBar": null,
+    "floorHeadings": 1
+   },
+   "search": {
+    "first": "rooms",
+    "classMatches": 0,
+    "noRoomMessage": null,
+    "noRoomAboveClasses": null,
+    "scopeSentence": true,
+    "classesHeadingTop": 934.7
+   }
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "home",
+   "lang": "de",
+   "screens": 1.9,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 48,
+   "textMinFs": 14,
+   "home": {
+    "kind": "stage2",
+    "cards": 6,
+    "columns": 1,
+    "minW": 350,
+    "minH": 112,
+    "maxH": 164,
+    "pictograms": 6,
+    "lastBottomViewportAtEnd": null
+   },
+   "newcomers": null,
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "newcomers",
+   "lang": "de",
+   "screens": 2.7,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 48,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": {
+    "cards": 5,
+    "columns": 1,
+    "minH": 244.5,
+    "helpFullWidth": true,
+    "pictograms": 5,
+    "noteKind": "compact marker",
+    "noteHeight": 48,
+    "noteFontPx": 16,
+    "noteBackground": "rgba(0, 0, 0, 0)"
+   },
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "rooms",
+   "lang": "de",
+   "screens": 20.3,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 48,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 54,
+    "medianPitch": 316,
+    "firstCardH": 364,
+    "actionsInOneRow": 0,
+    "chips": 4,
+    "chipBar": {
+     "sticky": false,
+     "h": 136
+    },
+    "floorHeadings": 4
+   },
+   "search": null
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "rooms-search-hci",
+   "lang": "de",
+   "screens": 2.3,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 48,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": null,
+   "rooms": null,
+   "search": {
+    "first": "classes",
+    "classMatches": 1,
+    "noRoomMessage": "Kein Raum passt zu „HCI“ – die Treffer stehen oben bei den Lehrveranstaltungen.",
+    "noRoomAboveClasses": false,
+    "scopeSentence": true,
+    "classesHeadingTop": 892.7
+   }
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "rooms-search-k1-120",
+   "lang": "de",
+   "screens": 2.3,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 48,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 1,
+    "medianPitch": null,
+    "firstCardH": 304,
+    "actionsInOneRow": 0,
+    "chips": 0,
+    "chipBar": null,
+    "floorHeadings": 1
+   },
+   "search": {
+    "first": "rooms",
+    "classMatches": 0,
+    "noRoomMessage": null,
+    "noRoomAboveClasses": null,
+    "scopeSentence": true,
+    "classesHeadingTop": 1304.7
+   }
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "home",
+   "lang": "en",
+   "screens": 1.8,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 48,
+   "textMinFs": 14,
+   "home": {
+    "kind": "stage2",
+    "cards": 6,
+    "columns": 1,
+    "minW": 350,
+    "minH": 112,
+    "maxH": 136,
+    "pictograms": 6,
+    "lastBottomViewportAtEnd": null
+   },
+   "newcomers": null,
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "newcomers",
+   "lang": "en",
+   "screens": 2.6,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 48,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": {
+    "cards": 5,
+    "columns": 1,
+    "minH": 244.5,
+    "helpFullWidth": true,
+    "pictograms": 5,
+    "noteKind": "compact marker",
+    "noteHeight": 48,
+    "noteFontPx": 16,
+    "noteBackground": "rgba(0, 0, 0, 0)"
+   },
+   "rooms": null,
+   "search": null
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "rooms",
+   "lang": "en",
+   "screens": 20.5,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 48,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 54,
+    "medianPitch": 316,
+    "firstCardH": 364,
+    "actionsInOneRow": 0,
+    "chips": 4,
+    "chipBar": {
+     "sticky": false,
+     "h": 136
+    },
+    "floorHeadings": 4
+   },
+   "search": null
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "rooms-search-hci",
+   "lang": "en",
+   "screens": 2.3,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 48,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": null,
+   "rooms": null,
+   "search": {
+    "first": "classes",
+    "classMatches": 1,
+    "noRoomMessage": "No room matches “HCI” – your results are the classes above.",
+    "noRoomAboveClasses": false,
+    "scopeSentence": true,
+    "classesHeadingTop": 976.7
+   }
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "rooms-search-k1-120",
+   "lang": "en",
+   "screens": 2.4,
+   "hOverflow": false,
+   "clearOfDock": true,
+   "minTargetH": 48,
+   "textMinFs": 14,
+   "home": null,
+   "newcomers": null,
+   "rooms": {
+    "cards": 1,
+    "medianPitch": null,
+    "firstCardH": 304,
+    "actionsInOneRow": 0,
+    "chips": 0,
+    "chipBar": null,
+    "floorHeadings": 1
+   },
+   "search": {
+    "first": "rooms",
+    "classMatches": 0,
+    "noRoomMessage": null,
+    "noRoomAboveClasses": null,
+    "scopeSentence": true,
+    "classesHeadingTop": 1388.7
+   }
+  }
+ ]
+}

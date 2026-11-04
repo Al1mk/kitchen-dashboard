@@ -1,0 +1,98 @@
+[
+  {
+    "viewport": {
+      "width": 1080,
+      "height": 1920
+    },
+    "lang": "de",
+    "cancellationTitle": "Reservierung stornieren – LCC Campus Board",
+    "confirmBottom": 1286.90625,
+    "initial": {
+      "top": 1069.90625,
+      "bottom": 1157.90625,
+      "dockTop": 1609,
+      "scrollY": 0,
+      "doneBottom": 1157.90625
+    },
+    "warning": {
+      "top": 1069.90625,
+      "bottom": 1157.90625,
+      "dockTop": 1609,
+      "scrollY": 0,
+      "doneBottom": 1157.90625
+    },
+    "pageErrors": []
+  },
+  {
+    "viewport": {
+      "width": 1080,
+      "height": 1920
+    },
+    "lang": "en",
+    "cancellationTitle": "Cancel a booking – LCC Campus Board",
+    "confirmBottom": 1286.90625,
+    "initial": {
+      "top": 1031.40625,
+      "bottom": 1119.40625,
+      "dockTop": 1609,
+      "scrollY": 0,
+      "doneBottom": 1119.40625
+    },
+    "warning": {
+      "top": 1031.40625,
+      "bottom": 1119.40625,
+      "dockTop": 1609,
+      "scrollY": 0,
+      "doneBottom": 1119.40625
+    },
+    "pageErrors": []
+  },
+  {
+    "viewport": {
+      "width": 540,
+      "height": 960
+    },
+    "lang": "de",
+    "cancellationTitle": "Reservierung stornieren – LCC Campus Board",
+    "confirmBottom": 477.65625,
+    "initial": {
+      "top": 633.65625,
+      "bottom": 697.65625,
+      "dockTop": 733,
+      "scrollY": 201,
+      "doneBottom": 697.65625
+    },
+    "warning": {
+      "top": 633.65625,
+      "bottom": 697.65625,
+      "dockTop": 733,
+      "scrollY": 201,
+      "doneBottom": 697.65625
+    },
+    "pageErrors": []
+  },
+  {
+    "viewport": {
+      "width": 540,
+      "height": 960
+    },
+    "lang": "en",
+    "cancellationTitle": "Cancel a booking – LCC Campus Board",
+    "confirmBottom": 477.65625,
+    "initial": {
+      "top": 633.65625,
+      "bottom": 697.65625,
+      "dockTop": 733,
+      "scrollY": 201,
+      "doneBottom": 697.65625
+    },
+    "warning": {
+      "top": 633.65625,
+      "bottom": 697.65625,
+      "dockTop": 733,
+      "scrollY": 201,
+      "doneBottom": 697.65625
+    },
+    "pageErrors": []
+  }
+]

@@ -203,3 +203,26 @@ The latest recorded run (SEARCH-R001 correction, 1 November, this checkout) had 
 - Physical screen/device checks (T20), actual participant sessions (T22), V2/retest and booklet remain separate tasks. This guide does not mark them complete.
 
 Task-state authority: [integration progress](plans/team-integration-2026-10-31/02-progress.md). User-facing overview: [README Kanban](../README.md#kanban-board-no-deadlines).
+
+## V2 integration walkthrough (4 November 2026)
+
+Use a **new disposable demo file** to keep earlier manual observations and bookings intact. Stop any server using this checkout before rebuilding its `.next` directory. The example uses port3001 to avoid an unrelated server on3000; adjust the browser address accordingly. Existing local admin credentials still come from your private `.env.local`; do not reset or commit them.
+
+```bash
+cd "/Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/campus-board"
+export CAMPUS_BOARD_DB_PATH="$PWD/.demo-data/ali-v2-2026-11-04.sqlite"
+npm run db:seed-demo
+npm run db:seed-team-demo -- --yes
+npm run build
+npm start -- --hostname 127.0.0.1 --port 3001
+```
+
+Open `http://127.0.0.1:3001/`; admin is `http://127.0.0.1:3001/admin`. Seeding is idempotent: reusing an old file does not reset its existing dates/data. For current demo dates use a fresh filename or deliberately select an existing session’s date; do not mistake an empty day for a broken lecturer search.
+
+1. Switch DE/EN, open Rooms, use the floor chips and search a room/course for the displayed date.
+2. Open a reservable room’s schedule, choose a date inside the 14-day demo window and use the booking link. Room/day/language should carry over.
+3. Choose a free slot, review, then confirm. On the temporary receipt, save both credentials privately; tick the acknowledgement to enable Done. More time extends it; a menu link asks before leaving, while the language switch keeps it.
+4. To test self-cancellation, use the cancellation page with both values **before** discarding them. Check show/hide and the localized feedback. Do not post the code or screenshot it unmasked.
+5. Verify a deliberately invalid room on Schedule gives an unavailable-room message and an All rooms return path, rather than presenting an ordinary connection outage.
+
+These are manual test instructions, not a record that a person performed them. Touchscreen reach, native keyboard, real campus content and user comprehension are still unverified.

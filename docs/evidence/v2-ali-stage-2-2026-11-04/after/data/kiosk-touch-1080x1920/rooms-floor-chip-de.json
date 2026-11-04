@@ -1,0 +1,12 @@
+{
+ "ctx": "kiosk-touch-1080x1920",
+ "lang": "de",
+ "label": "after",
+ "landed": {
+  "focusedId": "stock-1OG",
+  "headingTop": 111,
+  "barBottom": 99,
+  "barSticky": true,
+  "urlHasHash": false
+ }
+}

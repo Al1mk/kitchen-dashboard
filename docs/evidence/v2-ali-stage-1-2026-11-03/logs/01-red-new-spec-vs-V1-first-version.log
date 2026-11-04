@@ -1,0 +1,352 @@
+
+Running 19 tests using 1 worker
+
+  ✘   1 [chromium] › tests/e2e/kiosk-dock.spec.ts:151:3 › kiosk 1080x1920 touch: one navigation, seven destinations, 4 + 3 centred at the bottom, language switch lowered (798ms)
+  ✘   2 [chromium] › tests/e2e/kiosk-dock.spec.ts:151:3 › kiosk 1080x1920 pointer-fine: one navigation, seven destinations, 4 + 3 centred at the bottom, language switch lowered (609ms)
+  ✘   3 [chromium] › tests/e2e/kiosk-dock.spec.ts:151:3 › kiosk 1080x1700 (assumed chrome loss): one navigation, seven destinations, 4 + 3 centred at the bottom, language switch lowered (608ms)
+  ✘   4 [chromium] › tests/e2e/kiosk-dock.spec.ts:151:3 › kiosk 540x960 (assumed 200 % zoom): one navigation, seven destinations, 4 + 3 centred at the bottom, language switch lowered (610ms)
+  ✘   5 [chromium] › tests/e2e/kiosk-dock.spec.ts:184:3 › ordinary laptop 1440x900: navigation and language switch stay in the page header, nothing is pinned (2.9s)
+  ✘   6 [chromium] › tests/e2e/kiosk-dock.spec.ts:184:3 › ordinary phone 390x844: navigation and language switch stay in the page header, nothing is pinned (2.9s)
+  ✘   7 [chromium] › tests/e2e/kiosk-dock.spec.ts:207:1 › the kiosk scale is scoped: public pages at 1080 px grow, the admin keeps the ordinary scale (607ms)
+  ✘   8 [chromium] › tests/e2e/kiosk-dock.spec.ts:229:1 › the active destination and language are marked by more than colour (635ms)
+  ✘   9 [chromium] › tests/e2e/kiosk-dock.spec.ts:247:3 › kiosk 1080x1920 touch: the end of every page is reachable above the dock and the dock height is reserved (604ms)
+  ✘  10 [chromium] › tests/e2e/kiosk-dock.spec.ts:247:3 › kiosk 1080x1700 (assumed chrome loss): the end of every page is reachable above the dock and the dock height is reserved (606ms)
+  ✘  11 [chromium] › tests/e2e/kiosk-dock.spec.ts:247:3 › kiosk 540x960 (assumed 200 % zoom): the end of every page is reachable above the dock and the dock height is reserved (604ms)
+  ✓  12 [chromium] › tests/e2e/kiosk-dock.spec.ts:277:3 › kiosk 1080x1700 (assumed chrome loss): keyboard focus is never hidden behind the dock (2.5s)
+  ✓  13 [chromium] › tests/e2e/kiosk-dock.spec.ts:277:3 › kiosk 540x960 (assumed 200 % zoom): keyboard focus is never hidden behind the dock (2.5s)
+  ✓  14 [chromium] › tests/e2e/kiosk-dock.spec.ts:307:1 › kiosk: search, language switch, bare Rooms link and Back/Forward keep working through the dock (821ms)
+  ✘  15 [chromium] › tests/e2e/kiosk-dock.spec.ts:330:1 › kiosk: the course-title note appears only where class titles are shown (5.6s)
+  ✘  16 [chromium] › tests/e2e/kiosk-dock.spec.ts:366:3 › board 1080x1920 touch: dock below the scrolling list; cards, empty and error states intact (628ms)
+  ✘  17 [chromium] › tests/e2e/kiosk-dock.spec.ts:366:3 › board 540x960 (assumed 200 % zoom): dock below the scrolling list; cards, empty and error states intact (622ms)
+  ✓  18 [chromium] › tests/e2e/kiosk-dock.spec.ts:403:1 › the admin preview of an announcement has no public navigation (304ms)
+  ✘  19 [chromium] › tests/e2e/kiosk-dock.spec.ts:421:1 › kiosk: the pending-booking guard still intercepts the dock; confirm and receipt actions stay above the dock (216ms)
+
+
+  1) [chromium] › tests/e2e/kiosk-dock.spec.ts:151:3 › kiosk 1080x1920 touch: one navigation, seven destinations, 4 + 3 centred at the bottom, language switch lowered 
+
+    Error: 1080x1920 touch de /: row centred on 540
+
+    expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 2
+    Received:    92
+
+      161 |         expect(g.rows.map((r) => r.count), `${where}: first row four, second row three`).toEqual([4, 3]);
+      162 |         // The centre of each row is the centre of the viewport/container, not a hardcoded 540 px.
+    > 163 |         for (const row of g.rows) expect(Math.abs(row.centre - g.frameCentre), `${where}: row centred on ${g.frameCentre}`).toBeLessThanOrEqual(2);
+          |                                                                                                                             ^
+      164 |         for (const row of g.rows) {
+      165 |           expect(row.minHeight, `${where}: tile height`).toBeGreaterThanOrEqual(56);
+      166 |           expect(row.minGap ?? 99, `${where}: gap between tiles`).toBeGreaterThanOrEqual(8);
+        at <scratch>/v1/tests/e2e/kiosk-dock.spec.ts:163:125
+
+    Error Context: test-results/kiosk-dock-kiosk-1080x1920-18f00-tom-language-switch-lowered-chromium/error-context.md
+
+  2) [chromium] › tests/e2e/kiosk-dock.spec.ts:151:3 › kiosk 1080x1920 pointer-fine: one navigation, seven destinations, 4 + 3 centred at the bottom, language switch lowered 
+
+    Error: 1080x1920 pointer-fine de /: row centred on 540
+
+    expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 2
+    Received:    92
+
+      161 |         expect(g.rows.map((r) => r.count), `${where}: first row four, second row three`).toEqual([4, 3]);
+      162 |         // The centre of each row is the centre of the viewport/container, not a hardcoded 540 px.
+    > 163 |         for (const row of g.rows) expect(Math.abs(row.centre - g.frameCentre), `${where}: row centred on ${g.frameCentre}`).toBeLessThanOrEqual(2);
+          |                                                                                                                             ^
+      164 |         for (const row of g.rows) {
+      165 |           expect(row.minHeight, `${where}: tile height`).toBeGreaterThanOrEqual(56);
+      166 |           expect(row.minGap ?? 99, `${where}: gap between tiles`).toBeGreaterThanOrEqual(8);
+        at <scratch>/v1/tests/e2e/kiosk-dock.spec.ts:163:125
+
+    Error Context: test-results/kiosk-dock-kiosk-1080x1920-9d116-tom-language-switch-lowered-chromium/error-context.md
+
+  3) [chromium] › tests/e2e/kiosk-dock.spec.ts:151:3 › kiosk 1080x1700 (assumed chrome loss): one navigation, seven destinations, 4 + 3 centred at the bottom, language switch lowered 
+
+    Error: 1080x1700 (assumed chrome loss) de /: row centred on 540
+
+    expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 2
+    Received:    92
+
+      161 |         expect(g.rows.map((r) => r.count), `${where}: first row four, second row three`).toEqual([4, 3]);
+      162 |         // The centre of each row is the centre of the viewport/container, not a hardcoded 540 px.
+    > 163 |         for (const row of g.rows) expect(Math.abs(row.centre - g.frameCentre), `${where}: row centred on ${g.frameCentre}`).toBeLessThanOrEqual(2);
+          |                                                                                                                             ^
+      164 |         for (const row of g.rows) {
+      165 |           expect(row.minHeight, `${where}: tile height`).toBeGreaterThanOrEqual(56);
+      166 |           expect(row.minGap ?? 99, `${where}: gap between tiles`).toBeGreaterThanOrEqual(8);
+        at <scratch>/v1/tests/e2e/kiosk-dock.spec.ts:163:125
+
+    Error Context: test-results/kiosk-dock-kiosk-1080x1700-ff63e-tom-language-switch-lowered-chromium/error-context.md
+
+  4) [chromium] › tests/e2e/kiosk-dock.spec.ts:151:3 › kiosk 540x960 (assumed 200 % zoom): one navigation, seven destinations, 4 + 3 centred at the bottom, language switch lowered 
+
+    Error: 540x960 (assumed 200 % zoom) de /: first row four, second row three
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 4
+
+      Array [
+    -   4,
+    -   3,
+    +   2,
+    +   2,
+    +   2,
+    +   1,
+      ]
+
+      159 |         expect(g.navCount, `${where}: exactly one visible navigation`).toBe(1);
+      160 |         expect(g.links.map((l) => l.href), `${where}: seven destinations keep the language`).toEqual(EXPECTED_PATHS.map((p) => publicHref(p, lang)));
+    > 161 |         expect(g.rows.map((r) => r.count), `${where}: first row four, second row three`).toEqual([4, 3]);
+          |                                                                                          ^
+      162 |         // The centre of each row is the centre of the viewport/container, not a hardcoded 540 px.
+      163 |         for (const row of g.rows) expect(Math.abs(row.centre - g.frameCentre), `${where}: row centred on ${g.frameCentre}`).toBeLessThanOrEqual(2);
+      164 |         for (const row of g.rows) {
+        at <scratch>/v1/tests/e2e/kiosk-dock.spec.ts:161:90
+
+    Error Context: test-results/kiosk-dock-kiosk-540x960-a-5e1ac-tom-language-switch-lowered-chromium/error-context.md
+
+  5) [chromium] › tests/e2e/kiosk-dock.spec.ts:184:3 › ordinary laptop 1440x900: navigation and language switch stay in the page header, nothing is pinned 
+
+    Error: laptop 1440x900 de /schedule
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      190 |         const g = await geometry(page);
+      191 |         const where = `${v.name} ${lang} ${route}`;
+    > 192 |         expect(g.navCount, where).toBe(1);
+          |                                   ^
+      193 |         expect(g.links.length, `${where}: seven destinations`).toBe(7);
+      194 |         expect(g.pinned, `${where}: navigation is not pinned`).toBeNull();
+      195 |         expect(g.navTop, `${where}: navigation in the header`).toBeLessThan(260);
+        at <scratch>/v1/tests/e2e/kiosk-dock.spec.ts:192:35
+
+    Error Context: test-results/kiosk-dock-ordinary-laptop-a12ad-ge-header-nothing-is-pinned-chromium/error-context.md
+
+  6) [chromium] › tests/e2e/kiosk-dock.spec.ts:184:3 › ordinary phone 390x844: navigation and language switch stay in the page header, nothing is pinned 
+
+    Error: phone 390x844 de /schedule
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      190 |         const g = await geometry(page);
+      191 |         const where = `${v.name} ${lang} ${route}`;
+    > 192 |         expect(g.navCount, where).toBe(1);
+          |                                   ^
+      193 |         expect(g.links.length, `${where}: seven destinations`).toBe(7);
+      194 |         expect(g.pinned, `${where}: navigation is not pinned`).toBeNull();
+      195 |         expect(g.navTop, `${where}: navigation in the header`).toBeLessThan(260);
+        at <scratch>/v1/tests/e2e/kiosk-dock.spec.ts:192:35
+
+    Error Context: test-results/kiosk-dock-ordinary-phone--b282d-ge-header-nothing-is-pinned-chromium/error-context.md
+
+  7) [chromium] › tests/e2e/kiosk-dock.spec.ts:207:1 › the kiosk scale is scoped: public pages at 1080 px grow, the admin keeps the ordinary scale 
+
+    Error: public page root size at 1080 px
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 20
+    Received:    16
+
+      209 |   await open(page, "/", "de");
+      210 |   const g = await geometry(page);
+    > 211 |   expect(g.rootFontSize, "public page root size at 1080 px").toBeGreaterThanOrEqual(20);
+          |                                                              ^
+      212 |   const intro = await page.locator("main p").first().evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
+      213 |   expect(intro, "intro text at 1080 px").toBeGreaterThanOrEqual(22);
+      214 |   const h1 = await page.locator("h1").first().evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
+        at <scratch>/v1/tests/e2e/kiosk-dock.spec.ts:211:62
+
+    Error Context: test-results/kiosk-dock-the-kiosk-scale-6953c-in-keeps-the-ordinary-scale-chromium/error-context.md
+
+  8) [chromium] › tests/e2e/kiosk-dock.spec.ts:229:1 › the active destination and language are marked by more than colour 
+
+    Error: /rooms: active destination has a non-colour cue
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      234 |     const active = g.links.filter((l) => l.current === "page");
+      235 |     expect(active, `${route}: one active destination`).toHaveLength(1);
+    > 236 |     expect(active[0].cue, `${route}: active destination has a non-colour cue`).toBe(true);
+          |                                                                                ^
+      237 |     expect(g.links.filter((l) => l.current !== "page" && l.cue), `${route}: idle destinations have none`).toHaveLength(0);
+      238 |     const current = g.lang!.links.filter((l) => l.current === "true");
+      239 |     expect(current, `${route}: one active language`).toHaveLength(1);
+        at <scratch>/v1/tests/e2e/kiosk-dock.spec.ts:236:80
+
+    Error Context: test-results/kiosk-dock-the-active-dest-3cbfd--marked-by-more-than-colour-chromium/error-context.md
+
+  9) [chromium] › tests/e2e/kiosk-dock.spec.ts:247:3 › kiosk 1080x1920 touch: the end of every page is reachable above the dock and the dock height is reserved 
+
+    Error: 1080x1920 touch de /: dock pinned
+
+    expect(received).not.toBeNull()
+
+    Received: null
+
+      253 |         const where = `${v.name} ${lang} ${route}`;
+      254 |         const g = await geometry(page);
+    > 255 |         expect(g.pinned, `${where}: dock pinned`).not.toBeNull();
+          |                                                       ^
+      256 |         expect(Math.abs((g.dockToken ?? -99) - g.pinned!.height), `${where}: --public-dock-h equals the dock height`).toBeLessThanOrEqual(1);
+      257 |         expect(g.scrollPaddingBottom, `${where}: scroll-padding-bottom covers the dock`).toBeGreaterThanOrEqual(g.pinned!.height - 1);
+      258 |         const end = await page.evaluate(() => {
+        at <scratch>/v1/tests/e2e/kiosk-dock.spec.ts:255:55
+
+    Error Context: test-results/kiosk-dock-kiosk-1080x1920-948b0-the-dock-height-is-reserved-chromium/error-context.md
+
+  10) [chromium] › tests/e2e/kiosk-dock.spec.ts:247:3 › kiosk 1080x1700 (assumed chrome loss): the end of every page is reachable above the dock and the dock height is reserved 
+
+    Error: 1080x1700 (assumed chrome loss) de /: dock pinned
+
+    expect(received).not.toBeNull()
+
+    Received: null
+
+      253 |         const where = `${v.name} ${lang} ${route}`;
+      254 |         const g = await geometry(page);
+    > 255 |         expect(g.pinned, `${where}: dock pinned`).not.toBeNull();
+          |                                                       ^
+      256 |         expect(Math.abs((g.dockToken ?? -99) - g.pinned!.height), `${where}: --public-dock-h equals the dock height`).toBeLessThanOrEqual(1);
+      257 |         expect(g.scrollPaddingBottom, `${where}: scroll-padding-bottom covers the dock`).toBeGreaterThanOrEqual(g.pinned!.height - 1);
+      258 |         const end = await page.evaluate(() => {
+        at <scratch>/v1/tests/e2e/kiosk-dock.spec.ts:255:55
+
+    Error Context: test-results/kiosk-dock-kiosk-1080x1700-9e9e5-the-dock-height-is-reserved-chromium/error-context.md
+
+  11) [chromium] › tests/e2e/kiosk-dock.spec.ts:247:3 › kiosk 540x960 (assumed 200 % zoom): the end of every page is reachable above the dock and the dock height is reserved 
+
+    Error: 540x960 (assumed 200 % zoom) de /: dock pinned
+
+    expect(received).not.toBeNull()
+
+    Received: null
+
+      253 |         const where = `${v.name} ${lang} ${route}`;
+      254 |         const g = await geometry(page);
+    > 255 |         expect(g.pinned, `${where}: dock pinned`).not.toBeNull();
+          |                                                       ^
+      256 |         expect(Math.abs((g.dockToken ?? -99) - g.pinned!.height), `${where}: --public-dock-h equals the dock height`).toBeLessThanOrEqual(1);
+      257 |         expect(g.scrollPaddingBottom, `${where}: scroll-padding-bottom covers the dock`).toBeGreaterThanOrEqual(g.pinned!.height - 1);
+      258 |         const end = await page.evaluate(() => {
+        at <scratch>/v1/tests/e2e/kiosk-dock.spec.ts:255:55
+
+    Error Context: test-results/kiosk-dock-kiosk-540x960-a-db0dc-the-dock-height-is-reserved-chromium/error-context.md
+
+  12) [chromium] › tests/e2e/kiosk-dock.spec.ts:330:1 › kiosk: the course-title note appears only where class titles are shown 
+
+    Error: /booking (en) has no course-title note
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByText(/Course titles, lecturers and study groups/)
+    Expected: 0
+    Received: 1
+    Timeout:  5000ms
+
+    Call log:
+      - /booking (en) has no course-title note getByText(/Course titles, lecturers and study groups/) with timeout 5000ms
+      - waiting for getByText(/Course titles, lecturers and study groups/)
+        14 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      333 |   for (const route of ["/booking", "/booking/cancel", "/map", "/newcomers", "/display"]) {
+      334 |     await open(page, route, "en");
+    > 335 |     await expect(note, `${route} (en) has no course-title note`).toHaveCount(0);
+          |                                                                  ^
+      336 |   }
+      337 |   for (const route of ["/schedule", "/rooms"]) {
+      338 |     await open(page, route, "en");
+        at <scratch>/v1/tests/e2e/kiosk-dock.spec.ts:335:66
+
+    Error Context: test-results/kiosk-dock-kiosk-the-cours-13a54-here-class-titles-are-shown-chromium/error-context.md
+
+  13) [chromium] › tests/e2e/kiosk-dock.spec.ts:366:3 › board 1080x1920 touch: dock below the scrolling list; cards, empty and error states intact 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 2
+    Received:    124.7421875
+
+      372 |     const g = await geometry(page);
+      373 |     expect(g.rows.map((r) => r.count)).toEqual([4, 3]);
+    > 374 |     for (const row of g.rows) expect(Math.abs(row.centre - g.frameCentre)).toBeLessThanOrEqual(2);
+          |                                                                            ^
+      375 |     const list = await page.evaluate(() => {
+      376 |       const cards = [...document.querySelectorAll("article")];
+      377 |       const box = cards[0].parentElement!;
+        at <scratch>/v1/tests/e2e/kiosk-dock.spec.ts:374:76
+
+    Error Context: test-results/kiosk-dock-board-1080x1920-105d5-pty-and-error-states-intact-chromium/error-context.md
+
+  14) [chromium] › tests/e2e/kiosk-dock.spec.ts:366:3 › board 540x960 (assumed 200 % zoom): dock below the scrolling list; cards, empty and error states intact 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 2
+    Received:    62.375
+
+      372 |     const g = await geometry(page);
+      373 |     expect(g.rows.map((r) => r.count)).toEqual([4, 3]);
+    > 374 |     for (const row of g.rows) expect(Math.abs(row.centre - g.frameCentre)).toBeLessThanOrEqual(2);
+          |                                                                            ^
+      375 |     const list = await page.evaluate(() => {
+      376 |       const cards = [...document.querySelectorAll("article")];
+      377 |       const box = cards[0].parentElement!;
+        at <scratch>/v1/tests/e2e/kiosk-dock.spec.ts:374:76
+
+    Error Context: test-results/kiosk-dock-board-540x960-a-3099b-pty-and-error-states-intact-chromium/error-context.md
+
+  15) [chromium] › tests/e2e/kiosk-dock.spec.ts:421:1 › kiosk: the pending-booking guard still intercepts the dock; confirm and receipt actions stay above the dock 
+
+    Error: confirm button above the dock after focus
+
+    expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= -459.84375
+    Received:    1699.65625
+
+      451 |   // Keyboard focus on the confirm action must not leave it behind the dock.
+      452 |   await confirm.focus();
+    > 453 |   expect((await confirm.boundingBox())!.y + (await confirm.boundingBox())!.height, "confirm button above the dock after focus").toBeLessThanOrEqual((await dockTop()) + 0.5);
+          |                                                                                                                                 ^
+      454 |   await confirm.click();
+      455 |
+      456 |   // While the request is pending, a tap on the dock opens the leave dialog instead of navigating.
+        at <scratch>/v1/tests/e2e/kiosk-dock.spec.ts:453:129
+
+    Error Context: test-results/kiosk-dock-kiosk-the-pendi-01c65-actions-stay-above-the-dock-chromium/error-context.md
+
+  15 failed
+    [chromium] › tests/e2e/kiosk-dock.spec.ts:151:3 › kiosk 1080x1920 touch: one navigation, seven destinations, 4 + 3 centred at the bottom, language switch lowered 
+    [chromium] › tests/e2e/kiosk-dock.spec.ts:151:3 › kiosk 1080x1920 pointer-fine: one navigation, seven destinations, 4 + 3 centred at the bottom, language switch lowered 
+    [chromium] › tests/e2e/kiosk-dock.spec.ts:151:3 › kiosk 1080x1700 (assumed chrome loss): one navigation, seven destinations, 4 + 3 centred at the bottom, language switch lowered 
+    [chromium] › tests/e2e/kiosk-dock.spec.ts:151:3 › kiosk 540x960 (assumed 200 % zoom): one navigation, seven destinations, 4 + 3 centred at the bottom, language switch lowered 
+    [chromium] › tests/e2e/kiosk-dock.spec.ts:184:3 › ordinary laptop 1440x900: navigation and language switch stay in the page header, nothing is pinned 
+    [chromium] › tests/e2e/kiosk-dock.spec.ts:184:3 › ordinary phone 390x844: navigation and language switch stay in the page header, nothing is pinned 
+    [chromium] › tests/e2e/kiosk-dock.spec.ts:207:1 › the kiosk scale is scoped: public pages at 1080 px grow, the admin keeps the ordinary scale 
+    [chromium] › tests/e2e/kiosk-dock.spec.ts:229:1 › the active destination and language are marked by more than colour 
+    [chromium] › tests/e2e/kiosk-dock.spec.ts:247:3 › kiosk 1080x1920 touch: the end of every page is reachable above the dock and the dock height is reserved 
+    [chromium] › tests/e2e/kiosk-dock.spec.ts:247:3 › kiosk 1080x1700 (assumed chrome loss): the end of every page is reachable above the dock and the dock height is reserved 
+    [chromium] › tests/e2e/kiosk-dock.spec.ts:247:3 › kiosk 540x960 (assumed 200 % zoom): the end of every page is reachable above the dock and the dock height is reserved 
+    [chromium] › tests/e2e/kiosk-dock.spec.ts:330:1 › kiosk: the course-title note appears only where class titles are shown 
+    [chromium] › tests/e2e/kiosk-dock.spec.ts:366:3 › board 1080x1920 touch: dock below the scrolling list; cards, empty and error states intact 
+    [chromium] › tests/e2e/kiosk-dock.spec.ts:366:3 › board 540x960 (assumed 200 % zoom): dock below the scrolling list; cards, empty and error states intact 
+    [chromium] › tests/e2e/kiosk-dock.spec.ts:421:1 › kiosk: the pending-booking guard still intercepts the dock; confirm and receipt actions stay above the dock 
+  4 passed (36.0s)

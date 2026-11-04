@@ -1,0 +1,28 @@
+{
+ "ctx": "sens-1080x1700",
+ "name": "display-empty",
+ "lang": "de",
+ "label": "after",
+ "geo": {
+  "vw": 1080,
+  "vh": 1700,
+  "rows": [
+   4,
+   3
+  ],
+  "lang": {
+   "found": true,
+   "gap": 14.3,
+   "centreYRatio": 0.9
+  },
+  "navTop": 1535.5,
+  "navBottom": 1682.8,
+  "frameCentre": 540,
+  "rowCentres": [
+   540,
+   540
+  ]
+ },
+ "list": null,
+ "listAboveNav": null
+}

@@ -1,0 +1,65 @@
+
+Running 20 tests using 1 worker
+
+(node:33548) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (195ms)
+(node:33553) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (192ms)
+(node:33558) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   3 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (192ms)
+(node:33563) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   4 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (190ms)
+(node:33569) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   5 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (192ms)
+(node:33574) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   6 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (193ms)
+(node:33579) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (193ms)
+(node:33584) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   8 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (195ms)
+(node:33591) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (193ms)
+(node:33596) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  10 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (191ms)
+(node:33601) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (191ms)
+(node:33608) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  12 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (193ms)
+(node:33613) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  13 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (251ms)
+(node:33622) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  14 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (338ms)
+(node:33634) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  15 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (282ms)
+(node:33642) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  16 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (293ms)
+(node:33650) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  17 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (253ms)
+(node:33658) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  18 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (229ms)
+(node:33664) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  19 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (231ms)
+(node:33670) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  20 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (203ms)
+
+  20 passed (11.9s)

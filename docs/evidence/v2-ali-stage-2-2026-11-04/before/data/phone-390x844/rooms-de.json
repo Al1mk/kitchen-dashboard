@@ -1,0 +1,52 @@
+{
+ "ctx": "phone-390x844",
+ "name": "rooms",
+ "lang": "de",
+ "label": "before",
+ "url": "/rooms",
+ "summary": {
+  "targets": 141,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 0,
+  "minTargetH": 48,
+  "minTargetW": 80.5,
+  "textMinFs": 14,
+  "textLt14": 0,
+  "textLt16": 55,
+  "textTotal": 373,
+  "lowContrastCount": 0,
+  "screens": 20.51,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 1
+ },
+ "textMinFs": 14,
+ "clear": {
+  "scrollY": 16466,
+  "docHeight": 17310,
+  "dockTop": null,
+  "lastContentBottom": 754.7,
+  "footerBottom": 843.7,
+  "lowestBottom": 843.7,
+  "clearOfDock": true,
+  "clearance": null
+ },
+ "stage2": {
+  "vh": 844,
+  "docHeight": 17310,
+  "screens": 20.5,
+  "hOverflow": false,
+  "rooms": {
+   "cards": 54,
+   "medianPitch": 324,
+   "firstCardH": 368,
+   "actionsInOneRow": 0,
+   "chips": [],
+   "chipBar": null,
+   "floorHeadings": 4
+  },
+  "dockTop": null
+ },
+ "dock": null
+}

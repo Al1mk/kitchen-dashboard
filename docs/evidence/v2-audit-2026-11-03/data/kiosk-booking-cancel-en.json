@@ -1,0 +1,719 @@
+{
+ "context": "kiosk-nominal-1080x1920",
+ "route": "/booking/cancel",
+ "lang": "en",
+ "status": 200,
+ "finalUrl": "/booking/cancel?lang=en",
+ "loadMs": 1467,
+ "stillLoadingAfter8s": false,
+ "summary": {
+  "targets": 13,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 2,
+  "minTargetH": 48,
+  "minTargetW": 80.5,
+  "textMinFs": 14,
+  "textLt14": 0,
+  "textLt16": 1,
+  "textTotal": 18,
+  "lowContrastCount": 0,
+  "screens": 1,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 1
+ },
+ "measure": {
+  "viewport": {
+   "vw": 1080,
+   "vh": 1920,
+   "dpr": 1
+  },
+  "htmlLang": "de",
+  "title": "Reservierung stornieren – LCC Campus Board",
+  "scroll": {
+   "scrollWidth": 1080,
+   "scrollHeight": 1920,
+   "screens": 1,
+   "hOverflow": false
+  },
+  "landmarks": {
+   "header": true,
+   "nav": 1,
+   "main": true,
+   "footer": true,
+   "skipLink": false
+  },
+  "headings": [
+   {
+    "l": "H1",
+    "t": "Cancel a booking",
+    "fs": 36,
+    "y": 273
+   }
+  ],
+  "targets": [
+   {
+    "i": 0,
+    "tag": "a",
+    "name": "Deutsch",
+    "href": "/booking/cancel",
+    "x": 728,
+    "y": 35,
+    "w": 86.8,
+    "h": 48,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 4.2
+   },
+   {
+    "i": 1,
+    "tag": "a",
+    "name": "English",
+    "href": "/booking/cancel?lang=en",
+    "x": 819,
+    "y": 35,
+    "w": 80.5,
+    "h": 48,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 4.2
+   },
+   {
+    "i": 2,
+    "tag": "a",
+    "name": "Home",
+    "href": "/?lang=en",
+    "x": 176,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 3,
+    "tag": "a",
+    "name": "New to campus",
+    "href": "/newcomers?lang=en",
+    "x": 360,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 4,
+    "tag": "a",
+    "name": "Map",
+    "href": "/map?lang=en",
+    "x": 544,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 5,
+    "tag": "a",
+    "name": "Rooms",
+    "href": "/rooms?lang=en",
+    "x": 728,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 6,
+    "tag": "a",
+    "name": "Schedule",
+    "href": "/schedule?lang=en",
+    "x": 176,
+    "y": 175,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 7,
+    "tag": "a",
+    "name": "Booking",
+    "href": "/booking?lang=en",
+    "x": 360,
+    "y": 175,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 8,
+    "tag": "a",
+    "name": "Announcements",
+    "href": "/display?lang=en",
+    "x": 544,
+    "y": 175,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 9,
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "x": 196,
+    "y": 537,
+    "w": 688,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 52
+   },
+   {
+    "i": 10,
+    "tag": "input",
+    "type": "password",
+    "name": "",
+    "x": 196,
+    "y": 645,
+    "w": 688,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 16
+   },
+   {
+    "i": 11,
+    "tag": "button",
+    "type": "submit",
+    "name": "Confirm cancellation",
+    "x": 196,
+    "y": 717,
+    "w": 688,
+    "h": 64,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 16
+   },
+   {
+    "i": 12,
+    "tag": "a",
+    "name": "Back to room booking",
+    "href": "/booking?lang=en",
+    "x": 176,
+    "y": 821,
+    "w": 728,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 40
+   }
+  ],
+  "nameless": [
+   {
+    "tag": "input",
+    "x": 196,
+    "y": 537,
+    "w": 688,
+    "h": 56
+   },
+   {
+    "tag": "input",
+    "x": 196,
+    "y": 645,
+    "w": 688,
+    "h": 56
+   }
+  ],
+  "unlabeled": [],
+  "imgs": [
+   {
+    "src": "/brand/hs-coburg-logo-screenshot.png",
+    "alt": "Hochschule Coburg",
+    "w": 176,
+    "h": 47
+   }
+  ],
+  "homeLinks": [
+   {
+    "i": 2,
+    "tag": "a",
+    "name": "Home",
+    "href": "/?lang=en",
+    "x": 176,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   }
+  ],
+  "pinned": [],
+  "overflowers": [],
+  "text": {
+   "count": 18,
+   "sizeHist": {
+    "14": 1,
+    "16": 1,
+    "18": 15,
+    "36": 1
+   },
+   "items": [
+    {
+     "text": "Lucas-Cranach-Campus Kronach",
+     "tag": "p",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 71,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Deutsch",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 35,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "English",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 35,
+     "fg": "255,255,255",
+     "bg": "35,37,43"
+    },
+    {
+     "text": "Home",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "New to campus",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Map",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Rooms",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Schedule",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 175,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Booking",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 4.82,
+     "large": false,
+     "hasBgImage": false,
+     "y": 175,
+     "fg": "255,255,255",
+     "bg": "205,64,38"
+    },
+    {
+     "text": "Announcements",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 175,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Cancel a booking",
+     "tag": "h1",
+     "fs": 36,
+     "weight": "700",
+     "contrast": 13.96,
+     "large": true,
+     "hasBgImage": false,
+     "y": 273,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Course titles, lecturers and study groups are show",
+     "tag": "p",
+     "fs": 16,
+     "weight": "400",
+     "contrast": 5.83,
+     "large": false,
+     "hasBgImage": false,
+     "y": 333,
+     "fg": "91,95,105",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "DEMO – not an official university booking system.",
+     "tag": "p",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 10.87,
+     "large": false,
+     "hasBgImage": false,
+     "y": 401,
+     "fg": "76,14,116",
+     "bg": "241,232,248"
+    },
+    {
+     "text": "Booking ID",
+     "tag": "label",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 501,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Cancellation code",
+     "tag": "label",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 609,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Confirm cancellation",
+     "tag": "button",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 4.82,
+     "large": false,
+     "hasBgImage": false,
+     "y": 717,
+     "fg": "255,255,255",
+     "bg": "205,64,38"
+    },
+    {
+     "text": "Back to room booking",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 821,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Prototype from the Human-Computer Interaction cour",
+     "tag": "footer",
+     "fs": 14,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1875,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    }
+   ]
+  }
+ },
+ "tabStops": [
+  {
+   "tag": "a",
+   "name": "Deutsch",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 35,
+   "h": 48
+  },
+  {
+   "tag": "a",
+   "name": "English",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 35,
+   "h": 48
+  },
+  {
+   "tag": "a",
+   "name": "Home",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "New to campus",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Map",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Rooms",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Schedule",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 175,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Booking",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 175,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Announcements",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 175,
+   "h": 56
+  },
+  {
+   "tag": "input",
+   "name": "",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 537,
+   "h": 56
+  },
+  {
+   "tag": "input",
+   "name": "",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 645,
+   "h": 56
+  },
+  {
+   "tag": "button",
+   "name": "Confirm cancellation",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 717,
+   "h": 64
+  },
+  {
+   "tag": "a",
+   "name": "Back to room booking",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 821,
+   "h": 56
+  }
+ ],
+ "newEvents": {
+  "console": [],
+  "pageerror": [],
+  "requestfailed": [
+   {
+    "url": "/?lang=en&_rsc=oCxE8HVPZXgUCRFz",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=oCxE8HVPZXgUCRFz",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=oCxE8HVPZXgUCRFz",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=oCxE8HVPZXgUCRFz",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?lang=en&_rsc=oCxE8HVPZXgUCRFz",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=oCxE8HVPZXgUCRFz",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=oCxE8HVPZXgUCRFz",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?lang=en&_rsc=x0hWK_Y9tc6wIBsd",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=x0hWK_Y9tc6wIBsd",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=x0hWK_Y9tc6wIBsd",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=x0hWK_Y9tc6wIBsd",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=oCxE8HVPZXgUCRFz",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?lang=en&_rsc=x0hWK_Y9tc6wIBsd",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=x0hWK_Y9tc6wIBsd",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=x0hWK_Y9tc6wIBsd",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=oCxE8HVPZXgUCRFz",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=oCxE8HVPZXgUCRFz",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=oCxE8HVPZXgUCRFz",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=oCxE8HVPZXgUCRFz",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=oCxE8HVPZXgUCRFz",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=oCxE8HVPZXgUCRFz",
+    "why": "net::ERR_ABORTED"
+   }
+  ],
+  "badresponse": []
+ }
+}

@@ -49,3 +49,6 @@ next-env.d.ts
 
 # disposable integration/demo databases (never the real data/ file)
 /.demo-data/
+
+# Local Headroom coordination file (not project source)
+/.claude/.headroom_wrap_settings.lock

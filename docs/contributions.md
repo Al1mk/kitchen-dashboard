@@ -79,3 +79,14 @@ Documentation/board-only commits (`b2b3a36`, `4bb9c2d`, `c2933f6` and the 2026-1
 - Physical accuracy of the three floor illustrations (described by the submissions as AI-generated illustrations, not verified plans).
 - Provenance of the K1-114 entry (the package mentions a campus plan that was not supplied).
 - Real newcomer facts, screen measurements and any participant results (none were supplied).
+
+## V2 source and adaptation — 4 November 2026
+
+| Scope | Original contribution | Integration / correction | Attribution limit |
+| --- | --- | --- | --- |
+| Ali Stages1/2 | Shared kiosk dock/scale, Home/Newcomers presentation, Rooms floor jumps/result ordering | Ali, assisted by Claude Code; independent Codex review and combined validation | Reza’s content.ts remains unchanged; no claimed human study |
+| Parsa V2 | Receipt acknowledgement/leave dialog/warning, review/result scroll, code visibility, concise copy, schedule booking CTA, five E2E cases | Parsa submission, [manifest](team-sources/parsa-v2/source-manifest.json) and immutable original diff in integration evidence | Do not infer individual authorship of old Aryan+Parsa joint code |
+| Review fixes R001–R006 | Findings in the independent 4November package review | Ali assisted by Codex: restore essential pending warning, stable warning layout, 404 invalidation/recovery, EN metadata, literal input hints and truthful photo caption | This is Ali’s subsequent work, not a claim that Parsa delivered the fixes |
+| HCI evidence and handoff | Historical V1 and frozen PhaseA evidence retained | Ali/Codex records real fail-before/pass-after and combined checks, Persian vault and Stage3 handoff | Automated emulation ≠ participants or physical touch |
+
+All local integration commits use Ali’s exact author **and committer** `al1mk <alimk1752@gmail.com>`, with human contribution described in subjects and this ledger; no teammate email is invented and no AI attribution trailer is added. AI assistance remains disclosed here and in course documentation. User controls publication.

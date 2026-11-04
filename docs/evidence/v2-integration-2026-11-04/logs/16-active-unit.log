@@ -1,0 +1,13 @@
+
+> campus-board@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.5 /Users/alimk/Documents/university/Coburg/Mensch-Maschine-Interaktion/Project/campus-board
+
+
+ Test Files  23 passed (23)
+      Tests  166 passed (166)
+   Start at  20:38:12
+   Duration  969ms (tests 64%, import 25%, transform 9%, worker 2%)
+

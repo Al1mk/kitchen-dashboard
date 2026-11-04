@@ -1,0 +1,62 @@
+[
+ {
+  "k": "EN slot chosen (3rd from last)",
+  "v": "18:30"
+ },
+ {
+  "k": "EN confirm step text (tail)",
+  "v": "ar room 8 K1-305 – Office 2 K1-306 – Office 3 K1-307 – Seminar room 7 Show this room on the map Classes in this room 2. Date 3. Duration 15 minutes 30 minutes 45 minutes 60 minutes 90 minutes 120 minutes 4. Select a free start time 16:30 16:45 17:00 17:15 17:30 17:45 18:00 18:15 18:30 18:45 19:00 Check your booking K1-125 Seminar room Tuesday, 3 November 2026 · 18:30–19:30 Confirm demo booking Change Cancel a booking"
+ },
+ {
+  "k": "EN receipt text",
+  "v": "Book a room Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. ✓ Booking saved K1-125 Seminar room Tuesday, 3 November 2026 · 18:30–19:30 Booking ID [REDACTED] Cancellation code [REDACTED] Important: write down or photograph the ID and code now. They are not stored anywhere and not sent to you. You need both to cancel yourself. This receipt will be hidden in 60 seconds. More time Done"
+ },
+ {
+  "k": "EN codes captured in memory",
+  "v": true
+ },
+ {
+  "k": "code shape (class pattern only)",
+  "v": {
+   "numberShape": "9a9999a9-9a9a-999a-a9a9-99a9a9aa9999",
+   "codeShape": "9AAAaAAa99a-9AaaA9Aa99aaa9aAaAAAAaaAaaAaaaA",
+   "codeLen": 43
+  }
+ },
+ {
+  "k": "after tapping Home at receipt: url",
+  "v": "/?lang=en"
+ },
+ {
+  "k": "dialog/guard text",
+  "v": []
+ },
+ {
+  "k": "main text after nav tap",
+  "v": "Campus information Information for students and visitors at Lucas-Cranach-Campus. New to campus First orientation: where do I find what? Map Find rooms on the floor plan Rooms All rooms by floor Schedule Classes by day and room Booking Check free times and make a test booking (demo) Announcements Current notices for the campus"
+ },
+ {
+  "k": "Stay button visible",
+  "v": false
+ },
+ {
+  "k": "after language switch at receipt: url",
+  "v": "/"
+ },
+ {
+  "k": "after language switch text",
+  "v": "Campus-Informationen Informationen für Studierende und Gäste am Lucas-Cranach-Campus. Neu am Campus Erste Orientierung: wo finde ich was? Karte Räume auf dem Stockwerksplan finden Räume Alle Räume nach Stockwerk Stundenplan Lehrveranstaltungen nach Tag und Raum Raumbuchung Freie Zeiten prüfen und ei"
+ },
+ {
+  "k": "Back test skipped separately (fresh form)",
+  "v": true
+ },
+ {
+  "k": "well-formed wrong code result",
+  "v": "Cancel a booking Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”. DEMO – not an official university booking system. Booking ID Cancellation code The can"
+ },
+ {
+  "k": "right code result",
+  "v": "Cancel a booking Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partl"
+ }
+]

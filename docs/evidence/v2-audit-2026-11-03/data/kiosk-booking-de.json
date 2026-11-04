@@ -1,0 +1,748 @@
+{
+ "context": "kiosk-nominal-1080x1920",
+ "route": "/booking",
+ "lang": "de",
+ "status": 200,
+ "finalUrl": "/booking",
+ "loadMs": 1462,
+ "stillLoadingAfter8s": false,
+ "summary": {
+  "targets": 14,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 2,
+  "minTargetH": 48,
+  "minTargetW": 80.5,
+  "textMinFs": 14,
+  "textLt14": 0,
+  "textLt16": 1,
+  "textTotal": 22,
+  "lowContrastCount": 0,
+  "screens": 1,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 1
+ },
+ "measure": {
+  "viewport": {
+   "vw": 1080,
+   "vh": 1920,
+   "dpr": 1
+  },
+  "htmlLang": "de",
+  "title": "Raum reservieren – Campus Board",
+  "scroll": {
+   "scrollWidth": 1080,
+   "scrollHeight": 1920,
+   "screens": 1,
+   "hOverflow": false
+  },
+  "landmarks": {
+   "header": true,
+   "nav": 1,
+   "main": true,
+   "footer": true,
+   "skipLink": false
+  },
+  "headings": [
+   {
+    "l": "H1",
+    "t": "Raum reservieren",
+    "fs": 36,
+    "y": 273
+   },
+   {
+    "l": "H2",
+    "t": "4. Freie Startzeit wählen",
+    "fs": 18,
+    "y": 1021
+   }
+  ],
+  "targets": [
+   {
+    "i": 0,
+    "tag": "a",
+    "name": "Deutsch",
+    "href": "/booking?datum=2026-11-03",
+    "x": 728,
+    "y": 35,
+    "w": 86.8,
+    "h": 48,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 4.2
+   },
+   {
+    "i": 1,
+    "tag": "a",
+    "name": "English",
+    "href": "/booking?datum=2026-11-03&lang=en",
+    "x": 819,
+    "y": 35,
+    "w": 80.5,
+    "h": 48,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 4.2
+   },
+   {
+    "i": 2,
+    "tag": "a",
+    "name": "Start",
+    "href": "/",
+    "x": 176,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 3,
+    "tag": "a",
+    "name": "Neu am Campus",
+    "href": "/newcomers",
+    "x": 360,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 4,
+    "tag": "a",
+    "name": "Karte",
+    "href": "/map",
+    "x": 544,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 5,
+    "tag": "a",
+    "name": "Räume",
+    "href": "/rooms",
+    "x": 728,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 6,
+    "tag": "a",
+    "name": "Stundenplan",
+    "href": "/schedule",
+    "x": 176,
+    "y": 175,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 7,
+    "tag": "a",
+    "name": "Raumbuchung",
+    "href": "/booking",
+    "x": 360,
+    "y": 175,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 8,
+    "tag": "a",
+    "name": "Mitteilungen",
+    "href": "/display",
+    "x": 544,
+    "y": 175,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 9,
+    "tag": "select",
+    "name": "Bitte einen Raum wählen DEMO-101 – Seminarraum 1 (Demo) K1-103 – Semin",
+    "x": 196,
+    "y": 601,
+    "w": 688,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 96
+   },
+   {
+    "i": 10,
+    "tag": "input",
+    "type": "date",
+    "name": "2026-11-03",
+    "x": 196,
+    "y": 753,
+    "w": 688,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 96
+   },
+   {
+    "i": 11,
+    "tag": "select",
+    "name": "15 Minuten 30 Minuten 45 Minuten 60 Minuten 90 Minuten 120 Minuten",
+    "x": 196,
+    "y": 905,
+    "w": 688,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 96
+   },
+   {
+    "i": 12,
+    "tag": "button",
+    "type": "button",
+    "name": "Weiter zur Bestätigung",
+    "x": 176,
+    "y": 1129,
+    "w": 728,
+    "h": 64,
+    "inFirstViewport": true,
+    "disabled": true,
+    "nearestGap": 20
+   },
+   {
+    "i": 13,
+    "tag": "a",
+    "name": "Reservierung stornieren",
+    "href": "/booking/cancel",
+    "x": 176,
+    "y": 1213,
+    "w": 728,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 20
+   }
+  ],
+  "nameless": [],
+  "unlabeled": [],
+  "imgs": [
+   {
+    "src": "/brand/hs-coburg-logo-screenshot.png",
+    "alt": "Hochschule Coburg",
+    "w": 176,
+    "h": 47
+   }
+  ],
+  "homeLinks": [
+   {
+    "i": 2,
+    "tag": "a",
+    "name": "Start",
+    "href": "/",
+    "x": 176,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   }
+  ],
+  "pinned": [],
+  "overflowers": [],
+  "text": {
+   "count": 22,
+   "sizeHist": {
+    "14": 1,
+    "18": 20,
+    "36": 1
+   },
+   "items": [
+    {
+     "text": "Lucas-Cranach-Campus Kronach",
+     "tag": "p",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 71,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Deutsch",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 35,
+     "fg": "255,255,255",
+     "bg": "35,37,43"
+    },
+    {
+     "text": "English",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 35,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Start",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Neu am Campus",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Karte",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Räume",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Stundenplan",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 175,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Raumbuchung",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 4.82,
+     "large": false,
+     "hasBgImage": false,
+     "y": 175,
+     "fg": "255,255,255",
+     "bg": "205,64,38"
+    },
+    {
+     "text": "Mitteilungen",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 175,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Raum reservieren",
+     "tag": "h1",
+     "fs": 36,
+     "weight": "700",
+     "contrast": 13.96,
+     "large": true,
+     "hasBgImage": false,
+     "y": 273,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "DEMO – keine echte Hochschulreservierung. Keine An",
+     "tag": "p",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 10.87,
+     "large": false,
+     "hasBgImage": false,
+     "y": 333,
+     "fg": "76,14,116",
+     "bg": "241,232,248"
+    },
+    {
+     "text": "Beispieldaten:",
+     "tag": "span",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 10.87,
+     "large": false,
+     "hasBgImage": false,
+     "y": 457,
+     "fg": "76,14,116",
+     "bg": "241,232,248"
+    },
+    {
+     "text": "Einträge mit der Markierung „Beispiel“ sind erfund",
+     "tag": "p",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 10.87,
+     "large": false,
+     "hasBgImage": false,
+     "y": 443,
+     "fg": "76,14,116",
+     "bg": "241,232,248"
+    },
+    {
+     "text": "1. Raum auswählen",
+     "tag": "label",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 565,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "2. Datum",
+     "tag": "label",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 717,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "3. Dauer",
+     "tag": "label",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 869,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "4. Freie Startzeit wählen",
+     "tag": "h2",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1021,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Wähle zuerst einen Raum.",
+     "tag": "p",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1061,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Weiter zur Bestätigung",
+     "tag": "button",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 4.82,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1129,
+     "fg": "255,255,255",
+     "bg": "205,64,38"
+    },
+    {
+     "text": "Reservierung stornieren",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1213,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Prototyp im Kurs Mensch-Maschine-Interaktion – kei",
+     "tag": "footer",
+     "fs": 14,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1875,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    }
+   ]
+  }
+ },
+ "tabStops": [
+  {
+   "tag": "a",
+   "name": "Deutsch",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 35,
+   "h": 48
+  },
+  {
+   "tag": "a",
+   "name": "English",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 35,
+   "h": 48
+  },
+  {
+   "tag": "a",
+   "name": "Start",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Neu am Campus",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Karte",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Räume",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Stundenplan",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 175,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Raumbuchung",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 175,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Mitteilungen",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 175,
+   "h": 56
+  },
+  {
+   "tag": "select",
+   "name": "Bitte einen Raum wählen DEMO-101 – Seminarraum 1 (",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 601,
+   "h": 56
+  },
+  {
+   "tag": "input",
+   "name": "2026-11-03",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 753,
+   "h": 56
+  },
+  {
+   "tag": "select",
+   "name": "15 Minuten 30 Minuten 45 Minuten 60 Minuten 90 Min",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 905,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Reservierung stornieren",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 1213,
+   "h": 56
+  }
+ ],
+ "newEvents": {
+  "console": [],
+  "pageerror": [],
+  "requestfailed": [
+   {
+    "url": "/?_rsc=OaJHm5citSthPR5D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=OaJHm5citSthPR5D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=OaJHm5citSthPR5D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=OaJHm5citSthPR5D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=OaJHm5citSthPR5D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=OaJHm5citSthPR5D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking/cancel?_rsc=OaJHm5citSthPR5D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?datum=2026-11-03&_rsc=czbfvNiTdMcrpg7t",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?datum=2026-11-03&lang=en&_rsc=czbfvNiTdMcrpg7t",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=czbfvNiTdMcrpg7t",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=czbfvNiTdMcrpg7t",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=czbfvNiTdMcrpg7t",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=czbfvNiTdMcrpg7t",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=czbfvNiTdMcrpg7t",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=czbfvNiTdMcrpg7t",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking/cancel?_rsc=czbfvNiTdMcrpg7t",
+    "why": "net::ERR_ABORTED"
+   }
+  ],
+  "badresponse": []
+ }
+}

@@ -1,0 +1,306 @@
+{
+ "ctx": "kiosk-touch-1080x1920",
+ "name": "rooms",
+ "lang": "de",
+ "url": "/rooms",
+ "label": "after",
+ "htmlLang": "de",
+ "title": "Räume – Campus Board",
+ "summary": {
+  "targets": 141,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 5,
+  "minTargetH": 77,
+  "minTargetW": 132.7,
+  "textMinFs": 19.3,
+  "textLt14": 0,
+  "textLt16": 0,
+  "textTotal": 373,
+  "lowContrastCount": 0,
+  "screens": 11.85,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 1
+ },
+ "headings": [
+  {
+   "l": "H1",
+   "t": "Räume",
+   "fs": 49.5,
+   "y": 193
+  },
+  {
+   "l": "H2",
+   "t": "Erdgeschoss",
+   "fs": 33,
+   "y": 613
+  },
+  {
+   "l": "H3",
+   "t": "DEMO-E01 Küche / Aufenthalt (Demo)",
+   "fs": 33,
+   "y": 701
+  },
+  {
+   "l": "H3",
+   "t": "DEMO-E02 Hörsaal A (Demo)",
+   "fs": 33,
+   "y": 1103
+  }
+ ],
+ "textSizeHist": {
+  "22": 1,
+  "33": 58,
+  "24.8": 204,
+  "49.5": 1,
+  "27.5": 54,
+  "19.3": 55
+ },
+ "smallTargets": [],
+ "geo": {
+  "dock": {
+   "position": "fixed",
+   "x": 0,
+   "y": 1609,
+   "w": 1080,
+   "h": 311,
+   "top": 1609,
+   "bottom": 1920,
+   "left": 0,
+   "right": 1080,
+   "shareOfViewport": 0.162
+  },
+  "layout": {
+   "rootFontPx": 22,
+   "h1Px": 49.5,
+   "firstParagraphPx": 22,
+   "mainWidth": 1056,
+   "contentWidth": 1001
+  },
+  "vw": 1080,
+  "vh": 1920,
+  "frameCentre": 540,
+  "navCount": 1,
+  "linkCount": 7,
+  "links": [
+   {
+    "name": "Start",
+    "href": "/",
+    "current": null,
+    "x": 39.5,
+    "y": 1733,
+    "w": 237.9,
+    "h": 77,
+    "top": 1733,
+    "bottom": 1810,
+    "left": 39.5,
+    "right": 277.4
+   },
+   {
+    "name": "Neu am Campus",
+    "href": "/newcomers",
+    "current": null,
+    "x": 293.9,
+    "y": 1733,
+    "w": 237.9,
+    "h": 77,
+    "top": 1733,
+    "bottom": 1810,
+    "left": 293.9,
+    "right": 531.8
+   },
+   {
+    "name": "Karte",
+    "href": "/map",
+    "current": null,
+    "x": 548.3,
+    "y": 1733,
+    "w": 237.9,
+    "h": 77,
+    "top": 1733,
+    "bottom": 1810,
+    "left": 548.3,
+    "right": 786.1
+   },
+   {
+    "name": "Räume",
+    "href": "/rooms",
+    "current": "page",
+    "x": 802.6,
+    "y": 1733,
+    "w": 237.9,
+    "h": 77,
+    "top": 1733,
+    "bottom": 1810,
+    "left": 802.6,
+    "right": 1040.5
+   },
+   {
+    "name": "Stundenplan",
+    "href": "/schedule",
+    "current": null,
+    "x": 166.7,
+    "y": 1826.5,
+    "w": 237.9,
+    "h": 77,
+    "top": 1826.5,
+    "bottom": 1903.5,
+    "left": 166.7,
+    "right": 404.6
+   },
+   {
+    "name": "Raumbuchung",
+    "href": "/booking",
+    "current": null,
+    "x": 421.1,
+    "y": 1826.5,
+    "w": 237.9,
+    "h": 77,
+    "top": 1826.5,
+    "bottom": 1903.5,
+    "left": 421.1,
+    "right": 658.9
+   },
+   {
+    "name": "Mitteilungen",
+    "href": "/display",
+    "current": null,
+    "x": 675.4,
+    "y": 1826.5,
+    "w": 237.9,
+    "h": 77,
+    "top": 1826.5,
+    "bottom": 1903.5,
+    "left": 675.4,
+    "right": 913.3
+   }
+  ],
+  "rows": [
+   {
+    "count": 4,
+    "top": 1733,
+    "left": 39.5,
+    "right": 1040.5,
+    "centre": 540,
+    "minH": 77,
+    "minW": 237.9,
+    "minGap": 16.5,
+    "names": [
+     "Start",
+     "Neu am Campus",
+     "Karte",
+     "Räume"
+    ]
+   },
+   {
+    "count": 3,
+    "top": 1826.5,
+    "left": 166.7,
+    "right": 913.3,
+    "centre": 540,
+    "minH": 77,
+    "minW": 237.9,
+    "minGap": 16.5,
+    "names": [
+     "Stundenplan",
+     "Raumbuchung",
+     "Mitteilungen"
+    ]
+   }
+  ],
+  "rowVerticalGap": 16.5,
+  "navBox": {
+   "x": 39.5,
+   "y": 1733,
+   "w": 1001,
+   "h": 170.5,
+   "top": 1733,
+   "bottom": 1903.5,
+   "left": 39.5,
+   "right": 1040.5
+  },
+  "navCentreYRatio": 0.9,
+  "lang": {
+   "found": true,
+   "box": {
+    "x": 388.2,
+    "y": 1626.5,
+    "w": 303.6,
+    "h": 90,
+    "top": 1626.5,
+    "bottom": 1716.5,
+    "left": 388.2,
+    "right": 691.8
+   },
+   "gapBetween": 16.5,
+   "links": [
+    {
+     "name": "Deutsch",
+     "current": "true",
+     "href": "/rooms",
+     "x": 394.7,
+     "y": 1633,
+     "w": 141.4,
+     "h": 77,
+     "top": 1633,
+     "bottom": 1710,
+     "left": 394.7,
+     "right": 536.1
+    },
+    {
+     "name": "English",
+     "current": null,
+     "href": "/rooms?lang=en",
+     "x": 552.6,
+     "y": 1633,
+     "w": 132.7,
+     "h": 77,
+     "top": 1633,
+     "bottom": 1710,
+     "left": 552.6,
+     "right": 685.3
+    }
+   ],
+   "centreYRatio": 0.9
+  },
+  "pinned": {
+   "position": "fixed",
+   "tag": "div",
+   "x": 0,
+   "y": 1609,
+   "w": 1080,
+   "h": 311,
+   "top": 1609,
+   "bottom": 1920,
+   "left": 0,
+   "right": 1080
+  },
+  "cssVars": {
+   "dockH": "311px",
+   "scrollPaddingBottom": "333px",
+   "fontSize": "22px"
+  },
+  "media": {
+   "portraitMinW520": true,
+   "coarse": true,
+   "hoverNone": true
+  }
+ },
+ "clear": {
+  "scrollY": 20840,
+  "docHeight": 22760,
+  "dockTop": 1609,
+  "lastContentBottom": 1514.4,
+  "footerBottom": 1608.9,
+  "lowestBottom": 1608.9,
+  "clearOfDock": true,
+  "clearance": 0.1
+ },
+ "focus": {
+  "stops": 70,
+  "coveredByDock": [],
+  "outsideViewport": [],
+  "withoutRing": []
+ }
+}

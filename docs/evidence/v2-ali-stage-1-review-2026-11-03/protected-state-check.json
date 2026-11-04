@@ -1,0 +1,19 @@
+{
+  "checkedFiles": 12,
+  "allUnchanged": true,
+  "paths": {
+    ".env.local": true,
+    "data/campus-board.sqlite": true,
+    "data/campus-board.sqlite-shm": true,
+    "data/campus-board.sqlite-wal": true,
+    ".demo-data/ali-manual-2026-11-01.sqlite": true,
+    ".demo-data/team-demo.sqlite": true,
+    ".demo-data/ali-manual-2026-11-01.sqlite-shm": true,
+    ".demo-data/ali-manual-2026-11-01.sqlite-wal": true,
+    ".demo-data/backups/ali-manual-2026-11-01.before-hci-lecturer-20261101-124915.sqlite-shm": true,
+    ".demo-data/backups/ali-manual-2026-11-01.before-hci-lecturer-20261101-124915.sqlite-wal": true,
+    ".demo-data/backups/ali-manual-2026-11-01.before-hci-lecturer-20261101-124915.sqlite": true,
+    ".next/BUILD_ID": true
+  },
+  "probeCredentialFileDeleted": true
+}

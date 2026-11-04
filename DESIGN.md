@@ -44,3 +44,14 @@ UI/UX Pro Max skill (Quick Reference rules: accessibility, touch targets, forms 
 - Public touch targets keep the ≥ 56 px rule (`min-h-14`/`min-h-16`) for buttons and links. **Exception:** map markers are small code labels (≈ 20–24 px high) taken over from Aryan's design so that 47 labels fit on the illustration; the room list below the map offers the same selection with large targets. Marker size/overlap on the 540 px wide view is an open analytical finding for V2 (T23), not yet tested with people.
 - State is never shown by colour alone: booking and admin states use text ("Bestätigt", "Storniert", "Vorbei"), selected markers also change size and `aria-pressed`.
 - The map illustrations are AI-generated drawings from Aryan's delivery and are labelled on the page as not verified plans.
+
+## V2 Stage 1 additions (2026-11-03, provisional, not yet tried on the physical screen)
+
+- **Public kiosk mode** (portrait window ≥ 520 CSS px, chosen by viewport/orientation, never by pointer type): the language switch and the seven-destination navigation form a dock fixed to the bottom edge (four tiles, then three centred), and the public root size rises from 16 px to 22 px at 1080 px width (text, tiles, spacing and column grow together; admin and other pages keep 16 px). The announcement board keeps its container-unit scale and carries the same dock inside its frame. Contract and limits: `docs/contracts.md` C10.
+- The active destination has a bar and the active language an underline in addition to the red/dark fill (non-colour cue). No token, colour or font changed; the provisional palette above stands, and no colour is called official.
+- All kiosk sizes (22 px root, 77 px tiles, 0.75 rem gaps, 520 px threshold) are design choices pending the measurement of the real panel (V2-P0); they are not standards and not tested with people.
+
+## V2 Stage 2 additions (2026-11-04, provisional, not yet tried on the physical screen)
+
+- **Pictograms:** simple 24×24 line drawings (inline SVG in `src/components/public/Pictograms.tsx`) in `brand-strong` on a `brand-cream` tile; decorative, always beside a visible text label. No new colour, token or icon library.
+- **Home/Newcomers cards:** large cards (Home 2 × 3 filling the space above the dock; Newcomers 2 × 2 plus a full-width help card with an outlined secondary action). Contract and limits: `docs/contracts.md` C11.

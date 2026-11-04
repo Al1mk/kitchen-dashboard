@@ -1,0 +1,271 @@
+{
+ "ctx": "kiosk-pointer-1080x1920",
+ "name": "booking",
+ "lang": "de",
+ "url": "/booking",
+ "label": "before",
+ "htmlLang": "de",
+ "title": "Raum reservieren – Campus Board",
+ "summary": {
+  "targets": 14,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 2,
+  "minTargetH": 48,
+  "minTargetW": 80.5,
+  "textMinFs": 14,
+  "textLt14": 0,
+  "textLt16": 1,
+  "textTotal": 22,
+  "lowContrastCount": 0,
+  "screens": 1,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 1
+ },
+ "headings": [
+  {
+   "l": "H1",
+   "t": "Raum reservieren",
+   "fs": 36,
+   "y": 273
+  },
+  {
+   "l": "H2",
+   "t": "4. Freie Startzeit wählen",
+   "fs": 18,
+   "y": 1021
+  }
+ ],
+ "textSizeHist": {
+  "14": 1,
+  "18": 20,
+  "36": 1
+ },
+ "smallTargets": [],
+ "geo": {
+  "dock": null,
+  "layout": {
+   "rootFontPx": 16,
+   "h1Px": 36,
+   "firstParagraphPx": 18,
+   "mainWidth": 768,
+   "contentWidth": 728
+  },
+  "vw": 1080,
+  "vh": 1920,
+  "frameCentre": 540,
+  "navCount": 1,
+  "linkCount": 7,
+  "links": [
+   {
+    "name": "Start",
+    "href": "/",
+    "current": null,
+    "x": 176,
+    "y": 110.7,
+    "w": 176,
+    "h": 56,
+    "top": 110.7,
+    "bottom": 166.7,
+    "left": 176,
+    "right": 352
+   },
+   {
+    "name": "Neu am Campus",
+    "href": "/newcomers",
+    "current": null,
+    "x": 360,
+    "y": 110.7,
+    "w": 176,
+    "h": 56,
+    "top": 110.7,
+    "bottom": 166.7,
+    "left": 360,
+    "right": 536
+   },
+   {
+    "name": "Karte",
+    "href": "/map",
+    "current": null,
+    "x": 544,
+    "y": 110.7,
+    "w": 176,
+    "h": 56,
+    "top": 110.7,
+    "bottom": 166.7,
+    "left": 544,
+    "right": 720
+   },
+   {
+    "name": "Räume",
+    "href": "/rooms",
+    "current": null,
+    "x": 728,
+    "y": 110.7,
+    "w": 176,
+    "h": 56,
+    "top": 110.7,
+    "bottom": 166.7,
+    "left": 728,
+    "right": 904
+   },
+   {
+    "name": "Stundenplan",
+    "href": "/schedule",
+    "current": null,
+    "x": 176,
+    "y": 174.7,
+    "w": 176,
+    "h": 56,
+    "top": 174.7,
+    "bottom": 230.7,
+    "left": 176,
+    "right": 352
+   },
+   {
+    "name": "Raumbuchung",
+    "href": "/booking",
+    "current": "page",
+    "x": 360,
+    "y": 174.7,
+    "w": 176,
+    "h": 56,
+    "top": 174.7,
+    "bottom": 230.7,
+    "left": 360,
+    "right": 536
+   },
+   {
+    "name": "Mitteilungen",
+    "href": "/display",
+    "current": null,
+    "x": 544,
+    "y": 174.7,
+    "w": 176,
+    "h": 56,
+    "top": 174.7,
+    "bottom": 230.7,
+    "left": 544,
+    "right": 720
+   }
+  ],
+  "rows": [
+   {
+    "count": 4,
+    "top": 110.7,
+    "left": 176,
+    "right": 904,
+    "centre": 540,
+    "minH": 56,
+    "minW": 176,
+    "minGap": 8,
+    "names": [
+     "Start",
+     "Neu am Campus",
+     "Karte",
+     "Räume"
+    ]
+   },
+   {
+    "count": 3,
+    "top": 174.7,
+    "left": 176,
+    "right": 720,
+    "centre": 448,
+    "minH": 56,
+    "minW": 176,
+    "minGap": 8,
+    "names": [
+     "Stundenplan",
+     "Raumbuchung",
+     "Mitteilungen"
+    ]
+   }
+  ],
+  "rowVerticalGap": 8,
+  "navBox": {
+   "x": 176,
+   "y": 110.7,
+   "w": 728,
+   "h": 120,
+   "top": 110.7,
+   "bottom": 230.7,
+   "left": 176,
+   "right": 904
+  },
+  "navCentreYRatio": 0.1,
+  "lang": {
+   "found": true,
+   "box": {
+    "x": 722.7,
+    "y": 30.3,
+    "w": 181.3,
+    "h": 58,
+    "top": 30.3,
+    "bottom": 88.3,
+    "left": 722.7,
+    "right": 904
+   },
+   "gapBetween": 4,
+   "links": [
+    {
+     "name": "Deutsch",
+     "current": "true",
+     "href": "/booking?datum=2026-11-03",
+     "x": 727.7,
+     "y": 35.3,
+     "w": 86.8,
+     "h": 48,
+     "top": 35.3,
+     "bottom": 83.3,
+     "left": 727.7,
+     "right": 814.5
+    },
+    {
+     "name": "English",
+     "current": null,
+     "href": "/booking?datum=2026-11-03&lang=en",
+     "x": 818.5,
+     "y": 35.3,
+     "w": 80.5,
+     "h": 48,
+     "top": 35.3,
+     "bottom": 83.3,
+     "left": 818.5,
+     "right": 899
+    }
+   ],
+   "centreYRatio": 0
+  },
+  "pinned": null,
+  "cssVars": {
+   "dockH": null,
+   "scrollPaddingBottom": "auto",
+   "fontSize": "16px"
+  },
+  "media": {
+   "portraitMinW520": true,
+   "coarse": false,
+   "hoverNone": false
+  }
+ },
+ "clear": {
+  "scrollY": 0,
+  "docHeight": 1920,
+  "dockTop": null,
+  "lastContentBottom": 1268.7,
+  "footerBottom": 1920,
+  "lowestBottom": 1920,
+  "clearOfDock": true,
+  "clearance": null
+ },
+ "focus": {
+  "stops": 16,
+  "coveredByDock": [],
+  "outsideViewport": [],
+  "withoutRing": [
+   "input:2026-11-03"
+  ]
+ }
+}

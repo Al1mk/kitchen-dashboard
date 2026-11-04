@@ -1,0 +1,62 @@
+- banner:
+  - img "Hochschule Coburg"
+  - paragraph: Lucas-Cranach-Campus Kronach
+  - group "Sprache":
+    - link "Deutsch":
+      - /url: /newcomers
+    - link "English":
+      - /url: /newcomers?lang=en
+  - navigation "Campus-Informationen":
+    - list:
+      - listitem:
+        - link "Start":
+          - /url: /
+      - listitem:
+        - link "Neu am Campus":
+          - /url: /newcomers
+      - listitem:
+        - link "Karte":
+          - /url: /map
+      - listitem:
+        - link "Räume":
+          - /url: /rooms
+      - listitem:
+        - link "Stundenplan":
+          - /url: /schedule
+      - listitem:
+        - link "Raumbuchung":
+          - /url: /booking
+      - listitem:
+        - link "Mitteilungen":
+          - /url: /display
+- main:
+  - heading "Neu am Campus?" [level=1]
+  - paragraph: Wähle direkt aus, was du gerade brauchst.
+  - note: Studentischer HCI-Prototyp – kein offizielles Informationssystem der Hochschule Coburg. Räume und Termine sind teilweise Beispieldaten; prüfe wichtige Angaben über offizielle Hochschulquellen.
+  - article "Einen Raum finden":
+    - heading "Einen Raum finden" [level=2]
+    - paragraph: Suche nach Raumnummer oder Name und sieh, auf welchem Stockwerk der Raum liegt. Die Pläne sind Illustrationen, keine geprüften Gebäudepläne.
+    - link "Karte öffnen":
+      - /url: /map
+  - article "Was findet heute statt?":
+    - heading "Was findet heute statt?" [level=2]
+    - paragraph: Sieh dir die eingetragenen Lehrveranstaltungen nach Tag und Raum an. Abgesagte Termine sind markiert.
+    - link "Stundenplan öffnen":
+      - /url: /schedule
+  - article "Aktuelle Hinweise":
+    - heading "Aktuelle Hinweise" [level=2]
+    - paragraph: Hier stehen die Mitteilungen, die das Campus-Team veröffentlicht hat.
+    - link "Hinweise ansehen":
+      - /url: /display
+  - article "Einen Lernraum reservieren":
+    - heading "Einen Lernraum reservieren" [level=2]
+    - paragraph: Prüfe freie Zeiten und reserviere einen freigegebenen Raum für bis zu zwei Stunden – im Prototyp nur als Demo.
+    - link "Raum reservieren":
+      - /url: /booking
+  - article "Du brauchst Hilfe?":
+    - heading "Du brauchst Hilfe?" [level=2]
+    - paragraph: Geprüfte Kontaktangaben und Öffnungszeiten sind in diesem Prototyp noch nicht hinterlegt. Frag am besten Studierende oder Mitarbeitende vor Ort; wichtige Hinweise des Campus-Teams stehen bei den Mitteilungen.
+    - link "Mitteilungen ansehen":
+      - /url: /display
+- contentinfo: Prototyp im Kurs Mensch-Maschine-Interaktion – keine offizielle Anzeige der Hochschule Coburg.
+- alert

@@ -1,0 +1,27 @@
+{
+ "ctx": "sens-1080x1700",
+ "name": "booking-receipt",
+ "lang": "de",
+ "label": "after",
+ "geo": {
+  "vw": 1080,
+  "vh": 1700,
+  "pinned": {
+   "position": "fixed",
+   "tag": "div",
+   "x": 0,
+   "y": 1389,
+   "w": 1080,
+   "h": 311,
+   "top": 1389,
+   "bottom": 1700,
+   "left": 0,
+   "right": 1080
+  },
+  "navCount": 1
+ },
+ "doneButton": {
+  "top": 965,
+  "bottom": 1053
+ }
+}

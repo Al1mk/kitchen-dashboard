@@ -1,0 +1,114 @@
+
+Running 7 tests using 1 worker
+
+  ✘  1 [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 1080x1920 touch: four action cards and a full-width help card, Reza's text unchanged, no prototype block (866ms)
+  ✘  2 [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 1080x1920 pointer-fine: four action cards and a full-width help card, Reza's text unchanged, no prototype block (692ms)
+  ✘  3 [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 1080x1700 (assumed chrome loss): four action cards and a full-width help card, Reza's text unchanged, no prototype block (695ms)
+  ✓  4 [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 540x960 (assumed 200 % zoom): four action cards and a full-width help card, Reza's text unchanged, no prototype block (1.3s)
+  ✘  5 [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers laptop 1440x900: four action cards and a full-width help card, Reza's text unchanged, no prototype block (671ms)
+  ✓  6 [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers phone 390x844: four action cards and a full-width help card, Reza's text unchanged, no prototype block (1.3s)
+  ✓  7 [chromium] › tests/e2e/stage2-layout.spec.ts:206:1 › newcomers: the end of the page is reachable above the dock (1.2s)
+
+
+  1) [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 1080x1920 touch: four action cards and a full-width help card, Reza's text unchanged, no prototype block 
+
+    Error: 1080x1920 touch de: help card spans the full grid width
+
+    expect(received).toBeCloseTo(expected, precision)
+
+    Expected: 1040.5
+    Received: 529
+
+    Expected precision:    0
+    Expected difference: < 0.5
+    Received difference:   511.5
+
+      196 |         const help = boxes[4];
+      197 |         expect(help.left, `${where}: help card starts at the grid's left edge`).toBeCloseTo(primary[0].left, 0);
+    > 198 |         expect(help.right, `${where}: help card spans the full grid width`).toBeCloseTo(primary[1].right, 0);
+          |                                                                             ^
+      199 |       }
+      200 |       expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth), `${where}: no horizontal overflow`).toBeLessThanOrEqual(0);
+      201 |     }
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:198:77
+
+    Error Context: test-results/stage2-layout-newcomers-10-d9f4c-nchanged-no-prototype-block-chromium/error-context.md
+
+  2) [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 1080x1920 pointer-fine: four action cards and a full-width help card, Reza's text unchanged, no prototype block 
+
+    Error: 1080x1920 pointer-fine de: help card spans the full grid width
+
+    expect(received).toBeCloseTo(expected, precision)
+
+    Expected: 1040.5
+    Received: 529
+
+    Expected precision:    0
+    Expected difference: < 0.5
+    Received difference:   511.5
+
+      196 |         const help = boxes[4];
+      197 |         expect(help.left, `${where}: help card starts at the grid's left edge`).toBeCloseTo(primary[0].left, 0);
+    > 198 |         expect(help.right, `${where}: help card spans the full grid width`).toBeCloseTo(primary[1].right, 0);
+          |                                                                             ^
+      199 |       }
+      200 |       expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth), `${where}: no horizontal overflow`).toBeLessThanOrEqual(0);
+      201 |     }
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:198:77
+
+    Error Context: test-results/stage2-layout-newcomers-10-7adff-nchanged-no-prototype-block-chromium/error-context.md
+
+  3) [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 1080x1700 (assumed chrome loss): four action cards and a full-width help card, Reza's text unchanged, no prototype block 
+
+    Error: 1080x1700 (assumed chrome loss) de: help card spans the full grid width
+
+    expect(received).toBeCloseTo(expected, precision)
+
+    Expected: 1040.5
+    Received: 529
+
+    Expected precision:    0
+    Expected difference: < 0.5
+    Received difference:   511.5
+
+      196 |         const help = boxes[4];
+      197 |         expect(help.left, `${where}: help card starts at the grid's left edge`).toBeCloseTo(primary[0].left, 0);
+    > 198 |         expect(help.right, `${where}: help card spans the full grid width`).toBeCloseTo(primary[1].right, 0);
+          |                                                                             ^
+      199 |       }
+      200 |       expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth), `${where}: no horizontal overflow`).toBeLessThanOrEqual(0);
+      201 |     }
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:198:77
+
+    Error Context: test-results/stage2-layout-newcomers-10-b6048-nchanged-no-prototype-block-chromium/error-context.md
+
+  4) [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers laptop 1440x900: four action cards and a full-width help card, Reza's text unchanged, no prototype block 
+
+    Error: laptop 1440x900 de: help card spans the full grid width
+
+    expect(received).toBeCloseTo(expected, precision)
+
+    Expected: 1084
+    Received: 712
+
+    Expected precision:    0
+    Expected difference: < 0.5
+    Received difference:   372
+
+      196 |         const help = boxes[4];
+      197 |         expect(help.left, `${where}: help card starts at the grid's left edge`).toBeCloseTo(primary[0].left, 0);
+    > 198 |         expect(help.right, `${where}: help card spans the full grid width`).toBeCloseTo(primary[1].right, 0);
+          |                                                                             ^
+      199 |       }
+      200 |       expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth), `${where}: no horizontal overflow`).toBeLessThanOrEqual(0);
+      201 |     }
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:198:77
+
+    Error Context: test-results/stage2-layout-newcomers-la-e29d6-nchanged-no-prototype-block-chromium/error-context.md
+
+  4 failed
+    [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 1080x1920 touch: four action cards and a full-width help card, Reza's text unchanged, no prototype block 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 1080x1920 pointer-fine: four action cards and a full-width help card, Reza's text unchanged, no prototype block 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 1080x1700 (assumed chrome loss): four action cards and a full-width help card, Reza's text unchanged, no prototype block 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers laptop 1440x900: four action cards and a full-width help card, Reza's text unchanged, no prototype block 
+  3 passed (10.2s)

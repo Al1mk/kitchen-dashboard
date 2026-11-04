@@ -1,0 +1,2 @@
+kiosk emulation (hasTouch true) {"(pointer: coarse)":true,"(any-pointer: coarse)":true,"(hover: none)":true,"(orientation: portrait)":true,"(min-width: 1000px)":true}
+same viewport, no touch (what a Mac without working touch reports) {"(pointer: coarse)":false,"(any-pointer: coarse)":false,"(hover: none)":false,"(orientation: portrait)":true,"(min-width: 1000px)":true}

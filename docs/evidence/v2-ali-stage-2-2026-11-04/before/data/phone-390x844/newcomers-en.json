@@ -1,0 +1,54 @@
+{
+ "ctx": "phone-390x844",
+ "name": "newcomers",
+ "lang": "en",
+ "label": "before",
+ "url": "/newcomers?lang=en",
+ "summary": {
+  "targets": 14,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 0,
+  "minTargetH": 48,
+  "minTargetW": 80.5,
+  "textMinFs": 14,
+  "textLt14": 0,
+  "textLt16": 1,
+  "textTotal": 29,
+  "lowContrastCount": 0,
+  "screens": 2.59,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 1
+ },
+ "textMinFs": 14,
+ "clear": {
+  "scrollY": 1341,
+  "docHeight": 2185,
+  "dockTop": null,
+  "lastContentBottom": 754.9,
+  "footerBottom": 843.9,
+  "lowestBottom": 843.9,
+  "clearOfDock": true,
+  "clearance": null
+ },
+ "stage2": {
+  "vh": 844,
+  "docHeight": 2185,
+  "screens": 2.6,
+  "hOverflow": false,
+  "newcomers": {
+   "cards": 5,
+   "columns": 1,
+   "minH": 220.5,
+   "helpFullWidth": true,
+   "pictograms": 0,
+   "noteKind": "coloured block (V1)",
+   "noteHeight": 146,
+   "noteFontPx": 16,
+   "noteBackground": "rgb(241, 232, 248)"
+  },
+  "dockTop": null
+ },
+ "dock": null
+}

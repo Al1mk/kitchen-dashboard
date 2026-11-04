@@ -1,0 +1,852 @@
+{
+ "context": "kiosk-nominal-1080x1920",
+ "route": "/",
+ "lang": "en",
+ "status": 200,
+ "finalUrl": "/?lang=en",
+ "loadMs": 1462,
+ "stillLoadingAfter8s": false,
+ "summary": {
+  "targets": 15,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 2,
+  "minTargetH": 48,
+  "minTargetW": 80.5,
+  "textMinFs": 14,
+  "textLt14": 0,
+  "textLt16": 1,
+  "textTotal": 25,
+  "lowContrastCount": 0,
+  "screens": 1,
+  "hOverflow": false,
+  "homeLinks": 3,
+  "h1": 1
+ },
+ "measure": {
+  "viewport": {
+   "vw": 1080,
+   "vh": 1920,
+   "dpr": 1
+  },
+  "htmlLang": "de",
+  "title": "Campus information – Campus Board",
+  "scroll": {
+   "scrollWidth": 1080,
+   "scrollHeight": 1920,
+   "screens": 1,
+   "hOverflow": false
+  },
+  "landmarks": {
+   "header": true,
+   "nav": 1,
+   "main": true,
+   "footer": true,
+   "skipLink": false
+  },
+  "headings": [
+   {
+    "l": "H1",
+    "t": "Campus information",
+    "fs": 36,
+    "y": 273
+   }
+  ],
+  "targets": [
+   {
+    "i": 0,
+    "tag": "a",
+    "name": "Deutsch",
+    "href": "/",
+    "x": 728,
+    "y": 35,
+    "w": 86.8,
+    "h": 48,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 4.2
+   },
+   {
+    "i": 1,
+    "tag": "a",
+    "name": "English",
+    "href": "/?lang=en",
+    "x": 819,
+    "y": 35,
+    "w": 80.5,
+    "h": 48,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 4.2
+   },
+   {
+    "i": 2,
+    "tag": "a",
+    "name": "Home",
+    "href": "/?lang=en",
+    "x": 176,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 3,
+    "tag": "a",
+    "name": "New to campus",
+    "href": "/newcomers?lang=en",
+    "x": 360,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 4,
+    "tag": "a",
+    "name": "Map",
+    "href": "/map?lang=en",
+    "x": 544,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 5,
+    "tag": "a",
+    "name": "Rooms",
+    "href": "/rooms?lang=en",
+    "x": 728,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 6,
+    "tag": "a",
+    "name": "Schedule",
+    "href": "/schedule?lang=en",
+    "x": 176,
+    "y": 175,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 7,
+    "tag": "a",
+    "name": "Booking",
+    "href": "/booking?lang=en",
+    "x": 360,
+    "y": 175,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 8,
+    "tag": "a",
+    "name": "Announcements",
+    "href": "/display?lang=en",
+    "x": 544,
+    "y": 175,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 9,
+    "tag": "a",
+    "name": "New to campus First orientation: where do I find what?",
+    "href": "/newcomers?lang=en",
+    "x": 176,
+    "y": 381,
+    "w": 728,
+    "h": 100,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 12
+   },
+   {
+    "i": 10,
+    "tag": "a",
+    "name": "Map Find rooms on the floor plan",
+    "href": "/map?lang=en",
+    "x": 176,
+    "y": 493,
+    "w": 728,
+    "h": 100,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 12
+   },
+   {
+    "i": 11,
+    "tag": "a",
+    "name": "Rooms All rooms by floor",
+    "href": "/rooms?lang=en",
+    "x": 176,
+    "y": 605,
+    "w": 728,
+    "h": 100,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 12
+   },
+   {
+    "i": 12,
+    "tag": "a",
+    "name": "Schedule Classes by day and room",
+    "href": "/schedule?lang=en",
+    "x": 176,
+    "y": 717,
+    "w": 728,
+    "h": 100,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 12
+   },
+   {
+    "i": 13,
+    "tag": "a",
+    "name": "Booking Check free times and make a test booking (demo)",
+    "href": "/booking?lang=en",
+    "x": 176,
+    "y": 829,
+    "w": 728,
+    "h": 100,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 12
+   },
+   {
+    "i": 14,
+    "tag": "a",
+    "name": "Announcements Current notices for the campus",
+    "href": "/display?lang=en",
+    "x": 176,
+    "y": 941,
+    "w": 728,
+    "h": 100,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 12
+   }
+  ],
+  "nameless": [],
+  "unlabeled": [],
+  "imgs": [
+   {
+    "src": "/brand/hs-coburg-logo-screenshot.png",
+    "alt": "Hochschule Coburg",
+    "w": 176,
+    "h": 47
+   }
+  ],
+  "homeLinks": [
+   {
+    "i": 0,
+    "tag": "a",
+    "name": "Deutsch",
+    "href": "/",
+    "x": 728,
+    "y": 35,
+    "w": 86.8,
+    "h": 48,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 4.2
+   },
+   {
+    "i": 1,
+    "tag": "a",
+    "name": "English",
+    "href": "/?lang=en",
+    "x": 819,
+    "y": 35,
+    "w": 80.5,
+    "h": 48,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 4.2
+   },
+   {
+    "i": 2,
+    "tag": "a",
+    "name": "Home",
+    "href": "/?lang=en",
+    "x": 176,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   }
+  ],
+  "pinned": [],
+  "overflowers": [],
+  "text": {
+   "count": 25,
+   "sizeHist": {
+    "14": 1,
+    "18": 17,
+    "30": 6,
+    "36": 1
+   },
+   "items": [
+    {
+     "text": "Lucas-Cranach-Campus Kronach",
+     "tag": "p",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 71,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Deutsch",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 35,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "English",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 35,
+     "fg": "255,255,255",
+     "bg": "35,37,43"
+    },
+    {
+     "text": "Home",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 4.82,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "255,255,255",
+     "bg": "205,64,38"
+    },
+    {
+     "text": "New to campus",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Map",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Rooms",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Schedule",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 175,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Booking",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 175,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Announcements",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 175,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Campus information",
+     "tag": "h1",
+     "fs": 36,
+     "weight": "700",
+     "contrast": 13.96,
+     "large": true,
+     "hasBgImage": false,
+     "y": 273,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Information for students and visitors at Lucas-Cra",
+     "tag": "p",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 333,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "New to campus",
+     "tag": "span",
+     "fs": 30,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 397,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "First orientation: where do I find what?",
+     "tag": "span",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 437,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Map",
+     "tag": "span",
+     "fs": 30,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 509,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Find rooms on the floor plan",
+     "tag": "span",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 549,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Rooms",
+     "tag": "span",
+     "fs": 30,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 621,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "All rooms by floor",
+     "tag": "span",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 661,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Schedule",
+     "tag": "span",
+     "fs": 30,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 733,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Classes by day and room",
+     "tag": "span",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 773,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Booking",
+     "tag": "span",
+     "fs": 30,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 845,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Check free times and make a test booking (demo)",
+     "tag": "span",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 885,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Announcements",
+     "tag": "span",
+     "fs": 30,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 957,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Current notices for the campus",
+     "tag": "span",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 997,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Prototype from the Human-Computer Interaction cour",
+     "tag": "footer",
+     "fs": 14,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1875,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    }
+   ]
+  }
+ },
+ "tabStops": [
+  {
+   "tag": "a",
+   "name": "Deutsch",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 35,
+   "h": 48
+  },
+  {
+   "tag": "a",
+   "name": "English",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 35,
+   "h": 48
+  },
+  {
+   "tag": "a",
+   "name": "Home",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "New to campus",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Map",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Rooms",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Schedule",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 175,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Booking",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 175,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Announcements",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 175,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "New to campus First orientation: where do I find w",
+   "outline": "solid 3px",
+   "shadow": "yes",
+   "ring": true,
+   "inViewport": true,
+   "y": 381,
+   "h": 100
+  },
+  {
+   "tag": "a",
+   "name": "Map Find rooms on the floor plan",
+   "outline": "solid 3px",
+   "shadow": "yes",
+   "ring": true,
+   "inViewport": true,
+   "y": 493,
+   "h": 100
+  },
+  {
+   "tag": "a",
+   "name": "Rooms All rooms by floor",
+   "outline": "solid 3px",
+   "shadow": "yes",
+   "ring": true,
+   "inViewport": true,
+   "y": 605,
+   "h": 100
+  },
+  {
+   "tag": "a",
+   "name": "Schedule Classes by day and room",
+   "outline": "solid 3px",
+   "shadow": "yes",
+   "ring": true,
+   "inViewport": true,
+   "y": 717,
+   "h": 100
+  },
+  {
+   "tag": "a",
+   "name": "Booking Check free times and make a test booking (",
+   "outline": "solid 3px",
+   "shadow": "yes",
+   "ring": true,
+   "inViewport": true,
+   "y": 829,
+   "h": 100
+  },
+  {
+   "tag": "a",
+   "name": "Announcements Current notices for the campus",
+   "outline": "solid 3px",
+   "shadow": "yes",
+   "ring": true,
+   "inViewport": true,
+   "y": 941,
+   "h": 100
+  }
+ ],
+ "newEvents": {
+  "console": [],
+  "pageerror": [],
+  "requestfailed": [
+   {
+    "url": "/newcomers?lang=en&_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?lang=en&_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?lang=en&_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   }
+  ],
+  "badresponse": []
+ }
+}

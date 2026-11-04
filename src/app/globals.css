@@ -60,6 +60,37 @@ html {
   color-scheme: light;
 }
 
+/*
+ * Public kiosk mode (V2 Stage 1, AL-02; docs/contracts.md C10).
+ * Chosen by viewport and orientation only — portrait and at least 520 CSS px wide — never by pointer
+ * type (`pointer: coarse` is true only when touch is emulated/detected). The same rule is in
+ * src/lib/public-layout.ts; tests/unit/public-kiosk-layout.test.ts keeps both in step.
+ * All sizes are PROVISIONAL design choices pending the physical measurement of the panel (V2-P0).
+ */
+@custom-variant kiosk (@media (orientation: portrait) and (min-width: 520px));
+
+:root {
+  /* Space between dock tiles, rows and language buttons (≥ 8 px at every kiosk size). */
+  --public-dock-gap: 0.75rem;
+}
+
+@media (orientation: portrait) and (min-width: 520px) {
+  /*
+   * Scope: only pages that render PublicShell carry [data-public-shell], so the admin and every
+   * other page keep the ordinary 16 px root. Tailwind sizes are rem-based, so raising the root grows
+   * text, buttons, spacing and the content column together. 16 px up to a 720 px viewport (a 200 %
+   * browser zoom keeps its effect), rising linearly to 22 px at 1080 px (1.375×). Expressed in %, so a
+   * larger browser default text size is still respected.
+   * --public-dock-h is the reserved height of the fixed dock: this value is the first-paint estimate
+   * and DockHeightSync replaces it with the measured height.
+   */
+  :root:has([data-public-shell]) {
+    font-size: clamp(100%, calc(100% + (100vw - 720px) * 0.016667), 137.5%);
+    --public-dock-h: 15rem;
+    scroll-padding-bottom: calc(var(--public-dock-h) + 1rem);
+  }
+}
+
 body {
   background: var(--canvas);
   color: var(--ink);

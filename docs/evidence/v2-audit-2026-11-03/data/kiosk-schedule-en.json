@@ -1,0 +1,1103 @@
+{
+ "context": "kiosk-nominal-1080x1920",
+ "route": "/schedule",
+ "lang": "en",
+ "status": 200,
+ "finalUrl": "/schedule?lang=en",
+ "loadMs": 1466,
+ "stillLoadingAfter8s": false,
+ "summary": {
+  "targets": 12,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 4,
+  "minTargetH": 48,
+  "minTargetW": 80.5,
+  "textMinFs": 14,
+  "textLt14": 0,
+  "textLt16": 8,
+  "textTotal": 51,
+  "lowContrastCount": 0,
+  "screens": 1,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 1
+ },
+ "measure": {
+  "viewport": {
+   "vw": 1080,
+   "vh": 1920,
+   "dpr": 1
+  },
+  "htmlLang": "de",
+  "title": "Schedule – Campus Board",
+  "scroll": {
+   "scrollWidth": 1080,
+   "scrollHeight": 1920,
+   "screens": 1,
+   "hOverflow": false
+  },
+  "landmarks": {
+   "header": true,
+   "nav": 2,
+   "main": true,
+   "footer": true,
+   "skipLink": false
+  },
+  "headings": [
+   {
+    "l": "H1",
+    "t": "Schedule",
+    "fs": 36,
+    "y": 273
+   },
+   {
+    "l": "H2",
+    "t": "Programmierung – Übung (Demo)",
+    "fs": 20,
+    "y": 643
+   },
+   {
+    "l": "H2",
+    "t": "Mensch-Maschine-Interaktion (Demo)",
+    "fs": 20,
+    "y": 787
+   },
+   {
+    "l": "H2",
+    "t": "Mensch-Maschine-Interaktion (Demo)",
+    "fs": 20,
+    "y": 931
+   },
+   {
+    "l": "H2",
+    "t": "Wirtschaftsinformatik – Übung (Demo)",
+    "fs": 20,
+    "y": 1075
+   }
+  ],
+  "targets": [
+   {
+    "i": 0,
+    "tag": "a",
+    "name": "Deutsch",
+    "href": "/schedule",
+    "x": 728,
+    "y": 35,
+    "w": 86.8,
+    "h": 48,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 4.2
+   },
+   {
+    "i": 1,
+    "tag": "a",
+    "name": "English",
+    "href": "/schedule?lang=en",
+    "x": 819,
+    "y": 35,
+    "w": 80.5,
+    "h": 48,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 4.2
+   },
+   {
+    "i": 2,
+    "tag": "a",
+    "name": "Home",
+    "href": "/?lang=en",
+    "x": 176,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 3,
+    "tag": "a",
+    "name": "New to campus",
+    "href": "/newcomers?lang=en",
+    "x": 360,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 4,
+    "tag": "a",
+    "name": "Map",
+    "href": "/map?lang=en",
+    "x": 544,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 5,
+    "tag": "a",
+    "name": "Rooms",
+    "href": "/rooms?lang=en",
+    "x": 728,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 6,
+    "tag": "a",
+    "name": "Schedule",
+    "href": "/schedule?lang=en",
+    "x": 176,
+    "y": 175,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 7,
+    "tag": "a",
+    "name": "Booking",
+    "href": "/booking?lang=en",
+    "x": 360,
+    "y": 175,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 8,
+    "tag": "a",
+    "name": "Announcements",
+    "href": "/display?lang=en",
+    "x": 544,
+    "y": 175,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 9,
+    "tag": "a",
+    "name": "← Previous day",
+    "href": "/schedule?datum=2026-11-02&lang=en",
+    "x": 176,
+    "y": 445,
+    "w": 237.3,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 7.7
+   },
+   {
+    "i": 10,
+    "tag": "a",
+    "name": "Today",
+    "href": "/schedule?lang=en",
+    "x": 421,
+    "y": 445,
+    "w": 237.3,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 7.7
+   },
+   {
+    "i": 11,
+    "tag": "a",
+    "name": "Next day →",
+    "href": "/schedule?datum=2026-11-04&lang=en",
+    "x": 667,
+    "y": 445,
+    "w": 237.3,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8.7
+   }
+  ],
+  "nameless": [],
+  "unlabeled": [],
+  "imgs": [
+   {
+    "src": "/brand/hs-coburg-logo-screenshot.png",
+    "alt": "Hochschule Coburg",
+    "w": 176,
+    "h": 47
+   }
+  ],
+  "homeLinks": [
+   {
+    "i": 2,
+    "tag": "a",
+    "name": "Home",
+    "href": "/?lang=en",
+    "x": 176,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   }
+  ],
+  "pinned": [],
+  "overflowers": [],
+  "text": {
+   "count": 51,
+   "sizeHist": {
+    "14": 8,
+    "16": 1,
+    "18": 31,
+    "20": 4,
+    "24": 6,
+    "36": 1
+   },
+   "items": [
+    {
+     "text": "Lucas-Cranach-Campus Kronach",
+     "tag": "p",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 71,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Deutsch",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 35,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "English",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 35,
+     "fg": "255,255,255",
+     "bg": "35,37,43"
+    },
+    {
+     "text": "Home",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "New to campus",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Map",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Rooms",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Schedule",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 4.82,
+     "large": false,
+     "hasBgImage": false,
+     "y": 175,
+     "fg": "255,255,255",
+     "bg": "205,64,38"
+    },
+    {
+     "text": "Booking",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 175,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Announcements",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 175,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Schedule",
+     "tag": "h1",
+     "fs": 36,
+     "weight": "700",
+     "contrast": 13.96,
+     "large": true,
+     "hasBgImage": false,
+     "y": 273,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Course titles, lecturers and study groups are show",
+     "tag": "p",
+     "fs": 16,
+     "weight": "400",
+     "contrast": 5.83,
+     "large": false,
+     "hasBgImage": false,
+     "y": 333,
+     "fg": "91,95,105",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Tuesday, 3 November 2026",
+     "tag": "p",
+     "fs": 24,
+     "weight": "700",
+     "contrast": 13.96,
+     "large": true,
+     "hasBgImage": false,
+     "y": 401,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "·",
+     "tag": "span",
+     "fs": 24,
+     "weight": "700",
+     "contrast": 4.39,
+     "large": true,
+     "hasBgImage": false,
+     "y": 403,
+     "fg": "205,64,38",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "← Previous day",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 445,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Today",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 445,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Next day →",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 445,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Sample data:",
+     "tag": "span",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 10.87,
+     "large": false,
+     "hasBgImage": false,
+     "y": 535,
+     "fg": "76,14,116",
+     "bg": "241,232,248"
+    },
+    {
+     "text": "Entries marked “Example” are invented demo data, n",
+     "tag": "p",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 10.87,
+     "large": false,
+     "hasBgImage": false,
+     "y": 521,
+     "fg": "76,14,116",
+     "bg": "241,232,248"
+    },
+    {
+     "text": "08:15",
+     "tag": "p",
+     "fs": 24,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 643,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Programmierung – Übung (Demo)",
+     "tag": "h2",
+     "fs": 20,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 643,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "In progress",
+     "tag": "span",
+     "fs": 14,
+     "weight": "700",
+     "contrast": 4.82,
+     "large": false,
+     "hasBgImage": false,
+     "y": 645,
+     "fg": "255,255,255",
+     "bg": "205,64,38"
+    },
+    {
+     "text": "Example",
+     "tag": "span",
+     "fs": 14,
+     "weight": "600",
+     "contrast": 10.87,
+     "large": false,
+     "hasBgImage": false,
+     "y": 645,
+     "fg": "76,14,116",
+     "bg": "241,232,248"
+    },
+    {
+     "text": "Room",
+     "tag": "p",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 675,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "DEMO-102",
+     "tag": "strong",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 676,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "PC-Labor (Demo)",
+     "tag": "span",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 676,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Only in German",
+     "tag": "span",
+     "fs": 14,
+     "weight": "600",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 677,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Wirtschaftsinformatik 2.0 – Beispielsemester",
+     "tag": "p",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 707,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "10:00",
+     "tag": "p",
+     "fs": 24,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 787,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Mensch-Maschine-Interaktion (Demo)",
+     "tag": "h2",
+     "fs": 20,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 787,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "In progress",
+     "tag": "span",
+     "fs": 14,
+     "weight": "700",
+     "contrast": 4.82,
+     "large": false,
+     "hasBgImage": false,
+     "y": 789,
+     "fg": "255,255,255",
+     "bg": "205,64,38"
+    },
+    {
+     "text": "Example",
+     "tag": "span",
+     "fs": 14,
+     "weight": "600",
+     "contrast": 10.87,
+     "large": false,
+     "hasBgImage": false,
+     "y": 789,
+     "fg": "76,14,116",
+     "bg": "241,232,248"
+    },
+    {
+     "text": "Room",
+     "tag": "p",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 819,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "K1-120",
+     "tag": "strong",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 820,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Seminar room",
+     "tag": "span",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 820,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Beispielsemester (Demo)",
+     "tag": "p",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 851,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "13:00",
+     "tag": "p",
+     "fs": 24,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 931,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Mensch-Maschine-Interaktion (Demo)",
+     "tag": "h2",
+     "fs": 20,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 931,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Example",
+     "tag": "span",
+     "fs": 14,
+     "weight": "600",
+     "contrast": 10.87,
+     "large": false,
+     "hasBgImage": false,
+     "y": 933,
+     "fg": "76,14,116",
+     "bg": "241,232,248"
+    },
+    {
+     "text": "Room",
+     "tag": "p",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 963,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "DEMO-101",
+     "tag": "strong",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 964,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Seminar room 1 (Demo)",
+     "tag": "span",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 964,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Wirtschaftsinformatik 2.0 – Beispielsemester",
+     "tag": "p",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 995,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "14:00",
+     "tag": "p",
+     "fs": 24,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 1075,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Wirtschaftsinformatik – Übung (Demo)",
+     "tag": "h2",
+     "fs": 20,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 1075,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Example",
+     "tag": "span",
+     "fs": 14,
+     "weight": "600",
+     "contrast": 10.87,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1077,
+     "fg": "76,14,116",
+     "bg": "241,232,248"
+    },
+    {
+     "text": "Room",
+     "tag": "p",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1107,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "K1-103",
+     "tag": "strong",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1108,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Seminar room 1",
+     "tag": "span",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1108,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Beispielsemester (Demo)",
+     "tag": "p",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1139,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Prototype from the Human-Computer Interaction cour",
+     "tag": "footer",
+     "fs": 14,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1875,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    }
+   ]
+  }
+ },
+ "tabStops": [
+  {
+   "tag": "a",
+   "name": "Deutsch",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 35,
+   "h": 48
+  },
+  {
+   "tag": "a",
+   "name": "English",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 35,
+   "h": 48
+  },
+  {
+   "tag": "a",
+   "name": "Home",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "New to campus",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Map",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Rooms",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Schedule",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 175,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Booking",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 175,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Announcements",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 175,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "← Previous day",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 445,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Today",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 445,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Next day →",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 445,
+   "h": 56
+  }
+ ],
+ "newEvents": {
+  "console": [],
+  "pageerror": [],
+  "requestfailed": [
+   {
+    "url": "/?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-04&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-02&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   }
+  ],
+  "badresponse": []
+ }
+}
