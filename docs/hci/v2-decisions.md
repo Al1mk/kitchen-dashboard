@@ -54,3 +54,7 @@ V2-P3 H1 (Home as a 2 × 3 card grid with pictograms), the Newcomers layout and 
 ## Parsa module integrated and reviewed — 4 November 2026
 
 V2-P6/P8 delivered changes are now implemented with Ali’s review fixes: C12 and [combined evidence](../evidence/v2-integration-2026-11-04/README.md). Receipt acknowledgement, best-effort leave protection, stable warning/action area, cancellation hints/metadata, schedule booking CTA and meaningful404 feedback; existing lifetime/token/API rules retained. The previous Stage1/2 paragraphs describe their historical boundary; those pending receipt items are superseded by this integration. No human benefit established; Stage3 and map/content work remain open.
+
+## Aryan AP01 repaired and integrated — 4 November 2026
+
+AP01 follows HE-03/A-01 with grouped selection rather than shifting room positions. The original patch passed its own tests but failed measured kiosk hit geometry and keyboard/English regressions. The integration now measures the actual rem-scaled controls, preserves focus through chooser closure/selection/live regrouping and labels German fallback names. C13 and [evidence](../evidence/aryan-ap01-fix-2026-11-04/README.md) describe the exact technical scope. This is a justified technical/design correction, **not a measured human usability improvement**. Stage3, real-screen testing and human retesting remain open.

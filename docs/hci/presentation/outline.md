@@ -19,3 +19,7 @@ Suggested timing (not mandatory speaking quotas):
 | 4:00–5:00 | What was evaluated and how; one or two changes; limits | change ledger + actual session records |
 
 Setup: `CAMPUS_BOARD_DB_PATH=.demo-data/team-demo.sqlite npm run db:seed-team-demo -- --yes` then `npm run build && npm start`; never the real `data/` file. Backup: V1 screenshots in `docs/evidence/integration-2026-10-31/screenshots/` (simulated viewports, not a live demo). Actual rehearsal duration: NOT RECORDED.
+
+## Reviewed five-slide working copy — 4 November 2026
+
+The source delivery contains a five-slide PDF, so the repaired [editable deck and PDF backup](v2/README.md) retain five slides. [German speaking script](v2/Sprechtext-Reza-DE.md) includes planned timing and a short demo. They are now prepared, not rehearsed or team-approved. The earlier six-slide plan above is retained historically. Katja is included, slide2 overlap removed, actual public UI used and Fitts/status claims corrected. Reza presents after rehearsal; Aryan/Parsa approve the file/demo. No human results invented.

@@ -1,0 +1,91 @@
+
+> campus-board@0.1.0 test
+> vitest run tests/unit/map-clusters-scale.test.ts
+
+
+ RUN  v5.0.5 <isolated-workspace>/candidate
+
+ ❯ tests/unit/map-clusters-scale.test.ts (4 tests | 3 failed) 18ms
+   ❯ AP01-R001: use measured CSS-pixel target sizes (4)
+     × no overlapping targets at 19px root size 3ms
+     × no overlapping targets at 22px root size 1ms
+     × zero/unavailable sizing does not render guessed hit targets 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/map-clusters-scale.test.ts > AP01-R001: use measured CSS-pixel target sizes > no overlapping targets at 19px root size
+AssertionError: 1OG,728,1.1875: real target overlap: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/unit/map-clusters-scale.test.ts:14:138
+     12|    for(let i=0;i<groups.length;i++)for(let j=i+1;j<groups.length;j++){
+     13|     const a=groups[i],b=groups[j],aw=a.pins.length>1?metrics.clusterWi…
+     14|     expect(Math.abs(a.x-b.x)*width<(aw+bw)/2&&Math.abs(a.y-b.y)*height…
+       |                                                                                                                                          ^
+     15|    }
+     16|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/unit/map-clusters-scale.test.ts > AP01-R001: use measured CSS-pixel target sizes > no overlapping targets at 22px root size
+AssertionError: 1OG,728,1.375: real target overlap: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/unit/map-clusters-scale.test.ts:14:138
+     12|    for(let i=0;i<groups.length;i++)for(let j=i+1;j<groups.length;j++){
+     13|     const a=groups[i],b=groups[j],aw=a.pins.length>1?metrics.clusterWi…
+     14|     expect(Math.abs(a.x-b.x)*width<(aw+bw)/2&&Math.abs(a.y-b.y)*height…
+       |                                                                                                                                          ^
+     15|    }
+     16|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/unit/map-clusters-scale.test.ts > AP01-R001: use measured CSS-pixel target sizes > zero/unavailable sizing does not render guessed hit targets
+AssertionError: expected [ { key: 'x', x: 0.5, y: 0.5, …(1) } ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   {
++     "key": "x",
++     "pins": [
++       {
++         "id": "x",
++         "room": {},
++         "x": 0.5,
++         "y": 0.5,
++       },
++     ],
++     "x": 0.5,
++     "y": 0.5,
++   },
++ ]
+
+ ❯ tests/unit/map-clusters-scale.test.ts:19:107
+     17|  });
+     18|  test('zero/unavailable sizing does not render guessed hit targets',()…
+     19|   expect(groupMapMarkers([{id:'x',x:.5,y:.5,room:{}}],500,250,{markerW…
+       |                                                                                                           ^
+     20|  });
+     21| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 1 passed (4)
+   Start at  22:50:59
+   Duration  110ms (transform 43%, tests 39%, import 13%, worker 4%)

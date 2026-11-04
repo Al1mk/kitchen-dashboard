@@ -1,0 +1,55 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {Presentation,PresentationFile} from '@oai/artifact-tool';
+const root=path.resolve(path.dirname(new URL(import.meta.url).pathname),'..');
+const skill=process.env.PRESENTATIONS_SKILL_DIR;
+const runtime=process.env.CODEX_ARTIFACT_RUNTIME;
+const blobs=Object.fromEntries(await Promise.all(['home-v2.png','map-before.png','map-after.png'].map(async file=>[file,new Uint8Array(await fs.readFile(path.join(root,'assets',file)))])));
+const p=Presentation.create({slideSize:{width:1280,height:720}});
+const C={navy:'#142942',blue:'#2161A0',light:'#ECF3FA',ink:'#182C42',gray:'#4B6075',white:'#FFFFFF'};
+function text(s,value,x,y,w,h,size=26,color=C.ink,bold=false){const q=s.shapes.add({geometry:'textbox',position:{left:x,top:y,width:w,height:h},fill:'none',line:{fill:'none',width:0}});q.text=value;q.text.style={typeface:'Arial',fontSize:size,color,bold,insets:0,verticalAlignment:'top',wrap:'square'};return q;}
+function panel(s,x,y,w,h,fill=C.light){return s.shapes.add({geometry:'rect',position:{left:x,top:y,width:w,height:h},fill,line:{fill:'none',width:0}});}
+function base(n,kicker,title){const s=p.slides.add();s.background.fill=C.white;text(s,kicker,64,35,1152,30,18,C.blue,true);text(s,title,64,87,1152,80,42,C.navy,true);text(s,'LCC CAMPUS BOARD   HCI   05.11.2026',64,675,1010,24,15,C.gray);text(s,`${n} / 5`,1150,675,70,24,16,C.gray);return s;}
+function img(s,file,x,y,w,h,alt){s.images.add({blob:blobs[file],contentType:'image/png',alt,fit:'contain',...(file==='map-before.png'?{crop:{left:176/1080,right:176/1080,top:834/1920,bottom:735/1920}}:{}),position:{left:x,top:y,width:w,height:h}});}
+function note(s,value,sources){s.speakerNotes.text=value+'\n\nQuellen und Grenzen: '+sources;}
+let s=base(1,'MENSCH MASCHINE INTERAKTION','LCC Campus Board');
+text(s,'Ein gemeinsamer Prototyp für den Küchenbildschirm',64,198,630,132,38,C.navy,true);
+text(s,'Räume finden, den Stundenplan ansehen und Informationen verwalten.',64,368,600,110,29);
+text(s,'Ali · Aryan · Parsa · Reza',64,532,610,42,25,C.blue,true);
+text(s,'Demo-Daten. Öffentliche Ansicht und Verwaltung auf getrennten Geräten.',64,589,610,58,21,C.gray);
+img(s,'home-v2.png',780,184,345,460,'Öffentliche V2 Startseite im simulierten Portrait-Viewport');
+note(s,'Wir haben für den Küchenbereich am Lucas-Cranach-Campus einen gemeinsamen Prototyp entwickelt. Studierende sollen Räume, Termine und aktuelle Informationen finden. Katja verwaltet die Inhalte von ihrem Laptop. Der Bildschirm zeigt die öffentliche Oberfläche. Wir zeigen Demo-Daten und unterscheiden die technische Prüfung von einem Test am echten Touchscreen.','Eigener Browser-Screenshot der integrierten Version, 1080×1920. Kein Foto und kein bestätigter Touch-Test. README und docs/contracts.md.');
+s=base(2,'NUTZERGRUPPEN','Drei Rollen mit unterschiedlichen Zielen');
+const roles=[['Studierende','Raum oder Lehrveranstaltung finden.','Karte, Stundenplan, Demo-Buchung'],['Newcomer','Gebäude und erste Anlaufstellen verstehen.','Neu am Campus und Deutsch / English'],['Katja','Informationen pflegen und veröffentlichen.','Admin am Laptop mit Vorschau']];
+roles.forEach((r,i)=>{const x=64+i*390;panel(s,x,204,366,288);text(s,r[0],x+24,229,318,45,30,C.navy,true);text(s,r[1],x+24,302,318,96,27);text(s,r[2],x+24,416,318,64,22,C.gray);});
+text(s,'Ein Datenbestand verbindet Verwaltung und öffentliche Anzeige.',64,537,1148,48,29,C.blue,true);
+text(s,'Proto-Personas beschreiben zunächst Annahmen. Interviews und Nutzertests bleiben getrennte Nachweise.',64,599,1152,55,23,C.gray);
+note(s,'Wir unterscheiden drei Rollen. Studierende suchen etwa ihren nächsten Termin oder einen Lernraum. Newcomer benötigen Orientierung und verständliche Einstiege. Katja bearbeitet die Informationen in der getrennten Verwaltung. Derselbe Datenbestand versorgt die öffentliche Ansicht. Die Rollenbeschreibungen sind zunächst Proto-Personas. Wir geben sie nicht als Ergebnis bereits durchgeführter Interviews aus.','Drei Gruppen aus dem Projektbrief. docs/hci/user-research.md und docs/contracts.md. Keine neue Nutzerstudie.');
+s=base(3,'GEMEINSAMER PROTOTYP','Vier Beiträge verbinden sich zu einem Ablauf');
+const owners=[['Ali','Admin, Datenverträge und Integration'],['Aryan','Drei Etagen, 47 Positionen und Raumkarte'],['Parsa','V2 Buchungsablauf und Rückmeldungen'],['Reza','Newcomer-Inhalte und Dokumentation']];
+owners.forEach((r,i)=>{const y=200+i*99; text(s,r[0],64,y,200,40,29,C.blue,true);text(s,r[1],290,y,894,65,28);});
+panel(s,64,609,1152,45);text(s,'Live-Demo: K1-120 suchen, Stundenplan öffnen, Demo-Buchung zeigen.',80,617,1120,32,24,C.navy,true);
+note(s,'Die Karte stammt ursprünglich von Aryan. Sie enthält drei Illustrationen und 47 gebundene Positionen. Ali hat sie mit dem gemeinsamen Raumverzeichnis, den stabilen IDs und der Verwaltung verbunden. Parsa lieferte die Änderungen am V2 Buchungsablauf. Reza liefert die Newcomer-Inhalte und sammelt die Dokumentation. Die ältere gemeinsame Lieferung von Aryan und Parsa führen wir weiterhin als gemeinsamen Beitrag. In der Demo suchen wir K1-120 und öffnen den Stundenplan. Eine Buchung ist eine klar gekennzeichnete Demo.','docs/contributions.md. Die interne Aufteilung der älteren gemeinsamen Lieferung bleibt ungeklärt. Keine Behauptung, dass die aktuelle Integration bereits auf main liegt.');
+s=base(4,'V1 UND V2','Überlappende Ziele brauchen eine eindeutige Auswahl');
+img(s,'map-before.png',64,192,530,270,'V1 Karte vor der AP01 Gruppierung');
+img(s,'map-after.png',662,192,530,270,'Reparierte AP01 Karte mit Gruppen statt überlappenden Zielen');
+text(s,'V1: kleine und dicht liegende Marker',64,482,530,42,25,C.gray,true);
+text(s,'V2: Gruppe öffnen und Raum auswählen',662,482,530,42,25,C.blue,true);
+text(s,'Fitts: größere Ziele und kürzere Bewegungswege erleichtern die Auswahl.',64,544,1152,52,25);
+text(s,'Die Position eines Raums bleibt erhalten. Die Gruppe dient nur zur Auswahl.',64,609,1152,40,24,C.gray);
+note(s,'Eine konkrete Schwäche waren dicht liegende Marker, etwa bei K1-115 und K1-118. Größere Schaltflächen allein hätten die Überlappung vergrößert. Aryans Vorschlag fasst nahe Marker in Gruppen zusammen. Die Auswahl öffnet eine Liste der Räume. Die gespeicherten Raumpositionen ändern sich dabei nicht. Die Integration musste außerdem die tatsächliche Größe der Schaltflächen messen, weil die Kiosk-Schriftgröße mit der Bildschirmbreite wächst. Die technische Prüfung hat diesen Unterschied nachgewiesen. Ein Nutzertest muss noch zeigen, ob die Auswahl für Menschen tatsächlich leichter ist.','V1: docs/evidence/v2-audit-2026-11-03/kiosk-1080x1920/map-de.viewport.png, Bildausschnitt des Plans. 1080×1920, Deutsch, 1OG, fit. Die Kartenbreite unterscheidet sich nach dem Shell-Umbau. V2 Screenshot und Maßbedingungen in assets/manifest.json. Fitts aus der Vorlesung, kein gemessener menschlicher Effekt.');
+s=base(5,'EVALUATION UND NÄCHSTE SCHRITTE','Technisch geprüft, am Gerät noch zu bestätigen');
+panel(s,64,199,550,305);panel(s,644,199,572,305);
+text(s,'Tatsächlich geprüft',88,224,500,48,31,C.blue,true);
+text(s,'Funktionsprüfungen im Browser\nMarker-Geometrie bei mehreren Größen\nTastatur und Sprachwechsel',88,306,500,173,27);
+text(s,'Noch offen',670,224,520,48,31,C.navy,true);
+text(s,'Elo-Touch und Erreichbarkeit\nEchte Nutzertests und erneute Prüfung\nStage 3 und gemeinsame Endabnahme',670,306,510,173,27);
+text(s,'Elo ET4363L: 1080×1920, 60 Hz laut Geräteansicht. Touch funktionierte bei Alis Versuch noch nicht.',64,548,1152,66,24,C.gray);
+text(s,'KI-unterstützte Planillustrationen. Kein geprüfter Gebäude- oder Rettungsplan.',64,625,1152,30,21,C.gray);
+note(s,'Die aktuellen Nachweise sind technische Prüfungen. Wir haben die ursprünglichen Fehler reproduziert und die Korrekturen im Browser geprüft. Das ersetzt keinen Nutzertest. Ali hat am Elo-Gerät Probleme mit der Touch-Verbindung beobachtet. Die Geräteansicht zeigt 1080 mal 1920 Pixel bei 60 Hertz. Die erreichbare Höhe, der echte Browser-Viewport und die Touch-Bedienung müssen vor Ort geprüft werden. Anschließend lassen wir Personen typische Aufgaben ohne Anleitung lösen und dokumentieren nur tatsächlich gemessene Ergebnisse. Auch Stage 3 und die gemeinsame Abnahme bleiben offen.','Aktuelle technische Prüfergebnisse: docs/evidence/aryan-ap01-fix-2026-11-04/README.md. Hardwareangaben aus Alis Screenshot und Bericht. Keine erfundenen Teilnehmer, Zeiten oder Survey-Ergebnisse.');
+for(let i=0;i<p.slides.items.length;i++){await fs.writeFile(path.join(root,`previews/slide-${i+1}.png`),new Uint8Array(await (await p.export({slide:p.slides.items[i],format:'png',scale:1})).arrayBuffer()));}
+const candidate=path.join(root,'draft.pptx');await(await PresentationFile.exportPptx(p)).save(candidate);
+const {finalizePresentation}=await import(pathToFileURL(path.join(skill,'container_tools/artifact_tool_utils.mjs')).href);
+const final=path.join(root,'output/LCC-Campus-Board-V1-V2-reviewed.pptx');
+await finalizePresentation({workspaceDir:root,candidatePath:candidate,finalPath:final,pythonExecutable:path.join(runtime,'python/bin/python3'),integrityValidatorPath:path.join(skill,'container_tools/inspect_presentation_package_integrity.py'),layoutValidatorPath:path.join(skill,'container_tools/inspect_presentation_layout_geometry.py'),layoutArgs:['--expected-slide-size-emu','12192000,6858000','--validate-bullet-geometry','--validate-heading-fit'],explicitTotalSlideCount:5,requiredNativeTableOwnerSlides:[],requiredNativeChartOwnerSlides:[],fontPolicy:{basis:'design',families:['Arial']},verifyArtifactToolImport:true,receiptPath:path.join(root,'validation-embedded.json')});

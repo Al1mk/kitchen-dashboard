@@ -1,0 +1,104 @@
+
+> campus-board@0.1.0 test:e2e
+> playwright test tests/e2e/ap01-regressions.spec.ts --grep live regrouping
+
+[WebServer] (node:59794) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59795) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59823) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59825) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59831) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59833) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59836) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59829) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59839) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59832) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59835) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59837) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59834) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59838) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59830) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59840) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59868) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:59869) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/e2e/ap01-regressions.spec.ts:49:41 › AP01-R002: live regrouping preserves focus ownership (inside chooser: true) (10.7s)
+(node:59886) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › tests/e2e/ap01-regressions.spec.ts:49:41 › AP01-R002: live regrouping preserves focus ownership (inside chooser: false) (10.5s)
+
+
+  1) [chromium] › tests/e2e/ap01-regressions.spec.ts:49:41 › AP01-R002: live regrouping preserves focus ownership (inside chooser: true)
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('listitem').getByRole('button', { name: /K1-115/ })
+    Expected: visible
+    Error: strict mode violation: getByRole('listitem').getByRole('button', { name: /K1-115/ }) resolved to 2 elements:
+        1) <button type="button" class="flex min-h-14 w-full flex-col justify-center rounded-xl border border-ink bg-surface px-4 py-2 text-left">…</button> aka getByTestId('map-cluster-chooser').getByRole('button', { name: 'K1-115 Room' })
+        2) <button type="button" aria-pressed="false" class="flex min-h-14 w-full touch-manipulation flex-col items-start justify-center rounded-xl px-4 py-2 text-left bg-surface shadow-sm">…</button> aka getByRole('button', { name: 'K1-115 Room' }).nth(1)
+
+    Call log:
+      - Expect "toBeVisible" getByRole('listitem').getByRole('button', { name: /K1-115/ }) with timeout 12000ms
+      - waiting for getByRole('listitem').getByRole('button', { name: /K1-115/ })
+
+
+      62 |   expect((await request.post(`/api/admin/rooms/${id}/restore`,{headers})).status()).toBe(200);
+      63 |   archived=false;
+    > 64 |   await expect(page.getByRole('listitem').getByRole('button',{name:/K1-115/})).toBeVisible({timeout:12_000});
+         |                                                                                ^
+      65 |   await expect(chooser).toHaveCount(0);
+      66 |   await expect(search).toBeFocused();
+      67 |  }finally{if(archived)expect((await request.post(`/api/admin/rooms/${id}/restore`,{headers})).status()).toBe(200);}
+        at <isolated-workspace>/candidate/tests/e2e/ap01-regressions.spec.ts:64:80
+
+    Error Context: test-results/ap01-regressions-AP01-R002-08c15-ership-inside-chooser-true--chromium/error-context.md
+
+  2) [chromium] › tests/e2e/ap01-regressions.spec.ts:49:41 › AP01-R002: live regrouping preserves focus ownership (inside chooser: false)
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('listitem').getByRole('button', { name: /K1-115/ })
+    Expected: visible
+    Error: strict mode violation: getByRole('listitem').getByRole('button', { name: /K1-115/ }) resolved to 2 elements:
+        1) <button type="button" class="flex min-h-14 w-full flex-col justify-center rounded-xl border border-ink bg-surface px-4 py-2 text-left">…</button> aka getByTestId('map-cluster-chooser').getByRole('button', { name: 'K1-115 Room' })
+        2) <button type="button" aria-pressed="false" class="flex min-h-14 w-full touch-manipulation flex-col items-start justify-center rounded-xl px-4 py-2 text-left bg-surface shadow-sm">…</button> aka getByRole('button', { name: 'K1-115 Room' }).nth(1)
+
+    Call log:
+      - Expect "toBeVisible" getByRole('listitem').getByRole('button', { name: /K1-115/ }) with timeout 12000ms
+      - waiting for getByRole('listitem').getByRole('button', { name: /K1-115/ })
+
+
+      62 |   expect((await request.post(`/api/admin/rooms/${id}/restore`,{headers})).status()).toBe(200);
+      63 |   archived=false;
+    > 64 |   await expect(page.getByRole('listitem').getByRole('button',{name:/K1-115/})).toBeVisible({timeout:12_000});
+         |                                                                                ^
+      65 |   await expect(chooser).toHaveCount(0);
+      66 |   await expect(search).toBeFocused();
+      67 |  }finally{if(archived)expect((await request.post(`/api/admin/rooms/${id}/restore`,{headers})).status()).toBe(200);}
+        at <isolated-workspace>/candidate/tests/e2e/ap01-regressions.spec.ts:64:80
+
+    Error Context: test-results/ap01-regressions-AP01-R002-7076d-rship-inside-chooser-false--chromium/error-context.md
+
+  2 failed
+    [chromium] › tests/e2e/ap01-regressions.spec.ts:49:41 › AP01-R002: live regrouping preserves focus ownership (inside chooser: true)
+    [chromium] › tests/e2e/ap01-regressions.spec.ts:49:41 › AP01-R002: live regrouping preserves focus ownership (inside chooser: false)

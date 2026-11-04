@@ -90,3 +90,13 @@ Documentation/board-only commits (`b2b3a36`, `4bb9c2d`, `c2933f6` and the 2026-1
 | HCI evidence and handoff | Historical V1 and frozen PhaseA evidence retained | Ali/Codex records real fail-before/pass-after and combined checks, Persian vault and Stage3 handoff | Automated emulation ≠ participants or physical touch |
 
 All local integration commits use Ali’s exact author **and committer** `al1mk <alimk1752@gmail.com>`, with human contribution described in subjects and this ledger; no teammate email is invented and no AI attribution trailer is added. AI assistance remains disclosed here and in course documentation. User controls publication.
+
+## Aryan AP01 import and Ali repair — 4 November 2026
+
+| Contribution | Source / executor | Boundary |
+| --- | --- | --- |
+| AP01 marker grouping, chooser,17 unit and2 browser tests | Aryan’s original delivery, preserved in source archive and import commit `9b6eaba` | Original four-file patch imported before adaptation; known original defects are documented, not hidden |
+| Actual CSS hit-size measurement, keyboard/lifecycle focus, EN fallback, cluster-aware tests | Ali with Codex assistance | Separate repair commit;6 new browser regressions and4 scale tests; API/IDs/schema unchanged |
+| Editable five-slide deck, PDF, German script and five-page booklet working draft | Ali with Codex Presentations/Documents assistance, derived from Aryan’s PDF/outline and actual evidence | Editorial aid for Aryan/Parsa/Reza approval; not represented as their completed personal work, survey or rehearsal |
+
+Git author and committer remain `al1mk <alimk1752@gmail.com>` as Ali requested. No teammate email or AI co-author is invented. Earlier Aryan/Parsa joint-source attribution remains joint. Claude’s12 dirty Stage3 files are separately snapshotted and excluded from these commits. [Repair evidence](evidence/aryan-ap01-fix-2026-11-04/README.md).

@@ -1,0 +1,170 @@
+
+> campus-board@0.1.0 test:e2e
+> playwright test tests/e2e/ap01-regressions.spec.ts
+
+[WebServer] (node:55702) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:55703) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:55731) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:55734) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:55747) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:55740) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:55742) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:55743) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:55739) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:55746) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:55741) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:55745) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:55744) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:55737) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:55738) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:55749) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:55777) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:55778) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/e2e/ap01-regressions.spec.ts:5:1 › AP01-R001: actual kiosk rectangles do not overlap (344ms)
+(node:55784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › tests/e2e/ap01-regressions.spec.ts:19:1 › AP01-R002: closing cluster chooser restores keyboard focus to opener (5.2s)
+(node:55794) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 [chromium] › tests/e2e/ap01-regressions.spec.ts:28:1 › AP01-R003: untranslated room in English chooser gets existing fallback marker (5.2s)
+(node:55836) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  4 [chromium] › tests/e2e/ap01-regressions.spec.ts:40:1 › AP01-R002: choosing a cluster room transfers keyboard focus to its details (5.1s)
+
+
+  1) [chromium] › tests/e2e/ap01-regressions.spec.ts:5:1 › AP01-R001: actual kiosk rectangles do not overlap
+
+    Error: real hit rectangles, not the helper’s hardcoded dimensions
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 8
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "a": "lcc-demo-room-k1-105",
+    +     "b": "lcc-demo-room-k1-108",
+    +     "height": 52.734375,
+    +     "width": 4.578125,
+    +   },
+    + ]
+
+      14 |   }return pairs;
+      15 |  });
+    > 16 |  expect(collisions,'real hit rectangles, not the helper’s hardcoded dimensions').toEqual([]);
+         |                                                                                  ^
+      17 | });
+      18 |
+      19 | test('AP01-R002: closing cluster chooser restores keyboard focus to opener',async({page})=>{
+        at <isolated-workspace>/candidate/tests/e2e/ap01-regressions.spec.ts:16:82
+
+    Error Context: test-results/ap01-regressions-AP01-R001-1b590-k-rectangles-do-not-overlap-chromium/error-context.md
+
+  2) [chromium] › tests/e2e/ap01-regressions.spec.ts:19:1 › AP01-R002: closing cluster chooser restores keyboard focus to opener
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  locator('[data-testid="map-cluster"][data-room-ids*="lcc-demo-room-k1-115"]').first()
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" locator('[data-testid="map-cluster"][data-room-ids*="lcc-demo-room-k1-115"]').first() with timeout 5000ms
+      - waiting for locator('[data-testid="map-cluster"][data-room-ids*="lcc-demo-room-k1-115"]').first()
+        14 × locator resolved to <button type="button" aria-pressed="false" aria-expanded="false" data-testid="map-cluster" title="K1-115, K1-116, K1-118" aria-label="Choose nearby rooms: K1-115, K1-116, K1-118" data-room-ids="lcc-demo-room-k1-115 lcc-demo-room-k1-116 lcc-demo-room-k1-118" class="absolute z-[1] flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 touch-manipulation items-center justify-center rounded-xl border-2 px-1 text-sm font-bold shadow border-white bg-ink text-white">3</button>
+           - unexpected value "inactive"
+
+
+      23 |  const chooser=page.getByTestId('map-cluster-chooser');await expect(chooser.locator('h3')).toBeFocused();
+      24 |  await chooser.getByRole('button',{name:'Close room choices',exact:true}).focus();await page.keyboard.press('Enter');
+    > 25 |  await expect(chooser).toHaveCount(0);await expect(cluster).toBeFocused();
+         |                                                             ^
+      26 | });
+      27 |
+      28 | test('AP01-R003: untranslated room in English chooser gets existing fallback marker',async({page,request,baseURL})=>{
+        at <isolated-workspace>/candidate/tests/e2e/ap01-regressions.spec.ts:25:61
+
+    Error Context: test-results/ap01-regressions-AP01-R002-69d29-es-keyboard-focus-to-opener-chromium/error-context.md
+
+  3) [chromium] › tests/e2e/ap01-regressions.spec.ts:28:1 › AP01-R003: untranslated room in English chooser gets existing fallback marker
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('map-cluster-chooser').getByRole('button', { name: /K1-115/ })
+    Expected substring: "Only in German"
+    Received string:    "K1-115Beispielraum"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" getByTestId('map-cluster-chooser').getByRole('button', { name: /K1-115/ }) with timeout 5000ms
+      - waiting for getByTestId('map-cluster-chooser').getByRole('button', { name: /K1-115/ })
+        14 × locator resolved to <button type="button" class="flex min-h-14 w-full flex-col justify-center rounded-xl border border-ink bg-surface px-4 py-2 text-left">…</button>
+           - unexpected value "K1-115Beispielraum"
+
+
+      34 |   await page.locator('[data-testid="map-cluster"][data-room-ids*="lcc-demo-room-k1-115"]').first().click();
+      35 |   const item=page.getByTestId('map-cluster-chooser').getByRole('button',{name:/K1-115/});await expect(item).toContainText('Beispielraum');
+    > 36 |   await expect(item).toContainText('Only in German');
+         |                      ^
+      37 |  }finally{const restored=await request.put('/api/admin/rooms/'+room.id,{headers,data:original});expect(restored.status()).toBe(200);}
+      38 | });
+      39 |
+        at <isolated-workspace>/candidate/tests/e2e/ap01-regressions.spec.ts:36:22
+
+    Error Context: test-results/ap01-regressions-AP01-R003-16a7e-ts-existing-fallback-marker-chromium/error-context.md
+
+  4) [chromium] › tests/e2e/ap01-regressions.spec.ts:40:1 › AP01-R002: choosing a cluster room transfers keyboard focus to its details
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByTestId('map-details').getByRole('heading')
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" getByTestId('map-details').getByRole('heading') with timeout 5000ms
+      - waiting for getByTestId('map-details').getByRole('heading')
+        14 × locator resolved to <h2 id="map-details-title" class="text-base font-semibold text-ink-muted">Selected room</h2>
+           - unexpected value "inactive"
+
+
+      44 |  const room=page.getByTestId('map-cluster-chooser').getByRole('button',{name:/K1-115/});await room.focus();await page.keyboard.press('Enter');
+      45 |  await expect(page.getByTestId('map-details')).toContainText('K1-115');
+    > 46 |  await expect(page.getByTestId('map-details').getByRole('heading')).toBeFocused();
+         |                                                                     ^
+      47 | });
+      48 |
+        at <isolated-workspace>/candidate/tests/e2e/ap01-regressions.spec.ts:46:69
+
+    Error Context: test-results/ap01-regressions-AP01-R002-e9be8-yboard-focus-to-its-details-chromium/error-context.md
+
+  4 failed
+    [chromium] › tests/e2e/ap01-regressions.spec.ts:5:1 › AP01-R001: actual kiosk rectangles do not overlap
+    [chromium] › tests/e2e/ap01-regressions.spec.ts:19:1 › AP01-R002: closing cluster chooser restores keyboard focus to opener
+    [chromium] › tests/e2e/ap01-regressions.spec.ts:28:1 › AP01-R003: untranslated room in English chooser gets existing fallback marker
+    [chromium] › tests/e2e/ap01-regressions.spec.ts:40:1 › AP01-R002: choosing a cluster room transfers keyboard focus to its details

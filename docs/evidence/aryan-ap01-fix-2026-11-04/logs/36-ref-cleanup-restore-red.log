@@ -1,0 +1,86 @@
+
+> campus-board@0.1.0 test:e2e
+> playwright test tests/e2e/ap01-regressions.spec.ts --grep live regrouping
+
+[WebServer] (node:59613) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59614) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59642) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59644) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59653) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59656) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59659) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59652) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59649) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59655) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59651) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59658) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59657) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59654) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59650) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59661) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59689) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:59691) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/e2e/ap01-regressions.spec.ts:49:41 › AP01-R002: live regrouping preserves focus ownership (inside chooser: true) (10.7s)
+(node:59702) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › tests/e2e/ap01-regressions.spec.ts:49:41 › AP01-R002: live regrouping preserves focus ownership (inside chooser: false) (10.5s)
+
+
+  1) [chromium] › tests/e2e/ap01-regressions.spec.ts:49:41 › AP01-R002: live regrouping preserves focus ownership (inside chooser: true)
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 409
+
+      62 |   await expect(chooser).toHaveCount(0);
+      63 |   await expect(search).toBeFocused();
+    > 64 |  }finally{expect((await request.post(`/api/admin/rooms/${id}/restore`,{headers})).status()).toBe(200);}
+         |                                                                                             ^
+      65 | });
+      66 |
+        at <isolated-workspace>/candidate/tests/e2e/ap01-regressions.spec.ts:64:93
+
+    Error Context: test-results/ap01-regressions-AP01-R002-08c15-ership-inside-chooser-true--chromium/error-context.md
+
+  2) [chromium] › tests/e2e/ap01-regressions.spec.ts:49:41 › AP01-R002: live regrouping preserves focus ownership (inside chooser: false)
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 409
+
+      62 |   await expect(chooser).toHaveCount(0);
+      63 |   await expect(search).toBeFocused();
+    > 64 |  }finally{expect((await request.post(`/api/admin/rooms/${id}/restore`,{headers})).status()).toBe(200);}
+         |                                                                                             ^
+      65 | });
+      66 |
+        at <isolated-workspace>/candidate/tests/e2e/ap01-regressions.spec.ts:64:93
+
+    Error Context: test-results/ap01-regressions-AP01-R002-7076d-rship-inside-chooser-false--chromium/error-context.md
+
+  2 failed
+    [chromium] › tests/e2e/ap01-regressions.spec.ts:49:41 › AP01-R002: live regrouping preserves focus ownership (inside chooser: true)
+    [chromium] › tests/e2e/ap01-regressions.spec.ts:49:41 › AP01-R002: live regrouping preserves focus ownership (inside chooser: false)
