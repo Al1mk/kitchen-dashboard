@@ -1,0 +1,828 @@
+{
+ "context": "kiosk-nominal-1080x1920",
+ "route": "/",
+ "lang": "de",
+ "status": 200,
+ "finalUrl": "/",
+ "loadMs": 1597,
+ "stillLoadingAfter8s": false,
+ "summary": {
+  "targets": 15,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 2,
+  "minTargetH": 48,
+  "minTargetW": 80.5,
+  "textMinFs": 14,
+  "textLt14": 0,
+  "textLt16": 1,
+  "textTotal": 25,
+  "lowContrastCount": 0,
+  "screens": 1,
+  "hOverflow": false,
+  "homeLinks": 3,
+  "h1": 1
+ },
+ "measure": {
+  "viewport": {
+   "vw": 1080,
+   "vh": 1920,
+   "dpr": 1
+  },
+  "htmlLang": "de",
+  "title": "Campus-Informationen – Campus Board",
+  "scroll": {
+   "scrollWidth": 1080,
+   "scrollHeight": 1920,
+   "screens": 1,
+   "hOverflow": false
+  },
+  "landmarks": {
+   "header": true,
+   "nav": 1,
+   "main": true,
+   "footer": true,
+   "skipLink": false
+  },
+  "headings": [
+   {
+    "l": "H1",
+    "t": "Campus-Informationen",
+    "fs": 36,
+    "y": 273
+   }
+  ],
+  "targets": [
+   {
+    "i": 0,
+    "tag": "a",
+    "name": "Deutsch",
+    "href": "/",
+    "x": 728,
+    "y": 35,
+    "w": 86.8,
+    "h": 48,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 4.2
+   },
+   {
+    "i": 1,
+    "tag": "a",
+    "name": "English",
+    "href": "/?lang=en",
+    "x": 819,
+    "y": 35,
+    "w": 80.5,
+    "h": 48,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 4.2
+   },
+   {
+    "i": 2,
+    "tag": "a",
+    "name": "Start",
+    "href": "/",
+    "x": 176,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 3,
+    "tag": "a",
+    "name": "Neu am Campus",
+    "href": "/newcomers",
+    "x": 360,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 4,
+    "tag": "a",
+    "name": "Karte",
+    "href": "/map",
+    "x": 544,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 5,
+    "tag": "a",
+    "name": "Räume",
+    "href": "/rooms",
+    "x": 728,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 6,
+    "tag": "a",
+    "name": "Stundenplan",
+    "href": "/schedule",
+    "x": 176,
+    "y": 175,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 7,
+    "tag": "a",
+    "name": "Raumbuchung",
+    "href": "/booking",
+    "x": 360,
+    "y": 175,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 8,
+    "tag": "a",
+    "name": "Mitteilungen",
+    "href": "/display",
+    "x": 544,
+    "y": 175,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 9,
+    "tag": "a",
+    "name": "Neu am Campus Erste Orientierung: wo finde ich was?",
+    "href": "/newcomers",
+    "x": 176,
+    "y": 381,
+    "w": 728,
+    "h": 100,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 12
+   },
+   {
+    "i": 10,
+    "tag": "a",
+    "name": "Karte Räume auf dem Stockwerksplan finden",
+    "href": "/map",
+    "x": 176,
+    "y": 493,
+    "w": 728,
+    "h": 100,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 12
+   },
+   {
+    "i": 11,
+    "tag": "a",
+    "name": "Räume Alle Räume nach Stockwerk",
+    "href": "/rooms",
+    "x": 176,
+    "y": 605,
+    "w": 728,
+    "h": 100,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 12
+   },
+   {
+    "i": 12,
+    "tag": "a",
+    "name": "Stundenplan Lehrveranstaltungen nach Tag und Raum",
+    "href": "/schedule",
+    "x": 176,
+    "y": 717,
+    "w": 728,
+    "h": 100,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 12
+   },
+   {
+    "i": 13,
+    "tag": "a",
+    "name": "Raumbuchung Freie Zeiten prüfen und einen Raum probeweise reservieren ",
+    "href": "/booking",
+    "x": 176,
+    "y": 829,
+    "w": 728,
+    "h": 100,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 12
+   },
+   {
+    "i": 14,
+    "tag": "a",
+    "name": "Mitteilungen Aktuelle Hinweise für den Campus",
+    "href": "/display",
+    "x": 176,
+    "y": 941,
+    "w": 728,
+    "h": 100,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 12
+   }
+  ],
+  "nameless": [],
+  "unlabeled": [],
+  "imgs": [
+   {
+    "src": "/brand/hs-coburg-logo-screenshot.png",
+    "alt": "Hochschule Coburg",
+    "w": 176,
+    "h": 47
+   }
+  ],
+  "homeLinks": [
+   {
+    "i": 0,
+    "tag": "a",
+    "name": "Deutsch",
+    "href": "/",
+    "x": 728,
+    "y": 35,
+    "w": 86.8,
+    "h": 48,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 4.2
+   },
+   {
+    "i": 1,
+    "tag": "a",
+    "name": "English",
+    "href": "/?lang=en",
+    "x": 819,
+    "y": 35,
+    "w": 80.5,
+    "h": 48,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 4.2
+   },
+   {
+    "i": 2,
+    "tag": "a",
+    "name": "Start",
+    "href": "/",
+    "x": 176,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   }
+  ],
+  "pinned": [],
+  "overflowers": [],
+  "text": {
+   "count": 25,
+   "sizeHist": {
+    "14": 1,
+    "18": 17,
+    "30": 6,
+    "36": 1
+   },
+   "items": [
+    {
+     "text": "Lucas-Cranach-Campus Kronach",
+     "tag": "p",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 71,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Deutsch",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 35,
+     "fg": "255,255,255",
+     "bg": "35,37,43"
+    },
+    {
+     "text": "English",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 35,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Start",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 4.82,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "255,255,255",
+     "bg": "205,64,38"
+    },
+    {
+     "text": "Neu am Campus",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Karte",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Räume",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Stundenplan",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 175,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Raumbuchung",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 175,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Mitteilungen",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 175,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Campus-Informationen",
+     "tag": "h1",
+     "fs": 36,
+     "weight": "700",
+     "contrast": 13.96,
+     "large": true,
+     "hasBgImage": false,
+     "y": 273,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Informationen für Studierende und Gäste am Lucas-C",
+     "tag": "p",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 333,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Neu am Campus",
+     "tag": "span",
+     "fs": 30,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 397,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Erste Orientierung: wo finde ich was?",
+     "tag": "span",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 437,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Karte",
+     "tag": "span",
+     "fs": 30,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 509,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Räume auf dem Stockwerksplan finden",
+     "tag": "span",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 549,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Räume",
+     "tag": "span",
+     "fs": 30,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 621,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Alle Räume nach Stockwerk",
+     "tag": "span",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 661,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Stundenplan",
+     "tag": "span",
+     "fs": 30,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 733,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Lehrveranstaltungen nach Tag und Raum",
+     "tag": "span",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 773,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Raumbuchung",
+     "tag": "span",
+     "fs": 30,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 845,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Freie Zeiten prüfen und einen Raum probeweise rese",
+     "tag": "span",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 885,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Mitteilungen",
+     "tag": "span",
+     "fs": 30,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 957,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Aktuelle Hinweise für den Campus",
+     "tag": "span",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 997,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Prototyp im Kurs Mensch-Maschine-Interaktion – kei",
+     "tag": "footer",
+     "fs": 14,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1875,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    }
+   ]
+  }
+ },
+ "tabStops": [
+  {
+   "tag": "a",
+   "name": "Deutsch",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 35,
+   "h": 48
+  },
+  {
+   "tag": "a",
+   "name": "English",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 35,
+   "h": 48
+  },
+  {
+   "tag": "a",
+   "name": "Start",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Neu am Campus",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Karte",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Räume",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Stundenplan",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 175,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Raumbuchung",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 175,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Mitteilungen",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 175,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Neu am Campus Erste Orientierung: wo finde ich was",
+   "outline": "solid 3px",
+   "shadow": "yes",
+   "ring": true,
+   "inViewport": true,
+   "y": 381,
+   "h": 100
+  },
+  {
+   "tag": "a",
+   "name": "Karte Räume auf dem Stockwerksplan finden",
+   "outline": "solid 3px",
+   "shadow": "yes",
+   "ring": true,
+   "inViewport": true,
+   "y": 493,
+   "h": 100
+  },
+  {
+   "tag": "a",
+   "name": "Räume Alle Räume nach Stockwerk",
+   "outline": "solid 3px",
+   "shadow": "yes",
+   "ring": true,
+   "inViewport": true,
+   "y": 605,
+   "h": 100
+  },
+  {
+   "tag": "a",
+   "name": "Stundenplan Lehrveranstaltungen nach Tag und Raum",
+   "outline": "solid 3px",
+   "shadow": "yes",
+   "ring": true,
+   "inViewport": true,
+   "y": 717,
+   "h": 100
+  },
+  {
+   "tag": "a",
+   "name": "Raumbuchung Freie Zeiten prüfen und einen Raum pro",
+   "outline": "solid 3px",
+   "shadow": "yes",
+   "ring": true,
+   "inViewport": true,
+   "y": 829,
+   "h": 100
+  },
+  {
+   "tag": "a",
+   "name": "Mitteilungen Aktuelle Hinweise für den Campus",
+   "outline": "solid 3px",
+   "shadow": "yes",
+   "ring": true,
+   "inViewport": true,
+   "y": 941,
+   "h": 100
+  }
+ ],
+ "newEvents": {
+  "console": [],
+  "pageerror": [],
+  "requestfailed": [
+   {
+    "url": "/newcomers?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?lang=en&_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   }
+  ],
+  "badresponse": []
+ }
+}

@@ -1,0 +1,43 @@
+- banner:
+  - img "Hochschule Coburg"
+  - paragraph: Lucas-Cranach-Campus Kronach
+  - group "Sprache":
+    - link "Deutsch":
+      - /url: /booking/cancel
+    - link "English":
+      - /url: /booking/cancel?lang=en
+  - navigation "Campus-Informationen":
+    - list:
+      - listitem:
+        - link "Start":
+          - /url: /
+      - listitem:
+        - link "Neu am Campus":
+          - /url: /newcomers
+      - listitem:
+        - link "Karte":
+          - /url: /map
+      - listitem:
+        - link "Räume":
+          - /url: /rooms
+      - listitem:
+        - link "Stundenplan":
+          - /url: /schedule
+      - listitem:
+        - link "Raumbuchung":
+          - /url: /booking
+      - listitem:
+        - link "Mitteilungen":
+          - /url: /display
+- main:
+  - heading "Reservierung stornieren" [level=1]
+  - paragraph: DEMO – kein offizielles Raumbuchungssystem.
+  - text: Buchungsnummer
+  - textbox "Buchungsnummer"
+  - text: Stornierungscode
+  - textbox "Stornierungscode"
+  - button "Stornierung bestätigen"
+  - link "Zur Raumbuchung":
+    - /url: /booking
+- contentinfo: Prototyp im Kurs Mensch-Maschine-Interaktion – keine offizielle Anzeige der Hochschule Coburg.
+- alert

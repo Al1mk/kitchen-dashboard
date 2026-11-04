@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { localize, type Lang } from "@/lib/i18n/public.ts";
 import { formatCalendarDate } from "@/lib/time/berlin.ts";
 import { BOOKING_COPY } from "./booking-copy.ts";
@@ -33,6 +33,11 @@ export function BookingReceipt({ receipt, lang, onDone }: { receipt: Receipt; la
   const t = BOOKING_COPY[lang].receipt;
   const [expiresAt, setExpiresAt] = useState(() => Date.now() + RECEIPT_SECONDS * 1000);
   const [now, setNow] = useState(() => Date.now());
+  const [credentialsSaved, setCredentialsSaved] = useState(false);
+  const receiptRef = useRef<HTMLElement>(null);
+
+  // AP-03: when the receipt replaces a long form, bring the result into view.
+  useEffect(() => { receiptRef.current?.scrollIntoView({ block: "start", behavior: "auto" }); }, []);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -46,9 +51,11 @@ export function BookingReceipt({ receipt, lang, onDone }: { receipt: Receipt; la
   const secondsLeft = Math.max(0, Math.ceil((expiresAt - now) / 1000));
   const roomName = localize(receipt.roomName, receipt.roomNameEn, lang);
   const cancelled = receipt.status === "cancelled";
+  const warn = !cancelled && !credentialsSaved && secondsLeft <= 15;
 
   return (
     <section
+      ref={receiptRef}
       data-testid="booking-receipt"
       data-status={receipt.status}
       aria-labelledby="receipt-title"
@@ -79,12 +86,24 @@ export function BookingReceipt({ receipt, lang, onDone }: { receipt: Receipt; la
             <p data-testid="receipt-code" className="break-all font-mono text-lg font-semibold">{receipt.cancelToken}</p>
           </div>
           <p className="font-semibold">{t.noRecovery}</p>
+          <label className="flex items-center gap-3 rounded-xl bg-surface p-4 text-lg font-semibold">
+            <input
+              type="checkbox"
+              className="h-7 w-7 shrink-0 accent-brand"
+              checked={credentialsSaved}
+              onChange={(event) => setCredentialsSaved(event.target.checked)}
+            />
+            {t.saved}
+          </label>
         </>
       )}
-      <p data-testid="receipt-countdown" aria-live="off" className="rounded-xl bg-surface px-4 py-3 text-lg font-semibold tabular-nums">
-        {t.countdown(secondsLeft)}
+      {/* Both messages reserve one shared grid cell, so the deadline warning
+          never inserts a new row and pushes More time behind the public dock. */}
+      <p className={`grid rounded-xl px-4 py-3 text-lg font-semibold tabular-nums ${warn ? "bg-warning-soft text-warning" : "bg-surface"}`}>
+        <span data-testid="receipt-countdown" aria-live="off" aria-hidden={warn} className={`col-start-1 row-start-1 ${warn ? "invisible" : ""}`}>{t.countdown(secondsLeft)}</span>
+        <span role={warn ? "alert" : undefined} aria-hidden={!warn} className={`col-start-1 row-start-1 ${warn ? "" : "invisible"}`}>{t.timeWarning}</span>
       </p>
-      <div className="grid gap-3 sm:grid-cols-2">
+      <div className="grid gap-3 kiosk:grid-cols-2 sm:grid-cols-2">
         <button
           type="button"
           onClick={() => setExpiresAt(Date.now() + RECEIPT_SECONDS * 1000)}
@@ -92,7 +111,7 @@ export function BookingReceipt({ receipt, lang, onDone }: { receipt: Receipt; la
         >
           {t.more}
         </button>
-        <button type="button" onClick={onDone} className="min-h-16 touch-manipulation rounded-xl bg-ink px-4 text-lg font-bold text-white">
+        <button type="button" onClick={onDone} disabled={!cancelled && !credentialsSaved} className="min-h-16 touch-manipulation rounded-xl bg-ink px-4 text-lg font-bold text-white disabled:cursor-not-allowed disabled:opacity-50">
           {t.finish}
         </button>
       </div>

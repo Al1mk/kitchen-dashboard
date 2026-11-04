@@ -1,0 +1,28 @@
+{
+ "ctx": "sens-540x960",
+ "name": "display-loading",
+ "lang": "en",
+ "label": "before",
+ "geo": {
+  "vw": 540,
+  "vh": 960,
+  "rows": [
+   4,
+   3
+  ],
+  "lang": {
+   "found": true,
+   "gap": 2.6,
+   "centreYRatio": 0.1
+  },
+  "navTop": 156.9,
+  "navBottom": 240.1,
+  "frameCentre": 270,
+  "rowCentres": [
+   270,
+   207.7
+  ]
+ },
+ "list": null,
+ "listAboveNav": null
+}

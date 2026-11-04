@@ -1,0 +1,72 @@
+{
+ "ctx": "phone-390x844",
+ "name": "rooms",
+ "lang": "de",
+ "label": "after",
+ "url": "/rooms",
+ "summary": {
+  "targets": 145,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 0,
+  "minTargetH": 48,
+  "minTargetW": 80.5,
+  "textMinFs": 14,
+  "textLt14": 0,
+  "textLt16": 55,
+  "textTotal": 377,
+  "lowContrastCount": 0,
+  "screens": 20.33,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 1
+ },
+ "textMinFs": 14,
+ "clear": {
+  "scrollY": 16314,
+  "docHeight": 17158,
+  "dockTop": null,
+  "lastContentBottom": 754.7,
+  "footerBottom": 843.7,
+  "lowestBottom": 843.7,
+  "clearOfDock": true,
+  "clearance": null
+ },
+ "stage2": {
+  "vh": 844,
+  "docHeight": 17158,
+  "screens": 20.3,
+  "hOverflow": false,
+  "rooms": {
+   "cards": 54,
+   "medianPitch": 316,
+   "firstCardH": 364,
+   "actionsInOneRow": 0,
+   "chips": [
+    {
+     "t": "Erdgeschoss",
+     "h": 56
+    },
+    {
+     "t": "1. Obergeschoss",
+     "h": 56
+    },
+    {
+     "t": "2. Obergeschoss",
+     "h": 56
+    },
+    {
+     "t": "3. Obergeschoss",
+     "h": 56
+    }
+   ],
+   "chipBar": {
+    "sticky": false,
+    "h": 136
+   },
+   "floorHeadings": 4
+  },
+  "dockTop": null
+ },
+ "dock": null
+}

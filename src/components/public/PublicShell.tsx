@@ -1,13 +1,22 @@
 import type { ReactNode } from "react";
 import { PUBLIC_TEXT, type Lang, type PublicSection } from "@/lib/i18n/public.ts";
 import { formatBerlinTime } from "@/lib/time/berlin.ts";
+import { DockHeightSync } from "./DockHeightSync.tsx";
 import { LiveLanguageSwitch } from "./LiveLanguageSwitch.tsx";
 import { LanguageSwitch, PublicNav } from "./PublicNav.tsx";
 
-// Frame of the public start page, room directory and schedule. No admin links
-// or session. Sized for the portrait kiosk (large text, ≥ 56 px touch targets)
-// and usable on laptops and phones. How these pages join the team's map is
-// still open (see docs/contracts.md).
+// Frame of the public pages (start, newcomers, map, rooms, schedule, booking). No admin links
+// or session. Sized for the portrait kiosk (≥ 56 px touch targets) and usable on laptops and phones.
+//
+// Public kiosk mode (portrait, ≥ 520 CSS px; docs/contracts.md C10): the language switch and the one
+// navigation form a dock fixed to the bottom edge (data-public-dock). Outside kiosk mode that wrapper is
+// `display: contents`, so both stay in the header exactly where they were. There is only ever one
+// <nav>; CSS moves it, nothing is duplicated. DockHeightSync reserves the dock's real height.
+// Known consequence: the dock comes first in DOM/tab order although it is drawn last (a skip link is
+// planned for Stage 3).
+
+/** Sections that show class titles/lecturers; only there the "entered by campus staff" note helps. */
+const SECTIONS_WITH_CLASS_TITLES: PublicSection[] = ["schedule", "rooms"];
 
 export function PublicShell({
   active,
@@ -30,7 +39,7 @@ export function PublicShell({
 }) {
   const t = PUBLIC_TEXT[lang];
   return (
-    <div lang={lang} className="flex min-h-dvh flex-col bg-canvas text-lg text-ink">
+    <div lang={lang} data-public-shell className="flex min-h-dvh flex-col bg-canvas text-lg text-ink kiosk:pb-[var(--public-dock-h)]">
       <header className="bg-surface">
         <div className="mx-auto flex w-full max-w-3xl flex-wrap items-center justify-between gap-4 px-5 pt-5 pb-3">
           <div>
@@ -38,19 +47,26 @@ export function PublicShell({
             <img src="/brand/hs-coburg-logo-screenshot.png" alt="Hochschule Coburg" width={445} height={118} className="h-auto w-44" />
             <p className="mt-1 font-semibold text-ink-muted">Lucas-Cranach-Campus Kronach</p>
           </div>
-          {liveParams ? <LiveLanguageSwitch lang={lang} path={path} keys={liveParams} /> : <LanguageSwitch lang={lang} path={path} params={params} />}
-        </div>
-        <div className="mx-auto w-full max-w-3xl px-5 pb-3">
-          <PublicNav active={active} lang={lang} />
+          <div
+            data-public-dock
+            className="contents kiosk:fixed kiosk:inset-x-0 kiosk:bottom-0 kiosk:z-40 kiosk:flex kiosk:flex-col kiosk:items-center kiosk:gap-[var(--public-dock-gap)] kiosk:border-t kiosk:border-line kiosk:bg-surface kiosk:py-[var(--public-dock-gap)] kiosk:shadow-[0_-0.25rem_1rem_rgba(35,37,43,0.12)]"
+          >
+            {liveParams ? <LiveLanguageSwitch lang={lang} path={path} keys={liveParams} /> : <LanguageSwitch lang={lang} path={path} params={params} />}
+            {/* same column as the page content (max-w-3xl + px-5), so tiles line up with the cards above */}
+            <div className="basis-full kiosk:w-full kiosk:max-w-3xl kiosk:px-5">
+              <PublicNav active={active} lang={lang} />
+            </div>
+          </div>
         </div>
         <div className="brand-stripe h-1.5" aria-hidden="true" />
       </header>
       <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-5 px-5 py-6">
         <h1 className="font-display text-4xl font-bold">{title}</h1>
-        {t.contentNote && active !== "start" && <p className="text-base text-ink-muted">{t.contentNote}</p>}
+        {t.contentNote && SECTIONS_WITH_CLASS_TITLES.includes(active) && <p className="text-base text-ink-muted">{t.contentNote}</p>}
         {children}
       </main>
       <footer className="border-t border-line bg-surface px-5 py-3 text-center text-sm text-ink-muted">{t.footer}</footer>
+      <DockHeightSync />
     </div>
   );
 }

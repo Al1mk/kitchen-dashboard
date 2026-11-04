@@ -1,0 +1,519 @@
+
+Running 33 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/stage2-layout.spec.ts:84:3 › home 1080x1920 touch: six large cards with a pictogram and a label, same destinations in both languages (1.5s)
+  ✓   2 [chromium] › tests/e2e/stage2-layout.spec.ts:84:3 › home 1080x1920 pointer-fine: six large cards with a pictogram and a label, same destinations in both languages (1.3s)
+  ✓   3 [chromium] › tests/e2e/stage2-layout.spec.ts:84:3 › home 1080x1700 (assumed chrome loss): six large cards with a pictogram and a label, same destinations in both languages (1.3s)
+  ✓   4 [chromium] › tests/e2e/stage2-layout.spec.ts:84:3 › home 540x960 (assumed 200 % zoom): six large cards with a pictogram and a label, same destinations in both languages (1.3s)
+  ✓   5 [chromium] › tests/e2e/stage2-layout.spec.ts:84:3 › home laptop 1440x900: six large cards with a pictogram and a label, same destinations in both languages (1.2s)
+  ✓   6 [chromium] › tests/e2e/stage2-layout.spec.ts:84:3 › home phone 390x844: six large cards with a pictogram and a label, same destinations in both languages (1.2s)
+  ✘   7 [chromium] › tests/e2e/stage2-layout.spec.ts:115:3 › home 1080x1920 touch: the cards use the portrait space down to the dock, and stay above it (614ms)
+  ✘   8 [chromium] › tests/e2e/stage2-layout.spec.ts:115:3 › home 1080x1920 pointer-fine: the cards use the portrait space down to the dock, and stay above it (620ms)
+  ✓   9 [chromium] › tests/e2e/stage2-layout.spec.ts:115:3 › home 1080x1700 (assumed chrome loss): the cards use the portrait space down to the dock, and stay above it (1.2s)
+  ✓  10 [chromium] › tests/e2e/stage2-layout.spec.ts:130:1 › home: card text and pictogram are readable (contrast measured through the real colours) (620ms)
+  ✘  11 [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 1080x1920 touch: four action cards and a full-width help card, Reza's text unchanged, no prototype block (628ms)
+  ✘  12 [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 1080x1920 pointer-fine: four action cards and a full-width help card, Reza's text unchanged, no prototype block (626ms)
+  ✘  13 [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 1080x1700 (assumed chrome loss): four action cards and a full-width help card, Reza's text unchanged, no prototype block (628ms)
+  ✘  14 [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 540x960 (assumed 200 % zoom): four action cards and a full-width help card, Reza's text unchanged, no prototype block (628ms)
+  ✘  15 [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers laptop 1440x900: four action cards and a full-width help card, Reza's text unchanged, no prototype block (623ms)
+  ✘  16 [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers phone 390x844: four action cards and a full-width help card, Reza's text unchanged, no prototype block (621ms)
+  ✓  17 [chromium] › tests/e2e/stage2-layout.spec.ts:206:1 › newcomers: the end of the page is reachable above the dock (1.2s)
+  ✘  18 [chromium] › tests/e2e/stage2-layout.spec.ts:248:3 › rooms 1080x1920 touch: floor chips jump to the floor, without a new history entry, and focus lands on the heading (8.7s)
+  ✘  19 [chromium] › tests/e2e/stage2-layout.spec.ts:248:3 › rooms 1080x1920 pointer-fine: floor chips jump to the floor, without a new history entry, and focus lands on the heading (8.6s)
+  ✘  20 [chromium] › tests/e2e/stage2-layout.spec.ts:248:3 › rooms 1080x1700 (assumed chrome loss): floor chips jump to the floor, without a new history entry, and focus lands on the heading (8.6s)
+  ✘  21 [chromium] › tests/e2e/stage2-layout.spec.ts:248:3 › rooms 540x960 (assumed 200 % zoom): floor chips jump to the floor, without a new history entry, and focus lands on the heading (8.6s)
+  ✓  22 [chromium] › tests/e2e/stage2-layout.spec.ts:248:3 › rooms laptop 1440x900: floor chips jump to the floor, without a new history entry, and focus lands on the heading (9.7s)
+  ✓  23 [chromium] › tests/e2e/stage2-layout.spec.ts:248:3 › rooms phone 390x844: floor chips jump to the floor, without a new history entry, and focus lands on the heading (9.7s)
+  ✘  24 [chromium] › tests/e2e/stage2-layout.spec.ts:292:3 › rooms 1080x1920 touch: a card is compact, its actions share one row, and ids and links are unchanged (659ms)
+  ✘  25 [chromium] › tests/e2e/stage2-layout.spec.ts:317:3 › rooms 1080x1920 touch: cards are spaced tightly enough that the list is not longer than the audited V1 pitch (636ms)
+  ✘  26 [chromium] › tests/e2e/stage2-layout.spec.ts:292:3 › rooms 1080x1920 pointer-fine: a card is compact, its actions share one row, and ids and links are unchanged (665ms)
+  ✘  27 [chromium] › tests/e2e/stage2-layout.spec.ts:317:3 › rooms 1080x1920 pointer-fine: cards are spaced tightly enough that the list is not longer than the audited V1 pitch (647ms)
+  ✘  28 [chromium] › tests/e2e/stage2-layout.spec.ts:292:3 › rooms 1080x1700 (assumed chrome loss): a card is compact, its actions share one row, and ids and links are unchanged (667ms)
+  ✘  29 [chromium] › tests/e2e/stage2-layout.spec.ts:317:3 › rooms 1080x1700 (assumed chrome loss): cards are spaced tightly enough that the list is not longer than the audited V1 pitch (642ms)
+  ✘  30 [chromium] › tests/e2e/stage2-layout.spec.ts:292:3 › rooms 540x960 (assumed 200 % zoom): a card is compact, its actions share one row, and ids and links are unchanged (666ms)
+  ✓  31 [chromium] › tests/e2e/stage2-layout.spec.ts:317:3 › rooms 540x960 (assumed 200 % zoom): cards are spaced tightly enough that the list is not longer than the audited V1 pitch (648ms)
+  ✘  32 [chromium] › tests/e2e/stage2-layout.spec.ts:333:3 › rooms search (de): matching classes come first and are never contradicted by a "no room found" box (5.5s)
+  ✘  33 [chromium] › tests/e2e/stage2-layout.spec.ts:333:3 › rooms search (en): matching classes come first and are never contradicted by a "no room found" box (5.5s)
+
+
+  1) [chromium] › tests/e2e/stage2-layout.spec.ts:115:3 › home 1080x1920 touch: the cards use the portrait space down to the dock, and stay above it 
+
+    Error: 1080x1920 touch de: space left under the cards
+
+    expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 170
+    Received:    370.59375
+
+      122 |       expect(lastBottom, `${v.name} ${lang}: last card ends above the dock`).toBeLessThanOrEqual(top);
+      123 |       // V1 left a gap of ~300 px under the cards; the cards now fill the area (footer and padding remain).
+    > 124 |       expect(top - lastBottom, `${v.name} ${lang}: space left under the cards`).toBeLessThanOrEqual(170);
+          |                                                                                 ^
+      125 |     }
+      126 |     await context.close();
+      127 |   });
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:124:81
+
+    Error Context: test-results/stage2-layout-home-1080x19-e1575--the-dock-and-stay-above-it-chromium/error-context.md
+
+  2) [chromium] › tests/e2e/stage2-layout.spec.ts:115:3 › home 1080x1920 pointer-fine: the cards use the portrait space down to the dock, and stay above it 
+
+    Error: 1080x1920 pointer-fine de: space left under the cards
+
+    expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 170
+    Received:    370.59375
+
+      122 |       expect(lastBottom, `${v.name} ${lang}: last card ends above the dock`).toBeLessThanOrEqual(top);
+      123 |       // V1 left a gap of ~300 px under the cards; the cards now fill the area (footer and padding remain).
+    > 124 |       expect(top - lastBottom, `${v.name} ${lang}: space left under the cards`).toBeLessThanOrEqual(170);
+          |                                                                                 ^
+      125 |     }
+      126 |     await context.close();
+      127 |   });
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:124:81
+
+    Error Context: test-results/stage2-layout-home-1080x19-94d48--the-dock-and-stay-above-it-chromium/error-context.md
+
+  3) [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 1080x1920 touch: four action cards and a full-width help card, Reza's text unchanged, no prototype block 
+
+    Error: 1080x1920 touch de: marker has no fill
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "rgba(0, 0, 0, 0)"
+    Received: "rgb(241, 232, 248)"
+
+      158 |         return { background: s.backgroundColor, border: parseFloat(s.borderTopWidth) + parseFloat(s.borderLeftWidth), height: el.getBoundingClientRect().height, fontSize: parseFloat(s.fontSize) };
+      159 |       });
+    > 160 |       expect(markerStyle.background, `${where}: marker has no fill`).toBe("rgba(0, 0, 0, 0)");
+          |                                                                      ^
+      161 |       expect(markerStyle.border, `${where}: marker has no border`).toBe(0);
+      162 |       expect(markerStyle.fontSize, `${where}: marker text stays readable`).toBeGreaterThanOrEqual(16);
+      163 |       expect(markerStyle.height, `${where}: marker is compact (at most two lines)`).toBeLessThanOrEqual(markerStyle.fontSize * 1.6 * 2 + 4);
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:160:70
+
+    Error Context: test-results/stage2-layout-newcomers-10-d9f4c-nchanged-no-prototype-block-chromium/error-context.md
+
+  4) [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 1080x1920 pointer-fine: four action cards and a full-width help card, Reza's text unchanged, no prototype block 
+
+    Error: 1080x1920 pointer-fine de: marker has no fill
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "rgba(0, 0, 0, 0)"
+    Received: "rgb(241, 232, 248)"
+
+      158 |         return { background: s.backgroundColor, border: parseFloat(s.borderTopWidth) + parseFloat(s.borderLeftWidth), height: el.getBoundingClientRect().height, fontSize: parseFloat(s.fontSize) };
+      159 |       });
+    > 160 |       expect(markerStyle.background, `${where}: marker has no fill`).toBe("rgba(0, 0, 0, 0)");
+          |                                                                      ^
+      161 |       expect(markerStyle.border, `${where}: marker has no border`).toBe(0);
+      162 |       expect(markerStyle.fontSize, `${where}: marker text stays readable`).toBeGreaterThanOrEqual(16);
+      163 |       expect(markerStyle.height, `${where}: marker is compact (at most two lines)`).toBeLessThanOrEqual(markerStyle.fontSize * 1.6 * 2 + 4);
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:160:70
+
+    Error Context: test-results/stage2-layout-newcomers-10-7adff-nchanged-no-prototype-block-chromium/error-context.md
+
+  5) [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 1080x1700 (assumed chrome loss): four action cards and a full-width help card, Reza's text unchanged, no prototype block 
+
+    Error: 1080x1700 (assumed chrome loss) de: marker has no fill
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "rgba(0, 0, 0, 0)"
+    Received: "rgb(241, 232, 248)"
+
+      158 |         return { background: s.backgroundColor, border: parseFloat(s.borderTopWidth) + parseFloat(s.borderLeftWidth), height: el.getBoundingClientRect().height, fontSize: parseFloat(s.fontSize) };
+      159 |       });
+    > 160 |       expect(markerStyle.background, `${where}: marker has no fill`).toBe("rgba(0, 0, 0, 0)");
+          |                                                                      ^
+      161 |       expect(markerStyle.border, `${where}: marker has no border`).toBe(0);
+      162 |       expect(markerStyle.fontSize, `${where}: marker text stays readable`).toBeGreaterThanOrEqual(16);
+      163 |       expect(markerStyle.height, `${where}: marker is compact (at most two lines)`).toBeLessThanOrEqual(markerStyle.fontSize * 1.6 * 2 + 4);
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:160:70
+
+    Error Context: test-results/stage2-layout-newcomers-10-b6048-nchanged-no-prototype-block-chromium/error-context.md
+
+  6) [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 540x960 (assumed 200 % zoom): four action cards and a full-width help card, Reza's text unchanged, no prototype block 
+
+    Error: 540x960 (assumed 200 % zoom) de: marker has no fill
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "rgba(0, 0, 0, 0)"
+    Received: "rgb(241, 232, 248)"
+
+      158 |         return { background: s.backgroundColor, border: parseFloat(s.borderTopWidth) + parseFloat(s.borderLeftWidth), height: el.getBoundingClientRect().height, fontSize: parseFloat(s.fontSize) };
+      159 |       });
+    > 160 |       expect(markerStyle.background, `${where}: marker has no fill`).toBe("rgba(0, 0, 0, 0)");
+          |                                                                      ^
+      161 |       expect(markerStyle.border, `${where}: marker has no border`).toBe(0);
+      162 |       expect(markerStyle.fontSize, `${where}: marker text stays readable`).toBeGreaterThanOrEqual(16);
+      163 |       expect(markerStyle.height, `${where}: marker is compact (at most two lines)`).toBeLessThanOrEqual(markerStyle.fontSize * 1.6 * 2 + 4);
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:160:70
+
+    Error Context: test-results/stage2-layout-newcomers-54-d3f21-nchanged-no-prototype-block-chromium/error-context.md
+
+  7) [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers laptop 1440x900: four action cards and a full-width help card, Reza's text unchanged, no prototype block 
+
+    Error: laptop 1440x900 de: marker has no fill
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "rgba(0, 0, 0, 0)"
+    Received: "rgb(241, 232, 248)"
+
+      158 |         return { background: s.backgroundColor, border: parseFloat(s.borderTopWidth) + parseFloat(s.borderLeftWidth), height: el.getBoundingClientRect().height, fontSize: parseFloat(s.fontSize) };
+      159 |       });
+    > 160 |       expect(markerStyle.background, `${where}: marker has no fill`).toBe("rgba(0, 0, 0, 0)");
+          |                                                                      ^
+      161 |       expect(markerStyle.border, `${where}: marker has no border`).toBe(0);
+      162 |       expect(markerStyle.fontSize, `${where}: marker text stays readable`).toBeGreaterThanOrEqual(16);
+      163 |       expect(markerStyle.height, `${where}: marker is compact (at most two lines)`).toBeLessThanOrEqual(markerStyle.fontSize * 1.6 * 2 + 4);
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:160:70
+
+    Error Context: test-results/stage2-layout-newcomers-la-e29d6-nchanged-no-prototype-block-chromium/error-context.md
+
+  8) [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers phone 390x844: four action cards and a full-width help card, Reza's text unchanged, no prototype block 
+
+    Error: phone 390x844 de: marker has no fill
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "rgba(0, 0, 0, 0)"
+    Received: "rgb(241, 232, 248)"
+
+      158 |         return { background: s.backgroundColor, border: parseFloat(s.borderTopWidth) + parseFloat(s.borderLeftWidth), height: el.getBoundingClientRect().height, fontSize: parseFloat(s.fontSize) };
+      159 |       });
+    > 160 |       expect(markerStyle.background, `${where}: marker has no fill`).toBe("rgba(0, 0, 0, 0)");
+          |                                                                      ^
+      161 |       expect(markerStyle.border, `${where}: marker has no border`).toBe(0);
+      162 |       expect(markerStyle.fontSize, `${where}: marker text stays readable`).toBeGreaterThanOrEqual(16);
+      163 |       expect(markerStyle.height, `${where}: marker is compact (at most two lines)`).toBeLessThanOrEqual(markerStyle.fontSize * 1.6 * 2 + 4);
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:160:70
+
+    Error Context: test-results/stage2-layout-newcomers-ph-2043a-nchanged-no-prototype-block-chromium/error-context.md
+
+  9) [chromium] › tests/e2e/stage2-layout.spec.ts:248:3 › rooms 1080x1920 touch: floor chips jump to the floor, without a new history entry, and focus lands on the heading 
+
+    Error: 1080x1920 touch de 3OG: heading directly under the chips (or the page cannot scroll further)
+
+    1080x1920 touch de 3OG: heading directly under the chips (or the page cannot scroll further)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    Call Log:
+    - Timeout 8000ms exceeded while waiting on the predicate
+
+      276 |           }, '[data-testid="floor-jump"]');
+      277 |           return r.top >= r.barBottom - 1 && (r.top <= r.barBottom + 60 || Math.abs(r.y - r.max) < 2);
+    > 278 |         }, { message: `${where} ${floor.id}: heading directly under the chips (or the page cannot scroll further)`, timeout: 8_000 }).toBe(true);
+          |                                                                                                                                       ^
+      279 |         const bottom = await heading.evaluate((e) => e.getBoundingClientRect().bottom);
+      280 |         const top = await dockTop(page);
+      281 |         if (top !== null) expect(bottom, `${where} ${floor.id}: heading above the dock`).toBeLessThanOrEqual(top);
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:278:135
+
+    Error Context: test-results/stage2-layout-rooms-1080x1-769e1--focus-lands-on-the-heading-chromium/error-context.md
+
+  10) [chromium] › tests/e2e/stage2-layout.spec.ts:248:3 › rooms 1080x1920 pointer-fine: floor chips jump to the floor, without a new history entry, and focus lands on the heading 
+
+    Error: 1080x1920 pointer-fine de 3OG: heading directly under the chips (or the page cannot scroll further)
+
+    1080x1920 pointer-fine de 3OG: heading directly under the chips (or the page cannot scroll further)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    Call Log:
+    - Timeout 8000ms exceeded while waiting on the predicate
+
+      276 |           }, '[data-testid="floor-jump"]');
+      277 |           return r.top >= r.barBottom - 1 && (r.top <= r.barBottom + 60 || Math.abs(r.y - r.max) < 2);
+    > 278 |         }, { message: `${where} ${floor.id}: heading directly under the chips (or the page cannot scroll further)`, timeout: 8_000 }).toBe(true);
+          |                                                                                                                                       ^
+      279 |         const bottom = await heading.evaluate((e) => e.getBoundingClientRect().bottom);
+      280 |         const top = await dockTop(page);
+      281 |         if (top !== null) expect(bottom, `${where} ${floor.id}: heading above the dock`).toBeLessThanOrEqual(top);
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:278:135
+
+    Error Context: test-results/stage2-layout-rooms-1080x1-512e7--focus-lands-on-the-heading-chromium/error-context.md
+
+  11) [chromium] › tests/e2e/stage2-layout.spec.ts:248:3 › rooms 1080x1700 (assumed chrome loss): floor chips jump to the floor, without a new history entry, and focus lands on the heading 
+
+    Error: 1080x1700 (assumed chrome loss) de 3OG: heading directly under the chips (or the page cannot scroll further)
+
+    1080x1700 (assumed chrome loss) de 3OG: heading directly under the chips (or the page cannot scroll further)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    Call Log:
+    - Timeout 8000ms exceeded while waiting on the predicate
+
+      276 |           }, '[data-testid="floor-jump"]');
+      277 |           return r.top >= r.barBottom - 1 && (r.top <= r.barBottom + 60 || Math.abs(r.y - r.max) < 2);
+    > 278 |         }, { message: `${where} ${floor.id}: heading directly under the chips (or the page cannot scroll further)`, timeout: 8_000 }).toBe(true);
+          |                                                                                                                                       ^
+      279 |         const bottom = await heading.evaluate((e) => e.getBoundingClientRect().bottom);
+      280 |         const top = await dockTop(page);
+      281 |         if (top !== null) expect(bottom, `${where} ${floor.id}: heading above the dock`).toBeLessThanOrEqual(top);
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:278:135
+
+    Error Context: test-results/stage2-layout-rooms-1080x1-e1e94--focus-lands-on-the-heading-chromium/error-context.md
+
+  12) [chromium] › tests/e2e/stage2-layout.spec.ts:248:3 › rooms 540x960 (assumed 200 % zoom): floor chips jump to the floor, without a new history entry, and focus lands on the heading 
+
+    Error: 540x960 (assumed 200 % zoom) de 3OG: heading directly under the chips (or the page cannot scroll further)
+
+    540x960 (assumed 200 % zoom) de 3OG: heading directly under the chips (or the page cannot scroll further)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    Call Log:
+    - Timeout 8000ms exceeded while waiting on the predicate
+
+      276 |           }, '[data-testid="floor-jump"]');
+      277 |           return r.top >= r.barBottom - 1 && (r.top <= r.barBottom + 60 || Math.abs(r.y - r.max) < 2);
+    > 278 |         }, { message: `${where} ${floor.id}: heading directly under the chips (or the page cannot scroll further)`, timeout: 8_000 }).toBe(true);
+          |                                                                                                                                       ^
+      279 |         const bottom = await heading.evaluate((e) => e.getBoundingClientRect().bottom);
+      280 |         const top = await dockTop(page);
+      281 |         if (top !== null) expect(bottom, `${where} ${floor.id}: heading above the dock`).toBeLessThanOrEqual(top);
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:278:135
+
+    Error Context: test-results/stage2-layout-rooms-540x96-0f7e0--focus-lands-on-the-heading-chromium/error-context.md
+
+  13) [chromium] › tests/e2e/stage2-layout.spec.ts:292:3 › rooms 1080x1920 touch: a card is compact, its actions share one row, and ids and links are unchanged 
+
+    Error: de: the three actions are in one row
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 3
+
+      305 |       await expect(links.nth(0)).toHaveText(t.rooms.todayInRoom);
+      306 |       const tops = await links.evaluateAll((as) => as.map((a) => Math.round(a.getBoundingClientRect().top)));
+    > 307 |       expect(new Set(tops).size, `${lang}: the three actions are in one row`).toBe(1);
+          |                                                                               ^
+      308 |       const heights = await links.evaluateAll((as) => as.map((a) => a.getBoundingClientRect().height));
+      309 |       const wide = v.width >= 900;
+      310 |       for (const h of heights) expect(h, `${lang}: action height stays a full touch target (56 px at the 16 px root, 77 px at 22 px)`).toBeGreaterThanOrEqual(wide ? 77 : 56);
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:307:79
+
+    Error Context: test-results/stage2-layout-rooms-1080x1-85722-ids-and-links-are-unchanged-chromium/error-context.md
+
+  14) [chromium] › tests/e2e/stage2-layout.spec.ts:317:3 › rooms 1080x1920 touch: cards are spaced tightly enough that the list is not longer than the audited V1 pitch 
+
+    Error: median card pitch at 1080 px (px)
+
+    expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 290
+    Received:    347
+
+      325 |     expect(pitches.length).toBeGreaterThan(10);
+      326 |     const median = pitches[Math.floor(pitches.length / 2)];
+    > 327 |     expect(median, "median card pitch at 1080 px (px)").toBeLessThanOrEqual(290);
+          |                                                         ^
+      328 |     await context.close();
+      329 |   });
+      330 | }
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:327:57
+
+    Error Context: test-results/stage2-layout-rooms-1080x1-5bb6e-r-than-the-audited-V1-pitch-chromium/error-context.md
+
+  15) [chromium] › tests/e2e/stage2-layout.spec.ts:292:3 › rooms 1080x1920 pointer-fine: a card is compact, its actions share one row, and ids and links are unchanged 
+
+    Error: de: the three actions are in one row
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 3
+
+      305 |       await expect(links.nth(0)).toHaveText(t.rooms.todayInRoom);
+      306 |       const tops = await links.evaluateAll((as) => as.map((a) => Math.round(a.getBoundingClientRect().top)));
+    > 307 |       expect(new Set(tops).size, `${lang}: the three actions are in one row`).toBe(1);
+          |                                                                               ^
+      308 |       const heights = await links.evaluateAll((as) => as.map((a) => a.getBoundingClientRect().height));
+      309 |       const wide = v.width >= 900;
+      310 |       for (const h of heights) expect(h, `${lang}: action height stays a full touch target (56 px at the 16 px root, 77 px at 22 px)`).toBeGreaterThanOrEqual(wide ? 77 : 56);
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:307:79
+
+    Error Context: test-results/stage2-layout-rooms-1080x1-ec1fb-ids-and-links-are-unchanged-chromium/error-context.md
+
+  16) [chromium] › tests/e2e/stage2-layout.spec.ts:317:3 › rooms 1080x1920 pointer-fine: cards are spaced tightly enough that the list is not longer than the audited V1 pitch 
+
+    Error: median card pitch at 1080 px (px)
+
+    expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 290
+    Received:    347
+
+      325 |     expect(pitches.length).toBeGreaterThan(10);
+      326 |     const median = pitches[Math.floor(pitches.length / 2)];
+    > 327 |     expect(median, "median card pitch at 1080 px (px)").toBeLessThanOrEqual(290);
+          |                                                         ^
+      328 |     await context.close();
+      329 |   });
+      330 | }
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:327:57
+
+    Error Context: test-results/stage2-layout-rooms-1080x1-0cacc-r-than-the-audited-V1-pitch-chromium/error-context.md
+
+  17) [chromium] › tests/e2e/stage2-layout.spec.ts:292:3 › rooms 1080x1700 (assumed chrome loss): a card is compact, its actions share one row, and ids and links are unchanged 
+
+    Error: de: the three actions are in one row
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 3
+
+      305 |       await expect(links.nth(0)).toHaveText(t.rooms.todayInRoom);
+      306 |       const tops = await links.evaluateAll((as) => as.map((a) => Math.round(a.getBoundingClientRect().top)));
+    > 307 |       expect(new Set(tops).size, `${lang}: the three actions are in one row`).toBe(1);
+          |                                                                               ^
+      308 |       const heights = await links.evaluateAll((as) => as.map((a) => a.getBoundingClientRect().height));
+      309 |       const wide = v.width >= 900;
+      310 |       for (const h of heights) expect(h, `${lang}: action height stays a full touch target (56 px at the 16 px root, 77 px at 22 px)`).toBeGreaterThanOrEqual(wide ? 77 : 56);
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:307:79
+
+    Error Context: test-results/stage2-layout-rooms-1080x1-30c32-ids-and-links-are-unchanged-chromium/error-context.md
+
+  18) [chromium] › tests/e2e/stage2-layout.spec.ts:317:3 › rooms 1080x1700 (assumed chrome loss): cards are spaced tightly enough that the list is not longer than the audited V1 pitch 
+
+    Error: median card pitch at 1080 px (px)
+
+    expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 290
+    Received:    347
+
+      325 |     expect(pitches.length).toBeGreaterThan(10);
+      326 |     const median = pitches[Math.floor(pitches.length / 2)];
+    > 327 |     expect(median, "median card pitch at 1080 px (px)").toBeLessThanOrEqual(290);
+          |                                                         ^
+      328 |     await context.close();
+      329 |   });
+      330 | }
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:327:57
+
+    Error Context: test-results/stage2-layout-rooms-1080x1-58635-r-than-the-audited-V1-pitch-chromium/error-context.md
+
+  19) [chromium] › tests/e2e/stage2-layout.spec.ts:292:3 › rooms 540x960 (assumed 200 % zoom): a card is compact, its actions share one row, and ids and links are unchanged 
+
+    Error: de: the three actions are in one row
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 3
+
+      305 |       await expect(links.nth(0)).toHaveText(t.rooms.todayInRoom);
+      306 |       const tops = await links.evaluateAll((as) => as.map((a) => Math.round(a.getBoundingClientRect().top)));
+    > 307 |       expect(new Set(tops).size, `${lang}: the three actions are in one row`).toBe(1);
+          |                                                                               ^
+      308 |       const heights = await links.evaluateAll((as) => as.map((a) => a.getBoundingClientRect().height));
+      309 |       const wide = v.width >= 900;
+      310 |       for (const h of heights) expect(h, `${lang}: action height stays a full touch target (56 px at the 16 px root, 77 px at 22 px)`).toBeGreaterThanOrEqual(wide ? 77 : 56);
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:307:79
+
+    Error Context: test-results/stage2-layout-rooms-540x96-9df12-ids-and-links-are-unchanged-chromium/error-context.md
+
+  20) [chromium] › tests/e2e/stage2-layout.spec.ts:333:3 › rooms search (de): matching classes come first and are never contradicted by a "no room found" box 
+
+    Error: no 'no room' message while the classes are loading
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByText(/Kein Raum passt zu/)
+    Expected: 0
+    Received: 1
+    Timeout:  5000ms
+
+    Call log:
+      - no 'no room' message while the classes are loading getByText(/Kein Raum passt zu/) with timeout 5000ms
+      - waiting for getByText(/Kein Raum passt zu/)
+        14 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      348 |     await expect(page.getByRole("status").filter({ hasText: lang === "de" ? "Termine werden geladen" : "Loading classes" }), "class loading state shown").toBeVisible();
+      349 |     await page.waitForTimeout(400);
+    > 350 |     await expect(noRoom, "no 'no room' message while the classes are loading").toHaveCount(0);
+          |                                                                                ^
+      351 |     release();
+      352 |
+      353 |     await expect(page.getByTestId("class-match"), `${lang}: the class is found`).toHaveCount(1);
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:350:80
+
+    Error Context: test-results/stage2-layout-rooms-search-f806e-cted-by-a-no-room-found-box-chromium/error-context.md
+
+  21) [chromium] › tests/e2e/stage2-layout.spec.ts:333:3 › rooms search (en): matching classes come first and are never contradicted by a "no room found" box 
+
+    Error: no 'no room' message while the classes are loading
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByText(/No room matches/)
+    Expected: 0
+    Received: 1
+    Timeout:  5000ms
+
+    Call log:
+      - no 'no room' message while the classes are loading getByText(/No room matches/) with timeout 5000ms
+      - waiting for getByText(/No room matches/)
+        14 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      348 |     await expect(page.getByRole("status").filter({ hasText: lang === "de" ? "Termine werden geladen" : "Loading classes" }), "class loading state shown").toBeVisible();
+      349 |     await page.waitForTimeout(400);
+    > 350 |     await expect(noRoom, "no 'no room' message while the classes are loading").toHaveCount(0);
+          |                                                                                ^
+      351 |     release();
+      352 |
+      353 |     await expect(page.getByTestId("class-match"), `${lang}: the class is found`).toHaveCount(1);
+        at <scratch>/mut/tests/e2e/stage2-layout.spec.ts:350:80
+
+    Error Context: test-results/stage2-layout-rooms-search-29ef9-cted-by-a-no-room-found-box-chromium/error-context.md
+
+  21 failed
+    [chromium] › tests/e2e/stage2-layout.spec.ts:115:3 › home 1080x1920 touch: the cards use the portrait space down to the dock, and stay above it 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:115:3 › home 1080x1920 pointer-fine: the cards use the portrait space down to the dock, and stay above it 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 1080x1920 touch: four action cards and a full-width help card, Reza's text unchanged, no prototype block 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 1080x1920 pointer-fine: four action cards and a full-width help card, Reza's text unchanged, no prototype block 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 1080x1700 (assumed chrome loss): four action cards and a full-width help card, Reza's text unchanged, no prototype block 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 540x960 (assumed 200 % zoom): four action cards and a full-width help card, Reza's text unchanged, no prototype block 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers laptop 1440x900: four action cards and a full-width help card, Reza's text unchanged, no prototype block 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers phone 390x844: four action cards and a full-width help card, Reza's text unchanged, no prototype block 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:248:3 › rooms 1080x1920 touch: floor chips jump to the floor, without a new history entry, and focus lands on the heading 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:248:3 › rooms 1080x1920 pointer-fine: floor chips jump to the floor, without a new history entry, and focus lands on the heading 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:248:3 › rooms 1080x1700 (assumed chrome loss): floor chips jump to the floor, without a new history entry, and focus lands on the heading 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:248:3 › rooms 540x960 (assumed 200 % zoom): floor chips jump to the floor, without a new history entry, and focus lands on the heading 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:292:3 › rooms 1080x1920 touch: a card is compact, its actions share one row, and ids and links are unchanged 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:317:3 › rooms 1080x1920 touch: cards are spaced tightly enough that the list is not longer than the audited V1 pitch 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:292:3 › rooms 1080x1920 pointer-fine: a card is compact, its actions share one row, and ids and links are unchanged 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:317:3 › rooms 1080x1920 pointer-fine: cards are spaced tightly enough that the list is not longer than the audited V1 pitch 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:292:3 › rooms 1080x1700 (assumed chrome loss): a card is compact, its actions share one row, and ids and links are unchanged 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:317:3 › rooms 1080x1700 (assumed chrome loss): cards are spaced tightly enough that the list is not longer than the audited V1 pitch 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:292:3 › rooms 540x960 (assumed 200 % zoom): a card is compact, its actions share one row, and ids and links are unchanged 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:333:3 › rooms search (de): matching classes come first and are never contradicted by a "no room found" box 
+    [chromium] › tests/e2e/stage2-layout.spec.ts:333:3 › rooms search (en): matching classes come first and are never contradicted by a "no room found" box 
+  12 passed (1.6m)

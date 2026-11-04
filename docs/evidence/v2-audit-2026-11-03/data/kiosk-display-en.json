@@ -1,0 +1,680 @@
+{
+ "context": "kiosk-nominal-1080x1920",
+ "route": "/display",
+ "lang": "en",
+ "status": 200,
+ "finalUrl": "/display?lang=en",
+ "loadMs": 1462,
+ "stillLoadingAfter8s": false,
+ "summary": {
+  "targets": 9,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 2,
+  "minTargetH": 64.8,
+  "minTargetW": 131.3,
+  "textMinFs": 22.7,
+  "textLt14": 0,
+  "textLt16": 0,
+  "textTotal": 23,
+  "lowContrastCount": 0,
+  "screens": 1,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 0
+ },
+ "measure": {
+  "viewport": {
+   "vw": 1080,
+   "vh": 1920,
+   "dpr": 1
+  },
+  "htmlLang": "de",
+  "title": "Announcements – Campus Board",
+  "scroll": {
+   "scrollWidth": 1080,
+   "scrollHeight": 1920,
+   "screens": 1,
+   "hOverflow": false
+  },
+  "landmarks": {
+   "header": true,
+   "nav": 1,
+   "main": true,
+   "footer": true,
+   "skipLink": false
+  },
+  "headings": [
+   {
+    "l": "H2",
+    "t": "Announcements",
+    "fs": 58.32,
+    "y": 555
+   },
+   {
+    "l": "H3",
+    "t": "Welcome to Lucas-Cranach-Campus (Demo)",
+    "fs": 49.68,
+    "y": 775
+   },
+   {
+    "l": "H3",
+    "t": "Games night in the kitchen (Demo)",
+    "fs": 49.68,
+    "y": 1115
+   }
+  ],
+  "targets": [
+   {
+    "i": 0,
+    "tag": "a",
+    "name": "Deutsch",
+    "href": "/display",
+    "x": 747,
+    "y": 215,
+    "w": 141.2,
+    "h": 64.8,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 5.8
+   },
+   {
+    "i": 1,
+    "tag": "a",
+    "name": "English",
+    "href": "/display?lang=en",
+    "x": 894,
+    "y": 215,
+    "w": 131.3,
+    "h": 64.8,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 5.8
+   },
+   {
+    "i": 2,
+    "tag": "a",
+    "name": "Home",
+    "href": "/?lang=en",
+    "x": 49,
+    "y": 312,
+    "w": 234.4,
+    "h": 75.6,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 14.6
+   },
+   {
+    "i": 3,
+    "tag": "a",
+    "name": "New to campus",
+    "href": "/newcomers?lang=en",
+    "x": 298,
+    "y": 312,
+    "w": 234.4,
+    "h": 75.6,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 14.6
+   },
+   {
+    "i": 4,
+    "tag": "a",
+    "name": "Map",
+    "href": "/map?lang=en",
+    "x": 548,
+    "y": 312,
+    "w": 234.4,
+    "h": 75.6,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 14.6
+   },
+   {
+    "i": 5,
+    "tag": "a",
+    "name": "Rooms",
+    "href": "/rooms?lang=en",
+    "x": 797,
+    "y": 312,
+    "w": 234.4,
+    "h": 75.6,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 14.6
+   },
+   {
+    "i": 6,
+    "tag": "a",
+    "name": "Schedule",
+    "href": "/schedule?lang=en",
+    "x": 49,
+    "y": 403,
+    "w": 234.4,
+    "h": 75.6,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 14.6
+   },
+   {
+    "i": 7,
+    "tag": "a",
+    "name": "Booking",
+    "href": "/booking?lang=en",
+    "x": 298,
+    "y": 403,
+    "w": 234.4,
+    "h": 75.6,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 14.6
+   },
+   {
+    "i": 8,
+    "tag": "a",
+    "name": "Announcements",
+    "href": "/display?lang=en",
+    "x": 548,
+    "y": 403,
+    "w": 234.4,
+    "h": 75.6,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 15.4
+   }
+  ],
+  "nameless": [],
+  "unlabeled": [],
+  "imgs": [
+   {
+    "src": "/brand/hs-coburg-logo-screenshot.png",
+    "alt": "Hochschule Coburg",
+    "w": 367,
+    "h": 97
+   }
+  ],
+  "homeLinks": [
+   {
+    "i": 2,
+    "tag": "a",
+    "name": "Home",
+    "href": "/?lang=en",
+    "x": 49,
+    "y": 312,
+    "w": 234.4,
+    "h": 75.6,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 14.6
+   }
+  ],
+  "pinned": [],
+  "overflowers": [],
+  "text": {
+   "count": 23,
+   "sizeHist": {
+    "79.9": 1,
+    "28.1": 4,
+    "30.2": 7,
+    "58.3": 1,
+    "24.8": 4,
+    "49.7": 2,
+    "33.5": 2,
+    "22.7": 2
+   },
+   "items": [
+    {
+     "text": "10:51",
+     "tag": "p",
+     "fs": 79.9,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 39,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Tuesday 3 November",
+     "tag": "p",
+     "fs": 28.1,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": true,
+     "hasBgImage": false,
+     "y": 127,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Lucas-Cranach-Campus Kronach",
+     "tag": "p",
+     "fs": 28.1,
+     "weight": "600",
+     "contrast": 6.39,
+     "large": true,
+     "hasBgImage": false,
+     "y": 226,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Deutsch",
+     "tag": "a",
+     "fs": 28.1,
+     "weight": "600",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 215,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "English",
+     "tag": "a",
+     "fs": 28.1,
+     "weight": "600",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 215,
+     "fg": "255,255,255",
+     "bg": "35,37,43"
+    },
+    {
+     "text": "Home",
+     "tag": "a",
+     "fs": 30.2,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": true,
+     "hasBgImage": false,
+     "y": 312,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "New to campus",
+     "tag": "a",
+     "fs": 30.2,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": true,
+     "hasBgImage": false,
+     "y": 312,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Map",
+     "tag": "a",
+     "fs": 30.2,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": true,
+     "hasBgImage": false,
+     "y": 312,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Rooms",
+     "tag": "a",
+     "fs": 30.2,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": true,
+     "hasBgImage": false,
+     "y": 312,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Schedule",
+     "tag": "a",
+     "fs": 30.2,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": true,
+     "hasBgImage": false,
+     "y": 403,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Booking",
+     "tag": "a",
+     "fs": 30.2,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": true,
+     "hasBgImage": false,
+     "y": 403,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Announcements",
+     "tag": "a",
+     "fs": 30.2,
+     "weight": "600",
+     "contrast": 4.82,
+     "large": true,
+     "hasBgImage": false,
+     "y": 403,
+     "fg": "255,255,255",
+     "bg": "205,64,38"
+    },
+    {
+     "text": "Announcements",
+     "tag": "h2",
+     "fs": 58.3,
+     "weight": "700",
+     "contrast": 13.96,
+     "large": true,
+     "hasBgImage": false,
+     "y": 555,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "General",
+     "tag": "span",
+     "fs": 24.8,
+     "weight": "600",
+     "contrast": 12.87,
+     "large": true,
+     "hasBgImage": false,
+     "y": 711,
+     "fg": "35,37,43",
+     "bg": "236,235,234"
+    },
+    {
+     "text": "Highlighted",
+     "tag": "span",
+     "fs": 24.8,
+     "weight": "600",
+     "contrast": 11.18,
+     "large": true,
+     "hasBgImage": false,
+     "y": 711,
+     "fg": "35,37,43",
+     "bg": "246,216,170"
+    },
+    {
+     "text": "Welcome to Lucas-Cranach-Campus (Demo)",
+     "tag": "h3",
+     "fs": 49.7,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 775,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Sample content for the prototype: announcements pu",
+     "tag": "p",
+     "fs": 33.5,
+     "weight": "400",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 847,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Event",
+     "tag": "span",
+     "fs": 24.8,
+     "weight": "600",
+     "contrast": 10.87,
+     "large": true,
+     "hasBgImage": false,
+     "y": 1051,
+     "fg": "76,14,116",
+     "bg": "241,232,248"
+    },
+    {
+     "text": "Partly in German",
+     "tag": "span",
+     "fs": 24.8,
+     "weight": "600",
+     "contrast": 6.39,
+     "large": true,
+     "hasBgImage": false,
+     "y": 1050,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Games night in the kitchen (Demo)",
+     "tag": "h3",
+     "fs": 49.7,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 1115,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Beispielinhalt: Gemeinsamer Spieleabend – Datum un",
+     "tag": "p",
+     "fs": 33.5,
+     "weight": "400",
+     "contrast": 15.32,
+     "large": true,
+     "hasBgImage": false,
+     "y": 1187,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Prototype from the Human-Computer Interaction cour",
+     "tag": "footer",
+     "fs": 22.7,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1725,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Course titles, lecturers and study groups are show",
+     "tag": "span",
+     "fs": 22.7,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1792,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    }
+   ]
+  }
+ },
+ "tabStops": [
+  {
+   "tag": "a",
+   "name": "Deutsch",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 215,
+   "h": 65
+  },
+  {
+   "tag": "a",
+   "name": "English",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 215,
+   "h": 65
+  },
+  {
+   "tag": "a",
+   "name": "Home",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 312,
+   "h": 76
+  },
+  {
+   "tag": "a",
+   "name": "New to campus",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 312,
+   "h": 76
+  },
+  {
+   "tag": "a",
+   "name": "Map",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 312,
+   "h": 76
+  },
+  {
+   "tag": "a",
+   "name": "Rooms",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 312,
+   "h": 76
+  },
+  {
+   "tag": "a",
+   "name": "Schedule",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 403,
+   "h": 76
+  },
+  {
+   "tag": "a",
+   "name": "Booking",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 403,
+   "h": 76
+  },
+  {
+   "tag": "a",
+   "name": "Announcements",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 403,
+   "h": 76
+  }
+ ],
+ "newEvents": {
+  "console": [],
+  "pageerror": [],
+  "requestfailed": [
+   {
+    "url": "/?lang=en&_rsc=ZlYJzGwi627xXgvj",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=ZlYJzGwi627xXgvj",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=ZlYJzGwi627xXgvj",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=ZlYJzGwi627xXgvj",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?lang=en&_rsc=ZlYJzGwi627xXgvj",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=ZlYJzGwi627xXgvj",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=AoBhd38kWy1X2L9P",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?lang=en&_rsc=AoBhd38kWy1X2L9P",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=AoBhd38kWy1X2L9P",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=AoBhd38kWy1X2L9P",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=AoBhd38kWy1X2L9P",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?lang=en&_rsc=AoBhd38kWy1X2L9P",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=ZlYJzGwi627xXgvj",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=ZlYJzGwi627xXgvj",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=ZlYJzGwi627xXgvj",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?lang=en&_rsc=AoBhd38kWy1X2L9P",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=ZlYJzGwi627xXgvj",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=ZlYJzGwi627xXgvj",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=ZlYJzGwi627xXgvj",
+    "why": "net::ERR_ABORTED"
+   }
+  ],
+  "badresponse": []
+ }
+}

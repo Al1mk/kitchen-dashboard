@@ -1,0 +1,15 @@
+T1 /rooms one swipe (1100 px finger travel): scrollY: {"before":0,"after":1596}
+T1 /rooms docH: 16440
+T1 map image box: {"x":177,"y":834,"w":726,"h":351,"tag":"IMG","touchAction":"auto"}
+T1 swipe starting on map image: page scrollY: {"before":0,"after":463}
+T1 map after 2x zoom-in: before-drag state: {"img":{"x":-5,"y":833.65625,"width":1089,"height":526.375,"top":833.65625,"right":1084,"bottom":1360.03125,"left":-5},"tf":"none","parentTf":"none","scrollerLeft":0,"scrollerTop":0}
+T1 map after drag left 400px: state: {"img":{"x":-186,"y":833.65625,"width":1089,"height":526.375,"top":833.65625,"right":903,"bottom":1360.03125,"left":-186},"tf":"none","parentTf":"none","scrollerLeft":0,"scrollerTop":0}
+T1 map zoom-in button state after 2 taps: []
+T2 history length at receipt: 3
+T2 receipt -> Back: url: /
+T2 receipt -> Back: text: Campus-Informationen Informationen für Studierende und Gäste am Lucas-Cranach-Campus. Neu am Campus Erste Orientierung: wo finde ich was? Karte Räume auf dem St
+T2 Forward after Back: receipt visible again?: false
+T3 idle 95 s on /rooms?suche=Zagel&datum=2026-11-04: url: /rooms?suche=Zagel&datum=2026-11-04
+T3 field value after idle: Zagel
+T4 /rooms during 4 s API delay: main text: Räume Raum, Lehrperson oder Lehrveranstaltung suchen Raumnummer (z. B. K1-105 oder 105), Raumname, Lehrperson oder Lehrveranstaltung. Räume werden geladen …
+T4 live regions: [{"role":"status","busy":null,"t":"Räume werden geladen …"}]

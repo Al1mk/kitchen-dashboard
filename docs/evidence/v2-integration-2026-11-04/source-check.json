@@ -1,0 +1,9 @@
+{
+  "baselineCommit": "a7903db512b6e98ebbe7783ddc64c2da89543a23",
+  "branch": "integrate/v2-ali-parsa-20261104",
+  "validatedFiles": 189,
+  "manifestSha256": "2e1aacd288349250807f4b998379728e67afc011e663d1dfbc89f03f2f76e563",
+  "protectedFileComparisons": 9,
+  "protectedFilesUnchanged": true,
+  "originalBuildAndManualDatabaseUsed": false
+}

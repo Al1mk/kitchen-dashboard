@@ -1,0 +1,299 @@
+{
+ "ctx": "laptop-1440x900",
+ "name": "map",
+ "lang": "de",
+ "url": "/map",
+ "label": "before",
+ "htmlLang": "de",
+ "title": "Karte – Campus Board",
+ "summary": {
+  "targets": 63,
+  "targetsMin44fail": 21,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 24,
+  "minTargetH": 24,
+  "minTargetW": 52.7,
+  "textMinFs": 12,
+  "textLt14": 21,
+  "textLt16": 22,
+  "textTotal": 99,
+  "lowContrastCount": 0,
+  "screens": 2.65,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 1
+ },
+ "headings": [
+  {
+   "l": "H1",
+   "t": "Karte",
+   "fs": 36,
+   "y": 273
+  },
+  {
+   "l": "H2",
+   "t": "1. Obergeschoss",
+   "fs": 24,
+   "y": 777
+  },
+  {
+   "l": "H2",
+   "t": "Ausgewählter Raum",
+   "fs": 16,
+   "y": 1228
+  },
+  {
+   "l": "H2",
+   "t": "1. Obergeschoss · 24 Räume",
+   "fs": 24,
+   "y": 1366
+  }
+ ],
+ "textSizeHist": {
+  "12": 21,
+  "14": 1,
+  "16": 26,
+  "18": 45,
+  "24": 5,
+  "36": 1
+ },
+ "smallTargets": [
+  "button:K1-103, Seminarraum 1 52.7x24",
+  "button:K1-104, Shared Space 52.7x24",
+  "button:K1-105, EDV 52.7x24",
+  "button:K1-106, Seminarraum 3 52.7x24",
+  "button:K1-107, Sekretariat 52.7x24",
+  "button:K1-108, Kommunikation 52.7x24",
+  "button:K1-109, Verkehrsfläche 52.7x24",
+  "button:K1-110, Arbeitsflächen 52.7x24",
+  "button:K1-111, Arbeitsflächen 52.7x24",
+  "button:K1-112, Maschinenraum 52.7x24",
+  "button:K1-113, Schweißbereich 52.7x24",
+  "button:K1-115, Raum 52.7x24"
+ ],
+ "geo": {
+  "dock": null,
+  "layout": {
+   "rootFontPx": 16,
+   "h1Px": 36,
+   "firstParagraphPx": 18,
+   "mainWidth": 768,
+   "contentWidth": 728
+  },
+  "vw": 1440,
+  "vh": 900,
+  "frameCentre": 720,
+  "navCount": 1,
+  "linkCount": 7,
+  "links": [
+   {
+    "name": "Start",
+    "href": "/",
+    "current": null,
+    "x": 356,
+    "y": 110.7,
+    "w": 176,
+    "h": 56,
+    "top": 110.7,
+    "bottom": 166.7,
+    "left": 356,
+    "right": 532
+   },
+   {
+    "name": "Neu am Campus",
+    "href": "/newcomers",
+    "current": null,
+    "x": 540,
+    "y": 110.7,
+    "w": 176,
+    "h": 56,
+    "top": 110.7,
+    "bottom": 166.7,
+    "left": 540,
+    "right": 716
+   },
+   {
+    "name": "Karte",
+    "href": "/map",
+    "current": "page",
+    "x": 724,
+    "y": 110.7,
+    "w": 176,
+    "h": 56,
+    "top": 110.7,
+    "bottom": 166.7,
+    "left": 724,
+    "right": 900
+   },
+   {
+    "name": "Räume",
+    "href": "/rooms",
+    "current": null,
+    "x": 908,
+    "y": 110.7,
+    "w": 176,
+    "h": 56,
+    "top": 110.7,
+    "bottom": 166.7,
+    "left": 908,
+    "right": 1084
+   },
+   {
+    "name": "Stundenplan",
+    "href": "/schedule",
+    "current": null,
+    "x": 356,
+    "y": 174.7,
+    "w": 176,
+    "h": 56,
+    "top": 174.7,
+    "bottom": 230.7,
+    "left": 356,
+    "right": 532
+   },
+   {
+    "name": "Raumbuchung",
+    "href": "/booking",
+    "current": null,
+    "x": 540,
+    "y": 174.7,
+    "w": 176,
+    "h": 56,
+    "top": 174.7,
+    "bottom": 230.7,
+    "left": 540,
+    "right": 716
+   },
+   {
+    "name": "Mitteilungen",
+    "href": "/display",
+    "current": null,
+    "x": 724,
+    "y": 174.7,
+    "w": 176,
+    "h": 56,
+    "top": 174.7,
+    "bottom": 230.7,
+    "left": 724,
+    "right": 900
+   }
+  ],
+  "rows": [
+   {
+    "count": 4,
+    "top": 110.7,
+    "left": 356,
+    "right": 1084,
+    "centre": 720,
+    "minH": 56,
+    "minW": 176,
+    "minGap": 8,
+    "names": [
+     "Start",
+     "Neu am Campus",
+     "Karte",
+     "Räume"
+    ]
+   },
+   {
+    "count": 3,
+    "top": 174.7,
+    "left": 356,
+    "right": 900,
+    "centre": 628,
+    "minH": 56,
+    "minW": 176,
+    "minGap": 8,
+    "names": [
+     "Stundenplan",
+     "Raumbuchung",
+     "Mitteilungen"
+    ]
+   }
+  ],
+  "rowVerticalGap": 8,
+  "navBox": {
+   "x": 356,
+   "y": 110.7,
+   "w": 728,
+   "h": 120,
+   "top": 110.7,
+   "bottom": 230.7,
+   "left": 356,
+   "right": 1084
+  },
+  "navCentreYRatio": 0.2,
+  "lang": {
+   "found": true,
+   "box": {
+    "x": 902.7,
+    "y": 30.3,
+    "w": 181.3,
+    "h": 58,
+    "top": 30.3,
+    "bottom": 88.3,
+    "left": 902.7,
+    "right": 1084
+   },
+   "gapBetween": 4,
+   "links": [
+    {
+     "name": "Deutsch",
+     "current": "true",
+     "href": "/map",
+     "x": 907.7,
+     "y": 35.3,
+     "w": 86.8,
+     "h": 48,
+     "top": 35.3,
+     "bottom": 83.3,
+     "left": 907.7,
+     "right": 994.5
+    },
+    {
+     "name": "English",
+     "current": null,
+     "href": "/map?lang=en",
+     "x": 998.5,
+     "y": 35.3,
+     "w": 80.5,
+     "h": 48,
+     "top": 35.3,
+     "bottom": 83.3,
+     "left": 998.5,
+     "right": 1079
+    }
+   ],
+   "centreYRatio": 0.1
+  },
+  "pinned": null,
+  "cssVars": {
+   "dockH": null,
+   "scrollPaddingBottom": "auto",
+   "fontSize": "16px"
+  },
+  "media": {
+   "portraitMinW520": false,
+   "coarse": false,
+   "hoverNone": false
+  }
+ },
+ "clear": {
+  "scrollY": 1483,
+  "docHeight": 2383,
+  "dockTop": null,
+  "lastContentBottom": 830.6,
+  "footerBottom": 899.6,
+  "lowestBottom": 899.6,
+  "clearOfDock": true,
+  "clearance": null
+ },
+ "focus": {
+  "stops": 62,
+  "coveredByDock": [],
+  "outsideViewport": [
+   "div:Plan 1. Obergeschoss, verschiebbar"
+  ],
+  "withoutRing": []
+ }
+}

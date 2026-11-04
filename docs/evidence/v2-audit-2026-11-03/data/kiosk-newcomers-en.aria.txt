@@ -1,0 +1,63 @@
+- banner:
+  - img "Hochschule Coburg"
+  - paragraph: Lucas-Cranach-Campus Kronach
+  - group "Language":
+    - link "Deutsch":
+      - /url: /newcomers
+    - link "English":
+      - /url: /newcomers?lang=en
+  - navigation "Campus information":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /?lang=en
+      - listitem:
+        - link "New to campus":
+          - /url: /newcomers?lang=en
+      - listitem:
+        - link "Map":
+          - /url: /map?lang=en
+      - listitem:
+        - link "Rooms":
+          - /url: /rooms?lang=en
+      - listitem:
+        - link "Schedule":
+          - /url: /schedule?lang=en
+      - listitem:
+        - link "Booking":
+          - /url: /booking?lang=en
+      - listitem:
+        - link "Announcements":
+          - /url: /display?lang=en
+- main:
+  - heading "New to campus?" [level=1]
+  - paragraph: Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”.
+  - paragraph: Choose what you need right now.
+  - note: Student HCI prototype – not an official information system of Hochschule Coburg. Rooms and classes shown here are partly example data; please confirm important details with official university sources.
+  - article "Find a room":
+    - heading "Find a room" [level=2]
+    - paragraph: Search by room number or name and see which floor the room is on. The plans are illustrations, not verified building plans.
+    - link "Open the map":
+      - /url: /map?lang=en
+  - article "What is on today?":
+    - heading "What is on today?" [level=2]
+    - paragraph: See the listed classes by day and room. Cancelled classes are marked.
+    - link "Open the schedule":
+      - /url: /schedule?lang=en
+  - article "Current notices":
+    - heading "Current notices" [level=2]
+    - paragraph: Announcements published by the campus team appear here.
+    - link "View notices":
+      - /url: /display?lang=en
+  - article "Reserve a study room":
+    - heading "Reserve a study room" [level=2]
+    - paragraph: Check free times and reserve an open room for up to two hours – a demo in this prototype.
+    - link "Book a room":
+      - /url: /booking?lang=en
+  - article "Need help?":
+    - heading "Need help?" [level=2]
+    - paragraph: Verified contact details and opening hours are not yet included in this prototype. Ask students or staff on site; important notices from the campus team are in the announcements.
+    - link "View announcements":
+      - /url: /display?lang=en
+- contentinfo: Prototype from the Human-Computer Interaction course – not an official display of Hochschule Coburg.
+- alert

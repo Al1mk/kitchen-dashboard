@@ -10,12 +10,13 @@ import { BOOKING_COPY, type BookingCopy } from "./booking-copy.ts";
 // success, so a typo can be corrected.
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-type Problem = Exclude<keyof BookingCopy["cancel"], "id" | "code" | "go" | "pending" | "done" | "back" | "demo">;
+type Problem = Exclude<keyof BookingCopy["cancel"], "id" | "code" | "go" | "pending" | "done" | "back" | "demo" | "showCode" | "hideCode" | "credentialHint">;
 
 export function BookingCancel({ lang }: { lang: Lang }) {
   const t = BOOKING_COPY[lang].cancel;
   const [id, setId] = useState("");
   const [token, setToken] = useState("");
+  const [showCode, setShowCode] = useState(false);
   const [state, setState] = useState<"idle" | "pending" | "success">("idle");
   const [problem, setProblem] = useState<Problem | null>(null);
 
@@ -37,6 +38,7 @@ export function BookingCancel({ lang }: { lang: Lang }) {
       if (response.ok) {
         setId("");
         setToken("");
+        setShowCode(false);
         setState("success");
         return;
       }
@@ -57,14 +59,18 @@ export function BookingCancel({ lang }: { lang: Lang }) {
         </p>
       ) : (
         <form onSubmit={cancel} className="flex flex-col gap-4 rounded-xl bg-surface p-5">
+          <p id="cancel-credential-hint" className="text-base text-ink-muted">{t.credentialHint}</p>
           <label className="flex flex-col gap-2 font-bold">
             {t.id}
-            <input type="text" autoComplete="off" spellCheck={false} value={id} onChange={(e) => setId(e.target.value)} required maxLength={60} className="min-h-14 rounded-xl border border-ink px-3 font-mono text-base" />
+            <input type="text" autoComplete="off" autoCapitalize="none" autoCorrect="off" spellCheck={false} aria-describedby="cancel-credential-hint" value={id} onChange={(e) => setId(e.target.value)} required maxLength={60} className="min-h-14 rounded-xl border border-ink px-3 font-mono text-base" />
           </label>
           <label className="flex flex-col gap-2 font-bold">
             {t.code}
-            <input type="password" autoComplete="off" value={token} onChange={(e) => setToken(e.target.value)} required maxLength={100} className="min-h-14 rounded-xl border border-ink px-3 font-mono text-base" />
+            <input type={showCode ? "text" : "password"} autoComplete="off" autoCapitalize="none" autoCorrect="off" spellCheck={false} aria-describedby="cancel-credential-hint" value={token} onChange={(e) => setToken(e.target.value)} required maxLength={100} className="min-h-14 rounded-xl border border-ink px-3 font-mono text-base" />
           </label>
+          <button type="button" aria-pressed={showCode} onClick={() => setShowCode((visible) => !visible)} className="min-h-12 self-start rounded-xl border border-ink px-4 text-base font-semibold">
+            {showCode ? t.hideCode : t.showCode}
+          </button>
           {problem && (
             <p role="alert" className="rounded-xl bg-danger-soft p-4 font-semibold text-danger">
               {t[problem]}

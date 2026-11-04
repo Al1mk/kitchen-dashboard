@@ -1,0 +1,2077 @@
+{
+ "ctx": "kiosk-nominal-1080x1920",
+ "note": "Nominal portrait kiosk simulation: Chromium viewport 1080x1920 CSS px, DPR 1, touch enabled, isMobile false",
+ "lang": "de",
+ "log": [
+  {
+   "journey": "A1-find-room",
+   "n": 1,
+   "step": "start",
+   "ok": true,
+   "ms": 996,
+   "url": "/",
+   "h1": "Campus-Informationen",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Campus-Informationen Informationen für Studierende und Gäste am Lucas-Cranach-Campus. Neu am Campus Erste Orientierung: wo finde ich was? Karte Räume auf dem Stockwerksplan finden Räume Alle Räume nach Stockwerk Stundenplan Lehrveranstaltungen nach Tag und Raum Raumbuchung Freie Zeiten prüfen und einen Raum probeweise reservieren (Demo) Mitteilungen Aktuelle Hinweise für den Campus",
+   "buttons": [
+    "Neu am Campus Erste Orientierung: wo fin",
+    "Karte Räume auf dem Stockwerksplan finde",
+    "Räume Alle Räume nach Stockwerk",
+    "Stundenplan Lehrveranstaltungen nach Tag",
+    "Raumbuchung Freie Zeiten prüfen und eine",
+    "Mitteilungen Aktuelle Hinweise für den C"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A1-find-room-de-01-start.png"
+  },
+  {
+   "journey": "A1-find-room",
+   "n": 2,
+   "step": "tap-rooms-nav",
+   "ok": true,
+   "ms": 480,
+   "url": "/rooms",
+   "h1": "Räume",
+   "scrollY": 0,
+   "docH": 16440,
+   "vh": 1920,
+   "mainText": "Räume Raum, Lehrperson oder Lehrveranstaltung suchen Raumnummer (z. B. K1-105 oder 105), Raumname, Lehrperson oder Lehrveranstaltung. Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Erdgeschoss DEMO-E01 Küche / Aufenthalt (Demo) Beispiel Aufenthalt / Küche Beispieleintrag: Lage und Ausstattung sind erfunden. Heute in diesem Raum Auf der Karte zeigen DEMO-E02 Hörsaal A (Demo) Beispiel Hörsaal Beispieleintrag: Lage und Ausstattung sind erfunden. Heute in diesem Raum Auf der Karte zeigen 1. Obergeschoss DEMO-101 Seminarraum 1 (Demo) Beispiel Seminarraum Beispieleintrag: Lage und Ausstattung sind erfunden. Heute i",
+   "buttons": [
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A1-find-room-de-02-tap-rooms-nav.png"
+  },
+  {
+   "journey": "A1-find-room",
+   "n": 3,
+   "step": "type-120",
+   "ok": true,
+   "ms": 625,
+   "url": "/rooms?suche=120",
+   "h1": "Räume",
+   "scrollY": 0,
+   "docH": 3738,
+   "vh": 1920,
+   "mainText": "Räume Raum, Lehrperson oder Lehrveranstaltung suchen Raumnummer (z. B. K1-105 oder 105), Raumname, Lehrperson oder Lehrveranstaltung. Suche löschen Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Passende Räume · 9 Räume 1. Obergeschoss K1-120 Seminarraum Beispiel Seminarraum Heute in diesem Raum Auf der Karte zeigen Raum reservieren (Demo) 2. Obergeschoss K1-201 WC D Beispiel Sonstiges Heute in diesem Raum Auf der Karte zeigen K1-202 WC H Beispiel Sonstiges Heute in diesem Raum Auf der Karte zeigen K1-203 Raum Beispiel Sonstiges Heute in diesem Raum Auf der Karte zeigen K1-204 Büro 2 Beispiel Büro Heute in di",
+   "buttons": [
+    "Suche löschen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "← Vortag",
+    "Heute",
+    "Folgetag →"
+   ],
+   "active": "input#room-search",
+   "shot": "journeys/kiosk-nominal-1080x1920/A1-find-room-de-03-type-120.png"
+  },
+  {
+   "journey": "A1-find-room",
+   "n": 4,
+   "step": "results-120",
+   "ok": true,
+   "ms": 410,
+   "url": "/rooms?suche=120",
+   "h1": "Räume",
+   "scrollY": 0,
+   "docH": 3738,
+   "vh": 1920,
+   "mainText": "Räume Raum, Lehrperson oder Lehrveranstaltung suchen Raumnummer (z. B. K1-105 oder 105), Raumname, Lehrperson oder Lehrveranstaltung. Suche löschen Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Passende Räume · 9 Räume 1. Obergeschoss K1-120 Seminarraum Beispiel Seminarraum Heute in diesem Raum Auf der Karte zeigen Raum reservieren (Demo) 2. Obergeschoss K1-201 WC D Beispiel Sonstiges Heute in diesem Raum Auf der Karte zeigen K1-202 WC H Beispiel Sonstiges Heute in diesem Raum Auf der Karte zeigen K1-203 Raum Beispiel Sonstiges Heute in diesem Raum Auf der Karte zeigen K1-204 Büro 2 Beispiel Büro Heute in di",
+   "buttons": [
+    "Suche löschen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "← Vortag",
+    "Heute",
+    "Folgetag →"
+   ],
+   "active": "input#room-search",
+   "shot": "journeys/kiosk-nominal-1080x1920/A1-find-room-de-04-results-120.png"
+  },
+  {
+   "journey": "A1-find-room",
+   "n": 5,
+   "step": "tap-show-on-map",
+   "ok": true,
+   "ms": 477,
+   "url": "/map?raum=lcc-demo-room-k1-120",
+   "h1": "Karte",
+   "scrollY": 0,
+   "docH": 2536,
+   "vh": 1920,
+   "mainText": "Karte Wähle ein Stockwerk, tippe auf eine Markierung oder suche nach Raumnummer oder Name. Hinweis: Die Pläne sind KI-generierte Illustrationen aus dem Team-Prototyp, kein geprüfter Gebäudeplan und kein Fluchtplan. Positionen beziehen sich auf die Bilder. Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Erdgeschoss 1. Obergeschoss 2. Obergeschoss 3. Obergeschoss Raum suchen 1. Obergeschoss − + Ganzer Plan K1-103 K1-104 K1-105 K1-106 K1-107 K1-108 K1-109 K1-110 K1-111 K1-112 K1-113 K1-115 K1-116 K1-118 K1-119 K1-120 K1-121 K1-122 K1-123 K1-124 K1-125 Ausgewählter Raum K1-120 Seminarraum Beispiel 1. Obergeschoss ",
+   "buttons": [
+    "Erdgeschoss",
+    "1. Obergeschoss",
+    "2. Obergeschoss",
+    "3. Obergeschoss",
+    "Verkleinern",
+    "Vergrößern",
+    "Ganzer Plan",
+    "K1-103, Seminarraum 1",
+    "K1-104, Shared Space",
+    "K1-105, EDV",
+    "K1-106, Seminarraum 3",
+    "K1-107, Sekretariat",
+    "K1-108, Kommunikation",
+    "K1-109, Verkehrsfläche",
+    "K1-110, Arbeitsflächen",
+    "K1-111, Arbeitsflächen",
+    "K1-112, Maschinenraum",
+    "K1-113, Schweißbereich",
+    "K1-115, Raum",
+    "K1-116, Raum",
+    "K1-118, Raum",
+    "K1-119, Media Lab",
+    "K1-120, Seminarraum",
+    "K1-121, Elektronik-Werkstatt",
+    "K1-122, Raum",
+    "K1-123, Raum",
+    "K1-124, Networking",
+    "K1-125, Seminarraum",
+    "Auf dem Plan zeigen",
+    "Termine in diesem Raum",
+    "Diesen Raum reservieren (Demo)",
+    "DEMO-101 Seminarraum 1 (Demo)",
+    "DEMO-102 PC-Labor (Demo)",
+    "K1-103 Seminarraum 1",
+    "K1-104 Shared Space",
+    "K1-105 EDV",
+    "K1-106 Seminarraum 3",
+    "K1-107 Sekretariat",
+    "K1-108 Kommunikation",
+    "K1-109 Verkehrsfläche"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A1-find-room-de-05-tap-show-on-map.png"
+  },
+  {
+   "journey": "A1-find-room",
+   "n": 6,
+   "step": "map-selected",
+   "ok": true,
+   "ms": 456,
+   "url": "/map?raum=lcc-demo-room-k1-120",
+   "h1": "Karte",
+   "scrollY": 0,
+   "docH": 2536,
+   "vh": 1920,
+   "mainText": "Karte Wähle ein Stockwerk, tippe auf eine Markierung oder suche nach Raumnummer oder Name. Hinweis: Die Pläne sind KI-generierte Illustrationen aus dem Team-Prototyp, kein geprüfter Gebäudeplan und kein Fluchtplan. Positionen beziehen sich auf die Bilder. Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Erdgeschoss 1. Obergeschoss 2. Obergeschoss 3. Obergeschoss Raum suchen 1. Obergeschoss − + Ganzer Plan K1-103 K1-104 K1-105 K1-106 K1-107 K1-108 K1-109 K1-110 K1-111 K1-112 K1-113 K1-115 K1-116 K1-118 K1-119 K1-120 K1-121 K1-122 K1-123 K1-124 K1-125 Ausgewählter Raum K1-120 Seminarraum Beispiel 1. Obergeschoss ",
+   "buttons": [
+    "Erdgeschoss",
+    "1. Obergeschoss",
+    "2. Obergeschoss",
+    "3. Obergeschoss",
+    "Verkleinern",
+    "Vergrößern",
+    "Ganzer Plan",
+    "K1-103, Seminarraum 1",
+    "K1-104, Shared Space",
+    "K1-105, EDV",
+    "K1-106, Seminarraum 3",
+    "K1-107, Sekretariat",
+    "K1-108, Kommunikation",
+    "K1-109, Verkehrsfläche",
+    "K1-110, Arbeitsflächen",
+    "K1-111, Arbeitsflächen",
+    "K1-112, Maschinenraum",
+    "K1-113, Schweißbereich",
+    "K1-115, Raum",
+    "K1-116, Raum",
+    "K1-118, Raum",
+    "K1-119, Media Lab",
+    "K1-120, Seminarraum",
+    "K1-121, Elektronik-Werkstatt",
+    "K1-122, Raum",
+    "K1-123, Raum",
+    "K1-124, Networking",
+    "K1-125, Seminarraum",
+    "Auf dem Plan zeigen",
+    "Termine in diesem Raum",
+    "Diesen Raum reservieren (Demo)",
+    "DEMO-101 Seminarraum 1 (Demo)",
+    "DEMO-102 PC-Labor (Demo)",
+    "K1-103 Seminarraum 1",
+    "K1-104 Shared Space",
+    "K1-105 EDV",
+    "K1-106 Seminarraum 3",
+    "K1-107 Sekretariat",
+    "K1-108 Kommunikation",
+    "K1-109 Verkehrsfläche"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A1-find-room-de-06-map-selected.png"
+  },
+  {
+   "journey": "A1-find-room",
+   "n": 7,
+   "step": "tap-schedule-link",
+   "ok": true,
+   "ms": 452,
+   "url": "/schedule?raum=lcc-demo-room-k1-120",
+   "h1": "Stundenplan",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Stundenplan Dienstag, 3. November 2026· Heute ← Vortag Heute Folgetag → Raum K1-120 – Seminarraum (1. Obergeschoss) Auf der Karte Alle Räume Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. 10:00–11:30 Mensch-Maschine-Interaktion (Demo) Läuft gerade Beispiel Raum K1-120 – Seminarraum · 1. Obergeschoss Beispielsemester (Demo) · Prof. Dr. Christian Zagel",
+   "buttons": [
+    "← Vortag",
+    "Heute",
+    "Folgetag →",
+    "Auf der Karte",
+    "Alle Räume"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A1-find-room-de-07-tap-schedule-link.png"
+  },
+  {
+   "journey": "A1-find-room",
+   "n": 8,
+   "step": "schedule-for-room",
+   "ok": true,
+   "ms": 400,
+   "url": "/schedule?raum=lcc-demo-room-k1-120",
+   "h1": "Stundenplan",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Stundenplan Dienstag, 3. November 2026· Heute ← Vortag Heute Folgetag → Raum K1-120 – Seminarraum (1. Obergeschoss) Auf der Karte Alle Räume Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. 10:00–11:30 Mensch-Maschine-Interaktion (Demo) Läuft gerade Beispiel Raum K1-120 – Seminarraum · 1. Obergeschoss Beispielsemester (Demo) · Prof. Dr. Christian Zagel",
+   "buttons": [
+    "← Vortag",
+    "Heute",
+    "Folgetag →",
+    "Auf der Karte",
+    "Alle Räume"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A1-find-room-de-08-schedule-for-room.png"
+  },
+  {
+   "journey": "A1-find-room",
+   "n": 9,
+   "step": "tap-home",
+   "ok": true,
+   "ms": 446,
+   "url": "/",
+   "h1": "Campus-Informationen",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Campus-Informationen Informationen für Studierende und Gäste am Lucas-Cranach-Campus. Neu am Campus Erste Orientierung: wo finde ich was? Karte Räume auf dem Stockwerksplan finden Räume Alle Räume nach Stockwerk Stundenplan Lehrveranstaltungen nach Tag und Raum Raumbuchung Freie Zeiten prüfen und einen Raum probeweise reservieren (Demo) Mitteilungen Aktuelle Hinweise für den Campus",
+   "buttons": [
+    "Neu am Campus Erste Orientierung: wo fin",
+    "Karte Räume auf dem Stockwerksplan finde",
+    "Räume Alle Räume nach Stockwerk",
+    "Stundenplan Lehrveranstaltungen nach Tag",
+    "Raumbuchung Freie Zeiten prüfen und eine",
+    "Mitteilungen Aktuelle Hinweise für den C"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A1-find-room-de-09-tap-home.png"
+  },
+  {
+   "journey": "A2-map-marker",
+   "n": 10,
+   "step": "open-map",
+   "ok": true,
+   "ms": 999,
+   "url": "/map",
+   "h1": "Karte",
+   "scrollY": 0,
+   "docH": 2383,
+   "vh": 1920,
+   "mainText": "Karte Wähle ein Stockwerk, tippe auf eine Markierung oder suche nach Raumnummer oder Name. Hinweis: Die Pläne sind KI-generierte Illustrationen aus dem Team-Prototyp, kein geprüfter Gebäudeplan und kein Fluchtplan. Positionen beziehen sich auf die Bilder. Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Erdgeschoss 1. Obergeschoss 2. Obergeschoss 3. Obergeschoss Raum suchen 1. Obergeschoss − + Ganzer Plan K1-103 K1-104 K1-105 K1-106 K1-107 K1-108 K1-109 K1-110 K1-111 K1-112 K1-113 K1-115 K1-116 K1-118 K1-119 K1-120 K1-121 K1-122 K1-123 K1-124 K1-125 Ausgewählter Raum Kein Raum ausgewählt Tippe auf eine Markieru",
+   "buttons": [
+    "Erdgeschoss",
+    "1. Obergeschoss",
+    "2. Obergeschoss",
+    "3. Obergeschoss",
+    "Verkleinern",
+    "Vergrößern",
+    "Ganzer Plan",
+    "K1-103, Seminarraum 1",
+    "K1-104, Shared Space",
+    "K1-105, EDV",
+    "K1-106, Seminarraum 3",
+    "K1-107, Sekretariat",
+    "K1-108, Kommunikation",
+    "K1-109, Verkehrsfläche",
+    "K1-110, Arbeitsflächen",
+    "K1-111, Arbeitsflächen",
+    "K1-112, Maschinenraum",
+    "K1-113, Schweißbereich",
+    "K1-115, Raum",
+    "K1-116, Raum",
+    "K1-118, Raum",
+    "K1-119, Media Lab",
+    "K1-120, Seminarraum",
+    "K1-121, Elektronik-Werkstatt",
+    "K1-122, Raum",
+    "K1-123, Raum",
+    "K1-124, Networking",
+    "K1-125, Seminarraum",
+    "DEMO-101 Seminarraum 1 (Demo)",
+    "DEMO-102 PC-Labor (Demo)",
+    "K1-103 Seminarraum 1",
+    "K1-104 Shared Space",
+    "K1-105 EDV",
+    "K1-106 Seminarraum 3",
+    "K1-107 Sekretariat",
+    "K1-108 Kommunikation",
+    "K1-109 Verkehrsfläche",
+    "K1-110 Arbeitsflächen",
+    "K1-111 Arbeitsflächen",
+    "K1-112 Maschinenraum"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A2-map-marker-de-10-open-map.png"
+  },
+  {
+   "journey": "A2-map-marker",
+   "n": 11,
+   "step": "tap-marker-K1-120",
+   "ok": true,
+   "ms": 489,
+   "url": "/map?raum=lcc-demo-room-k1-120",
+   "h1": "Karte",
+   "scrollY": 0,
+   "docH": 2536,
+   "vh": 1920,
+   "mainText": "Karte Wähle ein Stockwerk, tippe auf eine Markierung oder suche nach Raumnummer oder Name. Hinweis: Die Pläne sind KI-generierte Illustrationen aus dem Team-Prototyp, kein geprüfter Gebäudeplan und kein Fluchtplan. Positionen beziehen sich auf die Bilder. Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Erdgeschoss 1. Obergeschoss 2. Obergeschoss 3. Obergeschoss Raum suchen 1. Obergeschoss − + Ganzer Plan K1-103 K1-104 K1-105 K1-106 K1-107 K1-108 K1-109 K1-110 K1-111 K1-112 K1-113 K1-115 K1-116 K1-118 K1-119 K1-120 K1-121 K1-122 K1-123 K1-124 K1-125 Ausgewählter Raum K1-120 Seminarraum Beispiel 1. Obergeschoss ",
+   "buttons": [
+    "Erdgeschoss",
+    "1. Obergeschoss",
+    "2. Obergeschoss",
+    "3. Obergeschoss",
+    "Verkleinern",
+    "Vergrößern",
+    "Ganzer Plan",
+    "K1-103, Seminarraum 1",
+    "K1-104, Shared Space",
+    "K1-105, EDV",
+    "K1-106, Seminarraum 3",
+    "K1-107, Sekretariat",
+    "K1-108, Kommunikation",
+    "K1-109, Verkehrsfläche",
+    "K1-110, Arbeitsflächen",
+    "K1-111, Arbeitsflächen",
+    "K1-112, Maschinenraum",
+    "K1-113, Schweißbereich",
+    "K1-115, Raum",
+    "K1-116, Raum",
+    "K1-118, Raum",
+    "K1-119, Media Lab",
+    "K1-120, Seminarraum",
+    "K1-121, Elektronik-Werkstatt",
+    "K1-122, Raum",
+    "K1-123, Raum",
+    "K1-124, Networking",
+    "K1-125, Seminarraum",
+    "Auf dem Plan zeigen",
+    "Termine in diesem Raum",
+    "Diesen Raum reservieren (Demo)",
+    "DEMO-101 Seminarraum 1 (Demo)",
+    "DEMO-102 PC-Labor (Demo)",
+    "K1-103 Seminarraum 1",
+    "K1-104 Shared Space",
+    "K1-105 EDV",
+    "K1-106 Seminarraum 3",
+    "K1-107 Sekretariat",
+    "K1-108 Kommunikation",
+    "K1-109 Verkehrsfläche"
+   ],
+   "active": "button",
+   "shot": "journeys/kiosk-nominal-1080x1920/A2-map-marker-de-11-tap-marker-K1-120.png"
+  },
+  {
+   "journey": "A2-map-marker",
+   "n": 12,
+   "step": "selected-panel",
+   "ok": true,
+   "ms": 447,
+   "url": "/map?raum=lcc-demo-room-k1-120",
+   "h1": "Karte",
+   "scrollY": 0,
+   "docH": 2536,
+   "vh": 1920,
+   "mainText": "Karte Wähle ein Stockwerk, tippe auf eine Markierung oder suche nach Raumnummer oder Name. Hinweis: Die Pläne sind KI-generierte Illustrationen aus dem Team-Prototyp, kein geprüfter Gebäudeplan und kein Fluchtplan. Positionen beziehen sich auf die Bilder. Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Erdgeschoss 1. Obergeschoss 2. Obergeschoss 3. Obergeschoss Raum suchen 1. Obergeschoss − + Ganzer Plan K1-103 K1-104 K1-105 K1-106 K1-107 K1-108 K1-109 K1-110 K1-111 K1-112 K1-113 K1-115 K1-116 K1-118 K1-119 K1-120 K1-121 K1-122 K1-123 K1-124 K1-125 Ausgewählter Raum K1-120 Seminarraum Beispiel 1. Obergeschoss ",
+   "buttons": [
+    "Erdgeschoss",
+    "1. Obergeschoss",
+    "2. Obergeschoss",
+    "3. Obergeschoss",
+    "Verkleinern",
+    "Vergrößern",
+    "Ganzer Plan",
+    "K1-103, Seminarraum 1",
+    "K1-104, Shared Space",
+    "K1-105, EDV",
+    "K1-106, Seminarraum 3",
+    "K1-107, Sekretariat",
+    "K1-108, Kommunikation",
+    "K1-109, Verkehrsfläche",
+    "K1-110, Arbeitsflächen",
+    "K1-111, Arbeitsflächen",
+    "K1-112, Maschinenraum",
+    "K1-113, Schweißbereich",
+    "K1-115, Raum",
+    "K1-116, Raum",
+    "K1-118, Raum",
+    "K1-119, Media Lab",
+    "K1-120, Seminarraum",
+    "K1-121, Elektronik-Werkstatt",
+    "K1-122, Raum",
+    "K1-123, Raum",
+    "K1-124, Networking",
+    "K1-125, Seminarraum",
+    "Auf dem Plan zeigen",
+    "Termine in diesem Raum",
+    "Diesen Raum reservieren (Demo)",
+    "DEMO-101 Seminarraum 1 (Demo)",
+    "DEMO-102 PC-Labor (Demo)",
+    "K1-103 Seminarraum 1",
+    "K1-104 Shared Space",
+    "K1-105 EDV",
+    "K1-106 Seminarraum 3",
+    "K1-107 Sekretariat",
+    "K1-108 Kommunikation",
+    "K1-109 Verkehrsfläche"
+   ],
+   "active": "button",
+   "shot": "journeys/kiosk-nominal-1080x1920/A2-map-marker-de-12-selected-panel.png"
+  },
+  {
+   "journey": "A2-map-marker",
+   "n": 13,
+   "step": "tap-floor-2",
+   "ok": true,
+   "ms": 491,
+   "url": "/map?etage=2OG",
+   "h1": "Karte",
+   "scrollY": 0,
+   "docH": 2229,
+   "vh": 1920,
+   "mainText": "Karte Wähle ein Stockwerk, tippe auf eine Markierung oder suche nach Raumnummer oder Name. Hinweis: Die Pläne sind KI-generierte Illustrationen aus dem Team-Prototyp, kein geprüfter Gebäudeplan und kein Fluchtplan. Positionen beziehen sich auf die Bilder. Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Erdgeschoss 1. Obergeschoss 2. Obergeschoss 3. Obergeschoss Raum suchen 2. Obergeschoss − + Ganzer Plan K1-201 K1-202 K1-203 K1-204 K1-206 K1-207 K1-208 K1-209 K1-210 K1-211 K1-212 K1-213 K1-214 K1-215a K1-215b K1-216 K1-217 K1-218 Ausgewählter Raum Kein Raum ausgewählt Tippe auf eine Markierung oder einen Raum ",
+   "buttons": [
+    "Erdgeschoss",
+    "1. Obergeschoss",
+    "2. Obergeschoss",
+    "3. Obergeschoss",
+    "Verkleinern",
+    "Vergrößern",
+    "Ganzer Plan",
+    "K1-201, WC D",
+    "K1-202, WC H",
+    "K1-203, Raum",
+    "K1-204, Büro 2",
+    "K1-206, Büro 3",
+    "K1-207, Besprechungsraum",
+    "K1-208, Multifunktionsraum",
+    "K1-209, Raum",
+    "K1-210, Seminarraum",
+    "K1-211, Büro 1",
+    "K1-212, Teeküche",
+    "K1-213, Flur",
+    "K1-214, Raum",
+    "K1-215a, Flur 2",
+    "K1-215b, Flur 1",
+    "K1-216, Modellstadt V2X",
+    "K1-217, Testmethodenlabor",
+    "K1-218, Projektraum",
+    "DEMO-201 Gruppenraum (Demo)",
+    "DEMO-202 Seminarraum 2 (Demo)",
+    "K1-201 WC D",
+    "K1-202 WC H",
+    "K1-203 Raum",
+    "K1-204 Büro 2",
+    "K1-206 Büro 3",
+    "K1-207 Besprechungsraum",
+    "K1-208 Multifunktionsraum",
+    "K1-209 Raum",
+    "K1-210 Seminarraum",
+    "K1-211 Büro 1",
+    "K1-212 Teeküche",
+    "K1-213 Flur",
+    "K1-214 Raum"
+   ],
+   "active": "button",
+   "shot": "journeys/kiosk-nominal-1080x1920/A2-map-marker-de-13-tap-floor-2.png"
+  },
+  {
+   "journey": "A2-map-marker",
+   "n": 14,
+   "step": "type-search-labor",
+   "ok": true,
+   "ms": 775,
+   "url": "/map?etage=2OG",
+   "h1": "Karte",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Karte Wähle ein Stockwerk, tippe auf eine Markierung oder suche nach Raumnummer oder Name. Hinweis: Die Pläne sind KI-generierte Illustrationen aus dem Team-Prototyp, kein geprüfter Gebäudeplan und kein Fluchtplan. Positionen beziehen sich auf die Bilder. Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Erdgeschoss 1. Obergeschoss 2. Obergeschoss 3. Obergeschoss Raum suchen Suche löschen 2. Obergeschoss − + Ganzer Plan K1-217 Ausgewählter Raum Kein Raum ausgewählt Tippe auf eine Markierung oder einen Raum in der Liste. Raum suchen · 2 Räume DEMO-102 PC-Labor (Demo) · 1. Obergeschoss K1-217 Testmethodenlabor · 2",
+   "buttons": [
+    "Erdgeschoss",
+    "1. Obergeschoss",
+    "2. Obergeschoss",
+    "3. Obergeschoss",
+    "Suche löschen",
+    "Verkleinern",
+    "Vergrößern",
+    "Ganzer Plan",
+    "K1-217, Testmethodenlabor",
+    "DEMO-102 PC-Labor (Demo) · 1. Obergescho",
+    "K1-217 Testmethodenlabor · 2. Obergescho"
+   ],
+   "active": "input#map-search",
+   "shot": "journeys/kiosk-nominal-1080x1920/A2-map-marker-de-14-type-search-labor.png"
+  },
+  {
+   "journey": "A2-map-marker",
+   "n": 15,
+   "step": "tap-room-in-list",
+   "ok": true,
+   "ms": 492,
+   "url": "/map?raum=lcc-demo-room-k1-217",
+   "h1": "Karte",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Karte Wähle ein Stockwerk, tippe auf eine Markierung oder suche nach Raumnummer oder Name. Hinweis: Die Pläne sind KI-generierte Illustrationen aus dem Team-Prototyp, kein geprüfter Gebäudeplan und kein Fluchtplan. Positionen beziehen sich auf die Bilder. Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Erdgeschoss 1. Obergeschoss 2. Obergeschoss 3. Obergeschoss Raum suchen Suche löschen 2. Obergeschoss − + Ganzer Plan K1-217 Ausgewählter Raum K1-217 Testmethodenlabor Beispiel 2. Obergeschoss · Labor / PC-Raum Auf dem Plan zeigen Termine in diesem Raum Diesen Raum reservieren (Demo) Raum suchen · 2 Räume DEMO-1",
+   "buttons": [
+    "Erdgeschoss",
+    "1. Obergeschoss",
+    "2. Obergeschoss",
+    "3. Obergeschoss",
+    "Suche löschen",
+    "Verkleinern",
+    "Vergrößern",
+    "Ganzer Plan",
+    "K1-217, Testmethodenlabor",
+    "Auf dem Plan zeigen",
+    "Termine in diesem Raum",
+    "Diesen Raum reservieren (Demo)",
+    "DEMO-102 PC-Labor (Demo) · 1. Obergescho",
+    "K1-217 Testmethodenlabor · 2. Obergescho"
+   ],
+   "active": "button",
+   "shot": "journeys/kiosk-nominal-1080x1920/A2-map-marker-de-15-tap-room-in-list.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 16,
+   "step": "rooms-zagel",
+   "ok": true,
+   "ms": 1055,
+   "url": "/rooms?suche=Zagel",
+   "h1": "Räume",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Räume Raum, Lehrperson oder Lehrveranstaltung suchen Raumnummer (z. B. K1-105 oder 105), Raumname, Lehrperson oder Lehrveranstaltung. Suche löschen Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Passende Räume · 0 Räume Kein Raum passt zu „Zagel“. Prüfe Raumnummer oder Schreibweise. Passende Lehrveranstaltungen · Dienstag, 3. November 2026 · 2 Termine Gezeigt wird der Raum, in dem die Lehrveranstaltung an diesem Tag stattfindet – kein Büro und kein aktueller Aufenthaltsort einer Person. Tag der Lehrveranstaltungen ← Vortag Heute Folgetag → 10:00–11:30 Mensch-Maschine-Interaktion (Demo) Beispiel Lehrperson: Pr",
+   "buttons": [
+    "Suche löschen",
+    "← Vortag",
+    "Heute",
+    "Folgetag →",
+    "Auf der Karte zeigen",
+    "Termine in diesem Raum",
+    "Auf der Karte zeigen",
+    "Termine in diesem Raum"
+   ],
+   "active": "input#room-search",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-de-16-rooms-zagel.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 17,
+   "step": "next-day",
+   "ok": true,
+   "ms": 445,
+   "url": "/rooms?suche=Zagel&datum=2026-11-04",
+   "h1": "Räume",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Räume Raum, Lehrperson oder Lehrveranstaltung suchen Raumnummer (z. B. K1-105 oder 105), Raumname, Lehrperson oder Lehrveranstaltung. Suche löschen Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Passende Räume · 0 Räume Kein Raum passt zu „Zagel“. Prüfe Raumnummer oder Schreibweise. Passende Lehrveranstaltungen · Mittwoch, 4. November 2026 · 0 Termine Gezeigt wird der Raum, in dem die Lehrveranstaltung an diesem Tag stattfindet – kein Büro und kein aktueller Aufenthaltsort einer Person. Tag der Lehrveranstaltungen ← Vortag Heute Folgetag → Am Mittwoch, 4. November 2026 gibt es keine Lehrveranstaltung, die zu ",
+   "buttons": [
+    "Suche löschen",
+    "← Vortag",
+    "Heute",
+    "Folgetag →"
+   ],
+   "active": "button",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-de-17-next-day.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 18,
+   "step": "back-to-today",
+   "ok": true,
+   "ms": 445,
+   "url": "/rooms?suche=Zagel",
+   "h1": "Räume",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Räume Raum, Lehrperson oder Lehrveranstaltung suchen Raumnummer (z. B. K1-105 oder 105), Raumname, Lehrperson oder Lehrveranstaltung. Suche löschen Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Passende Räume · 0 Räume Kein Raum passt zu „Zagel“. Prüfe Raumnummer oder Schreibweise. Passende Lehrveranstaltungen · Dienstag, 3. November 2026 · 2 Termine Gezeigt wird der Raum, in dem die Lehrveranstaltung an diesem Tag stattfindet – kein Büro und kein aktueller Aufenthaltsort einer Person. Tag der Lehrveranstaltungen ← Vortag Heute Folgetag → 10:00–11:30 Mensch-Maschine-Interaktion (Demo) Beispiel Lehrperson: Pr",
+   "buttons": [
+    "Suche löschen",
+    "← Vortag",
+    "Heute",
+    "Folgetag →",
+    "Auf der Karte zeigen",
+    "Termine in diesem Raum",
+    "Auf der Karte zeigen",
+    "Termine in diesem Raum"
+   ],
+   "active": "button",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-de-18-back-to-today.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 19,
+   "step": "tap-class-map-link",
+   "ok": true,
+   "ms": 491,
+   "url": "/map?raum=lcc-demo-room-k1-120&datum=2026-11-03",
+   "h1": "Karte",
+   "scrollY": 0,
+   "docH": 2536,
+   "vh": 1920,
+   "mainText": "Karte Wähle ein Stockwerk, tippe auf eine Markierung oder suche nach Raumnummer oder Name. Hinweis: Die Pläne sind KI-generierte Illustrationen aus dem Team-Prototyp, kein geprüfter Gebäudeplan und kein Fluchtplan. Positionen beziehen sich auf die Bilder. Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Erdgeschoss 1. Obergeschoss 2. Obergeschoss 3. Obergeschoss Raum suchen 1. Obergeschoss − + Ganzer Plan K1-103 K1-104 K1-105 K1-106 K1-107 K1-108 K1-109 K1-110 K1-111 K1-112 K1-113 K1-115 K1-116 K1-118 K1-119 K1-120 K1-121 K1-122 K1-123 K1-124 K1-125 Ausgewählter Raum K1-120 Seminarraum Beispiel 1. Obergeschoss ",
+   "buttons": [
+    "Erdgeschoss",
+    "1. Obergeschoss",
+    "2. Obergeschoss",
+    "3. Obergeschoss",
+    "Verkleinern",
+    "Vergrößern",
+    "Ganzer Plan",
+    "K1-103, Seminarraum 1",
+    "K1-104, Shared Space",
+    "K1-105, EDV",
+    "K1-106, Seminarraum 3",
+    "K1-107, Sekretariat",
+    "K1-108, Kommunikation",
+    "K1-109, Verkehrsfläche",
+    "K1-110, Arbeitsflächen",
+    "K1-111, Arbeitsflächen",
+    "K1-112, Maschinenraum",
+    "K1-113, Schweißbereich",
+    "K1-115, Raum",
+    "K1-116, Raum",
+    "K1-118, Raum",
+    "K1-119, Media Lab",
+    "K1-120, Seminarraum",
+    "K1-121, Elektronik-Werkstatt",
+    "K1-122, Raum",
+    "K1-123, Raum",
+    "K1-124, Networking",
+    "K1-125, Seminarraum",
+    "Auf dem Plan zeigen",
+    "Termine in diesem Raum",
+    "Diesen Raum reservieren (Demo)",
+    "DEMO-101 Seminarraum 1 (Demo)",
+    "DEMO-102 PC-Labor (Demo)",
+    "K1-103 Seminarraum 1",
+    "K1-104 Shared Space",
+    "K1-105 EDV",
+    "K1-106 Seminarraum 3",
+    "K1-107 Sekretariat",
+    "K1-108 Kommunikation",
+    "K1-109 Verkehrsfläche"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-de-19-tap-class-map-link.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 20,
+   "step": "browser-back",
+   "ok": true,
+   "ms": 419,
+   "url": "/rooms?suche=Zagel",
+   "h1": "Räume",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Räume Raum, Lehrperson oder Lehrveranstaltung suchen Raumnummer (z. B. K1-105 oder 105), Raumname, Lehrperson oder Lehrveranstaltung. Suche löschen Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Passende Räume · 0 Räume Kein Raum passt zu „Zagel“. Prüfe Raumnummer oder Schreibweise. Passende Lehrveranstaltungen · Dienstag, 3. November 2026 · 2 Termine Gezeigt wird der Raum, in dem die Lehrveranstaltung an diesem Tag stattfindet – kein Büro und kein aktueller Aufenthaltsort einer Person. Tag der Lehrveranstaltungen ← Vortag Heute Folgetag → 10:00–11:30 Mensch-Maschine-Interaktion (Demo) Beispiel Lehrperson: Pr",
+   "buttons": [
+    "Suche löschen",
+    "← Vortag",
+    "Heute",
+    "Folgetag →",
+    "Auf der Karte zeigen",
+    "Termine in diesem Raum",
+    "Auf der Karte zeigen",
+    "Termine in diesem Raum"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-de-20-browser-back.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 21,
+   "step": "clear-search",
+   "ok": true,
+   "ms": 445,
+   "url": "/rooms",
+   "h1": "Räume",
+   "scrollY": 0,
+   "docH": 16440,
+   "vh": 1920,
+   "mainText": "Räume Raum, Lehrperson oder Lehrveranstaltung suchen Raumnummer (z. B. K1-105 oder 105), Raumname, Lehrperson oder Lehrveranstaltung. Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Erdgeschoss DEMO-E01 Küche / Aufenthalt (Demo) Beispiel Aufenthalt / Küche Beispieleintrag: Lage und Ausstattung sind erfunden. Heute in diesem Raum Auf der Karte zeigen DEMO-E02 Hörsaal A (Demo) Beispiel Hörsaal Beispieleintrag: Lage und Ausstattung sind erfunden. Heute in diesem Raum Auf der Karte zeigen 1. Obergeschoss DEMO-101 Seminarraum 1 (Demo) Beispiel Seminarraum Beispieleintrag: Lage und Ausstattung sind erfunden. Heute i",
+   "buttons": [
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen"
+   ],
+   "active": "input#room-search",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-de-21-clear-search.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 22,
+   "step": "search-typo-zagl",
+   "ok": true,
+   "ms": 661,
+   "url": "/rooms?suche=Zagl",
+   "h1": "Räume",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Räume Raum, Lehrperson oder Lehrveranstaltung suchen Raumnummer (z. B. K1-105 oder 105), Raumname, Lehrperson oder Lehrveranstaltung. Suche löschen Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Passende Räume · 0 Räume Kein Raum passt zu „Zagl“. Prüfe Raumnummer oder Schreibweise. Passende Lehrveranstaltungen · Dienstag, 3. November 2026 · 0 Termine Gezeigt wird der Raum, in dem die Lehrveranstaltung an diesem Tag stattfindet – kein Büro und kein aktueller Aufenthaltsort einer Person. Tag der Lehrveranstaltungen ← Vortag Heute Folgetag → Am Dienstag, 3. November 2026 gibt es keine Lehrveranstaltung, die zu „",
+   "buttons": [
+    "Suche löschen",
+    "← Vortag",
+    "Heute",
+    "Folgetag →"
+   ],
+   "active": "input#room-search",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-de-22-search-typo-zagl.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 23,
+   "step": "clear-2",
+   "ok": true,
+   "ms": 468,
+   "url": "/rooms",
+   "h1": "Räume",
+   "scrollY": 0,
+   "docH": 16440,
+   "vh": 1920,
+   "mainText": "Räume Raum, Lehrperson oder Lehrveranstaltung suchen Raumnummer (z. B. K1-105 oder 105), Raumname, Lehrperson oder Lehrveranstaltung. Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Erdgeschoss DEMO-E01 Küche / Aufenthalt (Demo) Beispiel Aufenthalt / Küche Beispieleintrag: Lage und Ausstattung sind erfunden. Heute in diesem Raum Auf der Karte zeigen DEMO-E02 Hörsaal A (Demo) Beispiel Hörsaal Beispieleintrag: Lage und Ausstattung sind erfunden. Heute in diesem Raum Auf der Karte zeigen 1. Obergeschoss DEMO-101 Seminarraum 1 (Demo) Beispiel Seminarraum Beispieleintrag: Lage und Ausstattung sind erfunden. Heute i",
+   "buttons": [
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen"
+   ],
+   "active": "input#room-search",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-de-23-clear-2.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 24,
+   "step": "search-HCI",
+   "ok": true,
+   "ms": 610,
+   "url": "/rooms?suche=HCI",
+   "h1": "Räume",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Räume Raum, Lehrperson oder Lehrveranstaltung suchen Raumnummer (z. B. K1-105 oder 105), Raumname, Lehrperson oder Lehrveranstaltung. Suche löschen Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Passende Räume · 0 Räume Kein Raum passt zu „HCI“. Prüfe Raumnummer oder Schreibweise. Passende Lehrveranstaltungen · Dienstag, 3. November 2026 · 2 Termine Gezeigt wird der Raum, in dem die Lehrveranstaltung an diesem Tag stattfindet – kein Büro und kein aktueller Aufenthaltsort einer Person. Tag der Lehrveranstaltungen ← Vortag Heute Folgetag → 10:00–11:30 Mensch-Maschine-Interaktion (Demo) Beispiel Lehrperson: Prof",
+   "buttons": [
+    "Suche löschen",
+    "← Vortag",
+    "Heute",
+    "Folgetag →",
+    "Auf der Karte zeigen",
+    "Termine in diesem Raum",
+    "Auf der Karte zeigen",
+    "Termine in diesem Raum"
+   ],
+   "active": "input#room-search",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-de-24-search-HCI.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 25,
+   "step": "clear-3",
+   "ok": true,
+   "ms": 484,
+   "url": "/rooms",
+   "h1": "Räume",
+   "scrollY": 0,
+   "docH": 16440,
+   "vh": 1920,
+   "mainText": "Räume Raum, Lehrperson oder Lehrveranstaltung suchen Raumnummer (z. B. K1-105 oder 105), Raumname, Lehrperson oder Lehrveranstaltung. Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Erdgeschoss DEMO-E01 Küche / Aufenthalt (Demo) Beispiel Aufenthalt / Küche Beispieleintrag: Lage und Ausstattung sind erfunden. Heute in diesem Raum Auf der Karte zeigen DEMO-E02 Hörsaal A (Demo) Beispiel Hörsaal Beispieleintrag: Lage und Ausstattung sind erfunden. Heute in diesem Raum Auf der Karte zeigen 1. Obergeschoss DEMO-101 Seminarraum 1 (Demo) Beispiel Seminarraum Beispieleintrag: Lage und Ausstattung sind erfunden. Heute i",
+   "buttons": [
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Raum reservieren (Demo)",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen",
+    "Heute in diesem Raum",
+    "Auf der Karte zeigen"
+   ],
+   "active": "input#room-search",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-de-25-clear-3.png"
+  },
+  {
+   "journey": "A3-search-people",
+   "n": 26,
+   "step": "search-gibberish",
+   "ok": true,
+   "ms": 728,
+   "url": "/rooms?suche=qqqqq",
+   "h1": "Räume",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Räume Raum, Lehrperson oder Lehrveranstaltung suchen Raumnummer (z. B. K1-105 oder 105), Raumname, Lehrperson oder Lehrveranstaltung. Suche löschen Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. Passende Räume · 0 Räume Kein Raum passt zu „qqqqq“. Prüfe Raumnummer oder Schreibweise. Passende Lehrveranstaltungen · Dienstag, 3. November 2026 · 0 Termine Gezeigt wird der Raum, in dem die Lehrveranstaltung an diesem Tag stattfindet – kein Büro und kein aktueller Aufenthaltsort einer Person. Tag der Lehrveranstaltungen ← Vortag Heute Folgetag → Am Dienstag, 3. November 2026 gibt es keine Lehrveranstaltung, die zu ",
+   "buttons": [
+    "Suche löschen",
+    "← Vortag",
+    "Heute",
+    "Folgetag →"
+   ],
+   "active": "input#room-search",
+   "shot": "journeys/kiosk-nominal-1080x1920/A3-search-people-de-26-search-gibberish.png"
+  },
+  {
+   "journey": "A4-newcomer",
+   "n": 27,
+   "step": "start",
+   "ok": true,
+   "ms": 951,
+   "url": "/",
+   "h1": "Campus-Informationen",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Campus-Informationen Informationen für Studierende und Gäste am Lucas-Cranach-Campus. Neu am Campus Erste Orientierung: wo finde ich was? Karte Räume auf dem Stockwerksplan finden Räume Alle Räume nach Stockwerk Stundenplan Lehrveranstaltungen nach Tag und Raum Raumbuchung Freie Zeiten prüfen und einen Raum probeweise reservieren (Demo) Mitteilungen Aktuelle Hinweise für den Campus",
+   "buttons": [
+    "Neu am Campus Erste Orientierung: wo fin",
+    "Karte Räume auf dem Stockwerksplan finde",
+    "Räume Alle Räume nach Stockwerk",
+    "Stundenplan Lehrveranstaltungen nach Tag",
+    "Raumbuchung Freie Zeiten prüfen und eine",
+    "Mitteilungen Aktuelle Hinweise für den C"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A4-newcomer-de-27-start.png"
+  },
+  {
+   "journey": "A4-newcomer",
+   "n": 28,
+   "step": "tap-newcomer-card",
+   "ok": true,
+   "ms": 466,
+   "url": "/newcomers",
+   "h1": "Neu am Campus?",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Neu am Campus? Wähle direkt aus, was du gerade brauchst. Studentischer HCI-Prototyp – kein offizielles Informationssystem der Hochschule Coburg. Räume und Termine sind teilweise Beispieldaten; prüfe wichtige Angaben über offizielle Hochschulquellen. Einen Raum finden Suche nach Raumnummer oder Name und sieh, auf welchem Stockwerk der Raum liegt. Die Pläne sind Illustrationen, keine geprüften Gebäudepläne. Karte öffnen Was findet heute statt? Sieh dir die eingetragenen Lehrveranstaltungen nach Tag und Raum an. Abgesagte Termine sind markiert. Stundenplan öffnen Aktuelle Hinweise Hier stehen die Mitteilungen, die das Campus-Team veröffentlicht hat. Hinweise ansehen Einen Lernraum reservieren P",
+   "buttons": [
+    "Karte öffnen",
+    "Stundenplan öffnen",
+    "Hinweise ansehen",
+    "Raum reservieren",
+    "Mitteilungen ansehen"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A4-newcomer-de-28-tap-newcomer-card.png"
+  },
+  {
+   "journey": "A4-newcomer",
+   "n": 29,
+   "step": "tap-help-card-cta",
+   "ok": true,
+   "ms": 435,
+   "url": "/display",
+   "h1": null,
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Mitteilungen ALLGEMEIN HERVORGEHOBEN Willkommen am Lucas-Cranach-Campus (Demo) Beispielinhalt für den Prototyp: Hier erscheinen Mitteilungen, die in der Verwaltung veröffentlicht wurden. VERANSTALTUNG Spieleabend in der Küche (Demo) Beispielinhalt: Gemeinsamer Spieleabend – Datum und Ort sind erfunden und dienen nur der Demonstration.",
+   "buttons": [],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A4-newcomer-de-29-tap-help-card-cta.png"
+  },
+  {
+   "journey": "A5-schedule",
+   "n": 30,
+   "step": "open",
+   "ok": true,
+   "ms": 969,
+   "url": "/schedule",
+   "h1": "Stundenplan",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Stundenplan Dienstag, 3. November 2026· Heute ← Vortag Heute Folgetag → Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. 08:15–11:30 Programmierung – Übung (Demo) Läuft gerade Beispiel Raum DEMO-102 – PC-Labor (Demo) · 1. Obergeschoss Wirtschaftsinformatik 2.0 – Beispielsemester · Dozent:in C (Demo) 10:00–11:30 Mensch-Maschine-Interaktion (Demo) Läuft gerade Beispiel Raum K1-120 – Seminarraum · 1. Obergeschoss Beispielsemester (Demo) · Prof. Dr. Christian Zagel 13:00–14:30 Mensch-Maschine-Interaktion (Demo) Beispiel Raum DEMO-101 – Seminarraum 1 (Demo) · 1. Obergeschoss Wirtschaftsinformatik 2.0 – Beispielsemes",
+   "buttons": [
+    "← Vortag",
+    "Heute",
+    "Folgetag →"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A5-schedule-de-30-open.png"
+  },
+  {
+   "journey": "A5-schedule",
+   "n": 31,
+   "step": "tap-next",
+   "ok": true,
+   "ms": 450,
+   "url": "/schedule?datum=2026-11-04",
+   "h1": "Stundenplan",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Stundenplan Mittwoch, 4. November 2026 ← Vortag Heute Folgetag → Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. 08:15–09:45 Betriebswirtschaftslehre (Demo) Beispiel Raum DEMO-E02 – Hörsaal A (Demo) · Erdgeschoss Wirtschaftsinformatik 2.0 – Beispielsemester · Dozent:in B (Demo) 08:15–09:45 Projektmanagement (Demo) Beispiel Raum K1-120 – Seminarraum · 1. Obergeschoss Beispielsemester (Demo) · Dozent:in C (Demo) 10:00–11:30 Englisch (Demo) Beispiel Raum DEMO-202 – Seminarraum 2 (Demo) · 2. Obergeschoss Wirtschaftsinformatik 2.0 – Beispielsemester · Dozent:in E (Demo) 12:00–13:30 Statistik (Demo) Beispiel Raum K1",
+   "buttons": [
+    "← Vortag",
+    "Heute",
+    "Folgetag →"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A5-schedule-de-31-tap-next.png"
+  },
+  {
+   "journey": "A5-schedule",
+   "n": 32,
+   "step": "tap-prev-prev",
+   "ok": true,
+   "ms": 673,
+   "url": "/schedule?datum=2026-11-02",
+   "h1": "Stundenplan",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Stundenplan Montag, 2. November 2026 ← Vortag Heute Folgetag → Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. 08:15–09:45 Einführung in die Wirtschaftsinformatik (Demo) Beispiel Raum DEMO-101 – Seminarraum 1 (Demo) · 1. Obergeschoss Wirtschaftsinformatik 2.0 – Beispielsemester · Dozent:in A (Demo) 10:00–11:30 Mathematik (Demo) Beispiel Raum DEMO-E02 – Hörsaal A (Demo) · Erdgeschoss Wirtschaftsinformatik 2.0 – Beispielsemester · Dozent:in B (Demo)",
+   "buttons": [
+    "← Vortag",
+    "Heute",
+    "Folgetag →"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A5-schedule-de-32-tap-prev-prev.png"
+  },
+  {
+   "journey": "A5-schedule",
+   "n": 33,
+   "step": "saturday-empty",
+   "ok": true,
+   "ms": 950,
+   "url": "/schedule?datum=2026-11-07",
+   "h1": "Stundenplan",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Stundenplan Samstag, 7. November 2026 ← Vortag Heute Folgetag → An diesem Tag sind keine Termine eingetragen. Änderungen erscheinen hier automatisch.",
+   "buttons": [
+    "← Vortag",
+    "Heute",
+    "Folgetag →"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A5-schedule-de-33-saturday-empty.png"
+  },
+  {
+   "journey": "A5-schedule",
+   "n": 34,
+   "step": "far-future",
+   "ok": true,
+   "ms": 956,
+   "url": "/schedule?datum=2031-01-01",
+   "h1": "Stundenplan",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Stundenplan Mittwoch, 1. Januar 2031 ← Vortag Heute Folgetag → An diesem Tag sind keine Termine eingetragen. Änderungen erscheinen hier automatisch.",
+   "buttons": [
+    "← Vortag",
+    "Heute",
+    "Folgetag →"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A5-schedule-de-34-far-future.png"
+  },
+  {
+   "journey": "A5-schedule",
+   "n": 35,
+   "step": "bad-date",
+   "ok": true,
+   "ms": 962,
+   "url": "/schedule?datum=not-a-date",
+   "h1": "Stundenplan",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Stundenplan Dienstag, 3. November 2026· Heute ← Vortag Heute Folgetag → Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. 08:15–11:30 Programmierung – Übung (Demo) Läuft gerade Beispiel Raum DEMO-102 – PC-Labor (Demo) · 1. Obergeschoss Wirtschaftsinformatik 2.0 – Beispielsemester · Dozent:in C (Demo) 10:00–11:30 Mensch-Maschine-Interaktion (Demo) Läuft gerade Beispiel Raum K1-120 – Seminarraum · 1. Obergeschoss Beispielsemester (Demo) · Prof. Dr. Christian Zagel 13:00–14:30 Mensch-Maschine-Interaktion (Demo) Beispiel Raum DEMO-101 – Seminarraum 1 (Demo) · 1. Obergeschoss Wirtschaftsinformatik 2.0 – Beispielsemes",
+   "buttons": [
+    "← Vortag",
+    "Heute",
+    "Folgetag →"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A5-schedule-de-35-bad-date.png"
+  },
+  {
+   "journey": "A5-schedule",
+   "n": 36,
+   "step": "room-filter-param",
+   "ok": true,
+   "ms": 4928,
+   "url": "/schedule?raum=k1-120",
+   "h1": "Stundenplan",
+   "scrollY": 0,
+   "docH": 1920,
+   "vh": 1920,
+   "mainText": "Stundenplan Termine können gerade nicht geladen werden. Wir versuchen es automatisch weiter. Erneut versuchen",
+   "buttons": [
+    "Erneut versuchen"
+   ],
+   "active": "body",
+   "shot": "journeys/kiosk-nominal-1080x1920/A5-schedule-de-36-room-filter-param.png"
+  }
+ ],
+ "events": {
+  "console": [
+   {
+    "type": "error",
+    "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "at": "/schedule?raum=k1-120"
+   }
+  ],
+  "pageerror": [],
+  "requestfailed": [
+   {
+    "url": "/newcomers?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?lang=en&_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=demo-room-e01&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=demo-room-e01&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=demo-room-e02&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=demo-room-e02&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=demo-room-101&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=demo-room-101&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=demo-room-101&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=demo-room-102&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=demo-room-102&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-103&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-103&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=lcc-demo-room-k1-103&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-104&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=lcc-demo-room-k1-112&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-112&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-112&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-120&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-120&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-121&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-121&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=lcc-demo-room-k1-120&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=lcc-demo-room-k1-121&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-122&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-123&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-122&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-123&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-201&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-201&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-202&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-202&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-203&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-204&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-204&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-203&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=lcc-demo-room-k1-204&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-120&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-02&raum=lcc-demo-room-k1-120&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-04&raum=lcc-demo-room-k1-120&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=GwwRtTerPLiEJR6D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=GwwRtTerPLiEJR6D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=GwwRtTerPLiEJR6D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=GwwRtTerPLiEJR6D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=GwwRtTerPLiEJR6D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=GwwRtTerPLiEJR6D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-120&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=lcc-demo-room-k1-120&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-120&lang=en&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?etage=2OG&lang=en&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-217&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=lcc-demo-room-k1-217&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-217&lang=en&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=demo-room-e01&_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=demo-room-101&_rsc=FrkUJp_PrX_YHKEt",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=demo-room-e01&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=demo-room-e01&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=demo-room-e02&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=demo-room-101&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=demo-room-101&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=demo-room-e02&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-103&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=demo-room-102&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=demo-room-101&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=demo-room-102&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-103&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-304&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-304&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=demo-room-102&datum=2026-11-03&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-03&raum=lcc-demo-room-k1-120&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-03&raum=demo-room-102&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-120&datum=2026-11-03&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=demo-room-101&datum=2026-11-03&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-03&raum=demo-room-101&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-120&datum=2026-11-03&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-120&datum=2026-11-03&lang=en&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?raum=lcc-demo-room-k1-120&datum=2026-11-03&_rsc=d4Wif2ZBQ3Psxrbk",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-109&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-104&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-109&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-104&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=lcc-demo-room-k1-110&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?raum=lcc-demo-room-k1-110&_rsc=8WkPnV6H5P4THUOG",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=5CB68i4pnAekjehf",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?lang=en&_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=tXyZJ52UQVBCVsD3",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=GFoJpxtQB11Vori7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=AoBhd38kWy1X2L9P",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-02&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-04&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-03&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-02&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-01&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-07&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-08&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-06&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2031-01-01&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2030-12-31&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2031-01-02&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-02&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?datum=2026-11-04&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=7lMAxnFtzw9iDzvv",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?raum=k1-120&lang=en&_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=GkXPKcN2pE2Ai3h7",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/api/public/schedule?roomId=k1-120",
+    "why": "net::ERR_ABORTED"
+   }
+  ],
+  "badresponse": [
+   {
+    "url": "/api/public/schedule?roomId=k1-120",
+    "status": 404
+   }
+  ]
+ }
+}

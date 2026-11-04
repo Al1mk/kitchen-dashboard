@@ -4,14 +4,14 @@ import type { Lang } from "@/lib/i18n/public.ts";
 // are never shown; API `error`/`detail` codes are translated here instead.
 
 const de = {
-  disclaimer: "DEMO – keine echte Hochschulreservierung. Keine Anmeldung, kein offizieller Anspruch auf den Raum.",
+  disclaimer: "DEMO – keine echte Hochschulreservierung, kein Anspruch auf den Raum.",
   room: "1. Raum auswählen",
   roomPlaceholder: "Bitte einen Raum wählen",
   roomsLoading: "Räume werden geladen …",
   roomsFailed: "Die Räume können gerade nicht geladen werden.",
   roomsEmpty: "Zurzeit ist kein Raum für Demo-Reservierungen freigegeben.",
   requestedUnavailable:
-    "Der angefragte Raum kann gerade nicht reserviert werden (unbekannt, archiviert oder nicht freigegeben). Es wurde kein anderer Raum ausgewählt – bitte wähle selbst einen aus der Liste.",
+    "Dieser Raum ist unbekannt oder nicht buchbar. Es wurde kein anderer Raum ausgewählt. Bitte wähle einen Raum aus der Liste.",
   date: "2. Datum",
   duration: "3. Dauer",
   minutes: (n: number) => `${n} Minuten`,
@@ -27,7 +27,7 @@ const de = {
   change: "Ändern",
   book: "Demo-Reservierung bestätigen",
   submitting: "Reservierung wird gespeichert …",
-  lockedNote: "Bitte warten: Die Anfrage wird gesendet. Auswahl und Navigation sind so lange gesperrt.",
+  lockedNote: "Anfrage läuft. Bitte warte, bevor du etwas änderst.",
   uncertainTitle: "Wir konnten nicht bestätigen, ob die Reservierung gespeichert wurde.",
   uncertainText: "Sende sie erneut: Es wird genau dieselbe Anfrage wiederholt, eine doppelte Reservierung entsteht nicht.",
   resend: "Erneut senden",
@@ -43,7 +43,9 @@ const de = {
   },
   guardTitle: "Reservierung läuft noch",
   guardText:
-    "Die Reservierung wird gerade gespeichert oder ihr Ergebnis ist noch unklar. Wenn du jetzt gehst, kann sie trotzdem bestehen – aber Buchungsnummer und Stornierungscode gehen verloren, und du kannst sie nicht mehr selbst stornieren.",
+    "Der Status der Reservierung ist unklar. Wenn du gehst, kann sie trotzdem bestehen – aber Buchungsnummer und Stornierungscode gehen verloren. Ohne beide kannst du nicht selbst stornieren.",
+  receiptLeaveTitle: "Beleg wirklich verlassen?",
+  receiptLeaveText: "Buchungsnummer und Stornierungscode können danach nicht erneut angezeigt werden. Bitte sichere beide zuerst.",
   stay: "Hierbleiben",
   leave: "Trotzdem verlassen",
   mapLink: "Diesen Raum auf der Karte zeigen",
@@ -57,8 +59,10 @@ const de = {
     id: "Buchungsnummer",
     code: "Stornierungscode",
     noRecovery:
-      "Wichtig: Notiere oder fotografiere Nummer und Code jetzt. Sie werden nirgends gespeichert und nicht verschickt. Ohne beide kannst du nicht selbst stornieren.",
+      "Notiere oder fotografiere Nummer und Code jetzt. Ohne beide kannst du nicht selbst stornieren.",
+    saved: "Ich habe Buchungsnummer und Stornierungscode gesichert.",
     countdown: (s: number) => `Dieser Beleg wird in ${s} Sekunden ausgeblendet.`,
+    timeWarning: "Nur noch 15 Sekunden. Tippe auf Mehr Zeit.",
     more: "Mehr Zeit",
     finish: "Fertig",
   },
@@ -76,20 +80,23 @@ const de = {
     generic: "Die Stornierung konnte nicht gesendet werden. Bitte versuche es erneut.",
     back: "Zur Raumbuchung",
     demo: "DEMO – kein offizielles Raumbuchungssystem.",
+    showCode: "Code anzeigen",
+    hideCode: "Code verbergen",
+    credentialHint: "Buchungsnummer: 36 Zeichen. Code: 43 Zeichen. Füge beide genau wie auf dem Beleg ein; Groß- und Kleinschreibung des Codes beibehalten.",
   },
 };
 
 export type BookingCopy = typeof de;
 
 const en: BookingCopy = {
-  disclaimer: "DEMO – not a real university room reservation. No login and no official entitlement to the room.",
+  disclaimer: "DEMO – not a real university booking. No entitlement to the room.",
   room: "1. Choose a room",
   roomPlaceholder: "Please choose a room",
   roomsLoading: "Loading rooms …",
   roomsFailed: "Rooms cannot be loaded right now.",
   roomsEmpty: "No room is currently open for demo bookings.",
   requestedUnavailable:
-    "The requested room cannot be booked right now (unknown, archived or not open for booking). No other room was selected – please choose one from the list yourself.",
+    "This room is unknown or not bookable. No other room was selected. Please choose a room from the list.",
   date: "2. Date",
   duration: "3. Duration",
   minutes: (n: number) => `${n} minutes`,
@@ -105,7 +112,7 @@ const en: BookingCopy = {
   change: "Change",
   book: "Confirm demo booking",
   submitting: "Saving your booking …",
-  lockedNote: "Please wait: the request is being sent. Selection and navigation are locked until then.",
+  lockedNote: "Request in progress. Please wait before making changes.",
   uncertainTitle: "We could not confirm whether your booking was saved.",
   uncertainText: "Send it again: exactly the same request is repeated, so no double booking can happen.",
   resend: "Send again",
@@ -121,7 +128,9 @@ const en: BookingCopy = {
   },
   guardTitle: "Booking still in progress",
   guardText:
-    "Your booking is being saved or its result is still unclear. If you leave now, it may still exist – but the booking ID and cancellation code will be lost and you cannot cancel it yourself.",
+    "The booking status is unclear. If you leave, it may still exist – but the booking ID and cancellation code will be lost. You need both to cancel yourself.",
+  receiptLeaveTitle: "Leave this receipt?",
+  receiptLeaveText: "The booking ID and cancellation code cannot be shown again. Save both before leaving.",
   stay: "Stay here",
   leave: "Leave anyway",
   mapLink: "Show this room on the map",
@@ -135,8 +144,10 @@ const en: BookingCopy = {
     id: "Booking ID",
     code: "Cancellation code",
     noRecovery:
-      "Important: write down or photograph the ID and code now. They are not stored anywhere and not sent to you. You need both to cancel yourself.",
+      "Write down or photograph the ID and code now. You need both to cancel yourself.",
+    saved: "I have saved the booking ID and cancellation code.",
     countdown: (s: number) => `This receipt will be hidden in ${s} seconds.`,
+    timeWarning: "Only 15 seconds left. Tap More time.",
     more: "More time",
     finish: "Done",
   },
@@ -154,6 +165,9 @@ const en: BookingCopy = {
     generic: "The cancellation could not be sent. Please try again.",
     back: "Back to room booking",
     demo: "DEMO – not an official university booking system.",
+    showCode: "Show code",
+    hideCode: "Hide code",
+    credentialHint: "Booking ID: 36 characters. Code: 43 characters. Paste both exactly as shown on the receipt; keep the code's upper- and lower-case letters.",
   },
 };
 

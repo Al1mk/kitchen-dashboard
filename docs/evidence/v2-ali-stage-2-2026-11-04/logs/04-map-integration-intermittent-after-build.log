@@ -1,0 +1,41 @@
+
+Running 7 tests using 1 worker
+
+  ✓  1 [chromium] › tests/e2e/map-integration.spec.ts:22:1 › deep link selects the room on its floor, in the shared shell, with schedule and booking links (244ms)
+  ✘  2 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (246ms)
+  ✓  3 [chromium] › tests/e2e/map-integration.spec.ts:56:1 › search by code selects the room; changing the floor clears the room and keeps the language (297ms)
+  ✓  4 [chromium] › tests/e2e/map-integration.spec.ts:68:1 › renaming keeps the marker (id binding); moving to another floor hides the old position (264ms)
+  ✓  5 [chromium] › tests/e2e/map-integration.spec.ts:85:1 › archived and unknown rooms get no marker and no substitute (171ms)
+  ✓  6 [chromium] › tests/e2e/map-integration.spec.ts:97:1 › K1-114 is selectable as information without a dot (137ms)
+  ✓  7 [chromium] › tests/e2e/map-integration.spec.ts:105:1 › a missing floor image shows a localized fallback and keeps the room list (104ms)
+
+
+  1) [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming 
+
+    Error: expect(received).toBeLessThan(expected)
+
+    Expected: < 0.01
+    Received:   0.08341983523523525
+
+      49 |     const cx = (p.x + p.width / 2 - box.x) / box.width;
+      50 |     const cy = (p.y + p.height / 2 - box.y) / box.height;
+    > 51 |     expect(Math.abs(cx - 0.1294346)).toBeLessThan(0.01);
+         |                                      ^
+      52 |     expect(Math.abs(cy - 0.2522936)).toBeLessThan(0.01);
+      53 |   }
+      54 | });
+        at <scratch>/after/tests/e2e/map-integration.spec.ts:51:38
+
+    Error Context: test-results/map-integration-markers-si-64ca7-position-also-after-zooming-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/map-integration-markers-si-64ca7-position-also-after-zooming-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/map-integration-markers-si-64ca7-position-also-after-zooming-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming 
+  6 passed (2.7s)

@@ -1,0 +1,51 @@
+{
+ "ctx": "phone-390x844",
+ "name": "rooms-search-hci",
+ "lang": "en",
+ "label": "before",
+ "url": "/rooms?suche=HCI&lang=en",
+ "summary": {
+  "targets": 17,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 4,
+  "minTargetH": 48,
+  "minTargetW": 80.5,
+  "textMinFs": 14,
+  "textLt14": 0,
+  "textLt16": 2,
+  "textTotal": 39,
+  "lowContrastCount": 0,
+  "screens": 2.32,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 1
+ },
+ "textMinFs": 14,
+ "clear": {
+  "scrollY": 1110,
+  "docHeight": 1954,
+  "dockTop": null,
+  "lastContentBottom": 754.7,
+  "footerBottom": 843.7,
+  "lowestBottom": 843.7,
+  "clearOfDock": true,
+  "clearance": null
+ },
+ "stage2": {
+  "vh": 844,
+  "docHeight": 1954,
+  "screens": 2.3,
+  "hOverflow": false,
+  "search": {
+   "first": "rooms",
+   "classMatches": 1,
+   "noRoomMessage": "No room matches “HCI”. Check the room number or spelling.",
+   "noRoomAboveClasses": true,
+   "scopeSentence": false,
+   "classesHeadingTop": 1138.7
+  },
+  "dockTop": null
+ },
+ "dock": null
+}

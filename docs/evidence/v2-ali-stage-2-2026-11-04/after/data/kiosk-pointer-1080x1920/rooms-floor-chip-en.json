@@ -1,0 +1,12 @@
+{
+ "ctx": "kiosk-pointer-1080x1920",
+ "lang": "en",
+ "label": "after",
+ "landed": {
+  "focusedId": "stock-1OG",
+  "headingTop": 111,
+  "barBottom": 99,
+  "barSticky": true,
+  "urlHasHash": false
+ }
+}

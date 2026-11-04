@@ -1,0 +1,64 @@
+{
+ "ctx": "kiosk-touch-1080x1920",
+ "name": "home",
+ "lang": "en",
+ "label": "after",
+ "url": "/?lang=en",
+ "summary": {
+  "targets": 15,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 0,
+  "minTargetH": 77,
+  "minTargetW": 132.7,
+  "textMinFs": 19.3,
+  "textLt14": 0,
+  "textLt16": 0,
+  "textTotal": 25,
+  "lowContrastCount": 0,
+  "screens": 1,
+  "hOverflow": false,
+  "homeLinks": 3,
+  "h1": 1
+ },
+ "textMinFs": 19.3,
+ "clear": {
+  "scrollY": 0,
+  "docHeight": 1920,
+  "dockTop": 1609,
+  "lastContentBottom": 1514.5,
+  "footerBottom": 1609,
+  "lowestBottom": 1609,
+  "clearOfDock": true,
+  "clearance": 0
+ },
+ "stage2": {
+  "vh": 1920,
+  "docHeight": 1920,
+  "screens": 1,
+  "hOverflow": false,
+  "home": {
+   "kind": "stage2",
+   "cards": 6,
+   "columns": 2,
+   "minW": 492.3,
+   "minH": 379.9,
+   "maxH": 379.9,
+   "pictograms": 6,
+   "lastBottomViewportAtEnd": null
+  },
+  "dockTop": 1609
+ },
+ "dock": {
+  "position": "fixed",
+  "x": 0,
+  "y": 1609,
+  "w": 1080,
+  "h": 311,
+  "top": 1609,
+  "bottom": 1920,
+  "left": 0,
+  "right": 1080,
+  "shareOfViewport": 0.162
+ }
+}

@@ -1,0 +1,284 @@
+{
+ "ctx": "sens-1080x1700",
+ "name": "rooms",
+ "lang": "en",
+ "url": "/rooms?lang=en",
+ "label": "before",
+ "htmlLang": "de",
+ "title": "Rooms – Campus Board",
+ "summary": {
+  "targets": 141,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 2,
+  "minTargetH": 48,
+  "minTargetW": 80.5,
+  "textMinFs": 14,
+  "textLt14": 0,
+  "textLt16": 58,
+  "textTotal": 377,
+  "lowContrastCount": 0,
+  "screens": 9.71,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 1
+ },
+ "headings": [
+  {
+   "l": "H1",
+   "t": "Rooms",
+   "fs": 36,
+   "y": 273
+  },
+  {
+   "l": "H2",
+   "t": "Ground floor",
+   "fs": 24,
+   "y": 647
+  },
+  {
+   "l": "H3",
+   "t": "DEMO-E01 Kitchen / common room (Demo)",
+   "fs": 24,
+   "y": 711
+  },
+  {
+   "l": "H3",
+   "t": "DEMO-E02 Lecture hall A (Demo)",
+   "fs": 24,
+   "y": 1003
+  }
+ ],
+ "textSizeHist": {
+  "14": 58,
+  "16": 2,
+  "18": 204,
+  "20": 54,
+  "24": 58,
+  "36": 1
+ },
+ "smallTargets": [],
+ "geo": {
+  "dock": null,
+  "layout": {
+   "rootFontPx": 16,
+   "h1Px": 36,
+   "firstParagraphPx": 16,
+   "mainWidth": 768,
+   "contentWidth": 728
+  },
+  "vw": 1080,
+  "vh": 1700,
+  "frameCentre": 540,
+  "navCount": 1,
+  "linkCount": 7,
+  "links": [
+   {
+    "name": "Home",
+    "href": "/?lang=en",
+    "current": null,
+    "x": 176,
+    "y": 110.7,
+    "w": 176,
+    "h": 56,
+    "top": 110.7,
+    "bottom": 166.7,
+    "left": 176,
+    "right": 352
+   },
+   {
+    "name": "New to campus",
+    "href": "/newcomers?lang=en",
+    "current": null,
+    "x": 360,
+    "y": 110.7,
+    "w": 176,
+    "h": 56,
+    "top": 110.7,
+    "bottom": 166.7,
+    "left": 360,
+    "right": 536
+   },
+   {
+    "name": "Map",
+    "href": "/map?lang=en",
+    "current": null,
+    "x": 544,
+    "y": 110.7,
+    "w": 176,
+    "h": 56,
+    "top": 110.7,
+    "bottom": 166.7,
+    "left": 544,
+    "right": 720
+   },
+   {
+    "name": "Rooms",
+    "href": "/rooms?lang=en",
+    "current": "page",
+    "x": 728,
+    "y": 110.7,
+    "w": 176,
+    "h": 56,
+    "top": 110.7,
+    "bottom": 166.7,
+    "left": 728,
+    "right": 904
+   },
+   {
+    "name": "Schedule",
+    "href": "/schedule?lang=en",
+    "current": null,
+    "x": 176,
+    "y": 174.7,
+    "w": 176,
+    "h": 56,
+    "top": 174.7,
+    "bottom": 230.7,
+    "left": 176,
+    "right": 352
+   },
+   {
+    "name": "Booking",
+    "href": "/booking?lang=en",
+    "current": null,
+    "x": 360,
+    "y": 174.7,
+    "w": 176,
+    "h": 56,
+    "top": 174.7,
+    "bottom": 230.7,
+    "left": 360,
+    "right": 536
+   },
+   {
+    "name": "Announcements",
+    "href": "/display?lang=en",
+    "current": null,
+    "x": 544,
+    "y": 174.7,
+    "w": 176,
+    "h": 56,
+    "top": 174.7,
+    "bottom": 230.7,
+    "left": 544,
+    "right": 720
+   }
+  ],
+  "rows": [
+   {
+    "count": 4,
+    "top": 110.7,
+    "left": 176,
+    "right": 904,
+    "centre": 540,
+    "minH": 56,
+    "minW": 176,
+    "minGap": 8,
+    "names": [
+     "Home",
+     "New to campus",
+     "Map",
+     "Rooms"
+    ]
+   },
+   {
+    "count": 3,
+    "top": 174.7,
+    "left": 176,
+    "right": 720,
+    "centre": 448,
+    "minH": 56,
+    "minW": 176,
+    "minGap": 8,
+    "names": [
+     "Schedule",
+     "Booking",
+     "Announcements"
+    ]
+   }
+  ],
+  "rowVerticalGap": 8,
+  "navBox": {
+   "x": 176,
+   "y": 110.7,
+   "w": 728,
+   "h": 120,
+   "top": 110.7,
+   "bottom": 230.7,
+   "left": 176,
+   "right": 904
+  },
+  "navCentreYRatio": 0.1,
+  "lang": {
+   "found": true,
+   "box": {
+    "x": 722.7,
+    "y": 30.3,
+    "w": 181.3,
+    "h": 58,
+    "top": 30.3,
+    "bottom": 88.3,
+    "left": 722.7,
+    "right": 904
+   },
+   "gapBetween": 4,
+   "links": [
+    {
+     "name": "Deutsch",
+     "current": null,
+     "href": "/rooms",
+     "x": 727.7,
+     "y": 35.3,
+     "w": 86.8,
+     "h": 48,
+     "top": 35.3,
+     "bottom": 83.3,
+     "left": 727.7,
+     "right": 814.5
+    },
+    {
+     "name": "English",
+     "current": "true",
+     "href": "/rooms?lang=en",
+     "x": 818.5,
+     "y": 35.3,
+     "w": 80.5,
+     "h": 48,
+     "top": 35.3,
+     "bottom": 83.3,
+     "left": 818.5,
+     "right": 899
+    }
+   ],
+   "centreYRatio": 0
+  },
+  "pinned": null,
+  "cssVars": {
+   "dockH": null,
+   "scrollPaddingBottom": "auto",
+   "fontSize": "16px"
+  },
+  "media": {
+   "portraitMinW520": true,
+   "coarse": true,
+   "hoverNone": true
+  }
+ },
+ "clear": {
+  "scrollY": 14811,
+  "docHeight": 16511,
+  "dockTop": null,
+  "lastContentBottom": 1630.7,
+  "footerBottom": 1699.7,
+  "lowestBottom": 1699.7,
+  "clearOfDock": true,
+  "clearance": null
+ },
+ "focus": {
+  "stops": 70,
+  "coveredByDock": [],
+  "outsideViewport": [],
+  "withoutRing": []
+ }
+}

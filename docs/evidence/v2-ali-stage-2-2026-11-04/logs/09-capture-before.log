@@ -1,0 +1,7 @@
+capture before kiosk-touch-1080x1920
+capture before kiosk-pointer-1080x1920
+capture before sens-1080x1700
+capture before sens-540x960
+capture before laptop-1440x900
+capture before phone-390x844
+done before 60 page records -> <project>/campus-board/docs/evidence/v2-ali-stage-2-2026-11-04/before

@@ -1,0 +1,13 @@
+
+> campus-board@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.5 /private<isolated-workspace>/candidate
+
+
+ Test Files  23 passed (23)
+      Tests  166 passed (166)
+   Start at  20:24:44
+   Duration  973ms (tests 56%, transform 23%, import 21%, worker 1%)
+

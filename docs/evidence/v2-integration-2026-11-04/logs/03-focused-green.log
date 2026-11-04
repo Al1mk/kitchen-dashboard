@@ -1,0 +1,64 @@
+
+> campus-board@0.1.0 test:e2e
+> playwright test tests/e2e/parsa-review-fixes.spec.ts tests/e2e/parsa-v2-booking.spec.ts tests/e2e/booking-pending.spec.ts
+
+[WebServer] (node:30104) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30105) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30133) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30135) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30148) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30145) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30146) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30144) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30139) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30142) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30147) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30141) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30140) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30149) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30143) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30151) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30179) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 19 tests using 1 worker
+
+(node:30180) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/e2e/booking-pending.spec.ts:51:1 › A-01: a delayed accepted response still produces the receipt for the submitted request (504ms)
+  ✓   2 [chromium] › tests/e2e/booking-pending.spec.ts:80:1 › navigation while pending asks first; staying keeps the request and its receipt (405ms)
+  ✓   3 [chromium] › tests/e2e/booking-pending.spec.ts:103:1 › deliberate abandonment warns that the booking may exist, then leaves (338ms)
+  ✓   4 [chromium] › tests/e2e/booking-pending.spec.ts:120:1 › an uncertain outcome is retried with the identical request and never creates a second booking (330ms)
+  ✓   5 [chromium] › tests/e2e/booking-pending.spec.ts:156:1 › V1-R001: accepted, response lost, cancelled by Katja, identical retry → shown as cancelled, nothing re-created (396ms)
+  ✓   6 [chromium] › tests/e2e/booking-pending.spec.ts:211:1 › V1-R001: an unknown booking state in a successful answer stays recoverable with the same request (327ms)
+  ✓   7 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:7:1 › PARSA-R002: the 15-second warning keeps More time above the kiosk dock (278ms)
+  ✓   8 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:29:2 › PARSA-R003: invalid schedule room has a localized recovery path (de) (94ms)
+  ✓   9 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:36:2 › PARSA-R004: cancellation title follows language (de) (88ms)
+  ✓  10 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:40:2 › PARSA-R006: literal credential entry has hints and no text corrections (de) (96ms)
+  ✓  11 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:29:2 › PARSA-R003: invalid schedule room has a localized recovery path (en) (91ms)
+  ✓  12 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:36:2 › PARSA-R004: cancellation title follows language (en) (84ms)
+  ✓  13 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:40:2 › PARSA-R006: literal credential entry has hints and no text corrections (en) (95ms)
+  ✓  14 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:55:1 › PARSA-R003: a removed room clears its stale schedule; a network failure keeps last good data (207ms)
+  ✓  15 [chromium] › tests/e2e/parsa-v2-booking.spec.ts:42:1 › AP-02: receipt requires credential acknowledgement, warns on exit and preserves DE/EN switch (490ms)
+  ✓  16 [chromium] › tests/e2e/parsa-v2-booking.spec.ts:63:1 › AP-02: cancellation form offers a user-controlled show/hide code action (155ms)
+  ✓  17 [chromium] › tests/e2e/parsa-v2-booking.spec.ts:73:1 › AP-03: room schedule opens booking with stable room id, day and language (166ms)
+  ✓  18 [chromium] › tests/e2e/parsa-v2-booking.spec.ts:86:1 › AP-02: last-15-seconds warning and More time protect the temporary receipt (659ms)
+  ✓  19 [chromium] › tests/e2e/parsa-v2-booking.spec.ts:101:1 › AP-03: past dates never offer direct booking from the room schedule (89ms)
+
+  19 passed (9.5s)

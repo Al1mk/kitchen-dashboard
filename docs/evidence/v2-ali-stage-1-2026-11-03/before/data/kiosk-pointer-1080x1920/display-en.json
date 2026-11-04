@@ -1,0 +1,280 @@
+{
+ "ctx": "kiosk-pointer-1080x1920",
+ "name": "display",
+ "lang": "en",
+ "url": "/display?lang=en",
+ "label": "before",
+ "htmlLang": "de",
+ "title": "Announcements – Campus Board",
+ "summary": {
+  "targets": 9,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 2,
+  "minTargetH": 64.8,
+  "minTargetW": 131.3,
+  "textMinFs": 22.7,
+  "textLt14": 0,
+  "textLt16": 0,
+  "textTotal": 23,
+  "lowContrastCount": 0,
+  "screens": 1,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 0
+ },
+ "headings": [
+  {
+   "l": "H2",
+   "t": "Announcements",
+   "fs": 58.32,
+   "y": 555
+  },
+  {
+   "l": "H3",
+   "t": "Welcome to Lucas-Cranach-Campus (Demo)",
+   "fs": 49.68,
+   "y": 775
+  },
+  {
+   "l": "H3",
+   "t": "Games night in the kitchen (Demo)",
+   "fs": 49.68,
+   "y": 1115
+  }
+ ],
+ "textSizeHist": {
+  "79.9": 1,
+  "28.1": 4,
+  "30.2": 7,
+  "58.3": 1,
+  "24.8": 4,
+  "49.7": 2,
+  "33.5": 2,
+  "22.7": 2
+ },
+ "smallTargets": [],
+ "geo": {
+  "dock": null,
+  "layout": {
+   "rootFontPx": 16,
+   "h1Px": null,
+   "firstParagraphPx": 33.48,
+   "mainWidth": 1080,
+   "contentWidth": 982.8
+  },
+  "vw": 1080,
+  "vh": 1920,
+  "frameCentre": 540,
+  "navCount": 1,
+  "linkCount": 7,
+  "links": [
+   {
+    "name": "Home",
+    "href": "/?lang=en",
+    "current": null,
+    "x": 48.6,
+    "y": 311.9,
+    "w": 234.4,
+    "h": 75.6,
+    "top": 311.9,
+    "bottom": 387.5,
+    "left": 48.6,
+    "right": 283
+   },
+   {
+    "name": "New to campus",
+    "href": "/newcomers?lang=en",
+    "current": null,
+    "x": 298.1,
+    "y": 311.9,
+    "w": 234.4,
+    "h": 75.6,
+    "top": 311.9,
+    "bottom": 387.5,
+    "left": 298.1,
+    "right": 532.4
+   },
+   {
+    "name": "Map",
+    "href": "/map?lang=en",
+    "current": null,
+    "x": 547.5,
+    "y": 311.9,
+    "w": 234.4,
+    "h": 75.6,
+    "top": 311.9,
+    "bottom": 387.5,
+    "left": 547.5,
+    "right": 781.9
+   },
+   {
+    "name": "Rooms",
+    "href": "/rooms?lang=en",
+    "current": null,
+    "x": 797,
+    "y": 311.9,
+    "w": 234.4,
+    "h": 75.6,
+    "top": 311.9,
+    "bottom": 387.5,
+    "left": 797,
+    "right": 1031.4
+   },
+   {
+    "name": "Schedule",
+    "href": "/schedule?lang=en",
+    "current": null,
+    "x": 48.6,
+    "y": 402.6,
+    "w": 234.4,
+    "h": 75.6,
+    "top": 402.6,
+    "bottom": 478.2,
+    "left": 48.6,
+    "right": 283
+   },
+   {
+    "name": "Booking",
+    "href": "/booking?lang=en",
+    "current": null,
+    "x": 298.1,
+    "y": 402.6,
+    "w": 234.4,
+    "h": 75.6,
+    "top": 402.6,
+    "bottom": 478.2,
+    "left": 298.1,
+    "right": 532.4
+   },
+   {
+    "name": "Announcements",
+    "href": "/display?lang=en",
+    "current": "page",
+    "x": 547.5,
+    "y": 402.6,
+    "w": 234.4,
+    "h": 75.6,
+    "top": 402.6,
+    "bottom": 478.2,
+    "left": 547.5,
+    "right": 781.9
+   }
+  ],
+  "rows": [
+   {
+    "count": 4,
+    "top": 311.9,
+    "left": 48.6,
+    "right": 1031.4,
+    "centre": 540,
+    "minH": 75.6,
+    "minW": 234.4,
+    "minGap": 15.1,
+    "names": [
+     "Home",
+     "New to campus",
+     "Map",
+     "Rooms"
+    ]
+   },
+   {
+    "count": 3,
+    "top": 402.6,
+    "left": 48.6,
+    "right": 781.9,
+    "centre": 415.3,
+    "minH": 75.6,
+    "minW": 234.4,
+    "minGap": 15.1,
+    "names": [
+     "Schedule",
+     "Booking",
+     "Announcements"
+    ]
+   }
+  ],
+  "rowVerticalGap": 15.1,
+  "navBox": {
+   "x": 48.6,
+   "y": 311.9,
+   "w": 982.8,
+   "h": 166.3,
+   "top": 311.9,
+   "bottom": 478.2,
+   "left": 48.6,
+   "right": 1031.4
+  },
+  "navCentreYRatio": 0.2,
+  "lang": {
+   "found": true,
+   "box": {
+    "x": 740.7,
+    "y": 208.4,
+    "w": 290.7,
+    "h": 77.6,
+    "top": 208.4,
+    "bottom": 286,
+    "left": 740.7,
+    "right": 1031.4
+   },
+   "gapBetween": 5.4,
+   "links": [
+    {
+     "name": "Deutsch",
+     "current": null,
+     "href": "/display",
+     "x": 747.1,
+     "y": 214.8,
+     "w": 141.2,
+     "h": 64.8,
+     "top": 214.8,
+     "bottom": 279.6,
+     "left": 747.1,
+     "right": 888.3
+    },
+    {
+     "name": "English",
+     "current": "true",
+     "href": "/display?lang=en",
+     "x": 893.7,
+     "y": 214.8,
+     "w": 131.3,
+     "h": 64.8,
+     "top": 214.8,
+     "bottom": 279.6,
+     "left": 893.7,
+     "right": 1025
+    }
+   ],
+   "centreYRatio": 0.1
+  },
+  "pinned": null,
+  "cssVars": {
+   "dockH": null,
+   "scrollPaddingBottom": "auto",
+   "fontSize": "16px"
+  },
+  "media": {
+   "portraitMinW520": true,
+   "coarse": false,
+   "hoverNone": false
+  }
+ },
+ "clear": {
+  "scrollY": 0,
+  "docHeight": 1920,
+  "dockTop": null,
+  "lastContentBottom": 1724.6,
+  "footerBottom": 1920,
+  "lowestBottom": 1920,
+  "clearOfDock": true,
+  "clearance": null
+ },
+ "focus": {
+  "stops": 9,
+  "coveredByDock": [],
+  "outsideViewport": [],
+  "withoutRing": []
+ }
+}

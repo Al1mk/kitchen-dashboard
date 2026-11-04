@@ -1,0 +1,785 @@
+{
+ "context": "kiosk-nominal-1080x1920",
+ "route": "/booking",
+ "lang": "en",
+ "status": 200,
+ "finalUrl": "/booking?lang=en",
+ "loadMs": 1477,
+ "stillLoadingAfter8s": false,
+ "summary": {
+  "targets": 14,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 2,
+  "minTargetH": 48,
+  "minTargetW": 80.5,
+  "textMinFs": 14,
+  "textLt14": 0,
+  "textLt16": 1,
+  "textTotal": 23,
+  "lowContrastCount": 0,
+  "screens": 1,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 1
+ },
+ "measure": {
+  "viewport": {
+   "vw": 1080,
+   "vh": 1920,
+   "dpr": 1
+  },
+  "htmlLang": "de",
+  "title": "Book a room – Campus Board",
+  "scroll": {
+   "scrollWidth": 1080,
+   "scrollHeight": 1920,
+   "screens": 1,
+   "hOverflow": false
+  },
+  "landmarks": {
+   "header": true,
+   "nav": 1,
+   "main": true,
+   "footer": true,
+   "skipLink": false
+  },
+  "headings": [
+   {
+    "l": "H1",
+    "t": "Book a room",
+    "fs": 36,
+    "y": 273
+   },
+   {
+    "l": "H2",
+    "t": "4. Select a free start time",
+    "fs": 18,
+    "y": 1089
+   }
+  ],
+  "targets": [
+   {
+    "i": 0,
+    "tag": "a",
+    "name": "Deutsch",
+    "href": "/booking?datum=2026-11-03",
+    "x": 728,
+    "y": 35,
+    "w": 86.8,
+    "h": 48,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 4.2
+   },
+   {
+    "i": 1,
+    "tag": "a",
+    "name": "English",
+    "href": "/booking?datum=2026-11-03&lang=en",
+    "x": 819,
+    "y": 35,
+    "w": 80.5,
+    "h": 48,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 4.2
+   },
+   {
+    "i": 2,
+    "tag": "a",
+    "name": "Home",
+    "href": "/?lang=en",
+    "x": 176,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 3,
+    "tag": "a",
+    "name": "New to campus",
+    "href": "/newcomers?lang=en",
+    "x": 360,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 4,
+    "tag": "a",
+    "name": "Map",
+    "href": "/map?lang=en",
+    "x": 544,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 5,
+    "tag": "a",
+    "name": "Rooms",
+    "href": "/rooms?lang=en",
+    "x": 728,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 6,
+    "tag": "a",
+    "name": "Schedule",
+    "href": "/schedule?lang=en",
+    "x": 176,
+    "y": 175,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 7,
+    "tag": "a",
+    "name": "Booking",
+    "href": "/booking?lang=en",
+    "x": 360,
+    "y": 175,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 8,
+    "tag": "a",
+    "name": "Announcements",
+    "href": "/display?lang=en",
+    "x": 544,
+    "y": 175,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   },
+   {
+    "i": 9,
+    "tag": "select",
+    "name": "Please choose a room DEMO-101 – Seminar room 1 (Demo) K1-103 – Seminar",
+    "x": 196,
+    "y": 669,
+    "w": 688,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 96
+   },
+   {
+    "i": 10,
+    "tag": "input",
+    "type": "date",
+    "name": "2026-11-03",
+    "x": 196,
+    "y": 821,
+    "w": 688,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 96
+   },
+   {
+    "i": 11,
+    "tag": "select",
+    "name": "15 minutes 30 minutes 45 minutes 60 minutes 90 minutes 120 minutes",
+    "x": 196,
+    "y": 973,
+    "w": 688,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 96
+   },
+   {
+    "i": 12,
+    "tag": "button",
+    "type": "button",
+    "name": "Review booking",
+    "x": 176,
+    "y": 1197,
+    "w": 728,
+    "h": 64,
+    "inFirstViewport": true,
+    "disabled": true,
+    "nearestGap": 20
+   },
+   {
+    "i": 13,
+    "tag": "a",
+    "name": "Cancel a booking",
+    "href": "/booking/cancel?lang=en",
+    "x": 176,
+    "y": 1281,
+    "w": 728,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 20
+   }
+  ],
+  "nameless": [],
+  "unlabeled": [],
+  "imgs": [
+   {
+    "src": "/brand/hs-coburg-logo-screenshot.png",
+    "alt": "Hochschule Coburg",
+    "w": 176,
+    "h": 47
+   }
+  ],
+  "homeLinks": [
+   {
+    "i": 2,
+    "tag": "a",
+    "name": "Home",
+    "href": "/?lang=en",
+    "x": 176,
+    "y": 111,
+    "w": 176,
+    "h": 56,
+    "inFirstViewport": true,
+    "disabled": false,
+    "nearestGap": 8
+   }
+  ],
+  "pinned": [],
+  "overflowers": [],
+  "text": {
+   "count": 23,
+   "sizeHist": {
+    "14": 1,
+    "16": 1,
+    "18": 20,
+    "36": 1
+   },
+   "items": [
+    {
+     "text": "Lucas-Cranach-Campus Kronach",
+     "tag": "p",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 71,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Deutsch",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 35,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "English",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 35,
+     "fg": "255,255,255",
+     "bg": "35,37,43"
+    },
+    {
+     "text": "Home",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "New to campus",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Map",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Rooms",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 111,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Schedule",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 175,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Booking",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 4.82,
+     "large": false,
+     "hasBgImage": false,
+     "y": 175,
+     "fg": "255,255,255",
+     "bg": "205,64,38"
+    },
+    {
+     "text": "Announcements",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 175,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Book a room",
+     "tag": "h1",
+     "fs": 36,
+     "weight": "700",
+     "contrast": 13.96,
+     "large": true,
+     "hasBgImage": false,
+     "y": 273,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Course titles, lecturers and study groups are show",
+     "tag": "p",
+     "fs": 16,
+     "weight": "400",
+     "contrast": 5.83,
+     "large": false,
+     "hasBgImage": false,
+     "y": 333,
+     "fg": "91,95,105",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "DEMO – not a real university room reservation. No ",
+     "tag": "p",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 10.87,
+     "large": false,
+     "hasBgImage": false,
+     "y": 401,
+     "fg": "76,14,116",
+     "bg": "241,232,248"
+    },
+    {
+     "text": "Sample data:",
+     "tag": "span",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 10.87,
+     "large": false,
+     "hasBgImage": false,
+     "y": 525,
+     "fg": "76,14,116",
+     "bg": "241,232,248"
+    },
+    {
+     "text": "Entries marked “Example” are invented demo data, n",
+     "tag": "p",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 10.87,
+     "large": false,
+     "hasBgImage": false,
+     "y": 511,
+     "fg": "76,14,116",
+     "bg": "241,232,248"
+    },
+    {
+     "text": "1. Choose a room",
+     "tag": "label",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 633,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "2. Date",
+     "tag": "label",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 785,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "3. Duration",
+     "tag": "label",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 937,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "4. Select a free start time",
+     "tag": "h2",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 15.32,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1089,
+     "fg": "35,37,43",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Choose a room first.",
+     "tag": "p",
+     "fs": 18,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1129,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    },
+    {
+     "text": "Review booking",
+     "tag": "button",
+     "fs": 18,
+     "weight": "700",
+     "contrast": 4.82,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1197,
+     "fg": "255,255,255",
+     "bg": "205,64,38"
+    },
+    {
+     "text": "Cancel a booking",
+     "tag": "a",
+     "fs": 18,
+     "weight": "600",
+     "contrast": 13.96,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1281,
+     "fg": "35,37,43",
+     "bg": "246,244,242"
+    },
+    {
+     "text": "Prototype from the Human-Computer Interaction cour",
+     "tag": "footer",
+     "fs": 14,
+     "weight": "400",
+     "contrast": 6.39,
+     "large": false,
+     "hasBgImage": false,
+     "y": 1875,
+     "fg": "91,95,105",
+     "bg": "255,255,255"
+    }
+   ]
+  }
+ },
+ "tabStops": [
+  {
+   "tag": "a",
+   "name": "Deutsch",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 35,
+   "h": 48
+  },
+  {
+   "tag": "a",
+   "name": "English",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 35,
+   "h": 48
+  },
+  {
+   "tag": "a",
+   "name": "Home",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "New to campus",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Map",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Rooms",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 111,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Schedule",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 175,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Booking",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 175,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Announcements",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 175,
+   "h": 56
+  },
+  {
+   "tag": "select",
+   "name": "Please choose a room DEMO-101 – Seminar room 1 (De",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 669,
+   "h": 56
+  },
+  {
+   "tag": "input",
+   "name": "2026-11-03",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 821,
+   "h": 56
+  },
+  {
+   "tag": "select",
+   "name": "15 minutes 30 minutes 45 minutes 60 minutes 90 min",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 973,
+   "h": 56
+  },
+  {
+   "tag": "a",
+   "name": "Cancel a booking",
+   "outline": "solid 3px",
+   "shadow": "none",
+   "ring": true,
+   "inViewport": true,
+   "y": 1281,
+   "h": 56
+  }
+ ],
+ "newEvents": {
+  "console": [],
+  "pageerror": [],
+  "requestfailed": [
+   {
+    "url": "/?lang=en&_rsc=OaJHm5citSthPR5D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=OaJHm5citSthPR5D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=OaJHm5citSthPR5D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=OaJHm5citSthPR5D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?lang=en&_rsc=OaJHm5citSthPR5D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=OaJHm5citSthPR5D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking/cancel?lang=en&_rsc=OaJHm5citSthPR5D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking?datum=2026-11-03&lang=en&_rsc=czbfvNiTdMcrpg7t",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?lang=en&_rsc=czbfvNiTdMcrpg7t",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?lang=en&_rsc=czbfvNiTdMcrpg7t",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?lang=en&_rsc=czbfvNiTdMcrpg7t",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?lang=en&_rsc=czbfvNiTdMcrpg7t",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?lang=en&_rsc=czbfvNiTdMcrpg7t",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?lang=en&_rsc=czbfvNiTdMcrpg7t",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking/cancel?lang=en&_rsc=czbfvNiTdMcrpg7t",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/?_rsc=OaJHm5citSthPR5D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/newcomers?_rsc=OaJHm5citSthPR5D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/map?_rsc=OaJHm5citSthPR5D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/rooms?_rsc=OaJHm5citSthPR5D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/schedule?_rsc=OaJHm5citSthPR5D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/display?_rsc=OaJHm5citSthPR5D",
+    "why": "net::ERR_ABORTED"
+   },
+   {
+    "url": "/booking/cancel?_rsc=OaJHm5citSthPR5D",
+    "why": "net::ERR_ABORTED"
+   }
+  ],
+  "badresponse": []
+ }
+}

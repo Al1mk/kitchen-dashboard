@@ -19,6 +19,8 @@ This is a student prototype for the course *Mensch-Maschine-Interaktion* (Wirtsc
 
 Aryan and Parsa delivered one **joint** package (booking + map changes); how they split that work is not known and is recorded as joint. Who supplied what, and which later changes are integration work, is listed in [`docs/contributions.md`](docs/contributions.md).
 
+**V2 work assignment — 3 November 2026, requested by Ali:** Ali owns shared public UI, Rooms and integration/final QA; Aryan+Parsa take the joint map/booking improvements and build the presentation (Aryan leads map/deck editing; Parsa leads booking and demo assets). Reza has lighter coding work on newcomer copy and is the documentation editor and main presenter. **Every member supplies their own evidence and individual booklet section.** [Detailed assigned tasks, order, file ownership and acceptance](docs/plans/v2-team-2026-11-03/01-team-tasks-fa.md); [authoritative progress](docs/plans/team-integration-2026-10-31/02-progress.md). This is planned work, not an implemented V2 or a rewritten account of the earlier joint delivery.
+
 ---
 
 ## What exists today
@@ -233,7 +235,7 @@ If you (or your AI agent) work on this repository:
 
 ## Kanban board (no deadlines)
 
-**How to use it:** move a card by changing its **Status** in the card list and its place in the board overview, in the same commit as the work. Card owners marked *(proposed)* are suggestions; confirm them in the team. Statuses: **Backlog**, **To do**, **In progress**, **Needs decision**, **In review**, **Done**.
+**Current V2 status:** use the [authoritative task board](docs/plans/team-integration-2026-10-31/02-progress.md) and [assigned V2 task descriptions](docs/plans/v2-team-2026-11-03/01-team-tasks-fa.md). The original V1 cards/overview below are retained as earlier context; their proposed-owner labels do not override the V2 assignment. Do not maintain a second competing V2 status table here. Original V1 status labels: **Backlog**, **To do**, **In progress**, **Needs decision**, **In review**, **Done**.
 
 ### Board overview
 
@@ -310,3 +312,9 @@ If you (or your AI agent) work on this repository:
 | G-2 | Usability test with someone outside the team (and Katja if possible) | To do | Three tasks: publish an announcement, find a room, book a slot. Write down observations, help needed and errors; no invented numbers. |
 | G-3 | V2 design based on the test findings | Backlog | Finding → proposed change → decision → before/after screenshot → retest. The official palette must be confirmed first. |
 | G-4 | Hosting / deployment option and integration of all modules (M5) | Backlog | Local SQLite is not durable on serverless hosting; hosting is an open decision |
+
+## Local V2 integration checkpoint — 4 November 2026
+
+Ali’s kiosk Stages1/2 and Parsa’s delivered booking updates are combined on `integrate/v2-ali-parsa-20261104`, preserving this stack/database/API. [Current technical evidence, review fixes and limits](docs/evidence/v2-integration-2026-11-04/README.md), [contributions](docs/contributions.md), [C12](docs/contracts.md#c12-combined-parsa-v2-integration-2026-11-04). This is **V2 in progress**, not a completed or human-validated release: shared Stage3 accessibility, Aryan’s map improvements, final copy/deck/booklet and real screen/user testing remain open.
+
+The [run guide](docs/run-guide.md) still applies. On a confirmed booking receipt, save the booking ID and code and tick the saved-credentials checkbox before Done; More time extends the temporary receipt. Leaving asks first; a language switch retains the receipt. Cancellation needs both original values. Do not put real student information or cancellation codes in committed screenshots. User controls all pushes.

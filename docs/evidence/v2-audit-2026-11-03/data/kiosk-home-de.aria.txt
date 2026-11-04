@@ -1,0 +1,55 @@
+- banner:
+  - img "Hochschule Coburg"
+  - paragraph: Lucas-Cranach-Campus Kronach
+  - group "Sprache":
+    - link "Deutsch":
+      - /url: /
+    - link "English":
+      - /url: /?lang=en
+  - navigation "Campus-Informationen":
+    - list:
+      - listitem:
+        - link "Start":
+          - /url: /
+      - listitem:
+        - link "Neu am Campus":
+          - /url: /newcomers
+      - listitem:
+        - link "Karte":
+          - /url: /map
+      - listitem:
+        - link "Räume":
+          - /url: /rooms
+      - listitem:
+        - link "Stundenplan":
+          - /url: /schedule
+      - listitem:
+        - link "Raumbuchung":
+          - /url: /booking
+      - listitem:
+        - link "Mitteilungen":
+          - /url: /display
+- main:
+  - heading "Campus-Informationen" [level=1]
+  - paragraph: Informationen für Studierende und Gäste am Lucas-Cranach-Campus.
+  - list:
+    - listitem:
+      - 'link "Neu am Campus Erste Orientierung: wo finde ich was?"':
+        - /url: /newcomers
+    - listitem:
+      - link "Karte Räume auf dem Stockwerksplan finden":
+        - /url: /map
+    - listitem:
+      - link "Räume Alle Räume nach Stockwerk":
+        - /url: /rooms
+    - listitem:
+      - link "Stundenplan Lehrveranstaltungen nach Tag und Raum":
+        - /url: /schedule
+    - listitem:
+      - link "Raumbuchung Freie Zeiten prüfen und einen Raum probeweise reservieren (Demo)":
+        - /url: /booking
+    - listitem:
+      - link "Mitteilungen Aktuelle Hinweise für den Campus":
+        - /url: /display
+- contentinfo: Prototyp im Kurs Mensch-Maschine-Interaktion – keine offizielle Anzeige der Hochschule Coburg.
+- alert

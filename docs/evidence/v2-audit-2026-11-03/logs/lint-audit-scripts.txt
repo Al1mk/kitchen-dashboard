@@ -1,0 +1,2 @@
+lint of audit scripts + whole project (node entry, after directive fix):
+whole project: files 177 errors 0 warnings 0

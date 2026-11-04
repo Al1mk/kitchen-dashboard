@@ -1,0 +1,190 @@
+######## touch target size spacing kiosk reach
+## UI Pro Max Search Results
+**Domain:** ux | **Query:** touch target size spacing kiosk reach
+**Source:** ux-guidelines.csv | **Found:** 3 results
+
+### Result 1
+- **Category:** Touch
+- **Issue:** Touch Target Size
+- **Platform:** Mobile
+- **Description:** Touch target guidance depends on platform and web context
+- **Do:** Use 44pt on iOS and 48dp on Android; for web use the separate WCAG Target Size rule
+- **Don't:** Treat one unit or minimum as universal across platforms
+- **Code Example Good:** iOS 44pt; Android 48dp; Web 24 CSS px plus WCAG exceptions
+- **Code Example Bad:** w-6 h-6 buttons
+- **Severity:** High
+
+### Result 2
+- **Category:** Touch
+- **Issue:** Touch Spacing
+- **Platform:** Mobile
+- **Description:** Adjacent touch targets need adequate spacing
+- **Do:** Minimum 8px gap between touch targets
+- **Don't:** Tightly packed clickable elements
+- **Code Example Good:** gap-2 between buttons
+- **Code Example Bad:** gap-0 or gap-1
+- **Severity:** Medium
+
+### Result 3
+- **Category:** Accessibility
+- **Issue:** Target Size (Minimum)
+- **Platform:** Web
+- **Description:** WCAG 2.2 AA requires 24 CSS px pointer targets or an applicable exception
+- **Do:** Use at least 24 by 24 CSS px or verify spacing equivalent inline user-agent or essential exceptions
+- **Don't:** Assume native 44pt or 48dp guidance defines web conformance
+- **Code Example Good:** min-width: 24px; min-height: 24px
+- **Code Example Bad:** tiny adjacent icon buttons
+- **Severity:** High
+
+######## bottom navigation thumb zone fixed bar content obscured
+## UI Pro Max Search Results
+**Domain:** ux | **Query:** bottom navigation thumb zone fixed bar content obscured
+**Source:** ux-guidelines.csv | **Found:** 3 results
+
+### Result 1
+- **Category:** Navigation
+- **Issue:** Sticky Navigation
+- **Platform:** Web
+- **Description:** Fixed nav should not obscure content
+- **Do:** Add padding-top to body equal to nav height
+- **Don't:** Let nav overlap first section content
+- **Code Example Good:** pt-20 (if nav is h-20)
+- **Code Example Bad:** No padding compensation
+- **Severity:** Medium
+
+### Result 2
+- **Category:** Layout
+- **Issue:** Fixed Positioning
+- **Platform:** Web
+- **Description:** Fixed elements can overlap or be inaccessible
+- **Do:** Account for safe areas and other fixed elements
+- **Don't:** Stack multiple fixed elements carelessly
+- **Code Example Good:** Fixed nav + fixed bottom with gap
+- **Code Example Bad:** Multiple overlapping fixed elements
+- **Severity:** Medium
+
+### Result 3
+- **Category:** Accessibility
+- **Issue:** Focus Not Obscured (Enhanced)
+- **Platform:** Web
+- **Description:** WCAG 2.2 AAA requires keyboard focus to remain fully visible
+- **Do:** Keep the entire focused component unobscured by author-created content
+- **Don't:** Present this enhanced AAA criterion as an AA requirement or allow persistent UI to hide any part of focus
+- **Code Example Good:** close persistent overlay before focus moves behind it
+- **Code Example Bad:** sticky footer covers half the focused button
+- **Severity:** Medium
+
+######## session timeout receipt confirm leave unsaved
+## UI Pro Max Search Results
+**Domain:** ux | **Query:** session timeout receipt confirm leave unsaved
+**Source:** ux-guidelines.csv | **Found:** 3 results
+
+### Result 1
+- **Category:** Feedback
+- **Issue:** Confirmation Messages
+- **Platform:** All
+- **Description:** Confirm successful actions
+- **Do:** Brief success message
+- **Don't:** Silent success
+- **Code Example Good:** Saved successfully toast
+- **Code Example Bad:** No confirmation
+- **Severity:** Medium
+
+### Result 2
+- **Category:** Interaction
+- **Issue:** Success Feedback
+- **Platform:** All
+- **Description:** Confirm successful actions to users
+- **Do:** Show success message or visual change
+- **Don't:** No confirmation of completed action
+- **Code Example Good:** Toast notification or checkmark
+- **Code Example Bad:** Action completes silently
+- **Severity:** Medium
+
+### Result 3
+- **Category:** Forms
+- **Issue:** Submit Feedback
+- **Platform:** All
+- **Description:** Confirm form submission status
+- **Do:** Show loading then success/error state
+- **Don't:** No feedback after submit
+- **Code Example Good:** Loading -> Success message
+- **Code Example Bad:** Button click with no response
+- **Severity:** High
+
+######## long list scroll jump to section
+## UI Pro Max Search Results
+**Domain:** ux | **Query:** long list scroll jump to section
+**Source:** ux-guidelines.csv | **Found:** 3 results
+
+### Result 1
+- **Category:** Navigation
+- **Issue:** Smooth Scroll
+- **Platform:** Web
+- **Description:** Anchor links should scroll smoothly to target section
+- **Do:** Use scroll-behavior: smooth on html element
+- **Don't:** Jump directly without transition
+- **Code Example Good:** html { scroll-behavior: smooth; }
+- **Code Example Bad:** <a href='#section'> without CSS
+- **Severity:** High
+
+### Result 2
+- **Category:** Responsive
+- **Issue:** Horizontal Scroll
+- **Platform:** Web
+- **Description:** Avoid horizontal scrolling
+- **Do:** Ensure content fits viewport width
+- **Don't:** Content wider than viewport
+- **Code Example Good:** max-w-full overflow-x-hidden
+- **Code Example Bad:** Horizontal scrollbar on mobile
+- **Severity:** High
+
+### Result 3
+- **Category:** Content
+- **Issue:** Truncation
+- **Platform:** All
+- **Description:** Handle long content gracefully
+- **Do:** Truncate with ellipsis and expand option
+- **Don't:** Overflow or broken layout
+- **Code Example Good:** line-clamp-2 with expand
+- **Code Example Bad:** Overflow or cut off
+- **Severity:** Medium
+
+######## small hit target map marker
+## UI Pro Max Search Results
+**Domain:** ux | **Query:** small hit target map marker
+**Source:** ux-guidelines.csv | **Found:** 3 results
+
+### Result 1
+- **Category:** Touch
+- **Issue:** Touch Target Size
+- **Platform:** Mobile
+- **Description:** Touch target guidance depends on platform and web context
+- **Do:** Use 44pt on iOS and 48dp on Android; for web use the separate WCAG Target Size rule
+- **Don't:** Treat one unit or minimum as universal across platforms
+- **Code Example Good:** iOS 44pt; Android 48dp; Web 24 CSS px plus WCAG exceptions
+- **Code Example Bad:** w-6 h-6 buttons
+- **Severity:** High
+
+### Result 2
+- **Category:** Navigation
+- **Issue:** Smooth Scroll
+- **Platform:** Web
+- **Description:** Anchor links should scroll smoothly to target section
+- **Do:** Use scroll-behavior: smooth on html element
+- **Don't:** Jump directly without transition
+- **Code Example Good:** html { scroll-behavior: smooth; }
+- **Code Example Bad:** <a href='#section'> without CSS
+- **Severity:** High
+
+### Result 3
+- **Category:** Accessibility
+- **Issue:** Target Size (Minimum)
+- **Platform:** Web
+- **Description:** WCAG 2.2 AA requires 24 CSS px pointer targets or an applicable exception
+- **Do:** Use at least 24 by 24 CSS px or verify spacing equivalent inline user-agent or essential exceptions
+- **Don't:** Assume native 44pt or 48dp guidance defines web conformance
+- **Code Example Good:** min-width: 24px; min-height: 24px
+- **Code Example Bad:** tiny adjacent icon buttons
+- **Severity:** High
+

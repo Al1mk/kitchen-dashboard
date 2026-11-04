@@ -1,0 +1,114 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "label": "home portrait pointer-fine",
+      "width": 1080,
+      "height": 1920,
+      "font": 22,
+      "mode": true,
+      "dockPosition": "fixed",
+      "dockDisplay": "flex",
+      "dockHeight": 311,
+      "inlineReservation": "311px",
+      "scrollPadding": 333,
+      "overflow": false,
+      "navs": 1
+    },
+    {
+      "label": "language soft navigation",
+      "width": 1080,
+      "height": 1920,
+      "font": 22,
+      "mode": true,
+      "dockPosition": "fixed",
+      "dockDisplay": "flex",
+      "dockHeight": 311,
+      "inlineReservation": "311px",
+      "scrollPadding": 333,
+      "overflow": false,
+      "navs": 1
+    },
+    {
+      "label": "soft navigation to board removes shell reservation",
+      "width": 1080,
+      "height": 1920,
+      "font": 16,
+      "mode": true,
+      "dockPosition": "static",
+      "dockDisplay": "flex",
+      "dockHeight": 298.859375,
+      "inlineReservation": "",
+      "scrollPadding": 0,
+      "overflow": false,
+      "navs": 1
+    },
+    {
+      "label": "board to rooms reapplies reservation",
+      "width": 1080,
+      "height": 1920,
+      "font": 22,
+      "mode": true,
+      "dockPosition": "fixed",
+      "dockDisplay": "flex",
+      "dockHeight": 311,
+      "inlineReservation": "311px",
+      "scrollPadding": 333,
+      "overflow": false,
+      "navs": 1
+    },
+    {
+      "label": "resize to ordinary laptop",
+      "width": 1440,
+      "height": 900,
+      "font": 16,
+      "mode": false,
+      "dockPosition": "static",
+      "dockDisplay": "contents",
+      "dockHeight": 0,
+      "inlineReservation": "",
+      "scrollPadding": 0,
+      "overflow": false,
+      "navs": 1
+    },
+    {
+      "label": "resize to 540x960",
+      "width": 540,
+      "height": 960,
+      "font": 16,
+      "mode": true,
+      "dockPosition": "fixed",
+      "dockDisplay": "flex",
+      "dockHeight": 227,
+      "inlineReservation": "227px",
+      "scrollPadding": 243,
+      "overflow": false,
+      "navs": 1
+    },
+    {
+      "label": "English Rooms scrollIntoView nearest",
+      "bottom": 716.65625,
+      "dockTop": 733
+    },
+    {
+      "label": "English Rooms scrollIntoView end",
+      "bottom": 716.65625,
+      "dockTop": 733
+    },
+    {
+      "label": "resize back to full portrait",
+      "width": 1080,
+      "height": 1920,
+      "font": 22,
+      "mode": true,
+      "dockPosition": "fixed",
+      "dockDisplay": "flex",
+      "dockHeight": 311,
+      "inlineReservation": "311px",
+      "scrollPadding": 333,
+      "overflow": false,
+      "navs": 1
+    }
+  ],
+  "errors": []
+}

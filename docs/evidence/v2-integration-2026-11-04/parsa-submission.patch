@@ -1,0 +1,473 @@
+--- a/src/components/public/BookingReceipt.tsx
++++ b/src/components/public/BookingReceipt.tsx
+@@ -1,6 +1,6 @@
+ "use client";
+ 
+-import { useEffect, useState } from "react";
++import { useEffect, useRef, useState } from "react";
+ import { localize, type Lang } from "@/lib/i18n/public.ts";
+ import { formatCalendarDate } from "@/lib/time/berlin.ts";
+ import { BOOKING_COPY } from "./booking-copy.ts";
+@@ -33,6 +33,11 @@
+   const t = BOOKING_COPY[lang].receipt;
+   const [expiresAt, setExpiresAt] = useState(() => Date.now() + RECEIPT_SECONDS * 1000);
+   const [now, setNow] = useState(() => Date.now());
++  const [credentialsSaved, setCredentialsSaved] = useState(false);
++  const receiptRef = useRef<HTMLElement>(null);
++
++  // AP-03: when the receipt replaces a long form, bring the result into view.
++  useEffect(() => { receiptRef.current?.scrollIntoView({ block: "start", behavior: "auto" }); }, []);
+ 
+   useEffect(() => {
+     const timer = window.setInterval(() => {
+@@ -49,6 +54,7 @@
+ 
+   return (
+     <section
++      ref={receiptRef}
+       data-testid="booking-receipt"
+       data-status={receipt.status}
+       aria-labelledby="receipt-title"
+@@ -79,11 +85,23 @@
+             <p data-testid="receipt-code" className="break-all font-mono text-lg font-semibold">{receipt.cancelToken}</p>
+           </div>
+           <p className="font-semibold">{t.noRecovery}</p>
++          <label className="flex items-center gap-3 rounded-xl bg-surface p-4 text-lg font-semibold">
++            <input
++              type="checkbox"
++              className="h-7 w-7 shrink-0 accent-brand"
++              checked={credentialsSaved}
++              onChange={(event) => setCredentialsSaved(event.target.checked)}
++            />
++            {t.saved}
++          </label>
+         </>
+       )}
+       <p data-testid="receipt-countdown" aria-live="off" className="rounded-xl bg-surface px-4 py-3 text-lg font-semibold tabular-nums">
+         {t.countdown(secondsLeft)}
+       </p>
++      {!cancelled && !credentialsSaved && secondsLeft <= 15 && (
++        <p role="alert" className="rounded-xl bg-warning-soft p-4 font-bold text-warning">{t.timeWarning}</p>
++      )}
+       <div className="grid gap-3 sm:grid-cols-2">
+         <button
+           type="button"
+@@ -92,7 +110,7 @@
+         >
+           {t.more}
+         </button>
+-        <button type="button" onClick={onDone} className="min-h-16 touch-manipulation rounded-xl bg-ink px-4 text-lg font-bold text-white">
++        <button type="button" onClick={onDone} disabled={!cancelled && !credentialsSaved} className="min-h-16 touch-manipulation rounded-xl bg-ink px-4 text-lg font-bold text-white disabled:cursor-not-allowed disabled:opacity-50">
+           {t.finish}
+         </button>
+       </div>
+--- a/src/components/public/BookingFlow.tsx
++++ b/src/components/public/BookingFlow.tsx
+@@ -96,6 +96,7 @@
+   const [phase, setPhase] = useState<Phase>({ kind: "select" });
+   const [notice, setNotice] = useState<BookingErrorKey | null>(null);
+   const sending = useRef(false);
++  const reviewRef = useRef<HTMLElement>(null);
+   // A link to /booking with other parameters (nav, map) resets room/date; never while a request is unresolved.
+   const [urlState, setUrlState] = useState({ roomId: initialRoomId, date: initialDate });
+   if ((urlState.roomId !== initialRoomId || urlState.date !== initialDate) && phase.kind !== "submitting" && phase.kind !== "uncertain") {
+@@ -108,7 +109,12 @@
+   }
+ 
+   const locked = phase.kind === "submitting" || phase.kind === "uncertain";
+-  const guard = useLeaveGuard(locked);
++  const guard = useLeaveGuard(locked || (phase.kind === "receipt" && phase.receipt.status !== "cancelled"), phase.kind === "receipt");
++
++  // AP-03: the review can be far below the chosen time on a portrait kiosk.
++  useEffect(() => {
++    if (phase.kind === "review") reviewRef.current?.scrollIntoView({ block: "start", behavior: "auto" });
++  }, [phase.kind]);
+ 
+   const rooms = roomsState.status === "ok" ? roomsState.rooms : [];
+   const selectedRoom = rooms.find((r) => r.id === roomId) ?? null;
+@@ -257,6 +263,7 @@
+     return (
+       <div className="flex flex-col gap-5" data-testid="booking-flow">
+         <BookingReceipt receipt={phase.receipt} lang={lang} onDone={finish} />
++        <LeaveDialog open={guard.blockedHref !== null} lang={lang} receipt onStay={guard.stay} onLeave={() => abandon(guard.blockedHref)} />
+       </div>
+     );
+   }
+@@ -427,7 +434,7 @@
+       )}
+ 
+       {phase.kind !== "select" && shown && shownName && (
+-        <section aria-labelledby="booking-review" className="flex flex-col gap-3 rounded-xl border-2 border-brand bg-surface p-5">
++        <section ref={reviewRef} aria-labelledby="booking-review" className="flex flex-col gap-3 rounded-xl border-2 border-brand bg-surface p-5">
+           <h2 id="booking-review" className="font-display text-2xl font-bold">
+             {t.review}
+           </h2>
+@@ -479,7 +486,7 @@
+ }
+ 
+ /** Asks before leaving while a booking request is unresolved (T08). */
+-function LeaveDialog({ open, lang, onStay, onLeave }: { open: boolean; lang: Lang; onStay: () => void; onLeave: () => void }) {
++function LeaveDialog({ open, lang, receipt = false, onStay, onLeave }: { open: boolean; lang: Lang; receipt?: boolean; onStay: () => void; onLeave: () => void }) {
+   const t = BOOKING_COPY[lang];
+   const ref = useRef<HTMLDialogElement>(null);
+   const titleId = useId();
+@@ -504,10 +511,10 @@
+     >
+       <div className="flex flex-col gap-4 p-6">
+         <h2 id={titleId} className="font-display text-2xl font-bold">
+-          {t.guardTitle}
++          {receipt ? t.receiptLeaveTitle : t.guardTitle}
+         </h2>
+         <p id={textId} className="text-lg">
+-          {t.guardText}
++          {receipt ? t.receiptLeaveText : t.guardText}
+         </p>
+         <div className="grid gap-3 sm:grid-cols-2">
+           <button type="button" autoFocus onClick={onStay} className="min-h-16 rounded-xl bg-ink px-4 text-lg font-bold text-white">
+--- a/src/components/public/BookingCancel.tsx
++++ b/src/components/public/BookingCancel.tsx
+@@ -10,12 +10,13 @@
+ // success, so a typo can be corrected.
+ 
+ const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+-type Problem = Exclude<keyof BookingCopy["cancel"], "id" | "code" | "go" | "pending" | "done" | "back" | "demo">;
++type Problem = Exclude<keyof BookingCopy["cancel"], "id" | "code" | "go" | "pending" | "done" | "back" | "demo" | "showCode" | "hideCode">;
+ 
+ export function BookingCancel({ lang }: { lang: Lang }) {
+   const t = BOOKING_COPY[lang].cancel;
+   const [id, setId] = useState("");
+   const [token, setToken] = useState("");
++  const [showCode, setShowCode] = useState(false);
+   const [state, setState] = useState<"idle" | "pending" | "success">("idle");
+   const [problem, setProblem] = useState<Problem | null>(null);
+ 
+@@ -37,6 +38,7 @@
+       if (response.ok) {
+         setId("");
+         setToken("");
++        setShowCode(false);
+         setState("success");
+         return;
+       }
+@@ -63,8 +65,11 @@
+           </label>
+           <label className="flex flex-col gap-2 font-bold">
+             {t.code}
+-            <input type="password" autoComplete="off" value={token} onChange={(e) => setToken(e.target.value)} required maxLength={100} className="min-h-14 rounded-xl border border-ink px-3 font-mono text-base" />
++            <input type={showCode ? "text" : "password"} autoComplete="off" spellCheck={false} value={token} onChange={(e) => setToken(e.target.value)} required maxLength={100} className="min-h-14 rounded-xl border border-ink px-3 font-mono text-base" />
+           </label>
++          <button type="button" aria-pressed={showCode} onClick={() => setShowCode((visible) => !visible)} className="min-h-12 self-start rounded-xl border border-ink px-4 text-base font-semibold">
++            {showCode ? t.hideCode : t.showCode}
++          </button>
+           {problem && (
+             <p role="alert" className="rounded-xl bg-danger-soft p-4 font-semibold text-danger">
+               {t[problem]}
+--- a/src/components/public/booking-copy.ts
++++ b/src/components/public/booking-copy.ts
+@@ -4,14 +4,14 @@
+ // are never shown; API `error`/`detail` codes are translated here instead.
+ 
+ const de = {
+-  disclaimer: "DEMO – keine echte Hochschulreservierung. Keine Anmeldung, kein offizieller Anspruch auf den Raum.",
++  disclaimer: "DEMO – keine echte Hochschulreservierung, kein Anspruch auf den Raum.",
+   room: "1. Raum auswählen",
+   roomPlaceholder: "Bitte einen Raum wählen",
+   roomsLoading: "Räume werden geladen …",
+   roomsFailed: "Die Räume können gerade nicht geladen werden.",
+   roomsEmpty: "Zurzeit ist kein Raum für Demo-Reservierungen freigegeben.",
+   requestedUnavailable:
+-    "Der angefragte Raum kann gerade nicht reserviert werden (unbekannt, archiviert oder nicht freigegeben). Es wurde kein anderer Raum ausgewählt – bitte wähle selbst einen aus der Liste.",
++    "Dieser Raum ist unbekannt oder nicht buchbar. Es wurde kein anderer Raum ausgewählt. Bitte wähle einen Raum aus der Liste.",
+   date: "2. Datum",
+   duration: "3. Dauer",
+   minutes: (n: number) => `${n} Minuten`,
+@@ -27,7 +27,7 @@
+   change: "Ändern",
+   book: "Demo-Reservierung bestätigen",
+   submitting: "Reservierung wird gespeichert …",
+-  lockedNote: "Bitte warten: Die Anfrage wird gesendet. Auswahl und Navigation sind so lange gesperrt.",
++  lockedNote: "Anfrage läuft. Bitte warte, bevor du etwas änderst.",
+   uncertainTitle: "Wir konnten nicht bestätigen, ob die Reservierung gespeichert wurde.",
+   uncertainText: "Sende sie erneut: Es wird genau dieselbe Anfrage wiederholt, eine doppelte Reservierung entsteht nicht.",
+   resend: "Erneut senden",
+@@ -43,7 +43,9 @@
+   },
+   guardTitle: "Reservierung läuft noch",
+   guardText:
+-    "Die Reservierung wird gerade gespeichert oder ihr Ergebnis ist noch unklar. Wenn du jetzt gehst, kann sie trotzdem bestehen – aber Buchungsnummer und Stornierungscode gehen verloren, und du kannst sie nicht mehr selbst stornieren.",
++    "Der Status der Anfrage ist noch unklar. Beim Verlassen können Buchungsnummer und Stornierungscode verloren gehen.",
++  receiptLeaveTitle: "Beleg wirklich verlassen?",
++  receiptLeaveText: "Buchungsnummer und Stornierungscode können danach nicht erneut angezeigt werden. Bitte sichere beide zuerst.",
+   stay: "Hierbleiben",
+   leave: "Trotzdem verlassen",
+   mapLink: "Diesen Raum auf der Karte zeigen",
+@@ -57,8 +59,10 @@
+     id: "Buchungsnummer",
+     code: "Stornierungscode",
+     noRecovery:
+-      "Wichtig: Notiere oder fotografiere Nummer und Code jetzt. Sie werden nirgends gespeichert und nicht verschickt. Ohne beide kannst du nicht selbst stornieren.",
++      "Notiere oder fotografiere Nummer und Code jetzt. Ohne beide kannst du nicht selbst stornieren.",
++    saved: "Ich habe Buchungsnummer und Stornierungscode gesichert.",
+     countdown: (s: number) => `Dieser Beleg wird in ${s} Sekunden ausgeblendet.`,
++    timeWarning: "Nur noch 15 Sekunden. Sichere Nummer und Code oder tippe auf Mehr Zeit.",
+     more: "Mehr Zeit",
+     finish: "Fertig",
+   },
+@@ -76,20 +80,22 @@
+     generic: "Die Stornierung konnte nicht gesendet werden. Bitte versuche es erneut.",
+     back: "Zur Raumbuchung",
+     demo: "DEMO – kein offizielles Raumbuchungssystem.",
++    showCode: "Code anzeigen",
++    hideCode: "Code verbergen",
+   },
+ };
+ 
+ export type BookingCopy = typeof de;
+ 
+ const en: BookingCopy = {
+-  disclaimer: "DEMO – not a real university room reservation. No login and no official entitlement to the room.",
++  disclaimer: "DEMO – not a real university booking. No entitlement to the room.",
+   room: "1. Choose a room",
+   roomPlaceholder: "Please choose a room",
+   roomsLoading: "Loading rooms …",
+   roomsFailed: "Rooms cannot be loaded right now.",
+   roomsEmpty: "No room is currently open for demo bookings.",
+   requestedUnavailable:
+-    "The requested room cannot be booked right now (unknown, archived or not open for booking). No other room was selected – please choose one from the list yourself.",
++    "This room is unknown or not bookable. No other room was selected. Please choose a room from the list.",
+   date: "2. Date",
+   duration: "3. Duration",
+   minutes: (n: number) => `${n} minutes`,
+@@ -105,7 +111,7 @@
+   change: "Change",
+   book: "Confirm demo booking",
+   submitting: "Saving your booking …",
+-  lockedNote: "Please wait: the request is being sent. Selection and navigation are locked until then.",
++  lockedNote: "Request in progress. Please wait before making changes.",
+   uncertainTitle: "We could not confirm whether your booking was saved.",
+   uncertainText: "Send it again: exactly the same request is repeated, so no double booking can happen.",
+   resend: "Send again",
+@@ -121,7 +127,9 @@
+   },
+   guardTitle: "Booking still in progress",
+   guardText:
+-    "Your booking is being saved or its result is still unclear. If you leave now, it may still exist – but the booking ID and cancellation code will be lost and you cannot cancel it yourself.",
++    "The request outcome is still uncertain. Leaving may lose the booking ID and cancellation code.",
++  receiptLeaveTitle: "Leave this receipt?",
++  receiptLeaveText: "The booking ID and cancellation code cannot be shown again. Save both before leaving.",
+   stay: "Stay here",
+   leave: "Leave anyway",
+   mapLink: "Show this room on the map",
+@@ -135,8 +143,10 @@
+     id: "Booking ID",
+     code: "Cancellation code",
+     noRecovery:
+-      "Important: write down or photograph the ID and code now. They are not stored anywhere and not sent to you. You need both to cancel yourself.",
++      "Write down or photograph the ID and code now. You need both to cancel yourself.",
++    saved: "I have saved the booking ID and cancellation code.",
+     countdown: (s: number) => `This receipt will be hidden in ${s} seconds.`,
++    timeWarning: "Only 15 seconds left. Save your ID and code, or tap More time.",
+     more: "More time",
+     finish: "Done",
+   },
+@@ -154,6 +164,8 @@
+     generic: "The cancellation could not be sent. Please try again.",
+     back: "Back to room booking",
+     demo: "DEMO – not an official university booking system.",
++    showCode: "Show code",
++    hideCode: "Hide code",
+   },
+ };
+ 
+--- a/src/components/public/useLeaveGuard.ts
++++ b/src/components/public/useLeaveGuard.ts
+@@ -10,7 +10,7 @@
+  * credentials are then gone). Used by the booking flow while a request is in
+  * flight or its outcome is unknown (T08).
+  */
+-export function useLeaveGuard(active: boolean) {
++export function useLeaveGuard(active: boolean, allowLanguageSwitch = false) {
+   const [blockedHref, setBlockedHref] = useState<string | null>(null);
+ 
+   useEffect(() => {
+@@ -19,6 +19,20 @@
+       if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+       const link = event.target instanceof Element ? event.target.closest("a[href]") : null;
+       if (!link) return;
++      // AP-02: a same-page DE/EN switch must not destroy a settled receipt.
++      if (allowLanguageSwitch) {
++        const target = new URL(link.getAttribute("href") ?? "", window.location.href);
++        const current = new URL(window.location.href);
++        const withoutLang = (url: URL) => {
++          const query = new URLSearchParams(url.searchParams);
++          query.delete("lang");
++          query.sort();
++          return query.toString();
++        };
++        if (target.origin === current.origin && target.pathname === current.pathname &&
++            withoutLang(target) === withoutLang(current) &&
++            target.searchParams.get("lang") !== current.searchParams.get("lang")) return;
++      }
+       // Capture phase on document: runs before React/Next.js, so the Link never navigates.
+       event.preventDefault();
+       event.stopPropagation();
+@@ -34,7 +48,7 @@
+       document.removeEventListener("click", onClick, true);
+       window.removeEventListener("beforeunload", onBeforeUnload);
+     };
+-  }, [active]);
++  }, [active, allowLanguageSwitch]);
+ 
+   return {
+     /** Link the visitor tried to follow; only meaningful while the guard is active. */
+--- a/src/components/public/DaySchedule.tsx
++++ b/src/components/public/DaySchedule.tsx
+@@ -65,6 +65,11 @@
+             <Link href={publicHref("/map", lang, { raum: data.room.id, datum: date })} className="inline-flex min-h-14 touch-manipulation items-center rounded-xl border border-ink px-4 font-semibold">
+               {t.schedule.onMap}
+             </Link>
++            {data.room.reservable && shownDate && today && shownDate >= today && shownDate <= addDays(today, 13) && (
++              <Link href={publicHref("/booking", lang, { raum: data.room.id, datum: shownDate })} className="inline-flex min-h-14 touch-manipulation items-center rounded-xl bg-brand px-4 font-bold text-white">
++                {t.schedule.bookRoom}
++              </Link>
++            )}
+             <Link href={href(date, null)} className="inline-flex min-h-14 touch-manipulation items-center rounded-xl border border-ink px-4 font-semibold">
+               {t.schedule.allRooms}
+             </Link>
+--- a/src/lib/i18n/public.ts
++++ b/src/lib/i18n/public.ts
+@@ -101,6 +101,7 @@
+     room: "Raum",
+     allRooms: "Alle Räume",
+     onMap: "Auf der Karte",
++    bookRoom: "Diesen Raum reservieren (Demo)",
+     empty: "An diesem Tag sind keine Termine eingetragen.",
+     emptyHint: "Änderungen erscheinen hier automatisch.",
+     cancelled: "Entfällt",
+@@ -180,6 +181,7 @@
+     room: "Room",
+     allRooms: "All rooms",
+     onMap: "On the map",
++    bookRoom: "Book this room (demo)",
+     empty: "No classes are scheduled on this day.",
+     emptyHint: "Changes appear here automatically.",
+     cancelled: "Cancelled",
+--- a/tests/e2e/booking-language-receipt.spec.ts
++++ b/tests/e2e/booking-language-receipt.spec.ts
+@@ -137,6 +137,8 @@
+ test("Done clears the receipt; going back does not reveal it again", async ({ page, request, baseURL }) => {
+   const r = await room(request, baseURL!);
+   const { receipt } = await book(page, r.id, "de", "11:00");
++  await expect(receipt.getByRole("button", { name: "Fertig" })).toBeDisabled();
++  await receipt.getByLabel("Ich habe Buchungsnummer und Stornierungscode gesichert.").check();
+   await receipt.getByRole("button", { name: "Fertig" }).click();
+   await expect(page).toHaveURL(/\/$/);
+   await page.goBack();
+--- /dev/null
++++ b/tests/e2e/parsa-v2-booking.spec.ts
+@@ -0,0 +1,105 @@
++import { randomBytes } from "node:crypto";
++import { expect, test, type APIRequestContext, type Page } from "@playwright/test";
++import { loginViaApi } from "./helpers.ts";
++
++// AP-02 / AP-03 independent E2E regressions. Cancellation credentials are
++// NEVER printed, logged or included in screenshots/traces/videos.
++test.use({ trace: "off", screenshot: "off", video: "off" });
++
++const berlinDate = (days: number) =>
++  new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Berlin" }).format(new Date(Date.now() + days * 86_400_000));
++
++async function testRoom(request: APIRequestContext, baseURL: string) {
++  const origin = await loginViaApi(request, baseURL);
++  const response = await request.post("/api/admin/rooms", {
++    headers: { ...origin, "Content-Type": "application/json" },
++    data: {
++      code: `PARSA-${randomBytes(3).toString("hex").toUpperCase()}`,
++      name: "Raum für V2-Test",
++      nameEn: "Room for V2 test",
++      floorId: "1OG",
++      type: "study",
++      description: "",
++      reservable: true,
++    },
++  });
++  expect(response.status()).toBe(201);
++  return (await response.json()).room as { id: string; code: string };
++}
++
++async function book(page: Page, roomId: string) {
++  await page.goto(`/booking?raum=${roomId}&datum=${berlinDate(4)}&lang=en`);
++  await page.getByRole("button", { name: "10:00", exact: true }).click();
++  await page.getByRole("button", { name: "Review booking" }).click();
++  const review = page.getByRole("heading", { name: "Check your booking" });
++  await expect(review).toBeInViewport();
++  await page.getByRole("button", { name: "Confirm demo booking" }).click();
++  const receipt = page.getByTestId("booking-receipt");
++  await expect(receipt).toBeInViewport();
++  return receipt;
++}
++
++test("AP-02: receipt requires credential acknowledgement, warns on exit and preserves DE/EN switch", async ({ page, request, baseURL }) => {
++  const room = await testRoom(request, baseURL!);
++  const receipt = await book(page, room.id);
++  await expect(receipt.getByRole("button", { name: "Done" })).toBeDisabled();
++
++  await page.getByRole("navigation", { name: "Campus information" }).getByRole("link", { name: "Home" }).click();
++  const dialog = page.getByRole("alertdialog");
++  await expect(dialog).toContainText("Leave this receipt?");
++  await dialog.getByRole("button", { name: "Stay here" }).click();
++  await expect(dialog).toBeHidden();
++  await expect(receipt).toBeVisible();
++
++  await page.getByRole("link", { name: "Deutsch" }).click();
++  await expect(receipt.getByRole("heading", { name: "Reservierung gespeichert" })).toBeVisible();
++  await expect(receipt.getByRole("button", { name: "Fertig" })).toBeDisabled();
++  await receipt.getByLabel("Ich habe Buchungsnummer und Stornierungscode gesichert.").check();
++  await receipt.getByRole("button", { name: "Fertig" }).click();
++  await expect(page).toHaveURL(/\/$/);
++  await expect(page.getByTestId("receipt-code")).toHaveCount(0);
++});
++
++test("AP-02: cancellation form offers a user-controlled show/hide code action", async ({ page }) => {
++  await page.goto("/booking/cancel?lang=en");
++  const code = page.getByLabel("Cancellation code");
++  await expect(code).toHaveAttribute("type", "password");
++  await page.getByRole("button", { name: "Show code" }).click();
++  await expect(code).toHaveAttribute("type", "text");
++  await page.getByRole("button", { name: "Hide code" }).click();
++  await expect(code).toHaveAttribute("type", "password");
++});
++
++test("AP-03: room schedule opens booking with stable room id, day and language", async ({ page }) => {
++  // The project E2E fixture includes this bookable demo room.
++  const roomId = "lcc-demo-room-k1-120";
++  const date = berlinDate(4);
++  await page.goto(`/schedule?raum=${roomId}&datum=${date}&lang=en`);
++  const cta = page.getByRole("link", { name: "Book this room (demo)" });
++  await expect(cta).toHaveAttribute("href", `/booking?raum=${roomId}&datum=${date}&lang=en`);
++  await cta.click();
++  await expect(page).toHaveURL(new RegExp(`/booking\\?raum=${roomId}&datum=${date}&lang=en`));
++  await expect(page.getByLabel("1. Choose a room")).toHaveValue(roomId);
++});
++
++
++test("AP-02: last-15-seconds warning and More time protect the temporary receipt", async ({ page, request, baseURL }) => {
++  const room = await testRoom(request, baseURL!);
++  await page.clock.install();
++  const receipt = await book(page, room.id);
++  await page.clock.fastForward(46_000);
++  await expect(receipt.getByRole("alert")).toContainText("Only 15 seconds left");
++  await receipt.getByRole("button", { name: "More time" }).click();
++  await expect(receipt.getByRole("alert")).toHaveCount(0);
++  await expect(receipt.getByTestId("receipt-countdown")).toHaveText("This receipt will be hidden in 60 seconds.");
++  // Auto-expiry is intentionally retained for public-kiosk privacy.
++  await page.clock.fastForward(61_000);
++  await expect(page.getByTestId("receipt-code")).toHaveCount(0);
++  await expect(page).toHaveURL(/\?lang=en$/);
++});
++
++test("AP-03: past dates never offer direct booking from the room schedule", async ({ page }) => {
++  const roomId = "lcc-demo-room-k1-120";
++  await page.goto(`/schedule?raum=${roomId}&datum=${berlinDate(-2)}&lang=en`);
++  await expect(page.getByRole("link", { name: "Book this room (demo)" })).toHaveCount(0);
++});

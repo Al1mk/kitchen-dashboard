@@ -1,0 +1,130 @@
+- banner:
+  - img "Hochschule Coburg"
+  - paragraph: Lucas-Cranach-Campus Kronach
+  - group "Language":
+    - link "Deutsch":
+      - /url: /map
+    - link "English":
+      - /url: /map?lang=en
+  - navigation "Campus information":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /?lang=en
+      - listitem:
+        - link "New to campus":
+          - /url: /newcomers?lang=en
+      - listitem:
+        - link "Map":
+          - /url: /map?lang=en
+      - listitem:
+        - link "Rooms":
+          - /url: /rooms?lang=en
+      - listitem:
+        - link "Schedule":
+          - /url: /schedule?lang=en
+      - listitem:
+        - link "Booking":
+          - /url: /booking?lang=en
+      - listitem:
+        - link "Announcements":
+          - /url: /display?lang=en
+- main:
+  - heading "Map" [level=1]
+  - paragraph: Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”.
+  - paragraph: Choose a floor, tap a marker or search by room number or name.
+  - paragraph: "Note: the plans are AI-generated illustrations from the team prototype, not a verified building or emergency plan. Positions refer to the images."
+  - paragraph: "Sample data: Entries marked “Example” are invented demo data, not official room or class information."
+  - group "Choose a floor":
+    - button "Ground floor"
+    - button "1st floor" [pressed]
+    - button "2nd floor"
+    - button "3rd floor"
+  - search:
+    - text: Search rooms
+    - searchbox "Search rooms"
+  - region "1st floor":
+    - heading "1st floor" [level=2]
+    - button "Zoom out" [disabled]: −
+    - button "Zoom in": +
+    - button "Whole plan"
+    - region "Plan of the 1st floor, scrollable":
+      - img "Illustration of the 1st floor (not a verified building plan)"
+      - button "K1-103, Seminar room 1": K1-103
+      - button "K1-104, Shared Space": K1-104
+      - button "K1-105, IT room": K1-105
+      - button "K1-106, Seminar room 3": K1-106
+      - button "K1-107, Secretariat": K1-107
+      - button "K1-108, Communication area": K1-108
+      - button "K1-109, Circulation area": K1-109
+      - button "K1-110, Workspaces": K1-110
+      - button "K1-111, Workspaces": K1-111
+      - button "K1-112, Machine room": K1-112
+      - button "K1-113, Welding area": K1-113
+      - button "K1-115, Room": K1-115
+      - button "K1-116, Room": K1-116
+      - button "K1-118, Room": K1-118
+      - button "K1-119, Media Lab": K1-119
+      - button "K1-120, Seminar room": K1-120
+      - button "K1-121, Electronics workshop": K1-121
+      - button "K1-122, Room": K1-122
+      - button "K1-123, Room": K1-123
+      - button "K1-124, Networking": K1-124
+      - button "K1-125, Seminar room": K1-125
+  - region "Selected room":
+    - heading "Selected room" [level=2]
+    - paragraph: No room selected
+    - paragraph: Tap a marker or a room in the list.
+  - region "1st floor · 24 rooms":
+    - heading "1st floor · 24 rooms" [level=2]
+    - list:
+      - listitem:
+        - button "DEMO-101 Seminar room 1 (Demo)"
+      - listitem:
+        - button "DEMO-102 PC-Labor (Demo)"
+      - listitem:
+        - button "K1-103 Seminar room 1"
+      - listitem:
+        - button "K1-104 Shared Space"
+      - listitem:
+        - button "K1-105 IT room"
+      - listitem:
+        - button "K1-106 Seminar room 3"
+      - listitem:
+        - button "K1-107 Secretariat"
+      - listitem:
+        - button "K1-108 Communication area"
+      - listitem:
+        - button "K1-109 Circulation area"
+      - listitem:
+        - button "K1-110 Workspaces"
+      - listitem:
+        - button "K1-111 Workspaces"
+      - listitem:
+        - button "K1-112 Machine room"
+      - listitem:
+        - button "K1-113 Welding area"
+      - listitem:
+        - button "K1-114 Rapid Prototyping"
+      - listitem:
+        - button "K1-115 Room"
+      - listitem:
+        - button "K1-116 Room"
+      - listitem:
+        - button "K1-118 Room"
+      - listitem:
+        - button "K1-119 Media Lab"
+      - listitem:
+        - button "K1-120 Seminar room"
+      - listitem:
+        - button "K1-121 Electronics workshop"
+      - listitem:
+        - button "K1-122 Room"
+      - listitem:
+        - button "K1-123 Room"
+      - listitem:
+        - button "K1-124 Networking"
+      - listitem:
+        - button "K1-125 Seminar room"
+- contentinfo: Prototype from the Human-Computer Interaction course – not an official display of Hochschule Coburg.
+- alert

@@ -6,7 +6,8 @@ import { formatBerlinDateTime, formatBerlinLongDate, formatBerlinTime } from "@/
 // Presentational portrait board shared by the public display and the admin
 // preview. All sizes use container query units (cqw), so the same layout
 // scales from a 1080×1920 screen down to a small preview frame. The admin
-// preview passes no navigation and stays German.
+// preview passes no navigation and stays German. The public navigation and language switch form a dock
+// at the bottom of the frame (V2 Stage 1, docs/contracts.md C10).
 
 const categoryStyle: Record<Category, { bar: string; chip: string }> = {
   important: { bar: "bg-brand", chip: "bg-danger-soft text-danger" },
@@ -73,7 +74,7 @@ export function BoardLayout({
   emptyState?: ReactNode;
   footerNote?: ReactNode;
   lang?: Lang;
-  /** Public navigation below the header (not shown in the admin preview). */
+  /** Public navigation, shown in the dock at the bottom of the frame (not in the admin preview). */
   nav?: ReactNode;
   languageSwitch?: ReactNode;
 }) {
@@ -100,9 +101,7 @@ export function BoardLayout({
           </div>
           <div className="flex items-center justify-between gap-[3cqw] px-[4.5cqw] pb-[2.4cqw]">
             <p className="text-[2.6cqw] font-semibold text-ink-muted">Lucas-Cranach-Campus Kronach</p>
-            {languageSwitch}
           </div>
-          {nav && <div className="px-[4.5cqw] pb-[2.4cqw]">{nav}</div>}
           <div className="brand-stripe h-[0.7cqw]" aria-hidden="true" />
         </header>
 
@@ -116,14 +115,19 @@ export function BoardLayout({
           </div>
         </main>
 
-        <footer className="border-t border-line bg-surface px-[4.5cqw] py-[2.4cqw] text-[2.1cqw] text-ink-muted">
-          {footerNote ?? (
-            <>
-              {t.footer}
-              {t.contentNote && <span className="mt-[0.6cqw] block">{t.contentNote}</span>}
-            </>
-          )}
-        </footer>
+        <footer className="border-t border-line bg-surface px-[4.5cqw] py-[2.4cqw] text-[2.1cqw] text-ink-muted">{footerNote ?? t.footer}</footer>
+
+        {/* Public dock: language switch above the 4 + 3 navigation, last child of the portrait frame, so the
+            scrolling list above it can never run underneath it. Absent in the admin preview (no nav). */}
+        {(nav || languageSwitch) && (
+          <div
+            data-public-dock
+            className="flex shrink-0 flex-col items-center gap-[1.4cqw] border-t border-line bg-surface px-[4.5cqw] py-[1.8cqw] shadow-[0_-0.5cqw_1.5cqw_rgba(35,37,43,0.1)]"
+          >
+            {languageSwitch}
+            {nav && <div className="w-full">{nav}</div>}
+          </div>
+        )}
       </div>
     </div>
   );

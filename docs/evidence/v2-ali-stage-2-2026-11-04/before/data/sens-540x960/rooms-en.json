@@ -1,0 +1,63 @@
+{
+ "ctx": "sens-540x960",
+ "name": "rooms",
+ "lang": "en",
+ "label": "before",
+ "url": "/rooms?lang=en",
+ "summary": {
+  "targets": 141,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 5,
+  "minTargetH": 56,
+  "minTargetW": 96.5,
+  "textMinFs": 14,
+  "textLt14": 0,
+  "textLt16": 58,
+  "textTotal": 377,
+  "lowContrastCount": 0,
+  "screens": 17.46,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 1
+ },
+ "textMinFs": 14,
+ "clear": {
+  "scrollY": 15802,
+  "docHeight": 16762,
+  "dockTop": 733,
+  "lastContentBottom": 643.7,
+  "footerBottom": 732.7,
+  "lowestBottom": 732.7,
+  "clearOfDock": true,
+  "clearance": 0.3
+ },
+ "stage2": {
+  "vh": 960,
+  "docHeight": 16762,
+  "screens": 17.5,
+  "hOverflow": false,
+  "rooms": {
+   "cards": 54,
+   "medianPitch": 320,
+   "firstCardH": 308,
+   "actionsInOneRow": 0,
+   "chips": [],
+   "chipBar": null,
+   "floorHeadings": 4
+  },
+  "dockTop": 733
+ },
+ "dock": {
+  "position": "fixed",
+  "x": 0,
+  "y": 733,
+  "w": 540,
+  "h": 227,
+  "top": 733,
+  "bottom": 960,
+  "left": 0,
+  "right": 540,
+  "shareOfViewport": 0.236
+ }
+}

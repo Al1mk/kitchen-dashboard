@@ -1,0 +1,591 @@
+- banner:
+  - img "Hochschule Coburg"
+  - paragraph: Lucas-Cranach-Campus Kronach
+  - group "Language":
+    - link "Deutsch":
+      - /url: /rooms
+    - link "English":
+      - /url: /rooms?lang=en
+  - navigation "Campus information":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /?lang=en
+      - listitem:
+        - link "New to campus":
+          - /url: /newcomers?lang=en
+      - listitem:
+        - link "Map":
+          - /url: /map?lang=en
+      - listitem:
+        - link "Rooms":
+          - /url: /rooms?lang=en
+      - listitem:
+        - link "Schedule":
+          - /url: /schedule?lang=en
+      - listitem:
+        - link "Booking":
+          - /url: /booking?lang=en
+      - listitem:
+        - link "Announcements":
+          - /url: /display?lang=en
+- main:
+  - heading "Rooms" [level=1]
+  - paragraph: Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”.
+  - search:
+    - text: Search for a room, lecturer or course
+    - paragraph: Room number (e.g. K1-105 or 105), room name, lecturer or course.
+    - searchbox "Search for a room, lecturer or course"
+  - paragraph: "Sample data: Entries marked “Example” are invented demo data, not official room or class information."
+  - region "Ground floor":
+    - heading "Ground floor" [level=2]
+    - list:
+      - listitem:
+        - article "DEMO-E01 Kitchen / common room (Demo)":
+          - heading "DEMO-E01 Kitchen / common room (Demo)" [level=3]
+          - text: Example
+          - paragraph: Common room / kitchen
+          - paragraph: "Example entry: location and equipment are invented."
+          - link "Today in this room":
+            - /url: /schedule?raum=demo-room-e01&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=demo-room-e01&lang=en
+      - listitem:
+        - article "DEMO-E02 Lecture hall A (Demo)":
+          - heading "DEMO-E02 Lecture hall A (Demo)" [level=3]
+          - text: Example
+          - paragraph: Lecture hall
+          - paragraph: "Example entry: location and equipment are invented."
+          - link "Today in this room":
+            - /url: /schedule?raum=demo-room-e02&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=demo-room-e02&lang=en
+  - region "1st floor":
+    - heading "1st floor" [level=2]
+    - list:
+      - listitem:
+        - article "DEMO-101 Seminar room 1 (Demo)":
+          - heading "DEMO-101 Seminar room 1 (Demo)" [level=3]
+          - text: Example
+          - paragraph: Seminar room
+          - paragraph: "Example entry: location and equipment are invented."
+          - link "Today in this room":
+            - /url: /schedule?raum=demo-room-101&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=demo-room-101&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=demo-room-101&lang=en
+      - listitem:
+        - article "DEMO-102 PC-Labor (Demo)":
+          - heading "DEMO-102 PC-Labor (Demo)" [level=3]
+          - text: Only in German Example
+          - paragraph: Lab / computer room
+          - paragraph: "Beispieleintrag: Lage und Ausstattung sind erfunden."
+          - link "Today in this room":
+            - /url: /schedule?raum=demo-room-102&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=demo-room-102&lang=en
+      - listitem:
+        - article "K1-103 Seminar room 1":
+          - heading "K1-103 Seminar room 1" [level=3]
+          - text: Example
+          - paragraph: Seminar room
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-103&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-103&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=lcc-demo-room-k1-103&lang=en
+      - listitem:
+        - article "K1-104 Shared Space":
+          - heading "K1-104 Shared Space" [level=3]
+          - text: Example
+          - paragraph: Common room / kitchen
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-104&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-104&lang=en
+      - listitem:
+        - article "K1-105 IT room":
+          - heading "K1-105 IT room" [level=3]
+          - text: Example
+          - paragraph: Lab / computer room
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-105&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-105&lang=en
+      - listitem:
+        - article "K1-106 Seminar room 3":
+          - heading "K1-106 Seminar room 3" [level=3]
+          - text: Example
+          - paragraph: Seminar room
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-106&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-106&lang=en
+      - listitem:
+        - article "K1-107 Secretariat":
+          - heading "K1-107 Secretariat" [level=3]
+          - text: Example
+          - paragraph: Office
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-107&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-107&lang=en
+      - listitem:
+        - article "K1-108 Communication area":
+          - heading "K1-108 Communication area" [level=3]
+          - text: Example
+          - paragraph: Common room / kitchen
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-108&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-108&lang=en
+      - listitem:
+        - article "K1-109 Circulation area":
+          - heading "K1-109 Circulation area" [level=3]
+          - text: Example
+          - paragraph: Common room / kitchen
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-109&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-109&lang=en
+      - listitem:
+        - article "K1-110 Workspaces":
+          - heading "K1-110 Workspaces" [level=3]
+          - text: Example
+          - paragraph: Study / group room
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-110&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-110&lang=en
+      - listitem:
+        - article "K1-111 Workspaces":
+          - heading "K1-111 Workspaces" [level=3]
+          - text: Example
+          - paragraph: Study / group room
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-111&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-111&lang=en
+      - listitem:
+        - article "K1-112 Machine room":
+          - heading "K1-112 Machine room" [level=3]
+          - text: Example
+          - paragraph: Lab / computer room
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-112&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-112&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=lcc-demo-room-k1-112&lang=en
+      - listitem:
+        - article "K1-113 Welding area":
+          - heading "K1-113 Welding area" [level=3]
+          - text: Example
+          - paragraph: Lab / computer room
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-113&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-113&lang=en
+      - listitem:
+        - article "K1-114 Rapid Prototyping":
+          - heading "K1-114 Rapid Prototyping" [level=3]
+          - text: Example
+          - paragraph: Lab / computer room
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-114&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-114&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=lcc-demo-room-k1-114&lang=en
+      - listitem:
+        - article "K1-115 Room":
+          - heading "K1-115 Room" [level=3]
+          - text: Example
+          - paragraph: Other
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-115&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-115&lang=en
+      - listitem:
+        - article "K1-116 Room":
+          - heading "K1-116 Room" [level=3]
+          - text: Example
+          - paragraph: Other
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-116&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-116&lang=en
+      - listitem:
+        - article "K1-118 Room":
+          - heading "K1-118 Room" [level=3]
+          - text: Example
+          - paragraph: Other
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-118&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-118&lang=en
+      - listitem:
+        - article "K1-119 Media Lab":
+          - heading "K1-119 Media Lab" [level=3]
+          - text: Example
+          - paragraph: Lab / computer room
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-119&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-119&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=lcc-demo-room-k1-119&lang=en
+      - listitem:
+        - article "K1-120 Seminar room":
+          - heading "K1-120 Seminar room" [level=3]
+          - text: Example
+          - paragraph: Seminar room
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-120&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-120&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=lcc-demo-room-k1-120&lang=en
+      - listitem:
+        - article "K1-121 Electronics workshop":
+          - heading "K1-121 Electronics workshop" [level=3]
+          - text: Example
+          - paragraph: Lab / computer room
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-121&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-121&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=lcc-demo-room-k1-121&lang=en
+      - listitem:
+        - article "K1-122 Room":
+          - heading "K1-122 Room" [level=3]
+          - text: Example
+          - paragraph: Other
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-122&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-122&lang=en
+      - listitem:
+        - article "K1-123 Room":
+          - heading "K1-123 Room" [level=3]
+          - text: Example
+          - paragraph: Other
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-123&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-123&lang=en
+      - listitem:
+        - article "K1-124 Networking":
+          - heading "K1-124 Networking" [level=3]
+          - text: Example
+          - paragraph: Common room / kitchen
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-124&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-124&lang=en
+      - listitem:
+        - article "K1-125 Seminar room":
+          - heading "K1-125 Seminar room" [level=3]
+          - text: Example
+          - paragraph: Seminar room
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-125&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-125&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=lcc-demo-room-k1-125&lang=en
+  - region "2nd floor":
+    - heading "2nd floor" [level=2]
+    - list:
+      - listitem:
+        - article "DEMO-201 Gruppenraum (Demo)":
+          - heading "DEMO-201 Gruppenraum (Demo)" [level=3]
+          - text: Only in German Example
+          - paragraph: Study / group room
+          - paragraph: "Beispieleintrag: Lage und Ausstattung sind erfunden."
+          - link "Today in this room":
+            - /url: /schedule?raum=demo-room-201&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=demo-room-201&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=demo-room-201&lang=en
+      - listitem:
+        - article "DEMO-202 Seminarraum 2 (Demo)":
+          - heading "DEMO-202 Seminarraum 2 (Demo)" [level=3]
+          - text: Only in German Example
+          - paragraph: Seminar room
+          - paragraph: "Beispieleintrag: Lage und Ausstattung sind erfunden."
+          - link "Today in this room":
+            - /url: /schedule?raum=demo-room-202&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=demo-room-202&lang=en
+      - listitem:
+        - article "K1-201 Restroom":
+          - heading "K1-201 Restroom" [level=3]
+          - text: Example
+          - paragraph: Other
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-201&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-201&lang=en
+      - listitem:
+        - article "K1-202 Restroom":
+          - heading "K1-202 Restroom" [level=3]
+          - text: Example
+          - paragraph: Other
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-202&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-202&lang=en
+      - listitem:
+        - article "K1-203 Room":
+          - heading "K1-203 Room" [level=3]
+          - text: Example
+          - paragraph: Other
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-203&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-203&lang=en
+      - listitem:
+        - article "K1-204 Office 2":
+          - heading "K1-204 Office 2" [level=3]
+          - text: Example
+          - paragraph: Office
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-204&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-204&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=lcc-demo-room-k1-204&lang=en
+      - listitem:
+        - article "K1-206 Office 3":
+          - heading "K1-206 Office 3" [level=3]
+          - text: Example
+          - paragraph: Office
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-206&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-206&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=lcc-demo-room-k1-206&lang=en
+      - listitem:
+        - article "K1-207 Meeting room":
+          - heading "K1-207 Meeting room" [level=3]
+          - text: Example
+          - paragraph: Office
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-207&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-207&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=lcc-demo-room-k1-207&lang=en
+      - listitem:
+        - article "K1-208 Multi-purpose room":
+          - heading "K1-208 Multi-purpose room" [level=3]
+          - text: Example
+          - paragraph: Common room / kitchen
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-208&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-208&lang=en
+      - listitem:
+        - article "K1-209 Room":
+          - heading "K1-209 Room" [level=3]
+          - text: Example
+          - paragraph: Other
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-209&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-209&lang=en
+      - listitem:
+        - article "K1-210 Seminar room":
+          - heading "K1-210 Seminar room" [level=3]
+          - text: Example
+          - paragraph: Seminar room
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-210&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-210&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=lcc-demo-room-k1-210&lang=en
+      - listitem:
+        - article "K1-211 Office 1":
+          - heading "K1-211 Office 1" [level=3]
+          - text: Example
+          - paragraph: Office
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-211&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-211&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=lcc-demo-room-k1-211&lang=en
+      - listitem:
+        - article "K1-212 Tea kitchen":
+          - heading "K1-212 Tea kitchen" [level=3]
+          - text: Example
+          - paragraph: Common room / kitchen
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-212&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-212&lang=en
+      - listitem:
+        - article "K1-213 Corridor":
+          - heading "K1-213 Corridor" [level=3]
+          - text: Example
+          - paragraph: Common room / kitchen
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-213&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-213&lang=en
+      - listitem:
+        - article "K1-214 Room":
+          - heading "K1-214 Room" [level=3]
+          - text: Example
+          - paragraph: Other
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-214&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-214&lang=en
+      - listitem:
+        - article "K1-215a Corridor 2":
+          - heading "K1-215a Corridor 2" [level=3]
+          - text: Example
+          - paragraph: Common room / kitchen
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-215a&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-215a&lang=en
+      - listitem:
+        - article "K1-215b Corridor 1":
+          - heading "K1-215b Corridor 1" [level=3]
+          - text: Example
+          - paragraph: Common room / kitchen
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-215b&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-215b&lang=en
+      - listitem:
+        - article "K1-216 Model city V2X":
+          - heading "K1-216 Model city V2X" [level=3]
+          - text: Example
+          - paragraph: Lab / computer room
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-216&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-216&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=lcc-demo-room-k1-216&lang=en
+      - listitem:
+        - article "K1-217 Testing methods lab":
+          - heading "K1-217 Testing methods lab" [level=3]
+          - text: Example
+          - paragraph: Lab / computer room
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-217&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-217&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=lcc-demo-room-k1-217&lang=en
+      - listitem:
+        - article "K1-218 Project room":
+          - heading "K1-218 Project room" [level=3]
+          - text: Example
+          - paragraph: Seminar room
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-218&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-218&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=lcc-demo-room-k1-218&lang=en
+  - region "3rd floor":
+    - heading "3rd floor" [level=2]
+    - list:
+      - listitem:
+        - article "K1-301 Office 1":
+          - heading "K1-301 Office 1" [level=3]
+          - text: Example
+          - paragraph: Office
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-301&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-301&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=lcc-demo-room-k1-301&lang=en
+      - listitem:
+        - article "K1-302 Meeting room":
+          - heading "K1-302 Meeting room" [level=3]
+          - text: Example
+          - paragraph: Office
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-302&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-302&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=lcc-demo-room-k1-302&lang=en
+      - listitem:
+        - article "K1-303 Seminar room 8":
+          - heading "K1-303 Seminar room 8" [level=3]
+          - text: Example
+          - paragraph: Seminar room
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-303&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-303&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=lcc-demo-room-k1-303&lang=en
+      - listitem:
+        - article "K1-304 Student workspace":
+          - heading "K1-304 Student workspace" [level=3]
+          - text: Example
+          - paragraph: Study / group room
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-304&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-304&lang=en
+      - listitem:
+        - article "K1-305 Office 2":
+          - heading "K1-305 Office 2" [level=3]
+          - text: Example
+          - paragraph: Office
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-305&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-305&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=lcc-demo-room-k1-305&lang=en
+      - listitem:
+        - article "K1-306 Office 3":
+          - heading "K1-306 Office 3" [level=3]
+          - text: Example
+          - paragraph: Office
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-306&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-306&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=lcc-demo-room-k1-306&lang=en
+      - listitem:
+        - article "K1-307 Seminar room 7":
+          - heading "K1-307 Seminar room 7" [level=3]
+          - text: Example
+          - paragraph: Seminar room
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-307&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-307&lang=en
+          - link "Book this room (demo)":
+            - /url: /booking?raum=lcc-demo-room-k1-307&lang=en
+      - listitem:
+        - article "K1-309 Corridor":
+          - heading "K1-309 Corridor" [level=3]
+          - text: Example
+          - paragraph: Common room / kitchen
+          - link "Today in this room":
+            - /url: /schedule?raum=lcc-demo-room-k1-309&lang=en
+          - link "Show on the map":
+            - /url: /map?raum=lcc-demo-room-k1-309&lang=en
+- contentinfo: Prototype from the Human-Computer Interaction course – not an official display of Hochschule Coburg.
+- alert

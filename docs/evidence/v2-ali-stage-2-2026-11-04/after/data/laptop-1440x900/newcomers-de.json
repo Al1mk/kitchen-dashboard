@@ -1,0 +1,54 @@
+{
+ "ctx": "laptop-1440x900",
+ "name": "newcomers",
+ "lang": "de",
+ "label": "after",
+ "url": "/newcomers",
+ "summary": {
+  "targets": 14,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 0,
+  "minTargetH": 48,
+  "minTargetW": 80.5,
+  "textMinFs": 14,
+  "textLt14": 0,
+  "textLt16": 1,
+  "textTotal": 29,
+  "lowContrastCount": 0,
+  "screens": 1.53,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 1
+ },
+ "textMinFs": 14,
+ "clear": {
+  "scrollY": 481,
+  "docHeight": 1381,
+  "dockTop": null,
+  "lastContentBottom": 831.4,
+  "footerBottom": 900.4,
+  "lowestBottom": 900.4,
+  "clearOfDock": true,
+  "clearance": null
+ },
+ "stage2": {
+  "vh": 900,
+  "docHeight": 1381,
+  "screens": 1.5,
+  "hOverflow": false,
+  "newcomers": {
+   "cards": 5,
+   "columns": 2,
+   "minH": 273.8,
+   "helpFullWidth": true,
+   "pictograms": 5,
+   "noteKind": "compact marker",
+   "noteHeight": 24,
+   "noteFontPx": 16,
+   "noteBackground": "rgba(0, 0, 0, 0)"
+  },
+  "dockTop": null
+ },
+ "dock": null
+}

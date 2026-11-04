@@ -1,0 +1,53 @@
+{
+ "ctx": "phone-390x844",
+ "name": "home",
+ "lang": "de",
+ "label": "after",
+ "url": "/",
+ "summary": {
+  "targets": 15,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 0,
+  "minTargetH": 48,
+  "minTargetW": 80.5,
+  "textMinFs": 14,
+  "textLt14": 0,
+  "textLt16": 1,
+  "textTotal": 25,
+  "lowContrastCount": 0,
+  "screens": 1.88,
+  "hOverflow": false,
+  "homeLinks": 3,
+  "h1": 1
+ },
+ "textMinFs": 14,
+ "clear": {
+  "scrollY": 740,
+  "docHeight": 1584,
+  "dockTop": null,
+  "lastContentBottom": 754.7,
+  "footerBottom": 843.7,
+  "lowestBottom": 843.7,
+  "clearOfDock": true,
+  "clearance": null
+ },
+ "stage2": {
+  "vh": 844,
+  "docHeight": 1584,
+  "screens": 1.9,
+  "hOverflow": false,
+  "home": {
+   "kind": "stage2",
+   "cards": 6,
+   "columns": 1,
+   "minW": 350,
+   "minH": 112,
+   "maxH": 164,
+   "pictograms": 6,
+   "lastBottomViewportAtEnd": null
+  },
+  "dockTop": null
+ },
+ "dock": null
+}

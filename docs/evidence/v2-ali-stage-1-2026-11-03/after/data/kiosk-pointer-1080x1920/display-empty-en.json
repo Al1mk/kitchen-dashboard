@@ -1,0 +1,28 @@
+{
+ "ctx": "kiosk-pointer-1080x1920",
+ "name": "display-empty",
+ "lang": "en",
+ "label": "after",
+ "geo": {
+  "vw": 1080,
+  "vh": 1920,
+  "rows": [
+   4,
+   3
+  ],
+  "lang": {
+   "found": true,
+   "gap": 16.2,
+   "centreYRatio": 0.9
+  },
+  "navTop": 1734.3,
+  "navBottom": 1900.6,
+  "frameCentre": 540,
+  "rowCentres": [
+   540,
+   540
+  ]
+ },
+ "list": null,
+ "listAboveNav": null
+}

@@ -1,0 +1,45 @@
+- banner:
+  - img "Hochschule Coburg"
+  - paragraph: 10:50
+  - paragraph: Dienstag, 3. November
+  - paragraph: Lucas-Cranach-Campus Kronach
+  - group "Sprache":
+    - link "Deutsch":
+      - /url: /display
+    - link "English":
+      - /url: /display?lang=en
+  - navigation "Campus-Informationen":
+    - list:
+      - listitem:
+        - link "Start":
+          - /url: /
+      - listitem:
+        - link "Neu am Campus":
+          - /url: /newcomers
+      - listitem:
+        - link "Karte":
+          - /url: /map
+      - listitem:
+        - link "Räume":
+          - /url: /rooms
+      - listitem:
+        - link "Stundenplan":
+          - /url: /schedule
+      - listitem:
+        - link "Raumbuchung":
+          - /url: /booking
+      - listitem:
+        - link "Mitteilungen":
+          - /url: /display
+- main:
+  - heading "Mitteilungen" [level=2]
+  - article:
+    - text: Allgemein Hervorgehoben
+    - heading "Willkommen am Lucas-Cranach-Campus (Demo)" [level=3]
+    - paragraph: "Beispielinhalt für den Prototyp: Hier erscheinen Mitteilungen, die in der Verwaltung veröffentlicht wurden."
+  - article:
+    - text: Veranstaltung
+    - heading "Spieleabend in der Küche (Demo)" [level=3]
+    - paragraph: "Beispielinhalt: Gemeinsamer Spieleabend – Datum und Ort sind erfunden und dienen nur der Demonstration."
+- contentinfo: Prototyp im Kurs Mensch-Maschine-Interaktion – keine offizielle Anzeige der Hochschule Coburg.
+- alert

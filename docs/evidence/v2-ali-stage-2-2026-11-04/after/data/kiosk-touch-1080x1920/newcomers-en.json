@@ -1,0 +1,65 @@
+{
+ "ctx": "kiosk-touch-1080x1920",
+ "name": "newcomers",
+ "lang": "en",
+ "label": "after",
+ "url": "/newcomers?lang=en",
+ "summary": {
+  "targets": 14,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 0,
+  "minTargetH": 77,
+  "minTargetW": 132.7,
+  "textMinFs": 19.3,
+  "textLt14": 0,
+  "textLt16": 0,
+  "textTotal": 29,
+  "lowContrastCount": 0,
+  "screens": 1.03,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 1
+ },
+ "textMinFs": 19.3,
+ "clear": {
+  "scrollY": 61,
+  "docHeight": 1981,
+  "dockTop": 1609,
+  "lastContentBottom": 1514.1,
+  "footerBottom": 1608.6,
+  "lowestBottom": 1608.6,
+  "clearOfDock": true,
+  "clearance": 0.4
+ },
+ "stage2": {
+  "vh": 1920,
+  "docHeight": 1981,
+  "screens": 1,
+  "hOverflow": false,
+  "newcomers": {
+   "cards": 5,
+   "columns": 2,
+   "minH": 375.7,
+   "helpFullWidth": true,
+   "pictograms": 5,
+   "noteKind": "compact marker",
+   "noteHeight": 33,
+   "noteFontPx": 22,
+   "noteBackground": "rgba(0, 0, 0, 0)"
+  },
+  "dockTop": 1609
+ },
+ "dock": {
+  "position": "fixed",
+  "x": 0,
+  "y": 1609,
+  "w": 1080,
+  "h": 311,
+  "top": 1609,
+  "bottom": 1920,
+  "left": 0,
+  "right": 1080,
+  "shareOfViewport": 0.162
+ }
+}

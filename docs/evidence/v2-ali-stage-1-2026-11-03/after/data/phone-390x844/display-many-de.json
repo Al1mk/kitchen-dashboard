@@ -1,0 +1,34 @@
+{
+ "ctx": "phone-390x844",
+ "name": "display-many",
+ "lang": "de",
+ "label": "after",
+ "geo": {
+  "vw": 390,
+  "vh": 844,
+  "rows": [
+   4,
+   3
+  ],
+  "lang": {
+   "found": true,
+   "gap": 5.8,
+   "centreYRatio": 0.9
+  },
+  "navTop": 776.9,
+  "navBottom": 837,
+  "frameCentre": 195,
+  "rowCentres": [
+   195,
+   195
+  ]
+ },
+ "list": {
+  "cards": 8,
+  "scrollable": true,
+  "clipped": 0,
+  "lastReachable": true,
+  "listBottom": 702
+ },
+ "listAboveNav": true
+}

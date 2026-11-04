@@ -1,0 +1,35 @@
+
+Running 7 tests using 1 worker
+
+  ✓  1 [chromium] › tests/e2e/kiosk-dock.spec.ts:184:3 › ordinary laptop 1440x900: navigation and language switch stay in the page header, nothing is pinned (8.1s)
+  ✓  2 [chromium] › tests/e2e/kiosk-dock.spec.ts:184:3 › ordinary phone 390x844: navigation and language switch stay in the page header, nothing is pinned (7.9s)
+  ✘  3 [chromium] › tests/e2e/kiosk-dock.spec.ts:207:1 › the kiosk scale is scoped: public pages at 1080 px grow, the admin keeps the ordinary scale (612ms)
+  ✓  4 [chromium] › tests/e2e/kiosk-dock.spec.ts:277:3 › kiosk 1080x1700 (assumed chrome loss): keyboard focus is never hidden behind the dock (2.6s)
+  ✓  5 [chromium] › tests/e2e/kiosk-dock.spec.ts:277:3 › kiosk 540x960 (assumed 200 % zoom): keyboard focus is never hidden behind the dock (2.5s)
+  ✓  6 [chromium] › tests/e2e/kiosk-dock.spec.ts:307:1 › kiosk: search, language switch, bare Rooms link and Back/Forward keep working through the dock (811ms)
+  ✓  7 [chromium] › tests/e2e/kiosk-dock.spec.ts:403:1 › the admin preview of an announcement has no public navigation (276ms)
+
+
+  1) [chromium] › tests/e2e/kiosk-dock.spec.ts:207:1 › the kiosk scale is scoped: public pages at 1080 px grow, the admin keeps the ordinary scale 
+
+    Error: public page root size at 1080 px
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 20
+    Received:    16
+
+      209 |   await open(page, "/", "de");
+      210 |   const g = await geometry(page);
+    > 211 |   expect(g.rootFontSize, "public page root size at 1080 px").toBeGreaterThanOrEqual(20);
+          |                                                              ^
+      212 |   const intro = await page.locator("main p").first().evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
+      213 |   expect(intro, "intro text at 1080 px").toBeGreaterThanOrEqual(22);
+      214 |   const h1 = await page.locator("h1").first().evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
+        at <scratch>/v1/tests/e2e/kiosk-dock.spec.ts:211:62
+
+    Error Context: test-results/kiosk-dock-the-kiosk-scale-6953c-in-keeps-the-ordinary-scale-chromium/error-context.md
+
+  1 failed
+    [chromium] › tests/e2e/kiosk-dock.spec.ts:207:1 › the kiosk scale is scoped: public pages at 1080 px grow, the admin keeps the ordinary scale 
+  6 passed (27.9s)

@@ -1,0 +1,85 @@
+- banner:
+  - img "Hochschule Coburg"
+  - paragraph: Lucas-Cranach-Campus Kronach
+  - group "Sprache":
+    - link "Deutsch":
+      - /url: /schedule
+    - link "English":
+      - /url: /schedule?lang=en
+  - navigation "Campus-Informationen":
+    - list:
+      - listitem:
+        - link "Start":
+          - /url: /
+      - listitem:
+        - link "Neu am Campus":
+          - /url: /newcomers
+      - listitem:
+        - link "Karte":
+          - /url: /map
+      - listitem:
+        - link "Räume":
+          - /url: /rooms
+      - listitem:
+        - link "Stundenplan":
+          - /url: /schedule
+      - listitem:
+        - link "Raumbuchung":
+          - /url: /booking
+      - listitem:
+        - link "Mitteilungen":
+          - /url: /display
+- main:
+  - heading "Stundenplan" [level=1]
+  - paragraph: Dienstag, 3. November 2026· Heute
+  - navigation "Tag wählen":
+    - link "← Vortag":
+      - /url: /schedule?datum=2026-11-02
+    - link "Heute":
+      - /url: /schedule
+    - link "Folgetag →":
+      - /url: /schedule?datum=2026-11-04
+  - paragraph: "Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen."
+  - list:
+    - listitem:
+      - article "Programmierung – Übung (Demo)":
+        - paragraph: 08:15–11:30
+        - heading "Programmierung – Übung (Demo)" [level=2]
+        - text: Läuft gerade Beispiel
+        - paragraph:
+          - text: Raum
+          - strong: DEMO-102
+          - text: – PC-Labor (Demo) · 1. Obergeschoss
+        - paragraph: Wirtschaftsinformatik 2.0 – Beispielsemester · Dozent:in C (Demo)
+    - listitem:
+      - article "Mensch-Maschine-Interaktion (Demo)":
+        - paragraph: 10:00–11:30
+        - heading "Mensch-Maschine-Interaktion (Demo)" [level=2]
+        - text: Läuft gerade Beispiel
+        - paragraph:
+          - text: Raum
+          - strong: K1-120
+          - text: – Seminarraum · 1. Obergeschoss
+        - paragraph: Beispielsemester (Demo) · Prof. Dr. Christian Zagel
+    - listitem:
+      - article "Mensch-Maschine-Interaktion (Demo)":
+        - paragraph: 13:00–14:30
+        - heading "Mensch-Maschine-Interaktion (Demo)" [level=2]
+        - text: Beispiel
+        - paragraph:
+          - text: Raum
+          - strong: DEMO-101
+          - text: – Seminarraum 1 (Demo) · 1. Obergeschoss
+        - paragraph: Wirtschaftsinformatik 2.0 – Beispielsemester · Prof. Dr. Christian Zagel
+    - listitem:
+      - article "Wirtschaftsinformatik – Übung (Demo)":
+        - paragraph: 14:00–15:30
+        - heading "Wirtschaftsinformatik – Übung (Demo)" [level=2]
+        - text: Beispiel
+        - paragraph:
+          - text: Raum
+          - strong: K1-103
+          - text: – Seminarraum 1 · 1. Obergeschoss
+        - paragraph: Beispielsemester (Demo) · Dozent:in B (Demo)
+- contentinfo: Prototyp im Kurs Mensch-Maschine-Interaktion – keine offizielle Anzeige der Hochschule Coburg.
+- alert

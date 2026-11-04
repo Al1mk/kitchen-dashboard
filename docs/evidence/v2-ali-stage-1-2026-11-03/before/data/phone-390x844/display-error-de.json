@@ -1,0 +1,28 @@
+{
+ "ctx": "phone-390x844",
+ "name": "display-error",
+ "lang": "de",
+ "label": "before",
+ "geo": {
+  "vw": 390,
+  "vh": 844,
+  "rows": [
+   4,
+   3
+  ],
+  "lang": {
+   "found": true,
+   "gap": 1.9,
+   "centreYRatio": 0.1
+  },
+  "navTop": 113.9,
+  "navBottom": 179.4,
+  "frameCentre": 195,
+  "rowCentres": [
+   195,
+   150
+  ]
+ },
+ "list": null,
+ "listAboveNav": null
+}

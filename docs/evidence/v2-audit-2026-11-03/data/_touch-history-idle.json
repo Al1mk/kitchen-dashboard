@@ -1,0 +1,24 @@
+[
+ {
+  "k": "T3 idle 95 s on /rooms?suche=Zagel&datum=2026-11-04: url",
+  "v": "/rooms?suche=Zagel&datum=2026-11-04"
+ },
+ {
+  "k": "T3 field value after idle",
+  "v": "Zagel"
+ },
+ {
+  "k": "T4 /rooms during 4 s API delay: main text",
+  "v": "Räume Raum, Lehrperson oder Lehrveranstaltung suchen Raumnummer (z. B. K1-105 oder 105), Raumname, Lehrperson oder Lehrveranstaltung. Räume werden geladen …"
+ },
+ {
+  "k": "T4 live regions",
+  "v": [
+   {
+    "role": "status",
+    "busy": null,
+    "t": "Räume werden geladen …"
+   }
+  ]
+ }
+]

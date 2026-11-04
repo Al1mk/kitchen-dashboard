@@ -1,0 +1,25 @@
+
+ RUN  v5.0.5 <project>/campus-board
+
+ ❯ tests/unit/public-kiosk-layout.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/public-kiosk-layout.test.ts [ tests/unit/public-kiosk-layout.test.ts ]
+Error: Cannot find module '../../src/lib/public-layout.ts' imported from <project>/campus-board/tests/unit/public-kiosk-layout.test.ts
+ ❯ tests/unit/public-kiosk-layout.test.ts:3:1
+      1| import { readFileSync } from "node:fs";
+      2| import { describe, expect, it } from "vitest";
+      3| import { PUBLIC_KIOSK_MEDIA } from "../../src/lib/public-layout.ts";
+       | ^
+      4|
+      5| // V2 Stage 1 (AL-02): the public kiosk mode is chosen by ONE media ru…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  21:15:46
+   Duration  74ms (worker 97%, environment 3%)
+

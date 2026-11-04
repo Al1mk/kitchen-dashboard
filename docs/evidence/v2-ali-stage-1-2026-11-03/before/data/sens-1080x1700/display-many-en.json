@@ -1,0 +1,34 @@
+{
+ "ctx": "sens-1080x1700",
+ "name": "display-many",
+ "lang": "en",
+ "label": "before",
+ "geo": {
+  "vw": 1080,
+  "vh": 1700,
+  "rows": [
+   4,
+   3
+  ],
+  "lang": {
+   "found": true,
+   "gap": 4.7,
+   "centreYRatio": 0.1
+  },
+  "navTop": 276.4,
+  "navBottom": 423.7,
+  "frameCentre": 540,
+  "rowCentres": [
+   540,
+   429.6
+  ]
+ },
+ "list": {
+  "cards": 8,
+  "scrollable": true,
+  "clipped": 0,
+  "lastReachable": true,
+  "listBottom": 1527
+ },
+ "listAboveNav": false
+}

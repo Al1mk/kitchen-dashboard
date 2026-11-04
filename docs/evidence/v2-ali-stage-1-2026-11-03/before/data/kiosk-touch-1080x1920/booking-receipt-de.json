@@ -1,0 +1,16 @@
+{
+ "ctx": "kiosk-touch-1080x1920",
+ "name": "booking-receipt",
+ "lang": "de",
+ "label": "before",
+ "geo": {
+  "vw": 1080,
+  "vh": 1920,
+  "pinned": null,
+  "navCount": 1
+ },
+ "doneButton": {
+  "top": 835,
+  "bottom": 899
+ }
+}

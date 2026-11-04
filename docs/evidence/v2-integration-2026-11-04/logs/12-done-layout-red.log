@@ -1,0 +1,92 @@
+
+> campus-board@0.1.0 test:e2e
+> playwright test tests/e2e/parsa-review-fixes.spec.ts --grep 540x960
+
+[WebServer] (node:32081) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32082) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32110) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32112) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32124) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32117) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32122) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32119) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32123) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32125) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32121) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32120) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32116) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32126) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32118) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32127) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32155) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:32157) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:9:3 › PARSA-R002: warning keeps controls visible without scrolling (540x960, de) (802ms)
+(node:32162) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:9:3 › PARSA-R002: warning keeps controls visible without scrolling (540x960, en) (640ms)
+
+
+  1) [chromium] › tests/e2e/parsa-review-fixes.spec.ts:9:3 › PARSA-R002: warning keeps controls visible without scrolling (540x960, de) 
+
+    Error: Done is visible before interacting with the receipt
+
+    expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 733
+    Received:    773.65625
+
+      42 |    await context.close(); // Do not export credential-bearing failure snapshots.
+      43 |    expect(before.buttonBottom).toBeLessThanOrEqual(before.dockTop);
+    > 44 |    expect(before.doneBottom, "Done is visible before interacting with the receipt").toBeLessThanOrEqual(before.dockTop);
+         |                                                                                     ^
+      45 |    expect(after.buttonBottom).toBeLessThanOrEqual(after.dockTop);
+      46 |    expect(after.doneBottom, "Done stays above the dock with the warning").toBeLessThanOrEqual(after.dockTop);
+      47 |    expect(after.buttonTop).toBeGreaterThanOrEqual(0);
+        at /private<isolated-workspace>/candidate/tests/e2e/parsa-review-fixes.spec.ts:44:85
+
+    Error Context: test-results/parsa-review-fixes-PARSA-R-1f7f8-thout-scrolling-540x960-de--chromium/error-context.md
+
+  2) [chromium] › tests/e2e/parsa-review-fixes.spec.ts:9:3 › PARSA-R002: warning keeps controls visible without scrolling (540x960, en) 
+
+    Error: Done is visible before interacting with the receipt
+
+    expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 733
+    Received:    773.65625
+
+      42 |    await context.close(); // Do not export credential-bearing failure snapshots.
+      43 |    expect(before.buttonBottom).toBeLessThanOrEqual(before.dockTop);
+    > 44 |    expect(before.doneBottom, "Done is visible before interacting with the receipt").toBeLessThanOrEqual(before.dockTop);
+         |                                                                                     ^
+      45 |    expect(after.buttonBottom).toBeLessThanOrEqual(after.dockTop);
+      46 |    expect(after.doneBottom, "Done stays above the dock with the warning").toBeLessThanOrEqual(after.dockTop);
+      47 |    expect(after.buttonTop).toBeGreaterThanOrEqual(0);
+        at /private<isolated-workspace>/candidate/tests/e2e/parsa-review-fixes.spec.ts:44:85
+
+    Error Context: test-results/parsa-review-fixes-PARSA-R-d7014-thout-scrolling-540x960-en--chromium/error-context.md
+
+  2 failed
+    [chromium] › tests/e2e/parsa-review-fixes.spec.ts:9:3 › PARSA-R002: warning keeps controls visible without scrolling (540x960, de) 
+    [chromium] › tests/e2e/parsa-review-fixes.spec.ts:9:3 › PARSA-R002: warning keeps controls visible without scrolling (540x960, en) 

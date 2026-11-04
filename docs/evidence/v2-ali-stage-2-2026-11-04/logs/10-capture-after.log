@@ -1,0 +1,7 @@
+capture after kiosk-touch-1080x1920
+capture after kiosk-pointer-1080x1920
+capture after sens-1080x1700
+capture after sens-540x960
+capture after laptop-1440x900
+capture after phone-390x844
+done after 60 page records -> <project>/campus-board/docs/evidence/v2-ali-stage-2-2026-11-04/after

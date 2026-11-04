@@ -1,0 +1,60 @@
+{
+ "ctx": "phone-390x844",
+ "name": "rooms-search-k1-120",
+ "lang": "en",
+ "label": "before",
+ "url": "/rooms?suche=K1-120&lang=en",
+ "summary": {
+  "targets": 18,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 4,
+  "minTargetH": 48,
+  "minTargetW": 80.5,
+  "textMinFs": 14,
+  "textLt14": 0,
+  "textLt16": 2,
+  "textTotal": 38,
+  "lowContrastCount": 0,
+  "screens": 2.37,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 1
+ },
+ "textMinFs": 14,
+ "clear": {
+  "scrollY": 1158,
+  "docHeight": 2002,
+  "dockTop": null,
+  "lastContentBottom": 754.7,
+  "footerBottom": 843.7,
+  "lowestBottom": 843.7,
+  "clearOfDock": true,
+  "clearance": null
+ },
+ "stage2": {
+  "vh": 844,
+  "docHeight": 2002,
+  "screens": 2.4,
+  "hOverflow": false,
+  "rooms": {
+   "cards": 1,
+   "medianPitch": null,
+   "firstCardH": 312,
+   "actionsInOneRow": 0,
+   "chips": [],
+   "chipBar": null,
+   "floorHeadings": 1
+  },
+  "search": {
+   "first": "rooms",
+   "classMatches": 0,
+   "noRoomMessage": null,
+   "noRoomAboveClasses": null,
+   "scopeSentence": false,
+   "classesHeadingTop": 1396.7
+  },
+  "dockTop": null
+ },
+ "dock": null
+}

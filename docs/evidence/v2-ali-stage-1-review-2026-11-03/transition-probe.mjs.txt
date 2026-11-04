@@ -1,0 +1,62 @@
+import { chromium, expect } from '@playwright/test';
+import { writeFileSync } from 'node:fs';
+const root='/private/tmp/codex-stage1-review-20261103-3usgk_5g';
+const browser=await chromium.launch({headless:true});
+const context=await browser.newContext({viewport:{width:1080,height:1920},deviceScaleFactor:1,hasTouch:false,locale:'de-DE',timezoneId:'Europe/Berlin'});
+const page=await context.newPage();
+const records=[];
+const errors=[];
+page.on('pageerror', e=>errors.push(String(e)));
+const nav=()=>page.locator('nav[aria-label="Campus-Informationen"],nav[aria-label="Campus information"]');
+async function geom(label){
+ const g=await page.evaluate(()=>{
+  const dock=document.querySelector('[data-public-dock]');
+  const style=dock?getComputedStyle(dock):null;
+  const r=dock?.getBoundingClientRect();
+  return {width:innerWidth,height:innerHeight,font:parseFloat(getComputedStyle(document.documentElement).fontSize),mode:matchMedia('(orientation: portrait) and (min-width: 520px)').matches,dockPosition:style?.position,dockDisplay:style?.display,dockHeight:r?.height,inlineReservation:document.documentElement.style.getPropertyValue('--public-dock-h'),scrollPadding:parseFloat(getComputedStyle(document.documentElement).scrollPaddingBottom)||0,overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth+1,navs:document.querySelectorAll('nav[aria-label="Campus-Informationen"],nav[aria-label="Campus information"]').length};
+ });
+ records.push({label,...g});
+ expect(g.overflow,label+' horizontal overflow').toBe(false);
+ return g;
+}
+async function fixed(label){
+ await expect.poll(async()=>page.evaluate(()=>{
+  const dock=document.querySelector('[data-public-dock]');
+  return !!dock && getComputedStyle(dock).position==='fixed' && Math.abs(parseFloat(document.documentElement.style.getPropertyValue('--public-dock-h'))-dock.getBoundingClientRect().height)<=1;
+ })).toBe(true);
+ return geom(label);
+}
+try {
+ await page.goto('http://127.0.0.1:3402/');
+ let g=await fixed('home portrait pointer-fine'); expect(g.font).toBe(22);
+ await page.getByRole('group',{name:'Sprache'}).getByRole('link',{name:'English',exact:true}).click();
+ await expect(page).toHaveURL(/lang=en/);
+ await fixed('language soft navigation');
+ await page.screenshot({path:root+'/home-pointer-en.png'});
+ await nav().getByRole('link',{name:'Announcements',exact:true}).click();
+ await expect(page).toHaveURL(/\/display\?lang=en/);
+ await expect.poll(()=>page.evaluate(()=>document.documentElement.style.getPropertyValue('--public-dock-h'))).toBe('');
+ g=await geom('soft navigation to board removes shell reservation'); expect(g.font).toBe(16); expect(g.dockPosition).toBe('static'); expect(g.scrollPadding).toBe(0);
+ await nav().getByRole('link',{name:'Rooms',exact:true}).click();
+ await expect(page).toHaveURL(/\/rooms\?lang=en/);
+ await fixed('board to rooms reapplies reservation');
+ await page.setViewportSize({width:1440,height:900});
+ await expect.poll(()=>page.evaluate(()=>document.documentElement.style.getPropertyValue('--public-dock-h'))).toBe('');
+ g=await geom('resize to ordinary laptop'); expect(g.font).toBe(16); expect(g.dockDisplay).toBe('contents'); expect(g.scrollPadding).toBe(0);
+ await page.setViewportSize({width:540,height:960});
+ g=await fixed('resize to 540x960'); expect(g.font).toBe(16);
+ await expect(page.locator('main a').last()).toBeVisible();
+ const target=page.locator('main a').last();
+ for(const block of ['nearest','end']){
+  await page.evaluate(()=>window.scrollTo(0,0));
+  await target.evaluate((el,block)=>el.scrollIntoView({block,behavior:'instant'}),block);
+  const clearance=await target.evaluate(el=>({bottom:el.getBoundingClientRect().bottom,dockTop:document.querySelector('[data-public-dock]').getBoundingClientRect().top}));
+  records.push({label:'English Rooms scrollIntoView '+block,...clearance});
+  expect(clearance.bottom,'scrollIntoView '+block+' keeps last action above dock').toBeLessThanOrEqual(clearance.dockTop+1);
+ }
+ await page.setViewportSize({width:1080,height:1920});
+ g=await fixed('resize back to full portrait'); expect(g.font).toBe(22);
+ expect(errors).toEqual([]);
+ writeFileSync(root+'/probe-results.json',JSON.stringify({passed:true,checks:records,errors},null,2));
+ console.log(JSON.stringify({passed:true,checks:records,errors},null,2));
+} finally {await context.close();await browser.close();}

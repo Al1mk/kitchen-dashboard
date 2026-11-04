@@ -1,0 +1,55 @@
+- banner:
+  - img "Hochschule Coburg"
+  - paragraph: Lucas-Cranach-Campus Kronach
+  - group "Language":
+    - link "Deutsch":
+      - /url: /
+    - link "English":
+      - /url: /?lang=en
+  - navigation "Campus information":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /?lang=en
+      - listitem:
+        - link "New to campus":
+          - /url: /newcomers?lang=en
+      - listitem:
+        - link "Map":
+          - /url: /map?lang=en
+      - listitem:
+        - link "Rooms":
+          - /url: /rooms?lang=en
+      - listitem:
+        - link "Schedule":
+          - /url: /schedule?lang=en
+      - listitem:
+        - link "Booking":
+          - /url: /booking?lang=en
+      - listitem:
+        - link "Announcements":
+          - /url: /display?lang=en
+- main:
+  - heading "Campus information" [level=1]
+  - paragraph: Information for students and visitors at Lucas-Cranach-Campus.
+  - list:
+    - listitem:
+      - 'link "New to campus First orientation: where do I find what?"':
+        - /url: /newcomers?lang=en
+    - listitem:
+      - link "Map Find rooms on the floor plan":
+        - /url: /map?lang=en
+    - listitem:
+      - link "Rooms All rooms by floor":
+        - /url: /rooms?lang=en
+    - listitem:
+      - link "Schedule Classes by day and room":
+        - /url: /schedule?lang=en
+    - listitem:
+      - link "Booking Check free times and make a test booking (demo)":
+        - /url: /booking?lang=en
+    - listitem:
+      - link "Announcements Current notices for the campus":
+        - /url: /display?lang=en
+- contentinfo: Prototype from the Human-Computer Interaction course – not an official display of Hochschule Coburg.
+- alert

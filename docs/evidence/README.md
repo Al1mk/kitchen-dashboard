@@ -85,6 +85,10 @@ Build is part of T-24 (Playwright builds before starting). Restart check not rer
 | [`publication-prep-2026-11-01/`](publication-prep-2026-11-01/README.md) | Identity normalization before first push, SHA mapping | 24/24 commits verified tree-identical; typecheck/lint 0, unit 136/136 |
 | [`post-push-verification-2026-11-01/`](post-push-verification-2026-11-01/README.md) | Fresh clone of the pushed branch `f7f91af` | typecheck/lint 0, unit 136/136, build 0, E2E 66/66, restart PASS 13 |
 
+## Physical-display feedback received — 2 November 2026
+
+[FR-01–FR-04: Ali's report, supplied settings screenshot, local device photo and official Elo documentation](field-review-2026-11-02/README.md). Settings confirm configured ELO ET4363L portrait 1080×1920 at 60 Hz; photo identifies E344056. Touch failure, reach and readability issues are reported by Ali; not an independently executed hardware or participant test. Tasks T35–T42 recorded; runtime/DB/system unchanged and no product tests run in this documentation checkpoint.
+
 ## Independent room-search review — 1 November 2026
 
 [Evidence](room-search-review-2026-11-01/README.md): fresh unit 152/152, two navigation probes fail from SEARCH-R001, read-only demo/backup comparison correct. Full Claude build/E2E/restart logs inspected, not rerun; no runtime fix or human test. [Review](../reviews/2026-11-01-room-search-review.md).
@@ -92,3 +96,23 @@ Build is part of T-24 (Playwright builds before starting). Restart check not rer
 ## SEARCH-R001 independently resolved — 1 November 2026
 
 [Independent recheck](room-search-r001-recheck-2026-11-01/README.md): fresh unit 152/152 and 7/7 public-browser probes. Original failing Back/bare-navigation scenarios pass after correction. Claude full 75-browser/13-restart/build/typecheck/lint evidence read, not independently rerun. No human study or further runtime change.
+
+## V2 audit-first run — 3 November 2026
+
+[Audit evidence](v2-audit-2026-11-03/README.md): nominal 1080×1920 touch emulation, sensitivity and laptop contexts, DE/EN, isolated copy of `a7903db` with a disposable database. Screenshots, DOM measurements and logs; credentials, codes and device serials excluded and scanned. **Emulation only:** not the physical Elo screen, not a human study. Reports: [`docs/hci/v2-audit-2026-11-03/`](../hci/v2-audit-2026-11-03/README.md). Phase A report frozen with SHA-256 `5590f8ff…517c` before the comparison.
+
+## V2 Stage 1 — kiosk dock and scale, 3 November 2026
+
+[Stage 1 evidence](v2-ali-stage-1-2026-11-03/README.md): matched before (isolated copy of `a7903db`) and after (modified working tree) captures, 6 emulation contexts × DE/EN, generated measurements, red/mutation run logs and a packet for the documentation editor. Typecheck 0, lint 0, unit 155/155, build 0, E2E 94/94 on the modified source; restart validation not run. **Nominal emulation only:** the Elo screen was not attached; no physical, reach, touch or human result. Credentials and codes masked or absent; scanned.
+
+## V2 Stage 1 independent review — 3 November 2026
+
+[Codex review and fresh evidence](v2-ali-stage-1-review-2026-11-03/README.md): actual modified-source copy, fresh typecheck/lint, **155 unit and 94 browser tests passed**, plus a separate transition/resize/scroll probe. Initial build was blocked by Google Fonts access; the network-enabled build/E2E rerun passed without source changes or font mocks. No new blocking Stage 1 defect found in the checked scope; Stage 2 can proceed. Real touch/reach and human usability remain unverified, T36 remains IMPLEMENTED and restart validation was not rerun. Application code and protected original data were unchanged by this review.
+
+## V2 Stage 2 — Home, Newcomers, Rooms, 4 November 2026
+
+[Stage 2 evidence](v2-ali-stage-2-2026-11-04/README.md): matched before (Stage 1 working tree) and after captures, 6 emulation contexts × DE/EN, generated measurements, red/mutation/intermittent-test logs, packet for the documentation editor. Typecheck 0, lint 0, unit 164/164, build 0, E2E 127/127 on the modified source (repo config, port 3100); restart not run. **Nominal emulation only**; Elo screen not attached; no human result. No credentials involved.
+
+## V2 combined Ali + Parsa integration — 4 November 2026
+
+[Final source, review fixes and evidence](v2-integration-2026-11-04/README.md): source-matched189files; typecheck/lint pass,166unit,145E2E and13restart checks pass. Four DE/EN/size visual contexts,36masked screenshots. Includes meaningful red/green for pending warning, both receipt actions,404 cache invalidation, metadata and input hints. Stage1/2 history/frozen audit preserved. This is technical emulation, not people/physical acceptance; Stage3/map/copy/booklet/deck remain open.

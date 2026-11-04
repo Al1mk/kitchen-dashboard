@@ -1,0 +1,79 @@
+- banner:
+  - img "Hochschule Coburg"
+  - paragraph: Lucas-Cranach-Campus Kronach
+  - group "Sprache":
+    - link "Deutsch":
+      - /url: /booking?datum=2026-11-03
+    - link "English":
+      - /url: /booking?datum=2026-11-03&lang=en
+  - navigation "Campus-Informationen":
+    - list:
+      - listitem:
+        - link "Start":
+          - /url: /
+      - listitem:
+        - link "Neu am Campus":
+          - /url: /newcomers
+      - listitem:
+        - link "Karte":
+          - /url: /map
+      - listitem:
+        - link "Räume":
+          - /url: /rooms
+      - listitem:
+        - link "Stundenplan":
+          - /url: /schedule
+      - listitem:
+        - link "Raumbuchung":
+          - /url: /booking
+      - listitem:
+        - link "Mitteilungen":
+          - /url: /display
+- main:
+  - heading "Raum reservieren" [level=1]
+  - paragraph: DEMO – keine echte Hochschulreservierung. Keine Anmeldung, kein offizieller Anspruch auf den Raum.
+  - paragraph: "Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen."
+  - text: 1. Raum auswählen
+  - combobox "1. Raum auswählen":
+    - option "Bitte einen Raum wählen" [selected]
+    - option "DEMO-101 – Seminarraum 1 (Demo)"
+    - option "K1-103 – Seminarraum 1"
+    - option "K1-112 – Maschinenraum"
+    - option "K1-114 – Rapid Prototyping"
+    - option "K1-119 – Media Lab"
+    - option "K1-120 – Seminarraum"
+    - option "K1-121 – Elektronik-Werkstatt"
+    - option "K1-125 – Seminarraum"
+    - option "DEMO-201 – Gruppenraum (Demo)"
+    - option "K1-204 – Büro 2"
+    - option "K1-206 – Büro 3"
+    - option "K1-207 – Besprechungsraum"
+    - option "K1-210 – Seminarraum"
+    - option "K1-211 – Büro 1"
+    - option "K1-216 – Modellstadt V2X"
+    - option "K1-217 – Testmethodenlabor"
+    - option "K1-218 – Projektraum"
+    - option "K1-301 – Büro 1"
+    - option "K1-302 – Besprechung"
+    - option "K1-303 – Seminarraum 8"
+    - option "K1-305 – Büro 2"
+    - option "K1-306 – Büro 3"
+    - option "K1-307 – Seminarraum 7"
+  - text: 2. Datum
+  - textbox "2. Datum": 2026-11-03
+  - text: 3. Dauer
+  - combobox "3. Dauer":
+    - option "15 Minuten"
+    - option "30 Minuten"
+    - option "45 Minuten"
+    - option "60 Minuten" [selected]
+    - option "90 Minuten"
+    - option "120 Minuten"
+  - region "4. Freie Startzeit wählen":
+    - heading "4. Freie Startzeit wählen" [level=2]
+    - paragraph: Wähle zuerst einen Raum.
+  - button "Weiter zur Bestätigung" [disabled]
+  - link "Reservierung stornieren":
+    - /url: /booking/cancel
+- contentinfo: Prototyp im Kurs Mensch-Maschine-Interaktion – keine offizielle Anzeige der Hochschule Coburg.
+- alert

@@ -1,0 +1,83 @@
+{
+ "ctx": "kiosk-touch-1080x1920",
+ "name": "rooms",
+ "lang": "en",
+ "label": "after",
+ "url": "/rooms?lang=en",
+ "summary": {
+  "targets": 145,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 10,
+  "minTargetH": 77,
+  "minTargetW": 132.7,
+  "textMinFs": 19.3,
+  "textLt14": 0,
+  "textLt16": 0,
+  "textTotal": 381,
+  "lowContrastCount": 0,
+  "screens": 8.22,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 1
+ },
+ "textMinFs": 19.3,
+ "clear": {
+  "scrollY": 13863,
+  "docHeight": 15783,
+  "dockTop": 1609,
+  "lastContentBottom": 1514.2,
+  "footerBottom": 1608.7,
+  "lowestBottom": 1608.7,
+  "clearOfDock": true,
+  "clearance": 0.3
+ },
+ "stage2": {
+  "vh": 1920,
+  "docHeight": 15783,
+  "screens": 8.2,
+  "hOverflow": false,
+  "rooms": {
+   "cards": 54,
+   "medianPitch": 259,
+   "firstCardH": 292,
+   "actionsInOneRow": 54,
+   "chips": [
+    {
+     "t": "Ground floor",
+     "h": 77
+    },
+    {
+     "t": "1st floor",
+     "h": 77
+    },
+    {
+     "t": "2nd floor",
+     "h": 77
+    },
+    {
+     "t": "3rd floor",
+     "h": 77
+    }
+   ],
+   "chipBar": {
+    "sticky": true,
+    "h": 99
+   },
+   "floorHeadings": 4
+  },
+  "dockTop": 1609
+ },
+ "dock": {
+  "position": "fixed",
+  "x": 0,
+  "y": 1609,
+  "w": 1080,
+  "h": 311,
+  "top": 1609,
+  "bottom": 1920,
+  "left": 0,
+  "right": 1080,
+  "shareOfViewport": 0.162
+ }
+}

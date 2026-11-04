@@ -1,0 +1,36 @@
+
+ RUN  v5.0.5 <scratch>/before
+
+ ❯ tests/unit/public-pictograms.test.ts (0 test)
+ ❯ tests/unit/search-results-layout.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/public-pictograms.test.ts [ tests/unit/public-pictograms.test.ts ]
+Error: Cannot find module '../../src/lib/public-pictograms.ts' imported from <scratch>/before/tests/unit/public-pictograms.test.ts
+ ❯ tests/unit/public-pictograms.test.ts:2:1
+      1| import { describe, expect, it } from "vitest";
+      2| import { HOME_SECTIONS, NEWCOMER_PICTOGRAM, PICTOGRAM_NAMES } from "..…
+       | ^
+      3| import { PUBLIC_TEXT } from "../../src/lib/i18n/public.ts";
+      4| import { NEWCOMER_CARDS } from "../../src/lib/newcomers/content.ts";
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/search-results-layout.test.ts [ tests/unit/search-results-layout.test.ts ]
+Error: Cannot find module '../../src/lib/search/results-layout.ts' imported from <scratch>/before/tests/unit/search-results-layout.test.ts
+ ❯ tests/unit/search-results-layout.test.ts:2:1
+      1| import { describe, expect, it } from "vitest";
+      2| import { searchResultsLayout, type ClassState } from "../../src/lib/se…
+       | ^
+      3|
+      4| // V2 Stage 2 (AL-04): how /rooms orders the two result groups of one …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  no tests
+   Start at  16:15:16
+   Duration  86ms (worker 97%, environment 3%)
+

@@ -1,0 +1,92 @@
+[
+ {
+  "k": "confirm button in viewport before scroll (A)?",
+  "v": {
+   "top": 1580,
+   "vh": 1920,
+   "inViewport": true
+  }
+ },
+ {
+  "k": "B receipt shown; codes captured in memory?",
+  "v": true
+ },
+ {
+  "k": "A after conflicting confirm: text",
+  "v": "Raum reservieren DEMO – keine echte Hochschulreservierung. Keine Anmeldung, kein offizieller Anspruch auf den Raum. Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. 1. Raum auswählen Bitte einen Raum wählen [REDACTED] – Seminarraum 1 (Demo) K1-103 – Seminarraum 1 K1-112 – Maschinenraum K1-114 – Rapid Prototyping K1-119 – Media Lab K1-120 – Seminarraum K1-121 – Elektronik-Werkstatt K1-125 – Seminarraum [REDACTED] – Gruppenraum (Demo) K1-204 – Büro 2 K1-206 – Büro 3 K1-207 – Besprechungsraum K1-210 – Seminarraum K1-211 – Büro 1 K1-216 – Modellstadt V2X K1-217 – Testmethodenlabor K1-218 – Projektraum K1-301 – Büro"
+ },
+ {
+  "k": "A live regions",
+  "v": {
+   "alerts": [
+    {
+     "role": "alert",
+     "live": null,
+     "t": "Dieses Zeitfenster ist inzwischen belegt. Bitte wähle ein anderes."
+    }
+   ]
+  }
+ },
+ {
+  "k": "A conflict message position",
+  "v": {
+   "top": 1295,
+   "scrollY": 0,
+   "vh": 1920,
+   "inViewport": true,
+   "text": "Belegte Zeiten: "
+  }
+ },
+ {
+  "k": "A 17:00 slot still offered?",
+  "v": 0
+ },
+ {
+  "k": "B after receipt expiry: text",
+  "v": "Campus-Informationen Informationen für Studierende und Gäste am Lucas-Cranach-Campus. Neu am Campus Erste Orientierung: wo finde ich was? Karte Räume auf dem Stockwerksplan finden Räume Alle Räume nach Stockwerk Stundenplan Lehrveranstaltungen nach Tag und Raum Raumbuchung Freie Zeiten prüfen und einen Raum probeweise reservieren (Demo) Mitteilungen Aktuelle Hinweise für den Campus"
+ },
+ {
+  "k": "cancel with wrong code: text",
+  "v": "Reservierung stornieren DEMO – kein offizielles Raumbuchungssystem. Buchungsnummer Stornierungscode Der Stornierungscode hat nicht das richtige Format. Bitte prüfe ihn. Stornierung bestätigen Zur Raumbuchung"
+ },
+ {
+  "k": "cancel wrong-code live regions",
+  "v": {
+   "alerts": [
+    {
+     "role": "alert",
+     "live": null,
+     "t": "Der Stornierungscode hat nicht das richtige Format. Bitte prüfe ihn."
+    }
+   ]
+  }
+ },
+ {
+  "k": "cancel with right code: text",
+  "v": "Reservierung stornieren DEMO – kein offizielles Raumbuchungssystem. ✓ Die Reservierung wurde storniert. Zur Raumbuchung"
+ },
+ {
+  "k": "cancel success live regions",
+  "v": {
+   "alerts": [
+    {
+     "role": "status",
+     "live": null,
+     "t": "✓ Die Reservierung wurde storniert."
+    }
+   ]
+  }
+ },
+ {
+  "k": "17:00 bookable again after cancel",
+  "v": true
+ },
+ {
+  "k": "after reload at receipt: text",
+  "v": "Raum reservieren DEMO – keine echte Hochschulreservierung. Keine Anmeldung, kein offizieller Anspruch auf den Raum. Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen. 1. Raum auswählen Bitte einen Raum wählen [REDACTED] "
+ },
+ {
+  "k": "18:00 still offered after own booking?",
+  "v": 0
+ }
+]

@@ -1,0 +1,16 @@
+admin login status: 200
+create+publish Mensa heute geschlossen (Audit 200
+create+publish Bibliothek: verlängerte Öffnun 200
+create+publish Workshop Prototyping für Ersts 200
+create+publish Aufzug im Gebäude K1 außer Bet 200
+create+publish Fundsachen: Schlüsselbund im S 200
+create+publish Neue Lernräume im 2. Obergesch 200
+create failed 400 {"error":"validation","message":"Bitte die markierten Felder prüfen.","fieldErrors":{"title":["Der Titel darf höchstens 120 Zeichen lang sein."]}}
+create+publish Wichtige Mitteilung mit einem  null
+de display many: screens 1 docH 1920 minFs 22.7 h3 count 8
+en display many: screens 1 docH 1920 minFs 22.7 h3 count 8
+display t0: {"y":0,"first":"Mensa heute geschlossen (Audit)","n":8,"clock":"17:16"}  t+25s: {"y":0,"first":"Mensa heute geschlossen (Audit)","n":8,"clock":"17:17"}
+display bottom: {"y":0,"docH":1920,"vh":1920,"lastNoticeBottom":4220,"footerTop":1833}
+withdrawn: 8 of 9
+de empty: Mitteilungen Zurzeit gibt es keine Mitteilungen. Neue Mitteilungen erscheinen hier automatisch.
+en empty: Announcements There are no announcements at the moment. New announcements appear here automatically.

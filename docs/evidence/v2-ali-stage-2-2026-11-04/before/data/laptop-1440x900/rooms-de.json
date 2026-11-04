@@ -1,0 +1,52 @@
+{
+ "ctx": "laptop-1440x900",
+ "name": "rooms",
+ "lang": "de",
+ "label": "before",
+ "url": "/rooms",
+ "summary": {
+  "targets": 141,
+  "targetsMin44fail": 0,
+  "targetsMin24fail": 0,
+  "targetsGapLt8": 0,
+  "minTargetH": 48,
+  "minTargetW": 80.5,
+  "textMinFs": 14,
+  "textLt14": 0,
+  "textLt16": 55,
+  "textTotal": 373,
+  "lowContrastCount": 0,
+  "screens": 18.27,
+  "hOverflow": false,
+  "homeLinks": 1,
+  "h1": 1
+ },
+ "textMinFs": 14,
+ "clear": {
+  "scrollY": 15544,
+  "docHeight": 16444,
+  "dockTop": null,
+  "lastContentBottom": 830.7,
+  "footerBottom": 899.7,
+  "lowestBottom": 899.7,
+  "clearOfDock": true,
+  "clearance": null
+ },
+ "stage2": {
+  "vh": 900,
+  "docHeight": 16444,
+  "screens": 18.3,
+  "hOverflow": false,
+  "rooms": {
+   "cards": 54,
+   "medianPitch": 292,
+   "firstCardH": 280,
+   "actionsInOneRow": 0,
+   "chips": [],
+   "chipBar": null,
+   "floorHeadings": 4
+  },
+  "dockTop": null
+ },
+ "dock": null
+}

@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
  * credentials are then gone). Used by the booking flow while a request is in
  * flight or its outcome is unknown (T08).
  */
-export function useLeaveGuard(active: boolean) {
+export function useLeaveGuard(active: boolean, allowLanguageSwitch = false) {
   const [blockedHref, setBlockedHref] = useState<string | null>(null);
 
   useEffect(() => {
@@ -19,6 +19,20 @@ export function useLeaveGuard(active: boolean) {
       if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       const link = event.target instanceof Element ? event.target.closest("a[href]") : null;
       if (!link) return;
+      // AP-02: a same-page DE/EN switch must not destroy a settled receipt.
+      if (allowLanguageSwitch) {
+        const target = new URL(link.getAttribute("href") ?? "", window.location.href);
+        const current = new URL(window.location.href);
+        const withoutLang = (url: URL) => {
+          const query = new URLSearchParams(url.searchParams);
+          query.delete("lang");
+          query.sort();
+          return query.toString();
+        };
+        if (target.origin === current.origin && target.pathname === current.pathname &&
+            withoutLang(target) === withoutLang(current) &&
+            target.searchParams.get("lang") !== current.searchParams.get("lang")) return;
+      }
       // Capture phase on document: runs before React/Next.js, so the Link never navigates.
       event.preventDefault();
       event.stopPropagation();
@@ -34,7 +48,7 @@ export function useLeaveGuard(active: boolean) {
       document.removeEventListener("click", onClick, true);
       window.removeEventListener("beforeunload", onBeforeUnload);
     };
-  }, [active]);
+  }, [active, allowLanguageSwitch]);
 
   return {
     /** Link the visitor tried to follow; only meaningful while the guard is active. */

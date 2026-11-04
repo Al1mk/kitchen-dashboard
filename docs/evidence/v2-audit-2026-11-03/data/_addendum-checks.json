@@ -1,0 +1,51 @@
+{
+ "scheduleRoomLinks": [
+  "← Vortag",
+  "Heute",
+  "Folgetag →",
+  "Auf der Karte",
+  "Alle Räume"
+ ],
+ "scheduleRoomH": [
+  "Stundenplan",
+  "Mensch-Maschine-Interaktion (Demo)"
+ ],
+ "langWrapper_de": {
+  "html": "de",
+  "wrapper": "de"
+ },
+ "langWrapper_en": {
+  "html": "de",
+  "wrapper": "en"
+ },
+ "images_/": [
+  {
+   "src": "/brand/hs-coburg-logo-screenshot.png",
+   "natural": "445x118",
+   "shown": "176x47",
+   "ratio": 2.53
+  }
+ ],
+ "images_/map": [
+  {
+   "src": "/brand/hs-coburg-logo-screenshot.png",
+   "natural": "445x118",
+   "shown": "176x47",
+   "ratio": 2.53
+  },
+  {
+   "src": "/map-demo/assets/1OG.png",
+   "natural": "1804x872",
+   "shown": "726x351",
+   "ratio": 2.48
+  }
+ ],
+ "images_/display": [
+  {
+   "src": "/brand/hs-coburg-logo-screenshot.png",
+   "natural": "445x118",
+   "shown": "367x97",
+   "ratio": 1.21
+  }
+ ]
+}

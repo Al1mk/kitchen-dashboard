@@ -1,0 +1,129 @@
+- banner:
+  - img "Hochschule Coburg"
+  - paragraph: Lucas-Cranach-Campus Kronach
+  - group "Sprache":
+    - link "Deutsch":
+      - /url: /map
+    - link "English":
+      - /url: /map?lang=en
+  - navigation "Campus-Informationen":
+    - list:
+      - listitem:
+        - link "Start":
+          - /url: /
+      - listitem:
+        - link "Neu am Campus":
+          - /url: /newcomers
+      - listitem:
+        - link "Karte":
+          - /url: /map
+      - listitem:
+        - link "Räume":
+          - /url: /rooms
+      - listitem:
+        - link "Stundenplan":
+          - /url: /schedule
+      - listitem:
+        - link "Raumbuchung":
+          - /url: /booking
+      - listitem:
+        - link "Mitteilungen":
+          - /url: /display
+- main:
+  - heading "Karte" [level=1]
+  - paragraph: Wähle ein Stockwerk, tippe auf eine Markierung oder suche nach Raumnummer oder Name.
+  - paragraph: "Hinweis: Die Pläne sind KI-generierte Illustrationen aus dem Team-Prototyp, kein geprüfter Gebäudeplan und kein Fluchtplan. Positionen beziehen sich auf die Bilder."
+  - paragraph: "Beispieldaten: Einträge mit der Markierung „Beispiel“ sind erfundene Demo-Daten, keine offiziellen Raum- oder Termininformationen."
+  - group "Stockwerk wählen":
+    - button "Erdgeschoss"
+    - button "1. Obergeschoss" [pressed]
+    - button "2. Obergeschoss"
+    - button "3. Obergeschoss"
+  - search:
+    - text: Raum suchen
+    - searchbox "Raum suchen"
+  - region "1. Obergeschoss":
+    - heading "1. Obergeschoss" [level=2]
+    - button "Verkleinern" [disabled]: −
+    - button "Vergrößern": +
+    - button "Ganzer Plan"
+    - region "Plan 1. Obergeschoss, verschiebbar":
+      - img "Illustration 1. Obergeschoss (kein geprüfter Gebäudeplan)"
+      - button "K1-103, Seminarraum 1": K1-103
+      - button "K1-104, Shared Space": K1-104
+      - button "K1-105, EDV": K1-105
+      - button "K1-106, Seminarraum 3": K1-106
+      - button "K1-107, Sekretariat": K1-107
+      - button "K1-108, Kommunikation": K1-108
+      - button "K1-109, Verkehrsfläche": K1-109
+      - button "K1-110, Arbeitsflächen": K1-110
+      - button "K1-111, Arbeitsflächen": K1-111
+      - button "K1-112, Maschinenraum": K1-112
+      - button "K1-113, Schweißbereich": K1-113
+      - button "K1-115, Raum": K1-115
+      - button "K1-116, Raum": K1-116
+      - button "K1-118, Raum": K1-118
+      - button "K1-119, Media Lab": K1-119
+      - button "K1-120, Seminarraum": K1-120
+      - button "K1-121, Elektronik-Werkstatt": K1-121
+      - button "K1-122, Raum": K1-122
+      - button "K1-123, Raum": K1-123
+      - button "K1-124, Networking": K1-124
+      - button "K1-125, Seminarraum": K1-125
+  - region "Ausgewählter Raum":
+    - heading "Ausgewählter Raum" [level=2]
+    - paragraph: Kein Raum ausgewählt
+    - paragraph: Tippe auf eine Markierung oder einen Raum in der Liste.
+  - region "1. Obergeschoss · 24 Räume":
+    - heading "1. Obergeschoss · 24 Räume" [level=2]
+    - list:
+      - listitem:
+        - button "DEMO-101 Seminarraum 1 (Demo)"
+      - listitem:
+        - button "DEMO-102 PC-Labor (Demo)"
+      - listitem:
+        - button "K1-103 Seminarraum 1"
+      - listitem:
+        - button "K1-104 Shared Space"
+      - listitem:
+        - button "K1-105 EDV"
+      - listitem:
+        - button "K1-106 Seminarraum 3"
+      - listitem:
+        - button "K1-107 Sekretariat"
+      - listitem:
+        - button "K1-108 Kommunikation"
+      - listitem:
+        - button "K1-109 Verkehrsfläche"
+      - listitem:
+        - button "K1-110 Arbeitsflächen"
+      - listitem:
+        - button "K1-111 Arbeitsflächen"
+      - listitem:
+        - button "K1-112 Maschinenraum"
+      - listitem:
+        - button "K1-113 Schweißbereich"
+      - listitem:
+        - button "K1-114 Rapid Prototyping"
+      - listitem:
+        - button "K1-115 Raum"
+      - listitem:
+        - button "K1-116 Raum"
+      - listitem:
+        - button "K1-118 Raum"
+      - listitem:
+        - button "K1-119 Media Lab"
+      - listitem:
+        - button "K1-120 Seminarraum"
+      - listitem:
+        - button "K1-121 Elektronik-Werkstatt"
+      - listitem:
+        - button "K1-122 Raum"
+      - listitem:
+        - button "K1-123 Raum"
+      - listitem:
+        - button "K1-124 Networking"
+      - listitem:
+        - button "K1-125 Seminarraum"
+- contentinfo: Prototyp im Kurs Mensch-Maschine-Interaktion – keine offizielle Anzeige der Hochschule Coburg.
+- alert

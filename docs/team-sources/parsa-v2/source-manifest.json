@@ -1,0 +1,30 @@
+{
+  "submission": "PARSA_V2_INSTALLER_FIXED_FOR_ALI_2026-11-03.zip",
+  "sha256": "9c60f15b61e87056913c7fbe20bbaad3463a7c2460059d36d4c8ba7f2c98b96c",
+  "originalFiles": {
+    "source_branch": "main",
+    "base_commit": "a7903db512b6e98ebbe7783ddc64c2da89543a23",
+    "files": {
+      "README_START_HIER_FA.md": "d2c18254985ddf0bf653b43b8d76658c6be59c6332fc24d0c95d3e5f9159d7ef",
+      "START_4_STEPS_FA.txt": "4cdf4625ff6e68504c9bae8b1930ed378501306eb332e16675b8a1a08866137e",
+      "docs/BOOKLET_BASIS_DE.md": "d86ef8293bb49c2e6dd00e3ff6c2e8821772cc2be5ab281dfce715f37c82e3be",
+      "docs/QA_EXECUTION_STATUS.md": "9bb63acc49375bc5846c3259844b1b8ded1c3c3763140a42ab120d3122cb93d5",
+      "docs/QA_OFFLINE_RUN_2026-11-03.txt": "ff6667c5d5d36784a7180988e9eb5397330cedff549e0e3d944d78ca32aee2d3",
+      "docs/UI_UX_REVIEW_FA.md": "375f7dacff52f0495c849eebe042f31a12c8e6a65ef83338c40b55d589c4984d",
+      "photos_V1_physical/01_booking_no_rooms_2026-11-02.jpeg": "76ff4602688ad3b489636312f30bdb02c5ed561d2236972ff194c39adf7ae06d",
+      "photos_V1_physical/03_map_room_k1-120_2026-11-02.jpeg": "734c0647a739686395ced65e0e9c5125be70a38afd5f6ff37c01f2466dc4b7f9",
+      "photos_V1_physical/04_schedule_k1-120_2026-11-02.jpeg": "5a6076c2797b7c4d89f148b877bbd594b6bb92aef91c43997aedee4abcaf8e77",
+      "scripts/01_CLONE_AND_PATCH.sh": "920a5f0a6910deb462fe5451a487d053e01c440680dc1cf1c484dd1224fb4174",
+      "scripts/02_REAL_SCREENSHOTS.sh": "21459ef7e6c984d53099827eca46389a2cd43af8c67ef12fb2aefbc543b7f38c",
+      "scripts/03_MAKE_BEFORE_AFTER_REPORT.py": "74539d8237bc4d2a1895f68da21f7aaefc7c786d246c37da71fd81cbeba2427c",
+      "scripts/04_EXPORT_PROJECT_FOR_ALI.py": "a492798d862f230d01bbf10060b45214c5641005658295eb8fb646742cb5e778",
+      "scripts/APPLY_PARSA_V2.py": "e2580859dc9d94fe5cd376115440361c6424a35e2b0202bbf25454cda7905d10",
+      "scripts/VERIFY_OFFLINE_FIXTURE.py": "34516092674e3de8d733fc2817717b853c955aa8a2ba04136c7f388ace27a92d",
+      "scripts/parsa-v1-v2-screenshots.spec.ts": "c0ad86cd2127e8056aaabd20d600c87e22bdb2a642aa171b2fbc212ed6867270",
+      "scripts/parsa-v2-booking.spec.ts": "92932ab06b6006ec074bd5e14c381c7fcbf117cbcad43496d0033db44e3ff4de",
+      "tools/03_INSTALL_DESIGN_AND_BROWSER_CLI.sh": "7c4cc660a0971f68f41427519611d9e01ad4883a181dd3f28e136a836b5a8ef2"
+    }
+  },
+  "bookletOriginalSha256": "d86ef8293bb49c2e6dd00e3ff6c2e8821772cc2be5ab281dfce715f37c82e3be",
+  "activeBooklet": "BOOKLET_BASIS_DE.md is an Ali-edited derivative, not a byte-identical import"
+}

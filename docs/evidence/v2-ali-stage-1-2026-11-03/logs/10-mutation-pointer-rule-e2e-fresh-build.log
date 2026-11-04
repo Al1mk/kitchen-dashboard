@@ -1,0 +1,30 @@
+
+Running 2 tests using 1 worker
+
+  ✓  1 [chromium] › tests/e2e/kiosk-dock.spec.ts:159:3 › kiosk 1080x1920 touch: one navigation, seven destinations, 4 + 3 centred at the bottom, language switch lowered (9.4s)
+  ✘  2 [chromium] › tests/e2e/kiosk-dock.spec.ts:159:3 › kiosk 1080x1920 pointer-fine: one navigation, seven destinations, 4 + 3 centred at the bottom, language switch lowered (601ms)
+
+
+  1) [chromium] › tests/e2e/kiosk-dock.spec.ts:159:3 › kiosk 1080x1920 pointer-fine: one navigation, seven destinations, 4 + 3 centred at the bottom, language switch lowered 
+
+    Error: 1080x1920 pointer-fine de /: row centred on 540
+
+    expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 2
+    Received:    92
+
+      169 |         expect(g.rows.map((r) => r.count), `${where}: first row four, second row three`).toEqual([4, 3]);
+      170 |         // The centre of each row is the centre of the viewport/container, not a hardcoded 540 px.
+    > 171 |         for (const row of g.rows) expect(Math.abs(row.centre - g.frameCentre), `${where}: row centred on ${g.frameCentre}`).toBeLessThanOrEqual(2);
+          |                                                                                                                             ^
+      172 |         // The shell sizes in rem (≥ 56 px tiles, ≥ 8 px gaps). The announcement board sizes in container
+      173 |         // units like the rest of the board, so its minimum is proportional to the frame width (7 cqw ≈ 6.5 %).
+      174 |         const board = route === "/display";
+        at <scratch>/mut/tests/e2e/kiosk-dock.spec.ts:171:125
+
+    Error Context: test-results/kiosk-dock-kiosk-1080x1920-9d116-tom-language-switch-lowered-chromium/error-context.md
+
+  1 failed
+    [chromium] › tests/e2e/kiosk-dock.spec.ts:159:3 › kiosk 1080x1920 pointer-fine: one navigation, seven destinations, 4 + 3 centred at the bottom, language switch lowered 
+  1 passed (10.6s)

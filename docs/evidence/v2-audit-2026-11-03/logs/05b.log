@@ -1,0 +1,4 @@
+T3 idle 95 s on /rooms?suche=Zagel&datum=2026-11-04: url: /rooms?suche=Zagel&datum=2026-11-04
+T3 field value after idle: Zagel
+T4 /rooms during 4 s API delay: main text: Räume Raum, Lehrperson oder Lehrveranstaltung suchen Raumnummer (z. B. K1-105 oder 105), Raumname, Lehrperson oder Lehrveranstaltung. Räume werden geladen …
+T4 live regions: [{"role":"status","busy":null,"t":"Räume werden geladen …"}]
