@@ -1,0 +1,66 @@
+{
+ "ctx": "laptop-1440x900",
+ "name": "page-booking-cancel",
+ "lang": "de",
+ "label": "after",
+ "page": {
+  "htmlLang": "de",
+  "wrapperLang": "de",
+  "title": "Reservierung stornieren – LCC Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "Reservierung stornieren"
+   ]
+  ],
+  "skipLink": {
+   "text": "Zum Inhalt springen",
+   "href": "#main-content"
+  },
+  "logoLink": {
+   "href": "/",
+   "alt": "Hochschule Coburg – Start"
+  },
+  "mainId": "main-content",
+  "linkCount": 12,
+  "ambiguousLinkNames": []
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Zum Inhalt springen",
+  "href": "#main-content",
+  "top": 16,
+  "bottom": 72,
+  "left": 16,
+  "width": 200,
+  "height": 56,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": null,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": {
+  "tag": "MAIN",
+  "id": "main-content",
+  "name": "Reservierung stornieren DEMO – kein offizielles Raumbuchungssystem. Buchungsnumm",
+  "href": null,
+  "top": 188,
+  "bottom": 900,
+  "left": 336,
+  "width": 768,
+  "height": 712,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": null,
+  "underBar": false,
+  "underDock": false,
+  "nextTab": {
+   "tag": "INPUT",
+   "name": ""
+  },
+  "urlHash": ""
+ }
+}

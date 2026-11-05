@@ -1,0 +1,12 @@
+{
+ "ctx": "kiosk-touch-1080x1920",
+ "name": "rooms-class-links",
+ "lang": "de",
+ "label": "after",
+ "links": [
+  "Auf der Karte zeigen – DEMO-101",
+  "Termine in diesem Raum – DEMO-101",
+  "Auf der Karte zeigen – K1-120",
+  "Termine in diesem Raum – K1-120"
+ ]
+}

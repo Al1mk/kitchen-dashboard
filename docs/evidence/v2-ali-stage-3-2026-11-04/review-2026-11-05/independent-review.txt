@@ -1,0 +1,6 @@
+Separate read-only Stage3 code review — 5 November 2026
+Reviewer: Codex code-review agent, stage3_completion_review.
+Scope: shared public shell, skip-link/leave-guard interaction, document-language lifecycle, floor-bar focus clearance, contextual room-action names, board/public vs admin-preview headings, and strict cancellation metadata.
+Result: no actionable runtime regression found in the reviewed changes.
+Reviewer performed no writes, application tests, server launches, Git actions or vault changes.
+This static result does not establish physical accessibility, screen-reader compatibility, human usability or full WCAG conformance. The primary agent independently ran the technical checks recorded in README.md.

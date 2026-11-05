@@ -1,0 +1,60 @@
+{
+ "ctx": "kiosk-pointer-1080x1920",
+ "name": "page-newcomers",
+ "lang": "en",
+ "label": "before",
+ "page": {
+  "htmlLang": "de",
+  "wrapperLang": "en",
+  "title": "New to campus – Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "New to campus?"
+   ],
+   [
+    2,
+    "Find a room"
+   ],
+   [
+    2,
+    "What is on today?"
+   ],
+   [
+    2,
+    "Current notices"
+   ],
+   [
+    2,
+    "Reserve a study room"
+   ],
+   [
+    2,
+    "Need help?"
+   ]
+  ],
+  "skipLink": null,
+  "logoLink": null,
+  "mainId": null,
+  "linkCount": 14,
+  "ambiguousLinkNames": []
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Deutsch",
+  "href": "/newcomers",
+  "top": 1633,
+  "bottom": 1710,
+  "left": 395,
+  "width": 141,
+  "height": 77,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": 1609,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": null
+}

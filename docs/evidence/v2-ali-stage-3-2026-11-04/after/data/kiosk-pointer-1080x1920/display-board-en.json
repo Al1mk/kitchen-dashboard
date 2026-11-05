@@ -1,0 +1,11 @@
+{
+ "ctx": "kiosk-pointer-1080x1920",
+ "name": "display-board",
+ "lang": "en",
+ "label": "after",
+ "pngSha256": "b6113b19ca4db45d",
+ "sizes": {
+  "sectionHeading": 58.32,
+  "cardTitle": 49.68
+ }
+}

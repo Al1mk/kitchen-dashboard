@@ -1,0 +1,807 @@
+[WebServer] (node:5826) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:5827) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:5859) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:5863) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:5878) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:5875) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:5874) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:5876) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:5877) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:5872) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:5869) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:5871) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:5873) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:5870) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:5879) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:5881) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:5913) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 27 tests using 1 worker
+
+(node:5934) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/e2e/stage3-accessibility.spec.ts:113:3 › document language follows the page language on every public route (de) (4.9s)
+  ✘   2 [chromium] › tests/e2e/stage3-accessibility.spec.ts:113:3 › document language follows the page language on every public route (en) (5.6s)
+(node:5968) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   3 [chromium] › tests/e2e/stage3-accessibility.spec.ts:125:1 › document language follows client-side language switches and navigation (5.7s)
+(node:5992) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   4 [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (de) (9.7s)
+(node:6003) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   5 [chromium] › tests/e2e/stage3-accessibility.spec.ts:163:3 › /display: the board heading is the h1 and announcements are h2; the look is unchanged (de) (5.6s)
+(node:6030) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   6 [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (en) (9.7s)
+(node:6061) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   7 [chromium] › tests/e2e/stage3-accessibility.spec.ts:163:3 › /display: the board heading is the h1 and announcements are h2; the look is unchanged (en) (5.6s)
+(node:6219) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   8 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link 1080x1920 touch: first tab stop, readable and unobstructed when focused, moves focus into the content (5.6s)
+(node:6306) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   9 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link 1080x1920 pointer-fine: first tab stop, readable and unobstructed when focused, moves focus into the content (5.6s)
+(node:6476) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  10 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link 540x960 (assumed 200 % zoom): first tab stop, readable and unobstructed when focused, moves focus into the content (5.6s)
+(node:6560) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  11 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link laptop 1440x900: first tab stop, readable and unobstructed when focused, moves focus into the content (5.6s)
+(node:6672) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  12 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link phone 390x844: first tab stop, readable and unobstructed when focused, moves focus into the content (5.6s)
+(node:6753) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  13 [chromium] › tests/e2e/stage3-accessibility.spec.ts:233:1 › skip link: with a booking request pending, using it does not open the leave dialog (5.3s)
+(node:6922) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  14 [chromium] › tests/e2e/stage3-accessibility.spec.ts:279:3 › the logo is a link to Home that keeps the language (de) (5.6s)
+(node:6930) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  15 [chromium] › tests/e2e/stage3-accessibility.spec.ts:279:3 › the logo is a link to Home that keeps the language (en) (5.6s)
+(node:6956) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  16 [chromium] › tests/e2e/stage3-accessibility.spec.ts:300:3 › search placeholders reach 4.5:1 on /rooms and /map (de), kiosk and laptop (648ms)
+(node:6966) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  17 [chromium] › tests/e2e/stage3-accessibility.spec.ts:300:3 › search placeholders reach 4.5:1 on /rooms and /map (en), kiosk and laptop (642ms)
+(node:6971) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  18 [chromium] › tests/e2e/stage3-accessibility.spec.ts:354:3 › room links have distinct, contextual names that start with the visible label (de) (672ms)
+(node:6977) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  19 [chromium] › tests/e2e/stage3-accessibility.spec.ts:376:3 › class-result links name their room and agree where they lead (de) (101ms)
+(node:6982) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  20 [chromium] › tests/e2e/stage3-accessibility.spec.ts:354:3 › room links have distinct, contextual names that start with the visible label (en) (674ms)
+(node:6988) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  21 [chromium] › tests/e2e/stage3-accessibility.spec.ts:376:3 › class-result links name their room and agree where they lead (en) (101ms)
+(node:6993) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  22 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 touch de: keyboard focus is never left under the pinned chip bar or the dock (680ms)
+(node:6999) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  23 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 touch en: keyboard focus is never left under the pinned chip bar or the dock (682ms)
+(node:7005) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  24 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 pointer-fine de: keyboard focus is never left under the pinned chip bar or the dock (664ms)
+(node:7012) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  25 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 pointer-fine en: keyboard focus is never left under the pinned chip bar or the dock (664ms)
+(node:7017) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  26 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 540x960 (assumed 200 % zoom) de: keyboard focus is never left under the pinned chip bar or the dock (671ms)
+(node:7024) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  27 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 540x960 (assumed 200 % zoom) en: keyboard focus is never left under the pinned chip bar or the dock (668ms)
+
+
+  1) [chromium] › tests/e2e/stage3-accessibility.spec.ts:113:3 › document language follows the page language on every public route (en)
+
+    Error: / en: <html lang>
+
+    expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  locator('html')
+    Expected: "en"
+    Received: "de"
+    Timeout:  5000ms
+
+    Call log:
+      - / en: <html lang> locator('html') with timeout 5000ms
+      - waiting for locator('html')
+        14 × locator resolved to <html lang="de" class="rafaCq_variable d8oG9G_variable h-full antialiased">…</html>
+           - unexpected value "de"
+
+
+      117 |     for (const route of ALL_ROUTES) {
+      118 |       await open(page, route, lang);
+    > 119 |       await expect(page.locator("html"), `${route} ${lang}: <html lang>`).toHaveAttribute("lang", lang);
+          |                                                                           ^
+      120 |     }
+      121 |     await context.close();
+      122 |   });
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:119:75
+
+    Error Context: test-results/stage3-accessibility-docum-32ee3-e-on-every-public-route-en--chromium/error-context.md
+
+  2) [chromium] › tests/e2e/stage3-accessibility.spec.ts:125:1 › document language follows client-side language switches and navigation
+
+    Error: after switching to English without a reload
+
+    expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  locator('html')
+    Expected: "en"
+    Received: "de"
+    Timeout:  5000ms
+
+    Call log:
+      - after switching to English without a reload locator('html') with timeout 5000ms
+      - waiting for locator('html')
+        14 × locator resolved to <html lang="de" class="rafaCq_variable d8oG9G_variable h-full antialiased">…</html>
+           - unexpected value "de"
+
+
+      129 |   await page.getByRole("group", { name: "Sprache" }).getByRole("link", { name: "English" }).click();
+      130 |   await expect(page).toHaveURL(/lang=en/);
+    > 131 |   await expect(page.locator("html"), "after switching to English without a reload").toHaveAttribute("lang", "en");
+          |                                                                                     ^
+      132 |   await page.getByRole("navigation", { name: "Campus information" }).getByRole("link", { name: "Home" }).click();
+      133 |   await expect(page.getByRole("heading", { level: 1, name: "Campus information" })).toBeVisible();
+      134 |   await expect(page.locator("html"), "English stays English across pages").toHaveAttribute("lang", "en");
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:131:85
+
+    Error Context: test-results/stage3-accessibility-docum-7fef8-age-switches-and-navigation-chromium/error-context.md
+
+  3) [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (de)
+
+    Error: /display de: one h1
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByRole('heading', { level: 1 })
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - /display de: one h1 getByRole('heading', { level: 1 }) with timeout 5000ms
+      - waiting for getByRole('heading', { level: 1 })
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      155 |       // handoff, not an accepted state. The page-specific part and the language are asserted exactly.
+      156 |       await expect(page, `${where}: title`).toHaveTitle(new RegExp(`^${titleLabel(route, lang)} – (LCC )?Campus Board$`));
+    > 157 |       await expect(page.getByRole("heading", { level: 1 }), `${where}: one h1`).toHaveCount(1);
+          |                                                                                 ^
+      158 |       await expect(page.getByRole("heading", { level: 1 }), `${where}: h1 has text`).not.toHaveText("");
+      159 |     }
+      160 |     await context.close();
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:157:81
+
+    Error Context: test-results/stage3-accessibility-every-2f884-tly-one-level-1-heading-de--chromium/error-context.md
+
+  4) [chromium] › tests/e2e/stage3-accessibility.spec.ts:163:3 › /display: the board heading is the h1 and announcements are h2; the look is unchanged (de)
+
+    Error: one h1 on the board
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByTestId('display-board').getByRole('heading', { level: 1 })
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - one h1 on the board getByTestId('display-board').getByRole('heading', { level: 1 }) with timeout 5000ms
+      - waiting for getByTestId('display-board').getByRole('heading', { level: 1 })
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      167 |     const t = PUBLIC_TEXT[lang];
+      168 |     const board = page.getByTestId("display-board");
+    > 169 |     await expect(board.getByRole("heading", { level: 1 }), "one h1 on the board").toHaveCount(1);
+          |                                                                                   ^
+      170 |     await expect(board.getByRole("heading", { level: 1 })).toHaveText(t.sections.display);
+      171 |     await expect(board.getByRole("heading", { level: 2 }), "each announcement title is an h2").toHaveCount(3);
+      172 |     await expect(board.getByRole("heading", { level: 3 }), "no heading level is skipped").toHaveCount(0);
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:169:83
+
+    Error Context: test-results/stage3-accessibility--disp-42cc7-2-the-look-is-unchanged-de--chromium/error-context.md
+
+  5) [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (en)
+
+    Error: /display en: one h1
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByRole('heading', { level: 1 })
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - /display en: one h1 getByRole('heading', { level: 1 }) with timeout 5000ms
+      - waiting for getByRole('heading', { level: 1 })
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      155 |       // handoff, not an accepted state. The page-specific part and the language are asserted exactly.
+      156 |       await expect(page, `${where}: title`).toHaveTitle(new RegExp(`^${titleLabel(route, lang)} – (LCC )?Campus Board$`));
+    > 157 |       await expect(page.getByRole("heading", { level: 1 }), `${where}: one h1`).toHaveCount(1);
+          |                                                                                 ^
+      158 |       await expect(page.getByRole("heading", { level: 1 }), `${where}: h1 has text`).not.toHaveText("");
+      159 |     }
+      160 |     await context.close();
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:157:81
+
+    Error Context: test-results/stage3-accessibility-every-60097-tly-one-level-1-heading-en--chromium/error-context.md
+
+  6) [chromium] › tests/e2e/stage3-accessibility.spec.ts:163:3 › /display: the board heading is the h1 and announcements are h2; the look is unchanged (en)
+
+    Error: one h1 on the board
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByTestId('display-board').getByRole('heading', { level: 1 })
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - one h1 on the board getByTestId('display-board').getByRole('heading', { level: 1 }) with timeout 5000ms
+      - waiting for getByTestId('display-board').getByRole('heading', { level: 1 })
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      167 |     const t = PUBLIC_TEXT[lang];
+      168 |     const board = page.getByTestId("display-board");
+    > 169 |     await expect(board.getByRole("heading", { level: 1 }), "one h1 on the board").toHaveCount(1);
+          |                                                                                   ^
+      170 |     await expect(board.getByRole("heading", { level: 1 })).toHaveText(t.sections.display);
+      171 |     await expect(board.getByRole("heading", { level: 2 }), "each announcement title is an h2").toHaveCount(3);
+      172 |     await expect(board.getByRole("heading", { level: 3 }), "no heading level is skipped").toHaveCount(0);
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:169:83
+
+    Error Context: test-results/stage3-accessibility--disp-96fd9-2-the-look-is-unchanged-en--chromium/error-context.md
+
+  7) [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link 1080x1920 touch: first tab stop, readable and unobstructed when focused, moves focus into the content
+
+    Error: 1080x1920 touch de /: the first tab stop is the skip link
+
+    expect(locator).toBeFocused() failed
+
+    Locator: getByRole('link', { name: 'Zum Inhalt springen' })
+    Expected: focused
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - 1080x1920 touch de /: the first tab stop is the skip link getByRole('link', { name: 'Zum Inhalt springen' }) with timeout 5000ms
+      - waiting for getByRole('link', { name: 'Zum Inhalt springen' })
+
+
+      195 |         await page.keyboard.press("Tab");
+      196 |         const skip = page.getByRole("link", { name: SKIP_NAME[lang] });
+    > 197 |         await expect(skip, `${where}: the first tab stop is the skip link`).toBeFocused();
+          |                                                                             ^
+      198 |         const seen = await skip.evaluate((el) => {
+      199 |           const r = el.getBoundingClientRect();
+      200 |           const cx = r.left + r.width / 2;
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:197:77
+
+    Error Context: test-results/stage3-accessibility-skip--54d30-oves-focus-into-the-content-chromium/error-context.md
+
+  8) [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link 1080x1920 pointer-fine: first tab stop, readable and unobstructed when focused, moves focus into the content
+
+    Error: 1080x1920 pointer-fine de /: the first tab stop is the skip link
+
+    expect(locator).toBeFocused() failed
+
+    Locator: getByRole('link', { name: 'Zum Inhalt springen' })
+    Expected: focused
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - 1080x1920 pointer-fine de /: the first tab stop is the skip link getByRole('link', { name: 'Zum Inhalt springen' }) with timeout 5000ms
+      - waiting for getByRole('link', { name: 'Zum Inhalt springen' })
+
+
+      195 |         await page.keyboard.press("Tab");
+      196 |         const skip = page.getByRole("link", { name: SKIP_NAME[lang] });
+    > 197 |         await expect(skip, `${where}: the first tab stop is the skip link`).toBeFocused();
+          |                                                                             ^
+      198 |         const seen = await skip.evaluate((el) => {
+      199 |           const r = el.getBoundingClientRect();
+      200 |           const cx = r.left + r.width / 2;
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:197:77
+
+    Error Context: test-results/stage3-accessibility-skip--d45e6-oves-focus-into-the-content-chromium/error-context.md
+
+  9) [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link 540x960 (assumed 200 % zoom): first tab stop, readable and unobstructed when focused, moves focus into the content
+
+    Error: 540x960 (assumed 200 % zoom) de /: the first tab stop is the skip link
+
+    expect(locator).toBeFocused() failed
+
+    Locator: getByRole('link', { name: 'Zum Inhalt springen' })
+    Expected: focused
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - 540x960 (assumed 200 % zoom) de /: the first tab stop is the skip link getByRole('link', { name: 'Zum Inhalt springen' }) with timeout 5000ms
+      - waiting for getByRole('link', { name: 'Zum Inhalt springen' })
+
+
+      195 |         await page.keyboard.press("Tab");
+      196 |         const skip = page.getByRole("link", { name: SKIP_NAME[lang] });
+    > 197 |         await expect(skip, `${where}: the first tab stop is the skip link`).toBeFocused();
+          |                                                                             ^
+      198 |         const seen = await skip.evaluate((el) => {
+      199 |           const r = el.getBoundingClientRect();
+      200 |           const cx = r.left + r.width / 2;
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:197:77
+
+    Error Context: test-results/stage3-accessibility-skip--3ef47-oves-focus-into-the-content-chromium/error-context.md
+
+  10) [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link laptop 1440x900: first tab stop, readable and unobstructed when focused, moves focus into the content
+
+    Error: laptop 1440x900 de /: the first tab stop is the skip link
+
+    expect(locator).toBeFocused() failed
+
+    Locator: getByRole('link', { name: 'Zum Inhalt springen' })
+    Expected: focused
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - laptop 1440x900 de /: the first tab stop is the skip link getByRole('link', { name: 'Zum Inhalt springen' }) with timeout 5000ms
+      - waiting for getByRole('link', { name: 'Zum Inhalt springen' })
+
+
+      195 |         await page.keyboard.press("Tab");
+      196 |         const skip = page.getByRole("link", { name: SKIP_NAME[lang] });
+    > 197 |         await expect(skip, `${where}: the first tab stop is the skip link`).toBeFocused();
+          |                                                                             ^
+      198 |         const seen = await skip.evaluate((el) => {
+      199 |           const r = el.getBoundingClientRect();
+      200 |           const cx = r.left + r.width / 2;
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:197:77
+
+    Error Context: test-results/stage3-accessibility-skip--3de07-oves-focus-into-the-content-chromium/error-context.md
+
+  11) [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link phone 390x844: first tab stop, readable and unobstructed when focused, moves focus into the content
+
+    Error: phone 390x844 de /: the first tab stop is the skip link
+
+    expect(locator).toBeFocused() failed
+
+    Locator: getByRole('link', { name: 'Zum Inhalt springen' })
+    Expected: focused
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - phone 390x844 de /: the first tab stop is the skip link getByRole('link', { name: 'Zum Inhalt springen' }) with timeout 5000ms
+      - waiting for getByRole('link', { name: 'Zum Inhalt springen' })
+
+
+      195 |         await page.keyboard.press("Tab");
+      196 |         const skip = page.getByRole("link", { name: SKIP_NAME[lang] });
+    > 197 |         await expect(skip, `${where}: the first tab stop is the skip link`).toBeFocused();
+          |                                                                             ^
+      198 |         const seen = await skip.evaluate((el) => {
+      199 |           const r = el.getBoundingClientRect();
+      200 |           const cx = r.left + r.width / 2;
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:197:77
+
+    Error Context: test-results/stage3-accessibility-skip--5847e-oves-focus-into-the-content-chromium/error-context.md
+
+  12) [chromium] › tests/e2e/stage3-accessibility.spec.ts:233:1 › skip link: with a booking request pending, using it does not open the leave dialog
+
+    Error: the skip link exists on the booking page
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByRole('link', { name: 'Zum Inhalt springen' })
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - the skip link exists on the booking page getByRole('link', { name: 'Zum Inhalt springen' }) with timeout 5000ms
+      - waiting for getByRole('link', { name: 'Zum Inhalt springen' })
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      264 |   // ... but the skip link only moves focus inside this page, so it must not.
+      265 |   const skip = page.getByRole("link", { name: SKIP_NAME.de });
+    > 266 |   await expect(skip, "the skip link exists on the booking page").toHaveCount(1);
+          |                                                                  ^
+      267 |   await skip.focus();
+      268 |   await page.keyboard.press("Enter");
+      269 |   await expect(page.locator("main")).toBeFocused();
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:266:66
+
+    Error Context: test-results/stage3-accessibility-skip--1980c-s-not-open-the-leave-dialog-chromium/error-context.md
+
+  13) [chromium] › tests/e2e/stage3-accessibility.spec.ts:279:3 › the logo is a link to Home that keeps the language (de)
+
+    Error: / de: one logo link
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByRole('link', { name: /^Hochschule Coburg/ })
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - / de: one logo link getByRole('link', { name: /^Hochschule Coburg/ }) with timeout 5000ms
+      - waiting for getByRole('link', { name: /^Hochschule Coburg/ })
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      284 |       await open(page, route, lang);
+      285 |       const logo = page.getByRole("link", { name: /^Hochschule Coburg/ });
+    > 286 |       await expect(logo, `${route} ${lang}: one logo link`).toHaveCount(1);
+          |                                                             ^
+      287 |       await expect(logo, `${route} ${lang}: target`).toHaveAttribute("href", publicHref("/", lang));
+      288 |       await expect(logo.locator("img"), `${route} ${lang}: logo image inside the link`).toHaveCount(1);
+      289 |     }
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:286:61
+
+    Error Context: test-results/stage3-accessibility-the-l-1f1b2-that-keeps-the-language-de--chromium/error-context.md
+
+  14) [chromium] › tests/e2e/stage3-accessibility.spec.ts:279:3 › the logo is a link to Home that keeps the language (en)
+
+    Error: / en: one logo link
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByRole('link', { name: /^Hochschule Coburg/ })
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - / en: one logo link getByRole('link', { name: /^Hochschule Coburg/ }) with timeout 5000ms
+      - waiting for getByRole('link', { name: /^Hochschule Coburg/ })
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      284 |       await open(page, route, lang);
+      285 |       const logo = page.getByRole("link", { name: /^Hochschule Coburg/ });
+    > 286 |       await expect(logo, `${route} ${lang}: one logo link`).toHaveCount(1);
+          |                                                             ^
+      287 |       await expect(logo, `${route} ${lang}: target`).toHaveAttribute("href", publicHref("/", lang));
+      288 |       await expect(logo.locator("img"), `${route} ${lang}: logo image inside the link`).toHaveCount(1);
+      289 |     }
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:286:61
+
+    Error Context: test-results/stage3-accessibility-the-l-d1adf-that-keeps-the-language-en--chromium/error-context.md
+
+  15) [chromium] › tests/e2e/stage3-accessibility.spec.ts:300:3 › search placeholders reach 4.5:1 on /rooms and /map (de), kiosk and laptop
+
+    Error: 1080x1920 touch /rooms de: placeholder contrast
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 4.5
+    Received:    3.111347377017256
+
+      306 |         const input = "input[placeholder]";
+      307 |         await expect(page.locator(input).first(), `${v.name} ${route} ${lang}: a search field with a placeholder exists`).toBeVisible();
+    > 308 |         expect(await contrast(page, input, "::placeholder"), `${v.name} ${route} ${lang}: placeholder contrast`).toBeGreaterThanOrEqual(4.5);
+          |                                                                                                                  ^
+      309 |       }
+      310 |       await context.close();
+      311 |     }
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:308:114
+
+    Error Context: test-results/stage3-accessibility-searc-ba500-and-map-de-kiosk-and-laptop-chromium/error-context.md
+
+  16) [chromium] › tests/e2e/stage3-accessibility.spec.ts:300:3 › search placeholders reach 4.5:1 on /rooms and /map (en), kiosk and laptop
+
+    Error: 1080x1920 touch /rooms en: placeholder contrast
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 4.5
+    Received:    3.111347377017256
+
+      306 |         const input = "input[placeholder]";
+      307 |         await expect(page.locator(input).first(), `${v.name} ${route} ${lang}: a search field with a placeholder exists`).toBeVisible();
+    > 308 |         expect(await contrast(page, input, "::placeholder"), `${v.name} ${route} ${lang}: placeholder contrast`).toBeGreaterThanOrEqual(4.5);
+          |                                                                                                                  ^
+      309 |       }
+      310 |       await context.close();
+      311 |     }
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:308:114
+
+    Error Context: test-results/stage3-accessibility-searc-5a63c-and-map-en-kiosk-and-laptop-chromium/error-context.md
+
+  17) [chromium] › tests/e2e/stage3-accessibility.spec.ts:354:3 › room links have distinct, contextual names that start with the visible label (de)
+
+    Error: de: no two links in the directory share a name
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 7
+
+    - Array []
+    + Array [
+    +   "Heute in diesem Raum",
+    +   "Auf der Karte zeigen",
+    +   "Heute in diesem Raum",
+    +   "Auf der Karte zeigen",
+    +   "Heute in diesem Raum",
+    + ]
+
+      364 |     const names = links.map((l) => l.name);
+      365 |     const duplicates = names.filter((n, i) => names.indexOf(n) !== i);
+    > 366 |     expect(duplicates.slice(0, 5), `${lang}: no two links in the directory share a name`).toEqual([]);
+          |                                                                                           ^
+      367 |     for (const card of cards) {
+      368 |       for (const label of [t.todayInRoom, t.onMap]) {
+      369 |         const mine = names.filter((n) => n.startsWith(label) && n.includes(card.code));
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:366:91
+
+    Error Context: test-results/stage3-accessibility-room--d4d36--with-the-visible-label-de--chromium/error-context.md
+
+  18) [chromium] › tests/e2e/stage3-accessibility.spec.ts:376:3 › class-result links name their room and agree where they lead (de)
+
+    Error: de: "Auf der Karte zeigen" names the room
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /S3[AB]-39AGPT/
+    Received string:  "Auf der Karte zeigen"
+
+      386 |     for (const l of room) {
+      387 |       expect(l.name.startsWith(t.onMap) || l.name.startsWith(scheduleLabel), `${lang}: "${l.name}" starts with its visible label`).toBe(true);
+    > 388 |       expect(l.name, `${lang}: "${l.name}" names the room`).toMatch(new RegExp(`S3[AB]-${stamp}`));
+          |                                                             ^
+      389 |     }
+      390 |     // The same name must never lead to two different places.
+      391 |     const byName = new Map<string, Set<string>>();
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:388:61
+
+    Error Context: test-results/stage3-accessibility-class-2d302-d-agree-where-they-lead-de--chromium/error-context.md
+
+  19) [chromium] › tests/e2e/stage3-accessibility.spec.ts:354:3 › room links have distinct, contextual names that start with the visible label (en)
+
+    Error: en: no two links in the directory share a name
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 7
+
+    - Array []
+    + Array [
+    +   "Today in this room",
+    +   "Show on the map",
+    +   "Today in this room",
+    +   "Show on the map",
+    +   "Today in this room",
+    + ]
+
+      364 |     const names = links.map((l) => l.name);
+      365 |     const duplicates = names.filter((n, i) => names.indexOf(n) !== i);
+    > 366 |     expect(duplicates.slice(0, 5), `${lang}: no two links in the directory share a name`).toEqual([]);
+          |                                                                                           ^
+      367 |     for (const card of cards) {
+      368 |       for (const label of [t.todayInRoom, t.onMap]) {
+      369 |         const mine = names.filter((n) => n.startsWith(label) && n.includes(card.code));
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:366:91
+
+    Error Context: test-results/stage3-accessibility-room--3cb4c--with-the-visible-label-en--chromium/error-context.md
+
+  20) [chromium] › tests/e2e/stage3-accessibility.spec.ts:376:3 › class-result links name their room and agree where they lead (en)
+
+    Error: en: "Show on the map" names the room
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /S3[AB]-39AHZH/
+    Received string:  "Show on the map"
+
+      386 |     for (const l of room) {
+      387 |       expect(l.name.startsWith(t.onMap) || l.name.startsWith(scheduleLabel), `${lang}: "${l.name}" starts with its visible label`).toBe(true);
+    > 388 |       expect(l.name, `${lang}: "${l.name}" names the room`).toMatch(new RegExp(`S3[AB]-${stamp}`));
+          |                                                             ^
+      389 |     }
+      390 |     // The same name must never lead to two different places.
+      391 |     const byName = new Map<string, Set<string>>();
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:388:61
+
+    Error Context: test-results/stage3-accessibility-class-d8a0d-d-agree-where-they-lead-en--chromium/error-context.md
+
+  21) [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 touch de: keyboard focus is never left under the pinned chip bar or the dock
+
+    Error: 1080x1920 touch de Shift+Tab from under the bar: "Raum reservieren (Demo)" is not under the chip bar (bar bottom 99)
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 98.5
+    Received:    30.40625
+
+      421 |   expect(b, `${where}: something has focus`).not.toBeNull();
+      422 |   if (!b || b.covering) return;
+    > 423 |   expect(b.top, `${where}: "${b.label}" is not under the chip bar (bar bottom ${Math.round(b.barBottom)})`).toBeGreaterThanOrEqual(b.barBottom - 0.5);
+          |                                                                                                             ^
+      424 |   expect(b.bottom, `${where}: "${b.label}" is not under the dock (dock top ${Math.round(b.dockTop)})`).toBeLessThanOrEqual(b.dockTop + 0.5);
+      425 | }
+      426 |
+        at expectClear (<isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:423:109)
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:447:7
+
+    Error Context: test-results/stage3-accessibility-focus-08968-pinned-chip-bar-or-the-dock-chromium/error-context.md
+
+  22) [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 touch en: keyboard focus is never left under the pinned chip bar or the dock
+
+    Error: 1080x1920 touch en Shift+Tab from under the bar: "Book this room (demo)" is not under the chip bar (bar bottom 99)
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 98.5
+    Received:    30.15625
+
+      421 |   expect(b, `${where}: something has focus`).not.toBeNull();
+      422 |   if (!b || b.covering) return;
+    > 423 |   expect(b.top, `${where}: "${b.label}" is not under the chip bar (bar bottom ${Math.round(b.barBottom)})`).toBeGreaterThanOrEqual(b.barBottom - 0.5);
+          |                                                                                                             ^
+      424 |   expect(b.bottom, `${where}: "${b.label}" is not under the dock (dock top ${Math.round(b.dockTop)})`).toBeLessThanOrEqual(b.dockTop + 0.5);
+      425 | }
+      426 |
+        at expectClear (<isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:423:109)
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:447:7
+
+    Error Context: test-results/stage3-accessibility-focus-99ada-pinned-chip-bar-or-the-dock-chromium/error-context.md
+
+  23) [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 pointer-fine de: keyboard focus is never left under the pinned chip bar or the dock
+
+    Error: 1080x1920 pointer-fine de Shift+Tab from under the bar: "Raum reservieren (Demo)" is not under the chip bar (bar bottom 99)
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 98.5
+    Received:    30.40625
+
+      421 |   expect(b, `${where}: something has focus`).not.toBeNull();
+      422 |   if (!b || b.covering) return;
+    > 423 |   expect(b.top, `${where}: "${b.label}" is not under the chip bar (bar bottom ${Math.round(b.barBottom)})`).toBeGreaterThanOrEqual(b.barBottom - 0.5);
+          |                                                                                                             ^
+      424 |   expect(b.bottom, `${where}: "${b.label}" is not under the dock (dock top ${Math.round(b.dockTop)})`).toBeLessThanOrEqual(b.dockTop + 0.5);
+      425 | }
+      426 |
+        at expectClear (<isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:423:109)
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:447:7
+
+    Error Context: test-results/stage3-accessibility-focus-12afc-pinned-chip-bar-or-the-dock-chromium/error-context.md
+
+  24) [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 pointer-fine en: keyboard focus is never left under the pinned chip bar or the dock
+
+    Error: 1080x1920 pointer-fine en Shift+Tab from under the bar: "Book this room (demo)" is not under the chip bar (bar bottom 99)
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 98.5
+    Received:    30.15625
+
+      421 |   expect(b, `${where}: something has focus`).not.toBeNull();
+      422 |   if (!b || b.covering) return;
+    > 423 |   expect(b.top, `${where}: "${b.label}" is not under the chip bar (bar bottom ${Math.round(b.barBottom)})`).toBeGreaterThanOrEqual(b.barBottom - 0.5);
+          |                                                                                                             ^
+      424 |   expect(b.bottom, `${where}: "${b.label}" is not under the dock (dock top ${Math.round(b.dockTop)})`).toBeLessThanOrEqual(b.dockTop + 0.5);
+      425 | }
+      426 |
+        at expectClear (<isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:423:109)
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:447:7
+
+    Error Context: test-results/stage3-accessibility-focus-b71a0-pinned-chip-bar-or-the-dock-chromium/error-context.md
+
+  25) [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 540x960 (assumed 200 % zoom) de: keyboard focus is never left under the pinned chip bar or the dock
+
+    Error: 540x960 (assumed 200 % zoom) de Shift+Tab from under the bar: "Raum reservieren (Demo)" is not under the chip bar (bar bottom 72)
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 71.5
+    Received:    30.15625
+
+      421 |   expect(b, `${where}: something has focus`).not.toBeNull();
+      422 |   if (!b || b.covering) return;
+    > 423 |   expect(b.top, `${where}: "${b.label}" is not under the chip bar (bar bottom ${Math.round(b.barBottom)})`).toBeGreaterThanOrEqual(b.barBottom - 0.5);
+          |                                                                                                             ^
+      424 |   expect(b.bottom, `${where}: "${b.label}" is not under the dock (dock top ${Math.round(b.dockTop)})`).toBeLessThanOrEqual(b.dockTop + 0.5);
+      425 | }
+      426 |
+        at expectClear (<isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:423:109)
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:447:7
+
+    Error Context: test-results/stage3-accessibility-focus-47188-pinned-chip-bar-or-the-dock-chromium/error-context.md
+
+  26) [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 540x960 (assumed 200 % zoom) en: keyboard focus is never left under the pinned chip bar or the dock
+
+    Error: 540x960 (assumed 200 % zoom) en Shift+Tab from under the bar: "Book this room (demo)" is not under the chip bar (bar bottom 72)
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 71.5
+    Received:    29.65625
+
+      421 |   expect(b, `${where}: something has focus`).not.toBeNull();
+      422 |   if (!b || b.covering) return;
+    > 423 |   expect(b.top, `${where}: "${b.label}" is not under the chip bar (bar bottom ${Math.round(b.barBottom)})`).toBeGreaterThanOrEqual(b.barBottom - 0.5);
+          |                                                                                                             ^
+      424 |   expect(b.bottom, `${where}: "${b.label}" is not under the dock (dock top ${Math.round(b.dockTop)})`).toBeLessThanOrEqual(b.dockTop + 0.5);
+      425 | }
+      426 |
+        at expectClear (<isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:423:109)
+        at <isolated-copy-root>/before/tests/e2e/stage3-accessibility.spec.ts:447:7
+
+    Error Context: test-results/stage3-accessibility-focus-85766-pinned-chip-bar-or-the-dock-chromium/error-context.md
+
+  26 failed
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:113:3 › document language follows the page language on every public route (en)
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:125:1 › document language follows client-side language switches and navigation
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (de)
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:163:3 › /display: the board heading is the h1 and announcements are h2; the look is unchanged (de)
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (en)
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:163:3 › /display: the board heading is the h1 and announcements are h2; the look is unchanged (en)
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link 1080x1920 touch: first tab stop, readable and unobstructed when focused, moves focus into the content
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link 1080x1920 pointer-fine: first tab stop, readable and unobstructed when focused, moves focus into the content
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link 540x960 (assumed 200 % zoom): first tab stop, readable and unobstructed when focused, moves focus into the content
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link laptop 1440x900: first tab stop, readable and unobstructed when focused, moves focus into the content
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link phone 390x844: first tab stop, readable and unobstructed when focused, moves focus into the content
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:233:1 › skip link: with a booking request pending, using it does not open the leave dialog
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:279:3 › the logo is a link to Home that keeps the language (de)
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:279:3 › the logo is a link to Home that keeps the language (en)
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:300:3 › search placeholders reach 4.5:1 on /rooms and /map (de), kiosk and laptop
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:300:3 › search placeholders reach 4.5:1 on /rooms and /map (en), kiosk and laptop
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:354:3 › room links have distinct, contextual names that start with the visible label (de)
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:376:3 › class-result links name their room and agree where they lead (de)
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:354:3 › room links have distinct, contextual names that start with the visible label (en)
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:376:3 › class-result links name their room and agree where they lead (en)
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 touch de: keyboard focus is never left under the pinned chip bar or the dock
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 touch en: keyboard focus is never left under the pinned chip bar or the dock
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 pointer-fine de: keyboard focus is never left under the pinned chip bar or the dock
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 pointer-fine en: keyboard focus is never left under the pinned chip bar or the dock
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 540x960 (assumed 200 % zoom) de: keyboard focus is never left under the pinned chip bar or the dock
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 540x960 (assumed 200 % zoom) en: keyboard focus is never left under the pinned chip bar or the dock
+  1 passed (2.0m)
+EXIT 1

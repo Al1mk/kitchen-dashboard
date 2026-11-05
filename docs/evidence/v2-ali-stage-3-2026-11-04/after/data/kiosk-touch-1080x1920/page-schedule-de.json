@@ -1,0 +1,82 @@
+{
+ "ctx": "kiosk-touch-1080x1920",
+ "name": "page-schedule",
+ "lang": "de",
+ "label": "after",
+ "page": {
+  "htmlLang": "de",
+  "wrapperLang": "de",
+  "title": "Stundenplan – Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "Stundenplan"
+   ],
+   [
+    2,
+    "Mensch-Maschine-Interaktion – Projekt (Demo)"
+   ],
+   [
+    2,
+    "Mensch-Maschine-Interaktion (Demo)"
+   ],
+   [
+    2,
+    "Programmierung – Labor (Demo)"
+   ],
+   [
+    2,
+    "Wirtschaftsinformatik – Übung (Demo)"
+   ]
+  ],
+  "skipLink": {
+   "text": "Zum Inhalt springen",
+   "href": "#main-content"
+  },
+  "logoLink": {
+   "href": "/",
+   "alt": "Hochschule Coburg – Start"
+  },
+  "mainId": "main-content",
+  "linkCount": 14,
+  "ambiguousLinkNames": []
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Zum Inhalt springen",
+  "href": "#main-content",
+  "top": 22,
+  "bottom": 99,
+  "left": 22,
+  "width": 274,
+  "height": 77,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": 1609,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": {
+  "tag": "MAIN",
+  "id": "main-content",
+  "name": "Stundenplan Donnerstag, 5. November 2026· Heute ← Vortag Heute Folgetag → Beispi",
+  "href": null,
+  "top": 160,
+  "bottom": 1548,
+  "left": 12,
+  "width": 1056,
+  "height": 1387,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": 1609,
+  "underBar": false,
+  "underDock": false,
+  "nextTab": {
+   "tag": "A",
+   "name": "← Vortag"
+  },
+  "urlHash": ""
+ }
+}

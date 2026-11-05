@@ -1,0 +1,103 @@
+[WebServer] (node:20518) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20519) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20533) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20537) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20549) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20544) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20543) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20547) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20550) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20552) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20551) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20546) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20548) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20545) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20542) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20553) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20567) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:20568) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (de) (9.3s)
+(node:20593) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (en) (9.1s)
+
+
+  1) [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (de)
+
+    Error: /booking/cancel de: title
+
+    expect(page).toHaveTitle(expected) failed
+
+    Expected: "Reservierung stornieren – Campus Board"
+    Received: "Reservierung stornieren – LCC Campus Board"
+    Timeout:  5000ms
+
+    Call log:
+      - /booking/cancel de: title with timeout 5000ms
+        14 × locator resolved to <html lang="de" class="rafaCq_variable d8oG9G_variable h-full antialiased">…</html>
+           - unexpected value "Reservierung stornieren – LCC Campus Board"
+
+
+      152 |       const where = `${route} ${lang}`;
+      153 |       // One page-identity suffix on every public route, including booking cancellation.
+    > 154 |       await expect(page, `${where}: title`).toHaveTitle(`${titleLabel(route, lang)} – Campus Board`);
+          |                                             ^
+      155 |       await expect(page.getByRole("heading", { level: 1 }), `${where}: one h1`).toHaveCount(1);
+      156 |       await expect(page.getByRole("heading", { level: 1 }), `${where}: h1 has text`).not.toHaveText("");
+      157 |     }
+        at <isolated-work>/app/tests/e2e/stage3-accessibility.spec.ts:154:45
+
+    Error Context: test-results/stage3-accessibility-every-2f884-tly-one-level-1-heading-de--chromium/error-context.md
+
+  2) [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (en)
+
+    Error: /booking/cancel en: title
+
+    expect(page).toHaveTitle(expected) failed
+
+    Expected: "Cancel a booking – Campus Board"
+    Received: "Cancel a booking – LCC Campus Board"
+    Timeout:  5000ms
+
+    Call log:
+      - /booking/cancel en: title with timeout 5000ms
+        14 × locator resolved to <html lang="en" class="rafaCq_variable d8oG9G_variable h-full antialiased">…</html>
+           - unexpected value "Cancel a booking – LCC Campus Board"
+
+
+      152 |       const where = `${route} ${lang}`;
+      153 |       // One page-identity suffix on every public route, including booking cancellation.
+    > 154 |       await expect(page, `${where}: title`).toHaveTitle(`${titleLabel(route, lang)} – Campus Board`);
+          |                                             ^
+      155 |       await expect(page.getByRole("heading", { level: 1 }), `${where}: one h1`).toHaveCount(1);
+      156 |       await expect(page.getByRole("heading", { level: 1 }), `${where}: h1 has text`).not.toHaveText("");
+      157 |     }
+        at <isolated-work>/app/tests/e2e/stage3-accessibility.spec.ts:154:45
+
+    Error Context: test-results/stage3-accessibility-every-60097-tly-one-level-1-heading-en--chromium/error-context.md
+
+  2 failed
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (de)
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (en)
+EXIT 1

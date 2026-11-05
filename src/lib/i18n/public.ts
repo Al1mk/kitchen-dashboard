@@ -52,6 +52,7 @@ const de = {
   sections: { start: "Start", display: "Mitteilungen", rooms: "Räume", schedule: "Stundenplan", booking: "Raumbuchung", map: "Karte", newcomers: "Neu am Campus" } as Record<PublicSection, string>,
   navLabel: "Campus-Informationen",
   languageLabel: "Sprache",
+  skipLink: "Zum Inhalt springen",
   footer: "Prototyp im Kurs Mensch-Maschine-Interaktion – keine offizielle Anzeige der Hochschule Coburg.",
   contentNote: null as string | null,
   fallback: { all: "Nur auf Deutsch", partial: "Teilweise auf Deutsch" },
@@ -124,6 +125,7 @@ const en: PublicText = {
   sections: { start: "Home", display: "Announcements", rooms: "Rooms", schedule: "Schedule", booking: "Booking", map: "Map", newcomers: "New to campus" },
   navLabel: "Campus information",
   languageLabel: "Language",
+  skipLink: "Skip to main content",
   footer: "Prototype from the Human-Computer Interaction course – not an official display of Hochschule Coburg.",
   contentNote:
     "Course titles, lecturers and study groups are shown as entered by campus staff, in German. Announcements and rooms without a full English version are marked “Only in German” or “Partly in German”.",

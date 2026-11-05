@@ -1,0 +1,52 @@
+{
+ "ctx": "laptop-1440x900",
+ "name": "page-map",
+ "lang": "de",
+ "label": "before",
+ "page": {
+  "htmlLang": "de",
+  "wrapperLang": "de",
+  "title": "Karte – Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "Karte"
+   ],
+   [
+    2,
+    "1. Obergeschoss"
+   ],
+   [
+    2,
+    "Ausgewählter Raum"
+   ],
+   [
+    2,
+    "1. Obergeschoss · 24 Räume"
+   ]
+  ],
+  "skipLink": null,
+  "logoLink": null,
+  "mainId": null,
+  "linkCount": 9,
+  "ambiguousLinkNames": []
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Deutsch",
+  "href": "/map",
+  "top": 35,
+  "bottom": 83,
+  "left": 904,
+  "width": 87,
+  "height": 48,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": null,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": null
+}

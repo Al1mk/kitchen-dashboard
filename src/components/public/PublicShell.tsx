@@ -1,9 +1,12 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
-import { PUBLIC_TEXT, type Lang, type PublicSection } from "@/lib/i18n/public.ts";
+import { PUBLIC_TEXT, publicHref, type Lang, type PublicSection } from "@/lib/i18n/public.ts";
 import { formatBerlinTime } from "@/lib/time/berlin.ts";
 import { DockHeightSync } from "./DockHeightSync.tsx";
+import { DocumentLang } from "./DocumentLang.tsx";
 import { LiveLanguageSwitch } from "./LiveLanguageSwitch.tsx";
 import { LanguageSwitch, PublicNav } from "./PublicNav.tsx";
+import { SkipLink } from "./SkipLink.tsx";
 
 // Frame of the public pages (start, newcomers, map, rooms, schedule, booking). No admin links
 // or session. Sized for the portrait kiosk (≥ 56 px touch targets) and usable on laptops and phones.
@@ -12,8 +15,9 @@ import { LanguageSwitch, PublicNav } from "./PublicNav.tsx";
 // navigation form a dock fixed to the bottom edge (data-public-dock). Outside kiosk mode that wrapper is
 // `display: contents`, so both stay in the header exactly where they were. There is only ever one
 // <nav>; CSS moves it, nothing is duplicated. DockHeightSync reserves the dock's real height.
-// Known consequence: the dock comes first in DOM/tab order although it is drawn last (a skip link is
-// planned for Stage 3).
+// Known consequence: the dock comes first in DOM/tab order although it is drawn last. The skip link (Stage 3,
+// AL-05, docs/contracts.md C14) is the first tab stop and jumps over it to <main id="main-content">; DocumentLang
+// keeps <html lang> in step with the page, and the logo links to Home in the visitor's language.
 
 /** Sections that show class titles/lecturers; only there the "entered by campus staff" note helps. */
 const SECTIONS_WITH_CLASS_TITLES: PublicSection[] = ["schedule", "rooms"];
@@ -40,11 +44,16 @@ export function PublicShell({
   const t = PUBLIC_TEXT[lang];
   return (
     <div lang={lang} data-public-shell className="flex min-h-dvh flex-col bg-canvas text-lg text-ink kiosk:pb-[var(--public-dock-h)]">
+      <SkipLink label={t.skipLink} />
+      <DocumentLang lang={lang} />
       <header className="bg-surface">
         <div className="mx-auto flex w-full max-w-3xl flex-wrap items-center justify-between gap-4 px-5 pt-5 pb-3">
           <div>
-            {/* eslint-disable-next-line @next/next/no-img-element -- small static logo */}
-            <img src="/brand/hs-coburg-logo-screenshot.png" alt="Hochschule Coburg" width={445} height={118} className="h-auto w-44" />
+            {/* The logo is a link to Home; its image alt names the destination, so the link has a name of its own. */}
+            <Link href={publicHref("/", lang)} className="block w-fit rounded-lg">
+              {/* eslint-disable-next-line @next/next/no-img-element -- small static logo */}
+              <img src="/brand/hs-coburg-logo-screenshot.png" alt={`Hochschule Coburg – ${t.sections.start}`} width={445} height={118} className="h-auto w-44" />
+            </Link>
             <p className="mt-1 font-semibold text-ink-muted">Lucas-Cranach-Campus Kronach</p>
           </div>
           <div
@@ -60,7 +69,7 @@ export function PublicShell({
         </div>
         <div className="brand-stripe h-1.5" aria-hidden="true" />
       </header>
-      <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-5 px-5 py-6">
+      <main id="main-content" tabIndex={-1} className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-5 px-5 py-6">
         <h1 className="font-display text-4xl font-bold">{title}</h1>
         {t.contentNote && SECTIONS_WITH_CLASS_TITLES.includes(active) && <p className="text-base text-ink-muted">{t.contentNote}</p>}
         {children}

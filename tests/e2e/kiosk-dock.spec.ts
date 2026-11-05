@@ -409,7 +409,9 @@ for (const v of [KIOSK[0], KIOSK[3]]) {
     const { context, page } = await newPage(browser, v);
     await stubBoard(page, "many");
     await open(page, "/display", "de");
-    await expect(page.getByRole("heading", { name: /Beispielmitteilung 1 /, level: 3 })).toBeVisible();
+    // Stage 3 (AL-05, C14): the board's title is now the page's h1, so announcement titles are h2 (was h3 under an h2
+    // title and no h1). Intentional change of this expectation; the level is still asserted, not dropped.
+    await expect(page.getByRole("heading", { name: /Beispielmitteilung 1 /, level: 2 })).toBeVisible();
     const g = await geometry(page);
     expect(g.rows.map((r) => r.count)).toEqual([4, 3]);
     for (const row of g.rows) expect(Math.abs(row.centre - g.frameCentre)).toBeLessThanOrEqual(2);

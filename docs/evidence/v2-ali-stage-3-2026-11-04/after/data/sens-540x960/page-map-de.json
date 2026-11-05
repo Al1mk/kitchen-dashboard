@@ -1,0 +1,78 @@
+{
+ "ctx": "sens-540x960",
+ "name": "page-map",
+ "lang": "de",
+ "label": "after",
+ "page": {
+  "htmlLang": "de",
+  "wrapperLang": "de",
+  "title": "Karte – Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "Karte"
+   ],
+   [
+    2,
+    "1. Obergeschoss"
+   ],
+   [
+    2,
+    "Ausgewählter Raum"
+   ],
+   [
+    2,
+    "1. Obergeschoss · 24 Räume"
+   ]
+  ],
+  "skipLink": {
+   "text": "Zum Inhalt springen",
+   "href": "#main-content"
+  },
+  "logoLink": {
+   "href": "/",
+   "alt": "Hochschule Coburg – Start"
+  },
+  "mainId": "main-content",
+  "linkCount": 11,
+  "ambiguousLinkNames": []
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Zum Inhalt springen",
+  "href": "#main-content",
+  "top": 16,
+  "bottom": 72,
+  "left": 16,
+  "width": 200,
+  "height": 56,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": 733,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": {
+  "tag": "MAIN",
+  "id": "main-content",
+  "name": "Karte Wähle ein Stockwerk, tippe auf eine Markierung oder suche nach Raumnummer ",
+  "href": null,
+  "top": 0,
+  "bottom": 3034,
+  "left": 0,
+  "width": 540,
+  "height": 3035,
+  "inViewport": false,
+  "barBottom": null,
+  "dockTop": 733,
+  "underBar": false,
+  "underDock": true,
+  "nextTab": {
+   "tag": "BUTTON",
+   "name": "Erdgeschoss"
+  },
+  "urlHash": ""
+ }
+}

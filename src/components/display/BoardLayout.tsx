@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
 import type { Category, PublicAnnouncement } from "@/lib/announcements/schema.ts";
 import { fallbackLevel, localize, PUBLIC_TEXT, type Lang } from "@/lib/i18n/public.ts";
@@ -7,7 +8,10 @@ import { formatBerlinDateTime, formatBerlinLongDate, formatBerlinTime } from "@/
 // preview. All sizes use container query units (cqw), so the same layout
 // scales from a 1080×1920 screen down to a small preview frame. The admin
 // preview passes no navigation and stays German. The public navigation and language switch form a dock
-// at the bottom of the frame (V2 Stage 1, docs/contracts.md C10).
+// at the bottom of the frame (V2 Stage 1, docs/contracts.md C10). Stage 3 (AL-05, C14): on the public page the
+// board's title is the page's h1 and the announcement titles are h2 (`pageHeading`), and the logo links to Home
+// (`logoHref`); the admin preview, which sits inside an admin page that has its own h1, keeps h2/h3 and no link.
+// Sizes and classes are unchanged: only the heading level and the link wrapper differ.
 
 const categoryStyle: Record<Category, { bar: string; chip: string }> = {
   important: { bar: "bg-brand", chip: "bg-danger-soft text-danger" },
@@ -17,7 +21,7 @@ const categoryStyle: Record<Category, { bar: string; chip: string }> = {
 
 export type BoardItem = PublicAnnouncement & { isPreview?: boolean };
 
-export function AnnouncementCard({ item, lang = "de" }: { item: BoardItem; lang?: Lang }) {
+export function AnnouncementCard({ item, lang = "de", titleAs: Title = "h3" }: { item: BoardItem; lang?: Lang; titleAs?: "h2" | "h3" }) {
   const style = categoryStyle[item.category];
   const text = PUBLIC_TEXT[lang];
   const t = text.board;
@@ -44,9 +48,9 @@ export function AnnouncementCard({ item, lang = "de" }: { item: BoardItem; lang?
             </span>
           )}
         </div>
-        <h3 lang={title.lang} className="font-display text-[4.6cqw] leading-[1.15] font-bold text-ink [overflow-wrap:anywhere]">
+        <Title lang={title.lang} className="font-display text-[4.6cqw] leading-[1.15] font-bold text-ink [overflow-wrap:anywhere]">
           {title.text}
-        </h3>
+        </Title>
         <p lang={body.lang} className="text-[3.1cqw] leading-[1.45] whitespace-pre-line text-ink [overflow-wrap:anywhere]">
           {body.text}
         </p>
@@ -67,6 +71,8 @@ export function BoardLayout({
   lang = "de",
   nav,
   languageSwitch,
+  pageHeading = false,
+  logoHref,
 }: {
   items: BoardItem[] | null;
   now: Date | null;
@@ -77,21 +83,35 @@ export function BoardLayout({
   /** Public navigation, shown in the dock at the bottom of the frame (not in the admin preview). */
   nav?: ReactNode;
   languageSwitch?: ReactNode;
+  /** The board is a whole public page: its title is the h1 and the announcement titles are h2. */
+  pageHeading?: boolean;
+  /** Makes the logo a link (to Home on the public page). */
+  logoHref?: string;
 }) {
   const t = PUBLIC_TEXT[lang];
+  const Heading = pageHeading ? "h1" : "h2";
+  const logo = (
+    // eslint-disable-next-line @next/next/no-img-element -- static asset, sized by container units
+    <img
+      src="/brand/hs-coburg-logo-screenshot.png"
+      alt={logoHref ? `Hochschule Coburg – ${t.sections.start}` : "Hochschule Coburg"}
+      className="h-auto w-[34cqw]"
+      width={445}
+      height={118}
+    />
+  );
   return (
     <div className="@container h-full w-full">
       <div className="flex h-full w-full flex-col bg-canvas text-ink">
         <header className="bg-surface">
           <div className="flex items-center justify-between gap-[3cqw] px-[4.5cqw] py-[3.6cqw]">
-            {/* eslint-disable-next-line @next/next/no-img-element -- static asset, sized by container units */}
-            <img
-              src="/brand/hs-coburg-logo-screenshot.png"
-              alt="Hochschule Coburg"
-              className="h-auto w-[34cqw]"
-              width={445}
-              height={118}
-            />
+            {logoHref ? (
+              <Link href={logoHref} className="block shrink-0 rounded-[1cqw]">
+                {logo}
+              </Link>
+            ) : (
+              logo
+            )}
             <div className="text-right">
               <p className="font-display text-[7.4cqw] leading-none font-bold tabular-nums" aria-label={t.board.clock}>
                 {now ? formatBerlinTime(now) : " "}
@@ -108,10 +128,10 @@ export function BoardLayout({
         {banner}
 
         <main className="flex min-h-0 flex-1 flex-col px-[4.5cqw] pt-[4cqw]">
-          <h2 className="font-display text-[5.4cqw] font-bold">{t.sections.display}</h2>
+          <Heading className="font-display text-[5.4cqw] font-bold">{t.sections.display}</Heading>
         {/* Cards never shrink (that would clip their text); extra content scrolls this list. */}
           <div className="mt-[3cqw] flex min-h-0 flex-1 flex-col gap-[3cqw] overflow-y-auto pb-[4cqw]">
-            {items && items.length > 0 ? items.map((item) => <AnnouncementCard key={item.id} item={item} lang={lang} />) : emptyState}
+            {items && items.length > 0 ? items.map((item) => <AnnouncementCard key={item.id} item={item} lang={lang} titleAs={pageHeading ? "h2" : "h3"} />) : emptyState}
           </div>
         </main>
 

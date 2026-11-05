@@ -5,7 +5,7 @@ import { parseLang } from "@/lib/i18n/public.ts";
 
 export async function generateMetadata({ searchParams }: PageProps<"/booking/cancel">): Promise<Metadata> {
   const lang = parseLang((await searchParams).lang);
-  return { title: `${lang === "de" ? "Reservierung stornieren" : "Cancel a booking"} – LCC Campus Board` };
+  return { title: `${lang === "de" ? "Reservierung stornieren" : "Cancel a booking"} – Campus Board` };
 }
 export default async function BookingCancelPage({ searchParams }: PageProps<"/booking/cancel">) {
   const lang = parseLang((await searchParams).lang);

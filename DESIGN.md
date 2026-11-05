@@ -55,3 +55,9 @@ UI/UX Pro Max skill (Quick Reference rules: accessibility, touch targets, forms 
 
 - **Pictograms:** simple 24×24 line drawings (inline SVG in `src/components/public/Pictograms.tsx`) in `brand-strong` on a `brand-cream` tile; decorative, always beside a visible text label. No new colour, token or icon library.
 - **Home/Newcomers cards:** large cards (Home 2 × 3 filling the space above the dock; Newcomers 2 × 2 plus a full-width help card with an outlined secondary action). Contract and limits: `docs/contracts.md` C11.
+
+## V2 Stage 3 additions (2026-11-05, provisional, not yet tried on the physical screen)
+
+- **Skip link:** white text on `--ink`, at least 56 px high at the 16 px root (larger in kiosk mode), shown at the top left only while it has keyboard focus. It uses the existing focus ring and no new colour or token.
+- **Placeholders** in public pages use `--ink-muted` at full opacity (6.39:1 on white); typed text stays `--ink`.
+- The active-state cue (bar and underline), the 3 px `--focus` ring and every colour of the provisional palette are unchanged. Contract and limits: `docs/contracts.md` C14.

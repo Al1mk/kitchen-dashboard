@@ -1,0 +1,12 @@
+{
+ "ctx": "phone-390x844",
+ "name": "rooms-class-links",
+ "lang": "de",
+ "label": "before",
+ "links": [
+  "Auf der Karte zeigen",
+  "Termine in diesem Raum",
+  "Auf der Karte zeigen",
+  "Termine in diesem Raum"
+ ]
+}

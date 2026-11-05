@@ -1,0 +1,12 @@
+{
+ "ctx": "kiosk-pointer-1080x1920",
+ "name": "rooms-class-links",
+ "lang": "de",
+ "label": "before",
+ "links": [
+  "Auf der Karte zeigen",
+  "Termine in diesem Raum",
+  "Auf der Karte zeigen",
+  "Termine in diesem Raum"
+ ]
+}

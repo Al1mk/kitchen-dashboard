@@ -100,3 +100,13 @@ All local integration commits use Ali’s exact author **and committer** `al1mk 
 | Editable five-slide deck, PDF, German script and five-page booklet working draft | Ali with Codex Presentations/Documents assistance, derived from Aryan’s PDF/outline and actual evidence | Editorial aid for Aryan/Parsa/Reza approval; not represented as their completed personal work, survey or rehearsal |
 
 Git author and committer remain `al1mk <alimk1752@gmail.com>` as Ali requested. No teammate email or AI co-author is invented. Earlier Aryan/Parsa joint-source attribution remains joint. Claude’s12 dirty Stage3 files are separately snapshotted and excluded from these commits. [Repair evidence](evidence/aryan-ap01-fix-2026-11-04/README.md).
+
+## Ali Stage3 completion — 5 November 2026
+
+| Contribution | Executor / assistance | Boundary |
+| --- | --- | --- |
+| Shared skip link, document-language sync, focus clearance, room-action names, placeholder contrast, board headings and linked logo; 27 browser cases and original capture/mutation tooling | Ali with Claude Code | Builds on accepted Stages1/2 and existing Aryan/Parsa modules; their original commits and Reza's content stay intact |
+| Exact cancellation-title suffix and stricter DE/EN assertions; audit-runner failure propagation and preservation; capture-provenance correction | Ali with Codex | Later integration fixes, not attributed to Parsa or presented as Claude's original completed delivery |
+| Source-matched completion checks and separate read-only code review | Ali with Codex | 187 unit, 180 E2E, 13 restart checks; no actionable runtime regression in static review; no physical/screen-reader/human acceptance claim |
+
+Only code, tooling and necessary project records are in this delivery. Ali deferred Booklet work. Existing team contributions remain credited above; all new commit author/committer metadata use Ali's exact requested identity, without AI trailers. No push by Codex. [Completion evidence](evidence/v2-ali-stage-3-2026-11-04/README.md).

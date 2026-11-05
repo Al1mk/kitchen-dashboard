@@ -1,0 +1,59 @@
+{
+ "ctx": "kiosk-touch-1080x1920",
+ "name": "page-display",
+ "lang": "en",
+ "label": "after",
+ "page": {
+  "htmlLang": "en",
+  "wrapperLang": "en",
+  "title": "Announcements – Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "Announcements"
+   ],
+   [
+    2,
+    "Sample notice 1"
+   ],
+   [
+    2,
+    "Sample notice 2"
+   ],
+   [
+    2,
+    "Sample notice 3"
+   ],
+   [
+    2,
+    "Sample notice 4"
+   ]
+  ],
+  "skipLink": null,
+  "logoLink": {
+   "href": "/?lang=en",
+   "alt": "Hochschule Coburg – Home"
+  },
+  "mainId": null,
+  "linkCount": 10,
+  "ambiguousLinkNames": []
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Hochschule Coburg – Home",
+  "href": "/?lang=en",
+  "top": 56,
+  "bottom": 153,
+  "left": 49,
+  "width": 367,
+  "height": 97,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": null,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": null
+}

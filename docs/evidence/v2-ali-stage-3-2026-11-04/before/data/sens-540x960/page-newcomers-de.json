@@ -1,0 +1,60 @@
+{
+ "ctx": "sens-540x960",
+ "name": "page-newcomers",
+ "lang": "de",
+ "label": "before",
+ "page": {
+  "htmlLang": "de",
+  "wrapperLang": "de",
+  "title": "Neu am Campus – Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "Neu am Campus?"
+   ],
+   [
+    2,
+    "Einen Raum finden"
+   ],
+   [
+    2,
+    "Was findet heute statt?"
+   ],
+   [
+    2,
+    "Aktuelle Hinweise"
+   ],
+   [
+    2,
+    "Einen Lernraum reservieren"
+   ],
+   [
+    2,
+    "Du brauchst Hilfe?"
+   ]
+  ],
+  "skipLink": null,
+  "logoLink": null,
+  "mainId": null,
+  "linkCount": 14,
+  "ambiguousLinkNames": []
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Deutsch",
+  "href": "/newcomers",
+  "top": 751,
+  "bottom": 807,
+  "left": 164,
+  "width": 103,
+  "height": 56,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": 733,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": null
+}

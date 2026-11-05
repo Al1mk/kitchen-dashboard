@@ -1,0 +1,12 @@
+{
+ "ctx": "kiosk-touch-1080x1920",
+ "name": "rooms-class-links",
+ "lang": "en",
+ "label": "before",
+ "links": [
+  "Show on the map",
+  "Classes in this room",
+  "Show on the map",
+  "Classes in this room"
+ ]
+}

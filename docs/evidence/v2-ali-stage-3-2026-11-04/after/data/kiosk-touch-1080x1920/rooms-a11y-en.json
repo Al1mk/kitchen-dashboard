@@ -1,0 +1,43 @@
+{
+ "ctx": "kiosk-touch-1080x1920",
+ "name": "rooms-a11y",
+ "lang": "en",
+ "label": "after",
+ "roomLinkCount": 131,
+ "duplicateLinkNames": 0,
+ "distinctLinkNames": 131,
+ "firstCardLinks": [
+  "- link \"Today in this room – DEMO-E01\":",
+  "- link \"Show on the map – DEMO-E01\":"
+ ],
+ "placeholder": {
+  "placeholder": "e.g. K1-105, seminar room, Zagel or HCI",
+  "ratio": 6.39,
+  "fg": [
+   91,
+   95,
+   105
+  ],
+  "bg": [
+   255,
+   255,
+   255
+  ]
+ },
+ "shiftTabScenario": {
+  "tag": "A",
+  "id": null,
+  "name": "Show on the map – K1-124",
+  "href": "/map?raum=lcc-demo-room-k1-124&lang=en",
+  "top": 107,
+  "bottom": 184,
+  "left": 546,
+  "width": 468,
+  "height": 77,
+  "inViewport": true,
+  "barBottom": 99,
+  "dockTop": 1609,
+  "underBar": false,
+  "underDock": false
+ }
+}
