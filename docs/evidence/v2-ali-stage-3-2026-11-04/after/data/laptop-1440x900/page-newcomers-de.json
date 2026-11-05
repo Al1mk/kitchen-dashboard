@@ -1,0 +1,86 @@
+{
+ "ctx": "laptop-1440x900",
+ "name": "page-newcomers",
+ "lang": "de",
+ "label": "after",
+ "page": {
+  "htmlLang": "de",
+  "wrapperLang": "de",
+  "title": "Neu am Campus – Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "Neu am Campus?"
+   ],
+   [
+    2,
+    "Einen Raum finden"
+   ],
+   [
+    2,
+    "Was findet heute statt?"
+   ],
+   [
+    2,
+    "Aktuelle Hinweise"
+   ],
+   [
+    2,
+    "Einen Lernraum reservieren"
+   ],
+   [
+    2,
+    "Du brauchst Hilfe?"
+   ]
+  ],
+  "skipLink": {
+   "text": "Zum Inhalt springen",
+   "href": "#main-content"
+  },
+  "logoLink": {
+   "href": "/",
+   "alt": "Hochschule Coburg – Start"
+  },
+  "mainId": "main-content",
+  "linkCount": 16,
+  "ambiguousLinkNames": []
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Zum Inhalt springen",
+  "href": "#main-content",
+  "top": 16,
+  "bottom": 72,
+  "left": 16,
+  "width": 200,
+  "height": 56,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": null,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": {
+  "tag": "MAIN",
+  "id": "main-content",
+  "name": "Neu am Campus? Wähle direkt aus, was du gerade brauchst. Prototyp · Beispieldate",
+  "href": null,
+  "top": 0,
+  "bottom": 1083,
+  "left": 336,
+  "width": 768,
+  "height": 1084,
+  "inViewport": false,
+  "barBottom": null,
+  "dockTop": null,
+  "underBar": false,
+  "underDock": false,
+  "nextTab": {
+   "tag": "A",
+   "name": "Karte öffnen"
+  },
+  "urlHash": ""
+ }
+}

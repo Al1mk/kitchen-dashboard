@@ -61,7 +61,8 @@ for (const lang of ['de', 'en']) {
  });
  test(`PARSA-R004: cancellation title follows language (${lang})`,async({page})=>{
   await page.goto(`/booking/cancel?lang=${lang}`);
-  await expect(page).toHaveTitle(`${lang==='de'?'Reservierung stornieren':'Cancel a booking'} – LCC Campus Board`);
+  // Final Stage3 integration uses the same suffix as every public route (C14).
+  await expect(page).toHaveTitle(`${lang==='de'?'Reservierung stornieren':'Cancel a booking'} – Campus Board`);
  });
  test(`PARSA-R006: literal credential entry has hints and no text corrections (${lang})`,async({page})=>{
   await page.goto(`/booking/cancel?lang=${lang}`);

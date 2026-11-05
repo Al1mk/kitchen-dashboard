@@ -1,0 +1,293 @@
+
+> campus-board@0.1.0 test:e2e
+> playwright test --reporter=list
+
+[WebServer] (node:20869) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20870) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20890) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20892) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20897) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20900) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20906) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20898) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20902) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20901) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20899) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20903) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20904) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20905) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20907) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20910) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20930) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 180 tests using 1 worker
+
+(node:20934) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    1 [chromium] › tests/e2e/admin-bookings.spec.ts:11:1 › a class blocked by a booking links to the list; after explicit cancellation the retry succeeds (665ms)
+  ✓    2 [chromium] › tests/e2e/admin-bookings.spec.ts:53:1 › a stale list handles a booking that was cancelled meanwhile; anonymous access is refused (411ms)
+  ✓    3 [chromium] › tests/e2e/booking-api.spec.ts:14:1 › booking create, retry, conflicts, admin guards and cancellation follow the contract (55ms)
+  ✓    4 [chromium] › tests/e2e/booking-api.spec.ts:116:1 › public availability refuses unknown and non-reservable rooms; there is no public booking list (27ms)
+(node:20942) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    5 [chromium] › tests/e2e/ap01-map-clusters.spec.ts:4:1 › dense pins have a keyboard/touch chooser and no room gets lost (261ms)
+  ✓    6 [chromium] › tests/e2e/ap01-map-clusters.spec.ts:24:1 › room chooser stays in English and floor changes reset the chooser (230ms)
+  ✓    7 [chromium] › tests/e2e/api-security.spec.ts:5:3 › anonymous direct requests › cannot read or mutate admin data (19ms)
+  ✓    8 [chromium] › tests/e2e/api-security.spec.ts:15:3 › anonymous direct requests › admin pages redirect to the login page (128ms)
+  ✓    9 [chromium] › tests/e2e/api-security.spec.ts:22:3 › anonymous direct requests › public API rejects writes (4ms)
+  ✓   10 [chromium] › tests/e2e/api-security.spec.ts:26:3 › anonymous direct requests › wrong credentials are rejected (21ms)
+  ✓   11 [chromium] › tests/e2e/api-security.spec.ts:36:3 › authenticated API › rejects cross-origin mutations even with a valid session (25ms)
+  ✓   12 [chromium] › tests/e2e/api-security.spec.ts:47:3 › authenticated API › rejects invalid input server-side with field errors (27ms)
+  ✓   13 [chromium] › tests/e2e/api-security.spec.ts:70:3 › authenticated API › public output never contains drafts, future items or admin fields (27ms)
+  ✓   14 [chromium] › tests/e2e/api-security.spec.ts:88:3 › authenticated API › a repeated create request id does not create a duplicate (23ms)
+  ✓   15 [chromium] › tests/e2e/api-security.spec.ts:96:3 › authenticated API › logout invalidates the session server-side (24ms)
+  ✓   16 [chromium] › tests/e2e/bilingual-content.spec.ts:11:1 › English announcement text follows draft, preview, publish, republish and withdraw (25.6s)
+  ✓   17 [chromium] › tests/e2e/bilingual-content.spec.ts:104:1 › English room names and descriptions, with German fallback, in directory and schedule (363ms)
+  ✓   18 [chromium] › tests/e2e/display-overflow.spec.ts:25:1 › long announcements are not clipped on the display or in the preview (411ms)
+  ✓   19 [chromium] › tests/e2e/display-states.spec.ts:8:1 › shows a loading state, then an empty state (96ms)
+  ✓   20 [chromium] › tests/e2e/display-states.spec.ts:21:1 › shows an error state on first-load failure and recovers (155ms)
+  ✓   21 [chromium] › tests/e2e/display-states.spec.ts:41:1 › keeps last data with a stale notice when the connection drops, then recovers automatically (10.3s)
+  ✓   22 [chromium] › tests/e2e/integrated-navigation.spec.ts:10:1 › newcomer → map → schedule → booking → map, by clicks, in English (1.2s)
+  ✓   23 [chromium] › tests/e2e/integrated-navigation.spec.ts:46:1 › navigation lists all seven sections once, with no admin link (372ms)
+  ✓   24 [chromium] › tests/e2e/integrated-navigation.spec.ts:56:1 › the newcomer page's links all lead to working pages in both languages (175ms)
+  ✓   25 [chromium] › tests/e2e/integrated-navigation.spec.ts:75:3 › simulated portrait 540×960: start, map and booking fit without horizontal page scroll (415ms)
+  ✓   26 [chromium] › tests/e2e/integrated-navigation.spec.ts:75:3 › simulated portrait 1080×1920: start, map and booking fit without horizontal page scroll (507ms)
+  ✓   27 [chromium] › tests/e2e/map-integration.spec.ts:22:1 › deep link selects the room on its floor, in the shared shell, with schedule and booking links (178ms)
+  ✓   28 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (192ms)
+  ✓   29 [chromium] › tests/e2e/map-integration.spec.ts:59:1 › search by code selects the room; changing the floor clears the room and keeps the language (262ms)
+  ✓   30 [chromium] › tests/e2e/map-integration.spec.ts:71:1 › renaming keeps the marker (id binding); moving to another floor hides the old position (312ms)
+  ✓   31 [chromium] › tests/e2e/map-integration.spec.ts:96:1 › archived and unknown rooms get no marker and no substitute (169ms)
+  ✓   32 [chromium] › tests/e2e/map-integration.spec.ts:108:1 › K1-114 is selectable as information without a dot (147ms)
+  ✓   33 [chromium] › tests/e2e/map-integration.spec.ts:116:1 › a missing floor image shows a localized fallback and keeps the room list (107ms)
+  ✓   34 [chromium] › tests/e2e/public-navigation.spec.ts:16:1 › public pages are reachable from / with a return path, keeping language, day and room (906ms)
+  ✓   35 [chromium] › tests/e2e/public-navigation.spec.ts:107:1 › the board's language switch stays on the board and English carries over to other sections (233ms)
+  ✓   36 [chromium] › tests/e2e/publish-flow.spec.ts:10:1 › draft → preview → publish → display → edit/republish → withdraw (25.5s)
+  ✓   37 [chromium] › tests/e2e/publish-flow.spec.ts:79:1 › validation errors are shown next to the fields (327ms)
+  ✓   38 [chromium] › tests/e2e/publish-flow.spec.ts:89:1 › leaving with unsaved changes asks for confirmation (319ms)
+  ✓   39 [chromium] › tests/e2e/publish-flow.spec.ts:101:1 › logout from the UI ends access to admin pages (295ms)
+  ✓   40 [chromium] › tests/e2e/rooms-schedule-api.spec.ts:29:1 › anonymous requests cannot read or change rooms and sessions (13ms)
+  ✓   41 [chromium] › tests/e2e/rooms-schedule-api.spec.ts:46:1 › admin API validates, prevents conflicts and protects references (38ms)
+  ✓   42 [chromium] › tests/e2e/rooms-schedule-api.spec.ts:93:1 › public room and schedule output contain only allowlisted fields (30ms)
+  ✓   43 [chromium] › tests/e2e/rooms-schedule-flow.spec.ts:13:1 › room and session administration appear on the public pages (25.5s)
+  ✓   44 [chromium] › tests/e2e/rooms-schedule-flow.spec.ts:110:1 › public schedule changes day without admin access (190ms)
+  ✓   45 [chromium] › tests/e2e/schedule-room-fallback.spec.ts:11:1 › unfiltered English schedule marks untranslated room names in each row (370ms)
+  ✓   46 [chromium] › tests/e2e/screenshots-bilingual.spec.ts:13:1 › capture bilingual admin editor (1440×900) and English public pages (1080×1920) (891ms)
+  ✓   47 [chromium] › tests/e2e/screenshots-m2.spec.ts:12:1 › capture M2 admin (1440×900) and public (1080×1920) layouts (930ms)
+  ✓   48 [chromium] › tests/e2e/screenshots-nav.spec.ts:11:1 › capture public start, board and English schedule (1080×1920) (845ms)
+  ✓   49 [chromium] › tests/e2e/screenshots.spec.ts:10:1 › capture admin (1440×900) and display (1080×1920) layouts (931ms)
+(node:21173) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   50 [chromium] › tests/e2e/ap01-regressions.spec.ts:5:1 › AP01-R001: actual kiosk rectangles do not overlap (222ms)
+  ✓   51 [chromium] › tests/e2e/ap01-regressions.spec.ts:19:1 › AP01-R002: closing cluster chooser restores keyboard focus to opener (141ms)
+  ✓   52 [chromium] › tests/e2e/ap01-regressions.spec.ts:28:1 › AP01-R003: untranslated room in English chooser gets existing fallback marker (180ms)
+  ✓   53 [chromium] › tests/e2e/ap01-regressions.spec.ts:40:1 › AP01-R002: choosing a cluster room transfers keyboard focus to its details (105ms)
+  ✓   54 [chromium] › tests/e2e/ap01-regressions.spec.ts:49:41 › AP01-R002: live regrouping preserves focus ownership (inside chooser: true) (10.5s)
+  ✓   55 [chromium] › tests/e2e/ap01-regressions.spec.ts:49:41 › AP01-R002: live regrouping preserves focus ownership (inside chooser: false) (10.5s)
+  ✓   56 [chromium] › tests/e2e/booking-language-receipt.spec.ts:50:1 › English receipt: localized room name, countdown, More time, expiry returns Home in English (638ms)
+  ✓   57 [chromium] › tests/e2e/booking-language-receipt.spec.ts:67:1 › V1-R002: a settled receipt follows DE → EN → DE without resending, resetting or changing its identity (827ms)
+  ✓   58 [chromium] › tests/e2e/booking-language-receipt.spec.ts:117:1 › V1-R002: a room without an English name shows the German fallback marker only in English (393ms)
+  ✓   59 [chromium] › tests/e2e/booking-language-receipt.spec.ts:137:1 › Done clears the receipt; going back does not reveal it again (369ms)
+  ✓   60 [chromium] › tests/e2e/booking-language-receipt.spec.ts:150:1 › public cancellation: malformed, wrong and right credentials, repeated cancellation (575ms)
+  ✓   61 [chromium] › tests/e2e/booking-pending.spec.ts:51:1 › A-01: a delayed accepted response still produces the receipt for the submitted request (275ms)
+  ✓   62 [chromium] › tests/e2e/booking-pending.spec.ts:80:1 › navigation while pending asks first; staying keeps the request and its receipt (396ms)
+  ✓   63 [chromium] › tests/e2e/booking-pending.spec.ts:103:1 › deliberate abandonment warns that the booking may exist, then leaves (336ms)
+  ✓   64 [chromium] › tests/e2e/booking-pending.spec.ts:120:1 › an uncertain outcome is retried with the identical request and never creates a second booking (327ms)
+  ✓   65 [chromium] › tests/e2e/booking-pending.spec.ts:156:1 › V1-R001: accepted, response lost, cancelled by Katja, identical retry → shown as cancelled, nothing re-created (394ms)
+  ✓   66 [chromium] › tests/e2e/booking-pending.spec.ts:211:1 › V1-R001: an unknown booking state in a successful answer stays recoverable with the same request (327ms)
+  ✓   67 [chromium] › tests/e2e/kiosk-dock.spec.ts:159:3 › kiosk 1080x1920 touch: one navigation, seven destinations, 4 + 3 centred at the bottom, language switch lowered (9.1s)
+  ✓   68 [chromium] › tests/e2e/kiosk-dock.spec.ts:159:3 › kiosk 1080x1920 pointer-fine: one navigation, seven destinations, 4 + 3 centred at the bottom, language switch lowered (9.1s)
+  ✓   69 [chromium] › tests/e2e/kiosk-dock.spec.ts:159:3 › kiosk 1080x1700 (assumed chrome loss): one navigation, seven destinations, 4 + 3 centred at the bottom, language switch lowered (9.1s)
+  ✓   70 [chromium] › tests/e2e/kiosk-dock.spec.ts:159:3 › kiosk 540x960 (assumed 200 % zoom): one navigation, seven destinations, 4 + 3 centred at the bottom, language switch lowered (9.1s)
+  ✓   71 [chromium] › tests/e2e/kiosk-dock.spec.ts:200:3 › ordinary laptop 1440x900: navigation and language switch stay in the page header, nothing is pinned (7.9s)
+  ✓   72 [chromium] › tests/e2e/kiosk-dock.spec.ts:200:3 › ordinary phone 390x844: navigation and language switch stay in the page header, nothing is pinned (7.9s)
+  ✓   73 [chromium] › tests/e2e/kiosk-dock.spec.ts:224:1 › the kiosk scale is scoped: public pages at 1080 px grow, the admin keeps the ordinary scale (1.3s)
+  ✓   74 [chromium] › tests/e2e/kiosk-dock.spec.ts:246:1 › the active destination and language are marked by more than colour (1.8s)
+  ✓   75 [chromium] › tests/e2e/kiosk-dock.spec.ts:264:3 › kiosk 1080x1920 touch: the end of every page is reachable above the dock and the dock height is reserved (8.0s)
+  ✓   76 [chromium] › tests/e2e/kiosk-dock.spec.ts:264:3 › kiosk 1080x1700 (assumed chrome loss): the end of every page is reachable above the dock and the dock height is reserved (8.0s)
+  ✓   77 [chromium] › tests/e2e/kiosk-dock.spec.ts:264:3 › kiosk 540x960 (assumed 200 % zoom): the end of every page is reachable above the dock and the dock height is reserved (8.0s)
+  ✓   78 [chromium] › tests/e2e/kiosk-dock.spec.ts:317:3 › kiosk 1080x1700 (assumed chrome loss): keyboard focus is never hidden behind the dock (2.5s)
+  ✓   79 [chromium] › tests/e2e/kiosk-dock.spec.ts:317:3 › kiosk 540x960 (assumed 200 % zoom): keyboard focus is never hidden behind the dock (2.5s)
+  ✓   80 [chromium] › tests/e2e/kiosk-dock.spec.ts:348:1 › kiosk: search, language switch, bare Rooms link and Back/Forward keep working through the dock (843ms)
+  ✓   81 [chromium] › tests/e2e/kiosk-dock.spec.ts:371:1 › kiosk: the course-title note appears only where class titles are shown (4.0s)
+  ✓   82 [chromium] › tests/e2e/kiosk-dock.spec.ts:407:3 › board 1080x1920 touch: dock below the scrolling list; cards, empty and error states intact (1.2s)
+  ✓   83 [chromium] › tests/e2e/kiosk-dock.spec.ts:407:3 › board 540x960 (assumed 200 % zoom): dock below the scrolling list; cards, empty and error states intact (1.2s)
+  ✓   84 [chromium] › tests/e2e/kiosk-dock.spec.ts:447:1 › the admin preview of an announcement has no public navigation (270ms)
+  ✓   85 [chromium] › tests/e2e/kiosk-dock.spec.ts:465:1 › kiosk: the pending-booking guard still intercepts the dock; confirm and receipt actions stay above the dock (447ms)
+  ✓   86 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:9:3 › PARSA-R002: warning keeps controls visible without scrolling (540x960, de) (586ms)
+  ✓   87 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:9:3 › PARSA-R002: warning keeps controls visible without scrolling (540x960, en) (602ms)
+  ✓   88 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:9:3 › PARSA-R002: warning keeps controls visible without scrolling (1080x1920, de) (601ms)
+  ✓   89 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:9:3 › PARSA-R002: warning keeps controls visible without scrolling (1080x1920, en) (598ms)
+  ✓   90 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:9:3 › PARSA-R002: warning keeps controls visible without scrolling (1080x1700, de) (601ms)
+  ✓   91 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:9:3 › PARSA-R002: warning keeps controls visible without scrolling (1080x1700, en) (599ms)
+  ✓   92 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:55:2 › PARSA-R003: invalid schedule room has a localized recovery path (de) (106ms)
+  ✘   93 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:62:2 › PARSA-R004: cancellation title follows language (de) (5.1s)
+(node:21400) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   94 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:66:2 › PARSA-R006: literal credential entry has hints and no text corrections (de) (106ms)
+  ✓   95 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:55:2 › PARSA-R003: invalid schedule room has a localized recovery path (en) (93ms)
+  ✘   96 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:62:2 › PARSA-R004: cancellation title follows language (en) (5.1s)
+(node:21411) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   97 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:66:2 › PARSA-R006: literal credential entry has hints and no text corrections (en) (108ms)
+  ✓   98 [chromium] › tests/e2e/parsa-review-fixes.spec.ts:81:1 › PARSA-R003: a removed room clears its stale schedule; a network failure keeps last good data (221ms)
+  ✓   99 [chromium] › tests/e2e/parsa-v2-booking.spec.ts:42:1 › AP-02: receipt requires credential acknowledgement, warns on exit and preserves DE/EN switch (524ms)
+  ✓  100 [chromium] › tests/e2e/parsa-v2-booking.spec.ts:63:1 › AP-02: cancellation form offers a user-controlled show/hide code action (154ms)
+  ✓  101 [chromium] › tests/e2e/parsa-v2-booking.spec.ts:73:1 › AP-03: room schedule opens booking with stable room id, day and language (163ms)
+  ✓  102 [chromium] › tests/e2e/parsa-v2-booking.spec.ts:86:1 › AP-02: last-15-seconds warning and More time protect the temporary receipt (666ms)
+  ✓  103 [chromium] › tests/e2e/parsa-v2-booking.spec.ts:101:1 › AP-03: past dates never offer direct booking from the room schedule (90ms)
+  ✓  104 [chromium] › tests/e2e/review-booking.spec.ts:30:1 › REVIEW: replay after Katja cancellation must not show an active success receipt (402ms)
+  ✓  105 [chromium] › tests/e2e/review-booking.spec.ts:59:1 › REVIEW: changing settled receipt language must localize its room name (328ms)
+  ✓  106 [chromium] › tests/e2e/room-search.spec.ts:75:1 › room search: code variants, names, clear and no results (German) (192ms)
+  ✓  107 [chromium] › tests/e2e/room-search.spec.ts:119:1 › lecturer and course search for a chosen day, aliases, ambiguity and links (German) (478ms)
+  ✓  108 [chromium] › tests/e2e/room-search.spec.ts:184:1 › English search and language switch keep the query, the day and the room context (348ms)
+  ✓  109 [chromium] › tests/e2e/room-search.spec.ts:215:1 › results follow a room rename by id, and polling does not reset the search (11.5s)
+  ✓  110 [chromium] › tests/e2e/room-search.spec.ts:251:1 › a failed class request is not shown as 'no classes'; room search keeps working (135ms)
+  ✓  111 [chromium] › tests/e2e/room-search.spec.ts:260:1 › a late response for a previous day is ignored after the day changes (3.7s)
+  ✓  112 [chromium] › tests/e2e/room-search.spec.ts:291:1 › SEARCH-R001: Back and Forward restore each entry's search and day across a language switch (3.8s)
+  ✓  113 [chromium] › tests/e2e/room-search.spec.ts:328:1 › SEARCH-R001: the bare Rooms navigation link clears the search in both languages (3.1s)
+  ✓  114 [chromium] › tests/e2e/room-search.spec.ts:353:1 › SEARCH-R001: fast typing keeps every character and does not navigate per keystroke (2.7s)
+  ✓  115 [chromium] › tests/e2e/stage2-layout.spec.ts:84:3 › home 1080x1920 touch: six large cards with a pictogram and a label, same destinations in both languages (1.3s)
+  ✓  116 [chromium] › tests/e2e/stage2-layout.spec.ts:84:3 › home 1080x1920 pointer-fine: six large cards with a pictogram and a label, same destinations in both languages (1.3s)
+  ✓  117 [chromium] › tests/e2e/stage2-layout.spec.ts:84:3 › home 1080x1700 (assumed chrome loss): six large cards with a pictogram and a label, same destinations in both languages (1.3s)
+  ✓  118 [chromium] › tests/e2e/stage2-layout.spec.ts:84:3 › home 540x960 (assumed 200 % zoom): six large cards with a pictogram and a label, same destinations in both languages (1.3s)
+  ✓  119 [chromium] › tests/e2e/stage2-layout.spec.ts:84:3 › home laptop 1440x900: six large cards with a pictogram and a label, same destinations in both languages (1.3s)
+  ✓  120 [chromium] › tests/e2e/stage2-layout.spec.ts:84:3 › home phone 390x844: six large cards with a pictogram and a label, same destinations in both languages (1.3s)
+  ✓  121 [chromium] › tests/e2e/stage2-layout.spec.ts:115:3 › home 1080x1920 touch: the cards use the portrait space down to the dock, and stay above it (1.2s)
+  ✓  122 [chromium] › tests/e2e/stage2-layout.spec.ts:115:3 › home 1080x1920 pointer-fine: the cards use the portrait space down to the dock, and stay above it (1.2s)
+  ✓  123 [chromium] › tests/e2e/stage2-layout.spec.ts:115:3 › home 1080x1700 (assumed chrome loss): the cards use the portrait space down to the dock, and stay above it (1.2s)
+  ✓  124 [chromium] › tests/e2e/stage2-layout.spec.ts:130:1 › home: card text and pictogram are readable (contrast measured through the real colours) (630ms)
+  ✓  125 [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 1080x1920 touch: four action cards and a full-width help card, Reza's text unchanged, no prototype block (1.3s)
+  ✓  126 [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 1080x1920 pointer-fine: four action cards and a full-width help card, Reza's text unchanged, no prototype block (1.3s)
+  ✓  127 [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 1080x1700 (assumed chrome loss): four action cards and a full-width help card, Reza's text unchanged, no prototype block (1.3s)
+  ✓  128 [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers 540x960 (assumed 200 % zoom): four action cards and a full-width help card, Reza's text unchanged, no prototype block (1.3s)
+  ✓  129 [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers laptop 1440x900: four action cards and a full-width help card, Reza's text unchanged, no prototype block (1.3s)
+  ✓  130 [chromium] › tests/e2e/stage2-layout.spec.ts:143:3 › newcomers phone 390x844: four action cards and a full-width help card, Reza's text unchanged, no prototype block (1.3s)
+  ✓  131 [chromium] › tests/e2e/stage2-layout.spec.ts:206:1 › newcomers: the end of the page is reachable above the dock (1.2s)
+  ✓  132 [chromium] › tests/e2e/stage2-layout.spec.ts:248:3 › rooms 1080x1920 touch: floor chips jump to the floor, without a new history entry, and focus lands on the heading (13.4s)
+  ✓  133 [chromium] › tests/e2e/stage2-layout.spec.ts:248:3 › rooms 1080x1920 pointer-fine: floor chips jump to the floor, without a new history entry, and focus lands on the heading (13.4s)
+  ✓  134 [chromium] › tests/e2e/stage2-layout.spec.ts:248:3 › rooms 1080x1700 (assumed chrome loss): floor chips jump to the floor, without a new history entry, and focus lands on the heading (13.4s)
+  ✓  135 [chromium] › tests/e2e/stage2-layout.spec.ts:248:3 › rooms 540x960 (assumed 200 % zoom): floor chips jump to the floor, without a new history entry, and focus lands on the heading (13.5s)
+  ✓  136 [chromium] › tests/e2e/stage2-layout.spec.ts:248:3 › rooms laptop 1440x900: floor chips jump to the floor, without a new history entry, and focus lands on the heading (11.5s)
+  ✓  137 [chromium] › tests/e2e/stage2-layout.spec.ts:248:3 › rooms phone 390x844: floor chips jump to the floor, without a new history entry, and focus lands on the heading (11.4s)
+  ✓  138 [chromium] › tests/e2e/stage2-layout.spec.ts:292:3 › rooms 1080x1920 touch: a card is compact, its actions share one row, and ids and links are unchanged (1.3s)
+  ✓  139 [chromium] › tests/e2e/stage2-layout.spec.ts:322:3 › rooms 1080x1920 touch: cards are spaced tightly enough that the list is not longer than the audited V1 pitch (637ms)
+  ✓  140 [chromium] › tests/e2e/stage2-layout.spec.ts:292:3 › rooms 1080x1920 pointer-fine: a card is compact, its actions share one row, and ids and links are unchanged (1.3s)
+  ✓  141 [chromium] › tests/e2e/stage2-layout.spec.ts:322:3 › rooms 1080x1920 pointer-fine: cards are spaced tightly enough that the list is not longer than the audited V1 pitch (640ms)
+  ✓  142 [chromium] › tests/e2e/stage2-layout.spec.ts:292:3 › rooms 1080x1700 (assumed chrome loss): a card is compact, its actions share one row, and ids and links are unchanged (1.3s)
+  ✓  143 [chromium] › tests/e2e/stage2-layout.spec.ts:322:3 › rooms 1080x1700 (assumed chrome loss): cards are spaced tightly enough that the list is not longer than the audited V1 pitch (636ms)
+  ✓  144 [chromium] › tests/e2e/stage2-layout.spec.ts:292:3 › rooms 540x960 (assumed 200 % zoom): a card is compact, its actions share one row, and ids and links are unchanged (1.3s)
+  ✓  145 [chromium] › tests/e2e/stage2-layout.spec.ts:322:3 › rooms 540x960 (assumed 200 % zoom): cards are spaced tightly enough that the list is not longer than the audited V1 pitch (636ms)
+  ✓  146 [chromium] › tests/e2e/stage2-layout.spec.ts:338:3 › rooms search (de): matching classes come first and are never contradicted by a "no room found" box (584ms)
+  ✓  147 [chromium] › tests/e2e/stage2-layout.spec.ts:338:3 › rooms search (en): matching classes come first and are never contradicted by a "no room found" box (571ms)
+  ✓  148 [chromium] › tests/e2e/stage3-accessibility.spec.ts:113:3 › document language follows the page language on every public route (de) (4.6s)
+  ✓  149 [chromium] › tests/e2e/stage3-accessibility.spec.ts:113:3 › document language follows the page language on every public route (en) (4.7s)
+  ✓  150 [chromium] › tests/e2e/stage3-accessibility.spec.ts:125:1 › document language follows client-side language switches and navigation (888ms)
+  ✓  151 [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (de) (4.6s)
+  ✓  152 [chromium] › tests/e2e/stage3-accessibility.spec.ts:161:3 › /display: the board heading is the h1 and announcements are h2; the look is unchanged (de) (629ms)
+  ✓  153 [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (en) (4.7s)
+  ✓  154 [chromium] › tests/e2e/stage3-accessibility.spec.ts:161:3 › /display: the board heading is the h1 and announcements are h2; the look is unchanged (en) (633ms)
+  ✓  155 [chromium] › tests/e2e/stage3-accessibility.spec.ts:185:3 › skip link 1080x1920 touch: first tab stop, readable and unobstructed when focused, moves focus into the content (8.3s)
+  ✓  156 [chromium] › tests/e2e/stage3-accessibility.spec.ts:185:3 › skip link 1080x1920 pointer-fine: first tab stop, readable and unobstructed when focused, moves focus into the content (8.2s)
+  ✓  157 [chromium] › tests/e2e/stage3-accessibility.spec.ts:185:3 › skip link 540x960 (assumed 200 % zoom): first tab stop, readable and unobstructed when focused, moves focus into the content (8.3s)
+  ✓  158 [chromium] › tests/e2e/stage3-accessibility.spec.ts:185:3 › skip link laptop 1440x900: first tab stop, readable and unobstructed when focused, moves focus into the content (8.2s)
+  ✓  159 [chromium] › tests/e2e/stage3-accessibility.spec.ts:185:3 › skip link phone 390x844: first tab stop, readable and unobstructed when focused, moves focus into the content (8.2s)
+  ✓  160 [chromium] › tests/e2e/stage3-accessibility.spec.ts:231:1 › skip link: with a booking request pending, using it does not open the leave dialog (356ms)
+  ✓  161 [chromium] › tests/e2e/stage3-accessibility.spec.ts:277:3 › the logo is a link to Home that keeps the language (de) (5.4s)
+  ✓  162 [chromium] › tests/e2e/stage3-accessibility.spec.ts:277:3 › the logo is a link to Home that keeps the language (en) (5.4s)
+  ✓  163 [chromium] › tests/e2e/stage3-accessibility.spec.ts:298:3 › search placeholders reach 4.5:1 on /rooms and /map (de), kiosk and laptop (2.4s)
+  ✓  164 [chromium] › tests/e2e/stage3-accessibility.spec.ts:298:3 › search placeholders reach 4.5:1 on /rooms and /map (en), kiosk and laptop (2.5s)
+  ✓  165 [chromium] › tests/e2e/stage3-accessibility.spec.ts:352:3 › room links have distinct, contextual names that start with the visible label (de) (687ms)
+  ✓  166 [chromium] › tests/e2e/stage3-accessibility.spec.ts:374:3 › class-result links name their room and agree where they lead (de) (121ms)
+  ✓  167 [chromium] › tests/e2e/stage3-accessibility.spec.ts:352:3 › room links have distinct, contextual names that start with the visible label (en) (688ms)
+  ✓  168 [chromium] › tests/e2e/stage3-accessibility.spec.ts:374:3 › class-result links name their room and agree where they lead (en) (122ms)
+  ✓  169 [chromium] › tests/e2e/stage3-accessibility.spec.ts:427:5 › focus clearance 1080x1920 touch de: keyboard focus is never left under the pinned chip bar or the dock (725ms)
+  ✓  170 [chromium] › tests/e2e/stage3-accessibility.spec.ts:427:5 › focus clearance 1080x1920 touch en: keyboard focus is never left under the pinned chip bar or the dock (734ms)
+  ✓  171 [chromium] › tests/e2e/stage3-accessibility.spec.ts:427:5 › focus clearance 1080x1920 pointer-fine de: keyboard focus is never left under the pinned chip bar or the dock (729ms)
+  ✓  172 [chromium] › tests/e2e/stage3-accessibility.spec.ts:427:5 › focus clearance 1080x1920 pointer-fine en: keyboard focus is never left under the pinned chip bar or the dock (728ms)
+  ✓  173 [chromium] › tests/e2e/stage3-accessibility.spec.ts:427:5 › focus clearance 540x960 (assumed 200 % zoom) de: keyboard focus is never left under the pinned chip bar or the dock (708ms)
+  ✓  174 [chromium] › tests/e2e/stage3-accessibility.spec.ts:427:5 › focus clearance 540x960 (assumed 200 % zoom) en: keyboard focus is never left under the pinned chip bar or the dock (739ms)
+(node:21896) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  175 [chromium] › tests/e2e/booking-selection.spec.ts:24:1 › unknown, archived and non-reservable requested rooms are explained and never replaced (5.3s)
+  ✓  176 [chromium] › tests/e2e/booking-selection.spec.ts:39:1 › no query: the visitor chooses a room deliberately (171ms)
+  ✓  177 [chromium] › tests/e2e/booking-selection.spec.ts:49:1 › a late availability answer for the previous room is ignored (724ms)
+  ✓  178 [chromium] › tests/e2e/booking-selection.spec.ts:78:1 › availability failure shows a retry and blocks confirmation until it recovers (272ms)
+  ✓  179 [chromium] › tests/e2e/booking-selection.spec.ts:90:1 › English mode translates API errors instead of showing German server text (270ms)
+(node:21912) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  180 [chromium] › tests/e2e/insecure-origin.spec.ts:16:1 › editor creates a draft in a non-secure context (HTTP, non-loopback host) (308ms)
+
+
+  1) [chromium] › tests/e2e/parsa-review-fixes.spec.ts:62:2 › PARSA-R004: cancellation title follows language (de)
+
+    Error: expect(page).toHaveTitle(expected) failed
+
+    Expected: "Reservierung stornieren – LCC Campus Board"
+    Received: "Reservierung stornieren – Campus Board"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveTitle" with timeout 5000ms
+        14 × locator resolved to <html lang="de" class="rafaCq_variable d8oG9G_variable h-full antialiased">…</html>
+           - unexpected value "Reservierung stornieren – Campus Board"
+
+
+      62 |  test(`PARSA-R004: cancellation title follows language (${lang})`,async({page})=>{
+      63 |   await page.goto(`/booking/cancel?lang=${lang}`);
+    > 64 |   await expect(page).toHaveTitle(`${lang==='de'?'Reservierung stornieren':'Cancel a booking'} – LCC Campus Board`);
+         |                      ^
+      65 |  });
+      66 |  test(`PARSA-R006: literal credential entry has hints and no text corrections (${lang})`,async({page})=>{
+      67 |   await page.goto(`/booking/cancel?lang=${lang}`);
+        at <isolated-work>/app/tests/e2e/parsa-review-fixes.spec.ts:64:22
+
+    Error Context: test-results/parsa-review-fixes-PARSA-R-21e44--title-follows-language-de--chromium/error-context.md
+
+  2) [chromium] › tests/e2e/parsa-review-fixes.spec.ts:62:2 › PARSA-R004: cancellation title follows language (en)
+
+    Error: expect(page).toHaveTitle(expected) failed
+
+    Expected: "Cancel a booking – LCC Campus Board"
+    Received: "Cancel a booking – Campus Board"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveTitle" with timeout 5000ms
+        14 × locator resolved to <html lang="en" class="rafaCq_variable d8oG9G_variable h-full antialiased">…</html>
+           - unexpected value "Cancel a booking – Campus Board"
+
+
+      62 |  test(`PARSA-R004: cancellation title follows language (${lang})`,async({page})=>{
+      63 |   await page.goto(`/booking/cancel?lang=${lang}`);
+    > 64 |   await expect(page).toHaveTitle(`${lang==='de'?'Reservierung stornieren':'Cancel a booking'} – LCC Campus Board`);
+         |                      ^
+      65 |  });
+      66 |  test(`PARSA-R006: literal credential entry has hints and no text corrections (${lang})`,async({page})=>{
+      67 |   await page.goto(`/booking/cancel?lang=${lang}`);
+        at <isolated-work>/app/tests/e2e/parsa-review-fixes.spec.ts:64:22
+
+    Error Context: test-results/parsa-review-fixes-PARSA-R-ca199--title-follows-language-en--chromium/error-context.md
+
+  2 failed
+    [chromium] › tests/e2e/parsa-review-fixes.spec.ts:62:2 › PARSA-R004: cancellation title follows language (de)
+    [chromium] › tests/e2e/parsa-review-fixes.spec.ts:62:2 › PARSA-R004: cancellation title follows language (en)
+  178 passed (7.8m)
+
+EXIT 1

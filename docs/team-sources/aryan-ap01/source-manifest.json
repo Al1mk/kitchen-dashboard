@@ -1,0 +1,111 @@
+{
+  "received": "2026-11-04",
+  "author": "Aryan, as identified by Ali and delivery",
+  "outerZip": "HCI_AN_ALI_AP01_2026-11-04.zip",
+  "outerZipSha256": "c4caab1158bfb04f5465d5f90e2bc750ec374b6483ec665c64bce03f5d1088e0",
+  "base": "a089f73f53cb7a5cc617e648cd27a32227519b95",
+  "files": [
+    {
+      "path": "original/ap01/README_FA.md",
+      "sha256": "dab5c5ef0baf06f0b9f276107ca56b1d5170aca8a8270641abf7ddcde4f64ea0"
+    },
+    {
+      "path": "original/ap01/docs/MESSAGE_TO_ALI_DE.txt",
+      "sha256": "a999a9aaa7854c36a02791784632e98577ddb8b8d680cd089988decb5fb6e5c2"
+    },
+    {
+      "path": "original/ap01/docs/STATIC_GEOMETRY_QA.log",
+      "sha256": "dcc56820f22be291c1600b7dcbfd488aa09370b32989320f54ac80f3a470572c"
+    },
+    {
+      "path": "original/ap01/docs/V2_TASK_REVIEW_AND_CORRECTIONS_FA.md",
+      "sha256": "ae84cc1465d8133461ee6dd6c7bd8c0a5239ddda8df4b7ab0892b9c82a64cc60"
+    },
+    {
+      "path": "original/ap01/patch/apply_ap01.py",
+      "sha256": "a69b56faa9939de937499fd890ab59bd3f1d1d4374ca3994e7788fb2b188b33a"
+    },
+    {
+      "path": "original/ap01/patch/marker-clusters.ts",
+      "sha256": "34427be8d5afab5cf172cbbbfafd45a0319c1b18943fddf6bd10a8deb84bbe53"
+    },
+    {
+      "path": "original/ap01/prior_planning/01_GEOMETRY_FINDINGS_FA.md",
+      "sha256": "40b68cd78cbadf8f4c143acfb5d57f9248c35bfd1ef6d82931cf53585ac2312b"
+    },
+    {
+      "path": "original/ap01/prior_planning/02_REVISED_AP_SCOPE_FA.md",
+      "sha256": "567e37a7047711591e72273039ad028edf9c10daef987df6c0be9e98239e854d"
+    },
+    {
+      "path": "original/ap01/prior_planning/03_REVISED_ARYAN_BOOKLET_FA.md",
+      "sha256": "2b67d6840f3a1c0bdfa0454c2b27ada9bb6e2cba4dc3db5a8a26967de6625528"
+    },
+    {
+      "path": "original/ap01/prior_planning/05_AP05_PRESENTATION_PLAN_FA.md",
+      "sha256": "053a8e0abb92ffef2fda89e948046d4ff1cf9c5304b4a7715c53fb410606bcb4"
+    },
+    {
+      "path": "original/ap01/prior_planning/06_AP01_TEST_PROTOCOL_FA.md",
+      "sha256": "c3c53f780d2544bf0b31022b4a3151ba4bd686532094a3be74d52a34933c876b"
+    },
+    {
+      "path": "original/ap01/prior_planning/07_GOOGLE_FORM_EVIDENCE_TEMPLATE.csv",
+      "sha256": "d4f17df5845453487cf231f6153824f4c6d34bdf52c1b09442a97dbe1f51768b"
+    },
+    {
+      "path": "original/ap01/prior_planning/MAP_MARKER_44PX_CONFLICTS.csv",
+      "sha256": "0a1f3b8aeea536ea8cacb4a2d6aabc94d3a8f5e9afe0b1ed19734454d8e6b942"
+    },
+    {
+      "path": "original/ap01/tests/ap01-map-clusters.spec.ts",
+      "sha256": "cbbf0e9e9a3b96ab7ccae26d1e51509b86ab6eb8f2911ce7e661177d229df365"
+    },
+    {
+      "path": "original/ap01/tests/aryan-47.json",
+      "sha256": "4f8798feb2c2735b0f20f846108e97ca786706146679629af151874baef597c5"
+    },
+    {
+      "path": "original/ap01/tests/map-clusters.test.ts",
+      "sha256": "054a7f4bf0f0e1438beb2843bfb07fe495eac9ecfea17705613f5e9a49dcd105"
+    },
+    {
+      "path": "original/ap01/tests/run_static_geometry.mjs",
+      "sha256": "5eeefdf113f55bc5e8faa7b86db1cfc14198c6f8e93f68a029b7cc754c9a8005"
+    },
+    {
+      "path": "original/ap01/tests/test_patcher.py",
+      "sha256": "7175856e6cb3d653593e9a4646c00314aea3db37409ef8d64a7b1d201fbc35ba"
+    },
+    {
+      "path": "original/package/01_ALI/01_GEOMETRY_FINDINGS_FA.md",
+      "sha256": "40b68cd78cbadf8f4c143acfb5d57f9248c35bfd1ef6d82931cf53585ac2312b"
+    },
+    {
+      "path": "original/package/01_ALI/06_AP01_TEST_PROTOCOL_FA.md",
+      "sha256": "c3c53f780d2544bf0b31022b4a3151ba4bd686532094a3be74d52a34933c876b"
+    },
+    {
+      "path": "original/package/01_ALI/AN_ALI_DE.txt",
+      "sha256": "3cbfd5f62518accbfd41a3520d5e1924368481f160ee868d8bb5692b2f34e68e"
+    },
+    {
+      "path": "original/package/01_ALI/AP01_READY_FOR_ALI_2026-11-03.zip",
+      "sha256": "2c508652d59f1858a7e55853f4d11e9f3f698de2df48b633c2ed2179c0931c6a"
+    },
+    {
+      "path": "original/package/01_ALI/CODEX_PROMPT_AP01_EN.md",
+      "sha256": "ac8fd44b057902f249447c29c9f8f63aa2355a17c5d3cecb4eddd7a70932b2c4"
+    },
+    {
+      "path": "original/package/02_REZA/LCC_Campus_Board_Praesentation_05-11-2026.pdf",
+      "sha256": "71486dda71af0d3a21048e7cbc46845f3d531ddc54c399b7491f41cb127426bd"
+    },
+    {
+      "path": "original/package/06_TEAM/Team_Handoff_05-11-2026.pdf",
+      "sha256": "91faab5bd36d23fa520afc047a5102771f32247e6c00ec422a9c2d0e2c82b3fc"
+    }
+  ],
+  "archivePath": "original/submission.zip",
+  "manifestPathConvention": "package/ is the outer archive; ap01/ is its nested AP01_READY_FOR_ALI_2026-11-03.zip. Paths below name the prior reviewed extraction, not executable files in this repository."
+}

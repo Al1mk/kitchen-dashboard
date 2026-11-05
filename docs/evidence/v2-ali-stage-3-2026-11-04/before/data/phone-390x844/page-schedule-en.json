@@ -1,0 +1,56 @@
+{
+ "ctx": "phone-390x844",
+ "name": "page-schedule",
+ "lang": "en",
+ "label": "before",
+ "page": {
+  "htmlLang": "de",
+  "wrapperLang": "en",
+  "title": "Schedule – Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "Schedule"
+   ],
+   [
+    2,
+    "Mensch-Maschine-Interaktion – Projekt (Demo)"
+   ],
+   [
+    2,
+    "Mensch-Maschine-Interaktion (Demo)"
+   ],
+   [
+    2,
+    "Programmierung – Labor (Demo)"
+   ],
+   [
+    2,
+    "Wirtschaftsinformatik – Übung (Demo)"
+   ]
+  ],
+  "skipLink": null,
+  "logoLink": null,
+  "mainId": null,
+  "linkCount": 12,
+  "ambiguousLinkNames": []
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Deutsch",
+  "href": "/schedule",
+  "top": 120,
+  "bottom": 168,
+  "left": 25,
+  "width": 87,
+  "height": 48,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": null,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": null
+}

@@ -1,0 +1,44 @@
+{
+ "ctx": "kiosk-touch-1080x1920",
+ "name": "page-booking",
+ "lang": "en",
+ "label": "before",
+ "page": {
+  "htmlLang": "de",
+  "wrapperLang": "en",
+  "title": "Book a room – Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "Book a room"
+   ],
+   [
+    2,
+    "4. Select a free start time"
+   ]
+  ],
+  "skipLink": null,
+  "logoLink": null,
+  "mainId": null,
+  "linkCount": 10,
+  "ambiguousLinkNames": []
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Deutsch",
+  "href": "/booking?datum=2026-11-05",
+  "top": 1633,
+  "bottom": 1710,
+  "left": 395,
+  "width": 141,
+  "height": 77,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": 1609,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": null
+}

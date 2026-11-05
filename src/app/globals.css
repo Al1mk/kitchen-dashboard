@@ -88,6 +88,12 @@ html {
     font-size: clamp(100%, calc(100% + (100vw - 720px) * 0.016667), 137.5%);
     --public-dock-h: 15rem;
     scroll-padding-bottom: calc(var(--public-dock-h) + 1rem);
+    /*
+     * Stage 3 (AL-05, C14): the floor-chip bar on /rooms is pinned to the TOP edge in kiosk mode. While it is
+     * mounted, FloorJump publishes its height (+ a little air) here, so keyboard focus and in-page jumps stop below
+     * it, the same way scroll-padding-bottom keeps them above the dock. 0 where nothing is pinned.
+     */
+    scroll-padding-top: var(--public-sticky-top, 0px);
   }
 }
 
@@ -99,6 +105,20 @@ body {
 :focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 2px;
+}
+
+/* The skip link's target is a landmark, not a control: after "skip" no ring is drawn around the whole page body. */
+main[tabindex="-1"]:focus {
+  outline: none;
+}
+
+/*
+ * Placeholders (Stage 3, AL-05, C14): Tailwind's reset draws them at 50 % of the text colour, which measured 3.11:1 on
+ * white. The muted ink is 6.4:1 on white and still reads as lighter than typed text (ink, 15:1). Public pages only.
+ */
+[data-public-shell] ::placeholder {
+  color: var(--ink-muted);
+  opacity: 1;
 }
 
 /* Thin brand stripe echoing the website header (cream → orange → red). */

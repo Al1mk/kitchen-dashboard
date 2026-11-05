@@ -1,0 +1,564 @@
+{
+ "label": "before",
+ "base": "http://127.0.0.1:<port>",
+ "chromium": "156.0.8078.4",
+ "contexts": {
+  "kiosk-touch-1080x1920": "Nominal portrait kiosk, DPR 1, touch emulation ON (so (pointer: coarse) is true only because of the emulation)",
+  "kiosk-pointer-1080x1920": "Same viewport, touch OFF = pointer-fine portrait. The kiosk layout must not depend on pointer type",
+  "sens-540x960": "Sensitivity ONLY: what 200 % browser zoom on a 1080x1920 output would report (unmeasured assumption)",
+  "laptop-1440x900": "Ordinary laptop, mouse + keyboard",
+  "phone-390x844": "Ordinary phone emulation (isMobile, touch, DPR 2)"
+ },
+ "records": [
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "page-home",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "page-newcomers",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "page-map",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "page-rooms",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "page-schedule",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "page-booking",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "page-booking-cancel",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "page-display",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "rooms-a11y",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "rooms-class-links",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "display-board",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "page-home",
+   "lang": "en"
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "page-newcomers",
+   "lang": "en"
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "page-map",
+   "lang": "en"
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "page-rooms",
+   "lang": "en"
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "page-schedule",
+   "lang": "en"
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "page-booking",
+   "lang": "en"
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "page-booking-cancel",
+   "lang": "en"
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "page-display",
+   "lang": "en"
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "rooms-a11y",
+   "lang": "en"
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "rooms-class-links",
+   "lang": "en"
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "name": "display-board",
+   "lang": "en"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "page-home",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "page-newcomers",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "page-map",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "page-rooms",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "page-schedule",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "page-booking",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "page-booking-cancel",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "page-display",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "rooms-a11y",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "rooms-class-links",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "display-board",
+   "lang": "de"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "page-home",
+   "lang": "en"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "page-newcomers",
+   "lang": "en"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "page-map",
+   "lang": "en"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "page-rooms",
+   "lang": "en"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "page-schedule",
+   "lang": "en"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "page-booking",
+   "lang": "en"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "page-booking-cancel",
+   "lang": "en"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "page-display",
+   "lang": "en"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "rooms-a11y",
+   "lang": "en"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "rooms-class-links",
+   "lang": "en"
+  },
+  {
+   "ctx": "kiosk-pointer-1080x1920",
+   "name": "display-board",
+   "lang": "en"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "page-home",
+   "lang": "de"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "page-newcomers",
+   "lang": "de"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "page-map",
+   "lang": "de"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "page-rooms",
+   "lang": "de"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "page-schedule",
+   "lang": "de"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "page-booking",
+   "lang": "de"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "page-booking-cancel",
+   "lang": "de"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "page-display",
+   "lang": "de"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "rooms-a11y",
+   "lang": "de"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "rooms-class-links",
+   "lang": "de"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "display-board",
+   "lang": "de"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "page-home",
+   "lang": "en"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "page-newcomers",
+   "lang": "en"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "page-map",
+   "lang": "en"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "page-rooms",
+   "lang": "en"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "page-schedule",
+   "lang": "en"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "page-booking",
+   "lang": "en"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "page-booking-cancel",
+   "lang": "en"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "page-display",
+   "lang": "en"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "rooms-a11y",
+   "lang": "en"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "rooms-class-links",
+   "lang": "en"
+  },
+  {
+   "ctx": "sens-540x960",
+   "name": "display-board",
+   "lang": "en"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "page-home",
+   "lang": "de"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "page-newcomers",
+   "lang": "de"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "page-map",
+   "lang": "de"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "page-rooms",
+   "lang": "de"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "page-schedule",
+   "lang": "de"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "page-booking",
+   "lang": "de"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "page-booking-cancel",
+   "lang": "de"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "page-display",
+   "lang": "de"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "rooms-a11y",
+   "lang": "de"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "rooms-class-links",
+   "lang": "de"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "display-board",
+   "lang": "de"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "page-home",
+   "lang": "en"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "page-newcomers",
+   "lang": "en"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "page-map",
+   "lang": "en"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "page-rooms",
+   "lang": "en"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "page-schedule",
+   "lang": "en"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "page-booking",
+   "lang": "en"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "page-booking-cancel",
+   "lang": "en"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "page-display",
+   "lang": "en"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "rooms-a11y",
+   "lang": "en"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "rooms-class-links",
+   "lang": "en"
+  },
+  {
+   "ctx": "laptop-1440x900",
+   "name": "display-board",
+   "lang": "en"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "page-home",
+   "lang": "de"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "page-newcomers",
+   "lang": "de"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "page-map",
+   "lang": "de"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "page-rooms",
+   "lang": "de"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "page-schedule",
+   "lang": "de"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "page-booking",
+   "lang": "de"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "page-booking-cancel",
+   "lang": "de"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "page-display",
+   "lang": "de"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "rooms-a11y",
+   "lang": "de"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "rooms-class-links",
+   "lang": "de"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "display-board",
+   "lang": "de"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "page-home",
+   "lang": "en"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "page-newcomers",
+   "lang": "en"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "page-map",
+   "lang": "en"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "page-rooms",
+   "lang": "en"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "page-schedule",
+   "lang": "en"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "page-booking",
+   "lang": "en"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "page-booking-cancel",
+   "lang": "en"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "page-display",
+   "lang": "en"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "rooms-a11y",
+   "lang": "en"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "rooms-class-links",
+   "lang": "en"
+  },
+  {
+   "ctx": "phone-390x844",
+   "name": "display-board",
+   "lang": "en"
+  }
+ ]
+}

@@ -1,0 +1,425 @@
+{
+ "note": "after state only; synthetic data; context notes come from stage1-lib.mjs",
+ "contexts": {
+  "kiosk-touch-1080x1920": "Nominal portrait kiosk, DPR 1, touch emulation ON (so (pointer: coarse) is true only because of the emulation)",
+  "sens-540x960": "Sensitivity ONLY: what 200 % browser zoom on a 1080x1920 output would report (unmeasured assumption)"
+ },
+ "records": [
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "lang": "de",
+   "page": "home",
+   "firstSixTabStops": [
+    "Zum Inhalt springen",
+    "Hochschule Coburg – Start",
+    "Deutsch",
+    "English",
+    "Start",
+    "Neu am Campus"
+   ]
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "lang": "de",
+   "page": "newcomers",
+   "firstSixTabStops": [
+    "Zum Inhalt springen",
+    "Hochschule Coburg – Start",
+    "Deutsch",
+    "English",
+    "Start",
+    "Neu am Campus"
+   ]
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "lang": "de",
+   "page": "map",
+   "firstSixTabStops": [
+    "Zum Inhalt springen",
+    "Hochschule Coburg – Start",
+    "Deutsch",
+    "English",
+    "Start",
+    "Neu am Campus"
+   ]
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "lang": "de",
+   "page": "rooms",
+   "firstSixTabStops": [
+    "Zum Inhalt springen",
+    "Hochschule Coburg – Start",
+    "Deutsch",
+    "English",
+    "Start",
+    "Neu am Campus"
+   ]
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "lang": "de",
+   "page": "schedule",
+   "firstSixTabStops": [
+    "Zum Inhalt springen",
+    "Hochschule Coburg – Start",
+    "Deutsch",
+    "English",
+    "Start",
+    "Neu am Campus"
+   ]
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "lang": "de",
+   "page": "booking",
+   "firstSixTabStops": [
+    "Zum Inhalt springen",
+    "Hochschule Coburg – Start",
+    "Deutsch",
+    "English",
+    "Start",
+    "Neu am Campus"
+   ]
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "lang": "de",
+   "page": "booking-cancel",
+   "firstSixTabStops": [
+    "Zum Inhalt springen",
+    "Hochschule Coburg – Start",
+    "Deutsch",
+    "English",
+    "Start",
+    "Neu am Campus"
+   ]
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "lang": "de",
+   "page": "display",
+   "firstSixTabStops": [
+    "Hochschule Coburg – Start",
+    "VERANSTALTUNG HERVORGEHOBEN Beispielmitteilung 1",
+    "Deutsch",
+    "English",
+    "Start",
+    "Neu am Campus"
+   ]
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "lang": "en",
+   "page": "home",
+   "firstSixTabStops": [
+    "Skip to main content",
+    "Hochschule Coburg – Home",
+    "Deutsch",
+    "English",
+    "Home",
+    "New to campus"
+   ]
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "lang": "en",
+   "page": "newcomers",
+   "firstSixTabStops": [
+    "Skip to main content",
+    "Hochschule Coburg – Home",
+    "Deutsch",
+    "English",
+    "Home",
+    "New to campus"
+   ]
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "lang": "en",
+   "page": "map",
+   "firstSixTabStops": [
+    "Skip to main content",
+    "Hochschule Coburg – Home",
+    "Deutsch",
+    "English",
+    "Home",
+    "New to campus"
+   ]
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "lang": "en",
+   "page": "rooms",
+   "firstSixTabStops": [
+    "Skip to main content",
+    "Hochschule Coburg – Home",
+    "Deutsch",
+    "English",
+    "Home",
+    "New to campus"
+   ]
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "lang": "en",
+   "page": "schedule",
+   "firstSixTabStops": [
+    "Skip to main content",
+    "Hochschule Coburg – Home",
+    "Deutsch",
+    "English",
+    "Home",
+    "New to campus"
+   ]
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "lang": "en",
+   "page": "booking",
+   "firstSixTabStops": [
+    "Skip to main content",
+    "Hochschule Coburg – Home",
+    "Deutsch",
+    "English",
+    "Home",
+    "New to campus"
+   ]
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "lang": "en",
+   "page": "booking-cancel",
+   "firstSixTabStops": [
+    "Skip to main content",
+    "Hochschule Coburg – Home",
+    "Deutsch",
+    "English",
+    "Home",
+    "New to campus"
+   ]
+  },
+  {
+   "ctx": "kiosk-touch-1080x1920",
+   "lang": "en",
+   "page": "display",
+   "firstSixTabStops": [
+    "Hochschule Coburg – Home",
+    "EVENT HIGHLIGHTED Sample notice 1 Synthetic text",
+    "Deutsch",
+    "English",
+    "Home",
+    "New to campus"
+   ]
+  },
+  {
+   "ctx": "sens-540x960",
+   "lang": "de",
+   "page": "home",
+   "firstSixTabStops": [
+    "Zum Inhalt springen",
+    "Hochschule Coburg – Start",
+    "Deutsch",
+    "English",
+    "Start",
+    "Neu am Campus"
+   ]
+  },
+  {
+   "ctx": "sens-540x960",
+   "lang": "de",
+   "page": "newcomers",
+   "firstSixTabStops": [
+    "Zum Inhalt springen",
+    "Hochschule Coburg – Start",
+    "Deutsch",
+    "English",
+    "Start",
+    "Neu am Campus"
+   ]
+  },
+  {
+   "ctx": "sens-540x960",
+   "lang": "de",
+   "page": "map",
+   "firstSixTabStops": [
+    "Zum Inhalt springen",
+    "Hochschule Coburg – Start",
+    "Deutsch",
+    "English",
+    "Start",
+    "Neu am Campus"
+   ]
+  },
+  {
+   "ctx": "sens-540x960",
+   "lang": "de",
+   "page": "rooms",
+   "firstSixTabStops": [
+    "Zum Inhalt springen",
+    "Hochschule Coburg – Start",
+    "Deutsch",
+    "English",
+    "Start",
+    "Neu am Campus"
+   ]
+  },
+  {
+   "ctx": "sens-540x960",
+   "lang": "de",
+   "page": "schedule",
+   "firstSixTabStops": [
+    "Zum Inhalt springen",
+    "Hochschule Coburg – Start",
+    "Deutsch",
+    "English",
+    "Start",
+    "Neu am Campus"
+   ]
+  },
+  {
+   "ctx": "sens-540x960",
+   "lang": "de",
+   "page": "booking",
+   "firstSixTabStops": [
+    "Zum Inhalt springen",
+    "Hochschule Coburg – Start",
+    "Deutsch",
+    "English",
+    "Start",
+    "Neu am Campus"
+   ]
+  },
+  {
+   "ctx": "sens-540x960",
+   "lang": "de",
+   "page": "booking-cancel",
+   "firstSixTabStops": [
+    "Zum Inhalt springen",
+    "Hochschule Coburg – Start",
+    "Deutsch",
+    "English",
+    "Start",
+    "Neu am Campus"
+   ]
+  },
+  {
+   "ctx": "sens-540x960",
+   "lang": "de",
+   "page": "display",
+   "firstSixTabStops": [
+    "Hochschule Coburg – Start",
+    "VERANSTALTUNG HERVORGEHOBEN Beispielmitteilung 1",
+    "Deutsch",
+    "English",
+    "Start",
+    "Neu am Campus"
+   ]
+  },
+  {
+   "ctx": "sens-540x960",
+   "lang": "en",
+   "page": "home",
+   "firstSixTabStops": [
+    "Skip to main content",
+    "Hochschule Coburg – Home",
+    "Deutsch",
+    "English",
+    "Home",
+    "New to campus"
+   ]
+  },
+  {
+   "ctx": "sens-540x960",
+   "lang": "en",
+   "page": "newcomers",
+   "firstSixTabStops": [
+    "Skip to main content",
+    "Hochschule Coburg – Home",
+    "Deutsch",
+    "English",
+    "Home",
+    "New to campus"
+   ]
+  },
+  {
+   "ctx": "sens-540x960",
+   "lang": "en",
+   "page": "map",
+   "firstSixTabStops": [
+    "Skip to main content",
+    "Hochschule Coburg – Home",
+    "Deutsch",
+    "English",
+    "Home",
+    "New to campus"
+   ]
+  },
+  {
+   "ctx": "sens-540x960",
+   "lang": "en",
+   "page": "rooms",
+   "firstSixTabStops": [
+    "Skip to main content",
+    "Hochschule Coburg – Home",
+    "Deutsch",
+    "English",
+    "Home",
+    "New to campus"
+   ]
+  },
+  {
+   "ctx": "sens-540x960",
+   "lang": "en",
+   "page": "schedule",
+   "firstSixTabStops": [
+    "Skip to main content",
+    "Hochschule Coburg – Home",
+    "Deutsch",
+    "English",
+    "Home",
+    "New to campus"
+   ]
+  },
+  {
+   "ctx": "sens-540x960",
+   "lang": "en",
+   "page": "booking",
+   "firstSixTabStops": [
+    "Skip to main content",
+    "Hochschule Coburg – Home",
+    "Deutsch",
+    "English",
+    "Home",
+    "New to campus"
+   ]
+  },
+  {
+   "ctx": "sens-540x960",
+   "lang": "en",
+   "page": "booking-cancel",
+   "firstSixTabStops": [
+    "Skip to main content",
+    "Hochschule Coburg – Home",
+    "Deutsch",
+    "English",
+    "Home",
+    "New to campus"
+   ]
+  },
+  {
+   "ctx": "sens-540x960",
+   "lang": "en",
+   "page": "display",
+   "firstSixTabStops": [
+    "Hochschule Coburg – Home",
+    "EVENT HIGHLIGHTED Sample notice 1 Synthetic text",
+    "Deutsch",
+    "English",
+    "Home",
+    "New to campus"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "ctx": "sens-540x960",
+ "name": "rooms-a11y",
+ "lang": "de",
+ "label": "before",
+ "roomLinkCount": 131,
+ "duplicateLinkNames": 128,
+ "distinctLinkNames": 3,
+ "firstCardLinks": [
+  "- link \"Heute in diesem Raum\":",
+  "- link \"Auf der Karte zeigen\":"
+ ],
+ "placeholder": {
+  "placeholder": "z. B. K1-105, Seminarraum, Zagel oder HCI",
+  "ratio": 3.11,
+  "fg": [
+   145,
+   146,
+   149
+  ],
+  "bg": [
+   255,
+   255,
+   255
+  ]
+ },
+ "shiftTabScenario": {
+  "tag": "A",
+  "id": null,
+  "name": "Auf der Karte zeigen",
+  "href": "/map?raum=lcc-demo-room-k1-124",
+  "top": 30,
+  "bottom": 86,
+  "left": 274,
+  "width": 226,
+  "height": 56,
+  "inViewport": true,
+  "barBottom": 72,
+  "dockTop": 733,
+  "underBar": true,
+  "underDock": false
+ }
+}

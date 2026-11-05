@@ -1,0 +1,212 @@
+
+Running 27 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/stage3-accessibility.spec.ts:113:3 › document language follows the page language on every public route (de) (4.7s)
+  ✓   2 [chromium] › tests/e2e/stage3-accessibility.spec.ts:113:3 › document language follows the page language on every public route (en) (4.7s)
+  ✓   3 [chromium] › tests/e2e/stage3-accessibility.spec.ts:125:1 › document language follows client-side language switches and navigation (854ms)
+  ✓   4 [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (de) (4.6s)
+  ✓   5 [chromium] › tests/e2e/stage3-accessibility.spec.ts:163:3 › /display: the board heading is the h1 and announcements are h2; the look is unchanged (de) (616ms)
+  ✓   6 [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (en) (4.7s)
+  ✓   7 [chromium] › tests/e2e/stage3-accessibility.spec.ts:163:3 › /display: the board heading is the h1 and announcements are h2; the look is unchanged (en) (633ms)
+  ✓   8 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link 1080x1920 touch: first tab stop, readable and unobstructed when focused, moves focus into the content (8.1s)
+  ✓   9 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link 1080x1920 pointer-fine: first tab stop, readable and unobstructed when focused, moves focus into the content (8.2s)
+  ✓  10 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link 540x960 (assumed 200 % zoom): first tab stop, readable and unobstructed when focused, moves focus into the content (8.2s)
+  ✓  11 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link laptop 1440x900: first tab stop, readable and unobstructed when focused, moves focus into the content (8.1s)
+  ✓  12 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link phone 390x844: first tab stop, readable and unobstructed when focused, moves focus into the content (8.1s)
+  ✓  13 [chromium] › tests/e2e/stage3-accessibility.spec.ts:233:1 › skip link: with a booking request pending, using it does not open the leave dialog (347ms)
+  ✓  14 [chromium] › tests/e2e/stage3-accessibility.spec.ts:279:3 › the logo is a link to Home that keeps the language (de) (5.2s)
+  ✓  15 [chromium] › tests/e2e/stage3-accessibility.spec.ts:279:3 › the logo is a link to Home that keeps the language (en) (5.3s)
+  ✓  16 [chromium] › tests/e2e/stage3-accessibility.spec.ts:300:3 › search placeholders reach 4.5:1 on /rooms and /map (de), kiosk and laptop (2.4s)
+  ✓  17 [chromium] › tests/e2e/stage3-accessibility.spec.ts:300:3 › search placeholders reach 4.5:1 on /rooms and /map (en), kiosk and laptop (2.4s)
+  ✓  18 [chromium] › tests/e2e/stage3-accessibility.spec.ts:354:3 › room links have distinct, contextual names that start with the visible label (de) (680ms)
+  ✓  19 [chromium] › tests/e2e/stage3-accessibility.spec.ts:376:3 › class-result links name their room and agree where they lead (de) (117ms)
+  ✓  20 [chromium] › tests/e2e/stage3-accessibility.spec.ts:354:3 › room links have distinct, contextual names that start with the visible label (en) (667ms)
+  ✓  21 [chromium] › tests/e2e/stage3-accessibility.spec.ts:376:3 › class-result links name their room and agree where they lead (en) (118ms)
+  ✘  22 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 touch de: keyboard focus is never left under the pinned chip bar or the dock (654ms)
+  ✘  23 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 touch en: keyboard focus is never left under the pinned chip bar or the dock (679ms)
+  ✘  24 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 pointer-fine de: keyboard focus is never left under the pinned chip bar or the dock (673ms)
+  ✘  25 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 pointer-fine en: keyboard focus is never left under the pinned chip bar or the dock (669ms)
+  ✘  26 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 540x960 (assumed 200 % zoom) de: keyboard focus is never left under the pinned chip bar or the dock (660ms)
+  ✘  27 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 540x960 (assumed 200 % zoom) en: keyboard focus is never left under the pinned chip bar or the dock (664ms)
+
+
+  1) [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 touch de: keyboard focus is never left under the pinned chip bar or the dock
+
+    Error: 1080x1920 touch de Shift+Tab from under the bar: "Raum reservieren (Demo) – S3G-7BAEF3" is not under the chip bar (bar bottom 99)
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 98.5
+    Received:    30.40625
+
+      421 |   expect(b, `${where}: something has focus`).not.toBeNull();
+      422 |   if (!b || b.covering) return;
+    > 423 |   expect(b.top, `${where}: "${b.label}" is not under the chip bar (bar bottom ${Math.round(b.barBottom)})`).toBeGreaterThanOrEqual(b.barBottom - 0.5);
+          |                                                                                                             ^
+      424 |   expect(b.bottom, `${where}: "${b.label}" is not under the dock (dock top ${Math.round(b.dockTop)})`).toBeLessThanOrEqual(b.dockTop + 0.5);
+      425 | }
+      426 |
+        at expectClear (<isolated-copy-root>/mut-M2-no-top-scroll-padding/tests/e2e/stage3-accessibility.spec.ts:423:109)
+        at <isolated-copy-root>/mut-M2-no-top-scroll-padding/tests/e2e/stage3-accessibility.spec.ts:447:7
+
+    Error Context: test-results/stage3-accessibility-focus-08968-pinned-chip-bar-or-the-dock-chromium/error-context.md
+
+  2) [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 touch en: keyboard focus is never left under the pinned chip bar or the dock
+
+    Error: 1080x1920 touch en Shift+Tab from under the bar: "Book this room (demo) – S3B-39MT8F" is not under the chip bar (bar bottom 99)
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 98.5
+    Received:    30.15625
+
+      421 |   expect(b, `${where}: something has focus`).not.toBeNull();
+      422 |   if (!b || b.covering) return;
+    > 423 |   expect(b.top, `${where}: "${b.label}" is not under the chip bar (bar bottom ${Math.round(b.barBottom)})`).toBeGreaterThanOrEqual(b.barBottom - 0.5);
+          |                                                                                                             ^
+      424 |   expect(b.bottom, `${where}: "${b.label}" is not under the dock (dock top ${Math.round(b.dockTop)})`).toBeLessThanOrEqual(b.dockTop + 0.5);
+      425 | }
+      426 |
+        at expectClear (<isolated-copy-root>/mut-M2-no-top-scroll-padding/tests/e2e/stage3-accessibility.spec.ts:423:109)
+        at <isolated-copy-root>/mut-M2-no-top-scroll-padding/tests/e2e/stage3-accessibility.spec.ts:447:7
+
+    Error Context: test-results/stage3-accessibility-focus-99ada-pinned-chip-bar-or-the-dock-chromium/error-context.md
+
+  3) [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 pointer-fine de: keyboard focus is never left under the pinned chip bar or the dock
+
+    Error: 1080x1920 pointer-fine de Shift+Tab from under the bar: "Raum reservieren (Demo) – S3A-39OJTO" is not under the chip bar (bar bottom 99)
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 98.5
+    Received:    30.40625
+
+      421 |   expect(b, `${where}: something has focus`).not.toBeNull();
+      422 |   if (!b || b.covering) return;
+    > 423 |   expect(b.top, `${where}: "${b.label}" is not under the chip bar (bar bottom ${Math.round(b.barBottom)})`).toBeGreaterThanOrEqual(b.barBottom - 0.5);
+          |                                                                                                             ^
+      424 |   expect(b.bottom, `${where}: "${b.label}" is not under the dock (dock top ${Math.round(b.dockTop)})`).toBeLessThanOrEqual(b.dockTop + 0.5);
+      425 | }
+      426 |
+        at expectClear (<isolated-copy-root>/mut-M2-no-top-scroll-padding/tests/e2e/stage3-accessibility.spec.ts:423:109)
+        at <isolated-copy-root>/mut-M2-no-top-scroll-padding/tests/e2e/stage3-accessibility.spec.ts:447:7
+
+    Error Context: test-results/stage3-accessibility-focus-12afc-pinned-chip-bar-or-the-dock-chromium/error-context.md
+
+  4) [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 pointer-fine en: keyboard focus is never left under the pinned chip bar or the dock
+
+    Error: 1080x1920 pointer-fine en Shift+Tab from under the bar: "Book this room (demo) – S3A-39OJTO" is not under the chip bar (bar bottom 99)
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 98.5
+    Received:    30.15625
+
+      421 |   expect(b, `${where}: something has focus`).not.toBeNull();
+      422 |   if (!b || b.covering) return;
+    > 423 |   expect(b.top, `${where}: "${b.label}" is not under the chip bar (bar bottom ${Math.round(b.barBottom)})`).toBeGreaterThanOrEqual(b.barBottom - 0.5);
+          |                                                                                                             ^
+      424 |   expect(b.bottom, `${where}: "${b.label}" is not under the dock (dock top ${Math.round(b.dockTop)})`).toBeLessThanOrEqual(b.dockTop + 0.5);
+      425 | }
+      426 |
+        at expectClear (<isolated-copy-root>/mut-M2-no-top-scroll-padding/tests/e2e/stage3-accessibility.spec.ts:423:109)
+        at <isolated-copy-root>/mut-M2-no-top-scroll-padding/tests/e2e/stage3-accessibility.spec.ts:447:7
+
+    Error Context: test-results/stage3-accessibility-focus-b71a0-pinned-chip-bar-or-the-dock-chromium/error-context.md
+
+  5) [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 540x960 (assumed 200 % zoom) de: keyboard focus is never left under the pinned chip bar or the dock
+
+    Error: 540x960 (assumed 200 % zoom) de Shift+Tab from under the bar: "Raum reservieren (Demo) – S3A-39OJTO" is not under the chip bar (bar bottom 72)
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 71.5
+    Received:    30.15625
+
+      421 |   expect(b, `${where}: something has focus`).not.toBeNull();
+      422 |   if (!b || b.covering) return;
+    > 423 |   expect(b.top, `${where}: "${b.label}" is not under the chip bar (bar bottom ${Math.round(b.barBottom)})`).toBeGreaterThanOrEqual(b.barBottom - 0.5);
+          |                                                                                                             ^
+      424 |   expect(b.bottom, `${where}: "${b.label}" is not under the dock (dock top ${Math.round(b.dockTop)})`).toBeLessThanOrEqual(b.dockTop + 0.5);
+      425 | }
+      426 |
+        at expectClear (<isolated-copy-root>/mut-M2-no-top-scroll-padding/tests/e2e/stage3-accessibility.spec.ts:423:109)
+        at <isolated-copy-root>/mut-M2-no-top-scroll-padding/tests/e2e/stage3-accessibility.spec.ts:447:7
+
+    Error Context: test-results/stage3-accessibility-focus-47188-pinned-chip-bar-or-the-dock-chromium/error-context.md
+
+  6) [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 540x960 (assumed 200 % zoom) en: keyboard focus is never left under the pinned chip bar or the dock
+
+    Error: 540x960 (assumed 200 % zoom) en Shift+Tab from under the bar: "Book this room (demo) – S3A-39OJTO" is not under the chip bar (bar bottom 72)
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 71.5
+    Received:    29.65625
+
+      421 |   expect(b, `${where}: something has focus`).not.toBeNull();
+      422 |   if (!b || b.covering) return;
+    > 423 |   expect(b.top, `${where}: "${b.label}" is not under the chip bar (bar bottom ${Math.round(b.barBottom)})`).toBeGreaterThanOrEqual(b.barBottom - 0.5);
+          |                                                                                                             ^
+      424 |   expect(b.bottom, `${where}: "${b.label}" is not under the dock (dock top ${Math.round(b.dockTop)})`).toBeLessThanOrEqual(b.dockTop + 0.5);
+      425 | }
+      426 |
+        at expectClear (<isolated-copy-root>/mut-M2-no-top-scroll-padding/tests/e2e/stage3-accessibility.spec.ts:423:109)
+        at <isolated-copy-root>/mut-M2-no-top-scroll-padding/tests/e2e/stage3-accessibility.spec.ts:447:7
+
+    Error Context: test-results/stage3-accessibility-focus-85766-pinned-chip-bar-or-the-dock-chromium/error-context.md
+
+  6 failed
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 touch de: keyboard focus is never left under the pinned chip bar or the dock
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 touch en: keyboard focus is never left under the pinned chip bar or the dock
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 pointer-fine de: keyboard focus is never left under the pinned chip bar or the dock
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 pointer-fine en: keyboard focus is never left under the pinned chip bar or the dock
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 540x960 (assumed 200 % zoom) de: keyboard focus is never left under the pinned chip bar or the dock
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 540x960 (assumed 200 % zoom) en: keyboard focus is never left under the pinned chip bar or the dock
+  21 passed (1.5m)
+[WebServer] (node:11543) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:11545) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:11577) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:11585) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:11760) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:11761) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:11767) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:11769) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:11768) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:11762) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:11764) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:11766) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:11765) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:11763) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:11759) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:11772) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:11804) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+(node:11805) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:12673) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:12681) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:12687) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:12692) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:12698) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

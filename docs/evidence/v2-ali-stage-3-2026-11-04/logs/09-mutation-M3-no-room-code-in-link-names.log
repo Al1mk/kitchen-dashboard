@@ -1,0 +1,180 @@
+
+Running 27 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/stage3-accessibility.spec.ts:113:3 › document language follows the page language on every public route (de) (4.7s)
+  ✓   2 [chromium] › tests/e2e/stage3-accessibility.spec.ts:113:3 › document language follows the page language on every public route (en) (4.7s)
+  ✓   3 [chromium] › tests/e2e/stage3-accessibility.spec.ts:125:1 › document language follows client-side language switches and navigation (868ms)
+  ✓   4 [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (de) (4.6s)
+  ✓   5 [chromium] › tests/e2e/stage3-accessibility.spec.ts:163:3 › /display: the board heading is the h1 and announcements are h2; the look is unchanged (de) (627ms)
+  ✓   6 [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (en) (4.6s)
+  ✓   7 [chromium] › tests/e2e/stage3-accessibility.spec.ts:163:3 › /display: the board heading is the h1 and announcements are h2; the look is unchanged (en) (625ms)
+  ✓   8 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link 1080x1920 touch: first tab stop, readable and unobstructed when focused, moves focus into the content (8.2s)
+  ✓   9 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link 1080x1920 pointer-fine: first tab stop, readable and unobstructed when focused, moves focus into the content (8.2s)
+  ✓  10 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link 540x960 (assumed 200 % zoom): first tab stop, readable and unobstructed when focused, moves focus into the content (8.2s)
+  ✓  11 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link laptop 1440x900: first tab stop, readable and unobstructed when focused, moves focus into the content (8.2s)
+  ✓  12 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link phone 390x844: first tab stop, readable and unobstructed when focused, moves focus into the content (8.2s)
+  ✓  13 [chromium] › tests/e2e/stage3-accessibility.spec.ts:233:1 › skip link: with a booking request pending, using it does not open the leave dialog (339ms)
+  ✓  14 [chromium] › tests/e2e/stage3-accessibility.spec.ts:279:3 › the logo is a link to Home that keeps the language (de) (5.2s)
+  ✓  15 [chromium] › tests/e2e/stage3-accessibility.spec.ts:279:3 › the logo is a link to Home that keeps the language (en) (5.3s)
+  ✓  16 [chromium] › tests/e2e/stage3-accessibility.spec.ts:300:3 › search placeholders reach 4.5:1 on /rooms and /map (de), kiosk and laptop (2.4s)
+  ✓  17 [chromium] › tests/e2e/stage3-accessibility.spec.ts:300:3 › search placeholders reach 4.5:1 on /rooms and /map (en), kiosk and laptop (2.4s)
+  ✘  18 [chromium] › tests/e2e/stage3-accessibility.spec.ts:354:3 › room links have distinct, contextual names that start with the visible label (de) (661ms)
+  ✘  19 [chromium] › tests/e2e/stage3-accessibility.spec.ts:376:3 › class-result links name their room and agree where they lead (de) (119ms)
+  ✘  20 [chromium] › tests/e2e/stage3-accessibility.spec.ts:354:3 › room links have distinct, contextual names that start with the visible label (en) (669ms)
+  ✘  21 [chromium] › tests/e2e/stage3-accessibility.spec.ts:376:3 › class-result links name their room and agree where they lead (en) (119ms)
+  ✓  22 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 touch de: keyboard focus is never left under the pinned chip bar or the dock (744ms)
+  ✓  23 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 touch en: keyboard focus is never left under the pinned chip bar or the dock (720ms)
+  ✓  24 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 pointer-fine de: keyboard focus is never left under the pinned chip bar or the dock (713ms)
+  ✓  25 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 pointer-fine en: keyboard focus is never left under the pinned chip bar or the dock (718ms)
+  ✓  26 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 540x960 (assumed 200 % zoom) de: keyboard focus is never left under the pinned chip bar or the dock (722ms)
+  ✓  27 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 540x960 (assumed 200 % zoom) en: keyboard focus is never left under the pinned chip bar or the dock (725ms)
+
+
+  1) [chromium] › tests/e2e/stage3-accessibility.spec.ts:354:3 › room links have distinct, contextual names that start with the visible label (de)
+
+    Error: de: no two links in the directory share a name
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 7
+
+    - Array []
+    + Array [
+    +   "Heute in diesem Raum",
+    +   "Auf der Karte zeigen",
+    +   "Heute in diesem Raum",
+    +   "Auf der Karte zeigen",
+    +   "Heute in diesem Raum",
+    + ]
+
+      364 |     const names = links.map((l) => l.name);
+      365 |     const duplicates = names.filter((n, i) => names.indexOf(n) !== i);
+    > 366 |     expect(duplicates.slice(0, 5), `${lang}: no two links in the directory share a name`).toEqual([]);
+          |                                                                                           ^
+      367 |     for (const card of cards) {
+      368 |       for (const label of [t.todayInRoom, t.onMap]) {
+      369 |         const mine = names.filter((n) => n.startsWith(label) && n.includes(card.code));
+        at <isolated-copy-root>/mut-M3-no-room-code-in-link-names/tests/e2e/stage3-accessibility.spec.ts:366:91
+
+    Error Context: test-results/stage3-accessibility-room--d4d36--with-the-visible-label-de--chromium/error-context.md
+
+  2) [chromium] › tests/e2e/stage3-accessibility.spec.ts:376:3 › class-result links name their room and agree where they lead (de)
+
+    Error: de: "Auf der Karte zeigen" names the room
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /S3[AB]-39QOMZ/
+    Received string:  "Auf der Karte zeigen"
+
+      386 |     for (const l of room) {
+      387 |       expect(l.name.startsWith(t.onMap) || l.name.startsWith(scheduleLabel), `${lang}: "${l.name}" starts with its visible label`).toBe(true);
+    > 388 |       expect(l.name, `${lang}: "${l.name}" names the room`).toMatch(new RegExp(`S3[AB]-${stamp}`));
+          |                                                             ^
+      389 |     }
+      390 |     // The same name must never lead to two different places.
+      391 |     const byName = new Map<string, Set<string>>();
+        at <isolated-copy-root>/mut-M3-no-room-code-in-link-names/tests/e2e/stage3-accessibility.spec.ts:388:61
+
+    Error Context: test-results/stage3-accessibility-class-2d302-d-agree-where-they-lead-de--chromium/error-context.md
+
+  3) [chromium] › tests/e2e/stage3-accessibility.spec.ts:354:3 › room links have distinct, contextual names that start with the visible label (en)
+
+    Error: en: no two links in the directory share a name
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 7
+
+    - Array []
+    + Array [
+    +   "Today in this room",
+    +   "Show on the map",
+    +   "Today in this room",
+    +   "Show on the map",
+    +   "Today in this room",
+    + ]
+
+      364 |     const names = links.map((l) => l.name);
+      365 |     const duplicates = names.filter((n, i) => names.indexOf(n) !== i);
+    > 366 |     expect(duplicates.slice(0, 5), `${lang}: no two links in the directory share a name`).toEqual([]);
+          |                                                                                           ^
+      367 |     for (const card of cards) {
+      368 |       for (const label of [t.todayInRoom, t.onMap]) {
+      369 |         const mine = names.filter((n) => n.startsWith(label) && n.includes(card.code));
+        at <isolated-copy-root>/mut-M3-no-room-code-in-link-names/tests/e2e/stage3-accessibility.spec.ts:366:91
+
+    Error Context: test-results/stage3-accessibility-room--3cb4c--with-the-visible-label-en--chromium/error-context.md
+
+  4) [chromium] › tests/e2e/stage3-accessibility.spec.ts:376:3 › class-result links name their room and agree where they lead (en)
+
+    Error: en: "Show on the map" names the room
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /S3[AB]-39QPXN/
+    Received string:  "Show on the map"
+
+      386 |     for (const l of room) {
+      387 |       expect(l.name.startsWith(t.onMap) || l.name.startsWith(scheduleLabel), `${lang}: "${l.name}" starts with its visible label`).toBe(true);
+    > 388 |       expect(l.name, `${lang}: "${l.name}" names the room`).toMatch(new RegExp(`S3[AB]-${stamp}`));
+          |                                                             ^
+      389 |     }
+      390 |     // The same name must never lead to two different places.
+      391 |     const byName = new Map<string, Set<string>>();
+        at <isolated-copy-root>/mut-M3-no-room-code-in-link-names/tests/e2e/stage3-accessibility.spec.ts:388:61
+
+    Error Context: test-results/stage3-accessibility-class-d8a0d-d-agree-where-they-lead-en--chromium/error-context.md
+
+  4 failed
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:354:3 › room links have distinct, contextual names that start with the visible label (de)
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:376:3 › class-result links name their room and agree where they lead (de)
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:354:3 › room links have distinct, contextual names that start with the visible label (en)
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:376:3 › class-result links name their room and agree where they lead (en)
+  23 passed (1.6m)
+[WebServer] (node:12756) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12761) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12793) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12797) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12806) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12807) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12810) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12808) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12809) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12813) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12804) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12812) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12814) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12805) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12811) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12816) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12848) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+(node:12849) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:13035) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:13043) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:13049) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:13054) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

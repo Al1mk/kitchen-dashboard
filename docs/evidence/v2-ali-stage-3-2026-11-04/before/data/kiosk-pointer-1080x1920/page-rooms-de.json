@@ -1,0 +1,92 @@
+{
+ "ctx": "kiosk-pointer-1080x1920",
+ "name": "page-rooms",
+ "lang": "de",
+ "label": "before",
+ "page": {
+  "htmlLang": "de",
+  "wrapperLang": "de",
+  "title": "Räume – Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "Räume"
+   ],
+   [
+    2,
+    "Erdgeschoss"
+   ],
+   [
+    3,
+    "DEMO-E01 Küche / Aufenthalt (Demo)"
+   ],
+   [
+    3,
+    "DEMO-E02 Hörsaal A (Demo)"
+   ],
+   [
+    2,
+    "1. Obergeschoss"
+   ],
+   [
+    3,
+    "DEMO-101 Seminarraum 1 (Demo)"
+   ],
+   [
+    3,
+    "DEMO-102 PC-Labor (Demo)"
+   ],
+   [
+    3,
+    "K1-103 Seminarraum 1"
+   ],
+   [
+    3,
+    "K1-104 Shared Space"
+   ],
+   [
+    3,
+    "K1-105 EDV"
+   ]
+  ],
+  "skipLink": null,
+  "logoLink": null,
+  "mainId": null,
+  "linkCount": 140,
+  "ambiguousLinkNames": [
+   {
+    "name": "Heute in diesem Raum",
+    "targets": 54,
+    "occurrences": 54
+   },
+   {
+    "name": "Auf der Karte zeigen",
+    "targets": 54,
+    "occurrences": 54
+   },
+   {
+    "name": "Raum reservieren (Demo)",
+    "targets": 23,
+    "occurrences": 23
+   }
+  ]
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Deutsch",
+  "href": "/rooms",
+  "top": 1633,
+  "bottom": 1710,
+  "left": 395,
+  "width": 141,
+  "height": 77,
+  "inViewport": true,
+  "barBottom": 712,
+  "dockTop": 1609,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": null
+}

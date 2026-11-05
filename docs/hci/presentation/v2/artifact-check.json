@@ -1,0 +1,11 @@
+{
+  "slides": 5,
+  "nativeTextRuns": 58,
+  "embeddedMedia": 3,
+  "finalizer": "validation.json",
+  "allFinalPdfSlidesVisuallyInspected": true,
+  "bookletPdfPages": 5,
+  "allBookletPagesVisuallyInspected": true,
+  "PowerPointAppTest": false,
+  "humanTests": false
+}

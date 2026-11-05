@@ -116,3 +116,11 @@ Build is part of T-24 (Playwright builds before starting). Restart check not rer
 ## V2 combined Ali + Parsa integration — 4 November 2026
 
 [Final source, review fixes and evidence](v2-integration-2026-11-04/README.md): source-matched189files; typecheck/lint pass,166unit,145E2E and13restart checks pass. Four DE/EN/size visual contexts,36masked screenshots. Includes meaningful red/green for pending warning, both receipt actions,404 cache invalidation, metadata and input hints. Stage1/2 history/frozen audit preserved. This is technical emulation, not people/physical acceptance; Stage3/map/copy/booklet/deck remain open.
+
+## Aryan AP01 repaired integration — 4 November 2026
+
+[Source, red/green logs, matrix and preservation](aryan-ap01-fix-2026-11-04/README.md): original Aryan import separated from Ali repairs; typecheck/lint clean,187 unit,153 E2E and13 restart checks pass.72 real-DOM emulation cases have0 marker overlaps/0 page errors. Includes keyboard lifecycle and English fallback regressions. Stage3’s12 dirty files and9 protected original files remain unchanged. Reviewed deck/script and five-page working chapter are prepared, not human-approved or rehearsed. Real Elo/user validation remains open.
+
+## V2 Stage 3 — shared accessibility (AL-05), 5 November 2026
+
+[Capture measurements, independent completion logs and limits](v2-ali-stage-3-2026-11-04/README.md): supplied captures cover five contexts × DE/EN but do not stamp the source commit; the contradictory original baseline labels are documented rather than inferred. Claude's original red-first and seven mutation logs are retained. Independently rerun by Codex on the final source-matched copy: typecheck/lint/build pass, **187 unit, 180 E2E and 13 restart checks pass**. Strict cancellation-title checks failed in DE/EN before Ali's metadata fix. The audit runner's failure propagation and existing-run protection were checked separately. Read-only code review found no actionable runtime regression. Technical evidence only: no Stage3 screen reader, conformance claim, physical-screen or human acceptance result. Booklet is deferred and excluded from this code delivery.

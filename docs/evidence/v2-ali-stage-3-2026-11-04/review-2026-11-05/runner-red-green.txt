@@ -1,0 +1,4 @@
+Original runner probe: exit 1
+Fixed runner probe: exit 0
+PASS: expected red, positive success, positive failure, unexpected baseline success
+Existing-run preservation: exit 3, sentinel unchanged

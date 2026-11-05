@@ -1,0 +1,7 @@
+M1-no-skip-link: edits applied 1/1; 6 failed, 21 passed (exit 1)
+M2-no-top-scroll-padding: edits applied 1/1; 6 failed, 21 passed (exit 1)
+M3-no-room-code-in-link-names: edits applied 2/2; 4 failed, 23 passed (exit 1)
+M4-placeholder-back-to-half-alpha: edits applied 1/1; 2 failed, 25 passed (exit 1)
+M5-no-document-language-sync: edits applied 1/1; 2 failed, 25 passed (exit 1)
+M6-board-keeps-h2-h3: edits applied 1/1; 4 failed, 23 passed (exit 1)
+M7-skip-link-as-plain-hash-navigation: edits applied 1/1; 6 failed, 21 passed (exit 1)

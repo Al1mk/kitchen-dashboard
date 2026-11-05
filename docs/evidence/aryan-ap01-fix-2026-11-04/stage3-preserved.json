@@ -1,0 +1,14 @@
+{
+  "audit-artifacts/v2-ali-stage-3-2026-11-04/01-capture.mjs": "b6e070da8a46e9fffaa2c69221a2504efe1626ef4a223bcf8b575f3a8eece5e0",
+  "src/app/display/page.tsx": "f1a6cbfebb5548fcb58fc8a6cbac549d0bb002d54d414fe8f261862c1a31514f",
+  "src/app/globals.css": "4e1701f3803c899902dbf5089c11946b754ffaa71d7f391a1e735f223e7868e9",
+  "src/components/display/BoardLayout.tsx": "5cf66bbf674e5f5b42ba3d8d358220125ab91490c89180cb88087f1740dc7087",
+  "src/components/display/DisplayBoard.tsx": "95e17a290760ffcc41c65185ff15f7492f57337f5d634958bf3db057155cd7b8",
+  "src/components/public/DocumentLang.tsx": "a620311ae491996a71e981c942803bf7ae031a258b20c84503b24d576c8463f4",
+  "src/components/public/PublicShell.tsx": "d1a325445d7b19972bcb839ca936d751a67beb81b9fb1e173b3ea9afc68167ca",
+  "src/components/public/RoomDirectory.tsx": "cecc39a7b80bd6ec418b82e15eef757ba9cdae08d1f81e08fd3cabac27011827",
+  "src/components/public/SkipLink.tsx": "d6bcdf7c5ad53e8c984eaa8cd0158ba27769869c58195e1ea6be62dc8f7f80ac",
+  "src/lib/i18n/public.ts": "fe6de341a0c00f476b72a0424d4235750ab10f23fc4190dbdc038a2e32c2994a",
+  "tests/e2e/kiosk-dock.spec.ts": "ec5cca86bb024d4d4f354cb7d65f941b1acef8f498b3931dbbdf96e4aa7d14e9",
+  "tests/e2e/stage3-accessibility.spec.ts": "ede6679e9490020cf620f6998b60c1ffa38ae058dd4770a45c24aac44db9458a"
+}

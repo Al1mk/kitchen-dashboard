@@ -1,0 +1,198 @@
+
+Running 27 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/stage3-accessibility.spec.ts:113:3 › document language follows the page language on every public route (de) (4.7s)
+  ✓   2 [chromium] › tests/e2e/stage3-accessibility.spec.ts:113:3 › document language follows the page language on every public route (en) (4.7s)
+  ✓   3 [chromium] › tests/e2e/stage3-accessibility.spec.ts:125:1 › document language follows client-side language switches and navigation (851ms)
+  ✘   4 [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (de) (9.6s)
+  ✘   5 [chromium] › tests/e2e/stage3-accessibility.spec.ts:163:3 › /display: the board heading is the h1 and announcements are h2; the look is unchanged (de) (5.6s)
+  ✘   6 [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (en) (9.6s)
+  ✘   7 [chromium] › tests/e2e/stage3-accessibility.spec.ts:163:3 › /display: the board heading is the h1 and announcements are h2; the look is unchanged (en) (5.6s)
+  ✓   8 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link 1080x1920 touch: first tab stop, readable and unobstructed when focused, moves focus into the content (8.2s)
+  ✓   9 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link 1080x1920 pointer-fine: first tab stop, readable and unobstructed when focused, moves focus into the content (8.2s)
+  ✓  10 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link 540x960 (assumed 200 % zoom): first tab stop, readable and unobstructed when focused, moves focus into the content (8.2s)
+  ✓  11 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link laptop 1440x900: first tab stop, readable and unobstructed when focused, moves focus into the content (8.1s)
+  ✓  12 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link phone 390x844: first tab stop, readable and unobstructed when focused, moves focus into the content (8.2s)
+  ✓  13 [chromium] › tests/e2e/stage3-accessibility.spec.ts:233:1 › skip link: with a booking request pending, using it does not open the leave dialog (349ms)
+  ✓  14 [chromium] › tests/e2e/stage3-accessibility.spec.ts:279:3 › the logo is a link to Home that keeps the language (de) (5.3s)
+  ✓  15 [chromium] › tests/e2e/stage3-accessibility.spec.ts:279:3 › the logo is a link to Home that keeps the language (en) (5.3s)
+  ✓  16 [chromium] › tests/e2e/stage3-accessibility.spec.ts:300:3 › search placeholders reach 4.5:1 on /rooms and /map (de), kiosk and laptop (2.5s)
+  ✓  17 [chromium] › tests/e2e/stage3-accessibility.spec.ts:300:3 › search placeholders reach 4.5:1 on /rooms and /map (en), kiosk and laptop (2.4s)
+  ✓  18 [chromium] › tests/e2e/stage3-accessibility.spec.ts:354:3 › room links have distinct, contextual names that start with the visible label (de) (667ms)
+  ✓  19 [chromium] › tests/e2e/stage3-accessibility.spec.ts:376:3 › class-result links name their room and agree where they lead (de) (115ms)
+  ✓  20 [chromium] › tests/e2e/stage3-accessibility.spec.ts:354:3 › room links have distinct, contextual names that start with the visible label (en) (660ms)
+  ✓  21 [chromium] › tests/e2e/stage3-accessibility.spec.ts:376:3 › class-result links name their room and agree where they lead (en) (115ms)
+  ✓  22 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 touch de: keyboard focus is never left under the pinned chip bar or the dock (714ms)
+  ✓  23 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 touch en: keyboard focus is never left under the pinned chip bar or the dock (728ms)
+  ✓  24 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 pointer-fine de: keyboard focus is never left under the pinned chip bar or the dock (712ms)
+  ✓  25 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 pointer-fine en: keyboard focus is never left under the pinned chip bar or the dock (729ms)
+  ✓  26 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 540x960 (assumed 200 % zoom) de: keyboard focus is never left under the pinned chip bar or the dock (716ms)
+  ✓  27 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 540x960 (assumed 200 % zoom) en: keyboard focus is never left under the pinned chip bar or the dock (728ms)
+
+
+  1) [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (de)
+
+    Error: /display de: one h1
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByRole('heading', { level: 1 })
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - /display de: one h1 getByRole('heading', { level: 1 }) with timeout 5000ms
+      - waiting for getByRole('heading', { level: 1 })
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      155 |       // handoff, not an accepted state. The page-specific part and the language are asserted exactly.
+      156 |       await expect(page, `${where}: title`).toHaveTitle(new RegExp(`^${titleLabel(route, lang)} – (LCC )?Campus Board$`));
+    > 157 |       await expect(page.getByRole("heading", { level: 1 }), `${where}: one h1`).toHaveCount(1);
+          |                                                                                 ^
+      158 |       await expect(page.getByRole("heading", { level: 1 }), `${where}: h1 has text`).not.toHaveText("");
+      159 |     }
+      160 |     await context.close();
+        at <isolated-copy-root>/mut-M6-board-keeps-h2-h3/tests/e2e/stage3-accessibility.spec.ts:157:81
+
+    Error Context: test-results/stage3-accessibility-every-2f884-tly-one-level-1-heading-de--chromium/error-context.md
+
+  2) [chromium] › tests/e2e/stage3-accessibility.spec.ts:163:3 › /display: the board heading is the h1 and announcements are h2; the look is unchanged (de)
+
+    Error: one h1 on the board
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByTestId('display-board').getByRole('heading', { level: 1 })
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - one h1 on the board getByTestId('display-board').getByRole('heading', { level: 1 }) with timeout 5000ms
+      - waiting for getByTestId('display-board').getByRole('heading', { level: 1 })
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      167 |     const t = PUBLIC_TEXT[lang];
+      168 |     const board = page.getByTestId("display-board");
+    > 169 |     await expect(board.getByRole("heading", { level: 1 }), "one h1 on the board").toHaveCount(1);
+          |                                                                                   ^
+      170 |     await expect(board.getByRole("heading", { level: 1 })).toHaveText(t.sections.display);
+      171 |     await expect(board.getByRole("heading", { level: 2 }), "each announcement title is an h2").toHaveCount(3);
+      172 |     await expect(board.getByRole("heading", { level: 3 }), "no heading level is skipped").toHaveCount(0);
+        at <isolated-copy-root>/mut-M6-board-keeps-h2-h3/tests/e2e/stage3-accessibility.spec.ts:169:83
+
+    Error Context: test-results/stage3-accessibility--disp-42cc7-2-the-look-is-unchanged-de--chromium/error-context.md
+
+  3) [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (en)
+
+    Error: /display en: one h1
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByRole('heading', { level: 1 })
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - /display en: one h1 getByRole('heading', { level: 1 }) with timeout 5000ms
+      - waiting for getByRole('heading', { level: 1 })
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      155 |       // handoff, not an accepted state. The page-specific part and the language are asserted exactly.
+      156 |       await expect(page, `${where}: title`).toHaveTitle(new RegExp(`^${titleLabel(route, lang)} – (LCC )?Campus Board$`));
+    > 157 |       await expect(page.getByRole("heading", { level: 1 }), `${where}: one h1`).toHaveCount(1);
+          |                                                                                 ^
+      158 |       await expect(page.getByRole("heading", { level: 1 }), `${where}: h1 has text`).not.toHaveText("");
+      159 |     }
+      160 |     await context.close();
+        at <isolated-copy-root>/mut-M6-board-keeps-h2-h3/tests/e2e/stage3-accessibility.spec.ts:157:81
+
+    Error Context: test-results/stage3-accessibility-every-60097-tly-one-level-1-heading-en--chromium/error-context.md
+
+  4) [chromium] › tests/e2e/stage3-accessibility.spec.ts:163:3 › /display: the board heading is the h1 and announcements are h2; the look is unchanged (en)
+
+    Error: one h1 on the board
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByTestId('display-board').getByRole('heading', { level: 1 })
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - one h1 on the board getByTestId('display-board').getByRole('heading', { level: 1 }) with timeout 5000ms
+      - waiting for getByTestId('display-board').getByRole('heading', { level: 1 })
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      167 |     const t = PUBLIC_TEXT[lang];
+      168 |     const board = page.getByTestId("display-board");
+    > 169 |     await expect(board.getByRole("heading", { level: 1 }), "one h1 on the board").toHaveCount(1);
+          |                                                                                   ^
+      170 |     await expect(board.getByRole("heading", { level: 1 })).toHaveText(t.sections.display);
+      171 |     await expect(board.getByRole("heading", { level: 2 }), "each announcement title is an h2").toHaveCount(3);
+      172 |     await expect(board.getByRole("heading", { level: 3 }), "no heading level is skipped").toHaveCount(0);
+        at <isolated-copy-root>/mut-M6-board-keeps-h2-h3/tests/e2e/stage3-accessibility.spec.ts:169:83
+
+    Error Context: test-results/stage3-accessibility--disp-96fd9-2-the-look-is-unchanged-en--chromium/error-context.md
+
+  4 failed
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (de)
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:163:3 › /display: the board heading is the h1 and announcements are h2; the look is unchanged (de)
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (en)
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:163:3 › /display: the board heading is the h1 and announcements are h2; the look is unchanged (en)
+  23 passed (1.9m)
+[WebServer] (node:13734) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13735) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13767) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13777) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13783) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13782) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13790) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13786) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13785) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13789) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13781) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13791) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13787) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13788) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13792) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13824) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+(node:13826) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:13885) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:13925) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:13947) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:14005) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

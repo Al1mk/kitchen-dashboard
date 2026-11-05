@@ -1,0 +1,102 @@
+{
+ "ctx": "kiosk-touch-1080x1920",
+ "name": "page-rooms",
+ "lang": "en",
+ "label": "after",
+ "page": {
+  "htmlLang": "en",
+  "wrapperLang": "en",
+  "title": "Rooms – Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "Rooms"
+   ],
+   [
+    2,
+    "Ground floor"
+   ],
+   [
+    3,
+    "DEMO-E01 Kitchen / common room (Demo)"
+   ],
+   [
+    3,
+    "DEMO-E02 Lecture hall A (Demo)"
+   ],
+   [
+    2,
+    "1st floor"
+   ],
+   [
+    3,
+    "DEMO-101 Seminar room 1 (Demo)"
+   ],
+   [
+    3,
+    "DEMO-102 PC-Labor (Demo)"
+   ],
+   [
+    3,
+    "K1-103 Seminar room 1"
+   ],
+   [
+    3,
+    "K1-104 Shared Space"
+   ],
+   [
+    3,
+    "K1-105 IT room"
+   ]
+  ],
+  "skipLink": {
+   "text": "Skip to main content",
+   "href": "#main-content"
+  },
+  "logoLink": {
+   "href": "/?lang=en",
+   "alt": "Hochschule Coburg – Home"
+  },
+  "mainId": "main-content",
+  "linkCount": 142,
+  "ambiguousLinkNames": []
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Skip to main content",
+  "href": "#main-content",
+  "top": 22,
+  "bottom": 99,
+  "left": 22,
+  "width": 280,
+  "height": 77,
+  "inViewport": true,
+  "barBottom": 806,
+  "dockTop": 1609,
+  "underBar": true,
+  "underDock": false
+ },
+ "afterSkipActivation": {
+  "tag": "MAIN",
+  "id": "main-content",
+  "name": "Rooms Course titles, lecturers and study groups are shown as entered by campus s",
+  "href": null,
+  "top": 107,
+  "bottom": 15357,
+  "left": 12,
+  "width": 1056,
+  "height": 15250,
+  "inViewport": false,
+  "barBottom": 753,
+  "dockTop": 1609,
+  "underBar": true,
+  "underDock": true,
+  "nextTab": {
+   "tag": "INPUT",
+   "name": ""
+  },
+  "urlHash": ""
+ }
+}

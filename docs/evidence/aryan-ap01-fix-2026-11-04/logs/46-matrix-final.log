@@ -1,0 +1,46 @@
+{
+  "contexts": 72,
+  "withOverlaps": 0,
+  "visibleOverlapCases": 0,
+  "pageErrors": 0,
+  "flows": [
+    {
+      "lang": "de",
+      "headingFocused": true,
+      "focusAfterClose": {
+        "tag": "BUTTON",
+        "label": "Nahe Räume auswählen: K1-115, K1-116, K1-118"
+      },
+      "nextTab": {
+        "tag": "BUTTON",
+        "text": "2"
+      },
+      "chooserText": "Nahe Räume auswählen\nAuswahl schließen\n\nMehrere Raummarkierungen liegen dicht beieinander. Wähle den gewünschten Raum aus dieser Liste.\n\nK1-115\nRaum\nK1-116\nRaum\nK1-118\nRaum",
+      "sourceRoom": {
+        "name": "Raum",
+        "nameEn": "Room"
+      },
+      "url": "/map?raum=lcc-demo-room-k1-118&datum=2026-11-08",
+      "scheduleHref": "/schedule?raum=lcc-demo-room-k1-118&datum=2026-11-08"
+    },
+    {
+      "lang": "en",
+      "headingFocused": true,
+      "focusAfterClose": {
+        "tag": "BUTTON",
+        "label": "Choose nearby rooms: K1-115, K1-116, K1-118"
+      },
+      "nextTab": {
+        "tag": "BUTTON",
+        "text": "2"
+      },
+      "chooserText": "Choose nearby rooms\nClose room choices\n\nSeveral room markers are close together. Choose the desired room from this list.\n\nK1-115\nRoom\nK1-116\nRoom\nK1-118\nRoom",
+      "sourceRoom": {
+        "name": "Raum",
+        "nameEn": "Room"
+      },
+      "url": "/map?raum=lcc-demo-room-k1-118&datum=2026-11-08&lang=en",
+      "scheduleHref": "/schedule?raum=lcc-demo-room-k1-118&datum=2026-11-08&lang=en"
+    }
+  ]
+}

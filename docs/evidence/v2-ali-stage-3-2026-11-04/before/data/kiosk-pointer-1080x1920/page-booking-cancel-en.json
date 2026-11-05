@@ -1,0 +1,40 @@
+{
+ "ctx": "kiosk-pointer-1080x1920",
+ "name": "page-booking-cancel",
+ "lang": "en",
+ "label": "before",
+ "page": {
+  "htmlLang": "de",
+  "wrapperLang": "en",
+  "title": "Cancel a booking – LCC Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "Cancel a booking"
+   ]
+  ],
+  "skipLink": null,
+  "logoLink": null,
+  "mainId": null,
+  "linkCount": 10,
+  "ambiguousLinkNames": []
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Deutsch",
+  "href": "/booking/cancel",
+  "top": 1633,
+  "bottom": 1710,
+  "left": 395,
+  "width": 141,
+  "height": 77,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": 1609,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": null
+}

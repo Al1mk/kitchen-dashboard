@@ -1,0 +1,17 @@
+08:58:49 copy: working tree -> after
+08:58:52 copy: git archive HEAD -> before
+08:58:56 start 01-red-before-head
+09:00:56 done  01-red-before-head: EXIT 1
+09:00:56 start 02-typecheck
+09:01:01 done  02-typecheck: EXIT 0
+09:01:01 start 03-lint-live-tree
+09:01:04 done  03-lint-live-tree: EXIT 0
+09:01:04 start 04-unit
+09:01:07 done  04-unit: EXIT 0
+09:01:07 start 05-e2e-full
+09:08:39 done  05-e2e-full: EXIT 0
+09:08:39 start 06-restart
+09:08:41 done  06-restart: EXIT 0
+09:08:41 start 07-mutations
+09:19:52 done  07-mutations: EXIT 0
+09:19:52 ALLDONE

@@ -1,0 +1,26 @@
+{
+  "captured": "2026-11-04",
+  "source": "accepted a089f73 + reviewed AP01 integration (no Stage3)",
+  "viewport": {
+    "width": 1080,
+    "height": 1920,
+    "dpr": 1
+  },
+  "before": {
+    "source": "docs/evidence/v2-audit-2026-11-03/kiosk-1080x1920/map-de.viewport.png",
+    "floor": "1OG",
+    "lang": "de",
+    "zoom": 1,
+    "crop": "native slide crop of map, not altered screenshot",
+    "layerWidth": 728
+  },
+  "after": {
+    "route": "/map?etage=1OG",
+    "lang": "de",
+    "zoom": 1,
+    "width": 999,
+    "height": 483,
+    "rootPx": "22px"
+  },
+  "limit": "Different shell layout changes available map width. Browser emulation only, no user or Elo result."
+}

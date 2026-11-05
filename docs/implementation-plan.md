@@ -171,3 +171,7 @@ Scope set by Ali after reviewing the navigation/DE-EN milestone: optional Englis
 - [x] One record per room/announcement; course data and room codes untranslated (unit + E2E).
 
 Notes: the new tests were written after the code. To check they can fail, two deliberate breakages were tried and each was caught by a new unit test (removing the JSON upgrade from migration 3; ignoring English fields in the pending-change comparison); the code was restored afterwards. The first E2E run had two failures, both in test selectors (one new test, one existing navigation test that expected the old wording of the English footer note); no app code changed for them. Native German/English text quality was not reviewed by a person.
+
+## Aryan AP01 checkpoint — 4 November 2026
+
+Import original four-file AP01 separately from Ali’s repairs. Preserve accepted a089f73 plus unfinished Claude Stage3. Correct measured map hit sizes, chooser focus/lifecycle and English fallback; adapt legacy assertions to groups without weakening room identity/floor checks. Keep schema/API/pending-booking rules intact. [Current evidence](evidence/aryan-ap01-fix-2026-11-04/README.md) and C13 are authoritative for actual checks. Deliver source-based deck/script/booklet drafts with human approval still pending. No remote push or main merge by this agent.

@@ -1,0 +1,60 @@
+
+> campus-board@0.1.0 test:e2e
+> playwright test tests/e2e/ap01-regressions.spec.ts tests/e2e/ap01-map-clusters.spec.ts tests/e2e/map-integration.spec.ts
+
+[WebServer] (node:56030) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:56031) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:56059) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:56061) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:56070) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:56072) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:56071) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:56068) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:56067) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:56073) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:56074) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:56069) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:56065) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:56066) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:56075) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:56076) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:56104) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 13 tests using 1 worker
+
+(node:56106) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/e2e/ap01-map-clusters.spec.ts:4:1 › dense pins have a keyboard/touch chooser and no room gets lost (448ms)
+  ✓   2 [chromium] › tests/e2e/ap01-map-clusters.spec.ts:24:1 › room chooser stays in English and floor changes reset the chooser (229ms)
+  ✓   3 [chromium] › tests/e2e/map-integration.spec.ts:22:1 › deep link selects the room on its floor, in the shared shell, with schedule and booking links (180ms)
+  ✓   4 [chromium] › tests/e2e/map-integration.spec.ts:39:1 › markers sit on the image at their normalized position, also after zooming (198ms)
+  ✓   5 [chromium] › tests/e2e/map-integration.spec.ts:59:1 › search by code selects the room; changing the floor clears the room and keeps the language (266ms)
+  ✓   6 [chromium] › tests/e2e/map-integration.spec.ts:71:1 › renaming keeps the marker (id binding); moving to another floor hides the old position (345ms)
+  ✓   7 [chromium] › tests/e2e/map-integration.spec.ts:96:1 › archived and unknown rooms get no marker and no substitute (181ms)
+  ✓   8 [chromium] › tests/e2e/map-integration.spec.ts:108:1 › K1-114 is selectable as information without a dot (151ms)
+  ✓   9 [chromium] › tests/e2e/map-integration.spec.ts:116:1 › a missing floor image shows a localized fallback and keeps the room list (122ms)
+(node:56148) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  10 [chromium] › tests/e2e/ap01-regressions.spec.ts:5:1 › AP01-R001: actual kiosk rectangles do not overlap (140ms)
+  ✓  11 [chromium] › tests/e2e/ap01-regressions.spec.ts:19:1 › AP01-R002: closing cluster chooser restores keyboard focus to opener (159ms)
+  ✓  12 [chromium] › tests/e2e/ap01-regressions.spec.ts:28:1 › AP01-R003: untranslated room in English chooser gets existing fallback marker (188ms)
+  ✓  13 [chromium] › tests/e2e/ap01-regressions.spec.ts:40:1 › AP01-R002: choosing a cluster room transfers keyboard focus to its details (154ms)
+
+  13 passed (7.9s)

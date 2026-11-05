@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { fallbackLevel, localize, PUBLIC_TEXT, publicHref, type Lang } from "@/lib/i18n/public.ts";
+import { PUBLIC_KIOSK_MEDIA } from "@/lib/public-layout.ts";
 import { FLOORS, type PublicRoom } from "@/lib/rooms/schema.ts";
 import { isBlankQuery, roomMatches, sessionMatches } from "@/lib/search/match.ts";
 import { searchResultsLayout, type ClassState } from "@/lib/search/results-layout.ts";
@@ -220,6 +221,30 @@ const chip = "flex min-h-14 touch-manipulation items-center justify-center round
  */
 function FloorJump({ floors, lang }: { floors: { id: string; label: string }[]; lang: Lang }) {
   const bar = useRef<HTMLDivElement>(null);
+  // While pinned (kiosk mode), the bar covers the top of the screen: publish its height as the page's top
+  // scroll-padding, so keyboard focus (Shift+Tab upwards) and anchors never end up behind it (C14, like the dock).
+  useEffect(() => {
+    const el = bar.current;
+    if (!el) return;
+    const root = document.documentElement;
+    const kiosk = window.matchMedia(PUBLIC_KIOSK_MEDIA);
+    const sync = () => {
+      if (kiosk.matches && getComputedStyle(el).position === "sticky") {
+        root.style.setProperty("--public-sticky-top", `${Math.ceil(el.getBoundingClientRect().height) + 8}px`);
+      } else {
+        root.style.removeProperty("--public-sticky-top");
+      }
+    };
+    sync();
+    const observer = new ResizeObserver(sync);
+    observer.observe(el);
+    kiosk.addEventListener("change", sync);
+    return () => {
+      observer.disconnect();
+      kiosk.removeEventListener("change", sync);
+      root.style.removeProperty("--public-sticky-top");
+    };
+  }, []);
   function jump(id: string) {
     const heading = document.getElementById(`stock-${id}`);
     if (!heading) return;
@@ -285,15 +310,20 @@ function RoomsByFloor({ rooms, lang, headingLevel }: { rooms: PublicRoom[]; lang
                       {/* The actions share one row from 520 px up (the kiosk threshold; stacked on phones, as before).
                           Labels may wrap to two lines; their size is not reduced. */}
                       <div className="mt-1 flex flex-col gap-2 min-[520px]:flex-row">
+                        {/* The visible label stays first; the hidden room code makes every one of these otherwise
+                            identical links distinct in a link list or for voice control (WCAG 2.4.4, 2.5.3). */}
                         <Link href={publicHref("/schedule", lang, { raum: room.id })} className={`${action} border border-ink hover:bg-canvas`}>
                           {t.rooms.todayInRoom}
+                          <span className="sr-only"> – {room.code}</span>
                         </Link>
                         <Link href={publicHref("/map", lang, { raum: room.id })} className={`${action} border border-ink hover:bg-canvas`}>
                           {t.rooms.onMap}
+                          <span className="sr-only"> – {room.code}</span>
                         </Link>
                         {room.reservable && (
                           <Link href={publicHref("/booking", lang, { raum: room.id })} className={`${action} bg-brand text-white hover:bg-brand-strong`}>
                             {t.rooms.book}
+                            <span className="sr-only"> – {room.code}</span>
                           </Link>
                         )}
                       </div>
@@ -422,12 +452,14 @@ function ClassMatches({
                         className="inline-flex min-h-14 touch-manipulation items-center rounded-xl border border-ink px-5 font-semibold hover:bg-canvas"
                       >
                         {t.rooms.onMap}
+                        <span className="sr-only"> – {s.room.code}</span>
                       </Link>
                       <Link
                         href={publicHref("/schedule", lang, { datum: data.date, raum: s.room.id })}
                         className="inline-flex min-h-14 touch-manipulation items-center rounded-xl border border-ink px-5 font-semibold hover:bg-canvas"
                       >
                         {c.schedule}
+                        <span className="sr-only"> – {s.room.code}</span>
                       </Link>
                     </div>
                   ) : (

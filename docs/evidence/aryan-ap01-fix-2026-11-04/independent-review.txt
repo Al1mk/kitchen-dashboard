@@ -1,0 +1,1 @@
+Independent code review (static, read only): no remaining actionable findings after lifecycle corrections. Original finding on live regroup focus reproduced and corrected; follow-up finding on stale expanded key reopening reproduced and corrected. Reviewer ran no tests or servers and changed no files. Parent ran the recorded regression and full checks separately.

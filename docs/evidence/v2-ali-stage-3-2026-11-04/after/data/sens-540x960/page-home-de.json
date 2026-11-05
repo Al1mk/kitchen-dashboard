@@ -1,0 +1,66 @@
+{
+ "ctx": "sens-540x960",
+ "name": "page-home",
+ "lang": "de",
+ "label": "after",
+ "page": {
+  "htmlLang": "de",
+  "wrapperLang": "de",
+  "title": "Campus-Informationen – Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "Campus-Informationen"
+   ]
+  ],
+  "skipLink": {
+   "text": "Zum Inhalt springen",
+   "href": "#main-content"
+  },
+  "logoLink": {
+   "href": "/",
+   "alt": "Hochschule Coburg – Start"
+  },
+  "mainId": "main-content",
+  "linkCount": 16,
+  "ambiguousLinkNames": []
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Zum Inhalt springen",
+  "href": "#main-content",
+  "top": 16,
+  "bottom": 72,
+  "left": 16,
+  "width": 200,
+  "height": 56,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": 733,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": {
+  "tag": "MAIN",
+  "id": "main-content",
+  "name": "Campus-Informationen Informationen für Studierende und Gäste am Lucas-Cranach-Ca",
+  "href": null,
+  "top": 0,
+  "bottom": 1060,
+  "left": 0,
+  "width": 540,
+  "height": 1060,
+  "inViewport": false,
+  "barBottom": null,
+  "dockTop": 733,
+  "underBar": false,
+  "underDock": true,
+  "nextTab": {
+   "tag": "A",
+   "name": "Neu am Campus Erste Orientierung: wo finde ich was?"
+  },
+  "urlHash": ""
+ }
+}

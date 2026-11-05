@@ -1,0 +1,116 @@
+
+Running 27 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/stage3-accessibility.spec.ts:113:3 › document language follows the page language on every public route (de) (4.7s)
+  ✓   2 [chromium] › tests/e2e/stage3-accessibility.spec.ts:113:3 › document language follows the page language on every public route (en) (4.7s)
+  ✓   3 [chromium] › tests/e2e/stage3-accessibility.spec.ts:125:1 › document language follows client-side language switches and navigation (849ms)
+  ✓   4 [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (de) (4.6s)
+  ✓   5 [chromium] › tests/e2e/stage3-accessibility.spec.ts:163:3 › /display: the board heading is the h1 and announcements are h2; the look is unchanged (de) (630ms)
+  ✓   6 [chromium] › tests/e2e/stage3-accessibility.spec.ts:146:3 › every public page has a title in its own language and exactly one level-1 heading (en) (4.7s)
+  ✓   7 [chromium] › tests/e2e/stage3-accessibility.spec.ts:163:3 › /display: the board heading is the h1 and announcements are h2; the look is unchanged (en) (639ms)
+  ✓   8 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link 1080x1920 touch: first tab stop, readable and unobstructed when focused, moves focus into the content (8.2s)
+  ✓   9 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link 1080x1920 pointer-fine: first tab stop, readable and unobstructed when focused, moves focus into the content (8.2s)
+  ✓  10 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link 540x960 (assumed 200 % zoom): first tab stop, readable and unobstructed when focused, moves focus into the content (8.2s)
+  ✓  11 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link laptop 1440x900: first tab stop, readable and unobstructed when focused, moves focus into the content (8.2s)
+  ✓  12 [chromium] › tests/e2e/stage3-accessibility.spec.ts:187:3 › skip link phone 390x844: first tab stop, readable and unobstructed when focused, moves focus into the content (8.2s)
+  ✓  13 [chromium] › tests/e2e/stage3-accessibility.spec.ts:233:1 › skip link: with a booking request pending, using it does not open the leave dialog (354ms)
+  ✓  14 [chromium] › tests/e2e/stage3-accessibility.spec.ts:279:3 › the logo is a link to Home that keeps the language (de) (5.3s)
+  ✓  15 [chromium] › tests/e2e/stage3-accessibility.spec.ts:279:3 › the logo is a link to Home that keeps the language (en) (5.3s)
+  ✘  16 [chromium] › tests/e2e/stage3-accessibility.spec.ts:300:3 › search placeholders reach 4.5:1 on /rooms and /map (de), kiosk and laptop (642ms)
+  ✘  17 [chromium] › tests/e2e/stage3-accessibility.spec.ts:300:3 › search placeholders reach 4.5:1 on /rooms and /map (en), kiosk and laptop (644ms)
+  ✓  18 [chromium] › tests/e2e/stage3-accessibility.spec.ts:354:3 › room links have distinct, contextual names that start with the visible label (de) (676ms)
+  ✓  19 [chromium] › tests/e2e/stage3-accessibility.spec.ts:376:3 › class-result links name their room and agree where they lead (de) (116ms)
+  ✓  20 [chromium] › tests/e2e/stage3-accessibility.spec.ts:354:3 › room links have distinct, contextual names that start with the visible label (en) (662ms)
+  ✓  21 [chromium] › tests/e2e/stage3-accessibility.spec.ts:376:3 › class-result links name their room and agree where they lead (en) (115ms)
+  ✓  22 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 touch de: keyboard focus is never left under the pinned chip bar or the dock (739ms)
+  ✓  23 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 touch en: keyboard focus is never left under the pinned chip bar or the dock (719ms)
+  ✓  24 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 pointer-fine de: keyboard focus is never left under the pinned chip bar or the dock (715ms)
+  ✓  25 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 1080x1920 pointer-fine en: keyboard focus is never left under the pinned chip bar or the dock (726ms)
+  ✓  26 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 540x960 (assumed 200 % zoom) de: keyboard focus is never left under the pinned chip bar or the dock (707ms)
+  ✓  27 [chromium] › tests/e2e/stage3-accessibility.spec.ts:429:5 › focus clearance 540x960 (assumed 200 % zoom) en: keyboard focus is never left under the pinned chip bar or the dock (720ms)
+
+
+  1) [chromium] › tests/e2e/stage3-accessibility.spec.ts:300:3 › search placeholders reach 4.5:1 on /rooms and /map (de), kiosk and laptop
+
+    Error: 1080x1920 touch /rooms de: placeholder contrast
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 4.5
+    Received:    3.111347377017256
+
+      306 |         const input = "input[placeholder]";
+      307 |         await expect(page.locator(input).first(), `${v.name} ${route} ${lang}: a search field with a placeholder exists`).toBeVisible();
+    > 308 |         expect(await contrast(page, input, "::placeholder"), `${v.name} ${route} ${lang}: placeholder contrast`).toBeGreaterThanOrEqual(4.5);
+          |                                                                                                                  ^
+      309 |       }
+      310 |       await context.close();
+      311 |     }
+        at <isolated-copy-root>/mut-M4-placeholder-back-to-half-alpha/tests/e2e/stage3-accessibility.spec.ts:308:114
+
+    Error Context: test-results/stage3-accessibility-searc-ba500-and-map-de-kiosk-and-laptop-chromium/error-context.md
+
+  2) [chromium] › tests/e2e/stage3-accessibility.spec.ts:300:3 › search placeholders reach 4.5:1 on /rooms and /map (en), kiosk and laptop
+
+    Error: 1080x1920 touch /rooms en: placeholder contrast
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 4.5
+    Received:    3.111347377017256
+
+      306 |         const input = "input[placeholder]";
+      307 |         await expect(page.locator(input).first(), `${v.name} ${route} ${lang}: a search field with a placeholder exists`).toBeVisible();
+    > 308 |         expect(await contrast(page, input, "::placeholder"), `${v.name} ${route} ${lang}: placeholder contrast`).toBeGreaterThanOrEqual(4.5);
+          |                                                                                                                  ^
+      309 |       }
+      310 |       await context.close();
+      311 |     }
+        at <isolated-copy-root>/mut-M4-placeholder-back-to-half-alpha/tests/e2e/stage3-accessibility.spec.ts:308:114
+
+    Error Context: test-results/stage3-accessibility-searc-5a63c-and-map-en-kiosk-and-laptop-chromium/error-context.md
+
+  2 failed
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:300:3 › search placeholders reach 4.5:1 on /rooms and /map (de), kiosk and laptop
+    [chromium] › tests/e2e/stage3-accessibility.spec.ts:300:3 › search placeholders reach 4.5:1 on /rooms and /map (en), kiosk and laptop
+  25 passed (1.5m)
+[WebServer] (node:13099) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13100) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13132) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13140) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13162) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13166) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13167) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13165) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13164) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13161) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13159) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13160) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13158) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13168) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13163) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13169) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13201) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+(node:13202) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:13339) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:13345) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

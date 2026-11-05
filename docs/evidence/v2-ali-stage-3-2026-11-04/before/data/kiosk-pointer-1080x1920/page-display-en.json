@@ -1,0 +1,56 @@
+{
+ "ctx": "kiosk-pointer-1080x1920",
+ "name": "page-display",
+ "lang": "en",
+ "label": "before",
+ "page": {
+  "htmlLang": "de",
+  "wrapperLang": "en",
+  "title": "Announcements – Campus Board",
+  "h1Count": 0,
+  "headings": [
+   [
+    2,
+    "Announcements"
+   ],
+   [
+    3,
+    "Sample notice 1"
+   ],
+   [
+    3,
+    "Sample notice 2"
+   ],
+   [
+    3,
+    "Sample notice 3"
+   ],
+   [
+    3,
+    "Sample notice 4"
+   ]
+  ],
+  "skipLink": null,
+  "logoLink": null,
+  "mainId": null,
+  "linkCount": 9,
+  "ambiguousLinkNames": []
+ },
+ "firstTabStop": {
+  "tag": "DIV",
+  "id": null,
+  "name": "EVENT HIGHLIGHTED Sample notice 1 Synthetic text 1. For display only; not a real",
+  "href": null,
+  "top": 447,
+  "bottom": 1534,
+  "left": 49,
+  "width": 983,
+  "height": 1087,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": null,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": null
+}

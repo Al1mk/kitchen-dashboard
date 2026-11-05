@@ -302,7 +302,12 @@ for (const v of KIOSK) {
       await expect(links.nth(0)).toHaveAttribute("href", publicHref("/schedule", lang, { raum: roomId }));
       await expect(links.nth(1)).toHaveAttribute("href", publicHref("/map", lang, { raum: roomId }));
       await expect(links.nth(2)).toHaveAttribute("href", publicHref("/booking", lang, { raum: roomId }));
-      await expect(links.nth(0)).toHaveText(t.rooms.todayInRoom);
+      // Stage 3 (AL-05, C14): each link now ends in a visually hidden " – <room code>" so its accessible name is
+      // distinct. Intentional change of this expectation (was the bare label); the visible label must still come
+      // first, and all three actions are checked instead of one.
+      for (const [i, label] of [t.rooms.todayInRoom, t.rooms.onMap, t.rooms.book].entries()) {
+        await expect(links.nth(i), `${lang}: action ${i} reads "${label}" first, then the room code`).toHaveText(`${label} – S2C-${stamp}`);
+      }
       const tops = await links.evaluateAll((as) => as.map((a) => Math.round(a.getBoundingClientRect().top)));
       expect(new Set(tops).size, `${lang}: the three actions are in one row`).toBe(1);
       const heights = await links.evaluateAll((as) => as.map((a) => a.getBoundingClientRect().height));

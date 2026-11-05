@@ -1,0 +1,52 @@
+{
+ "ctx": "kiosk-touch-1080x1920",
+ "name": "page-map",
+ "lang": "en",
+ "label": "before",
+ "page": {
+  "htmlLang": "de",
+  "wrapperLang": "en",
+  "title": "Map – Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "Map"
+   ],
+   [
+    2,
+    "1st floor"
+   ],
+   [
+    2,
+    "Selected room"
+   ],
+   [
+    2,
+    "1st floor · 24 rooms"
+   ]
+  ],
+  "skipLink": null,
+  "logoLink": null,
+  "mainId": null,
+  "linkCount": 9,
+  "ambiguousLinkNames": []
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Deutsch",
+  "href": "/map",
+  "top": 1633,
+  "bottom": 1710,
+  "left": 395,
+  "width": 141,
+  "height": 77,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": 1609,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": null
+}

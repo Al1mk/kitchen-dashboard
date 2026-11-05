@@ -1,0 +1,66 @@
+{
+ "ctx": "phone-390x844",
+ "name": "page-booking-cancel",
+ "lang": "en",
+ "label": "after",
+ "page": {
+  "htmlLang": "en",
+  "wrapperLang": "en",
+  "title": "Cancel a booking – LCC Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "Cancel a booking"
+   ]
+  ],
+  "skipLink": {
+   "text": "Skip to main content",
+   "href": "#main-content"
+  },
+  "logoLink": {
+   "href": "/?lang=en",
+   "alt": "Hochschule Coburg – Home"
+  },
+  "mainId": "main-content",
+  "linkCount": 12,
+  "ambiguousLinkNames": []
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Skip to main content",
+  "href": "#main-content",
+  "top": 16,
+  "bottom": 72,
+  "left": 16,
+  "width": 204,
+  "height": 56,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": null,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": {
+  "tag": "MAIN",
+  "id": "main-content",
+  "name": "Cancel a booking DEMO – not an official university booking system. Booking ID: 3",
+  "href": null,
+  "top": 56,
+  "bottom": 844,
+  "left": 0,
+  "width": 390,
+  "height": 788,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": null,
+  "underBar": false,
+  "underDock": false,
+  "nextTab": {
+   "tag": "INPUT",
+   "name": ""
+  },
+  "urlHash": ""
+ }
+}

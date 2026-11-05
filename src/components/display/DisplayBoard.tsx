@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import type { PublicAnnouncement } from "@/lib/announcements/schema.ts";
-import { PUBLIC_TEXT, type Lang } from "@/lib/i18n/public.ts";
+import { PUBLIC_TEXT, publicHref, type Lang } from "@/lib/i18n/public.ts";
 import { formatBerlinTime } from "@/lib/time/berlin.ts";
 import { BoardLayout } from "./BoardLayout.tsx";
 
@@ -132,6 +132,8 @@ export function DisplayBoard({ lang, nav, languageSwitch }: { lang: Lang; nav?: 
           lang={lang}
           nav={nav}
           languageSwitch={languageSwitch}
+          pageHeading
+          logoHref={publicHref("/", lang)}
         />
       </div>
     </div>

@@ -1,0 +1,86 @@
+{
+ "ctx": "kiosk-pointer-1080x1920",
+ "name": "page-newcomers",
+ "lang": "en",
+ "label": "after",
+ "page": {
+  "htmlLang": "en",
+  "wrapperLang": "en",
+  "title": "New to campus – Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "New to campus?"
+   ],
+   [
+    2,
+    "Find a room"
+   ],
+   [
+    2,
+    "What is on today?"
+   ],
+   [
+    2,
+    "Current notices"
+   ],
+   [
+    2,
+    "Reserve a study room"
+   ],
+   [
+    2,
+    "Need help?"
+   ]
+  ],
+  "skipLink": {
+   "text": "Skip to main content",
+   "href": "#main-content"
+  },
+  "logoLink": {
+   "href": "/?lang=en",
+   "alt": "Hochschule Coburg – Home"
+  },
+  "mainId": "main-content",
+  "linkCount": 16,
+  "ambiguousLinkNames": []
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Skip to main content",
+  "href": "#main-content",
+  "top": 22,
+  "bottom": 99,
+  "left": 22,
+  "width": 280,
+  "height": 77,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": 1609,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": {
+  "tag": "MAIN",
+  "id": "main-content",
+  "name": "New to campus? Choose what you need right now. Prototype · example data – not an",
+  "href": null,
+  "top": 139,
+  "bottom": 1587,
+  "left": 12,
+  "width": 1056,
+  "height": 1448,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": 1609,
+  "underBar": false,
+  "underDock": false,
+  "nextTab": {
+   "tag": "A",
+   "name": "Open the map"
+  },
+  "urlHash": ""
+ }
+}

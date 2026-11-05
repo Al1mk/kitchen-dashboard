@@ -1,0 +1,66 @@
+{
+ "ctx": "laptop-1440x900",
+ "name": "page-home",
+ "lang": "en",
+ "label": "after",
+ "page": {
+  "htmlLang": "en",
+  "wrapperLang": "en",
+  "title": "Campus information – Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "Campus information"
+   ]
+  ],
+  "skipLink": {
+   "text": "Skip to main content",
+   "href": "#main-content"
+  },
+  "logoLink": {
+   "href": "/?lang=en",
+   "alt": "Hochschule Coburg – Home"
+  },
+  "mainId": "main-content",
+  "linkCount": 16,
+  "ambiguousLinkNames": []
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Skip to main content",
+  "href": "#main-content",
+  "top": 16,
+  "bottom": 72,
+  "left": 16,
+  "width": 204,
+  "height": 56,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": null,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": {
+  "tag": "MAIN",
+  "id": "main-content",
+  "name": "Campus information Information for students and visitors at Lucas-Cranach-Campus",
+  "href": null,
+  "top": 92,
+  "bottom": 900,
+  "left": 336,
+  "width": 768,
+  "height": 808,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": null,
+  "underBar": false,
+  "underDock": false,
+  "nextTab": {
+   "tag": "A",
+   "name": "New to campus First orientation: where do I find what?"
+  },
+  "urlHash": ""
+ }
+}

@@ -1,0 +1,10 @@
+
+ RUN  v5.0.5 <isolated-copy-root>/after
+
+
+ Test Files  25 passed (25)
+      Tests  187 passed (187)
+   Start at  09:01:05
+   Duration  1.17s (tests 69%, transform 16%, import 14%, worker 1%)
+
+EXIT 0

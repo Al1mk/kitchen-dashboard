@@ -1,0 +1,11 @@
+docs/team-sources/aryan-ap01/original/ap01/tests/map-clusters.test.ts(2,33): error TS2307: Cannot find module '../../src/lib/map/marker-clusters.ts' or its corresponding type declarations.
+docs/team-sources/aryan-ap01/original/ap01/tests/map-clusters.test.ts(3,33): error TS2307: Cannot find module '../../src/lib/map/team-catalog.ts' or its corresponding type declarations.
+docs/team-sources/aryan-ap01/original/ap01/tests/map-clusters.test.ts(5,63): error TS7006: Parameter 'r' implicitly has an 'any' type.
+docs/team-sources/aryan-ap01/original/ap01/tests/map-clusters.test.ts(6,8): error TS7006: Parameter 'r' implicitly has an 'any' type.
+docs/team-sources/aryan-ap01/original/ap01/tests/map-clusters.test.ts(25,29): error TS7006: Parameter 'g' implicitly has an 'any' type.
+docs/team-sources/aryan-ap01/original/ap01/tests/map-clusters.test.ts(25,45): error TS7006: Parameter 'p' implicitly has an 'any' type.
+docs/team-sources/aryan-ap01/original/ap01/tests/map-clusters.test.ts(25,86): error TS7006: Parameter 'p' implicitly has an 'any' type.
+docs/team-sources/aryan-ap01/original/ap01/tests/map-clusters.test.ts(35,31): error TS7006: Parameter 'g' implicitly has an 'any' type.
+docs/team-sources/aryan-ap01/original/ap01/tests/map-clusters.test.ts(35,48): error TS7006: Parameter 'p' implicitly has an 'any' type.
+docs/team-sources/aryan-ap01/original/ap01/tests/map-clusters.test.ts(36,29): error TS7006: Parameter 'p' implicitly has an 'any' type.
+docs/team-sources/aryan-ap01/original/ap01/tests/map-clusters.test.ts(37,29): error TS7006: Parameter 'p' implicitly has an 'any' type.

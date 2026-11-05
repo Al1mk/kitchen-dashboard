@@ -1,0 +1,92 @@
+{
+ "ctx": "phone-390x844",
+ "name": "page-rooms",
+ "lang": "en",
+ "label": "before",
+ "page": {
+  "htmlLang": "de",
+  "wrapperLang": "en",
+  "title": "Rooms – Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "Rooms"
+   ],
+   [
+    2,
+    "Ground floor"
+   ],
+   [
+    3,
+    "DEMO-E01 Kitchen / common room (Demo)"
+   ],
+   [
+    3,
+    "DEMO-E02 Lecture hall A (Demo)"
+   ],
+   [
+    2,
+    "1st floor"
+   ],
+   [
+    3,
+    "DEMO-101 Seminar room 1 (Demo)"
+   ],
+   [
+    3,
+    "DEMO-102 PC-Labor (Demo)"
+   ],
+   [
+    3,
+    "K1-103 Seminar room 1"
+   ],
+   [
+    3,
+    "K1-104 Shared Space"
+   ],
+   [
+    3,
+    "K1-105 IT room"
+   ]
+  ],
+  "skipLink": null,
+  "logoLink": null,
+  "mainId": null,
+  "linkCount": 140,
+  "ambiguousLinkNames": [
+   {
+    "name": "Today in this room",
+    "targets": 54,
+    "occurrences": 54
+   },
+   {
+    "name": "Show on the map",
+    "targets": 54,
+    "occurrences": 54
+   },
+   {
+    "name": "Book this room (demo)",
+    "targets": 23,
+    "occurrences": 23
+   }
+  ]
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Deutsch",
+  "href": "/rooms",
+  "top": 120,
+  "bottom": 168,
+  "left": 25,
+  "width": 87,
+  "height": 48,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": null,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": null
+}

@@ -1,0 +1,70 @@
+{
+ "ctx": "kiosk-touch-1080x1920",
+ "name": "page-booking",
+ "lang": "de",
+ "label": "after",
+ "page": {
+  "htmlLang": "de",
+  "wrapperLang": "de",
+  "title": "Raum reservieren – Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "Raum reservieren"
+   ],
+   [
+    2,
+    "4. Freie Startzeit wählen"
+   ]
+  ],
+  "skipLink": {
+   "text": "Zum Inhalt springen",
+   "href": "#main-content"
+  },
+  "logoLink": {
+   "href": "/",
+   "alt": "Hochschule Coburg – Start"
+  },
+  "mainId": "main-content",
+  "linkCount": 12,
+  "ambiguousLinkNames": []
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Zum Inhalt springen",
+  "href": "#main-content",
+  "top": 22,
+  "bottom": 99,
+  "left": 22,
+  "width": 274,
+  "height": 77,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": 1609,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": {
+  "tag": "MAIN",
+  "id": "main-content",
+  "name": "Raum reservieren DEMO – keine echte Hochschulreservierung, kein Anspruch auf den",
+  "href": null,
+  "top": 160,
+  "bottom": 1556,
+  "left": 12,
+  "width": 1056,
+  "height": 1396,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": 1609,
+  "underBar": false,
+  "underDock": false,
+  "nextTab": {
+   "tag": "SELECT",
+   "name": "Bitte einen Raum wählen DEMO-101 – Seminarraum 1 (Demo) K1-103 – Seminarraum 1 K"
+  },
+  "urlHash": ""
+ }
+}

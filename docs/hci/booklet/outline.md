@@ -18,3 +18,7 @@ Each personal section: 1 problem/role, 2 alternatives with real dates, 3 impleme
 Reza is now the **documentation editor/assembler and main presenter**, with lighter coding work on newcomer copy. This does not make him the author of everyone's work. **Ali, Aryan, Parsa and Reza each prepare and approve their own minimum five-page personal contribution** under the course basis above; Reza makes structure, references, before/after captions and the final assembly consistent. Shared front matter does not replace the four individual sections.
 
 Each implementer supplies the evidence packet in [team plan section 6](../../plans/v2-team-2026-11-03/01-team-tasks-fa.md): finding/owner, actual before state, source evidence, decision/change/files/SHA, HCI reasoning, matched before/after captures, tests actually run, human result or NOT RUN and remaining limits. The earlier internal split of the joint source package remains unknown until the two authors clarify it; future assigned leads must not be projected backwards onto that history.
+
+## Aryan source-based working draft — 4 November 2026
+
+A [five-page editable draft and PDF](aryan-ap01/README.md) now cover the map, honest proto-persona/research boundaries, ID integration, AP01 decisions and technical evidence. It is Ali/Codex editorial assistance for Aryan to verify and approve. It does not replace real original research or complete the team’s personal chapters. Reza’s existing chapter remains unchanged. Current Moodle requirements still need team confirmation.

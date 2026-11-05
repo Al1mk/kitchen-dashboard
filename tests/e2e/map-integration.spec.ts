@@ -41,15 +41,18 @@ test("markers sit on the image at their normalized position, also after zooming"
   await page.goto("/map?etage=1OG");
   const layer = page.getByTestId("map-layer");
   const pin = marker(page, "lcc-demo-room-k1-103"); // x 0.1294346, y 0.2522936 in the source data
+  // Isolate this pin: grouped affordances deliberately sit at a centroid.
+  await page.getByLabel("Raum suchen").fill("103");
   await expect(pin).toBeVisible();
   for (const zoomClicks of [0, 2]) {
     for (let i = 0; i < zoomClicks; i++) await page.getByRole("button", { name: "Vergrößern" }).click();
-    const box = (await layer.boundingBox())!;
-    const p = (await pin.boundingBox())!;
-    const cx = (p.x + p.width / 2 - box.x) / box.width;
-    const cy = (p.y + p.height / 2 - box.y) / box.height;
-    expect(Math.abs(cx - 0.1294346)).toBeLessThan(0.01);
-    expect(Math.abs(cy - 0.2522936)).toBeLessThan(0.01);
+    // Read both boxes in one frame, after scroll/zoom settles.
+    await expect.poll(async () => layer.evaluate((element) => {
+      const box = element.getBoundingClientRect();
+      const pin = element.querySelector('[data-room-id="lcc-demo-room-k1-103"]')!;
+      const p = pin.getBoundingClientRect();
+      return Math.max(Math.abs((p.x + p.width / 2 - box.x) / box.width - 0.1294346), Math.abs((p.y + p.height / 2 - box.y) / box.height - 0.2522936));
+    })).toBeLessThan(0.01);
   }
 });
 
@@ -69,17 +72,25 @@ test("renaming keeps the marker (id binding); moving to another floor hides the 
   const id = "lcc-demo-room-k1-108";
   await editRoom(request, baseURL!, id, { code: "K1-108N", name: "Umbenannter Raum" });
   await page.goto(`/map?raum=${id}`);
-  await expect(marker(page, id)).toHaveText("K1-108N");
+  const cluster = page.locator(`[data-testid="map-cluster"][data-room-ids~="${id}"]`);
+  await expect.poll(async () => await marker(page, id).count() + await cluster.count()).toBe(1);
+  if (await cluster.count()) {
+    await cluster.click();
+    await expect(page.getByTestId("map-cluster-chooser").getByRole("button", { name: /K1-108N/ })).toContainText("Umbenannter Raum");
+    await page.getByTestId("map-cluster-chooser").getByRole("button", { name: /K1-108N/ }).click();
+  } else await expect(marker(page, id)).toHaveText("K1-108N");
   await expect(details(page)).toContainText("Umbenannter Raum");
 
   await editRoom(request, baseURL!, id, { floorId: "2OG" });
   await page.goto(`/map?raum=${id}`);
   await expect(page.getByRole("button", { name: "2. Obergeschoss", exact: true })).toHaveAttribute("aria-pressed", "true");
   await expect(marker(page, id)).toHaveCount(0);
+  await expect(cluster).toHaveCount(0);
   await expect(details(page)).toContainText("anderen Stockwerk");
   // The 1OG plan does not show it either.
   await page.getByRole("button", { name: "1. Obergeschoss", exact: true }).click();
   await expect(marker(page, id)).toHaveCount(0);
+  await expect(cluster).toHaveCount(0);
 });
 
 test("archived and unknown rooms get no marker and no substitute", async ({ page, request, baseURL }) => {

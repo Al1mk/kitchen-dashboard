@@ -1,0 +1,40 @@
+{
+ "ctx": "kiosk-pointer-1080x1920",
+ "name": "page-home",
+ "lang": "de",
+ "label": "before",
+ "page": {
+  "htmlLang": "de",
+  "wrapperLang": "de",
+  "title": "Campus-Informationen – Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "Campus-Informationen"
+   ]
+  ],
+  "skipLink": null,
+  "logoLink": null,
+  "mainId": null,
+  "linkCount": 14,
+  "ambiguousLinkNames": []
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Deutsch",
+  "href": "/",
+  "top": 1633,
+  "bottom": 1710,
+  "left": 395,
+  "width": 141,
+  "height": 77,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": 1609,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": null
+}

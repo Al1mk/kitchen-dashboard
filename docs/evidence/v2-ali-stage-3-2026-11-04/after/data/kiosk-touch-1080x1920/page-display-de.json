@@ -1,0 +1,59 @@
+{
+ "ctx": "kiosk-touch-1080x1920",
+ "name": "page-display",
+ "lang": "de",
+ "label": "after",
+ "page": {
+  "htmlLang": "de",
+  "wrapperLang": "de",
+  "title": "Mitteilungen – Campus Board",
+  "h1Count": 1,
+  "headings": [
+   [
+    1,
+    "Mitteilungen"
+   ],
+   [
+    2,
+    "Beispielmitteilung 1"
+   ],
+   [
+    2,
+    "Beispielmitteilung 2"
+   ],
+   [
+    2,
+    "Beispielmitteilung 3"
+   ],
+   [
+    2,
+    "Beispielmitteilung 4"
+   ]
+  ],
+  "skipLink": null,
+  "logoLink": {
+   "href": "/",
+   "alt": "Hochschule Coburg – Start"
+  },
+  "mainId": null,
+  "linkCount": 10,
+  "ambiguousLinkNames": []
+ },
+ "firstTabStop": {
+  "tag": "A",
+  "id": null,
+  "name": "Hochschule Coburg – Start",
+  "href": "/",
+  "top": 56,
+  "bottom": 153,
+  "left": 49,
+  "width": 367,
+  "height": 97,
+  "inViewport": true,
+  "barBottom": null,
+  "dockTop": null,
+  "underBar": false,
+  "underDock": false
+ },
+ "afterSkipActivation": null
+}
